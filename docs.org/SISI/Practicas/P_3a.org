@@ -1,0 +1,675 @@
+#+TITLE: Practica 3A
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+* Diseño de un sistema de informacion
+1. Realizad un particionado del espacio de disco duro, teniendo en
+   cuenta que por eficiencia necesitaremos al menos tres particiones:
+
+   1. Sistema Operativo (una o varias en funcion del numero de SO)
+   2. Datos
+   3. Backups
+
+   Pasos que he realizado:
+      
+   - Primero de todo: creacion de la VM
+
+     [[file:./img/3.1.1.png]]
+
+     [[file:./img/3.1.2.png]]
+
+     Habilitare efi, para que sea como una instalacion en una maquina
+     mas actual:
+  
+     [[file:./img/3.1.3.png]]
+  
+     Añado la ISO del OS, que sera nixOS:
+  
+     [[file:./img/3.1.4.png]]
+  
+     Arranco la VM y selecciono la primera opcion:
+  
+     [[file:./img/3.1.5.png]]
+  
+   - Una vez arrancado, lo siguiente es particionar el disco.
+
+     Hechamos un vistazo a los discos:
+  
+     [[file:./img/3.1.6.png]]
+  
+     Lo primaro es a cambiar a root e ir a ~/~:
+
+     #+begin_src shell
+       sudo su
+
+       cd /
+     #+end_src
+
+     Con ~fdisk~ sobre el disco duro creamos las particiones:
+  
+     #+begin_src shell
+       sudo fdisk /dev/sda
+     #+end_src
+  
+     Le asigno el particionado GPT y creamos 2 particiones, una de
+     512MiB-1GiB para la efi y otra con el resto del espacio que sobra.
+     
+     [[file:./img/3.1.8.png]]
+  
+     A la particion efi la pongo de tipo ~EFI System~.
+  
+     [[file:./img/3.1.9.png]]
+  
+     Y por ultimo se guardan los cambios.
+  
+     [[file:./img/3.1.10.png]]
+  
+     Formateo las particiones, la efi con ~fat32~ y la otra con ~btrfs~:
+  
+     #+begin_src shell
+       mkfs.fat -F 32 -n BOOT /dev/sda1
+
+       mkfs.btrfs -L SYSTEM /dev/sda2
+     #+end_src
+  
+     Monto la particion del sistema y creo los diferentes subvolumenes;
+     datos, backups y el del SO:
+  
+     #+begin_src shell
+       mount /dev/sda2 /mnt
+
+       btrfs subvolume create /mnt/@data
+
+       btrfs subvolume create /mnt/@backups
+
+       btrfs subvolume create /mnt/@nixos
+     #+end_src
+  
+     Desmonto ~/mnt~ y monto el subvolumen ~@nixos~, seguido de crear
+     su ~/boot~ y montarle la particion de boot y lo mismo creando
+     ~/Datos~ y ~/Backups~, montandoles sus respectivos subvolumenes:
+  
+     #+begin_src shell
+       umount /mnt
+
+       mount /dev/sda2 -o subvol=@nixos /mnt
+
+       mkdir /mnt/boot
+
+       mount /dev/sda1 /mnt/boot
+
+       mkdir /mnt/Datos /mnt/Backups
+
+       mount /dev/sda2 -o subvol=@data /mnt/Datos
+
+       mount /dev/sda2 -o subvol=@backups /mnt/Backups
+     #+end_src
+  
+     Y me acabo de acordar, deberia crear una swap, asi que monto en un
+     directorio aparte ~/dev/sda2~ de nuevo y le creo el subvolumen
+     para la swap:
+   
+     #+begin_src shell
+       mkdir /mnt2
+
+       mount /dev/sda2 /mnt2
+
+       btrfs subvolume create /mnt2/@swap
+
+       umount /mnt2
+     #+end_src
+  
+     Creo ~/swap~, donde se montara el subvolumen creado antes:
+  
+     #+begin_src shell
+       mkdir /mnt/swap
+
+       mount /dev/sda2 -o subvol=@swap /mnt/swap
+     #+end_src
+  
+     Pero eso de poco sirve, normalmente se suele crear una particion
+     aparte, a la que se le realiza un ~swapon~ para usarla como swap,
+     en caso de no usar una particion, se puede crear un ~swapfile~:
+  
+     #+begin_src shell
+       touch /mnt/swap/swapfile
+     #+end_src
+     
+     Ahora bien, no queremos que nadie que no sea el sistema pueda
+     toquetear la swap, y aparte tenemos que deshabilitar el COW (Copy
+     on Write) para que btrfs no haga de las suyas:
+  
+     #+begin_src shell
+       chmod 600 /mnt/swap/swapfile
+
+       chattr +C /mnt/swap/swapfile
+     #+end_src
+  
+     Por ultimo, hay que darle un tamaño a la swapfile, formatearlo y
+     hacerle ~swapon~ (el tamaño es el valor de count multiplicado por
+     lo que se de en el blocksize, BS):
+  
+     #+begin_src shell
+       dd if=/dev/zero of=/mnt/swap/swapfile bs=1M count=2048
+       # 2048+0 records in
+       # 2048+0 records out
+       # 2147483648 bytes (2 GiB) copied, 20 s, 105 MB/s
+
+       mkswap /mnt/swap/swapfile
+       # Setting up swapspace version 1, size = 2 GiB
+       # no label, UUID=8d33617c-9642-4c9a4-ae68-9885a67bbea5
+
+       swapon /mnt/swap/swapfile
+     #+end_src
+  
+   - Ahora toca instalar el OS. En nixOS es de una forma no muy
+     habitual.
+
+     Primero de todo, generar una configuracion para instalar nixos,
+     que se guarda en ~/etc/nixos~:
+
+     #+begin_src shell
+       nixos-generate-config --root /mnt
+       # writing /mnt/etc/nixos/hardware-configuration.nix...
+       # writing /mnt/etc/nixos/configuration.nix...
+
+       cd /mnt/etc/nixos/
+     #+end_src
+
+     Existen 2 archivos, ~configuration.nix~ y
+     ~hardware-configuration.nix~, uno tiene configuracion del sistema
+     y el otro del hardware, por ejemplo de como montar los discos.
+
+     Primero voy a ver si el de hardware esta bien:
+
+     #+begin_src nix
+       { config, lib, pkgs, modulesPath, ... }:
+
+       {
+         imports = [ ];
+
+         boot.initrd.availableKernelModules = [
+           "ata_piix"
+           "ohci_pci"
+           "sd_mod"
+           "sr_mod"
+         ];
+
+         boot.initrd.kernelModules = [ ];
+         boot.kernelModules = [ ];
+         boot.extraModulePackages = [ ];
+
+         fileSystems."/" = {
+           device = "/dev/disk/by-uuid/5a3613a9-814e-4a71-ba4c-53aea68a03bd";
+           fsType = "btrfs";
+           options = [ "subvol=@nixos" ];
+         };
+
+         fileSystems."/boot" = {
+           device = "/dev/disk/by-uuid/A795-88BB";
+           fsType = "vfat";
+         };
+
+         fileSystems."/Datos" = {
+           device = "/dev/disk/by-uuid/5a3613a9-814e-4a71-ba4c-53aea68a03bd";
+           fsType = "btrfs";
+           options = [ "subvol=@data" ];
+         };
+
+         fileSystems."/Backups" = {
+           device = "/dev/disk/by-uuid/5a3613a9-814e-4a71-ba4c-53aea68a03bd";
+           fsType = "btrfs";
+           options = [ "subvol=@backups" ];
+         };
+
+         fileSystems."/swap" = {
+           device = "/dev/disk/by-uuid/5a3613a9-814e-4a71-ba4c-53aea68a03bd";
+           fsType = "btrfs";
+           options = [ "subvol=@swap" ];
+         };
+
+         swapDevices = [ ];
+
+         virtualisation.virtualbox.guest.enable = true;
+       }
+     #+end_src
+
+     Parece que no detecto que tenemos un swapfile, asi que se lo
+     añado:
+
+     #+begin_src nix
+       swapDevices = [ { device = "/swap/swapfile"; } ];
+     #+end_src
+
+     Ahora he editado ~configuration.nix~, quitado los comentarios y
+     configuraciones innecesarias, crado un usuario pruebas con una
+     contraseña super segura, añadido un editor de texto y el resto es
+     por defecto.
+
+     #+begin_src nix
+       { config, pkgs, ... }:
+
+       {
+         imports =
+           [
+             ./hardware-configuration.nix
+           ];
+
+         boot.loader.systemd-boot.enable = true;
+         boot.loader.efi.canTouchEfiVariables = true;
+
+         networking.hostName = "SISI_nixos";
+
+         time.timeZone = "Europe/Madrid";
+
+         networking.useDHCP = false;
+         networking.interfaces.enp0s3.useDHCP = true;
+
+         i18n.defaultLocale = "en_US.UTF-8";
+
+         users.mutableUsers = false;
+         users.users.pruebas = {
+           isNormalUser = true;
+           createHome = true;
+           password = "1234";
+           extraGroups = [ "wheel" ];
+         };
+
+         environment.systemPackages = with pkgs; [
+           neovim
+         ];
+
+         system.stateVersion = "21.05";
+       }
+     #+end_src
+
+     Y con esto y un bizcocho, rezamos para que instale:
+
+     #+begin_src shell
+       cd /
+
+       nixos-install
+     #+end_src
+
+     Empieza a instalar todo y generar las configuraciones, y por
+     ultimo nos pregunta para poner la contraseña de root:
+
+     [[file:./img/3.1.25.png]]
+
+     Y ya solo queda hacer ~reboot~. El sistema funciona al arrancar
+     perfectamente.
+
+     [[file:./img/3.1.26.png]]
+
+     Inicio sesion con el usuario que cree y compruebo que todo esta
+     montado.
+
+     [[file:./img/3.1.27.png]]
+
+2. Configura la creacion de copias de seguridad de los datos, que se
+   guardaran en la particion correspondiente (combino este ejercicio
+   con el 3, para hacerlo 'todo de una'):
+
+   1. Copia completa cada tres meses, sabado a las 9am
+   2. Copia diferencial cada dos semanas, sabado a las 9am
+   3. Copia incremental todos los dias a las 10 de la noche
+
+   Esto usando nixOS y btrfs es muy sencillo:
+
+   - Primero vamos con las copias completas:
+
+     Como antes, nos vamos a la configuracion de nixOS:
+
+     #+begin_src shell
+       sudo su
+
+       cd /etc/nixos/
+     #+end_src
+
+     Vamos a usar systemd para crear unos servicios que se ejecuten en
+     determinadas fechas (systemd-timers calendar events). La sintaxis
+     es sencilla, le doy un nombre al servicio, en este caso
+     ~'fullBackup'~ junto a una descripcion. Ahora le configuro para
+     que solo se ejecute los sabados de la primera semana de Enero,
+     Abril, Julio y Octubre, es decir cada 4 meses, a las 9 de la
+     mañana.
+
+     #+begin_src nix
+       { config, pkgs, ... }:
+
+       {
+         # ...
+
+         system.stateVersion = "21.05";
+
+         systemd.services = {
+           fullBackup = {
+             description = "Realizar una copia comleta";
+             startAt = "Sat *-01,04,07,10-1..7 09:00:00";
+           };
+         };
+       }
+     #+end_src
+
+     Ahora hay que decirle que orden tiene que ejecutar, que sera que
+     haga una snapshot readonly (~-r~) del subvolumen ~/Datos~ en el
+     subvolumen ~/Backups~ y de nombre le da ~'full'~, que quedaria
+     tal que asi:
+
+     #+begin_src nix
+       fullBackup = {
+         description = "Realizar una copia comleta";
+         startAt = "Sat *-01,04,07,10-1..7 09:00:00";
+         script = "btrfs subvolume snapshot -r /Datos /Backups/full";
+       };
+     #+end_src
+
+     Ahora bien, el problema es que el script no tiene importado el
+     ~PATH~ que un usuario normal tiene, por lo que no sabe que es el
+     comando ~btrfs~, asi que tenemos que decirle donde se encuentra
+     el comando. El atributo ~path~ toma una lista de paquetes y de
+     cada uno toma lo que tienen en su ~bin/~, en este caso el paquete
+     en el que se encuentra el comando btrfs se llama ~btrfs-progs~ y
+     todos los paquetes se encuentran dentro del modulo ~pkgs~:
+
+     #+begin_src nix
+       fullBackup = {
+         description = "Realizar una copia comleta";
+         startAt = "Sat *-01,04,07,10-1..7 09:00:00";
+         script = "btrfs subvolume snapshot -r /Datos /Backups/full";
+         path = [ pkgs.btrfs-progs ];
+       };
+     #+end_src
+
+     Ahora bien, las snapshots se deberian nombrar de forma
+     incremental, tal que si existe una anterior completa, genere la
+     siguiente, si no existe ninguna, genera la 1, asi quedaria el
+     script:
+
+     #+begin_src shell
+       # Path de la ultima backup completa
+       LFB=$(find /Backups -type d -name "full_*" | tail -n1)
+
+       # Si no existe una anterior backup completa, esta sera la 1
+       # Si no esta sera la siguiente (si es 1, pues 2)
+       if [[ -z $LFB ]]; then
+         # Nombre de la nueva backup
+         NBN=full_1
+       else
+         # Numero / ID de la ultima backup completa
+         LFBN=$(echo "$LFB" | sed "s/.*\/full_\(.*\)/\1/g")
+         # Numero / ID de la siguiente backup completa
+         NFBN=$(($LFBN + 1))
+         # Nombre de la nueva backup
+         NBN=full_$NFBN
+         # Borrar todas las backups locales
+         btrfs subvolume delete /Backups/*
+       fi
+
+       # Creamos una snapshot de /Datos y la guardamos en local
+       btrfs subvolume snapshot -r /Datos /Backups/$NBN
+       # Enviamos la snapshot al remoto
+       btrfs send /Backups/$NBN | btrfs receive /Remoto
+     #+end_src
+
+     Notese tambien como he creado un ~/Remoto~, esto se debe a que
+     normalmente no queremos guardar las copias de seguridad en local,
+     si no en un servidor remoto o un NAS. Si se quieren guardar en
+     local, el directorio ~/Backups~ seria tratado como un contenedor
+     temporal de backups, ya que al enviarlas ya no son necesarias y
+     se eliminan. (Sobre la opcion ~send~ y ~receive~ hablo mas
+     abajo).
+
+   - Ahora hare para las copias diferenciales:
+
+     Para realizar esto en btrfs existe el comando ~send~ y ~receive~,
+     ~send~ puede tomar una snapshot padre y otra snapshot que derive
+     de el (solo si le pasamos el ~-p~, sino simplemente envia la
+     snapshot, como un ~mv~), determinar las diferencias entre ellos y
+     lo envia por un stream de datos, que se puede guardar en un
+     archivo o usar ~receive~ para que guarde esos cambios en forma de
+     una nueva snapshot.
+     
+     #+begin_src nix
+       diferentialBackup = {
+         description = "Realizar una copia diferencial";
+         startAt = "Sat *-*-1..7,15-21 09:00:00";
+         script =
+           ''
+           # Copy paste de lo de abajo
+           '';
+         path = [ pkgs.btrfs-progs ];
+       };
+     #+end_src
+
+     #+begin_src shell
+       # Path de la ultima backup completa
+       LFB=$(find /Backups -type d -name "full_*" | tail -n1)
+       # Numero / ID de la ultima backup completa
+       LFBN=$(echo "$LFB" | sed "s/.*\/full_\(.*\)/\1/g")
+       # Path de la ultima backup diferencial
+       LDB=$(find /Backups -type d -name "diferential_$LFBN-*" | tail -n1)
+
+       # Si no existe una anterior backup diferencial, esta sera la 1
+       # Si existe el nombre sera la siguiente
+       if [[ -z $LDB ]]; then
+         # Nombre de la nueva backup
+         NBN=diferential_$LFBN-1
+       else
+         # Numero / ID de la anterior backup diferencial
+         LDBN=$(echo "$LDB" | sed "s/.*\/diferential_.*-\(.*\)/\1/g")
+         # Numero / ID de la siguiente backup diferencial
+         NDBN=$(($LDBN + 1))
+         # Nombre de la nueva backup
+         NBN=diferential_$LFBN-$NDBN
+         # Se elimina la anterior copia diferencial en local
+         btrfs subvolume delete $LDB
+       fi
+
+       # Creamos una snapshot de /Datos y la guardamos en local
+       btrfs subvolume snapshot -r /Datos /Backups/$NBN
+       # Se forma un stream de diferencias entre la ultima backup completa
+       # y el estado actual, que se guardo en local en el comando anterior
+       # Este stream se evia al remote y este lo interpreta creando la
+       # copia diferencial
+       btrfs send -p $LFB /Backups/$NBN | btrfs receive /Remoto
+     #+end_src
+
+   - Por ultimo las incrementales:
+
+     Lo mismo que con las diferenciales, solo hay que cambiar un par
+     de cosas:
+
+     #+begin_src nix
+       incrementalBackup = {
+         description = "Realizar una copia incremental";
+         startAt = "*-*-* 22:00:00";
+         script =
+           ''
+           # Copy paste de lo de abajo
+           '';
+         path = [ pkgs.btrfs-progs ];
+       };
+     #+end_src
+
+     #+begin_src shell
+       # Path de la ultima backup completa
+       LFB=$(find /Backups -type d -name "full_*" | tail -n1)
+       # Numero / ID de la ultima backup completa
+       LFBN=$(echo "$LFB" | sed "s/.*\/full_\(.*\)/\1/g")
+       # Path de la ultima backup diferencial
+       LDB=$(find /Backups -type d -name "diferential_$LFBN-*" | tail -n1)
+       # Numero / ID de la ultima backup diferencial
+       LDBN=$(echo "$LDB" | sed "s/.*\/diferential_.*-\(.*\)/\1/g")
+       # Path de la ultima backup incremental
+       LIB=$(find /Backups -type d -name "incremental_$LFBN-$LDBN-*" | tail -n1)
+
+       # Si no existe una anterior backup incremental, esta sera la 1
+       # Si existe el nombre sera la siguiente
+       if [[ -z $LIB ]]; then
+         # Nombre de la nueva backup
+         NBN=incremental_$LFBN-$LDBN-1
+         # Path de la copia con la que se debe comparar
+         # como no hay incrementales sera la ultima diferencial
+         PARENT=$LDB
+       else
+         # Numero / ID de la anterior backup incremental
+         LIBN=$(echo "$LIB" | sed "s/.*\/incremental_.*-.*-\(.*\)/\1/g")
+         # Numero / ID de la siguiente backup incremental
+         NIBN=$(($LIBN + 1))
+         # Nombre de la nueva backup
+         NBN=incremental_$LFBN-$LDBN-$NIBN
+         # Path de la copia con la que se debe comparar
+         # como existe una anterior incremental, esa sera
+         PARENT=$LIB
+       fi
+
+       # Creamos una snapshot de /Datos y la guardamos en local
+       btrfs subvolume snapshot -r /Datos /Backups/$NBN
+       # Se forma un stream de diferencias entre la backup "PADRE"
+       # y el estado actual, que se guardo en local en el comando anterior
+       # Este stream se evia al remote y este lo interpreta creando la
+       # copia incremental
+       btrfs send -p $PARENT /Backups/$NBN | btrfs receive /Remoto
+       # Me cargo la anterior incremental en local si es que habia
+       [[ -z $NIBN ]] || btrfs subvolume delete $PARENT
+     #+end_src
+
+   - Demostracion de que funciona
+
+     Para demostrar que todo esto funciona solo queda aplicar la
+     configuracion y probar.
+
+     #+begin_src shell
+       nixos-rebuild switch
+     #+end_src
+
+     Y a hacer las pruebas (entre cada creacion de una copia,
+     creaba/editaba un archivo en ~/Datos~):
+
+     Primero creare un falso remoto para la simulacion
+
+     #+begin_src shell
+       mkdir /Remoto
+     #+end_src
+
+     Ahora voy a forzar al servicio para que se ejecute:
+     
+     [[file:./img/3.2.1.png]]
+
+     [[file:./img/3.2.2.png]]
+
+     [[file:./img/3.2.3.png]]
+
+     [[file:./img/3.2.4.png]]
+
+     Y por ultimo al comprobar la informacion de cada snapshot en el
+     remoto, se puede ver como cada uno marca que tiene un snapshot
+     que desciende de el, menos el incremental 1-1-2 que es el ultimo.
+
+     [[file:./img/3.2.5.png]]
+
+4. [@4] Realiza una valoracion de las necesidades para un
+   desarrollador de software.
+
+   Un desarrollador de software necesita, como minimo, de un editor de
+   texto, ya puede ser desde un bloc de notas como el notepad de
+   windows o el ~ed~ de linux, aunque no es bien recomendado si se
+   busca realizar un proyecto que contenga de varios ficheros, ya que
+   se puede volver bastante tedioso. Hoy en dia se suelen utilizar
+   editores que ofrecen ventajas como coloreado de sintaxis, marcado
+   de errores que se pueden dar en el proceso de compilacion sin
+   realizar este, prediccion de lo que vas a escribir o plantillas de
+   codigo entre muchas otras ayudas.
+
+   Dependiendo del lenguaje que se quiera utilizar, se necesitaran
+   de una serie de compiladores o interpretes, si se quieren usar
+   frameworks o librerias, etc.
+
+   Aparte de todo esto, si se busca realizar proyectos web, se
+   necesitara de un servidor en el que mantener el servicio; si se
+   quiere mantener una buena organizacion del codigo desarrollado en
+   equipo y realizar testing junto a otras cosas, se puede usar git y
+   pipelines devOps (CI y CD) para la automatizacion de las tareas de
+   testing y deploy.
+
+   Este es un resumen bastante breve, ya que creo que en el siguiente
+   punto se extiende lo que este trata de preguntar.
+
+5. Valora cuales de las siguientes utilidades informaticas seria
+   preciso tener (ademas de la suite ofimatica) para un desarrollador
+   de software, e instala las que consideres.
+
+   Antes de empezar, me gustaria decir que no hay ninguna necesidad de
+   tener una suite ofimatica. Si se quiere realizar documentos del
+   tipo docx o doc, existen formatos de marcado como el md, tex y org
+   que ofrecen algo mucho mas simple y dan un mejor resultado, 100%
+   portable e incluso facilmente renderizable en el navegador.
+
+   1. Utilidades de difusion:
+
+      Aqui sin ninguna duda entra en juego stackoverflow, uno de los
+      sitios mas repletos (por no decir el que mas) de informacion y
+      preguntas realizadas sobre cualquier ambito de programacion,
+      sistemas, redes, etc. Comunmente conocido como el paraiso del
+      programador, el 99% de tus dudas estan ahi resueltas.
+
+      Por otro lado tambien existen varios subreddits que pueden
+      ayudar, como por ejemplo r/linux.
+
+      Y otro de los grandes son las webs que contienen documentacion
+      de diferentes lenguajes, estandares, etc. Como mozilla.org,
+      w3schools.com, archlinux.org, etc.
+
+   2. Utilidades de almacenamiento compartido:
+
+      Esto es algo que con la existencia de github y parecidos
+      servicios ha dejado de usarse bastante, algunos de los mas
+      usados por la comunidad para pasar conocimiento (libros y demas
+      cosas no muy legales) serian mega y mediafire.
+
+   3. Utilidades de desarrollo:
+
+      Sobre el tema de editores de texto / IDE, cada persona tiene su
+      propio entorno de trabajo al que esta acostumbrado, en mi caso
+      uso emacs con evil mode (emacs + vim) y habra gente que use
+      vscode, atom o cualquier otra.
+
+   4. Repositorios:
+
+      Aqui el ganador es git, es poca la gente que sigue sin cambiar a
+      git (normalmente antiguos proyectos que empezaron usando otra
+      herramienta) y practicamente se ha convertido en standard, sobre
+      todo para la comunidad del open source.
+
+   5. Utilidades de trabajo colaborativo:
+
+      Normalmente, si usas git y de remoto github, se suele usar
+      varias de las utilidades que ofrece como son las listas de TODOs
+      (github projects) que permiten crear listas de cosas que hay que
+      hacer, fechas para las que deberian estar, marcas las
+      completadas, etc. Tambien las issues, que consisten de reportes
+      de errores en los que se discuten como arreglar el bug, nuevas
+      features, etc, y eso combinado con las pull requests que
+      permiten que ajenos al proyecto envien codigo a revisar por los
+      propietarios y que acaba siendo integrado, suelen normalmente
+      resolver bugs.
+
+      Otros tambien bastante utilizados son slack y discord.
+
+   6. Utilidades de anotacion y referencias:
+
+      Como explique el anterior punto sobre los github projects, eso
+      es lo mas usado, aparte de utilizar comentarios en el codigo y
+      ficheros md y org indicando referencias.
+
+6. Para las decisiones anteriores, ten en cuenta las licencias de
+   software.
+
+   Todo lo mencionado (excluyendo slack y discord) son software libre,
+   en mi caso mi setup de mi entorno de trabajo es 100% software
+   libre, quitando alguna herramienta que solo utilizo debido a
+   cualquier asignatura que requiera de ella, pero que cuando son
+   innecesarias vuelven a la tumba.
+
+   Una lista de todo lo que utilizo se puede ver en el repositorio que
+   tengo en github de mis archivos de configuracion [[https://github.com/aru-hackZ/Dotfiles.nix][aqui]].

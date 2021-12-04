@@ -1,0 +1,157 @@
+#+TITLE: Ejercicios del Libro
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+* Unidad 2
+
+1. Complete the sentences with this, that, these, those.
+   1. that
+   2. those
+   3. this
+   4. these / those
+   5. that
+   6. that
+
+2. Rewrite these sentences using possesive pronouns / adjectives.
+   1. His car is in the garage.
+   2. These documents are mine.
+   3. Their parents are away at the moment.
+   4. Its colours are beautiful.
+   5. This handbag is hers.
+   6. Excuse me, is this passport yours?
+
+3. Complete the sentences with personal pronouns.
+   1. them
+   2. i   / it
+   3. he  / us
+   4. us  / they
+   5. i   / us
+   6. you / them
+
+4. Complete the sentences with reflexive pronouns.
+   1. myself
+   2. ourselves
+   3. themselves
+   4. himself
+   5. yourself
+   6. herself
+
+5. Choose the correct answer.
+   1. each other
+   2. themselves
+   3. one
+   4. ones
+   5. each other
+   6. itself
+
+* Unit 3
+
+1. Complete this text with a(n) or the.
+   1. a
+   2. the
+   3. the
+   4. the
+   5. a
+   6. a
+   7. the
+   8. the
+   9. a
+   10. a
+   11. the
+   12. a
+   13. an
+   14. a
+   15. a
+   16. the
+   17. a
+   18. the
+   19. the
+   20. the
+
+2. Complete the sentences with the article the. In some cases, no
+   article is necessary.
+   1. the / ………
+   2. ……… / ………
+   3. the / ………
+   4. ………
+   5. the / the
+   6. ……… / the
+   7. ………
+   8. the
+
+3. Rewrite these sentences in the singular.
+   1. There is a rose in the garden.
+   2. I've got an interesting book.
+   3. The cup is on the selve.
+   4. The old ladie fell downstairs and broke her leg.
+   5. The biggest librarie in town is closed on Sundays.
+   6. We need to take a taxi to get home from the shop.
+
+4. If necessary, complete the sentences with a, an or the.
+   1. ……… / a   / the
+   2. the / the
+   3. the / the
+   4. ……… / a
+   5. ………
+   6. ……… / a
+   7. ………
+   8. ……… / the
+
+5. Correct the errors in these sentences.
+   1. I like coffee with milk.
+   2. My brother is a mechanic.
+   3. Flowers are beautiful in spring.
+   4. What an elegant person.
+   5. Come on Sam. Go to bed right now.
+   6. My brother's ill in hospital.
+   7. We have dinner at 8 o'clock.
+   8. What do you say: the University of Cambridge or Cambridge
+      University?
+
+* Unit 4
+
+1. Order these words to make correct sentences.
+   1. She is a rich person.
+   2. This coffee tastes awful.
+   3. That music sounds nice.
+   4. There is a crazy man in the main building.
+   5. We are very happy to be here.
+   6. Those books are interesting.
+
+3. [@3] Write sentences using the comparative of the adjective in brackets.
+   1. London is bigger than Madrid.
+   2. The piramids are older than the Eiffel Tower.
+   3. Chinese is more difficult than English.
+   4. Woody Allen is thinner than Marlon Brando.
+   5. Leonardo DiCaprio is younger than Sean Connery.
+   6. Reading books is more interesting thon playing with video games.
+   7. A months holiday is better than a week's holiday.
+   8. Finland is colder than Spain.
+
+4. Complete the sentences with the superlative of the adjective in
+   brackets.
+   1. The Petronas Twin Towers are the highest buildings in Malaysia.
+   2. The Nile is the longest river in Africa.
+   3. In your opinion, who is the best singer in the world?
+   4. Reading a good book is the most relaxing way to pass the time.
+   5. Who has the biggest fortune in the world?
+   6. This is one of the most economical cars I've ever driven.
+   7. This is the worst cold I've ever had.
+   8. It was the most beautiful dress I'd ever owned.
+
+5. Choose the correct word to complete the sentences.
+   1. Jane is much taller than Jennifer.
+   2. My friend Peter is as old as me.
+   3. She likes the same things as I do.
+   4. Our house is farther from the station than yours.
+   5. Your shirt isn't as clean as mine.
+   6. Frank is the intelligent boy of the class.
+   7. Traditional food is better than fast food.
+   8. Italian is the easiest language I've ever learnt.
+
+6. Rewrite these sentences as in the example.
+   1. French is interesting to learn.
+   2. Mr Bean is funny to watch.
+   3. Spaghetti isn't difficult to cook.
+   4. These instructions are easy to understand.
+   5. His name is hard to pronounce.
+   6. These kinds of trees are unusual to find in this area.

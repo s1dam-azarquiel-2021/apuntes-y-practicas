@@ -1,0 +1,11 @@
+#+TITLE: SISI - Practicas
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+OPTIONS: toc:nil
+* Contenido
+** [[file:./P_1a.org][Practica 1a]]
+** [[file:./P_1b.org][Practica 1b]]
+** [[file:./P_1c.org][Practica 1c]]
+** [[file:./P_1d.org][Practica 1d]]
+** [[file:./P_2a.org][Practica 2a]]
+** [[file:./P_3a.org][Practica 3a]]

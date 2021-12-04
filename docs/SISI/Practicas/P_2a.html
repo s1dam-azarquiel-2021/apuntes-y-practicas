@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- 2021-12-04 Sat 18:25 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Practica 2A</title>
+<meta name="author" content="Alberto Robles Gomez" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+</head>
+<body>
+<div id="content" class="content">
+<header>
+<h1 class="title">Practica 2A</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>&Iacute;ndice</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org02ddbae">Creacion y configuracion de una maquina virtual</a></li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-org02ddbae" class="outline-2">
+<h2 id="org02ddbae">Creacion y configuracion de una maquina virtual</h2>
+<div class="outline-text-2" id="text-org02ddbae">
+<ol class="org-ol">
+<li><p>
+Crea una máquina virtual en VirtualBox Workstation que nos sirva
+para instalar el sistema operativo Windows 7. ¿Qué requerimientos
+mínimos necesita Windows 7? ¿Qué características tiene la máquina
+creada? Llama a tu máquina W7-SI. La tarjeta de red funcionará en
+modo NAT en principio.
+</p>
+
+<p>
+Requerimientos minimos de Windows 7:
+</p>
+<ul class="org-ul">
+<li>Procesador de 1GHz 32bit o 64bit</li>
+<li>1GB ram para 32bit y 2GB 64bit</li>
+<li>16GB espacio para 32bit y 20GB para 64bit</li>
+<li>Graficos DirectX 9 con WDDM 1.0</li>
+</ul>
+
+<p>
+Creacion de la VM:
+</p>
+
+
+<figure id="org575d5ff">
+<img src="./img/2.1.1.png" alt="2.1.1.png">
+
+</figure>
+
+
+<figure id="org7cd5591">
+<img src="./img/2.1.2.png" alt="2.1.2.png">
+
+</figure>
+
+<p>
+Y ya solo queda meter la ISO y dejar que instale.
+</p></li>
+
+<li><p>
+Carga la ISO de instalación de Windows 10 en la unidad de CD e
+instala dicho sistema operativo en la máquina virtual creada. Llama
+la máquina W10-SI-XX donde XX es tu rango de IP asignadas.
+</p>
+
+
+<figure id="orgaeddb27">
+<img src="./img/2.2.1.png" alt="2.2.1.png">
+
+</figure>
+
+
+<figure id="orgb174d12">
+<img src="./img/2.2.2.png" alt="2.2.2.png">
+
+</figure>
+
+<p>
+Y luego solo es seguir los pasos de instalacion y dejar que,
+despues de media hora, acabe de instalarse.
+</p></li>
+
+<li><p>
+Instala VMWTools en la máquina virtual.
+</p>
+
+
+<figure id="org280bfbb">
+<img src="./img/2.3.1.png" alt="2.3.1.png">
+
+</figure>
+
+<p>
+(Cuando intento hacer una captura el $!#*#$&amp; menu contextual se
+cierra, asi que te explico que hay que pinchar)
+</p>
+
+<p>
+Pinchando en Devices, al final tenemos una opcion de insertar el CD
+con las guest additions, le pinchas y aparecera que windows ha
+encontrado una nueva unidad.
+</p>
+
+
+<figure id="org5afea32">
+<img src="./img/2.3.2.png" alt="2.3.2.png">
+
+</figure>
+
+<p>
+Ahora le hacemos doble click a la unidad.
+</p>
+
+
+<figure id="orgec8a3f6">
+<img src="./img/2.3.3.png" alt="2.3.3.png">
+
+</figure>
+
+<p>
+Aceptamos y le damos a next hasta que deje de preguntar.
+</p>
+
+
+<figure id="org7e370d8">
+<img src="./img/2.3.4.png" alt="2.3.4.png">
+
+</figure>
+
+<p>
+Una vez acabe tocara reiniciar la VM.
+</p>
+
+
+<figure id="org0940426">
+<img src="./img/2.3.5.png" alt="2.3.5.png">
+
+</figure></li>
+
+<li><p>
+Comprueba que ahora podemos copiar un fichero simplemente cogiendo
+un fichero del anfitrión y soltándolo dentro del huésped.
+</p>
+
+<p>
+(Ya que en el host no tengo un File Manager grafico, pruebo con el
+portapapeles).
+</p>
+
+<p>
+Funciona, demostracion copiando del host un textaco y pegandolo en
+el guest:
+</p>
+
+
+<figure id="org6cb6e2b">
+<img src="./img/2.4.1.png" alt="2.4.1.png">
+
+</figure>
+
+
+<figure id="org01cbd44">
+<img src="./img/2.4.2.png" alt="2.4.2.png">
+
+</figure></li>
+
+<li><p>
+Crea una carpeta compartida entre la máquina virtual y la
+anfitriona de sólo lectura. Haz que salga conectada en la virtual
+como una unidad de red. Comprueba que funciona.
+</p>
+
+<p>
+Creamos una carpeta compartida.
+</p>
+
+
+<figure id="orga8c55cb">
+<img src="./img/2.5.1.png" alt="2.5.1.png">
+
+</figure>
+
+<p>
+Abrimos el explorador de archivos y deberia aparecer una unidad de
+red con la carpeta anteriormente especificada
+</p>
+
+
+<figure id="orgb756c62">
+<img src="./img/2.5.2.png" alt="2.5.2.png">
+
+</figure></li>
+
+<li><p>
+Explica las diferencias que hay entre los tres modos en los que
+puede trabajar la tarjeta de red virtual.
+</p>
+
+<p>
+Modo NAT: El guest se conecta a lo que podriamos llamar un router
+virtual cuya puerta de enlace es el host, y nos conectamos por
+defecto a este router mediant DHCP. Este tipo de configuracion, si
+el host esta conectado a internet, nos permite que el guest tambien
+sea capaz de conectarse a internet sin rompernos la cabeza.
+</p>
+
+<p>
+Modo Bridge: El guest se conecta mediante un switch virtual
+directamente a la red a la que el host esta conectado, con lo que
+puede interactuar con esta de forma directa. Si la red usa DHCP la
+conexion es tan simple como no tocar nada, sino tocaria configurar.
+</p>
+
+<p>
+Modo Host-Only: En este modo el guest se conecta con el host y con
+nada mas, es decir que no puede salir a la red del host o internet.
+</p></li>
+
+<li>En modo NAT.
+
+<ul class="org-ul">
+<li><p>
+Observa qué configuración IP tiene la máquina virtual en la línea
+de comandos con el comando ipconfig /all
+</p>
+
+
+<figure id="orgcf467b1">
+<img src="./img/2.7.1.png" alt="2.7.1.png">
+
+</figure></li>
+
+<li><p>
+¿Qué dirección IP, de DNS y de Puerta de enlace tenemos? ¿Quién
+lo ha asignado?
+</p>
+
+<p>
+Ha sido asignada mediante DHCP segun la configuracion del
+adaptador virtual, que en este caso es algo parecido a esto:
+</p>
+
+
+<figure id="orgd36cc9c">
+<img src="./img/2.7.2.png" alt="2.7.2.png">
+
+</figure></li>
+
+<li><p>
+Comprueba que funciona un PING a www.google.es
+</p>
+
+<p>
+Google es malvado
+</p>
+
+
+<figure id="org4788c16">
+<img src="./img/2.7.3.png" alt="2.7.3.png">
+
+</figure></li>
+
+<li><p>
+Comprueba si funciona un PING a una IP de un ordenador físico del
+aula.
+</p>
+
+<p>
+Como explico mas abajo en el ejercicio 9, le hare ping a un
+dispositivo de la red de mi casa, en este caso mi movil.
+</p>
+
+
+<figure id="org406956c">
+<img src="./img/2.7.4.png" alt="2.7.4.png">
+
+</figure>
+
+<p>
+La VM peta tanto que ni ping hace a veces.
+</p></li>
+</ul></li>
+
+<li>En modo Host Only de la tarjeta de red
+
+<ul class="org-ul">
+<li><p>
+Observa qué configuración IP tiene la máquina virtual en la línea
+de comandos con el comando ipconfig /all
+</p>
+
+
+<figure id="org2a24c3f">
+<img src="./img/2.8.1.png" alt="2.8.1.png">
+
+</figure></li>
+
+<li><p>
+¿Qué dirección IP, de DNS y de Puerta de enlace tenemos? ¿Quién
+lo ha asignado?
+</p>
+
+<p>
+Ha sido asignada mediante DHCP segun la configuracion del
+adaptador virtual, que en este caso es parecida al ejemplo
+anterior pero con una diferente red (<code>192.168.56.0</code>) y sin puerta
+de enlace.
+</p></li>
+
+<li><p>
+Comprueba que funciona un PING a www.google.es
+</p>
+
+
+<figure id="orge59a78f">
+<img src="./img/2.8.2.png" alt="2.8.2.png">
+
+</figure>
+
+<p>
+Obviamente no se puede, ya que al no haber configurado puerta de
+enlace no hay salido al exterior, como vivir en una cueva.
+</p></li>
+
+<li><p>
+Comprueba si funciona un PING a una IP de un ordenador físico del
+aula
+</p>
+
+
+<figure id="org20d2568">
+<img src="./img/2.8.3.png" alt="2.8.3.png">
+
+</figure>
+
+<p>
+Lo mismo de antes.
+</p></li>
+</ul></li>
+
+<li>En modo Bridged de la tarjeta de red.
+
+<ul class="org-ul">
+<li><p>
+Daremos la siguinte configuracion de red a la maquina:
+</p>
+<ul class="org-ul">
+<li>IP: XX.XX.XXX.10 donde XXX será el byte asignado para tus redes</li>
+<li>Máscara: 255.255.0.0</li>
+<li>Puerta de enlace: XX.XX.0.254</li>
+<li>DNS primario: 8.8.8.8</li>
+</ul>
+
+<p>
+Ya que uso portatil y en clase no podemos conectarnos a la red
+local por falta de rosetas, lo hare desde mi case haciendo ping a
+mi movil, por ejemplo. Notese, que tengo en mi casa la red
+configurada usando la ip 172.20.0.0.
+</p>
+
+<p>
+Tras abrir tropecientos menus contextuales cambie la
+configuracion de la red:
+</p>
+
+
+<figure id="orgab5a760">
+<img src="./img/2.9.1.png" alt="2.9.1.png">
+
+</figure></li>
+
+<li><p>
+Comprueba que funciona un PING a www.google.es
+</p>
+
+
+<figure id="orgf3aa1b5">
+<img src="./img/2.9.2.png" alt="2.9.2.png">
+
+</figure></li>
+
+<li><p>
+Comprueba si funciona un PING a una IP de un ordenador físico del
+aula
+</p>
+
+
+<figure id="orgedad223">
+<img src="./img/2.9.3.png" alt="2.9.3.png">
+
+</figure>
+
+<p>
+Lo dicho, esto va muy petado.
+</p></li>
+</ul></li>
+
+<li><p>
+¿Qué conclusiones sacas sobre los tres modos distintos en los que
+puede trabajar una tarjeta de red virtual?
+</p>
+
+<p>
+Lo mas habitual es usar el NAT, que viene por defecto, a menos de
+que se tenga la necesidad de comunicarse con la VM por algun
+protocolo de red, para lo cual seria mas facil usar el modo Bridge
+a menos que quieras estar toqueteando el port forwarding del
+NAT. Y por ultimo en los casos de no tener la necesidad de acceder
+a terceros o que estos accedan a la VM se usaria el Host-Only.
+</p></li>
+
+<li><p>
+¿Qué es un Snapshot?
+</p>
+
+<p>
+Una Snapshot es un punto de guardado del estado de la maquina, al
+cual siempre podemos regresar si, por ejemplo, nos la hemos
+cargado.
+</p></li>
+
+<li><p>
+Realiza un Snapshot.
+</p>
+
+<p>
+Pinchamos en Machine y dentro Take Snapshot.
+</p>
+
+
+<figure id="org80574a4">
+<img src="./img/2.12.1.png" alt="2.12.1.png">
+
+</figure>
+
+<p>
+Le damos un nombre y descricion y aceptamos.
+</p>
+
+
+<figure id="org0e823d0">
+<img src="./img/2.12.2.png" alt="2.12.2.png">
+
+</figure></li>
+
+<li><p>
+Realiza algún cambio apreciable dentro de la máquina virtual.
+</p>
+
+<p>
+Voy a cambiar el nombre del equipo
+</p>
+
+
+<figure id="orgec3e639">
+<img src="./img/2.13.1.png" alt="2.13.1.png">
+
+</figure>
+
+
+<figure id="org6a5b0ee">
+<img src="./img/2.13.2.png" alt="2.13.2.png">
+
+</figure>
+
+
+<figure id="org896b4de">
+<img src="./img/2.13.3.png" alt="2.13.3.png">
+
+</figure></li>
+
+<li><p>
+Vuelve al Snapshot creado en el punto 12.
+</p>
+
+<p>
+Nos vamos a la vista de snapshots
+</p>
+
+
+<figure id="orgbc5954f">
+<img src="./img/2.14.1.png" alt="2.14.1.png">
+
+</figure>
+
+<p>
+Y pinchamos en la snapshot1 y damos en restaurar. Si arrancamos la
+maquina y comprobamos el nombre del equipo ha vuelto a la
+normalidad.
+</p>
+
+
+<figure id="orgc5fe161">
+<img src="./img/2.14.2.png" alt="2.14.2.png">
+
+</figure></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Alberto Robles Gomez</p>
+<p class="date">Created: 2021-12-04 Sat 18:25</p>
+</div>
+</body>
+</html>

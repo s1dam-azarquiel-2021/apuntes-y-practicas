@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- 2021-12-04 Sat 18:25 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Practica 1D</title>
+<meta name="author" content="Alberto Robles Gomez" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+</head>
+<body>
+<div id="content" class="content">
+<header>
+<h1 class="title">Practica 1D</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>&Iacute;ndice</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4bb6450">Interpretacion de mapas de red</a></li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-org4bb6450" class="outline-2">
+<h2 id="org4bb6450">Interpretacion de mapas de red</h2>
+<div class="outline-text-2" id="text-org4bb6450">
+<ol class="org-ol">
+<li>Interpreta ambas redes.</li>
+<li><p>
+Identifica los siguientes elementos de ambas redes:
+</p>
+
+
+<figure id="org83e407d">
+<img src="./img/red-2.1.png" alt="red-2.1.png">
+
+</figure>
+<ul class="org-ul">
+<li>Servidor:
+<ul class="org-ul">
+<li>Central Server</li>
+<li>Branch Server</li>
+</ul></li>
+<li>Clientes:
+<ul class="org-ul">
+<li>HomeDesktop</li>
+<li>HomeLaptop</li>
+<li>Tablet</li>
+<li>Inyeccion de tinta</li>
+<li>PC1 a PC4</li>
+<li>Laser</li>
+<li>Smartphone</li>
+<li>Invitado</li>
+<li>Ventas y Telefono0 IP</li>
+<li>Contabilidad y Telefono1 IP</li>
+</ul></li>
+<li>Routers
+<ul class="org-ul">
+<li>WRS</li>
+<li>R2</li>
+<li>R4</li>
+</ul></li>
+<li>Internet
+<ul class="org-ul">
+<li>Internet</li>
+<li>Intranet</li>
+</ul></li>
+</ul>
+
+
+<figure id="org3c77889">
+<img src="./img/red-2.2.png" alt="red-2.2.png">
+
+</figure>
+<ul class="org-ul">
+<li>Servidor:</li>
+<li>Clientes:
+<ul class="org-ul">
+<li>PC0 a PC3</li>
+</ul></li>
+<li>Routers
+<ul class="org-ul">
+<li>Router0 a Router2</li>
+</ul></li>
+<li>Internet
+<ul class="org-ul">
+<li>Cloud0</li>
+</ul></li>
+</ul></li>
+<li><p>
+Identifica la topologia de las siguientes redes o subredes:
+</p>
+
+<p>
+<img src="./img/red-3.1.png" alt="red-3.1.png">
+Estrella
+</p>
+
+<p>
+<img src="./img/red-3.2.png" alt="red-3.2.png">
+Estrella
+</p>
+
+<p>
+<img src="./img/red-3.3.png" alt="red-3.3.png">
+Estrella
+</p>
+
+<p>
+<img src="./img/red-3.4.png" alt="red-3.4.png">
+Malla
+</p></li>
+<li><p>
+En el diagrama de red A, ¿puede el ordenador HomeLaptop, de la red
+HomeOffice acceder a la intranet de la empresa, o por el contrario
+sólo sería accesible desde las redes Central o Branch?
+</p>
+
+<p>
+Si que puede, siempre y cuando al intentar acceder a la intranet
+mediante la red Central o Branch, el router de una de estas este
+configurado para ser capaz de direccionar la conexion hacia la
+Intranet, y que esta permita su acceso.
+</p>
+
+<p>
+Por ejemplo, si en la Intranet existe una web a la que queremos
+acceder de forma remota, podriamos conectarnos mediante un tunel
+SOCKS con SSH al servidor de la intranet que se encuentre en una de
+las redes Branch o Central, una vez conectado se configuraria el
+navegador para usar ese tunel como proxy para asi hacer forwarding
+del HTTP y poder acceder a la web. (Que yo recuerde en firefox
+habia que habilitar una opcion para que tambien hiciera forwarding
+del DNS, ya que sino ocurre un DNS leakeage).
+</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Alberto Robles Gomez</p>
+<p class="date">Created: 2021-12-04 Sat 18:25</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,475 @@
+#+TITLE: Textos
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+* Texto 1
+
+The ability of tiny computing devices to control complex operations
+has transformed the way many tasks are performed, ranging from
+scientific research to producing consumer products. Tiny computers on
+a chip are used in medical equipment, home appliances, cars and
+toys. Workers use handheld computing devices to collect data at a
+customer´s site, to generate forms, to control inventory, and to serve
+as desktop organizers.
+
+Not only is computing equipment getting smaller, it is getting more
+sophisticated. Computers are part of many machines and devices that
+once required continual human supervision and control. Today,
+computers in security systems result in safer environments, computers
+in cars improve energy efficiency, and computers in phones provide
+features such as call forwarding, call monitoring, and call
+answering.
+
+These smart machines are designed to take over some of the basic tasks
+previously performed by people; by so doing, they make life a little
+easier and a little more pleasant. Smart cards store vital information
+such as health records, driver’s licenses, bank balances, and so
+on. Smart phones, cars, and appliances with built-in computers can be
+programmed to better meet individual needs. A smart house has built-in
+monitoring systems that can turn lights on and off, open and close
+windows, operate the oven, and more.
+
+With small computing devices available for performing smart tasks like
+cooking dinner, programming the VCR, and controlling the flow of
+information in an organization, people are able to spend more time
+doing what they often do best – being creative. Computers can help
+people work more creatively.
+
+1. Choose the best title for this text
+   - Computers are reducing their size
+   - Smart devices will help us with the housework
+   - _Computers are making life less difficult in many ways_
+   - Robots will take over Man
+
+2. How are computers changing lately?
+   - They are getting easier to repair
+   - They are getting cheaper because of competence
+   - _They are becoming smaller and more efficient_
+   - They are turning creative
+
+3. Which is the best synonym for "built-in" as it appears in the text?
+   - constructed
+   - involved
+   - _integrated_
+   - redecorated
+
+4. Is this statement True, False, Not mentioned or Totally
+   disconnected with the information in the text? "Wars will not need
+   people as soldiers in the future".
+   - True
+   - False
+   - Not Mentioned
+   - _Totally disconnected_
+
+5. According to the text, what does the expression "by so doing" refer
+   to?
+   - Computers can control inventory
+   - Computers can cook.
+   - _Computers can work without constant supervision._
+   - Computers are part of bigger machines.
+
+6. This is ……… Harry´s bike. I can tell it from ……… broken front
+   light.
+   - the / a
+   - _……… / the_
+   - ……… / some
+   - a   / the
+
+7. ……… tigers are ……… biggest cats in the world.
+   - Some / the
+   - ………  / some
+   - _………  / the_
+   - A    / a
+
+8. I have got ……… spare blank discs. Do you need ………… ?
+   - a    / some
+   - any  / some
+   - some / ones
+   - _some / any_
+
+9. After watching ……… TV, they usually go straight to ……… bed.
+   - the / a
+   - a   / the
+   - _……… / ………_
+   - the / the
+
+10. ……… People know ……… snow is white.
+    - The  / the
+    - A    / ………
+    - Some / the
+    - _………  / ………_
+
+11. Please, pass me ……… salt.
+    - a
+    - an
+    - _the_
+    - one
+
+12. Poetry is for ……… young and ……… old; ……… wise and ……… ignorant.
+    - a   / a / a / a
+    - an  / an / an / an
+    - _the / the / the/ the_
+    - the / a / the / a
+
+13. ……… most important thing for him is ……… money.
+    - _the / the_
+    - ……… / -
+    - the / ………
+    - ……… / the
+
+14. Which one do you like, ……… blue one or ……… orange one?
+    - a    / an
+    - ………  / ………
+    - some / some
+    - _the  / the_
+
+15. Edmund Hillary was the first to climb ……… Mount Everest.
+    - an
+    - the
+    - _………_
+    - a
+
+16. We invited ……… Simpsons but we didn´t invite ……… Professor
+    Smithers.
+    - the / the
+    - _the / ………_
+    - ……… / some
+    - a   / the
+
+17. I´ll try to do ……… best for you.
+    - some
+    - ………
+    - _the_
+    - a
+
+18. Your tent is almost torn apart but ……… his is totally destroyed.
+    - a
+    - the
+    - an
+    - _………_
+
+19. I never believed ……… John´s explanation. ……… policeman´s one
+    seemed more logical.
+    - the    / a
+    - the    / the
+    - _………    / the_
+    - one of / the
+
+20. This congress on Ancient Egypt can be ……… unique opportunity to
+    reveal ……… unknown manuscript.
+    - an / an
+    - a  / a
+    - an / a
+    - _a  / an_
+
+* Texto 2
+
+Multimedia systems are known for their educational and entertainment
+value, which we call ‘edutainment’. Multimedia combines text with
+sound, video, animation, and graphics, which greatly enhances the
+interaction between user and machine and can make information more
+interesting and appealing to people. Expert systems software enables
+computer to ‘think’ like experts. Medical diagnose expert systems, for
+example, can help doctors pinpoint a patient’s illness, suggest
+further tests, and prescribe appropriate drugs.
+
+Connectivity enables computers and software that might otherwise be
+incompatible to communicate and to share resources. Now that computers
+are proliferating in many areas and networks are available for people
+to access data and communicate with others, personal computers are
+becoming interpersonal PCs. They have the potential to significantly
+improve the way we relate to each other. Many people today telecommute
+that is, use their computers to stay in touch with the office while
+they are working at home. With the proper tools, hospital staff can
+get diagnosis from a medical expert hundreds or thousands of miles
+away. Similarly, the disabled can communicate more effectively with
+others using computers.
+
+Distance learning and videoconferencing are concepts made possible
+with the use of an electronic classroom or boardroom accessible to
+people in remote locations. Vast databases of information are
+currently available to users of the internet, all of whom can send
+email messages to each other. The information superhighway is designed
+to significantly expand this interactive connectivity so that people
+all over the world will have free access to all these resources.
+
+People power is critical to ensuring that hardware, software, and
+connectivity are effectively integrated in a socially responsible
+way. People – computer users and computer professionals –are ones who
+will decide which hardware, software and networks endure and how great
+and impact they will have on our lives. Ultimately people power must
+be exercised to ensure that computers are used not only efficiently
+but in a socially responsible way.
+
+1. Choose the best title for this text.
+   - The new educational software
+   - People must take care with computers
+   - Peripherals and hardware solutions
+   - _Computers allow lots of new functionalities_
+
+2. Who must watch out for the right application of the process of
+   digitalization?
+   - Local authorities
+   - Computer experts
+   - _People in general_
+   - Politicians
+
+3. Which is the best synonym for "exercised" as it appears in the
+   text?
+   - _put into action_
+   - done as homework
+   - taken physical activity
+   - made possible
+
+4. Is this statement True, False, Not mentioned or Totally
+   disconnected with the information in the text? "More people will be
+   able to shop from home".
+   - True
+   - False
+   - _Not Mentioned_
+   - Totally disconnected
+
+5. According to the text, what does the expression "all of whom"
+   refer to?
+   - Computer experts
+   - _Computer users_
+   - Computer programs
+   - Computer functions
+
+6. Who´s that pretty girl? ……… name is Sophie.
+   - My
+   - _Her_
+   - His
+   - She´s
+
+7. My husband isn´t here, ……… is at work.
+   - _he_
+   - her
+   - his
+   - him
+
+8. His car looks nice but I prefer ………
+   - my
+   - me
+   - _mine_
+   - I´s
+
+9. My wife never listens to my suggestions. She simply ignores ………
+   - they
+   - _them_
+   - my
+   - their
+
+10. Don´t leave your sister behind! Wait for ………
+    - _her_
+    - she
+    - hers
+    - She´s
+
+11. People like knowing the news. ……… read ……… in the newspapers or watch ……… on TV.
+    - He   / them / them
+    - They / them / them
+    - _They / it   / it_
+    - Them / it   / it
+
+12. Who are ……… women over there?
+    - this
+    - _those_
+    - these
+    - that
+
+13. I don´t feel well. ……… head hurts and I´ve got ……… fever.
+    - the  / ………
+    - mine / a
+    - me   / any
+    - _my   / a_
+
+14. -"Whose car is that ……… ?" -"It´s ……… ."
+    - a    / hers
+    - _one  / hers_
+    - ones / she´s
+    - my   / she
+
+15. No, James didn´t shout at Karen; ……… shouted at ……… !
+    - she / he
+    - her / him
+    - her / he
+    - _she / him_
+
+16. I always loved fast cars but now I prefer safe ………
+    - them
+    - _ones_
+    - one
+    - it
+
+17. No more excuses: ……… want ……… to do ……… at once!
+    - me / you / it
+    - I  / you / you
+    - He / you / them
+    - _I  / you / it_
+
+18. (At the door) -"Who is ……… ?" - " ……… , James. Can I come in?"
+    - you  / it is I
+    - _it   / it is me_
+    - this / it is him
+    - that / he is me
+
+19. "Who broke this door knob?". "It was ……… : John and Peter"
+    - his
+    - they
+    - _them_
+    - these
+
+20. That baby is crying more and more. ……… must need ……… nappies to be changed.
+    - he  / her
+    - she / his
+    - it  / the
+    - _it  / its_
+
+* Texto 3
+According to new research, learning a second language can slow
+cognitive ageing, that is, the speed at which the mental activity of
+the brain diminishes. This seems to happen not only in young learners
+but also in those who have learnt a new language in their
+adulthood. Previous studies had already shown that becoming
+functionally bilingual could delay the apparition of elderly demetia
+by several years, but the aim of Dr Thomas Bak´s studies was to answer
+the question of whether people improve their brain function through
+learning new languages , or whether people with better brain functions
+are more likely to become bilingual.
+
+Dr Bak´s team assessed data from 835 native English speakers. These
+people had passed an intelligence test in 1947 when they were just 11
+years old, and were given a new test in their early 70s. Of the
+participants, nearly one third said that they could communicate in at
+least another language apart from English. Of those, one out of three
+admitted they had learnt the new language/s when they were adults.
+
+Researchers said that participants who spoke two or more languages
+showed better cognitive abilities than the results from the first
+long-ago tests had anticipated. Nevermind if people had been young or
+adult language learners. Dr Bak said that the improvements could not
+be attributed to the participants´ original intelligence levels and
+added: "These findings are relevant as millions of people around
+the world acquire a second language later in life. The results show
+that being able to use different languages, even when you have started
+later in your life, is beneficial against brain ageing.
+
+1. Which is the best title for this text?
+   - Better late than never
+   - _Learning languages can improve your mental abilities_
+   - A curious neurological experiment
+   - Intelligence Quotient tests under debate
+
+2. Which word is the best substitute for “aim” in the text?
+   - controversy
+   - _objective_
+   - consequence
+   - explanation
+
+3. Who or what does "they" stand for ?
+   - the researchers
+   - the bilingual people who were interviewed
+   - the older people
+   - _the people in the experiment_
+
+4. ¿Which of these statements is TRUE according to the text?:
+   - Some of the tests results had been manipulates
+   - Learning languages is something that can only be done as a child
+   - Two groups of people were interviewed: children and elderly
+   - _Some people had improved their capacities more than expected_
+
+5. Which is the best synonym for "nevermind" in the text?
+   - Very often
+   - As always
+   - _It doesn´t matter if_
+   - However
+
+6. John ́s and Mary ́s jobs are ……… as the best
+   - so honourable
+   - more honourable
+   - _as honourable_
+   - less honourable
+
+7. My sister is ……… dancer that I have ever seen
+   - the worse
+   - _the worst_
+   - the goodest
+   - the baddest
+
+8. I don ́t like this pub. I prefer them ……… and ………
+   - less crowded and eleganter
+   - more crowded and more noisy
+   - _less crowded and more elegant_
+   - crowdeder and noisier
+
+9. They say that La Coruña is very far away from here but Barcelona is ………
+   - farer
+   - more far
+   - _further_
+   - fartherer
+
+10. ”Get this one! It's ……… and not ………
+    - more cheap     / so old
+    - _cheaper        / as old_
+    - more expensive / less good
+    - expensive      / more good
+
+11. Karen is ……… Susan. She hasn´t left school yet!
+    - older than
+    - _younger than_
+    - the youngest
+    - the oldest
+
+12. I´ve got enough work to do this weekend. Don´t give me any ………
+    - much
+    - _more_
+    - less
+    - most
+
+13. Cádiz is quite far from Madrid. On the contrary, Córdoba is ………
+    - the furthest
+    - further
+    - as far
+    - _not so far_
+
+14. Playing an instrument is just practice. The ……… you play, the ……… it gets.
+    - more   / more easy
+    - easier / more
+    - most   / easiest
+    - _more   / easier_
+
+15. Use all your strength! The ……… , the ………
+    - more hard / the more good
+    - hardest   / best
+    - _harder    / better_
+    - most hard / most good
+
+16. Is this all you can do with this Ferrari? Can´t you drive it any ……… ?
+    - fastest
+    - the fastest
+    - _faster_
+    - less fast
+
+17. Do you really think John is good-looking? Paul is obviously ……… than him
+    - more good-looking
+    - _better-looking_
+    - the best-looking
+    - the least good-looking
+
+18. Pau is ……… in his family while Marc is ………
+    - the more intelligent / the less
+    - the intelligenter    / the less
+    - _the most intelligent / the least_
+    - the intelligentest   / the least
+
+19. The door couldn´t be opened. So he had to push ……… until it slammed open
+    - harder and hardest
+    - more and more hard
+    - _harder and harder_
+    - the most and most
+
+20. The hotel is almost empty. There are ……… visitors than we expected at Christmas
+    - _less_
+    - fewer
+    - more
+    - minus

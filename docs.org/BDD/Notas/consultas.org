@@ -1,0 +1,444 @@
+#+TITLE: Consultas SQL
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+* Consultas en video/video
+
+1. Titulo de las peliculas producidas despues del año 2005
+   #+begin_src sql
+     SELECT titulo
+     FROM   peliculas
+     WHERE  anno > 2005
+   #+end_src
+
+2. Precio y formato de las peliculas de menos de 1 euro
+   #+begin_src sql
+     SELECT precio, formato
+     FROM   peliculas
+     WHERE  precio < 1
+   #+end_src
+
+3. Titulo de las peliculas en formato DVD
+   #+begin_src sql
+     SELECT titulo
+     FROM   peliculas
+     WHERE  formato = 'DVD'
+   #+end_src
+
+4. Listado con los formetos de las peliculas
+   #+begin_src sql
+     SELECT DISTINCT formato
+     FROM   peliculas
+   #+end_src
+
+5. Cuantas peliculas se produjeron en los 3 ultimos años
+   #+begin_src sql
+     SELECT COUNT(*)
+     FROM   peliculas
+     WHERE  anno >= 2019
+   #+end_src
+
+6. Cuantos DVDs estan de oferta
+   #+begin_src sql
+     SELECT COUNT(*)
+     FROM   peliculas
+     WHERE  oferta = 'S' AND formato = 'DVD'
+   #+end_src
+
+7. Precio mas caro de una pelicula
+   #+begin_src sql
+     SELECT MAX(precio)
+     FROM   peliculas
+   #+end_src
+
+8. Año de la pelicula mas antigua
+   #+begin_src sql
+     SELECT MIN(anno)
+     FROM   peliculas
+   #+end_src
+
+9. Cuantas peliculas no estan en MP4
+   #+begin_src sql
+     SELECT COUNT(*)
+     FROM   peliculas
+     WHERE  formato != 'MP4'
+   #+end_src
+
+10. Titulo de las peliculas que empiezan por 'M'
+    #+begin_src sql
+      SELECT titulo
+      FROM   peliculas
+      WHERE  titulo LIKE 'M%'
+    #+end_src
+
+11. Cuantos titulos de peliculas estan formados por mas de una palabra
+    #+begin_src sql
+      SELECT titulo
+      FROM   peliculas
+      WHERE  titulo LIKE '% %'
+    #+end_src
+
+12. Cuantas peliculas se han alquilado en Febrero
+    #+begin_src sql
+      SELECT COUNT(*)
+      FROM   alquiler
+      WHERE  FECHA LIKE '__/02/%'
+    #+end_src
+
+13. Codigo de los socios que no han devuelto las pelis que alquilaron
+    #+begin_src sql
+      SELECT c_socio
+      FROM   alquiler
+      WHERE  devuelta = 'N'
+    #+end_src
+
+14. Nombre de los socios que presublimenete son chicas
+    #+begin_src sql
+      SELECT nombre
+      FROM   alquiler
+      WHERE  nombre LIKE '%a'
+    #+end_src
+
+15. Que titulos de peliculas no estan ni en DVD ni en MP4
+    #+begin_src sql
+      SELECT titulo
+      FROM   peliculas
+      WHERE  formato != 'DVD'
+        AND  formato != 'MP4'
+    #+end_src
+
+16. Cuantas peliculas hay de matrix
+    #+begin_src sql
+      SELECT COUNT(*)
+      FROM   peliculas
+      WHERE  titulo LIKE 'Matrix%'
+    #+end_src
+
+17. Cuantas peliculas se alquilaron en febrero de 2002
+    #+begin_src sql
+      SELECT COUNT(*)
+      FROM   alquiler
+      WHERE  fecha LIKE '__/02/02'
+    #+end_src
+
+18. Nombre de nuestros socios que presumiblemente son chicas
+    #+begin_src sql
+      SELECT nombre
+      FROM   socios
+      WHERE  nombre LIKE '%a'
+    #+end_src
+
+19. Código de los socios que en el 2005 no nos devolvieron las
+    peliculas alquiladas
+    #+begin_src sql
+      SELECT c_socio
+      FROM   alquiler
+      WHERE  fecha LIKE '__/__/05'
+        AND  devuelta = 'N'
+    #+end_src
+
+20. Precio de la película mas cara
+    #+begin_src sql
+      SELECT MAX(precio)
+      FROM   peliculas
+    #+end_src
+
+21. Nombre de paises que tienen menos de 7 letras
+    #+begin_src sql
+      SELECT nombre_pais
+      FROM   paises
+      WHERE  LENGTH(nombre_pais) < 7
+    #+end_src
+
+22. Visualiza los distintos formatos de las películas
+    #+begin_src sql
+      SELECT DISTINCT formato
+      FROM   peliculas
+    #+end_src
+
+23. Título de las pelis que valen 2 euros o 2 euros y pico
+    #+begin_src sql
+      SELECT titulo
+      FROM   peliculas
+      WHERE  precio >= 2
+        AND  precio < 3
+    #+end_src
+
+24. En qué año se produjo la primera película
+    #+begin_src sql
+      SELECT MIN(anno)
+      FROM   peliculas
+    #+end_src
+
+25. Título de las películas que se han producido en los últimos 10
+    años
+    #+begin_src sql
+      SELECT titulo
+      FROM   peliculas
+      WHERE  anno > TO_CHAR(
+               ADD_MONTHS(SYSDATE, -12*10),
+               'YYYY'
+             )
+    #+end_src
+
+26. Precio medio de los dvds
+    #+begin_src sql
+      SELECT AVG(precio)
+      FROM   peliculas
+    #+end_src
+
+27. Cuato valen todos los DVDs que tenemos
+    #+begin_src sql
+      SELECT SUM(precio)
+      FROM   peliculas
+    #+end_src
+
+28. Cuantos cines existen entre España, Francia y Portugal
+    #+begin_src sql
+      SELECT SUM(cines)
+      FROM   paises
+      WHERE  nombre_pais in ( 'España', 'Francia', 'Portugal' )
+    #+end_src
+
+29. Cuanto valen todas las peliculas que no están ni en BR ni en MP4
+    #+begin_src sql
+      SELECT SUM(precio)
+      FROM   peliculas
+      WHERE  NOT formato = 'BR'
+        AND  NOT formato = 'MP4'
+    #+end_src
+
+30. Precio mas caro de una pelicula en oferta
+    #+begin_src sql
+      SELECT MAX(precio)
+      FROM   peliculas
+      WHERE  oferta = 'S'
+    #+end_src
+
+31. Cuantos socios son de Toledo
+    #+begin_src sql
+      SELECT COUNT(*)
+      FROM   socios
+      WHERE  telefono LIKE '925%'
+    #+end_src
+
+32. Cual es la facturación total del 2º semestre de 2002
+    #+begin_src sql
+      SELECT SUM(precio)
+      FROM   peliculas, alquiler
+      WHERE  SUBSTR(fecha, 4, 2) > 6
+        AND  fecha LIKE '__/__/02'
+    #+end_src
+
+33. Que codigos de socio alquilan películas en Enero
+    #+begin_src sql
+      SELECT c_socio
+      FROM   alquiler
+      WHERE  fecha LIKE '__/01/__'
+    #+end_src
+
+34. Cuanto dinero se ha gastado el socio de código 1001
+    #+begin_src sql
+      SELECT SUM(precio)
+      FROM   alquiler, peliculas
+      WHERE  c_socio = 1001
+    #+end_src
+
+35. Visualizar los paises de más de 8000 cines ordenados
+    alfabeticamente
+    #+begin_src sql
+      SELECT   nombre_pais
+      FROM     paises
+      WHERE    cines > 8000
+      ORDER BY nombre_pais
+    #+end_src
+
+36. Cuantas veces se ha alquilado la pelicula de codigo 2
+    #+begin_src sql
+      SELECT COUNT(*)
+      FROM   alquiler
+      WHERE  c_peli = 2
+    #+end_src
+
+37. Nombre de los hermanos de Gema Ramirez Lopez
+    #+begin_src sql
+      SELECT nombre
+      FROM   socios
+      WHERE  ape1 = 'ramirez'
+        AND  ape2 = 'lopez'
+        AND  NOT nombre = 'gema'
+    #+end_src
+
+38. Despues del 2000 en cuantos años no se han producido peliculas
+    #+begin_src sql
+      SELECT SUBSTR(SYSDATE, 7, 2)
+             - COUNT(DISTINCT anno) 
+      FROM   peliculas
+      WHERE  anno > 2000
+    #+end_src
+
+39. Visualiza en que años se han alquilado peliculas
+    #+begin_src sql
+      SELECT DISTINCT SUBSTR(fecha, 7, 2)
+      FROM   alquiler
+    #+end_src
+
+40. Cuantas peliculas hay de Tiburon
+    #+begin_src sql
+      SELECT COUNT(*)
+      FROM   peliculas
+      WHERE  titulo LIKE 'Tiburón%'
+    #+end_src
+
+41. Cuantos alquileres de un solo dia no se han devuelto
+    #+begin_src sql
+      SELECT COUNT(*)
+      FROM   alquiler
+      WHERE  ndias = 1
+        AND  devuelta = 'N'
+    #+end_src
+
+42. Cuantos socios viven en la calle oro
+    #+begin_src sql
+      SELECT COUNT(*)
+      FROM   socios
+      WHERE  direccion LIKE 'oro,%'
+    #+end_src
+
+43. Que titulo de peliculas es la mas cara
+    #+begin_src sql
+      SELECT titulo
+      FROM   peliculas
+      WHERE  precio = (SELECT MAX(precio) FROM peliculas)
+    #+end_src
+
+44. Cual es el titulo de la pelicula mas moderna
+    #+begin_src sql
+      SELECT titulo
+      FROM   peliculas
+      WHERE  anno = (SELECT MAX(anno) FROM PELICULAS)
+    #+end_src
+
+45. En que formato esta la pelicula mas barata
+    #+begin_src sql
+      SELECT DISTINCT formato
+      FROM   peliculas
+      WHERE  precio = (SELECT MIN(precio) FROM PELICULAS)
+    #+end_src
+
+46. Cuando se hizo el ultimo alquiler
+    #+begin_src sql
+      SELECT MAX(fecha)
+      FROM   alquiler
+    #+end_src
+
+47. Cual es el pais que tiene mas cines
+    #+begin_src sql
+      SELECT nombre_pais
+      FROM   paises
+      WHERE  cines = (SELECT MAX(cines) FROM paises)
+    #+end_src
+
+48. Titulo de las peliculas españolas
+    #+begin_src sql
+      SELECT titulo
+      FROM   peliculas
+      WHERE  c_pais = (
+               SELECT c_pais
+               FROM   paises
+               WHERE  nombre_pais = 'España'
+             )
+    #+end_src
+
+49. Titulo de las peliculas que no se alquilan
+    #+begin_src sql
+      SELECT titulo
+      FROM   peliculas
+      WHERE  c_peli NOT IN (
+               SELECT DISTINCT c_peli
+               FROM alquiler
+             )
+    #+end_src
+
+50. Nombre de los hermanos de Laura.
+    #+begin_src sql
+      SELECT nombre
+      FROM   socios
+      WHERE  ape1 = (
+               SELECT ape1
+               FROM   socios
+               WHERE  nombre = 'laura'
+             )
+        AND  ape2 = (
+               SELECT ape2
+               FROM   socios
+               WHERE  nombre = 'laura'
+             )
+        AND  nombre != 'laura'
+    #+end_src
+
+51. Titulo de las peliculas del pais que menos cines tiene
+    #+begin_src sql
+      SELECT titulo
+      FROM   peliculas
+      WHERE  c_pais = (
+               SELECT c_pais
+               FROM   paises
+               WHERE  cines = (
+                 SELECT MIN(cines)
+                 FROM   paises
+               )
+             )
+    #+end_src
+
+52. Codigo de la peliculas que se alquilo la primera vez
+    #+begin_src sql
+      SELECT c_peli
+      FROM   alquiler
+      WHERE  fecha = (
+               SELECT MIN(fecha)
+               FROM   alquiler
+             )
+    #+end_src
+
+53. Codigo del socio que realizo el alquiler mas barato
+    #+begin_src sql
+      SELECT c_socio
+      FROM   alquiler
+      WHERE  total = (
+               SELECT MIN(total)
+               FROM   alquiler
+             )
+    #+end_src
+
+54. Cuantas peliculas tenemos en los diferentes formatos
+    #+begin_src sql
+      SELECT   COUNT(formato), formato
+      FROM     peliculas
+      GROUP BY formato
+    #+end_src
+
+55. Listado con el numero de alquileres realizados los diferentes años
+    #+begin_src sql
+      SELECT   substr(fecha, 7, 2), COUNT(*)
+      FROM     alquiler
+      GROUP BY substr(fecha, 7, 2)
+      ORDER BY substr(fecha, 7, 2)
+    #+end_src
+
+56. Listado de los precios de las peliculas mas caras en los
+    diferentes años
+    #+begin_src sql
+      SELECT   anno, MAX(precio)
+      FROM     peliculas
+      GROUP BY anno
+      ORDER BY anno
+    #+end_src
+
+57. Listado con el total que hemos facturada los distintos años,
+    alquilando peliculas
+    #+begin_src sql
+      SELECT   substr(fecha, 7, 2), SUM(total)
+      FROM     alquiler
+      GROUP BY substr(fecha, 7, 2)
+      ORDER BY substr(fecha, 7, 2)
+    #+end_src

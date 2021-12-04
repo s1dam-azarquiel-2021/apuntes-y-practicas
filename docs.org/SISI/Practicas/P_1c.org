@@ -1,0 +1,12 @@
+#+TITLE: Practica 1C
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+AUTHOR:  y Alfonso Rodriguez Rodriguez
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+* Configuracion opciones de arranque
+[[file:./img/reseteo-bios.png]]
+[[file:./img/secuencia-de-arranque.png]]
+[[file:./img/secuencia-de-arranque.png]]
+[[file:./img/info-hdd.png]]
+[[file:./img/ram.png]]
+[[file:./img/pswd-bios.png]]
+[[file:./img/oc.png]]

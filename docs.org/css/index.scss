@@ -1,0 +1,525 @@
+/*
+ * By aru
+ */
+
+@charset "utf-8";
+
+@function incremental-elements(
+	$element,
+	$from,
+	$to,
+	$before: '',
+	$after: ''
+) {
+	@if $from == $to {
+		@return '#{$before}#{$element}#{$from}#{$after}';
+	} @else {
+		@return '#{$before}#{$element}#{$from}#{$after}, ' +
+		incremental-elements($element, $from + 1, $to, $before, $after);
+	}
+}
+
+@mixin prefix(
+	$property,
+	$value...
+) {
+	$vendor-prefixes: ("-webkit-", "-moz-", "-o-", "-ms-", "");
+	@each $vendor-prefix in $vendor-prefixes {
+		#{$vendor-prefix}#{$property}: #{$value};
+	}
+}
+
+@mixin font-faces(
+	$font-family,
+	$font-weight,
+	$font-style,
+	$font-stretch,
+	$font-display,
+	$path,
+	$file-name
+) {
+	@font-face {
+		@include prefix(font-family, $font-family);
+		@include prefix(font-weight, $font-weight);
+		@include prefix(font-style, $font-style);
+		@include prefix(font-stretch, $font-stretch);
+		@include prefix(font-display, $font-display);
+		@include prefix(
+			src,
+			url('#{$path}/#{$file-name}.eot')
+		);
+		@include prefix(
+			src,
+			url('#{$path}/#{$file-name}.eot?#iefix') format('embedded-opentype'),
+			url('#{$path}/#{$file-name}.woff2') format('woff2'),
+			url('#{$path}/#{$file-name}.woff') format('woff'),
+			url('#{$path}/#{$file-name}.ttf') format('truetype'),
+			url('#{$path}/#{$file-name}.svg##{$file-name}') format('svg')
+		);
+	}
+}
+
+/* FONTS */
+
+@include font-faces(
+	'Iosevka Curly',
+	500,
+	normal,
+	normal,
+	swap,
+	'fonts/medium',
+	'Iosevka-Curly-Medium'
+);
+
+@include font-faces(
+	'Iosevka Curly',
+	700,
+	normal,
+	normal,
+	swap,
+	'fonts/bold',
+	'Iosevka-Curly-Bold'
+);
+
+@include font-faces(
+	'Iosevka Curly',
+	900,
+	normal,
+	normal,
+	swap,
+	'fonts/heavy',
+	'Iosevka-Curly-Heavy'
+);
+
+// Backgrounds
+$bg0h: #1d2021;
+$bg0:  #282828;
+$bg0s: #32302f;
+$bg1:  #3c3836;
+$bg2:  #504945;
+$bg3:  #665c54;
+$bg4:  #7c6f64;
+$bg5:  #928374;
+
+// Foregrounds
+$fg0h: #f9f5d7;
+$fg0:  #fbf1c7;
+$fg0s: #f2e5bc;
+$fg1:  #ebdbb2;
+$fg2:  #d5c4a1;
+$fg3:  #bdae93;
+$fg4:  #a89984;
+
+// Red
+$r0: #fb4934;
+$r1: #cc241d;
+$r2: #9d0006;
+
+// Green
+$g0: #b8bb26;
+$g1: #98971a;
+$g2: #79740e;
+
+// Yellow
+$y0: #fabd2f;
+$y1: #d79921;
+$y2: #b57614;
+
+// Blue
+$b0: #83a598;
+$b1: #458588;
+$b2: #076678;
+
+// Magenta
+$m0: #d3869b;
+$m1: #b16286;
+$m2: #8f3f71;
+
+// Cyan
+$c0: #8ec07c;
+$c1: #689d6a;
+$c2: #427b58;
+
+// Orange
+$o0: #fe8019;
+$o1: #d65d0e;
+$o2: #af3a03;
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	vertical-align: baseline;
+	font: inherit;
+}
+
+html {
+	scrollbar-width: none;
+}
+
+body {
+	font: {
+		family: "Iosevka Curly", monospace;
+		size: 18px;
+		weight: 500;
+	}
+	background-color: $bg0h;
+	color: $fg0h;
+	line-height: 1.4em;
+	margin: 0 2rem;
+}
+
+#{incremental-elements('h', 1, 6)} {
+	line-height: 1em;
+}
+
+header {
+	margin: 2rem 0;
+
+	h1 {
+		color: $c1;
+		font: {
+			size: 3rem;
+			weight: 900;
+		}
+		text-align: center;
+		letter-spacing: -0.05em;
+	}
+}
+
+#table-of-contents {
+	margin: 1rem 0;
+	padding: 1rem 0;
+	border: {
+		top: 0.2rem dashed $b1;
+		bottom: 0.2rem dashed $b1;
+	}
+
+	> h2 {
+		margin: 0;
+
+		&::before {
+			content: "➫ ";
+			position: initial;
+		}
+	}
+	
+	li {
+		list-style-position: inside;
+	}
+	
+	a {
+		text-decoration: none;
+	}
+	
+	#text-table-of-contents {
+		margin-top: 1rem;
+		
+		ul {
+			list-style: none;
+		}
+		
+		> ul {
+			display: flex;
+			gap: 1rem;
+			flex-flow: row wrap;
+			
+			> li {
+				vertical-align: top;
+				background-color: $bg0;
+				border-radius: 1em;
+				padding: 1em;
+				flex-grow: 1;
+				flex-basis: 30%;
+				height: min-content;
+
+				> ul {
+					font-weight: 400;
+					font-size: 0.9em;
+					
+					> li {
+						a {
+							margin-left: 1rem;
+						}
+						
+						> ul {
+							font-weight: 300;
+							font-size: 0.9em;
+							padding-left: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+h2 {
+	font: {
+		size: 1.8rem;
+		weight: 700;
+	}
+	color: $b1;
+	margin: 1rem 0 0.5rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+	color: $y1;
+	margin: 1rem 0 0.5rem;
+}
+
+h4 {
+	color: $g1;
+}
+
+h5 {
+	color: $c1;
+}
+
+h6 {
+	color: $o1;
+}
+
+h4,
+h5,
+h6 {
+	font-size: 1.2rem;
+	margin: 1rem 0 0.5rem;
+}
+
+h7 {
+	font-size:  1.1rem;
+	margin: 1rem 0 0.2rem;
+	color: $r1;
+}
+
+.outline {
+	&-2 {
+		width: 80ch;
+		margin: 0 auto;
+	}
+	
+	&-2,
+	&-3,
+	&-4,
+	&-5,
+	&-6,
+	&-7,
+	&-8 {
+		* {
+			margin: 0.5rem 0;
+		}
+
+		code {
+			margin: 0 calc(0.2em - 1px);
+		}
+	}
+
+	&-3,
+	&-4,
+	&-5,
+	&-6,
+	&-7,
+	&-8 {
+		padding-left: 1rem;
+	}
+
+	&-text {
+		&-2,
+		&-3,
+		&-4,
+		&-5,
+		&-6,
+		&-7,
+		&-8 {
+			ul,
+			ol {
+				margin-left: 1rem;
+
+				> ::marker {
+					color: $m2;
+				}
+			}
+
+			img {
+				display: block;
+				max-width: 50vw;
+			}
+		}
+	}
+}
+
+a {
+	text-decoration: underline;
+	color: $m1;
+}
+
+p {
+	&.verse {
+		margin: 1rem 0;
+		padding-left: 1rem;
+		border-left: 0.3em solid $bg0;
+	}
+}
+
+table {
+	border-collapse: collapse;
+	display: block;
+	width: 100%;
+
+	& img {
+		width: 50px;
+	}
+
+	& td,
+	& th {
+		border: 1px solid $bg5;
+		padding: 0.3rem;
+		vertical-align: top;
+	}
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.subtitle {
+	text-align: center;
+	font-size: 0.9em;
+}
+
+pre {
+	color: $fg1;
+	background-color: $bg1;
+	overflow: auto;
+	margin: 1rem 0;
+	padding: 0.5rem 0.8rem;
+	font-size: 0.95em;
+	line-height: 1.25em;
+	font-weight: 300;
+	border: none;
+	border-left: 0.2em dashed $bg5;
+	border-radius: 0 1em 1em 0;
+	min-height: calc(2px + 2em);
+
+	&.src {
+		position: relative;
+
+		&::before {
+			display: none;
+			position: absolute;
+			background-color: $bg2;
+			text-align: center;
+			font-size: 0.8em;
+			top: 0.5em;
+			right: 0.5em;
+			padding: 0 1em;
+			border: 1px solid $bg5;
+			border-radius: 1em;
+		}
+
+		&:hover::before   { display: inline;    }
+		&-text::before    { display: none;      }
+		&-shell::before   { content: "SHELL";   }
+		&-haskell::before { content: "HASKELL"; }
+		&-nix::before     { content: "NIX";     }
+	}
+}
+
+code {
+	color: $fg1;
+	display: inline-block;
+	background-color: $bg2;
+	padding: 0 0.3em;
+	margin: 0 calc(0.2em - 1px);
+	border: 1px solid $fg4;
+	border-radius: 0.4em;
+}
+
+.org {
+	&-string                   { color: $g0; }
+	&-type                     { color: $b0; }
+	&-highlight-numbers-number { color: $m0; }
+	&-builtin                  { color: $o0; }
+	&-variable-name            { color: $c0; }
+	&-keyword                  { color: $r0; }
+
+	&-comment {
+		color: $bg5;
+
+		&-delimiter { color: $bg5; }
+	}
+
+	&-haskell {
+		&-definition  { color: $g0; }
+		&-constructor { color: $y0; }
+		&-operator    { color: $b0; }
+		&-type        { color: $y0; }
+		&-keyword     { color: $r0; }
+	}
+
+	&-nix {
+		&-builtin   { color: $o0; }
+		&-attribute { color: $b0; }
+		&-keyword   { color: $r0; }
+		&-constant  { color: $m0; }
+	}
+}
+
+
+#postamble,
+#preamble {
+	font-size: 0.9em;
+	margin: 3rem 0.5rem 1rem;
+	text-align: right;
+	line-height: 1em;
+	color: $bg4;
+
+	& p + p {
+		margin-top: 0;
+	}
+}
+
+@media print {
+	figure,
+	img {
+		page-break-inside: avoid;
+		page-break-after: auto;
+		page-break-before: auto;
+	}
+}
+
+// @media screen and (max-width: 800px) {
+// 	body {
+// 		font-size: 16px;
+// 		line-height: 1.2rem;
+// 	}
+// 
+// 	h2 {
+// 		font-size: 2em;
+// 		color: #458588;
+// 		margin: 1em 0 0.2em;
+// 	}
+// 
+// 	h3 {
+// 		font-size: 1.5em;
+// 		color: #d79921;
+// 		margin: 1em 0 0.2em;
+// 	}
+// 
+// 	.outline {
+// 		&-2,
+// 		&-3 {
+// 			margin-left: 0;
+// 		}
+// 	}
+// }
+// 
+// @media screen and (max-width: 500px) {
+// 	body {
+// 		font-size: 14px;
+// 		line-height: 1.1rem;
+// 	}
+// }

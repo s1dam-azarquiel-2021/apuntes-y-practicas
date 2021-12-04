@@ -1,0 +1,68 @@
+#+TITLE: Practica 1D
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+* Interpretacion de mapas de red
+1. Interpreta ambas redes.
+2. Identifica los siguientes elementos de ambas redes:
+
+   [[file:./img/red-2.1.png]]
+   - Servidor:
+     - Central Server
+     - Branch Server
+   - Clientes:
+     - HomeDesktop
+     - HomeLaptop
+     - Tablet
+     - Inyeccion de tinta
+     - PC1 a PC4
+     - Laser
+     - Smartphone
+     - Invitado
+     - Ventas y Telefono0 IP
+     - Contabilidad y Telefono1 IP
+   - Routers
+     - WRS
+     - R2
+     - R4
+   - Internet
+     - Internet
+     - Intranet
+
+   [[file:./img/red-2.2.png]]
+   - Servidor:
+   - Clientes:
+     - PC0 a PC3
+   - Routers
+     - Router0 a Router2
+   - Internet
+     - Cloud0
+3. Identifica la topologia de las siguientes redes o subredes:
+
+   [[file:./img/red-3.1.png]]
+   Estrella
+
+   [[file:./img/red-3.2.png]]
+   Estrella
+
+   [[file:./img/red-3.3.png]]
+   Estrella
+
+   [[file:./img/red-3.4.png]]
+   Malla
+4. En el diagrama de red A, ¿puede el ordenador HomeLaptop, de la red
+   HomeOffice acceder a la intranet de la empresa, o por el contrario
+   sólo sería accesible desde las redes Central o Branch?
+
+   Si que puede, siempre y cuando al intentar acceder a la intranet
+   mediante la red Central o Branch, el router de una de estas este
+   configurado para ser capaz de direccionar la conexion hacia la
+   Intranet, y que esta permita su acceso.
+
+   Por ejemplo, si en la Intranet existe una web a la que queremos
+   acceder de forma remota, podriamos conectarnos mediante un tunel
+   SOCKS con SSH al servidor de la intranet que se encuentre en una de
+   las redes Branch o Central, una vez conectado se configuraria el
+   navegador para usar ese tunel como proxy para asi hacer forwarding
+   del HTTP y poder acceder a la web. (Que yo recuerde en firefox
+   habia que habilitar una opcion para que tambien hiciera forwarding
+   del DNS, ya que sino ocurre un DNS leakeage).

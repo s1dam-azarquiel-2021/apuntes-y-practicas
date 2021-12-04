@@ -1,0 +1,239 @@
+#+TITLE: Practica 2A
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+* Creacion y configuracion de una maquina virtual
+1. Crea una máquina virtual en VirtualBox Workstation que nos sirva
+   para instalar el sistema operativo Windows 7. ¿Qué requerimientos
+   mínimos necesita Windows 7? ¿Qué características tiene la máquina
+   creada? Llama a tu máquina W7-SI. La tarjeta de red funcionará en
+   modo NAT en principio.
+
+   Requerimientos minimos de Windows 7:
+   - Procesador de 1GHz 32bit o 64bit
+   - 1GB ram para 32bit y 2GB 64bit
+   - 16GB espacio para 32bit y 20GB para 64bit
+   - Graficos DirectX 9 con WDDM 1.0
+
+   Creacion de la VM:
+
+   [[file:./img/2.1.1.png]]
+
+   [[file:./img/2.1.2.png]]
+
+   Y ya solo queda meter la ISO y dejar que instale.
+
+2. Carga la ISO de instalación de Windows 10 en la unidad de CD e
+   instala dicho sistema operativo en la máquina virtual creada. Llama
+   la máquina W10-SI-XX donde XX es tu rango de IP asignadas.
+
+   [[file:./img/2.2.1.png]]
+
+   [[file:./img/2.2.2.png]]
+
+   Y luego solo es seguir los pasos de instalacion y dejar que,
+   despues de media hora, acabe de instalarse.
+
+3. Instala VMWTools en la máquina virtual.
+
+   [[file:./img/2.3.1.png]]
+
+   (Cuando intento hacer una captura el $!#*#$& menu contextual se
+   cierra, asi que te explico que hay que pinchar)
+
+   Pinchando en Devices, al final tenemos una opcion de insertar el CD
+   con las guest additions, le pinchas y aparecera que windows ha
+   encontrado una nueva unidad.
+
+   [[file:./img/2.3.2.png]]
+
+   Ahora le hacemos doble click a la unidad.
+   
+   [[file:./img/2.3.3.png]]
+
+   Aceptamos y le damos a next hasta que deje de preguntar.
+
+   [[file:./img/2.3.4.png]]
+
+   Una vez acabe tocara reiniciar la VM.
+
+   [[file:./img/2.3.5.png]]
+
+4. Comprueba que ahora podemos copiar un fichero simplemente cogiendo
+   un fichero del anfitrión y soltándolo dentro del huésped.
+
+   (Ya que en el host no tengo un File Manager grafico, pruebo con el
+   portapapeles).
+
+   Funciona, demostracion copiando del host un textaco y pegandolo en
+   el guest:
+   
+   [[file:./img/2.4.1.png]]
+
+   [[file:./img/2.4.2.png]]
+
+5. Crea una carpeta compartida entre la máquina virtual y la
+   anfitriona de sólo lectura. Haz que salga conectada en la virtual
+   como una unidad de red. Comprueba que funciona.
+
+   Creamos una carpeta compartida.
+
+   [[file:./img/2.5.1.png]]
+
+   Abrimos el explorador de archivos y deberia aparecer una unidad de
+   red con la carpeta anteriormente especificada
+
+   [[file:./img/2.5.2.png]]
+
+6. Explica las diferencias que hay entre los tres modos en los que
+   puede trabajar la tarjeta de red virtual.
+
+   Modo NAT: El guest se conecta a lo que podriamos llamar un router
+   virtual cuya puerta de enlace es el host, y nos conectamos por
+   defecto a este router mediant DHCP. Este tipo de configuracion, si
+   el host esta conectado a internet, nos permite que el guest tambien
+   sea capaz de conectarse a internet sin rompernos la cabeza.
+
+   Modo Bridge: El guest se conecta mediante un switch virtual
+   directamente a la red a la que el host esta conectado, con lo que
+   puede interactuar con esta de forma directa. Si la red usa DHCP la
+   conexion es tan simple como no tocar nada, sino tocaria configurar.
+
+   Modo Host-Only: En este modo el guest se conecta con el host y con
+   nada mas, es decir que no puede salir a la red del host o internet.
+
+7. En modo NAT.
+
+   - Observa qué configuración IP tiene la máquina virtual en la línea
+     de comandos con el comando ipconfig /all
+
+     [[file:./img/2.7.1.png]]
+
+   - ¿Qué dirección IP, de DNS y de Puerta de enlace tenemos? ¿Quién
+     lo ha asignado?
+     
+     Ha sido asignada mediante DHCP segun la configuracion del
+     adaptador virtual, que en este caso es algo parecido a esto:
+
+     [[file:./img/2.7.2.png]]
+
+   - Comprueba que funciona un PING a www.google.es
+
+     Google es malvado
+
+     [[file:./img/2.7.3.png]]
+
+   - Comprueba si funciona un PING a una IP de un ordenador físico del
+     aula.
+
+     Como explico mas abajo en el ejercicio 9, le hare ping a un
+     dispositivo de la red de mi casa, en este caso mi movil.
+
+     [[file:./img/2.7.4.png]]
+
+     La VM peta tanto que ni ping hace a veces.
+
+8. En modo Host Only de la tarjeta de red
+
+   - Observa qué configuración IP tiene la máquina virtual en la línea
+     de comandos con el comando ipconfig /all
+
+     [[file:./img/2.8.1.png]]
+
+   - ¿Qué dirección IP, de DNS y de Puerta de enlace tenemos? ¿Quién
+     lo ha asignado?
+
+     Ha sido asignada mediante DHCP segun la configuracion del
+     adaptador virtual, que en este caso es parecida al ejemplo
+     anterior pero con una diferente red (~192.168.56.0~) y sin puerta
+     de enlace.
+
+   - Comprueba que funciona un PING a www.google.es
+
+     [[file:./img/2.8.2.png]]
+
+     Obviamente no se puede, ya que al no haber configurado puerta de
+     enlace no hay salido al exterior, como vivir en una cueva.
+
+   - Comprueba si funciona un PING a una IP de un ordenador físico del
+     aula
+
+     [[file:./img/2.8.3.png]]
+
+     Lo mismo de antes.
+
+9. En modo Bridged de la tarjeta de red.
+
+   - Daremos la siguinte configuracion de red a la maquina:
+     - IP: XX.XX.XXX.10 donde XXX será el byte asignado para tus redes
+     - Máscara: 255.255.0.0
+     - Puerta de enlace: XX.XX.0.254
+     - DNS primario: 8.8.8.8
+
+     Ya que uso portatil y en clase no podemos conectarnos a la red
+     local por falta de rosetas, lo hare desde mi case haciendo ping a
+     mi movil, por ejemplo. Notese, que tengo en mi casa la red
+     configurada usando la ip 172.20.0.0.
+
+     Tras abrir tropecientos menus contextuales cambie la
+     configuracion de la red:
+
+     [[file:./img/2.9.1.png]]
+     
+   - Comprueba que funciona un PING a www.google.es
+
+     [[file:./img/2.9.2.png]]
+
+   - Comprueba si funciona un PING a una IP de un ordenador físico del
+     aula
+
+     [[file:./img/2.9.3.png]]
+
+     Lo dicho, esto va muy petado.
+
+10. ¿Qué conclusiones sacas sobre los tres modos distintos en los que
+    puede trabajar una tarjeta de red virtual?
+
+    Lo mas habitual es usar el NAT, que viene por defecto, a menos de
+    que se tenga la necesidad de comunicarse con la VM por algun
+    protocolo de red, para lo cual seria mas facil usar el modo Bridge
+    a menos que quieras estar toqueteando el port forwarding del
+    NAT. Y por ultimo en los casos de no tener la necesidad de acceder
+    a terceros o que estos accedan a la VM se usaria el Host-Only.
+
+11. ¿Qué es un Snapshot?
+
+    Una Snapshot es un punto de guardado del estado de la maquina, al
+    cual siempre podemos regresar si, por ejemplo, nos la hemos
+    cargado.
+
+12. Realiza un Snapshot.
+
+    Pinchamos en Machine y dentro Take Snapshot.
+
+    [[file:./img/2.12.1.png]]
+
+    Le damos un nombre y descricion y aceptamos.
+
+    [[file:./img/2.12.2.png]]
+
+13. Realiza algún cambio apreciable dentro de la máquina virtual.
+
+    Voy a cambiar el nombre del equipo
+
+    [[file:./img/2.13.1.png]]
+
+    [[file:./img/2.13.2.png]]
+
+    [[file:./img/2.13.3.png]]
+
+14. Vuelve al Snapshot creado en el punto 12.
+
+    Nos vamos a la vista de snapshots
+
+    [[file:./img/2.14.1.png]]
+
+    Y pinchamos en la snapshot1 y damos en restaurar. Si arrancamos la
+    maquina y comprobamos el nombre del equipo ha vuelto a la
+    normalidad.
+
+    [[file:./img/2.14.2.png]]

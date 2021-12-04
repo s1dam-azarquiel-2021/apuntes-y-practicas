@@ -1,0 +1,181 @@
+#+TITLE: Practica 1B
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+* Deteccion de drivers del equipo
+Version del kernel: 5.10.57
+| Modulo                | Usado por                                                   |
+|-----------------------+-------------------------------------------------------------|
+| hid-generic           |                                                             |
+| usbhid                |                                                             |
+| hid                   | usbhid,hid-generic                                          |
+| af-packet             |                                                             |
+| 8021q                 |                                                             |
+| nls-iso8859-1         |                                                             |
+| nls-cp437             |                                                             |
+| vfat                  |                                                             |
+| fat                   | vfat                                                        |
+| ip6table-nat          |                                                             |
+| iptable-nat           |                                                             |
+| nf-nat                | ip6table-nat,iptable-nat                                    |
+| xt-conntrack          |                                                             |
+| nf-conntrack          | xt-conntrack,nf-nat                                         |
+| nf-defrag-ipv6        | nf-conntrack                                                |
+| uvcvideo              |                                                             |
+| nf-defrag-ipv4        | nf-conntrack                                                |
+| videobuf2-vmalloc     | uvcvideo                                                    |
+| videobuf2-memops      | videobuf2-vmalloc                                           |
+| videobuf2-v4l2        | uvcvideo                                                    |
+| videobuf2-common      | videobuf2-v4l2,uvcvideo                                     |
+| ip6t-rpfilter         |                                                             |
+| videodev              | videobuf2-v4l2,uvcvideo,videobuf2-common                    |
+| btusb                 |                                                             |
+| btrtl                 | btusb                                                       |
+| btbcm                 | btusb                                                       |
+| ipt-rpfilter          |                                                             |
+| btintel               | btusb                                                       |
+| iwlmvm                |                                                             |
+| ip6table-raw          |                                                             |
+| iptable-raw           |                                                             |
+| mc                    | videodev,videobuf2-v4l2,uvcvideo,videobuf2-common           |
+| bluetooth             | btrtl,btintel,btbcm,btusb                                   |
+| xt-pkttype            |                                                             |
+| mac80211              | iwlmvm                                                      |
+| nf-log-ipv6           |                                                             |
+| ecdh-generic          | bluetooth                                                   |
+| ecc                   | ecdh-generic                                                |
+| crc16                 | bluetooth                                                   |
+| libarc4               | mac80211                                                    |
+| amdgpu                |                                                             |
+| snd-hda-codec-realtek |                                                             |
+| edac-mce-amd          |                                                             |
+| nf-log-ipv4           |                                                             |
+| edac-core             |                                                             |
+| snd-hda-codec-generic | snd-hda-codec-realtek                                       |
+| nf-log-common         | nf-log-ipv4,nf-log-ipv6                                     |
+| ledtrig-audio         | snd-hda-codec-generic                                       |
+| joydev                |                                                             |
+| snd-hda-codec-hdmi    |                                                             |
+| xt-LOG                |                                                             |
+| mousedev              |                                                             |
+| snd-hda-intel         |                                                             |
+| crc32-pclmul          |                                                             |
+| ghash-clmulni-intel   |                                                             |
+| iwlwifi               | iwlmvm                                                      |
+| aesni-intel           |                                                             |
+| snd-intel-dspcfg      | snd-hda-intel                                               |
+| libaes                | bluetooth,aesni-intel                                       |
+| hp-wmi                |                                                             |
+| crypto-simd           | aesni-intel                                                 |
+| input-leds            |                                                             |
+| sparse-keymap         | hp-wmi                                                      |
+| wmi-bmof              |                                                             |
+| led-class             | snd-hda-codec-generic,input-leds,iwlmvm                     |
+| evdev                 |                                                             |
+| fam15h-power          |                                                             |
+| cryptd                | crypto-simd,ghash-clmulni-intel                             |
+| xt-tcpudp             |                                                             |
+| iommu-v2              | amdgpu                                                      |
+| snd-hwdep             | snd-hda-codec                                               |
+| cfg80211              | iwlmvm,iwlwifi,mac80211                                     |
+| gpu-sched             | amdgpu                                                      |
+| glue-helper           | aesni-intel                                                 |
+| mac-hid               |                                                             |
+| deflate               |                                                             |
+| rfkill                | hp-wmi,bluetooth,cfg80211                                   |
+| snd-pcm               | snd-hda-codec-hdmi,snd-hda-intel,snd-hda-codec,snd-hda-core |
+| psmouse               |                                                             |
+| ttm                   | amdgpu                                                      |
+| snd-timer             | snd-pcm                                                     |
+| serio-raw             |                                                             |
+| r8169                 |                                                             |
+| wmi                   | hp-wmi,wmi-bmof                                             |
+| efi-pstore            |                                                             |
+| k10temp               |                                                             |
+| drm-kms-helper        | amdgpu                                                      |
+| wdat-wdt              |                                                             |
+| sp5100-tco            |                                                             |
+| watchdog              | sp5100-tco,wdat-wdt                                         |
+| i2c-algo-bit          | amdgpu                                                      |
+| soundcore             | snd                                                         |
+| tpm-crb               |                                                             |
+| fb-sys-fops           | drm-kms-helper                                              |
+| syscopyarea           | drm-kms-helper                                              |
+| sysfillrect           | drm-kms-helper                                              |
+| sysimgblt             | drm-kms-helper                                              |
+| hp-wireless           |                                                             |
+| realtek               |                                                             |
+| tpm-tis               |                                                             |
+| tpm-tis-core          | tpm-tis                                                     |
+| mdio-devres           | r8169                                                       |
+| libphy                | r8169,mdio-devres,realtek                                   |
+| tpm                   | tpm-tis,tpm-crb,tpm-tis-core                                |
+| thermal               |                                                             |
+| battery               |                                                             |
+| ip6table-filter       |                                                             |
+| ac                    |                                                             |
+| ip6-tables            | ip6table-filter,ip6table-raw,ip6table-nat                   |
+| rng-core              | tpm                                                         |
+| video                 |                                                             |
+| i2c-scmi              |                                                             |
+| tiny-power-button     |                                                             |
+| i2c-piix4             |                                                             |
+| acpi-cpufreq          |                                                             |
+| button                |                                                             |
+| sch-fq-codel          |                                                             |
+| iptable-filter        |                                                             |
+| ctr                   |                                                             |
+| loop                  |                                                             |
+| tun                   |                                                             |
+| tap                   |                                                             |
+| macvlan               |                                                             |
+| bridge                |                                                             |
+| stp                   | bridge                                                      |
+| llc                   | bridge,stp                                                  |
+| vboxnetflt            |                                                             |
+| vboxnetadp            |                                                             |
+| vboxdrv               | vboxnetadp,vboxnetflt                                       |
+| drm                   | gpu-sched,drm-kms-helper,amdgpu,ttm                         |
+| kvm-amd               |                                                             |
+| agpgart               | ttm,drm                                                     |
+| backlight             | video,amdgpu,drm                                            |
+| kvm                   | kvm-amd                                                     |
+| irqbypass             | kvm                                                         |
+| fuse                  |                                                             |
+| pstore                | efi-pstore                                                  |
+| configfs              |                                                             |
+| efivarfs              |                                                             |
+| ip-tables             | iptable-filter,iptable-raw,iptable-nat                      |
+| autofs4               |                                                             |
+| sd-mod                |                                                             |
+| sr-mod                |                                                             |
+| cdrom                 | sr-mod                                                      |
+| t10-pi                | sd-mod                                                      |
+| crc-t10dif            | t10-pi                                                      |
+| crct10dif-generic     |                                                             |
+| xhci-pci              |                                                             |
+| xhci-pci-renesas      | xhci-pci                                                    |
+| xhci-hcd              | xhci-pci                                                    |
+| atkbd                 |                                                             |
+| libps2                | atkbd,psmouse                                               |
+| ahci                  |                                                             |
+| libahci               | ahci                                                        |
+| ehci-pci              |                                                             |
+| libata                | libahci,ahci                                                |
+| ehci-hcd              | ehci-pci                                                    |
+| usbcore               | xhci-hcd,ehci-pci,usbhid,uvcvideo,ehci-hcd,btusb,xhci-pci   |
+| rtc-cmos              |                                                             |
+| crct10dif-pclmul      |                                                             |
+| crct10dif-common      | crct10dif-generic,crc-t10dif,crct10dif-pclmul               |
+| scsi-mod              | sd-mod,libata,sr-mod                                        |
+| usb-common            | xhci-hcd,usbcore,uvcvideo,ehci-hcd                          |
+| i8042                 |                                                             |
+| serio                 | serio-raw,atkbd,psmouse,i8042                               |
+| dm-mod                |                                                             |
+| btrfs                 |                                                             |
+| blake2b-generic       |                                                             |
+| libcrc32c             | nf-conntrack,nf-nat,btrfs                                   |
+| crc32c-generic        |                                                             |
+| crc32c-intel          |                                                             |
+| xor                   | btrfs                                                       |
+| raid6-pq              | btrfs                                                       |
+

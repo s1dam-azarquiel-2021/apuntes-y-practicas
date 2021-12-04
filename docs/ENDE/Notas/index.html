@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- 2021-12-04 Sat 18:25 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ENDE - Notas</title>
+<meta name="author" content="Alberto Robles Gomez" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+</head>
+<body>
+<div id="content" class="content">
+<header>
+<h1 class="title">ENDE - Notas</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>&Iacute;ndice</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgaf6a6f6">TEMA 1</a>
+<ul>
+<li><a href="#org501d59f">Conceptos de software, programa y aplicacion.</a>
+<ul>
+<li><a href="#org696bf6e">Software</a></li>
+<li><a href="#org932c5a0">Programa</a></li>
+<li><a href="#orgfe9b678">Aplicacion</a></li>
+<li><a href="#orged0a640">Suite o Paquete Integrado</a></li>
+</ul>
+</li>
+<li><a href="#org1eb6b61">Lenguajes de programacion</a>
+<ul>
+<li><a href="#org8ffd9ba">Componentes</a></li>
+<li><a href="#orgc15da55">Criterios para establecer las clasificaciones</a></li>
+<li><a href="#org748d2c0">Obtener codigo ejecutable</a></li>
+</ul>
+</li>
+<li><a href="#org3323c24">Maquinas Virtuales</a>
+<ul>
+<li><a href="#org542791b">Categorias</a></li>
+<li><a href="#org66757f6">La maquina virtual de Java</a></li>
+</ul>
+</li>
+<li><a href="#org1811f36">Lenguajes mas difundidos. Caracteristicas.</a>
+<ul>
+<li><a href="#org280bded">Java</a></li>
+<li><a href="#org246ce08">Python</a></li>
+<li><a href="#org58af97d">C y C++</a></li>
+<li><a href="#org3f69d33">JavaScript</a></li>
+<li><a href="#org1278e00">PHP</a></li>
+<li><a href="#org19afe12">VB.NET</a></li>
+</ul>
+</li>
+<li><a href="#org8721625">Desarrollo de una aplicacion</a>
+<ul>
+<li><a href="#orgbac1634">Fases</a></li>
+<li><a href="#org205f92b">Roles en el desarrollo de software</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2170318">TEMA 2</a></li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-orgaf6a6f6" class="outline-2">
+<h2 id="orgaf6a6f6">TEMA 1</h2>
+<div class="outline-text-2" id="text-orgaf6a6f6">
+</div>
+<div id="outline-container-org501d59f" class="outline-3">
+<h3 id="org501d59f">Conceptos de software, programa y aplicacion.</h3>
+<div class="outline-text-3" id="text-org501d59f">
+</div>
+<div id="outline-container-org696bf6e" class="outline-4">
+<h4 id="org696bf6e">Software</h4>
+<div class="outline-text-4" id="text-org696bf6e">
+<ul class="org-ul">
+<li>Tambien denominado componente logico.</li>
+<li>Es intangible, a diferencia del hardware que es tangible.</li>
+<li>Realiza una tarea determinada.</li>
+<li>Se comunica con el hardware para llevar a cabo su tarea.</li>
+<li>Se desarrolla, no se fabrica.</li>
+<li>Incluye los datos utilizados por los programas.</li>
+<li>Puede ser a medida o enlatado.</li>
+</ul>
+</div>
+<div id="outline-container-org0155ac3" class="outline-5">
+<h5 id="org0155ac3">Categorias</h5>
+<div class="outline-text-5" id="text-org0155ac3">
+</div>
+<div id="outline-container-orgd7a9f75" class="outline-6">
+<h6 id="orgd7a9f75">Segun el tipo de tarea que realiza</h6>
+<div class="outline-text-6" id="text-orgd7a9f75">
+</div>
+<div id="outline-container-org1d27c2c" class="outline-7">
+<h7 id="org1d27c2c">De sistema</h7>
+<div class="outline-text-7" id="text-org1d27c2c">
+<ul class="org-ul">
+<li>Hace que funcione el HW.</li>
+<li>Administra los recursos HW.</li>
+<li>Intermediario: Humano - HW.</li>
+<li>Ejemplo: SS. OO., Controladores (driver)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbda2ac7" class="outline-7">
+<h7 id="orgbda2ac7">De aplicacion</h7>
+<div class="outline-text-7" id="text-orgbda2ac7">
+<ul class="org-ul">
+<li>Nos ayudan a realizar tareas especificas -&gt; automatizan.</li>
+<li>Ejemplo: CAD, SW medico, contabilidad, ofimatica, &#x2026;</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf99ee3d" class="outline-7">
+<h7 id="orgf99ee3d">De programacion o Desarrollo</h7>
+<div class="outline-text-7" id="text-orgf99ee3d">
+<ul class="org-ul">
+<li>Proporciona herramientas al progamador.</li>
+<li>Suelen contar con un IDE (Entornos de Desarrollo Integrados).</li>
+<li>Ejemplos: Eclipse.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org7f25455" class="outline-6">
+<h6 id="org7f25455">Segun el metodo de distribucion</h6>
+<div class="outline-text-6" id="text-org7f25455">
+</div>
+<div id="outline-container-org4d739a5" class="outline-7">
+<h7 id="org4d739a5">Shareware</h7>
+<div class="outline-text-7" id="text-org4d739a5">
+<ul class="org-ul">
+<li>El usuario evalua el producto el producto por tiempo determinado.</li>
+<li>Adquirir su licencia -&gt; $ | Precio cero</li>
+<li>Ejemplo: Winrar</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3132085" class="outline-7">
+<h7 id="org3132085">Freeware</h7>
+<div class="outline-text-7" id="text-org3132085">
+<ul class="org-ul">
+<li>Se distribuye sin $.</li>
+<li>Incluye una licencia:</li>
+<li>Permite su redistrubacion.</li>
+<li>Restricciones: vender, modificar.</li>
+<li>No es software de libre distribucion.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6172930" class="outline-7">
+<h7 id="org6172930">Adware</h7>
+<div class="outline-text-7" id="text-org6172930">
+<ul class="org-ul">
+<li>Shareware + se descarga automaticamente + publicidad.</li>
+<li>Al comprar la licencia -&gt; desaparece la publicidad.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org45033ac" class="outline-7">
+<h7 id="org45033ac">Multimedia</h7>
+<div class="outline-text-7" id="text-org45033ac">
+<ul class="org-ul">
+<li>Integra textos, graficos, sonidos, animaciones.</li>
+<li>En distintos ambitos como el educativo.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd484016" class="outline-7">
+<h7 id="orgd484016">De uso especifico</h7>
+<div class="outline-text-7" id="text-orgd484016">
+<ul class="org-ul">
+<li>Resuelven un problema concreto.</li>
+<li>Ejemplo: bancos, educacion, &#x2026;</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org7f41eba" class="outline-5">
+<h5 id="org7f41eba">Licencias</h5>
+<div class="outline-text-5" id="text-org7f41eba">
+<ul class="org-ul">
+<li>Licencia = contrato (desarrollador del SW, usuario).</li>
+</ul>
+</div>
+<div id="outline-container-orge6d12d5" class="outline-6">
+<h6 id="orge6d12d5">SW Libre</h6>
+<div class="outline-text-6" id="text-orge6d12d5">
+<ul class="org-ul">
+<li>Utilizado con cualquier fin.</li>
+<li>Podemos estudiar su funcionamiento y modificarlo.</li>
+<li>Distribuir copias.</li>
+<li>Mejoras -&gt; hacerlas publicas -&gt; distribuir al publico.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org89bb7ac" class="outline-6">
+<h6 id="org89bb7ac">SW Propietario</h6>
+<div class="outline-text-6" id="text-org89bb7ac">
+<ul class="org-ul">
+<li>El codigo fuente no es accesible.</li>
+<li>Su licencia prohibe 1 o varias posibilidades:
+<ul class="org-ul">
+<li>Redistribucion.</li>
+<li>Copia.</li>
+<li>Uso en varias maquinas.</li>
+<li>Transferencias de titularidad.</li>
+<li>Difusion de fallos y errores.</li>
+<li>Variantes: Freeware y Shareware.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf056024" class="outline-6">
+<h6 id="orgf056024">SW de dominio publico</h6>
+<div class="outline-text-6" id="text-orgf056024">
+<ul class="org-ul">
+<li>So desconoce su autor o fin de la propiedad de autor.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org46d6599" class="outline-6">
+<h6 id="org46d6599">GPL</h6>
+<div class="outline-text-6" id="text-org46d6599">
+<ul class="org-ul">
+<li>Licencia mas utilizada.</li>
+<li>SW Libre + fuente abierta.</li>
+<li>Derecho a: usar, modificar haciendo publicas.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4229f82" class="outline-5">
+<h5 id="org4229f82">Tipos</h5>
+<div class="outline-text-5" id="text-org4229f82">
+</div>
+<div id="outline-container-org33844ec" class="outline-6">
+<h6 id="org33844ec">A medida</h6>
+<div class="outline-text-6" id="text-org33844ec">
+<ul class="org-ul">
+<li>Adaptado a los requeremientos de la empresa u organizacion.</li>
+<li>Se desarrollo en funcion de las necesidades, actividad y
+forma de trabajar.</li>
+<li>No suele ser compatible con empresas del sector.</li>
+<li>Es mas costoso, ya que va dirigido a un solo cliente.</li>
+<li>Necesito tiempo de desarrollo.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd54e305" class="outline-6">
+<h6 id="orgd54e305">Estandar o Enlatados</h6>
+<div class="outline-text-6" id="text-orgd54e305">
+<ul class="org-ul">
+<li>Es software generico.</li>
+<li>Resuelve multiples necesidades.</li>
+<li>Puede parametrizarse o adaptarse a las necesiades -&gt;
+herramientas de configuracion.</li>
+<li>Pueden faltarse funciones -&gt; se complementa con otras
+herramientas.</li>
+<li>Ya esta hecho.</li>
+<li>Menor numero de errores -&gt; comprobado por varios clientes.</li>
+<li>Suele ser mas barato.</li>
+<li>Pueden tener funciones que no usamos.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfd6fbbc" class="outline-5">
+<h5 id="orgfd6fbbc">Ciclos de vida</h5>
+<div class="outline-text-5" id="text-orgfd6fbbc">
+<ul class="org-ul">
+<li>Son las fases o etapas en las que se desarrolla el software.</li>
+</ul>
+</div>
+<div id="outline-container-org2b364b1" class="outline-6">
+<h6 id="org2b364b1">Cascada</h6>
+<div class="outline-text-6" id="text-org2b364b1">
+<ul class="org-ul">
+<li>Entrega el documento completo.</li>
+<li>Solo en el mantenimiento se vuelve a etapas anteriores
+(codificacion -&gt; pruebas).</li>
+<li>Con realimentacion:
+<ul class="org-ul">
+<li>Cuando debido a un fallo, ambiguedades, etc &#x2026; se vuelve
+a etapas anteriores.</li>
+</ul></li>
+<li>Ventajas, inconvenientes. Cuando se recomienda.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org61203fa" class="outline-6">
+<h6 id="org61203fa">Evolutivos</h6>
+<div class="outline-text-6" id="text-org61203fa">
+<ul class="org-ul">
+<li>Los requisitos del usuario y del producto cambian cuando se
+desarrolla.</li>
+<li>Surgen versiones distintas.</li>
+</ul>
+</div>
+<div id="outline-container-orge4d8e31" class="outline-7">
+<h7 id="orge4d8e31">Iterativo incremental</h7>
+<div class="outline-text-7" id="text-orge4d8e31">
+<ul class="org-ul">
+<li>Basado en cascada.</li>
+<li>El SW se entrega en partes pequeñas -&gt; incrementos.</li>
+<li>Los incrementos son reutilizables.</li>
+<li>Ej: procesador de textos.
+<ul class="org-ul">
+<li>Primero se desarrollan las funciones basicas como las de
+edicion.</li>
+<li>En cada incremento se desarrollarian nuevas funciones como
+la gramatica u ortografia.</li>
+<li>En el siguiente, funciones avanzadas de paginacion.</li>
+<li>&#x2026;</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org06c2596" class="outline-7">
+<h7 id="org06c2596">En espiral</h7>
+<div class="outline-text-7" id="text-org06c2596">
+<ul class="org-ul">
+<li>Mezcla el modelo en Cascada y el iterativo de construccion
+de prototipos.</li>
+<li>Cada ciclo -&gt; se divide en 4 fases.</li>
+<li>Es similar al iterativo incremental, pero este si analiza
+riesgos.</li>
+<li>Fases:
+<ul class="org-ul">
+<li>Determinar objetivos, alternativas, restricciones, &#x2026;</li>
+<li>Analisis de riesgos: identificar los riesgos, como
+resolverlos, &#x2026;</li>
+<li>Desarrollar y probar.</li>
+<li>Planificacion: se revisa lo hecho, si se continua, se
+planifican las fases del ciclo siguiente.</li>
+</ul></li>
+<li>Muy utilizado para sistemas orientados a objetos.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org932c5a0" class="outline-4">
+<h4 id="org932c5a0">Programa</h4>
+<div class="outline-text-4" id="text-org932c5a0">
+<ul class="org-ul">
+<li>Es una serie de ordenes o instrucciones.</li>
+<li>Siguen un orden o secuencia para cumplir una finalidad determinado.</li>
+<li>Ejemplo: Holamundo.c</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfe9b678" class="outline-4">
+<h4 id="orgfe9b678">Aplicacion</h4>
+<div class="outline-text-4" id="text-orgfe9b678">
+<ul class="org-ul">
+<li>Puede estar formada por uno o varios programas.</li>
+<li>Esta en contacto con el usuario, no con el hardware.</li>
+<li>Ejemplo: BB.DD., procesadores do texto, hojas de calculo, correo electronico.</li>
+<li>Finalizar: automatizar o ayudar a realizar tareas.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orged0a640" class="outline-4">
+<h4 id="orged0a640">Suite o Paquete Integrado</h4>
+<div class="outline-text-4" id="text-orged0a640">
+<ul class="org-ul">
+<li>Es el conjunto de programas que se ejecutan unos
+independientes del otro.</li>
+<li>Ejemplo: Microsoft Office, Libre Office, Open Office.</li>
+<li>Suelen compartir elementos comunes como librerias, datos. etc.</li>
+<li>Son compatibles entre ellos.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1eb6b61" class="outline-3">
+<h3 id="org1eb6b61">Lenguajes de programacion</h3>
+<div class="outline-text-3" id="text-org1eb6b61">
+<ul class="org-ul">
+<li>Los programas son conjuntos de instrucciones que se desarrollan
+utilizando un lenguaje de programacion.</li>
+<li>Es legible por el usuario (programador).</li>
+<li>Es ininteligible para el ordenador.</li>
+<li>Necesita de un proceso de traduccion: lenguaje -&gt; hardware</li>
+</ul>
+</div>
+<div id="outline-container-org8ffd9ba" class="outline-4">
+<h4 id="org8ffd9ba">Componentes</h4>
+<div class="outline-text-4" id="text-org8ffd9ba">
+<ul class="org-ul">
+<li>Caracteres: Vocabulario o lexico -&gt; simbolos permitidos.</li>
+<li>Sintaxis: Son las reglas que combinan los caracteres -&gt;
+construcciones con los simbolos.</li>
+<li>Semantica: son las reglas que definen los efectos de cualquier
+construccion.</li>
+<li>Palabras reservadas.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc15da55" class="outline-4">
+<h4 id="orgc15da55">Criterios para establecer las clasificaciones</h4>
+<div class="outline-text-4" id="text-orgc15da55">
+</div>
+<div id="outline-container-org11bc0d0" class="outline-5">
+<h5 id="org11bc0d0">Segun el nivel de abstraccion</h5>
+<div class="outline-text-5" id="text-org11bc0d0">
+</div>
+<div id="outline-container-org18ea5ef" class="outline-6">
+<h6 id="org18ea5ef">Lenguaje de bajo nivel</h6>
+<div class="outline-text-6" id="text-org18ea5ef">
+<ul class="org-ul">
+<li>Son instrucciones complejas e ininteligibles -&gt; secuencias
+de 0's y 1's.</li>
+<li>Es entendible por el ordenador (hardware).</li>
+<li>Es dependiente del hardware del ordenador (procesador,
+memoria, &#x2026;).</li>
+<li>No son portables entre distinto hardware (clonico, Apple,
+etc.).</li>
+<li>Trabaja con los registros de Memoria Fisica.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org58954c6" class="outline-6">
+<h6 id="org58954c6">Lenguaje de Medio Nivel o Ensamblador</h6>
+<div class="outline-text-6" id="text-org58954c6">
+<ul class="org-ul">
+<li>Esta cercano al Hardware.</li>
+<li>Surge por la poce portabilidad del L. Maquina.</li>
+<li>Usa mnemotecnicos -&gt; Mas legible por el usuario.</li>
+<li>Se trabaja con los registros del procesador y direcciones
+fisicas.</li>
+<li>No es facil de programar.</li>
+<li>El programador ademas de conocer el lenguaje ha de conocer
+el HW.</li>
+<li>Para hacerlo legible al ordenador:
+<ul class="org-ul">
+<li>Se compila.</li>
+<li>Se traduce al lenguaje maquina.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf5b84d" class="outline-6">
+<h6 id="orgdf5b84d">Lenguaje de Alto Nivel</h6>
+<div class="outline-text-6" id="text-orgdf5b84d">
+<ul class="org-ul">
+<li>Son la mayoria de los lenguajes actuales.</li>
+<li>Mas cercano al lenguaje humano, son mas intuitivos.</li>
+<li>Se ayudan de librerias y funciones.</li>
+<li>Para ejecutarse necesitan de un traductor (interprete o
+compilador).</li>
+<li>Son independientes de la maquina.</li>
+<li>Ejemplo: C++, Cobol, PHP, Java, &#x2026;</li>
+<li>Pueden ofrecer un framework (entorno de trabajo o
+desarrollo):
+<ul class="org-ul">
+<li>La programacion es mas eficiente y rapida.</li>
+<li>Formado por un conjunto de elementos personalizables y
+adaptables a las necesidades de la aplicacion.</li>
+<li>Ejemplo: bootstrap.
+<ul class="org-ul">
+<li>Utilizado en twitter.</li>
+<li>Cualquiera puede realizar paginas y aplicaciones web.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1820c4a" class="outline-5">
+<h5 id="org1820c4a">Segun la forma de ejecucion</h5>
+<div class="outline-text-5" id="text-org1820c4a">
+</div>
+<div id="outline-container-org8e9ad92" class="outline-6">
+<h6 id="org8e9ad92">Compilados</h6>
+<div class="outline-text-6" id="text-org8e9ad92">
+<ul class="org-ul">
+<li>Necesitan de un traductor o compilador.</li>
+<li>Convierten de codigo fuente a codigo maquina.</li>
+<li>Mas rapidos que los interpretes o virtuales.</li>
+<li>Si se producen errores hay que modificar y volver a compilar.</li>
+<li>Utilizando un enlazador o linker:
+<ul class="org-ul">
+<li>Union (codigo objeto programa; codigo objeto de las
+librerias).</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org75cb891" class="outline-6">
+<h6 id="org75cb891">Interpretados</h6>
+<div class="outline-text-6" id="text-org75cb891">
+<ul class="org-ul">
+<li>Se carga en Memoria el interprete.</li>
+<li>Lee las instrucciones + las interpreta + las ejecuta.</li>
+<li>Es mas lento.</li>
+<li>No requiere volver a compilar ante un error.</li>
+<li>Ejemplo: Java -&gt; combina compilacion e interpretacion</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge9e55c3" class="outline-5">
+<h5 id="orge9e55c3">Paradigma de programacion</h5>
+<div class="outline-text-5" id="text-orge9e55c3">
+<ul class="org-ul">
+<li>Paradigma = enfoque particular para construir el SW -&gt; reglas,</li>
+</ul>
+<p>
+patrones, estilos de programacion, &#x2026;
+</p>
+<ul class="org-ul">
+<li>Un lenguaje de programacion puede usar mas de un paradigma -&gt;</li>
+</ul>
+<p>
+se usa el que interesa.
+</p>
+</div>
+<div id="outline-container-orgf242a39" class="outline-6">
+<h6 id="orgf242a39">Categorias</h6>
+<div class="outline-text-6" id="text-orgf242a39">
+</div>
+<div id="outline-container-org7907369" class="outline-7">
+<h7 id="org7907369">Imperativos</h7>
+<div class="outline-text-7" id="text-org7907369">
+<ul class="org-ul">
+<li>Instrucciones simples.</li>
+<li>Detallan como se manipula la informacion de la memoria.</li>
+<li>Sentencia principal -&gt; la asignacion.</li>
+<li>Ejemplo: Basic, Java, Fortran, C++.</li>
+<li>Engloba: programacion estructurada, modular y la POO.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3d1f062" class="outline-7">
+<h7 id="org3d1f062">Funcionales</h7>
+<div class="outline-text-7" id="text-org3d1f062">
+<ul class="org-ul">
+<li>Se basan en el concepto de funcion y los argumentos a
+aplicar.</li>
+<li>Ejemplo: Lisp, Schema, ML.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0844be4" class="outline-7">
+<h7 id="org0844be4">Logicos</h7>
+<div class="outline-text-7" id="text-org0844be4">
+<ul class="org-ul">
+<li>Los podemos ver como una BB.DD. de declaraciones logicas
+-&gt; reglas.</li>
+<li>Ejecucion: consiste en preguntar (BB.DD.) de forma
+interactiva.</li>
+<li>Ej: Prolog -&gt; sistemas expertos, prospecciones.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2894964" class="outline-7">
+<h7 id="org2894964">Estructurados</h7>
+<div class="outline-text-7" id="text-org2894964">
+<ul class="org-ul">
+<li>Utilizan 3 construcciones logicas -&gt; secuencial,
+condicional y repetitiva.</li>
+<li>De lectura y seguimiento facil.</li>
+<li>Si es grande su lectura y manejo se complica.</li>
+<li>Se puede dividir en partes manejables o modulos (con sus
+inputs y outputs).
+<ul class="org-ul">
+<li>Son independientes.</li>
+<li>Hay uno raiz que controla al resto.</li>
+<li>Permite un desarrollo mas rapido.</li>
+<li>Es reutilizable.</li>
+<li>Ej. Pascal, Fortran, C, Modula-2.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbb7e9b9" class="outline-7">
+<h7 id="orgbb7e9b9">Orientados a objetos</h7>
+<div class="outline-text-7" id="text-orgbb7e9b9">
+<ul class="org-ul">
+<li>Un programa es visto como un conjunto de objetos.</li>
+<li>Objeto:
+<ul class="org-ul">
+<li>Es una estructura de datos + metodo u operaciones
+(comportamiento) que los manipulan.</li>
+<li>Los datos son propiedades o atributos de los objetos.</li>
+<li>Los metodos son propiedades o atributos.</li>
+<li>La comunicacion se lleva a cabo mediante paso de mensajes.</li>
+</ul></li>
+<li>Clase:
+<ul class="org-ul">
+<li>Es una plantilla para crear objetos -&gt; instaciacion.</li>
+<li>Ejemplo: Java</li>
+<li>Se asemeja a un modulo (programacion estructurada).</li>
+</ul></li>
+<li>Permite reutilizar codigo, trabajar en equipo y
+mantenimiento del software.</li>
+<li>Su programacion no es tan intuitiva.</li>
+<li>Ej.: C++, Java, Smaltalk.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org748d2c0" class="outline-4">
+<h4 id="org748d2c0">Obtener codigo ejecutable</h4>
+<div class="outline-text-4" id="text-org748d2c0">
+<ul class="org-ul">
+<li>Diseño:
+<ul class="org-ul">
+<li>Componente SW &lt;-&gt; nivel de detalle.</li>
+<li>Herramientas: {Pseudocodigo | DFD}</li>
+<li>Se codifica con un lenguaje de programacion.</li>
+</ul></li>
+<li>Codificacion: se genera el codigo fuente.</li>
+</ul>
+</div>
+<div id="outline-container-org40b0c4e" class="outline-5">
+<h5 id="org40b0c4e">Tipos de codigo</h5>
+<div class="outline-text-5" id="text-org40b0c4e">
+</div>
+<div id="outline-container-org6c4c866" class="outline-6">
+<h6 id="org6c4c866">Fuente</h6>
+<div class="outline-text-6" id="text-org6c4c866">
+<ul class="org-ul">
+<li>Escrito por el programador.</li>
+<li>En lenguaje de alto nivel.</li>
+<li>Mediante editor de texto o herramienta de programacion.</li>
+<li>Se parte de lo pseudocodigos o DFD.</li>
+<li>No se ejecute por el ordenador.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga3aecb7" class="outline-6">
+<h6 id="orga3aecb7">Objeto</h6>
+<div class="outline-text-6" id="text-orga3aecb7">
+<ul class="org-ul">
+<li>Resultado de compilar el codigo fuente.</li>
+<li>No se ejecuta en el ordenador.</li>
+<li>Ininteligible por el humano.</li>
+<li>Representacion a bajo nivel.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge8f19c8" class="outline-6">
+<h6 id="orge8f19c8">Ejecutable</h6>
+<div class="outline-text-6" id="text-orge8f19c8">
+<ul class="org-ul">
+<li>Resultado de enlazar: codigo objeto + rutinas + librerias.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org0863b86" class="outline-5">
+<h5 id="org0863b86">Compilacion</h5>
+<div class="outline-text-5" id="text-org0863b86">
+</div>
+<div id="outline-container-orge539687" class="outline-6">
+<h6 id="orge539687">Compilador</h6>
+<div class="outline-text-6" id="text-orge539687">
+<ul class="org-ul">
+<li>Si existe un error en la compilacion -&gt; no se genera el
+codigo objeto -&gt; modificar el codigo fuente + compilar.</li>
+<li>Etapas:
+<ul class="org-ul">
+<li>Analisis lexico.</li>
+<li>Analisis sintactico.</li>
+<li>Analisis semantico.</li>
+<li>Genera codigo intermedio.</li>
+<li>Optimizar codigo.</li>
+<li>Generar codigo.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org596f05c" class="outline-6">
+<h6 id="org596f05c">Enlazador</h6>
+<div class="outline-text-6" id="text-org596f05c">
+<ul class="org-ul">
+<li>Inserta en el codigo objeto las funciones de las librerias.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org3323c24" class="outline-3">
+<h3 id="org3323c24">Maquinas Virtuales</h3>
+<div class="outline-text-3" id="text-org3323c24">
+<ul class="org-ul">
+<li>El codigo es un codigo intermedio -&gt; bytecode.</li>
+<li>Son mas portables -&gt; sirven para distintas plataformas (Windows,
+Linux, Apple, &#x2026;).</li>
+<li>El codigo es interpretado por una maquina virtual.</li>
+<li>Su ejecucion es lenta.</li>
+<li>Son muy versatiles.</li>
+<li>Aplicacion SW de un equipo que ejecuta programas como si fuese una
+maquina real.</li>
+</ul>
+</div>
+<div id="outline-container-org542791b" class="outline-4">
+<h4 id="org542791b">Categorias</h4>
+<div class="outline-text-4" id="text-org542791b">
+</div>
+<div id="outline-container-org7f6dba3" class="outline-5">
+<h5 id="org7f6dba3">De sistema</h5>
+<div class="outline-text-5" id="text-org7f6dba3">
+<ul class="org-ul">
+<li>Ejecuta en la misma fisica distintas maquinas virtuales con
+distintos sistemas operativos.</li>
+<li>Ej: VMWare, VBox</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf0b0f6" class="outline-5">
+<h5 id="orgdf0b0f6">De proceso o de aplicacion</h5>
+<div class="outline-text-5" id="text-orgdf0b0f6">
+<ul class="org-ul">
+<li>La VM se ejecuta como un proceso en el SS.OO.</li>
+<li>Objetivo: proporcionar un entorno de ejecucion con
+independiencia del HW y el OS.</li>
+<li>Permite que un programa se ejecute de distinta manera en
+distinta plataforma.</li>
+<li>Ejemplo: VM Java</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org66757f6" class="outline-4">
+<h4 id="org66757f6">La maquina virtual de Java</h4>
+<div class="outline-text-4" id="text-org66757f6">
+<ul class="org-ul">
+<li>Programa compilador Java -&gt; se ejecuta en distintos entornos.</li>
+<li>El codigo generado por el compilador -&gt; lo ejecuta la JVM, no el
+procesador.</li>
+<li>Dibujo.</li>
+</ul>
+</div>
+<div id="outline-container-org76ff7d8" class="outline-5">
+<h5 id="org76ff7d8">Tareas o funciones</h5>
+<div class="outline-text-5" id="text-org76ff7d8">
+<ul class="org-ul">
+<li>Reservar / Liberar memoria para los objetos.</li>
+<li>Comunicarse con el HW.</li>
+<li>Comprobar el cumplimiento de las normas de seguridad de
+aplicaciones Java.</li>
+<li>Inconvenientes:
+<ul class="org-ul">
+<li>Ejecucion mas lenta.</li>
+</ul></li>
+<li>Descargar e instalar el JRE.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1811f36" class="outline-3">
+<h3 id="org1811f36">Lenguajes mas difundidos. Caracteristicas.</h3>
+<div class="outline-text-3" id="text-org1811f36">
+</div>
+<div id="outline-container-org280bded" class="outline-4">
+<h4 id="org280bded">Java</h4>
+<div class="outline-text-4" id="text-org280bded">
+<ul class="org-ul">
+<li>Evolucion de C++ -&gt; lo simplifica.</li>
+<li>LOO (Lenguaje Orientado a Objetos).</li>
+<li>Capaz de trabajar con redes y protocolos (IP, HTTP, FTP, &#x2026;).</li>
+<li>Lenguaje Virtual Interpretado.</li>
+<li>Portable.</li>
+<li>Contempla aspectos de seguridad.</li>
+<li>Permite ejecucion multihilo.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org246ce08" class="outline-4">
+<h4 id="org246ce08">Python</h4>
+<div class="outline-text-4" id="text-org246ce08">
+<ul class="org-ul">
+<li>De alto nivel pero simple y sencillo</li>
+<li>Muy portable.</li>
+<li>Interpretado como Java: codigo fuente -&gt; bytecode.</li>
+<li>El enlace con las librerias -&gt; Al ejecutar el bytecode.</li>
+<li>LOO.</li>
+<li>Incrustable en otros lenguajes como C y C++.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org58af97d" class="outline-4">
+<h4 id="org58af97d">C y C++</h4>
+<div class="outline-text-4" id="text-org58af97d">
+<ul class="org-ul">
+<li>Potente, versatil y se sigue utilizando.</li>
+<li>Ligado a Unix.</li>
+<li>Estructurado y ligado al uso de funciones.</li>
+<li>Puede incluir codigo que trabaje a bajo nivel.</li>
+<li>Programas eficientes y rapidos.</li>
+<li>Tamaño pequeño de los programas.</li>
+<li>Portable, aunque puede necesitar modificaciones.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f69d33" class="outline-4">
+<h4 id="org3f69d33">JavaScript</h4>
+<div class="outline-text-4" id="text-org3f69d33">
+<ul class="org-ul">
+<li>En programacion web.</li>
+<li>Parecido a Java, C, C++.</li>
+<li>Se ejecuta en el cliente.</li>
+<li>Es seguro y fiable.</li>
+<li>Tiene limitaciones de seguridad.</li>
+<li>Codigo visible -&gt; podemos leerlo.</li>
+<li>Existen muchas librerias basadas en JavaScript como JQuery.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1278e00" class="outline-4">
+<h4 id="org1278e00">PHP</h4>
+<div class="outline-text-4" id="text-org1278e00">
+<ul class="org-ul">
+<li>Multiplataforma.</li>
+<li>Para desarrollar webs dinamicas.</li>
+<li>Buena integracion con MySQL.</li>
+<li>Puede usar tecnicas de POO (Programacion Orientada a Objetos).</li>
+<li>Interpretado en la parte del servidor.</li>
+<li>En backend de CMS (Pretashop, Wordpress, &#x2026;).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org19afe12" class="outline-4">
+<h4 id="org19afe12">VB.NET</h4>
+<div class="outline-text-4" id="text-org19afe12">
+<ul class="org-ul">
+<li>Evolucion de Visual Basic.</li>
+<li>LOO.</li>
+<li>Herramientas para programarlo.
+<ul class="org-ul">
+<li>Microsoft Visual Estudio.</li>
+<li>Sharp Develop -&gt; Libre, menos potente.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8721625" class="outline-3">
+<h3 id="org8721625">Desarrollo de una aplicacion</h3>
+<div class="outline-text-3" id="text-org8721625">
+<ul class="org-ul">
+<li>Existen distintos paradigmas.</li>
+</ul>
+</div>
+<div id="outline-container-orgbac1634" class="outline-4">
+<h4 id="orgbac1634">Fases</h4>
+<div class="outline-text-4" id="text-orgbac1634">
+</div>
+<div id="outline-container-orgab0df55" class="outline-5">
+<h5 id="orgab0df55">Inicial</h5>
+<div class="outline-text-5" id="text-orgab0df55">
+<ul class="org-ul">
+<li>Planificacion, Estimaciones y Rentabilidad del proyecto.</li>
+<li>Simil: construccion de un edificio: licencia, coste,
+trabajadores, tiempo, &#x2026;</li>
+<li>Gente experimentada en:
+<ul class="org-ul">
+<li>Elaboracion del proyecto.</li>
+<li>Plataforma de construccion.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org206004c" class="outline-5">
+<h5 id="org206004c">Analisis</h5>
+<div class="outline-text-5" id="text-org206004c">
+<ul class="org-ul">
+<li>Se recopilan, examinan y formulan los requisitos del cliente.</li>
+<li>Se analizan posibles restricciones.</li>
+<li>Se documentan y registran las entrevistas con el cliente.</li>
+<li>El cliente se compromete a no variar nada hasta la 1a release.</li>
+<li>El exito del proyecto esta en funcion de comprender y entender
+lo que quiere el cliente para darle una solucion lo mas
+acertada posible.</li>
+<li>No es facil, ya que los requisitos no quedan claros, surgen
+nuevos, etc.</li>
+<li>Importante: comunicacion cliente-desarrollador.</li>
+</ul>
+</div>
+<div id="outline-container-org6ea50dc" class="outline-6">
+<h6 id="org6ea50dc">Tecnicas utilizadas</h6>
+<div class="outline-text-6" id="text-org6ea50dc">
+<ul class="org-ul">
+<li>Entrevistas.</li>
+<li>Desarrollo conjunto de aplicaciones, donde cada persona
+juega un rol.</li>
+<li>Planificacion conjunta de requisitos.</li>
+<li>Brainstorming.</li>
+<li>Prototipos.</li>
+<li>Casos de Uso: UML (Lenguaje Unificado de Marcas) -&gt;
+escenarios, comportamientos -&gt; requisitos funcionales.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org97e9d57" class="outline-6">
+<h6 id="org97e9d57">Tipos de requisitos</h6>
+<div class="outline-text-6" id="text-org97e9d57">
+<ul class="org-ul">
+<li>Funcionales: Comportamiento del sistema ante determinados
+inputs.</li>
+<li><p>
+No Funcionales: sobre caracteristicas del sistema:
+fiabilidad, plataforma, HW, &#x2026;
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Funcionales</th>
+<th scope="col" class="org-left">No Funcionales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">El usuario puede agregar</td>
+<td class="org-left">La aplicacion debe funcionar en</td>
+</tr>
+
+<tr>
+<td class="org-left">un nuevo contacto</td>
+<td class="org-left">SS.OO. Linux y Windows</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">El usuario puede ver una</td>
+<td class="org-left">El tiempo de respuesta a consultas,</td>
+</tr>
+
+<tr>
+<td class="org-left">lista con todos los contactos</td>
+<td class="org-left">altas, bajas y modificaciones ha de</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">ser inferior a 5 segundos</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">A partir de la lista de contactos</td>
+<td class="org-left">Utilizar un sistema gestor de bases</td>
+</tr>
+
+<tr>
+<td class="org-left">el usuario puede acceder a un contacto</td>
+<td class="org-left">de datos</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org76c9390" class="outline-6">
+<h6 id="org76c9390">Representacion de requisitos</h6>
+<div class="outline-text-6" id="text-org76c9390">
+</div>
+<div id="outline-container-org3aa219d" class="outline-7">
+<h7 id="org3aa219d">DFD (Diagrama De Flujo de Datos)</h7>
+<div class="outline-text-7" id="text-org3aa219d">
+<ul class="org-ul">
+<li>Procesos -&gt; Funciones</li>
+<li>Entidades externas: no pertenecen al sistema y proporciona
+datos o se reciben de el.</li>
+<li>Almacenes: almacena los datos procesados.</li>
+<li>Flujo de datos.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org654aabd" class="outline-7">
+<h7 id="org654aabd">DFC (Diagrama de Flujo de Control)</h7>
+<div class="outline-text-7" id="text-org654aabd">
+<ul class="org-ul">
+<li>Muestra el flujo de control, no de Estados.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgad68f38" class="outline-7">
+<h7 id="orgad68f38">DTE (Diagrama de Transicion de Estados)</h7>
+<div class="outline-text-7" id="text-orgad68f38">
+<ul class="org-ul">
+<li>Comportamiento del sistema en funcion de los sucesos externos.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3bc5583" class="outline-7">
+<h7 id="org3bc5583">DER (Diagrama Entidad Relacion)</h7>
+<div class="outline-text-7" id="text-org3bc5583">
+<ul class="org-ul">
+<li>Representa los datos y como se relacionan entre ellos.</li>
+<li>Entidades.</li>
+<li>Relaciones.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcb4dc92" class="outline-7">
+<h7 id="orgcb4dc92">DD (Diccionario de Datos)</h7>
+<div class="outline-text-7" id="text-orgcb4dc92">
+<ul class="org-ul">
+<li>Describe detalladamente los datos (flujo, almacenes) del
+DFD.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org709369e" class="outline-7">
+<h7 id="org709369e">Documento Generado</h7>
+<div class="outline-text-7" id="text-org709369e">
+<ul class="org-ul">
+<li>Especificacion de Requisiton del SW.</li>
+<li>Estructura: IEEE 830.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb93de4e" class="outline-5">
+<h5 id="orgb93de4e">Diseño</h5>
+<div class="outline-text-5" id="text-orgb93de4e">
+<ul class="org-ul">
+<li>Composicion sobre la solucion al problema.</li>
+<li>Requisitos -&gt; representacion del SW.</li>
+<li>Se realizan 2 documentos por los analistas, supervisado por el
+jefe del proyecto.
+<ul class="org-ul">
+<li>Se determinan los requisitos generales de la arquitectura de
+la aplicacion.</li>
+<li>Se define con precision cada subconjunto de la aplcacion.</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org34da206" class="outline-6">
+<h6 id="org34da206">Estructurado: flujo de datos sobre el sistema.</h6>
+<div class="outline-text-6" id="text-org34da206">
+</div>
+<div id="outline-container-orgeb32329" class="outline-7">
+<h7 id="orgeb32329">Diseño de datos</h7>
+<div class="outline-text-7" id="text-orgeb32329">
+<ul class="org-ul">
+<li>Son las estructuras de datos necesarias para implementar
+el software.</li>
+<li>Se basan en el diagrama E/R y la descripcion detallada
+de los datos.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfa283cb" class="outline-7">
+<h7 id="orgfa283cb">Diseño arquitectonico</h7>
+<div class="outline-text-7" id="text-orgfa283cb">
+<ul class="org-ul">
+<li>Se centra en la representacion de la estructura de los
+componentes del SW, sus propiedades e interacciones.</li>
+<li>Un componente del SW puede ser desde un modulo de
+programa, una BB.DD., conectores que permitan la
+comunicacion, etc.</li>
+<li>Se parte del DFD para establecer la estructura modular
+del SW a desarrollar.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc8db89e" class="outline-7">
+<h7 id="orgc8db89e">Diseño de la interfaz</h7>
+<div class="outline-text-7" id="text-orgc8db89e">
+<ul class="org-ul">
+<li>Describe la comunicacion entre (SW, Personas, Otros
+sistemas).</li>
+<li>El resultado -&gt; Creacion de formatos de pantalla.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgefa5bba" class="outline-7">
+<h7 id="orgefa5bba">Diseño a nivel de componentes</h7>
+<div class="outline-text-7" id="text-orgefa5bba">
+<ul class="org-ul">
+<li>Transforma: elementos estructurales (arquitectura) en
+una descripcion procedimental -&gt; diseño de componentes
+SW.</li>
+<li>El nivel de detalle de cada componente del software se
+debe poder codificar mediante un lenguaje de
+programacion.</li>
+<li>Sus fundamentos se basan en distintas representaciones
+graficas utilizando notaciones como:
+<ul class="org-ul">
+<li>Diagramas de flujo.</li>
+<li>Diagramas de cajas.</li>
+<li>Tablas de decision.</li>
+<li>Pseudocodigo.</li>
+</ul></li>
+<li>Construcciones logicas para formar un programa -&gt;
+programacion estructurada:
+<ul class="org-ul">
+<li>Secuencial</li>
+<li>Condicional</li>
+<li>Seleccion Multiple</li>
+<li>Repetitiva</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org609be37" class="outline-6">
+<h6 id="org609be37">O.O.: objetos, propiedades, comportamiento, eventos, estado.</h6>
+<div class="outline-text-6" id="text-org609be37">
+<ul class="org-ul">
+<li>Es dificil.</li>
+<li>Parte de un Analisis O.O.</li>
+<li>Etapas:
+<ul class="org-ul">
+<li>Subsistemas que implementan las pricipales funciones del
+sistema.</li>
+<li>Clases y Objetos:
+<ul class="org-ul">
+<li>Arquitectura de objetos global.</li>
+<li>Jerarquia de clases.</li>
+</ul></li>
+<li>Mensajes: colaboracion entre Objetos.</li>
+</ul></li>
+<li>UML:
+<ul class="org-ul">
+<li>Diagramas para expresar modelos.</li>
+<li>Estandar de facto.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9cc21b9" class="outline-5">
+<h5 id="org9cc21b9">Codificacion o Implementacion</h5>
+<div class="outline-text-5" id="text-org9cc21b9">
+<ul class="org-ul">
+<li>Implementa el software mediante un lenguaje de programacion.</li>
+<li>Documentacion detallada que contiene el codigo (E/, S/,
+revision, &#x2026;)</li>
+<li>Mucho codigo se suele comentar en el mismo programa.</li>
+<li>Importancia:
+<ul class="org-ul">
+<li>Puede mantenerse por la misma u otra persona.</li>
+<li>La que lo mantenga ha de saber que hace cada parte y como lo
+hace.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3601e11" class="outline-5">
+<h5 id="org3601e11">Pruebas</h5>
+<div class="outline-text-5" id="text-org3601e11">
+<ul class="org-ul">
+<li>Garantizan que cumple las especificaciones del cliente.</li>
+<li>Los mismos programas se integran bien y esta listo para la
+explotacion.</li>
+<li>Documentos y pruebas (Con el cliente presente, opcional):
+<ul class="org-ul">
+<li>Se ve si cumple con las funciones acordadas en los
+documentos.</li>
+<li>Se detallan:
+<ul class="org-ul">
+<li>Los fallos.</li>
+<li>Las modificaciones.</li>
+</ul></li>
+</ul></li>
+<li>Estructurales:
+<ul class="org-ul">
+<li>Pruebas tecnicas (sin clientes).</li>
+<li>Cargas reales, estres del sistema y de la aplicacion.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2d38736" class="outline-5">
+<h5 id="org2d38736">Explotacion</h5>
+<div class="outline-text-5" id="text-org2d38736">
+<ul class="org-ul">
+<li>Instalacion del software en el entorno real.</li>
+<li>Se trabaja con el de forma normal.</li>
+<li>Fase mas larga: incidencias, nuevas necesidades, etc.</li>
+<li>Documentacion:
+<ul class="org-ul">
+<li>Errores o fallos concretos.</li>
+<li>Los analistas y programadores los revisan y solucionan.</li>
+<li>Otras necesidades -&gt; en Mantenimiento</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6ebedfd" class="outline-5">
+<h5 id="org6ebedfd">Mantenimiento</h5>
+<div class="outline-text-5" id="text-org6ebedfd">
+<ul class="org-ul">
+<li>Acciones:
+<ul class="org-ul">
+<li>Correctivas de fallos.</li>
+<li>Actualizaciones -&gt; adaptarlos y evolucionarias.</li>
+</ul></li>
+<li>Se utiliza la documentacion tecnica.</li>
+<li>Todo se documenta: que operacion, que hace, como -&gt; pruebas
+distintas para el programador.</li>
+<li>TODAS LAS FASES SE VAN SOLAPANDO. CUANDO FINALIZAN, SU
+RESULTADO ES LA APLICACION</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc36bf81" class="outline-5">
+<h5 id="orgc36bf81">Documentacion</h5>
+<div class="outline-text-5" id="text-orgc36bf81">
+<ul class="org-ul">
+<li>Debe ser util y adaptada a los usuarios de dicha
+documentacion. Como minimo:
+<ul class="org-ul">
+<li>Manual de usuario:
+<ul class="org-ul">
+<li>Para utilizar el programa, manejo, lo que hay que hacer,
+lo que no.</li>
+<li>Ayuda, explicativo.</li>
+</ul></li>
+<li>Manual tecnico:
+<ul class="org-ul">
+<li>Tecnicos que conozcan el lenguaje.</li>
+<li>Para que la conozcan como los que la crearon.</li>
+</ul></li>
+<li>Manual de instalacion:
+<ul class="org-ul">
+<li>Requisitos necesarios.</li>
+<li>Como se instala.</li>
+<li>Como so pne en funcionamiento.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org205f92b" class="outline-4">
+<h4 id="org205f92b">Roles en el desarrollo de software</h4>
+<div class="outline-text-4" id="text-org205f92b">
+</div>
+<div id="outline-container-orgee30646" class="outline-5">
+<h5 id="orgee30646">Arquitecto del SW</h5>
+<div class="outline-text-5" id="text-orgee30646">
+<ul class="org-ul">
+<li>Decide:
+<ul class="org-ul">
+<li>Como va a realizarse.</li>
+<li>Como se va a cohesionar.</li>
+</ul></li>
+<li>Con elevado conocimiento de tecnologias, frameworks,
+librerias, etc.</li>
+<li>Decide la forma y recursos del proyecto.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf9605b9" class="outline-5">
+<h5 id="orgf9605b9">Jefe de Proyecto</h5>
+<div class="outline-text-5" id="text-orgf9605b9">
+<ul class="org-ul">
+<li>Dirige el proyecto.</li>
+<li>Puede ser un analista experimentado.</li>
+<li>Sabiduria en gestinar:
+<ul class="org-ul">
+<li>Equipos.</li>
+<li>Tiempos.</li>
+<li>Relacion con clientes.</li>
+<li>Etc</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org624b3c8" class="outline-5">
+<h5 id="org624b3c8">Analista del sistema</h5>
+<div class="outline-text-5" id="text-org624b3c8">
+<ul class="org-ul">
+<li>Tiene mucha experiencia.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org2170318" class="outline-2">
+<h2 id="org2170318">TEMA 2</h2>
+<div class="outline-text-2" id="text-org2170318">
+<ul class="org-ul">
+<li>&#x2026;</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Alberto Robles Gomez</p>
+<p class="date">Created: 2021-12-04 Sat 18:25</p>
+</div>
+</body>
+</html>

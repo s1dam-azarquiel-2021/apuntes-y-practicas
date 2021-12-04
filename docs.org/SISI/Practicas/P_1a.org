@@ -1,0 +1,115 @@
+#+TITLE: Practica 1A
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+* Ordenador A
+Proposito: general
+
+Presupuesto: 1000 euros
+
+#+NAME: ordenador-A
+| <~> | Elemento   | Marca       | Modelo                            | Foto                                             | Vendedor      | Fabricante  | Caracteristicas                | Cantidad | Precio |    <~> |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+|     | Procesador | AMD         | Ryzen 5 5600G                     | [[file:./img/amd-ryzen-5600G.png]]                   | [[https://www.amazon.es/AMD-Ryzen-5600G-Wraith-Stealth/dp/B092L9GF5N?qsid=257-2094730-8436744&sres=B092L9GF5N%2CB09BVSP8TP%2CB08166SLDF%2CB07SXMZLPK%2CB091J3NYVF%2CB07STGGQ18%2CB0815XFSGK%2CB08Q841H8P%2CB07SXNDKNM%2CB07B428V2L%2CB096BBQYTT%2CB08924TQJ3%2CB07SXMZLP9%2CB07STGHZK8%2CB08164VTWH%2CB07SXMZLPJ%2CB0815JGFQ8%2CB08N5F9Z3R%2CB09FYDWXX8%2CB07SQBFN2D&srpt=COMPUTER_PROCESSOR][Amazon]]        | AMD         | 6 nucleos + 12 hilos           |        1 | 217.16 | 217.16 |
+|     |            |             |                                   |                                                  |               |             | 7 nucleos GPU                  |          |        |      0 |
+|     |            |             |                                   |                                                  |               |             | 3.9GHz, max 4.4GHz             |          |        |      0 |
+|     |            |             |                                   |                                                  |               |             | TDP: 65W                       |          |        |      0 |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+|     | Placa Base | MSI         | B450M Mortar Max                  | [[file:./img/b450m-mortar-max.png]]                  | [[https://www.amazon.es/MSI-B450M-Mortar-MAX-B450/dp/B07WC6LLB6?qsid=257-2094730-8436744&sres=B07WC6LLB6%2CB07WC724Z7%2CB08L598DYN%2CB09H5DXXXV%2CB09H5FHJ6P%2CB09FTBCR46%2CB084RMJ6BK%2CB07MV9BMNY%2CB08B4SD768%2CB07W838JXD%2CB08K96RV9H%2CB07W6YZNLN%2CB08BCR4ZRS%2CB07TXWYL4W%2CB08B8WTLMH%2CB08K91L574%2CB09BTQ22VN%2CB08K13TJS3%2CB07FKNM8FQ%2CB08B4V583Q&srpt=MOTHERBOARD][Amazon]]        | MSI         | 1x Turbo M.2                   |        1 |  55.28 |  55.28 |
+|     |            |             |                                   |                                                  |               |             | 1x USB 3.2 Gen 2 A y C         |          |        |      0 |
+|     |            |             |                                   |                                                  |               |             | Micro ATX                      |          |        |      0 |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+|     | Ram        | GSkill      | Trident Z RGB AMD DDR4 3200       | [[file:./img/trident-z-rgb-amd-ddr4-3200-2x8.png]]   | [[https://www.pccomponentes.com/gskill-trident-z-rgb-amd-ddr4-3200-pc4-25600-16gb-2x8gb-cl16][PcComponentes]] | GSkill      | 3200MHz                        |        1 |  95.55 |  95.55 |
+|     |            |             |                                   |                                                  |               |             | DDR4                           |          |        |      0 |
+|     |            |             |                                   |                                                  |               |             | 2x8GB                          |          |        |      0 |
+|     |            |             |                                   |                                                  |               |             | CL16                           |          |        |      0 |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+|     | SSD        | Samsung     | 980 Pro NVMe PCIe M.2             | [[file:./img/980-pro-nvme-pcie-m2.png]]              | [[https://www.pccomponentes.com/samsung-980-pro-ssd-250gb-pcie-nvme-m2][PcComponentes]] | Samsung     | 250GB                          |        1 |  63.74 |  63.74 |
+|     |            |             |                                   |                                                  |               |             | 6400MB/s lectura               |          |        |      0 |
+|     |            |             |                                   |                                                  |               |             | 2700MB/s escritura             |          |        |      0 |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+|     | SSD        | Kingstone   | A2000 NVMe PCIe M.2               | [[file:./img/a2000-nvme-pcie-m2.png]]                | [[https://www.pccomponentes.com/kingston-a2000-m2-1tb-pci-express-30-nvme][PcComponentes]] | Kingstone   | 1TB                            |        1 |  85.62 |  85.62 |
+|     |            |             |                                   |                                                  |               |             | 2200MB/s lectura               |          |        |      0 |
+|     |            |             |                                   |                                                  |               |             | 2000MB/s escritura             |          |        |      0 |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+|     | Caja       | HSCCGI      | Mini Tower with Dual rainbow Fans | [[file:./img/mini-tower-with-dual-rainbow-fans.png]] | [[https://www.newegg.com/p/2AM-0323-00022][NewEgg]]        | HSCCGI      | 2 ventiladores 140mm incluidos |        1 |  53.92 |  53.92 |
+|     |            |             |                                   |                                                  |               |             | 1x USB 3.0 frontal             |          |        |      0 |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+|     | Fuente     | Seasonic    | Core GC 500 500W 80 Plus Gold     | [[file:./img/core-gc-500-500w-80-plus-gold.png]]     | [[https://www.pccomponentes.com/seasonic-core-gc-500-500w-80-plus-gold][PcComponentes]] | Seasonic    | 500W                           |        1 |  43.79 |  43.79 |
+|     |            |             |                                   |                                                  |               |             | 80 Plus Gold                   |          |        |      0 |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+|     | Teclado    | Mars Gaming | MKMINI Switch Outemu Brown        | [[file:./img/mkmini-switch-outemu-brown.png]]        | [[https://www.pccomponentes.com/mars-gaming-mkmini-teclado-mecanico-switch-outemu-marron][PcComponentes]] | Mars Gaming | Switches outemu brown          |        1 |  28.02 |  28.02 |
+|     |            |             |                                   |                                                  |               |             | 60%                            |          |        |      0 |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+|     | Raton      | Aukey       | Knight Ratón RGB 10000 DPI Negro  | [[file:./img/aukey-knight-raton.png]]                | [[https://www.pccomponentes.com/aukey-knight-raton-rgb-10000-dpi-negro][PcComponentes]] | Aukey       | 8 botones                      |        1 |  13.63 |  13.63 |
+|     |            |             |                                   |                                                  |               |             | 10000 dpi                      |          |        |      0 |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+|     | Monitor    | Lenovo      | C27-35                            | [[file:./img/lenovo-c27-35.png]]                     | [[https://www.pccomponentes.com/lenovo-c27-35-27-led-fullhd-freesync][PcComponentes]] | Lenovo      | 27" 1920x1080 16:9             |        1 | 107.42 | 107.42 |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+| _   |            |             |                                   |                                                  |               |             |                                |          |   subt |        |
+|     |            |             |                                   |                                                  |               |             |                                | Subtotal | 764.13 |        |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+| _   |            |             |                                   |                                                  |               |             |                                |          |    iva |        |
+|     |            |             |                                   |                                                  |               |             |                                | IVA(21%) | 160.47 |        |
+|-----+------------+-------------+-----------------------------------+--------------------------------------------------+---------------+-------------+--------------------------------+----------+--------+--------|
+| _   |            |             |                                   |                                                  |               |             |                                |          |  total |        |
+|     |            |             |                                   |                                                  |               |             |                                |    Total | 924.60 |        |
+#+TBLFM: @2$>..@-6$>=$9*$10
+#+TBLFM: $subt=vsum(@2$>..@-2$>);%.2f
+#+TBLFM: $iva=$subt*21%;%.2f
+#+TBLFM: $total=$subt+$iva;%.2f
+
+* Ordenador B
+Proposito: servidor de CI (build server) / servidor de compilacion (de
+cache binaria para software / kernel por ejemplo)
+
+Presupuesto: +1700+ 3700 euros
+
+#+NAME: ordenador-A
+| <~> | Elemento      | Marca     | Modelo                   | Foto                                | Vendedor      | Fabricante | Caracteristicas             | Cantidad |  Precio |    <~> |
+|-----+---------------+-----------+--------------------------+-------------------------------------+---------------+------------+-----------------------------+----------+---------+--------|
+|     | Procesador    | AMD       | Ryzen Threadripper 3970X | [[file:./img/amd-ryzen-5600G.png]]      | [[https://www.amazon.es/AMD-Ryzen-5600G-Wraith-Stealth/dp/B092L9GF5N?qsid=257-2094730-8436744&sres=B092L9GF5N%2CB09BVSP8TP%2CB08166SLDF%2CB07SXMZLPK%2CB091J3NYVF%2CB07STGGQ18%2CB0815XFSGK%2CB08Q841H8P%2CB07SXNDKNM%2CB07B428V2L%2CB096BBQYTT%2CB08924TQJ3%2CB07SXMZLP9%2CB07STGHZK8%2CB08164VTWH%2CB07SXMZLPJ%2CB0815JGFQ8%2CB08N5F9Z3R%2CB09FYDWXX8%2CB07SQBFN2D&srpt=COMPUTER_PROCESSOR][PcComponentes]] | AMD        | 32 nucleos + 12 hilos       |        1 | 1702.40 | 1702.4 |
+|     |               |           |                          |                                     |               |            | 3.7GHz, max 4.5GHz          |          |         |      0 |
+|     |               |           |                          |                                     |               |            | 3MB L1, 16MB L2, 128MB L3   |          |         |      0 |
+|     |               |           |                          |                                     |               |            | TDP: 280W                   |          |         |      0 |
+|-----+---------------+-----------+--------------------------+-------------------------------------+---------------+------------+-----------------------------+----------+---------+--------|
+|     | Placa Base    | Gigabyte  | TRX40 Aorus Master       | [[file:./img/trx40-aorus-master.png]]   | [[https://www.pccomponentes.com/gigabyte-trx40-aorus-master-reacondicionado][PcComponentes]] | Gigabyte   | 3x NVMe PCIe 4.0            |        1 |  438.68 | 438.68 |
+|     |               |           |                          |                                     |               |            | 3x USB A 3.2 y 1x USB C 3.2 |          |         |      0 |
+|     |               |           |                          |                                     |               |            | Quad Channel ECC            |          |         |      0 |
+|-----+---------------+-----------+--------------------------+-------------------------------------+---------------+------------+-----------------------------+----------+---------+--------|
+|     | Ram           | Kingstone | KSM24ED8/16ME            | [[file:./img/ksm24ed8-16me.png]]        | [[https://www.pccomponentes.com/kingston-ksm24ed8-16me-ddr4-2400mhz-pc4-19200-16gb-cl17-ecc][PcComponentes]] | Kingstone  | 2400MHz                     |        4 |   94.21 | 376.84 |
+|     |               |           |                          |                                     |               |            | DDR4                        |          |         |      0 |
+|     |               |           |                          |                                     |               |            | 1x16GB                      |          |         |      0 |
+|     |               |           |                          |                                     |               |            | CL17                        |          |         |      0 |
+|     |               |           |                          |                                     |               |            | ECC                         |          |         |      0 |
+|-----+---------------+-----------+--------------------------+-------------------------------------+---------------+------------+-----------------------------+----------+---------+--------|
+|     | SSD           | Samsung   | 980 Pro NVMe PCIe M.2    | [[file:./img/980-pro-nvme-pcie-m2.png]] | [[https://www.pccomponentes.com/samsung-980-pro-ssd-250gb-pcie-nvme-m2][PcComponentes]] | Samsung    | 250GB                       |        1 |   63.74 |  63.74 |
+|     |               |           |                          |                                     |               |            | 6400MB/s lectura            |          |         |      0 |
+|     |               |           |                          |                                     |               |            | 2700MB/s escritura          |          |         |      0 |
+|-----+---------------+-----------+--------------------------+-------------------------------------+---------------+------------+-----------------------------+----------+---------+--------|
+|     | SSD           | Samsung   | 980 NVMe PCIe M.2        | [[file:./img/980-nvme-pcie-m2.png]]     | [[https://www.pccomponentes.com/samsung-980-ssd-500gb-pcie-30-nvme-m2][PcComponentes]] | Samsung    | 500GB                       |        1 |   60.13 |  60.13 |
+|     |               |           |                          |                                     |               |            | 3100MB/s lectura            |          |         |      0 |
+|     |               |           |                          |                                     |               |            | 2600MB/s escritura          |          |         |      0 |
+|-----+---------------+-----------+--------------------------+-------------------------------------+---------------+------------+-----------------------------+----------+---------+--------|
+|     | Caja          | Corsair   | 4000D                    | [[file:./img/4000d.png]]                | [[https://www.pccomponentes.com/corsair-4000d-airflow-cristal-templado-usb-31-negra][PcComponentes]] | Corsair    | Cabe la liquida             |        1 |   96.15 |  96.15 |
+|     |               |           |                          |                                     |               |            | Incluye 2x ventilador 120mm |          |         |      0 |
+|     |               |           |                          |                                     |               |            | Eatx                        |          |         |      0 |
+|-----+---------------+-----------+--------------------------+-------------------------------------+---------------+------------+-----------------------------+----------+---------+--------|
+|     | Fuente        | Corsair   | RM 850 80 Plus Gold      | [[file:./img/rm-850-80-plus-gold.png]]  | [[https://www.pccomponentes.com/seasonic-core-gc-500-500w-80-plus-gold][PcComponentes]] | Corsair    | 850W                        |        1 |   86.01 |  86.01 |
+|     |               |           |                          |                                     |               |            | 80 Plus Gold                |          |         |      0 |
+|     |               |           |                          |                                     |               |            | Full Modular                |          |         |      0 |
+|-----+---------------+-----------+--------------------------+-------------------------------------+---------------+------------+-----------------------------+----------+---------+--------|
+|     | Refrigeracion | Asus      | ROG Ryujin 360           | [[file:./img/rog-ryujin-360.png]]       | [[https://www.pccomponentes.com/mars-gaming-mkmini-teclado-mecanico-switch-outemu-marron][PcComponentes]] | Asus       | Ventiladores 3x 120mm       |        1 |  196.98 | 196.98 |
+|     |               |           |                          |                                     |               |            | Liquida                     |          |         |      0 |
+|-----+---------------+-----------+--------------------------+-------------------------------------+---------------+------------+-----------------------------+----------+---------+--------|
+| _   |               |           |                          |                                     |               |            |                             |          |    subt |        |
+|     |               |           |                          |                                     |               |            |                             | Subtotal | 3020.93 |        |
+|-----+---------------+-----------+--------------------------+-------------------------------------+---------------+------------+-----------------------------+----------+---------+--------|
+| _   |               |           |                          |                                     |               |            |                             |          |     iva |        |
+|     |               |           |                          |                                     |               |            |                             | IVA(21%) |  634.40 |        |
+|-----+---------------+-----------+--------------------------+-------------------------------------+---------------+------------+-----------------------------+----------+---------+--------|
+| _   |               |           |                          |                                     |               |            |                             |          |   total |        |
+|     |               |           |                          |                                     |               |            |                             |    Total | 3655.33 |        |
+#+TBLFM: @2$>..@-6$>=$9*$10
+#+TBLFM: $subt=vsum(@2$>..@-2$>);%.2f
+#+TBLFM: $iva=$subt*21%;%.2f
+#+TBLFM: $total=$subt+$iva;%.2f

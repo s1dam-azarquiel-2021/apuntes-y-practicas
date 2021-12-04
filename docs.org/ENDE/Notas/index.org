@@ -1,0 +1,569 @@
+#+TITLE: ENDE - Notas
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+* TEMA 1
+** Conceptos de software, programa y aplicacion.
+*** Software
+- Tambien denominado componente logico.
+- Es intangible, a diferencia del hardware que es tangible.
+- Realiza una tarea determinada.
+- Se comunica con el hardware para llevar a cabo su tarea.
+- Se desarrolla, no se fabrica.
+- Incluye los datos utilizados por los programas.
+- Puede ser a medida o enlatado.
+**** Categorias
+***** Segun el tipo de tarea que realiza
+****** De sistema
+- Hace que funcione el HW.
+- Administra los recursos HW.
+- Intermediario: Humano - HW.
+- Ejemplo: SS. OO., Controladores (driver)
+****** De aplicacion
+- Nos ayudan a realizar tareas especificas -> automatizan.
+- Ejemplo: CAD, SW medico, contabilidad, ofimatica, ...
+****** De programacion o Desarrollo
+- Proporciona herramientas al progamador.
+- Suelen contar con un IDE (Entornos de Desarrollo Integrados).
+- Ejemplos: Eclipse.
+***** Segun el metodo de distribucion
+****** Shareware
+- El usuario evalua el producto el producto por tiempo determinado.
+- Adquirir su licencia -> $ | Precio cero
+- Ejemplo: Winrar
+****** Freeware
+- Se distribuye sin $.
+- Incluye una licencia:
+- Permite su redistrubacion.
+- Restricciones: vender, modificar.
+- No es software de libre distribucion.
+****** Adware
+- Shareware + se descarga automaticamente + publicidad.
+- Al comprar la licencia -> desaparece la publicidad.
+****** Multimedia
+- Integra textos, graficos, sonidos, animaciones.
+- En distintos ambitos como el educativo.
+****** De uso especifico
+- Resuelven un problema concreto.
+- Ejemplo: bancos, educacion, ...
+**** Licencias
+- Licencia = contrato (desarrollador del SW, usuario).
+***** SW Libre
+- Utilizado con cualquier fin.
+- Podemos estudiar su funcionamiento y modificarlo.
+- Distribuir copias.
+- Mejoras -> hacerlas publicas -> distribuir al publico.
+***** SW Propietario
+- El codigo fuente no es accesible.
+- Su licencia prohibe 1 o varias posibilidades:
+  - Redistribucion.
+  - Copia.
+  - Uso en varias maquinas.
+  - Transferencias de titularidad.
+  - Difusion de fallos y errores.
+  - Variantes: Freeware y Shareware.
+***** SW de dominio publico
+- So desconoce su autor o fin de la propiedad de autor.
+***** GPL
+- Licencia mas utilizada.
+- SW Libre + fuente abierta.
+- Derecho a: usar, modificar haciendo publicas.
+**** Tipos
+***** A medida
+- Adaptado a los requeremientos de la empresa u organizacion.
+- Se desarrollo en funcion de las necesidades, actividad y
+  forma de trabajar.
+- No suele ser compatible con empresas del sector.
+- Es mas costoso, ya que va dirigido a un solo cliente.
+- Necesito tiempo de desarrollo.
+***** Estandar o Enlatados
+- Es software generico.
+- Resuelve multiples necesidades.
+- Puede parametrizarse o adaptarse a las necesiades ->
+  herramientas de configuracion.
+- Pueden faltarse funciones -> se complementa con otras
+  herramientas.
+- Ya esta hecho.
+- Menor numero de errores -> comprobado por varios clientes.
+- Suele ser mas barato.
+- Pueden tener funciones que no usamos.
+**** Ciclos de vida
+- Son las fases o etapas en las que se desarrolla el software.
+***** Cascada
+- Entrega el documento completo.
+- Solo en el mantenimiento se vuelve a etapas anteriores
+  (codificacion -> pruebas).
+- Con realimentacion:
+  - Cuando debido a un fallo, ambiguedades, etc ... se vuelve
+    a etapas anteriores.
+- Ventajas, inconvenientes. Cuando se recomienda.
+***** Evolutivos
+- Los requisitos del usuario y del producto cambian cuando se
+  desarrolla.
+- Surgen versiones distintas.
+****** Iterativo incremental
+- Basado en cascada.
+- El SW se entrega en partes pequeñas -> incrementos.
+- Los incrementos son reutilizables.
+- Ej: procesador de textos.
+  - Primero se desarrollan las funciones basicas como las de
+    edicion.
+  - En cada incremento se desarrollarian nuevas funciones como
+    la gramatica u ortografia.
+  - En el siguiente, funciones avanzadas de paginacion.
+  - ...      
+****** En espiral
+- Mezcla el modelo en Cascada y el iterativo de construccion
+ de prototipos. 
+- Cada ciclo -> se divide en 4 fases.
+- Es similar al iterativo incremental, pero este si analiza
+ riesgos. 
+- Fases:
+  - Determinar objetivos, alternativas, restricciones, ...
+  - Analisis de riesgos: identificar los riesgos, como
+    resolverlos, ...
+  - Desarrollar y probar.
+  - Planificacion: se revisa lo hecho, si se continua, se
+    planifican las fases del ciclo siguiente.      
+- Muy utilizado para sistemas orientados a objetos.
+*** Programa
+- Es una serie de ordenes o instrucciones.
+- Siguen un orden o secuencia para cumplir una finalidad determinado.
+- Ejemplo: Holamundo.c
+*** Aplicacion
+- Puede estar formada por uno o varios programas.
+- Esta en contacto con el usuario, no con el hardware.
+- Ejemplo: BB.DD., procesadores do texto, hojas de calculo, correo electronico.
+- Finalizar: automatizar o ayudar a realizar tareas.
+*** Suite o Paquete Integrado
+- Es el conjunto de programas que se ejecutan unos
+  independientes del otro.
+- Ejemplo: Microsoft Office, Libre Office, Open Office.
+- Suelen compartir elementos comunes como librerias, datos. etc.
+- Son compatibles entre ellos.
+** Lenguajes de programacion
+- Los programas son conjuntos de instrucciones que se desarrollan
+  utilizando un lenguaje de programacion.
+- Es legible por el usuario (programador).
+- Es ininteligible para el ordenador.
+- Necesita de un proceso de traduccion: lenguaje -> hardware
+*** Componentes
+- Caracteres: Vocabulario o lexico -> simbolos permitidos.
+- Sintaxis: Son las reglas que combinan los caracteres ->
+  construcciones con los simbolos.
+- Semantica: son las reglas que definen los efectos de cualquier
+  construccion.
+- Palabras reservadas.
+*** Criterios para establecer las clasificaciones
+**** Segun el nivel de abstraccion
+***** Lenguaje de bajo nivel
+- Son instrucciones complejas e ininteligibles -> secuencias
+  de 0's y 1's.
+- Es entendible por el ordenador (hardware).
+- Es dependiente del hardware del ordenador (procesador,
+  memoria, ...).
+- No son portables entre distinto hardware (clonico, Apple,
+  etc.).
+- Trabaja con los registros de Memoria Fisica.
+***** Lenguaje de Medio Nivel o Ensamblador
+- Esta cercano al Hardware.
+- Surge por la poce portabilidad del L. Maquina.
+- Usa mnemotecnicos -> Mas legible por el usuario.
+- Se trabaja con los registros del procesador y direcciones
+  fisicas.
+- No es facil de programar.
+- El programador ademas de conocer el lenguaje ha de conocer
+  el HW.
+- Para hacerlo legible al ordenador:
+  - Se compila.
+  - Se traduce al lenguaje maquina.
+***** Lenguaje de Alto Nivel
+- Son la mayoria de los lenguajes actuales.
+- Mas cercano al lenguaje humano, son mas intuitivos.
+- Se ayudan de librerias y funciones.
+- Para ejecutarse necesitan de un traductor (interprete o
+  compilador).
+- Son independientes de la maquina.
+- Ejemplo: C++, Cobol, PHP, Java, ...
+- Pueden ofrecer un framework (entorno de trabajo o
+  desarrollo):
+  - La programacion es mas eficiente y rapida.
+  - Formado por un conjunto de elementos personalizables y
+    adaptables a las necesidades de la aplicacion.
+  - Ejemplo: bootstrap.
+    - Utilizado en twitter.
+    - Cualquiera puede realizar paginas y aplicaciones web.
+**** Segun la forma de ejecucion
+***** Compilados
+- Necesitan de un traductor o compilador.
+- Convierten de codigo fuente a codigo maquina.
+- Mas rapidos que los interpretes o virtuales.
+- Si se producen errores hay que modificar y volver a compilar.
+- Utilizando un enlazador o linker:
+  - Union (codigo objeto programa; codigo objeto de las
+    librerias).
+***** Interpretados
+- Se carga en Memoria el interprete.
+- Lee las instrucciones + las interpreta + las ejecuta.
+- Es mas lento.
+- No requiere volver a compilar ante un error.
+- Ejemplo: Java -> combina compilacion e interpretacion
+**** Paradigma de programacion
+- Paradigma = enfoque particular para construir el SW -> reglas,
+patrones, estilos de programacion, ...
+- Un lenguaje de programacion puede usar mas de un paradigma ->
+se usa el que interesa.
+***** Categorias
+****** Imperativos
+- Instrucciones simples.
+- Detallan como se manipula la informacion de la memoria.
+- Sentencia principal -> la asignacion.
+- Ejemplo: Basic, Java, Fortran, C++.
+- Engloba: programacion estructurada, modular y la POO.
+****** Funcionales
+- Se basan en el concepto de funcion y los argumentos a
+  aplicar.
+- Ejemplo: Lisp, Schema, ML.
+****** Logicos
+- Los podemos ver como una BB.DD. de declaraciones logicas
+  -> reglas.
+- Ejecucion: consiste en preguntar (BB.DD.) de forma
+  interactiva.
+- Ej: Prolog -> sistemas expertos, prospecciones.
+****** Estructurados
+- Utilizan 3 construcciones logicas -> secuencial,
+  condicional y repetitiva.
+- De lectura y seguimiento facil.
+- Si es grande su lectura y manejo se complica.
+- Se puede dividir en partes manejables o modulos (con sus
+  inputs y outputs).
+  - Son independientes.
+  - Hay uno raiz que controla al resto.
+  - Permite un desarrollo mas rapido.
+  - Es reutilizable.
+  - Ej. Pascal, Fortran, C, Modula-2.
+****** Orientados a objetos
+- Un programa es visto como un conjunto de objetos.
+- Objeto:
+  - Es una estructura de datos + metodo u operaciones
+    (comportamiento) que los manipulan.
+  - Los datos son propiedades o atributos de los objetos.
+  - Los metodos son propiedades o atributos.
+  - La comunicacion se lleva a cabo mediante paso de mensajes.
+- Clase:
+  - Es una plantilla para crear objetos -> instaciacion.
+  - Ejemplo: Java
+  - Se asemeja a un modulo (programacion estructurada).   
+- Permite reutilizar codigo, trabajar en equipo y
+ mantenimiento del software. 
+- Su programacion no es tan intuitiva.
+- Ej.: C++, Java, Smaltalk.
+*** Obtener codigo ejecutable
+- Diseño:
+  - Componente SW <-> nivel de detalle.
+  - Herramientas: {Pseudocodigo | DFD}
+  - Se codifica con un lenguaje de programacion.
+- Codificacion: se genera el codigo fuente.
+**** Tipos de codigo
+***** Fuente
+- Escrito por el programador.
+- En lenguaje de alto nivel.
+- Mediante editor de texto o herramienta de programacion.
+- Se parte de lo pseudocodigos o DFD.
+- No se ejecute por el ordenador.
+***** Objeto
+- Resultado de compilar el codigo fuente.
+- No se ejecuta en el ordenador.
+- Ininteligible por el humano.
+- Representacion a bajo nivel.
+***** Ejecutable
+- Resultado de enlazar: codigo objeto + rutinas + librerias.
+**** Compilacion
+***** Compilador
+- Si existe un error en la compilacion -> no se genera el
+  codigo objeto -> modificar el codigo fuente + compilar.
+- Etapas:
+  - Analisis lexico.
+  - Analisis sintactico.
+  - Analisis semantico.
+  - Genera codigo intermedio.
+  - Optimizar codigo.
+  - Generar codigo.
+***** Enlazador
+- Inserta en el codigo objeto las funciones de las librerias.
+** Maquinas Virtuales
+- El codigo es un codigo intermedio -> bytecode.
+- Son mas portables -> sirven para distintas plataformas (Windows,
+  Linux, Apple, ...).
+- El codigo es interpretado por una maquina virtual.
+- Su ejecucion es lenta.
+- Son muy versatiles.
+- Aplicacion SW de un equipo que ejecuta programas como si fuese una
+  maquina real.
+*** Categorias
+**** De sistema
+- Ejecuta en la misma fisica distintas maquinas virtuales con
+  distintos sistemas operativos.
+- Ej: VMWare, VBox
+**** De proceso o de aplicacion
+- La VM se ejecuta como un proceso en el SS.OO.
+- Objetivo: proporcionar un entorno de ejecucion con
+  independiencia del HW y el OS.
+- Permite que un programa se ejecute de distinta manera en
+  distinta plataforma.
+- Ejemplo: VM Java
+*** La maquina virtual de Java
+- Programa compilador Java -> se ejecuta en distintos entornos.
+- El codigo generado por el compilador -> lo ejecuta la JVM, no el
+  procesador.
+- Dibujo.
+**** Tareas o funciones
+- Reservar / Liberar memoria para los objetos.
+- Comunicarse con el HW.
+- Comprobar el cumplimiento de las normas de seguridad de
+  aplicaciones Java.
+- Inconvenientes:
+  - Ejecucion mas lenta.
+- Descargar e instalar el JRE.
+** Lenguajes mas difundidos. Caracteristicas.
+*** Java
+- Evolucion de C++ -> lo simplifica.
+- LOO (Lenguaje Orientado a Objetos).
+- Capaz de trabajar con redes y protocolos (IP, HTTP, FTP, ...).
+- Lenguaje Virtual Interpretado.
+- Portable.
+- Contempla aspectos de seguridad.
+- Permite ejecucion multihilo.
+*** Python
+- De alto nivel pero simple y sencillo
+- Muy portable.
+- Interpretado como Java: codigo fuente -> bytecode.
+- El enlace con las librerias -> Al ejecutar el bytecode.
+- LOO.
+- Incrustable en otros lenguajes como C y C++.
+*** C y C++
+- Potente, versatil y se sigue utilizando.
+- Ligado a Unix.
+- Estructurado y ligado al uso de funciones.
+- Puede incluir codigo que trabaje a bajo nivel.
+- Programas eficientes y rapidos.
+- Tamaño pequeño de los programas.
+- Portable, aunque puede necesitar modificaciones.
+*** JavaScript
+- En programacion web.
+- Parecido a Java, C, C++.
+- Se ejecuta en el cliente.
+- Es seguro y fiable.
+- Tiene limitaciones de seguridad.
+- Codigo visible -> podemos leerlo.
+- Existen muchas librerias basadas en JavaScript como JQuery.
+*** PHP
+- Multiplataforma.
+- Para desarrollar webs dinamicas.
+- Buena integracion con MySQL.
+- Puede usar tecnicas de POO (Programacion Orientada a Objetos).
+- Interpretado en la parte del servidor.
+- En backend de CMS (Pretashop, Wordpress, ...).
+*** VB.NET
+- Evolucion de Visual Basic.
+- LOO.
+- Herramientas para programarlo.
+  - Microsoft Visual Estudio.
+  - Sharp Develop -> Libre, menos potente.
+** Desarrollo de una aplicacion
+- Existen distintos paradigmas.
+*** Fases
+**** Inicial
+- Planificacion, Estimaciones y Rentabilidad del proyecto.
+- Simil: construccion de un edificio: licencia, coste,
+  trabajadores, tiempo, ...
+- Gente experimentada en:
+  - Elaboracion del proyecto.
+  - Plataforma de construccion.
+**** Analisis
+- Se recopilan, examinan y formulan los requisitos del cliente.
+- Se analizan posibles restricciones.
+- Se documentan y registran las entrevistas con el cliente.
+- El cliente se compromete a no variar nada hasta la 1a release.
+- El exito del proyecto esta en funcion de comprender y entender
+  lo que quiere el cliente para darle una solucion lo mas
+  acertada posible.
+- No es facil, ya que los requisitos no quedan claros, surgen
+  nuevos, etc.
+- Importante: comunicacion cliente-desarrollador.
+***** Tecnicas utilizadas
+- Entrevistas.
+- Desarrollo conjunto de aplicaciones, donde cada persona
+  juega un rol.
+- Planificacion conjunta de requisitos.
+- Brainstorming.
+- Prototipos.
+- Casos de Uso: UML (Lenguaje Unificado de Marcas) ->
+  escenarios, comportamientos -> requisitos funcionales.
+***** Tipos de requisitos
+- Funcionales: Comportamiento del sistema ante determinados
+  inputs.
+- No Funcionales: sobre caracteristicas del sistema:
+  fiabilidad, plataforma, HW, ...
+  | Funcionales                            | No Funcionales                      |
+  |----------------------------------------+-------------------------------------|
+  | El usuario puede agregar               | La aplicacion debe funcionar en     |
+  | un nuevo contacto                      | SS.OO. Linux y Windows              |
+  |----------------------------------------+-------------------------------------|
+  | El usuario puede ver una               | El tiempo de respuesta a consultas, |
+  | lista con todos los contactos          | altas, bajas y modificaciones ha de |
+  |                                        | ser inferior a 5 segundos           |
+  |----------------------------------------+-------------------------------------|
+  | A partir de la lista de contactos      | Utilizar un sistema gestor de bases |
+  | el usuario puede acceder a un contacto | de datos                            |
+***** Representacion de requisitos
+****** DFD (Diagrama De Flujo de Datos)
+- Procesos -> Funciones
+- Entidades externas: no pertenecen al sistema y proporciona
+  datos o se reciben de el.
+- Almacenes: almacena los datos procesados.
+- Flujo de datos.
+****** DFC (Diagrama de Flujo de Control)
+- Muestra el flujo de control, no de Estados.
+****** DTE (Diagrama de Transicion de Estados)
+- Comportamiento del sistema en funcion de los sucesos externos.
+****** DER (Diagrama Entidad Relacion)
+- Representa los datos y como se relacionan entre ellos.
+- Entidades.
+- Relaciones.
+****** DD (Diccionario de Datos)
+- Describe detalladamente los datos (flujo, almacenes) del
+  DFD.
+****** Documento Generado
+- Especificacion de Requisiton del SW.
+- Estructura: IEEE 830.
+**** Diseño
+- Composicion sobre la solucion al problema.
+- Requisitos -> representacion del SW.
+- Se realizan 2 documentos por los analistas, supervisado por el
+  jefe del proyecto.
+  - Se determinan los requisitos generales de la arquitectura de
+    la aplicacion.
+  - Se define con precision cada subconjunto de la aplcacion.
+***** Estructurado: flujo de datos sobre el sistema.
+****** Diseño de datos
+- Son las estructuras de datos necesarias para implementar
+  el software.
+- Se basan en el diagrama E/R y la descripcion detallada
+  de los datos.
+****** Diseño arquitectonico
+- Se centra en la representacion de la estructura de los
+  componentes del SW, sus propiedades e interacciones.
+- Un componente del SW puede ser desde un modulo de
+  programa, una BB.DD., conectores que permitan la
+  comunicacion, etc.
+- Se parte del DFD para establecer la estructura modular
+  del SW a desarrollar.
+****** Diseño de la interfaz
+- Describe la comunicacion entre (SW, Personas, Otros
+  sistemas).
+- El resultado -> Creacion de formatos de pantalla.
+****** Diseño a nivel de componentes
+- Transforma: elementos estructurales (arquitectura) en
+  una descripcion procedimental -> diseño de componentes
+  SW.
+- El nivel de detalle de cada componente del software se
+  debe poder codificar mediante un lenguaje de
+  programacion.
+- Sus fundamentos se basan en distintas representaciones
+  graficas utilizando notaciones como:
+  - Diagramas de flujo.
+  - Diagramas de cajas.
+  - Tablas de decision.
+  - Pseudocodigo.
+- Construcciones logicas para formar un programa ->
+  programacion estructurada:
+  - Secuencial
+  - Condicional
+  - Seleccion Multiple
+  - Repetitiva
+***** O.O.: objetos, propiedades, comportamiento, eventos, estado.
+- Es dificil.
+- Parte de un Analisis O.O.
+- Etapas:
+  - Subsistemas que implementan las pricipales funciones del
+    sistema.
+  - Clases y Objetos:
+    - Arquitectura de objetos global.
+    - Jerarquia de clases.
+  - Mensajes: colaboracion entre Objetos.
+- UML:
+  - Diagramas para expresar modelos.
+  - Estandar de facto.
+**** Codificacion o Implementacion
+- Implementa el software mediante un lenguaje de programacion.
+- Documentacion detallada que contiene el codigo (E/, S/,
+  revision, ...)
+- Mucho codigo se suele comentar en el mismo programa.
+- Importancia:
+  - Puede mantenerse por la misma u otra persona.
+  - La que lo mantenga ha de saber que hace cada parte y como lo
+    hace.
+**** Pruebas
+- Garantizan que cumple las especificaciones del cliente.
+- Los mismos programas se integran bien y esta listo para la
+  explotacion.
+- Documentos y pruebas (Con el cliente presente, opcional):
+  - Se ve si cumple con las funciones acordadas en los
+    documentos.
+  - Se detallan:
+    - Los fallos.
+    - Las modificaciones.
+- Estructurales:
+  - Pruebas tecnicas (sin clientes).
+  - Cargas reales, estres del sistema y de la aplicacion.
+**** Explotacion
+- Instalacion del software en el entorno real.
+- Se trabaja con el de forma normal.
+- Fase mas larga: incidencias, nuevas necesidades, etc.
+- Documentacion:
+  - Errores o fallos concretos.
+  - Los analistas y programadores los revisan y solucionan.
+  - Otras necesidades -> en Mantenimiento
+**** Mantenimiento
+- Acciones:
+  - Correctivas de fallos.
+  - Actualizaciones -> adaptarlos y evolucionarias.
+- Se utiliza la documentacion tecnica.
+- Todo se documenta: que operacion, que hace, como -> pruebas
+  distintas para el programador.
+- TODAS LAS FASES SE VAN SOLAPANDO. CUANDO FINALIZAN, SU
+  RESULTADO ES LA APLICACION
+**** Documentacion
+- Debe ser util y adaptada a los usuarios de dicha
+  documentacion. Como minimo:
+  - Manual de usuario:
+    - Para utilizar el programa, manejo, lo que hay que hacer,
+      lo que no.
+    - Ayuda, explicativo.
+  - Manual tecnico:
+    - Tecnicos que conozcan el lenguaje.
+    - Para que la conozcan como los que la crearon.
+  - Manual de instalacion:
+    - Requisitos necesarios.
+    - Como se instala.
+    - Como so pne en funcionamiento.
+*** Roles en el desarrollo de software
+**** Arquitecto del SW
+- Decide:
+  - Como va a realizarse.
+  - Como se va a cohesionar.
+- Con elevado conocimiento de tecnologias, frameworks,
+  librerias, etc.
+- Decide la forma y recursos del proyecto.
+**** Jefe de Proyecto
+- Dirige el proyecto.
+- Puede ser un analista experimentado.
+- Sabiduria en gestinar:
+  - Equipos.
+  - Tiempos.
+  - Relacion con clientes.
+  - Etc
+**** Analista del sistema
+- Tiene mucha experiencia.
+* TEMA 2
+- ...

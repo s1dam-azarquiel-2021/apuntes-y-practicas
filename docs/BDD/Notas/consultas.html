@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- 2021-12-04 Sat 18:25 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Consultas SQL</title>
+<meta name="author" content="Alberto Robles Gomez" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+</head>
+<body>
+<div id="content" class="content">
+<header>
+<h1 class="title">Consultas SQL</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>&Iacute;ndice</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgf073a00">Consultas en video/video</a></li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-orgf073a00" class="outline-2">
+<h2 id="orgf073a00">Consultas en video/video</h2>
+<div class="outline-text-2" id="text-orgf073a00">
+<ol class="org-ol">
+<li><p>
+Titulo de las peliculas producidas despues del año 2005
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  anno &gt; 2005
+</pre>
+</div></li>
+
+<li><p>
+Precio y formato de las peliculas de menos de 1 euro
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> precio, formato
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  precio &lt; 1
+</pre>
+</div></li>
+
+<li><p>
+Titulo de las peliculas en formato DVD
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  formato = <span class="org-string">'DVD'</span>
+</pre>
+</div></li>
+
+<li><p>
+Listado con los formetos de las peliculas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-keyword">DISTINCT</span> formato
+<span class="org-keyword">FROM</span>   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas se produjeron en los 3 ultimos años
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  anno &gt;= 2019
+</pre>
+</div></li>
+
+<li><p>
+Cuantos DVDs estan de oferta
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  oferta = <span class="org-string">'S'</span> <span class="org-keyword">AND</span> formato = <span class="org-string">'DVD'</span>
+</pre>
+</div></li>
+
+<li><p>
+Precio mas caro de una pelicula
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(precio)
+<span class="org-keyword">FROM</span>   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Año de la pelicula mas antigua
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(anno)
+<span class="org-keyword">FROM</span>   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas no estan en MP4
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  formato != <span class="org-string">'MP4'</span>
+</pre>
+</div></li>
+
+<li><p>
+Titulo de las peliculas que empiezan por 'M'
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  titulo <span class="org-keyword">LIKE</span> <span class="org-string">'M%'</span>
+</pre>
+</div></li>
+
+<li><p>
+Cuantos titulos de peliculas estan formados por mas de una palabra
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  titulo <span class="org-keyword">LIKE</span> <span class="org-string">'% %'</span>
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas se han alquilado en Febrero
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<span class="org-keyword">FROM</span>   alquiler
+<span class="org-keyword">WHERE</span>  FECHA <span class="org-keyword">LIKE</span> <span class="org-string">'__/02/%'</span>
+</pre>
+</div></li>
+
+<li><p>
+Codigo de los socios que no han devuelto las pelis que alquilaron
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> c_socio
+<span class="org-keyword">FROM</span>   alquiler
+<span class="org-keyword">WHERE</span>  devuelta = <span class="org-string">'N'</span>
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los socios que presublimenete son chicas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre
+<span class="org-keyword">FROM</span>   alquiler
+<span class="org-keyword">WHERE</span>  nombre <span class="org-keyword">LIKE</span> <span class="org-string">'%a'</span>
+</pre>
+</div></li>
+
+<li><p>
+Que titulos de peliculas no estan ni en DVD ni en MP4
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  formato != <span class="org-string">'DVD'</span>
+  <span class="org-keyword">AND</span>  formato != <span class="org-string">'MP4'</span>
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas hay de matrix
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  titulo <span class="org-keyword">LIKE</span> <span class="org-string">'Matrix%'</span>
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas se alquilaron en febrero de 2002
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<span class="org-keyword">FROM</span>   alquiler
+<span class="org-keyword">WHERE</span>  fecha <span class="org-keyword">LIKE</span> <span class="org-string">'__/02/02'</span>
+</pre>
+</div></li>
+
+<li><p>
+Nombre de nuestros socios que presumiblemente son chicas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre
+<span class="org-keyword">FROM</span>   socios
+<span class="org-keyword">WHERE</span>  nombre <span class="org-keyword">LIKE</span> <span class="org-string">'%a'</span>
+</pre>
+</div></li>
+
+<li><p>
+Código de los socios que en el 2005 no nos devolvieron las
+peliculas alquiladas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> c_socio
+<span class="org-keyword">FROM</span>   alquiler
+<span class="org-keyword">WHERE</span>  fecha <span class="org-keyword">LIKE</span> <span class="org-string">'__/__/05'</span>
+  <span class="org-keyword">AND</span>  devuelta = <span class="org-string">'N'</span>
+</pre>
+</div></li>
+
+<li><p>
+Precio de la película mas cara
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(precio)
+<span class="org-keyword">FROM</span>   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Nombre de paises que tienen menos de 7 letras
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre_pais
+<span class="org-keyword">FROM</span>   paises
+<span class="org-keyword">WHERE</span>  <span class="org-keyword">LENGTH</span>(nombre_pais) &lt; 7
+</pre>
+</div></li>
+
+<li><p>
+Visualiza los distintos formatos de las películas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-keyword">DISTINCT</span> formato
+<span class="org-keyword">FROM</span>   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Título de las pelis que valen 2 euros o 2 euros y pico
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  precio &gt;= 2
+  <span class="org-keyword">AND</span>  precio &lt; 3
+</pre>
+</div></li>
+
+<li><p>
+En qué año se produjo la primera película
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(anno)
+<span class="org-keyword">FROM</span>   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Título de las películas que se han producido en los últimos 10
+años
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  anno &gt; TO_CHAR(
+         ADD_MONTHS(SYSDATE, -12*10),
+         <span class="org-string">'YYYY'</span>
+       )
+</pre>
+</div></li>
+
+<li><p>
+Precio medio de los dvds
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">AVG</span>(precio)
+<span class="org-keyword">FROM</span>   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Cuato valen todos los DVDs que tenemos
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(precio)
+<span class="org-keyword">FROM</span>   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Cuantos cines existen entre España, Francia y Portugal
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(cines)
+<span class="org-keyword">FROM</span>   paises
+<span class="org-keyword">WHERE</span>  nombre_pais <span class="org-keyword">in</span> ( <span class="org-string">'Espa&#241;a'</span>, <span class="org-string">'Francia'</span>, <span class="org-string">'Portugal'</span> )
+</pre>
+</div></li>
+
+<li><p>
+Cuanto valen todas las peliculas que no están ni en BR ni en MP4
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(precio)
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  <span class="org-keyword">NOT</span> formato = <span class="org-string">'BR'</span>
+  <span class="org-keyword">AND</span>  <span class="org-keyword">NOT</span> formato = <span class="org-string">'MP4'</span>
+</pre>
+</div></li>
+
+<li><p>
+Precio mas caro de una pelicula en oferta
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(precio)
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  oferta = <span class="org-string">'S'</span>
+</pre>
+</div></li>
+
+<li><p>
+Cuantos socios son de Toledo
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<span class="org-keyword">FROM</span>   socios
+<span class="org-keyword">WHERE</span>  telefono <span class="org-keyword">LIKE</span> <span class="org-string">'925%'</span>
+</pre>
+</div></li>
+
+<li><p>
+Cual es la facturación total del 2º semestre de 2002
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(precio)
+<span class="org-keyword">FROM</span>   peliculas, alquiler
+<span class="org-keyword">WHERE</span>  SUBSTR(fecha, 4, 2) &gt; 6
+  <span class="org-keyword">AND</span>  fecha <span class="org-keyword">LIKE</span> <span class="org-string">'__/__/02'</span>
+</pre>
+</div></li>
+
+<li><p>
+Que codigos de socio alquilan películas en Enero
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> c_socio
+<span class="org-keyword">FROM</span>   alquiler
+<span class="org-keyword">WHERE</span>  fecha <span class="org-keyword">LIKE</span> <span class="org-string">'__/01/__'</span>
+</pre>
+</div></li>
+
+<li><p>
+Cuanto dinero se ha gastado el socio de código 1001
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(precio)
+<span class="org-keyword">FROM</span>   alquiler, peliculas
+<span class="org-keyword">WHERE</span>  c_socio = 1001
+</pre>
+</div></li>
+
+<li><p>
+Visualizar los paises de más de 8000 cines ordenados
+alfabeticamente
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   nombre_pais
+<span class="org-keyword">FROM</span>     paises
+<span class="org-keyword">WHERE</span>    cines &gt; 8000
+<span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> nombre_pais
+</pre>
+</div></li>
+
+<li><p>
+Cuantas veces se ha alquilado la pelicula de codigo 2
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<span class="org-keyword">FROM</span>   alquiler
+<span class="org-keyword">WHERE</span>  c_peli = 2
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los hermanos de Gema Ramirez Lopez
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre
+<span class="org-keyword">FROM</span>   socios
+<span class="org-keyword">WHERE</span>  ape1 = <span class="org-string">'ramirez'</span>
+  <span class="org-keyword">AND</span>  ape2 = <span class="org-string">'lopez'</span>
+  <span class="org-keyword">AND</span>  <span class="org-keyword">NOT</span> nombre = <span class="org-string">'gema'</span>
+</pre>
+</div></li>
+
+<li><p>
+Despues del 2000 en cuantos años no se han producido peliculas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> SUBSTR(SYSDATE, 7, 2)
+       - <span class="org-builtin">COUNT</span>(<span class="org-keyword">DISTINCT</span> anno) 
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  anno &gt; 2000
+</pre>
+</div></li>
+
+<li><p>
+Visualiza en que años se han alquilado peliculas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-keyword">DISTINCT</span> SUBSTR(fecha, 7, 2)
+<span class="org-keyword">FROM</span>   alquiler
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas hay de Tiburon
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  titulo <span class="org-keyword">LIKE</span> <span class="org-string">'Tibur&#243;n%'</span>
+</pre>
+</div></li>
+
+<li><p>
+Cuantos alquileres de un solo dia no se han devuelto
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<span class="org-keyword">FROM</span>   alquiler
+<span class="org-keyword">WHERE</span>  ndias = 1
+  <span class="org-keyword">AND</span>  devuelta = <span class="org-string">'N'</span>
+</pre>
+</div></li>
+
+<li><p>
+Cuantos socios viven en la calle oro
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<span class="org-keyword">FROM</span>   socios
+<span class="org-keyword">WHERE</span>  direccion <span class="org-keyword">LIKE</span> <span class="org-string">'oro,%'</span>
+</pre>
+</div></li>
+
+<li><p>
+Que titulo de peliculas es la mas cara
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  precio = (<span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(precio) <span class="org-keyword">FROM</span> peliculas)
+</pre>
+</div></li>
+
+<li><p>
+Cual es el titulo de la pelicula mas moderna
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  anno = (<span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(anno) <span class="org-keyword">FROM</span> PELICULAS)
+</pre>
+</div></li>
+
+<li><p>
+En que formato esta la pelicula mas barata
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-keyword">DISTINCT</span> formato
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  precio = (<span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(precio) <span class="org-keyword">FROM</span> PELICULAS)
+</pre>
+</div></li>
+
+<li><p>
+Cuando se hizo el ultimo alquiler
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(fecha)
+<span class="org-keyword">FROM</span>   alquiler
+</pre>
+</div></li>
+
+<li><p>
+Cual es el pais que tiene mas cines
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre_pais
+<span class="org-keyword">FROM</span>   paises
+<span class="org-keyword">WHERE</span>  cines = (<span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(cines) <span class="org-keyword">FROM</span> paises)
+</pre>
+</div></li>
+
+<li><p>
+Titulo de las peliculas españolas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  c_pais = (
+         <span class="org-keyword">SELECT</span> c_pais
+         <span class="org-keyword">FROM</span>   paises
+         <span class="org-keyword">WHERE</span>  nombre_pais = <span class="org-string">'Espa&#241;a'</span>
+       )
+</pre>
+</div></li>
+
+<li><p>
+Titulo de las peliculas que no se alquilan
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  c_peli <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> (
+         <span class="org-keyword">SELECT</span> <span class="org-keyword">DISTINCT</span> c_peli
+         <span class="org-keyword">FROM</span> alquiler
+       )
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los hermanos de Laura.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre
+<span class="org-keyword">FROM</span>   socios
+<span class="org-keyword">WHERE</span>  ape1 = (
+         <span class="org-keyword">SELECT</span> ape1
+         <span class="org-keyword">FROM</span>   socios
+         <span class="org-keyword">WHERE</span>  nombre = <span class="org-string">'laura'</span>
+       )
+  <span class="org-keyword">AND</span>  ape2 = (
+         <span class="org-keyword">SELECT</span> ape2
+         <span class="org-keyword">FROM</span>   socios
+         <span class="org-keyword">WHERE</span>  nombre = <span class="org-string">'laura'</span>
+       )
+  <span class="org-keyword">AND</span>  nombre != <span class="org-string">'laura'</span>
+</pre>
+</div></li>
+
+<li><p>
+Titulo de las peliculas del pais que menos cines tiene
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
+<span class="org-keyword">FROM</span>   peliculas
+<span class="org-keyword">WHERE</span>  c_pais = (
+         <span class="org-keyword">SELECT</span> c_pais
+         <span class="org-keyword">FROM</span>   paises
+         <span class="org-keyword">WHERE</span>  cines = (
+           <span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(cines)
+           <span class="org-keyword">FROM</span>   paises
+         )
+       )
+</pre>
+</div></li>
+
+<li><p>
+Codigo de la peliculas que se alquilo la primera vez
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> c_peli
+<span class="org-keyword">FROM</span>   alquiler
+<span class="org-keyword">WHERE</span>  fecha = (
+         <span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(fecha)
+         <span class="org-keyword">FROM</span>   alquiler
+       )
+</pre>
+</div></li>
+
+<li><p>
+Codigo del socio que realizo el alquiler mas barato
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> c_socio
+<span class="org-keyword">FROM</span>   alquiler
+<span class="org-keyword">WHERE</span>  total = (
+         <span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(total)
+         <span class="org-keyword">FROM</span>   alquiler
+       )
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas tenemos en los diferentes formatos
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   <span class="org-builtin">COUNT</span>(formato), formato
+<span class="org-keyword">FROM</span>     peliculas
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> formato
+</pre>
+</div></li>
+
+<li><p>
+Listado con el numero de alquileres realizados los diferentes años
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   substr(fecha, 7, 2), <span class="org-builtin">COUNT</span>(*)
+<span class="org-keyword">FROM</span>     alquiler
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> substr(fecha, 7, 2)
+<span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> substr(fecha, 7, 2)
+</pre>
+</div></li>
+
+<li><p>
+Listado de los precios de las peliculas mas caras en los
+diferentes años
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   anno, <span class="org-builtin">MAX</span>(precio)
+<span class="org-keyword">FROM</span>     peliculas
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> anno
+<span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> anno
+</pre>
+</div></li>
+
+<li><p>
+Listado con el total que hemos facturada los distintos años,
+alquilando peliculas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   substr(fecha, 7, 2), <span class="org-builtin">SUM</span>(total)
+<span class="org-keyword">FROM</span>     alquiler
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> substr(fecha, 7, 2)
+<span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> substr(fecha, 7, 2)
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Alberto Robles Gomez</p>
+<p class="date">Created: 2021-12-04 Sat 18:25</p>
+</div>
+</body>
+</html>

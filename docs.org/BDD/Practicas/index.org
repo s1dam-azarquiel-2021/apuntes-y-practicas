@@ -1,0 +1,10 @@
+#+TITLE: BDD - Practicas
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+OPTIONS: toc:nil
+* Contenido
+** Modelo ER
+*** [[./modelo-er/Bomberos.png][Bomberos]]
+*** [[./modelo-er/Copas.png][Copas]]
+*** [[./modelo-er/Oscar.png][Oscar]]
+*** [[./modelo-er/Viaje.png][Viaje]]

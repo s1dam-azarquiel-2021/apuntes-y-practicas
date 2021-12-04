@@ -1,0 +1,7 @@
+#+TITLE: SISI
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/index.css" />
+#+OPTIONS: toc:nil
+* Contenido
+** [[file:./Notas/index.org][Teoria, notas, etc]]
+** [[file:./Practicas/index.org][Practicas, tarea, etc]]

@@ -1,0 +1,6 @@
+#+TITLE: BDD - Notas
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+OPTIONS: toc:nil
+* Contenido
+** [[./consultas.org][Consultas SQL]]

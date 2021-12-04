@@ -1,0 +1,11 @@
+#+TITLE: S1DAM - Notas y Practicas
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/index.css" />
+#+OPTIONS: toc:nil
+* Contenido
+** [[file:./BDD/index.org][Bases de datos]]
+** [[file:./ENDE/index.org][Entornos de desarrollo]]
+** [[file:./ING/index.org][Ingles]]
+** [[file:./LMSG/index.org][Lenguaje de marcas]]
+** [[file:./PROG/index.org][Programacion]]
+** [[file:./SISI/index.org][Sistemas Informaticos]]
