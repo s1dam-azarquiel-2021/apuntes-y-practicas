@@ -39,15 +39,15 @@
      Lo primaro es a cambiar a root e ir a ~/~:
 
      #+begin_src shell
-       sudo su
+     sudo su
 
-       cd /
+     cd /
      #+end_src
 
      Con ~fdisk~ sobre el disco duro creamos las particiones:
   
      #+begin_src shell
-       sudo fdisk /dev/sda
+     sudo fdisk /dev/sda
      #+end_src
   
      Le asigno el particionado GPT y creamos 2 particiones, una de
@@ -66,22 +66,22 @@
      Formateo las particiones, la efi con ~fat32~ y la otra con ~btrfs~:
   
      #+begin_src shell
-       mkfs.fat -F 32 -n BOOT /dev/sda1
+     mkfs.fat -F 32 -n BOOT /dev/sda1
 
-       mkfs.btrfs -L SYSTEM /dev/sda2
+     mkfs.btrfs -L SYSTEM /dev/sda2
      #+end_src
   
      Monto la particion del sistema y creo los diferentes subvolumenes;
      datos, backups y el del SO:
   
      #+begin_src shell
-       mount /dev/sda2 /mnt
+     mount /dev/sda2 /mnt
 
-       btrfs subvolume create /mnt/@data
+     btrfs subvolume create /mnt/@data
 
-       btrfs subvolume create /mnt/@backups
+     btrfs subvolume create /mnt/@backups
 
-       btrfs subvolume create /mnt/@nixos
+     btrfs subvolume create /mnt/@nixos
      #+end_src
   
      Desmonto ~/mnt~ y monto el subvolumen ~@nixos~, seguido de crear
@@ -89,19 +89,19 @@
      ~/Datos~ y ~/Backups~, montandoles sus respectivos subvolumenes:
   
      #+begin_src shell
-       umount /mnt
+     umount /mnt
 
-       mount /dev/sda2 -o subvol=@nixos /mnt
+     mount /dev/sda2 -o subvol=@nixos /mnt
 
-       mkdir /mnt/boot
+     mkdir /mnt/boot
 
-       mount /dev/sda1 /mnt/boot
+     mount /dev/sda1 /mnt/boot
 
-       mkdir /mnt/Datos /mnt/Backups
+     mkdir /mnt/Datos /mnt/Backups
 
-       mount /dev/sda2 -o subvol=@data /mnt/Datos
+     mount /dev/sda2 -o subvol=@data /mnt/Datos
 
-       mount /dev/sda2 -o subvol=@backups /mnt/Backups
+     mount /dev/sda2 -o subvol=@backups /mnt/Backups
      #+end_src
   
      Y me acabo de acordar, deberia crear una swap, asi que monto en un
@@ -109,21 +109,21 @@
      para la swap:
    
      #+begin_src shell
-       mkdir /mnt2
+     mkdir /mnt2
 
-       mount /dev/sda2 /mnt2
+     mount /dev/sda2 /mnt2
 
-       btrfs subvolume create /mnt2/@swap
+     btrfs subvolume create /mnt2/@swap
 
-       umount /mnt2
+     umount /mnt2
      #+end_src
   
      Creo ~/swap~, donde se montara el subvolumen creado antes:
   
      #+begin_src shell
-       mkdir /mnt/swap
+     mkdir /mnt/swap
 
-       mount /dev/sda2 -o subvol=@swap /mnt/swap
+     mount /dev/sda2 -o subvol=@swap /mnt/swap
      #+end_src
   
      Pero eso de poco sirve, normalmente se suele crear una particion
@@ -131,7 +131,7 @@
      en caso de no usar una particion, se puede crear un ~swapfile~:
   
      #+begin_src shell
-       touch /mnt/swap/swapfile
+     touch /mnt/swap/swapfile
      #+end_src
      
      Ahora bien, no queremos que nadie que no sea el sistema pueda
@@ -139,9 +139,9 @@
      on Write) para que btrfs no haga de las suyas:
   
      #+begin_src shell
-       chmod 600 /mnt/swap/swapfile
+     chmod 600 /mnt/swap/swapfile
 
-       chattr +C /mnt/swap/swapfile
+     chattr +C /mnt/swap/swapfile
      #+end_src
   
      Por ultimo, hay que darle un tamaño a la swapfile, formatearlo y
@@ -149,16 +149,16 @@
      lo que se de en el blocksize, BS):
   
      #+begin_src shell
-       dd if=/dev/zero of=/mnt/swap/swapfile bs=1M count=2048
-       # 2048+0 records in
-       # 2048+0 records out
-       # 2147483648 bytes (2 GiB) copied, 20 s, 105 MB/s
+     dd if=/dev/zero of=/mnt/swap/swapfile bs=1M count=2048
+     # 2048+0 records in
+     # 2048+0 records out
+     # 2147483648 bytes (2 GiB) copied, 20 s, 105 MB/s
 
-       mkswap /mnt/swap/swapfile
-       # Setting up swapspace version 1, size = 2 GiB
-       # no label, UUID=8d33617c-9642-4c9a4-ae68-9885a67bbea5
+     mkswap /mnt/swap/swapfile
+     # Setting up swapspace version 1, size = 2 GiB
+     # no label, UUID=8d33617c-9642-4c9a4-ae68-9885a67bbea5
 
-       swapon /mnt/swap/swapfile
+     swapon /mnt/swap/swapfile
      #+end_src
   
    - Ahora toca instalar el OS. En nixOS es de una forma no muy
@@ -168,11 +168,11 @@
      que se guarda en ~/etc/nixos~:
 
      #+begin_src shell
-       nixos-generate-config --root /mnt
-       # writing /mnt/etc/nixos/hardware-configuration.nix...
-       # writing /mnt/etc/nixos/configuration.nix...
+     nixos-generate-config --root /mnt
+     # writing /mnt/etc/nixos/hardware-configuration.nix...
+     # writing /mnt/etc/nixos/configuration.nix...
 
-       cd /mnt/etc/nixos/
+     cd /mnt/etc/nixos/
      #+end_src
 
      Existen 2 archivos, ~configuration.nix~ y
@@ -182,62 +182,62 @@
      Primero voy a ver si el de hardware esta bien:
 
      #+begin_src nix
-       { config, lib, pkgs, modulesPath, ... }:
+     { config, lib, pkgs, modulesPath, ... }:
 
-       {
-         imports = [ ];
+     {
+       imports = [ ];
 
-         boot.initrd.availableKernelModules = [
-           "ata_piix"
-           "ohci_pci"
-           "sd_mod"
-           "sr_mod"
-         ];
+       boot.initrd.availableKernelModules = [
+         "ata_piix"
+         "ohci_pci"
+         "sd_mod"
+         "sr_mod"
+       ];
 
-         boot.initrd.kernelModules = [ ];
-         boot.kernelModules = [ ];
-         boot.extraModulePackages = [ ];
+       boot.initrd.kernelModules = [ ];
+       boot.kernelModules = [ ];
+       boot.extraModulePackages = [ ];
 
-         fileSystems."/" = {
-           device = "/dev/disk/by-uuid/5a3613a9-814e-4a71-ba4c-53aea68a03bd";
-           fsType = "btrfs";
-           options = [ "subvol=@nixos" ];
-         };
+       fileSystems."/" = {
+         device = "/dev/disk/by-uuid/5a3613a9-814e-4a71-ba4c-53aea68a03bd";
+         fsType = "btrfs";
+         options = [ "subvol=@nixos" ];
+       };
 
-         fileSystems."/boot" = {
-           device = "/dev/disk/by-uuid/A795-88BB";
-           fsType = "vfat";
-         };
+       fileSystems."/boot" = {
+         device = "/dev/disk/by-uuid/A795-88BB";
+         fsType = "vfat";
+       };
 
-         fileSystems."/Datos" = {
-           device = "/dev/disk/by-uuid/5a3613a9-814e-4a71-ba4c-53aea68a03bd";
-           fsType = "btrfs";
-           options = [ "subvol=@data" ];
-         };
+       fileSystems."/Datos" = {
+         device = "/dev/disk/by-uuid/5a3613a9-814e-4a71-ba4c-53aea68a03bd";
+         fsType = "btrfs";
+         options = [ "subvol=@data" ];
+       };
 
-         fileSystems."/Backups" = {
-           device = "/dev/disk/by-uuid/5a3613a9-814e-4a71-ba4c-53aea68a03bd";
-           fsType = "btrfs";
-           options = [ "subvol=@backups" ];
-         };
+       fileSystems."/Backups" = {
+         device = "/dev/disk/by-uuid/5a3613a9-814e-4a71-ba4c-53aea68a03bd";
+         fsType = "btrfs";
+         options = [ "subvol=@backups" ];
+       };
 
-         fileSystems."/swap" = {
-           device = "/dev/disk/by-uuid/5a3613a9-814e-4a71-ba4c-53aea68a03bd";
-           fsType = "btrfs";
-           options = [ "subvol=@swap" ];
-         };
+       fileSystems."/swap" = {
+         device = "/dev/disk/by-uuid/5a3613a9-814e-4a71-ba4c-53aea68a03bd";
+         fsType = "btrfs";
+         options = [ "subvol=@swap" ];
+       };
 
-         swapDevices = [ ];
+       swapDevices = [ ];
 
-         virtualisation.virtualbox.guest.enable = true;
-       }
+       virtualisation.virtualbox.guest.enable = true;
+     }
      #+end_src
 
      Parece que no detecto que tenemos un swapfile, asi que se lo
      añado:
 
      #+begin_src nix
-       swapDevices = [ { device = "/swap/swapfile"; } ];
+     swapDevices = [ { device = "/swap/swapfile"; } ];
      #+end_src
 
      Ahora he editado ~configuration.nix~, quitado los comentarios y
@@ -246,48 +246,48 @@
      por defecto.
 
      #+begin_src nix
-       { config, pkgs, ... }:
+     { config, pkgs, ... }:
 
-       {
-         imports =
-           [
-             ./hardware-configuration.nix
-           ];
-
-         boot.loader.systemd-boot.enable = true;
-         boot.loader.efi.canTouchEfiVariables = true;
-
-         networking.hostName = "SISI_nixos";
-
-         time.timeZone = "Europe/Madrid";
-
-         networking.useDHCP = false;
-         networking.interfaces.enp0s3.useDHCP = true;
-
-         i18n.defaultLocale = "en_US.UTF-8";
-
-         users.mutableUsers = false;
-         users.users.pruebas = {
-           isNormalUser = true;
-           createHome = true;
-           password = "1234";
-           extraGroups = [ "wheel" ];
-         };
-
-         environment.systemPackages = with pkgs; [
-           neovim
+     {
+       imports =
+         [
+           ./hardware-configuration.nix
          ];
 
-         system.stateVersion = "21.05";
-       }
+       boot.loader.systemd-boot.enable = true;
+       boot.loader.efi.canTouchEfiVariables = true;
+
+       networking.hostName = "SISI_nixos";
+
+       time.timeZone = "Europe/Madrid";
+
+       networking.useDHCP = false;
+       networking.interfaces.enp0s3.useDHCP = true;
+
+       i18n.defaultLocale = "en_US.UTF-8";
+
+       users.mutableUsers = false;
+       users.users.pruebas = {
+         isNormalUser = true;
+         createHome = true;
+         password = "1234";
+         extraGroups = [ "wheel" ];
+       };
+
+       environment.systemPackages = with pkgs; [
+         neovim
+       ];
+
+       system.stateVersion = "21.05";
+     }
      #+end_src
 
      Y con esto y un bizcocho, rezamos para que instale:
 
      #+begin_src shell
-       cd /
+     cd /
 
-       nixos-install
+     nixos-install
      #+end_src
 
      Empieza a instalar todo y generar las configuraciones, y por
@@ -320,9 +320,9 @@
      Como antes, nos vamos a la configuracion de nixOS:
 
      #+begin_src shell
-       sudo su
+     sudo su
 
-       cd /etc/nixos/
+     cd /etc/nixos/
      #+end_src
 
      Vamos a usar systemd para crear unos servicios que se ejecuten en
@@ -334,20 +334,20 @@
      mañana.
 
      #+begin_src nix
-       { config, pkgs, ... }:
+     { config, pkgs, ... }:
 
-       {
-         # ...
+     {
+       # ...
 
-         system.stateVersion = "21.05";
+       system.stateVersion = "21.05";
 
-         systemd.services = {
-           fullBackup = {
-             description = "Realizar una copia comleta";
-             startAt = "Sat *-01,04,07,10-1..7 09:00:00";
-           };
+       systemd.services = {
+         fullBackup = {
+           description = "Realizar una copia comleta";
+           startAt = "Sat *-01,04,07,10-1..7 09:00:00";
          };
-       }
+       };
+     }
      #+end_src
 
      Ahora hay que decirle que orden tiene que ejecutar, que sera que
@@ -356,11 +356,11 @@
      tal que asi:
 
      #+begin_src nix
-       fullBackup = {
-         description = "Realizar una copia comleta";
-         startAt = "Sat *-01,04,07,10-1..7 09:00:00";
-         script = "btrfs subvolume snapshot -r /Datos /Backups/full";
-       };
+     fullBackup = {
+       description = "Realizar una copia comleta";
+       startAt = "Sat *-01,04,07,10-1..7 09:00:00";
+       script = "btrfs subvolume snapshot -r /Datos /Backups/full";
+     };
      #+end_src
 
      Ahora bien, el problema es que el script no tiene importado el
@@ -372,12 +372,12 @@
      todos los paquetes se encuentran dentro del modulo ~pkgs~:
 
      #+begin_src nix
-       fullBackup = {
-         description = "Realizar una copia comleta";
-         startAt = "Sat *-01,04,07,10-1..7 09:00:00";
-         script = "btrfs subvolume snapshot -r /Datos /Backups/full";
-         path = [ pkgs.btrfs-progs ];
-       };
+     fullBackup = {
+       description = "Realizar una copia comleta";
+       startAt = "Sat *-01,04,07,10-1..7 09:00:00";
+       script = "btrfs subvolume snapshot -r /Datos /Backups/full";
+       path = [ pkgs.btrfs-progs ];
+     };
      #+end_src
 
      Ahora bien, las snapshots se deberian nombrar de forma
@@ -386,29 +386,29 @@
      script:
 
      #+begin_src shell
-       # Path de la ultima backup completa
-       LFB=$(find /Backups -type d -name "full_*" | tail -n1)
+     # Path de la ultima backup completa
+     LFB=$(find /Backups -type d -name "full_*" | tail -n1)
 
-       # Si no existe una anterior backup completa, esta sera la 1
-       # Si no esta sera la siguiente (si es 1, pues 2)
-       if [[ -z $LFB ]]; then
-         # Nombre de la nueva backup
-         NBN=full_1
-       else
-         # Numero / ID de la ultima backup completa
-         LFBN=$(echo "$LFB" | sed "s/.*\/full_\(.*\)/\1/g")
-         # Numero / ID de la siguiente backup completa
-         NFBN=$(($LFBN + 1))
-         # Nombre de la nueva backup
-         NBN=full_$NFBN
-         # Borrar todas las backups locales
-         btrfs subvolume delete /Backups/*
-       fi
+     # Si no existe una anterior backup completa, esta sera la 1
+     # Si no esta sera la siguiente (si es 1, pues 2)
+     if [[ -z $LFB ]]; then
+       # Nombre de la nueva backup
+       NBN=full_1
+     else
+       # Numero / ID de la ultima backup completa
+       LFBN=$(echo "$LFB" | sed "s/.*\/full_\(.*\)/\1/g")
+       # Numero / ID de la siguiente backup completa
+       NFBN=$(($LFBN + 1))
+       # Nombre de la nueva backup
+       NBN=full_$NFBN
+       # Borrar todas las backups locales
+       btrfs subvolume delete /Backups/*
+     fi
 
-       # Creamos una snapshot de /Datos y la guardamos en local
-       btrfs subvolume snapshot -r /Datos /Backups/$NBN
-       # Enviamos la snapshot al remoto
-       btrfs send /Backups/$NBN | btrfs receive /Remoto
+     # Creamos una snapshot de /Datos y la guardamos en local
+     btrfs subvolume snapshot -r /Datos /Backups/$NBN
+     # Enviamos la snapshot al remoto
+     btrfs send /Backups/$NBN | btrfs receive /Remoto
      #+end_src
 
      Notese tambien como he creado un ~/Remoto~, esto se debe a que
@@ -430,48 +430,48 @@
      una nueva snapshot.
      
      #+begin_src nix
-       diferentialBackup = {
-         description = "Realizar una copia diferencial";
-         startAt = "Sat *-*-1..7,15-21 09:00:00";
-         script =
-           ''
-           # Copy paste de lo de abajo
-           '';
-         path = [ pkgs.btrfs-progs ];
-       };
+     diferentialBackup = {
+       description = "Realizar una copia diferencial";
+       startAt = "Sat *-*-1..7,15-21 09:00:00";
+       script =
+         ''
+         # Copy paste de lo de abajo
+         '';
+       path = [ pkgs.btrfs-progs ];
+     };
      #+end_src
 
      #+begin_src shell
-       # Path de la ultima backup completa
-       LFB=$(find /Backups -type d -name "full_*" | tail -n1)
-       # Numero / ID de la ultima backup completa
-       LFBN=$(echo "$LFB" | sed "s/.*\/full_\(.*\)/\1/g")
-       # Path de la ultima backup diferencial
-       LDB=$(find /Backups -type d -name "diferential_$LFBN-*" | tail -n1)
+     # Path de la ultima backup completa
+     LFB=$(find /Backups -type d -name "full_*" | tail -n1)
+     # Numero / ID de la ultima backup completa
+     LFBN=$(echo "$LFB" | sed "s/.*\/full_\(.*\)/\1/g")
+     # Path de la ultima backup diferencial
+     LDB=$(find /Backups -type d -name "diferential_$LFBN-*" | tail -n1)
 
-       # Si no existe una anterior backup diferencial, esta sera la 1
-       # Si existe el nombre sera la siguiente
-       if [[ -z $LDB ]]; then
-         # Nombre de la nueva backup
-         NBN=diferential_$LFBN-1
-       else
-         # Numero / ID de la anterior backup diferencial
-         LDBN=$(echo "$LDB" | sed "s/.*\/diferential_.*-\(.*\)/\1/g")
-         # Numero / ID de la siguiente backup diferencial
-         NDBN=$(($LDBN + 1))
-         # Nombre de la nueva backup
-         NBN=diferential_$LFBN-$NDBN
-         # Se elimina la anterior copia diferencial en local
-         btrfs subvolume delete $LDB
-       fi
+     # Si no existe una anterior backup diferencial, esta sera la 1
+     # Si existe el nombre sera la siguiente
+     if [[ -z $LDB ]]; then
+       # Nombre de la nueva backup
+       NBN=diferential_$LFBN-1
+     else
+       # Numero / ID de la anterior backup diferencial
+       LDBN=$(echo "$LDB" | sed "s/.*\/diferential_.*-\(.*\)/\1/g")
+       # Numero / ID de la siguiente backup diferencial
+       NDBN=$(($LDBN + 1))
+       # Nombre de la nueva backup
+       NBN=diferential_$LFBN-$NDBN
+       # Se elimina la anterior copia diferencial en local
+       btrfs subvolume delete $LDB
+     fi
 
-       # Creamos una snapshot de /Datos y la guardamos en local
-       btrfs subvolume snapshot -r /Datos /Backups/$NBN
-       # Se forma un stream de diferencias entre la ultima backup completa
-       # y el estado actual, que se guardo en local en el comando anterior
-       # Este stream se evia al remote y este lo interpreta creando la
-       # copia diferencial
-       btrfs send -p $LFB /Backups/$NBN | btrfs receive /Remoto
+     # Creamos una snapshot de /Datos y la guardamos en local
+     btrfs subvolume snapshot -r /Datos /Backups/$NBN
+     # Se forma un stream de diferencias entre la ultima backup completa
+     # y el estado actual, que se guardo en local en el comando anterior
+     # Este stream se evia al remote y este lo interpreta creando la
+     # copia diferencial
+     btrfs send -p $LFB /Backups/$NBN | btrfs receive /Remoto
      #+end_src
 
    - Por ultimo las incrementales:
@@ -480,58 +480,58 @@
      de cosas:
 
      #+begin_src nix
-       incrementalBackup = {
-         description = "Realizar una copia incremental";
-         startAt = "*-*-* 22:00:00";
-         script =
-           ''
-           # Copy paste de lo de abajo
-           '';
-         path = [ pkgs.btrfs-progs ];
-       };
+     incrementalBackup = {
+       description = "Realizar una copia incremental";
+       startAt = "*-*-* 22:00:00";
+       script =
+         ''
+         # Copy paste de lo de abajo
+         '';
+       path = [ pkgs.btrfs-progs ];
+     };
      #+end_src
 
      #+begin_src shell
-       # Path de la ultima backup completa
-       LFB=$(find /Backups -type d -name "full_*" | tail -n1)
-       # Numero / ID de la ultima backup completa
-       LFBN=$(echo "$LFB" | sed "s/.*\/full_\(.*\)/\1/g")
-       # Path de la ultima backup diferencial
-       LDB=$(find /Backups -type d -name "diferential_$LFBN-*" | tail -n1)
-       # Numero / ID de la ultima backup diferencial
-       LDBN=$(echo "$LDB" | sed "s/.*\/diferential_.*-\(.*\)/\1/g")
-       # Path de la ultima backup incremental
-       LIB=$(find /Backups -type d -name "incremental_$LFBN-$LDBN-*" | tail -n1)
+     # Path de la ultima backup completa
+     LFB=$(find /Backups -type d -name "full_*" | tail -n1)
+     # Numero / ID de la ultima backup completa
+     LFBN=$(echo "$LFB" | sed "s/.*\/full_\(.*\)/\1/g")
+     # Path de la ultima backup diferencial
+     LDB=$(find /Backups -type d -name "diferential_$LFBN-*" | tail -n1)
+     # Numero / ID de la ultima backup diferencial
+     LDBN=$(echo "$LDB" | sed "s/.*\/diferential_.*-\(.*\)/\1/g")
+     # Path de la ultima backup incremental
+     LIB=$(find /Backups -type d -name "incremental_$LFBN-$LDBN-*" | tail -n1)
 
-       # Si no existe una anterior backup incremental, esta sera la 1
-       # Si existe el nombre sera la siguiente
-       if [[ -z $LIB ]]; then
-         # Nombre de la nueva backup
-         NBN=incremental_$LFBN-$LDBN-1
-         # Path de la copia con la que se debe comparar
-         # como no hay incrementales sera la ultima diferencial
-         PARENT=$LDB
-       else
-         # Numero / ID de la anterior backup incremental
-         LIBN=$(echo "$LIB" | sed "s/.*\/incremental_.*-.*-\(.*\)/\1/g")
-         # Numero / ID de la siguiente backup incremental
-         NIBN=$(($LIBN + 1))
-         # Nombre de la nueva backup
-         NBN=incremental_$LFBN-$LDBN-$NIBN
-         # Path de la copia con la que se debe comparar
-         # como existe una anterior incremental, esa sera
-         PARENT=$LIB
-       fi
+     # Si no existe una anterior backup incremental, esta sera la 1
+     # Si existe el nombre sera la siguiente
+     if [[ -z $LIB ]]; then
+       # Nombre de la nueva backup
+       NBN=incremental_$LFBN-$LDBN-1
+       # Path de la copia con la que se debe comparar
+       # como no hay incrementales sera la ultima diferencial
+       PARENT=$LDB
+     else
+       # Numero / ID de la anterior backup incremental
+       LIBN=$(echo "$LIB" | sed "s/.*\/incremental_.*-.*-\(.*\)/\1/g")
+       # Numero / ID de la siguiente backup incremental
+       NIBN=$(($LIBN + 1))
+       # Nombre de la nueva backup
+       NBN=incremental_$LFBN-$LDBN-$NIBN
+       # Path de la copia con la que se debe comparar
+       # como existe una anterior incremental, esa sera
+       PARENT=$LIB
+     fi
 
-       # Creamos una snapshot de /Datos y la guardamos en local
-       btrfs subvolume snapshot -r /Datos /Backups/$NBN
-       # Se forma un stream de diferencias entre la backup "PADRE"
-       # y el estado actual, que se guardo en local en el comando anterior
-       # Este stream se evia al remote y este lo interpreta creando la
-       # copia incremental
-       btrfs send -p $PARENT /Backups/$NBN | btrfs receive /Remoto
-       # Me cargo la anterior incremental en local si es que habia
-       [[ -z $NIBN ]] || btrfs subvolume delete $PARENT
+     # Creamos una snapshot de /Datos y la guardamos en local
+     btrfs subvolume snapshot -r /Datos /Backups/$NBN
+     # Se forma un stream de diferencias entre la backup "PADRE"
+     # y el estado actual, que se guardo en local en el comando anterior
+     # Este stream se evia al remote y este lo interpreta creando la
+     # copia incremental
+     btrfs send -p $PARENT /Backups/$NBN | btrfs receive /Remoto
+     # Me cargo la anterior incremental en local si es que habia
+     [[ -z $NIBN ]] || btrfs subvolume delete $PARENT
      #+end_src
 
    - Demostracion de que funciona
@@ -540,7 +540,7 @@
      configuracion y probar.
 
      #+begin_src shell
-       nixos-rebuild switch
+     nixos-rebuild switch
      #+end_src
 
      Y a hacer las pruebas (entre cada creacion de una copia,
@@ -549,7 +549,7 @@
      Primero creare un falso remoto para la simulacion
 
      #+begin_src shell
-       mkdir /Remoto
+     mkdir /Remoto
      #+end_src
 
      Ahora voy a forzar al servicio para que se ejecute:
