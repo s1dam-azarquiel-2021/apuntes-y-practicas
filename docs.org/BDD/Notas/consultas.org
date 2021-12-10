@@ -442,3 +442,50 @@
     GROUP BY substr(fecha, 7, 2)
     ORDER BY substr(fecha, 7, 2)
     #+end_src
+
+58. Cuantos DVDs españoles hay?
+    #+begin_src sql
+    SELECT COUNT(*)
+    FROM   peliculas
+    WHERE  formato = 'DVD'
+      and  c_pais = (
+             SELECT c_pais
+             FROM   paises
+             WHERE  nombre_pais = 'España'
+          )
+    #+end_src
+
+59. Listado con las diferencias familias socias (1er apellido) junto
+    con el numero de integrantes que tiene cada familia.
+    #+begin_src sql
+    SELECT   ape1, COUNT(*)
+    FROM     socios
+    GROUP BY ape1
+    ORDER BY ape1
+    #+end_src
+
+60. Listado con los diferentes titulos de peliculas que se han ido
+    produciendo los diferentes años.
+    #+begin_src sql
+    SELECT   anno, titulo
+    FROM     peliculas
+    ORDER BY anno, titulo
+    #+end_src
+
+61. Listado con el titulo de las peliculas junto con el nombre de pais
+    al que pertenece.
+    #+begin_src sql
+    SELECT   pe.titulo, pa.nombre_pais
+    FROM     peliculas pe, paises pa
+    WHERE    pe.c_pais = pa.c_pais
+    ORDER BY pe.titulo
+    #+end_src
+
+62. Listado con los titulos de las peliculas que se han alquildado
+    junto con la fecha en que se alquilo
+    #+begin_src sql
+    SELECT   a.fecha, p.titulo
+    FROM     peliculas p, alquiler a
+    WHERE    p.c_peli = a.c_peli
+    ORDER BY a.fecha
+    #+end_src
