@@ -489,3 +489,88 @@
     WHERE    p.c_peli = a.c_peli
     ORDER BY a.fecha
     #+end_src
+
+63. Nombre de los socios que no han visto ninguna de Torrente.
+    #+begin_src sql
+    SELECT   nombre, ape1
+    FROM     socios
+    WHERE    c_socio NOT IN (
+               SELECT c_socio
+               FROM   alquiler
+               WHERE  c_peli IN (
+                        SELECT c_peli
+                        FROM   peliculas
+                        WHERE  titulo LIKE 'Torrente%'
+                      )
+             )
+    ORDER BY nombre
+    #+end_src
+
+64. Nombre de los socios que alquilaron el año pasado.
+    #+begin_src sql
+    SELECT   s.nombre, s.ape1
+    FROM     socios s, alquiler a
+    WHERE    s.c_socio = a.c_socio
+      AND    SUBSTR(a.fecha, 7, 2) = SUBSTR(SYSDATE, 7, 2) - 1
+    ORDER BY a.nombre
+    #+end_src
+
+65. Nombre de los paises que no alquilan sus peliculas.
+    #+begin_src sql
+    SELECT   nombre_pais
+    FROM     paises
+    WHERE    c_pais NOT IN (
+               SELECT c_pais
+               FROM   peliculas
+               WHERE  c_peli IN (
+                        SELECT c_peli
+                        FROM   alquiler
+                      )
+             )
+    ORDER BY nombre_pais
+    #+end_src
+
+66. Nombre y apellidos de los socios que alquilan peliculas españolas.
+    #+begin_src sql
+    SELECT nombre, ape1
+    FROM   socios
+    WHERE  c_socio IN (
+             SELECT c_socio
+             FROM   alquiler
+             WHERE  c_peli IN (
+                      SELECT c_peli
+                      FROM   peliculas
+                      WHERE  c_pais = (
+                               SELECT c_pais
+                               FROM   paises
+                               WHERE  nombre_pais = 'España'
+                             )
+                    )
+           )
+    ORDER BY nombre
+    #+end_src
+
+67. Cuantos socios han alquilado algun DVD?
+    #+begin_src sql
+    SELECT COUNT(c_socio)
+    FROM   socios
+    WHERE  c_socio IN (
+             SELECT c_socio
+             FROM   alquiler
+             WHERE  c_peli IN (
+                      SELECT c_peli
+                      FROM   peliculas
+                      WHERE  formato = 'DVD'
+             )
+           )
+   #+end_src
+
+68. Cuantos paises tienen mas cines que la media de los paises?
+    #+begin_src sql
+    SELECT COUNT(c_pais)
+    FROM   paises
+    WHERE  cines > (
+             SELECT AVG(cines)
+             FROM   paises
+           )
+    #+end_src
