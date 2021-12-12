@@ -491,12 +491,20 @@ code {
 	}
 }
 
-// @media screen and (max-width: 800px) {
-// 	body {
-// 		font-size: 16px;
-// 		line-height: 1.2rem;
-// 	}
-// 
+@media screen and (max-width: 800px) {
+	body {
+		font-size: 16px;
+		line-height: 1.2rem;
+	}
+
+#table-of-contents {
+	#text-table-of-contents {
+		> ul {
+			flex-flow: column nowrap;
+		}
+	}
+}
+
 // 	h2 {
 // 		font-size: 2em;
 // 		color: #458588;
@@ -508,18 +516,38 @@ code {
 // 		color: #d79921;
 // 		margin: 1em 0 0.2em;
 // 	}
-// 
-// 	.outline {
-// 		&-2,
-// 		&-3 {
-// 			margin-left: 0;
-// 		}
-// 	}
-// }
+
+	.outline {
+		&-2 {
+			width: auto;
+		}
+
+		&-4,
+		&-5,
+		&-6,
+		&-7,
+		&-8 {
+			padding-left: 0;
+		}
+
+		&-text {
+			&-3,
+			&-4,
+			&-5,
+			&-6,
+			&-7,
+			&-8 {
+				ul,
+				ol {
+					margin-left: 0;
+				}
+			}
+		}
+	}
 // 
 // @media screen and (max-width: 500px) {
 // 	body {
 // 		font-size: 14px;
 // 		line-height: 1.1rem;
 // 	}
-// }
+}

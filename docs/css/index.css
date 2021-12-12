@@ -370,5 +370,25 @@ code {
     page-break-inside: avoid;
     page-break-after: auto;
     page-break-before: auto; } }
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 16px;
+    line-height: 1.2rem; }
+
+  #table-of-contents #text-table-of-contents > ul {
+    flex-flow: column nowrap; }
+
+  .outline-2 {
+    width: auto; }
+  .outline-4, .outline-5, .outline-6, .outline-7, .outline-8 {
+    padding-left: 0; }
+  .outline-text-3 ul,
+  .outline-text-3 ol, .outline-text-4 ul,
+  .outline-text-4 ol, .outline-text-5 ul,
+  .outline-text-5 ol, .outline-text-6 ul,
+  .outline-text-6 ol, .outline-text-7 ul,
+  .outline-text-7 ol, .outline-text-8 ul,
+  .outline-text-8 ol {
+    margin-left: 0; } }
 
 /*# sourceMappingURL=index.css.map */
