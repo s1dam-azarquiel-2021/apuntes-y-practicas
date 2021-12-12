@@ -308,6 +308,8 @@ pre {
       content: "HASKELL"; }
     pre.src-nix::before {
       content: "NIX"; }
+    pre.src-sql::before {
+      content: "SQL"; }
 
 code {
   color: #ebdbb2;

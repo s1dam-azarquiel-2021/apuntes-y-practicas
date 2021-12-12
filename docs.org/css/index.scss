@@ -425,6 +425,7 @@ pre {
 		&-shell::before   { content: "SHELL";   }
 		&-haskell::before { content: "HASKELL"; }
 		&-nix::before     { content: "NIX";     }
+		&-sql::before     { content: "SQL";     }
 	}
 }
 
