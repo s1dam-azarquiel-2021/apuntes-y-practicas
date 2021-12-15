@@ -1,7 +1,7 @@
 #+TITLE: Consultas SQL
 #+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
-* Consultas en video/video
+* Consultas en miVIDEO
 
 1. Titulo de las peliculas producidas despues del año 2005
    #+begin_src sql
@@ -570,3 +570,7 @@
              FROM   paises
            )
     #+end_src
+
+* Consultas en miCOMIDA
+
+1. a
