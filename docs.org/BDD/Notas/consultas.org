@@ -553,15 +553,11 @@
 67. Cuantos socios han alquilado algun DVD?
     #+begin_src sql
     SELECT COUNT(DISTINCT c_socio)
-    FROM   socios
-    WHERE  c_socio IN (
-             SELECT c_socio
-             FROM   alquiler
-             WHERE  c_peli IN (
-                      SELECT c_peli
-                      FROM   peliculas
-                      WHERE  formato = 'DVD'
-                    )
+    FROM   alquiler
+    WHERE  c_peli IN (
+             SELECT c_peli
+             FROM   peliculas
+             WHERE  formato = 'DVD'
            )
    #+end_src
 
