@@ -617,3 +617,22 @@
              FROM   articulo
            )
     #+end_src
+
+74. Cuantos pedidos nos hacen entre madrileños y toledanos?
+    #+begin_src sql
+    SELECT COUNT(idped)
+    FROM   pedido
+    WHERE  idcli IN (
+             SELECT idcli
+             FROM   cliente
+             WHERE  ciudad = 'MADRID'
+                OR  ciudad = 'TOLEDO'
+           )
+    #+end_src
+
+75. Cuantos pedidos se hacen en la segunda quincena del mes?
+    #+begin_src sql
+    SELECT COUNT(idped)
+    FROM   pedido
+    WHERE  SUBSTR(fped, 1, 2) > 15
+    #+end_src

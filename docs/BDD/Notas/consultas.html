@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2021-12-16 Thu 12:51 -->
+<!-- 2021-12-16 Thu 13:03 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Consultas SQL</title>
@@ -407,7 +407,7 @@ Despues del 2000 en cuantos años no se han producido peliculas
 </p>
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> SUBSTR(SYSDATE, 7, 2)
-       - <span class="org-builtin">COUNT</span>(<span class="org-keyword">DISTINCT</span> anno) 
+       - <span class="org-builtin">COUNT</span>(<span class="org-keyword">DISTINCT</span> anno)
 <span class="org-keyword">FROM</span>   peliculas
 <span class="org-keyword">WHERE</span>  anno &gt; 2000
 </pre>
@@ -864,13 +864,38 @@ Descripcion del articulo mas caro.
        )
 </pre>
 </div></li>
+
+<li><p>
+Cuantos pedidos nos hacen entre madrileños y toledanos?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(idped)
+<span class="org-keyword">FROM</span>   pedido
+<span class="org-keyword">WHERE</span>  idcli <span class="org-keyword">IN</span> (
+         <span class="org-keyword">SELECT</span> idcli
+         <span class="org-keyword">FROM</span>   cliente
+         <span class="org-keyword">WHERE</span>  ciudad = <span class="org-string">'MADRID'</span>
+            <span class="org-keyword">OR</span>  ciudad = <span class="org-string">'TOLEDO'</span>
+       )
+</pre>
+</div></li>
+
+<li><p>
+Cuantos pedidos se hacen en la segunda quincena del mes?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(idped)
+<span class="org-keyword">FROM</span>   pedido
+<span class="org-keyword">WHERE</span>  SUBSTR(fped, 1, 2) &gt; 15
+</pre>
+</div></li>
 </ol>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2021-12-16 Thu 12:51</p>
+<p class="date">Created: 2021-12-16 Thu 13:03</p>
 </div>
 </body>
 </html>
