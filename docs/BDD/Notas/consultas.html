@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2021-12-16 Thu 13:22 -->
+<!-- 2021-12-16 Thu 13:29 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Consultas SQL</title>
@@ -906,9 +906,10 @@ Listado con los nombres de los clientes junto con el numero de
 pedidos que nos han hecho.
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> c.nombre, <span class="org-builtin">COUNT</span>(p.idped)
-<span class="org-keyword">FROM</span>   cliente c, pedido p
-<span class="org-keyword">WHERE</span>  c.idcli = p.idcli <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> c.nombre
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   c.nombre, <span class="org-builtin">COUNT</span>(p.idped)
+<span class="org-keyword">FROM</span>     cliente c, pedido p
+<span class="org-keyword">WHERE</span>    c.idcli = p.idcli
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> c.nombre
 </pre>
 </div></li>
 
@@ -939,7 +940,7 @@ Que come Ana Kurnicova.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2021-12-16 Thu 13:22</p>
+<p class="date">Created: 2021-12-16 Thu 13:29</p>
 </div>
 </body>
 </html>

@@ -648,9 +648,10 @@
 77. Listado con los nombres de los clientes junto con el numero de
     pedidos que nos han hecho.
     #+begin_src sql
-    SELECT c.nombre, COUNT(p.idped)
-    FROM   cliente c, pedido p
-    WHERE  c.idcli = p.idcli GROUP BY c.nombre
+    SELECT   c.nombre, COUNT(p.idped)
+    FROM     cliente c, pedido p
+    WHERE    c.idcli = p.idcli
+    GROUP BY c.nombre
     #+end_src
 
 78. Que come Ana Kurnicova.
