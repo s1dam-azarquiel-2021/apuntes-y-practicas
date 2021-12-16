@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2021-12-16 Thu 13:03 -->
+<!-- 2021-12-16 Thu 13:22 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Consultas SQL</title>
@@ -889,13 +889,57 @@ Cuantos pedidos se hacen en la segunda quincena del mes?
 <span class="org-keyword">WHERE</span>  SUBSTR(fped, 1, 2) &gt; 15
 </pre>
 </div></li>
+
+<li><p>
+Listado de las ciudades con el numero de clientes que tenemos en
+cada provincia.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   ciudad, <span class="org-builtin">COUNT</span>(idcli)
+<span class="org-keyword">FROM</span>     cliente
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> ciudad
+</pre>
+</div></li>
+
+<li><p>
+Listado con los nombres de los clientes junto con el numero de
+pedidos que nos han hecho.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> c.nombre, <span class="org-builtin">COUNT</span>(p.idped)
+<span class="org-keyword">FROM</span>   cliente c, pedido p
+<span class="org-keyword">WHERE</span>  c.idcli = p.idcli <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> c.nombre
+</pre>
+</div></li>
+
+<li><p>
+Que come Ana Kurnicova.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> descrip
+<span class="org-keyword">FROM</span>   articulo
+<span class="org-keyword">WHERE</span>  idart <span class="org-keyword">IN</span> (
+         <span class="org-keyword">SELECT</span> idart
+         <span class="org-keyword">FROM</span>   detalle
+         <span class="org-keyword">WHERE</span>  idped <span class="org-keyword">IN</span> (
+                  <span class="org-keyword">SELECT</span> idped
+                  <span class="org-keyword">FROM</span>   pedido
+                  <span class="org-keyword">WHERE</span>  idcli = (
+                           <span class="org-keyword">SELECT</span> idcli
+                           <span class="org-keyword">FROM</span>   cliente
+                           <span class="org-keyword">WHERE</span>  nombre = <span class="org-string">'ANA KURNICOVA'</span>
+                         )
+                )
+       )
+</pre>
+</div></li>
 </ol>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2021-12-16 Thu 13:03</p>
+<p class="date">Created: 2021-12-16 Thu 13:22</p>
 </div>
 </body>
 </html>
