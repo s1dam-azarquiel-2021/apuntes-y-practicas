@@ -695,35 +695,40 @@
 
 81. Nombre de los clientes que no comen salchichas.
     #+begin_src sql
-       SELECT nombre
-       FROM   cliente
-       WHERE  idcli NOT IN (
-                SELECT idcli
-                FROM   pedido
-                WHERE  idped IN (
-                         SELECT idped
-                         FROM   detalle
-                         WHERE  idart IN (
-                                  SELECT idart
-                                  FROM   articulo
-                                  WHERE  descrip = 'SALCHICHAS'
-                                )
-                       )
-              )
+    SELECT nombre
+    FROM   cliente
+    WHERE  idcli NOT IN (
+             SELECT idcli
+             FROM   pedido
+             WHERE  idped IN (
+                      SELECT idped
+                      FROM   detalle
+                      WHERE  idart IN (
+                               SELECT idart
+                               FROM   articulo
+                               WHERE  descrip = 'SALCHICHAS'
+                             )
+                    )
+           )
     #+end_src
 
 82. Cuantas paellas se comen en Toledo?
     #+begin_src sql
-    SELECT SUM(cantidad)
-    FROM   detalle
-    WHERE  idped IN (
-             SELECT idped
-             FROM   pedido
-             WHERE  idcli IN (
-                      SELECT idcli
-                      FROM   cliente
+    SELECT SUM(cantidad)                      
+    FROM   detalle                            
+    WHERE  idped IN (                         
+             SELECT idped                     
+             FROM   pedido                    
+             WHERE  idcli IN (                
+                      SELECT idcli            
+                      FROM   cliente          
                       WHERE  ciudad = 'TOLEDO'
-                    )
+                    )                         
+           )
+      AND  idart = (
+             SELECT idart
+             FROM   articulo
+             WHERE  descrip = 'PAELLA'
            )
     #+end_src
 
