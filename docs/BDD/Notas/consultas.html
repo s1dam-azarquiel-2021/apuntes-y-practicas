@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2021-12-17 Fri 12:32 -->
+<!-- 2021-12-17 Fri 12:47 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Consultas SQL</title>
@@ -1010,9 +1010,10 @@ Cuantas paellas se comen en Toledo?
 Listado con el idped junto con el importe del pedido.
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> d.idped, d.cantidad * a.precio
-<span class="org-keyword">FROM</span>   detalle d, articulo a
-<span class="org-keyword">WHERE</span>  d.idart = a.idart
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   d.idped, <span class="org-builtin">SUM</span>(d.cantidad * a.precio)
+<span class="org-keyword">FROM</span>     detalle d, articulo a
+<span class="org-keyword">WHERE</span>    d.idart = a.idart
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> d.idped
 </pre>
 </div></li>
 </ol>
@@ -1021,7 +1022,7 @@ Listado con el idped junto con el importe del pedido.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2021-12-17 Fri 12:32</p>
+<p class="date">Created: 2021-12-17 Fri 12:47</p>
 </div>
 </body>
 </html>

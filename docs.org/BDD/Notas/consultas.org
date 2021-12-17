@@ -734,7 +734,8 @@
 
 83. Listado con el idped junto con el importe del pedido.
     #+begin_src sql
-    SELECT d.idped, d.cantidad * a.precio
-    FROM   detalle d, articulo a
-    WHERE  d.idart = a.idart
+    SELECT   d.idped, SUM(d.cantidad * a.precio)
+    FROM     detalle d, articulo a
+    WHERE    d.idart = a.idart
+    GROUP BY d.idped
     #+end_src
