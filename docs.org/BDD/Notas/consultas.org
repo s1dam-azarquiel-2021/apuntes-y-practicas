@@ -672,3 +672,63 @@
                     )
            )
     #+end_src
+
+79. Listado de los articulos que vendemos junto con la cantidad que
+    vendemos de ellos.
+    #+begin_src sql
+    SELECT   a.descrip, SUM(d.cantidad)
+    FROM     articulo a, detalle d
+    WHERE    a.idart = d.idart
+    GROUP BY a.descrip
+    ORDER BY a.descrip
+    #+end_src
+
+80. Que capital tenemos entre corderos y hamburguesas en el almacen?
+    #+begin_src sql
+    SELECT SUM(stock * precio)
+    FROM   articulo
+    WHERE  descrip IN (
+             'CORDERO',
+             'HAMBURGUESA'
+           )
+    #+end_src
+
+81. Nombre de los clientes que no comen salchichas.
+    #+begin_src sql
+       SELECT nombre
+       FROM   cliente
+       WHERE  idcli NOT IN (
+                SELECT idcli
+                FROM   pedido
+                WHERE  idped IN (
+                         SELECT idped
+                         FROM   detalle
+                         WHERE  idart IN (
+                                  SELECT idart
+                                  FROM   articulo
+                                  WHERE  descrip = 'SALCHICHAS'
+                                )
+                       )
+              )
+    #+end_src
+
+82. Cuantas paellas se comen en Toledo?
+    #+begin_src sql
+    SELECT SUM(cantidad)
+    FROM   detalle
+    WHERE  idped IN (
+             SELECT idped
+             FROM   pedido
+             WHERE  idcli IN (
+                      SELECT idcli
+                      FROM   cliente
+                      WHERE  ciudad = 'TOLEDO'
+                    )
+           )
+    #+end_src
+
+83. Listado con el idped junto con el importe del pedido.
+    #+begin_src sql
+    SELECT d.idped, d.cantidad * a.precio
+    FROM   detalle d, articulo a    
+    #+end_src
