@@ -710,16 +710,16 @@
 
 82. Cuantas paellas se comen en Toledo?
     #+begin_src sql
-    SELECT SUM(cantidad)                      
-    FROM   detalle                            
-    WHERE  idped IN (                         
-             SELECT idped                     
-             FROM   pedido                    
-             WHERE  idcli IN (                
-                      SELECT idcli            
-                      FROM   cliente          
+    SELECT SUM(cantidad)
+    FROM   detalle
+    WHERE  idped IN (
+             SELECT idped
+             FROM   pedido
+             WHERE  idcli IN (
+                      SELECT idcli
+                      FROM   cliente
                       WHERE  ciudad = 'TOLEDO'
-                    )                         
+                    )
            )
       AND  idart = (
              SELECT idart
@@ -734,4 +734,57 @@
     FROM     detalle d, articulo a
     WHERE    d.idart = a.idart
     GROUP BY d.idped
+    #+end_src
+
+84. Listado con las ciudades y el numero de clientes de cada ciudad.
+    #+begin_src sql
+    SELECT   ciudad, COUNT(idcli)
+    FROM     cliente
+    GROUP BY ciudad
+    #+end_src
+
+85. Nombre de las ciudades en las que tenemos mas de 2 clientes.
+    #+begin_src sql
+    SELECT   ciudad
+    FROM     cliente
+    GROUP BY ciudad
+    HAVING   COUNT(idcli) > 2
+    #+end_src
+
+86. En que formatos tenemos mas de 10 peliculas?
+    #+begin_src sql
+    SELECT   formato
+    FROM     peliculas
+    GROUP BY formato
+    HAVING   COUNT(c_peli) > 10
+    #+end_src
+
+87. Titulo de las peliculas que hemos alquilado mas de una vez.
+    #+begin_src sql
+    SELECT   titulo
+    FROM     peliculas
+    WHERE    c_peli IN (
+               SELECT   c_peli
+               FROM     alquiler
+               GROUP BY c_peli
+               HAVING   COUNT(c_socio) > 1
+             )
+    #+end_src
+
+88. Que paises producen menos de 3 peliculas?
+    #+begin_src sql
+    SELECT   pa.nombre_pais
+    FROM     peliculas pe, paises pa
+    WHERE    pe.c_pais = pa.c_pais
+    GROUP BY pa.nombre_pais
+    HAVING   COUNT(pe.c_peli) < 3
+    #+end_src
+
+89. Nombre de los socios que han alquilado mas de 2 peliculas.
+    #+begin_src sql
+    SELECT   s.nombre
+    FROM     socios s, alquiler a
+    WHERE    s.c_socio = a.c_socio
+    GROUP BY s.nombre
+    HAVING   COUNT(a.c_peli) > 2
     #+end_src
