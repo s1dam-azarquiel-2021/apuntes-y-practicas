@@ -1,8 +1,6 @@
 #+TITLE: Consultas SQL
 #+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
-* Consultas en miVIDEO
-
 1. Titulo de las peliculas producidas despues del año 2005
    #+begin_src sql
    SELECT titulo
@@ -571,9 +569,7 @@
            )
     #+end_src
 
-* Consultas en miCOMIDA
-
-69. [@69] Nombre de los clientes que no han pedido nada.
+69. Nombre de los clientes que no han pedido nada.
     #+begin_src sql
     SELECT nombre
     FROM   cliente
