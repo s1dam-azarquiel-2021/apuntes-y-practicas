@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2021-12-17 Fri 12:47 -->
+<!-- 2022-01-20 Thu 13:04 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Consultas SQL</title>
@@ -13,19 +13,7 @@
 <div id="content" class="content">
 <header>
 <h1 class="title">Consultas SQL</h1>
-</header><nav id="table-of-contents" role="doc-toc">
-<h2>&Iacute;ndice</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="#org39460ec">Consultas en miVIDEO</a></li>
-<li><a href="#org76fccb0">Consultas en miCOMIDA</a></li>
-</ul>
-</div>
-</nav>
-<div id="outline-container-org39460ec" class="outline-2">
-<h2 id="org39460ec">Consultas en miVIDEO</h2>
-<div class="outline-text-2" id="text-org39460ec">
-<ol class="org-ol">
+</header><ol class="org-ol">
 <li><p>
 Titulo de las peliculas producidas despues del año 2005
 </p>
@@ -69,7 +57,7 @@ Listado con los formetos de las peliculas
 Cuantas peliculas se produjeron en los 3 ultimos años
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 <span class="org-keyword">WHERE</span>  anno &gt;= 2019
 </pre>
@@ -79,7 +67,7 @@ Cuantas peliculas se produjeron en los 3 ultimos años
 Cuantos DVDs estan de oferta
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 <span class="org-keyword">WHERE</span>  oferta = <span class="org-string">'S'</span> <span class="org-keyword">AND</span> formato = <span class="org-string">'DVD'</span>
 </pre>
@@ -89,7 +77,7 @@ Cuantos DVDs estan de oferta
 Precio mas caro de una pelicula
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(precio)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-1">(</span>precio<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 </pre>
 </div></li>
@@ -98,7 +86,7 @@ Precio mas caro de una pelicula
 Año de la pelicula mas antigua
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(anno)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span><span class="org-rainbow-delimiters-depth-1">(</span>anno<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 </pre>
 </div></li>
@@ -107,7 +95,7 @@ Año de la pelicula mas antigua
 Cuantas peliculas no estan en MP4
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 <span class="org-keyword">WHERE</span>  formato != <span class="org-string">'MP4'</span>
 </pre>
@@ -137,7 +125,7 @@ Cuantos titulos de peliculas estan formados por mas de una palabra
 Cuantas peliculas se han alquilado en Febrero
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   alquiler
 <span class="org-keyword">WHERE</span>  FECHA <span class="org-keyword">LIKE</span> <span class="org-string">'__/02/%'</span>
 </pre>
@@ -178,7 +166,7 @@ Que titulos de peliculas no estan ni en DVD ni en MP4
 Cuantas peliculas hay de matrix
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 <span class="org-keyword">WHERE</span>  titulo <span class="org-keyword">LIKE</span> <span class="org-string">'Matrix%'</span>
 </pre>
@@ -188,7 +176,7 @@ Cuantas peliculas hay de matrix
 Cuantas peliculas se alquilaron en febrero de 2002
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   alquiler
 <span class="org-keyword">WHERE</span>  fecha <span class="org-keyword">LIKE</span> <span class="org-string">'__/02/02'</span>
 </pre>
@@ -220,7 +208,7 @@ peliculas alquiladas
 Precio de la película mas cara
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(precio)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-1">(</span>precio<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 </pre>
 </div></li>
@@ -231,7 +219,7 @@ Nombre de paises que tienen menos de 7 letras
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre_pais
 <span class="org-keyword">FROM</span>   paises
-<span class="org-keyword">WHERE</span>  <span class="org-keyword">LENGTH</span>(nombre_pais) &lt; 7
+<span class="org-keyword">WHERE</span>  <span class="org-keyword">LENGTH</span><span class="org-rainbow-delimiters-depth-1">(</span>nombre_pais<span class="org-rainbow-delimiters-depth-1">)</span> &lt; 7
 </pre>
 </div></li>
 
@@ -259,7 +247,7 @@ Título de las pelis que valen 2 euros o 2 euros y pico
 En qué año se produjo la primera película
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(anno)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span><span class="org-rainbow-delimiters-depth-1">(</span>anno<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 </pre>
 </div></li>
@@ -271,10 +259,10 @@ años
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
 <span class="org-keyword">FROM</span>   peliculas
-<span class="org-keyword">WHERE</span>  anno &gt; TO_CHAR(
-         ADD_MONTHS(SYSDATE, -12*10),
+<span class="org-keyword">WHERE</span>  anno &gt; TO_CHAR<span class="org-rainbow-delimiters-depth-1">(</span>
+         ADD_MONTHS<span class="org-rainbow-delimiters-depth-2">(</span>SYSDATE, -12*10<span class="org-rainbow-delimiters-depth-2">)</span>,
          <span class="org-string">'YYYY'</span>
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -282,7 +270,7 @@ años
 Precio medio de los dvds
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">AVG</span>(precio)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">AVG</span><span class="org-rainbow-delimiters-depth-1">(</span>precio<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 </pre>
 </div></li>
@@ -291,7 +279,7 @@ Precio medio de los dvds
 Cuato valen todos los DVDs que tenemos
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(precio)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span><span class="org-rainbow-delimiters-depth-1">(</span>precio<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 </pre>
 </div></li>
@@ -300,9 +288,9 @@ Cuato valen todos los DVDs que tenemos
 Cuantos cines existen entre España, Francia y Portugal
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(cines)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span><span class="org-rainbow-delimiters-depth-1">(</span>cines<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   paises
-<span class="org-keyword">WHERE</span>  nombre_pais <span class="org-keyword">in</span> ( <span class="org-string">'Espa&#241;a'</span>, <span class="org-string">'Francia'</span>, <span class="org-string">'Portugal'</span> )
+<span class="org-keyword">WHERE</span>  nombre_pais <span class="org-keyword">in</span> <span class="org-rainbow-delimiters-depth-1">(</span> <span class="org-string">'Espa&#241;a'</span>, <span class="org-string">'Francia'</span>, <span class="org-string">'Portugal'</span> <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -310,7 +298,7 @@ Cuantos cines existen entre España, Francia y Portugal
 Cuanto valen todas las peliculas que no están ni en BR ni en MP4
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(precio)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span><span class="org-rainbow-delimiters-depth-1">(</span>precio<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 <span class="org-keyword">WHERE</span>  <span class="org-keyword">NOT</span> formato = <span class="org-string">'BR'</span>
   <span class="org-keyword">AND</span>  <span class="org-keyword">NOT</span> formato = <span class="org-string">'MP4'</span>
@@ -321,7 +309,7 @@ Cuanto valen todas las peliculas que no están ni en BR ni en MP4
 Precio mas caro de una pelicula en oferta
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(precio)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-1">(</span>precio<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 <span class="org-keyword">WHERE</span>  oferta = <span class="org-string">'S'</span>
 </pre>
@@ -331,7 +319,7 @@ Precio mas caro de una pelicula en oferta
 Cuantos socios son de Toledo
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   socios
 <span class="org-keyword">WHERE</span>  telefono <span class="org-keyword">LIKE</span> <span class="org-string">'925%'</span>
 </pre>
@@ -341,9 +329,9 @@ Cuantos socios son de Toledo
 Cual es la facturación total del 2º semestre de 2002
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(precio)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span><span class="org-rainbow-delimiters-depth-1">(</span>precio<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas, alquiler
-<span class="org-keyword">WHERE</span>  SUBSTR(fecha, 4, 2) &gt; 6
+<span class="org-keyword">WHERE</span>  SUBSTR<span class="org-rainbow-delimiters-depth-1">(</span>fecha, 4, 2<span class="org-rainbow-delimiters-depth-1">)</span> &gt; 6
   <span class="org-keyword">AND</span>  fecha <span class="org-keyword">LIKE</span> <span class="org-string">'__/__/02'</span>
 </pre>
 </div></li>
@@ -362,7 +350,7 @@ Que codigos de socio alquilan películas en Enero
 Cuanto dinero se ha gastado el socio de código 1001
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(precio)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span><span class="org-rainbow-delimiters-depth-1">(</span>precio<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   alquiler, peliculas
 <span class="org-keyword">WHERE</span>  c_socio = 1001
 </pre>
@@ -384,7 +372,7 @@ alfabeticamente
 Cuantas veces se ha alquilado la pelicula de codigo 2
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   alquiler
 <span class="org-keyword">WHERE</span>  c_peli = 2
 </pre>
@@ -406,8 +394,8 @@ Nombre de los hermanos de Gema Ramirez Lopez
 Despues del 2000 en cuantos años no se han producido peliculas
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> SUBSTR(SYSDATE, 7, 2)
-       - <span class="org-builtin">COUNT</span>(<span class="org-keyword">DISTINCT</span> anno)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> SUBSTR<span class="org-rainbow-delimiters-depth-1">(</span>SYSDATE, 7, 2<span class="org-rainbow-delimiters-depth-1">)</span>
+       - <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">DISTINCT</span> anno<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 <span class="org-keyword">WHERE</span>  anno &gt; 2000
 </pre>
@@ -417,7 +405,7 @@ Despues del 2000 en cuantos años no se han producido peliculas
 Visualiza en que años se han alquilado peliculas
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-keyword">DISTINCT</span> SUBSTR(fecha, 7, 2)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-keyword">DISTINCT</span> SUBSTR<span class="org-rainbow-delimiters-depth-1">(</span>fecha, 7, 2<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   alquiler
 </pre>
 </div></li>
@@ -426,7 +414,7 @@ Visualiza en que años se han alquilado peliculas
 Cuantas peliculas hay de Tiburon
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 <span class="org-keyword">WHERE</span>  titulo <span class="org-keyword">LIKE</span> <span class="org-string">'Tibur&#243;n%'</span>
 </pre>
@@ -436,7 +424,7 @@ Cuantas peliculas hay de Tiburon
 Cuantos alquileres de un solo dia no se han devuelto
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   alquiler
 <span class="org-keyword">WHERE</span>  ndias = 1
   <span class="org-keyword">AND</span>  devuelta = <span class="org-string">'N'</span>
@@ -447,7 +435,7 @@ Cuantos alquileres de un solo dia no se han devuelto
 Cuantos socios viven en la calle oro
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   socios
 <span class="org-keyword">WHERE</span>  direccion <span class="org-keyword">LIKE</span> <span class="org-string">'oro,%'</span>
 </pre>
@@ -459,7 +447,7 @@ Que titulo de peliculas es la mas cara
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
 <span class="org-keyword">FROM</span>   peliculas
-<span class="org-keyword">WHERE</span>  precio = (<span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(precio) <span class="org-keyword">FROM</span> peliculas)
+<span class="org-keyword">WHERE</span>  precio = <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-2">(</span>precio<span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-keyword">FROM</span> peliculas<span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -469,7 +457,7 @@ Cual es el titulo de la pelicula mas moderna
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
 <span class="org-keyword">FROM</span>   peliculas
-<span class="org-keyword">WHERE</span>  anno = (<span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(anno) <span class="org-keyword">FROM</span> PELICULAS)
+<span class="org-keyword">WHERE</span>  anno = <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-2">(</span>anno<span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-keyword">FROM</span> PELICULAS<span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -479,7 +467,7 @@ En que formato esta la pelicula mas barata
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-keyword">DISTINCT</span> formato
 <span class="org-keyword">FROM</span>   peliculas
-<span class="org-keyword">WHERE</span>  precio = (<span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(precio) <span class="org-keyword">FROM</span> PELICULAS)
+<span class="org-keyword">WHERE</span>  precio = <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span><span class="org-rainbow-delimiters-depth-2">(</span>precio<span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-keyword">FROM</span> PELICULAS<span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -487,7 +475,7 @@ En que formato esta la pelicula mas barata
 Cuando se hizo el ultimo alquiler
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(fecha)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-1">(</span>fecha<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   alquiler
 </pre>
 </div></li>
@@ -498,7 +486,7 @@ Cual es el pais que tiene mas cines
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre_pais
 <span class="org-keyword">FROM</span>   paises
-<span class="org-keyword">WHERE</span>  cines = (<span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(cines) <span class="org-keyword">FROM</span> paises)
+<span class="org-keyword">WHERE</span>  cines = <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-2">(</span>cines<span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-keyword">FROM</span> paises<span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -508,11 +496,11 @@ Titulo de las peliculas españolas
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
 <span class="org-keyword">FROM</span>   peliculas
-<span class="org-keyword">WHERE</span>  c_pais = (
+<span class="org-keyword">WHERE</span>  c_pais = <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> c_pais
          <span class="org-keyword">FROM</span>   paises
          <span class="org-keyword">WHERE</span>  nombre_pais = <span class="org-string">'Espa&#241;a'</span>
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -522,10 +510,10 @@ Titulo de las peliculas que no se alquilan
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
 <span class="org-keyword">FROM</span>   peliculas
-<span class="org-keyword">WHERE</span>  c_peli <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> (
+<span class="org-keyword">WHERE</span>  c_peli <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> <span class="org-keyword">DISTINCT</span> c_peli
          <span class="org-keyword">FROM</span> alquiler
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -535,16 +523,16 @@ Nombre de los hermanos de Laura.
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre
 <span class="org-keyword">FROM</span>   socios
-<span class="org-keyword">WHERE</span>  ape1 = (
+<span class="org-keyword">WHERE</span>  ape1 = <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> ape1
          <span class="org-keyword">FROM</span>   socios
          <span class="org-keyword">WHERE</span>  nombre = <span class="org-string">'laura'</span>
-       )
-  <span class="org-keyword">AND</span>  ape2 = (
+       <span class="org-rainbow-delimiters-depth-1">)</span>
+  <span class="org-keyword">AND</span>  ape2 = <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> ape2
          <span class="org-keyword">FROM</span>   socios
          <span class="org-keyword">WHERE</span>  nombre = <span class="org-string">'laura'</span>
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
   <span class="org-keyword">AND</span>  nombre != <span class="org-string">'laura'</span>
 </pre>
 </div></li>
@@ -555,14 +543,14 @@ Titulo de las peliculas del pais que menos cines tiene
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> titulo
 <span class="org-keyword">FROM</span>   peliculas
-<span class="org-keyword">WHERE</span>  c_pais = (
+<span class="org-keyword">WHERE</span>  c_pais = <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> c_pais
          <span class="org-keyword">FROM</span>   paises
-         <span class="org-keyword">WHERE</span>  cines = (
-           <span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(cines)
+         <span class="org-keyword">WHERE</span>  cines = <span class="org-rainbow-delimiters-depth-2">(</span>
+           <span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span><span class="org-rainbow-delimiters-depth-3">(</span>cines<span class="org-rainbow-delimiters-depth-3">)</span>
            <span class="org-keyword">FROM</span>   paises
-         )
-       )
+         <span class="org-rainbow-delimiters-depth-2">)</span>
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -572,10 +560,10 @@ Codigo de la peliculas que se alquilo la primera vez
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> c_peli
 <span class="org-keyword">FROM</span>   alquiler
-<span class="org-keyword">WHERE</span>  fecha = (
-         <span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(fecha)
+<span class="org-keyword">WHERE</span>  fecha = <span class="org-rainbow-delimiters-depth-1">(</span>
+         <span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span><span class="org-rainbow-delimiters-depth-2">(</span>fecha<span class="org-rainbow-delimiters-depth-2">)</span>
          <span class="org-keyword">FROM</span>   alquiler
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -585,10 +573,10 @@ Codigo del socio que realizo el alquiler mas barato
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> c_socio
 <span class="org-keyword">FROM</span>   alquiler
-<span class="org-keyword">WHERE</span>  total = (
-         <span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(total)
+<span class="org-keyword">WHERE</span>  total = <span class="org-rainbow-delimiters-depth-1">(</span>
+         <span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span><span class="org-rainbow-delimiters-depth-2">(</span>total<span class="org-rainbow-delimiters-depth-2">)</span>
          <span class="org-keyword">FROM</span>   alquiler
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -596,7 +584,7 @@ Codigo del socio que realizo el alquiler mas barato
 Cuantas peliculas tenemos en los diferentes formatos
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span>   <span class="org-builtin">COUNT</span>(formato), formato
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>formato<span class="org-rainbow-delimiters-depth-1">)</span>, formato
 <span class="org-keyword">FROM</span>     peliculas
 <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> formato
 </pre>
@@ -606,10 +594,10 @@ Cuantas peliculas tenemos en los diferentes formatos
 Listado con el numero de alquileres realizados los diferentes años
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span>   substr(fecha, 7, 2), <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   substr<span class="org-rainbow-delimiters-depth-1">(</span>fecha, 7, 2<span class="org-rainbow-delimiters-depth-1">)</span>, <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>     alquiler
-<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> substr(fecha, 7, 2)
-<span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> substr(fecha, 7, 2)
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> substr<span class="org-rainbow-delimiters-depth-1">(</span>fecha, 7, 2<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> substr<span class="org-rainbow-delimiters-depth-1">(</span>fecha, 7, 2<span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -618,7 +606,7 @@ Listado de los precios de las peliculas mas caras en los
 diferentes años
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span>   anno, <span class="org-builtin">MAX</span>(precio)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   anno, <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-1">(</span>precio<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>     peliculas
 <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> anno
 <span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> anno
@@ -630,10 +618,10 @@ Listado con el total que hemos facturada los distintos años,
 alquilando peliculas
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span>   substr(fecha, 7, 2), <span class="org-builtin">SUM</span>(total)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   substr<span class="org-rainbow-delimiters-depth-1">(</span>fecha, 7, 2<span class="org-rainbow-delimiters-depth-1">)</span>, <span class="org-builtin">SUM</span><span class="org-rainbow-delimiters-depth-1">(</span>total<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>     alquiler
-<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> substr(fecha, 7, 2)
-<span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> substr(fecha, 7, 2)
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> substr<span class="org-rainbow-delimiters-depth-1">(</span>fecha, 7, 2<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> substr<span class="org-rainbow-delimiters-depth-1">(</span>fecha, 7, 2<span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -641,14 +629,14 @@ alquilando peliculas
 Cuantos DVDs españoles hay?
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   peliculas
 <span class="org-keyword">WHERE</span>  formato = <span class="org-string">'DVD'</span>
-  <span class="org-keyword">and</span>  c_pais = (
+  <span class="org-keyword">and</span>  c_pais = <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> c_pais
          <span class="org-keyword">FROM</span>   paises
          <span class="org-keyword">WHERE</span>  nombre_pais = <span class="org-string">'Espa&#241;a'</span>
-      )
+      <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -657,7 +645,7 @@ Listado con las diferencias familias socias (1er apellido) junto
 con el numero de integrantes que tiene cada familia.
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span>   ape1, <span class="org-builtin">COUNT</span>(*)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   ape1, <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>*<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>     socios
 <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> ape1
 <span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> ape1
@@ -705,15 +693,15 @@ Nombre de los socios que no han visto ninguna de Torrente.
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span>   nombre, ape1
 <span class="org-keyword">FROM</span>     socios
-<span class="org-keyword">WHERE</span>    c_socio <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> (
+<span class="org-keyword">WHERE</span>    c_socio <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
            <span class="org-keyword">SELECT</span> c_socio
            <span class="org-keyword">FROM</span>   alquiler
-           <span class="org-keyword">WHERE</span>  c_peli <span class="org-keyword">IN</span> (
+           <span class="org-keyword">WHERE</span>  c_peli <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-2">(</span>
                     <span class="org-keyword">SELECT</span> c_peli
                     <span class="org-keyword">FROM</span>   peliculas
                     <span class="org-keyword">WHERE</span>  titulo <span class="org-keyword">LIKE</span> <span class="org-string">'Torrente%'</span>
-                  )
-         )
+                  <span class="org-rainbow-delimiters-depth-2">)</span>
+         <span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> nombre
 </pre>
 </div></li>
@@ -725,7 +713,7 @@ Nombre de los socios que alquilaron el año pasado.
 <pre class="src src-sql"><span class="org-keyword">SELECT</span>   s.nombre, s.ape1
 <span class="org-keyword">FROM</span>     socios s, alquiler a
 <span class="org-keyword">WHERE</span>    s.c_socio = a.c_socio
-  <span class="org-keyword">AND</span>    SUBSTR(a.fecha, 7, 2) = SUBSTR(SYSDATE, 7, 2) - 1
+  <span class="org-keyword">AND</span>    SUBSTR<span class="org-rainbow-delimiters-depth-1">(</span>a.fecha, 7, 2<span class="org-rainbow-delimiters-depth-1">)</span> = SUBSTR<span class="org-rainbow-delimiters-depth-1">(</span>SYSDATE, 7, 2<span class="org-rainbow-delimiters-depth-1">)</span> - 1
 <span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> a.nombre
 </pre>
 </div></li>
@@ -736,14 +724,14 @@ Nombre de los paises que no alquilan sus peliculas.
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span>   nombre_pais
 <span class="org-keyword">FROM</span>     paises
-<span class="org-keyword">WHERE</span>    c_pais <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> (
+<span class="org-keyword">WHERE</span>    c_pais <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
            <span class="org-keyword">SELECT</span> c_pais
            <span class="org-keyword">FROM</span>   peliculas
-           <span class="org-keyword">WHERE</span>  c_peli <span class="org-keyword">IN</span> (
+           <span class="org-keyword">WHERE</span>  c_peli <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-2">(</span>
                     <span class="org-keyword">SELECT</span> c_peli
                     <span class="org-keyword">FROM</span>   alquiler
-                  )
-         )
+                  <span class="org-rainbow-delimiters-depth-2">)</span>
+         <span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> nombre_pais
 </pre>
 </div></li>
@@ -754,19 +742,19 @@ Nombre y apellidos de los socios que alquilan peliculas españolas.
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre, ape1
 <span class="org-keyword">FROM</span>   socios
-<span class="org-keyword">WHERE</span>  c_socio <span class="org-keyword">IN</span> (
+<span class="org-keyword">WHERE</span>  c_socio <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> c_socio
          <span class="org-keyword">FROM</span>   alquiler
-         <span class="org-keyword">WHERE</span>  c_peli <span class="org-keyword">IN</span> (
+         <span class="org-keyword">WHERE</span>  c_peli <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-2">(</span>
                   <span class="org-keyword">SELECT</span> c_peli
                   <span class="org-keyword">FROM</span>   peliculas
-                  <span class="org-keyword">WHERE</span>  c_pais = (
+                  <span class="org-keyword">WHERE</span>  c_pais = <span class="org-rainbow-delimiters-depth-3">(</span>
                            <span class="org-keyword">SELECT</span> c_pais
                            <span class="org-keyword">FROM</span>   paises
                            <span class="org-keyword">WHERE</span>  nombre_pais = <span class="org-string">'Espa&#241;a'</span>
-                         )
-                )
-       )
+                         <span class="org-rainbow-delimiters-depth-3">)</span>
+                <span class="org-rainbow-delimiters-depth-2">)</span>
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> nombre
 </pre>
 </div></li>
@@ -775,13 +763,13 @@ Nombre y apellidos de los socios que alquilan peliculas españolas.
 Cuantos socios han alquilado algun DVD?
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(<span class="org-keyword">DISTINCT</span> c_socio)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">DISTINCT</span> c_socio<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   alquiler
-<span class="org-keyword">WHERE</span>  c_peli <span class="org-keyword">IN</span> (
+<span class="org-keyword">WHERE</span>  c_peli <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> c_peli
          <span class="org-keyword">FROM</span>   peliculas
          <span class="org-keyword">WHERE</span>  formato = <span class="org-string">'DVD'</span>
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -789,32 +777,25 @@ Cuantos socios han alquilado algun DVD?
 Cuantos paises tienen mas cines que la media de los paises?
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(c_pais)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>c_pais<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   paises
-<span class="org-keyword">WHERE</span>  cines &gt; (
-         <span class="org-keyword">SELECT</span> <span class="org-builtin">AVG</span>(cines)
+<span class="org-keyword">WHERE</span>  cines &gt; <span class="org-rainbow-delimiters-depth-1">(</span>
+         <span class="org-keyword">SELECT</span> <span class="org-builtin">AVG</span><span class="org-rainbow-delimiters-depth-2">(</span>cines<span class="org-rainbow-delimiters-depth-2">)</span>
          <span class="org-keyword">FROM</span>   paises
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
-</ol>
-</div>
-</div>
 
-<div id="outline-container-org76fccb0" class="outline-2">
-<h2 id="org76fccb0">Consultas en miCOMIDA</h2>
-<div class="outline-text-2" id="text-org76fccb0">
-<ol class="org-ol">
-<li value="69"><p>
+<li><p>
 Nombre de los clientes que no han pedido nada.
 </p>
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre
 <span class="org-keyword">FROM</span>   cliente
-<span class="org-keyword">WHERE</span>  idcli <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> (
+<span class="org-keyword">WHERE</span>  idcli <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> idcli
          <span class="org-keyword">FROM</span>   pedido
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -822,7 +803,7 @@ Nombre de los clientes que no han pedido nada.
 Cuantos pedidos se hicieron en 2017.
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(idped)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>idped<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   pedido
 <span class="org-keyword">WHERE</span>  fped <span class="org-keyword">like</span> <span class="org-string">'__/__/17'</span>
 </pre>
@@ -845,10 +826,10 @@ Descripcion de los articulos que se han vendido.
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> descrip
 <span class="org-keyword">FROM</span>   articulo
-<span class="org-keyword">WHERE</span>  idart <span class="org-keyword">IN</span> (
+<span class="org-keyword">WHERE</span>  idart <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> idart
          <span class="org-keyword">FROM</span>   detalle
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -858,10 +839,10 @@ Descripcion del articulo mas caro.
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> descrip
 <span class="org-keyword">FROM</span>   articulo
-<span class="org-keyword">WHERE</span>  precio = (
-         <span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(precio)
+<span class="org-keyword">WHERE</span>  precio = <span class="org-rainbow-delimiters-depth-1">(</span>
+         <span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-2">(</span>precio<span class="org-rainbow-delimiters-depth-2">)</span>
          <span class="org-keyword">FROM</span>   articulo
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -869,14 +850,14 @@ Descripcion del articulo mas caro.
 Cuantos pedidos nos hacen entre madrileños y toledanos?
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(idped)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>idped<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   pedido
-<span class="org-keyword">WHERE</span>  idcli <span class="org-keyword">IN</span> (
+<span class="org-keyword">WHERE</span>  idcli <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> idcli
          <span class="org-keyword">FROM</span>   cliente
          <span class="org-keyword">WHERE</span>  ciudad = <span class="org-string">'MADRID'</span>
             <span class="org-keyword">OR</span>  ciudad = <span class="org-string">'TOLEDO'</span>
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -884,9 +865,9 @@ Cuantos pedidos nos hacen entre madrileños y toledanos?
 Cuantos pedidos se hacen en la segunda quincena del mes?
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(idped)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>idped<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   pedido
-<span class="org-keyword">WHERE</span>  SUBSTR(fped, 1, 2) &gt; 15
+<span class="org-keyword">WHERE</span>  SUBSTR<span class="org-rainbow-delimiters-depth-1">(</span>fped, 1, 2<span class="org-rainbow-delimiters-depth-1">)</span> &gt; 15
 </pre>
 </div></li>
 
@@ -895,7 +876,7 @@ Listado de las ciudades con el numero de clientes que tenemos en
 cada provincia.
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span>   ciudad, <span class="org-builtin">COUNT</span>(idcli)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   ciudad, <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>idcli<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>     cliente
 <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> ciudad
 </pre>
@@ -906,7 +887,7 @@ Listado con los nombres de los clientes junto con el numero de
 pedidos que nos han hecho.
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span>   c.nombre, <span class="org-builtin">COUNT</span>(p.idped)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   c.nombre, <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>p.idped<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>     cliente c, pedido p
 <span class="org-keyword">WHERE</span>    c.idcli = p.idcli
 <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> c.nombre
@@ -919,19 +900,19 @@ Que come Ana Kurnicova.
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> descrip
 <span class="org-keyword">FROM</span>   articulo
-<span class="org-keyword">WHERE</span>  idart <span class="org-keyword">IN</span> (
+<span class="org-keyword">WHERE</span>  idart <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> idart
          <span class="org-keyword">FROM</span>   detalle
-         <span class="org-keyword">WHERE</span>  idped <span class="org-keyword">IN</span> (
+         <span class="org-keyword">WHERE</span>  idped <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-2">(</span>
                   <span class="org-keyword">SELECT</span> idped
                   <span class="org-keyword">FROM</span>   pedido
-                  <span class="org-keyword">WHERE</span>  idcli = (
+                  <span class="org-keyword">WHERE</span>  idcli = <span class="org-rainbow-delimiters-depth-3">(</span>
                            <span class="org-keyword">SELECT</span> idcli
                            <span class="org-keyword">FROM</span>   cliente
                            <span class="org-keyword">WHERE</span>  nombre = <span class="org-string">'ANA KURNICOVA'</span>
-                         )
-                )
-       )
+                         <span class="org-rainbow-delimiters-depth-3">)</span>
+                <span class="org-rainbow-delimiters-depth-2">)</span>
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -940,7 +921,7 @@ Listado de los articulos que vendemos junto con la cantidad que
 vendemos de ellos.
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span>   a.descrip, <span class="org-builtin">SUM</span>(d.cantidad)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   a.descrip, <span class="org-builtin">SUM</span><span class="org-rainbow-delimiters-depth-1">(</span>d.cantidad<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>     articulo a, detalle d
 <span class="org-keyword">WHERE</span>    a.idart = d.idart
 <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> a.descrip
@@ -952,12 +933,12 @@ vendemos de ellos.
 Que capital tenemos entre corderos y hamburguesas en el almacen?
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(stock * precio)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span><span class="org-rainbow-delimiters-depth-1">(</span>stock * precio<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>   articulo
-<span class="org-keyword">WHERE</span>  descrip <span class="org-keyword">IN</span> (
+<span class="org-keyword">WHERE</span>  descrip <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-string">'CORDERO'</span>,
          <span class="org-string">'HAMBURGUESA'</span>
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -967,19 +948,19 @@ Nombre de los clientes que no comen salchichas.
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre
 <span class="org-keyword">FROM</span>   cliente
-<span class="org-keyword">WHERE</span>  idcli <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> (
+<span class="org-keyword">WHERE</span>  idcli <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> idcli
          <span class="org-keyword">FROM</span>   pedido
-         <span class="org-keyword">WHERE</span>  idped <span class="org-keyword">IN</span> (
+         <span class="org-keyword">WHERE</span>  idped <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-2">(</span>
                   <span class="org-keyword">SELECT</span> idped
                   <span class="org-keyword">FROM</span>   detalle
-                  <span class="org-keyword">WHERE</span>  idart <span class="org-keyword">IN</span> (
+                  <span class="org-keyword">WHERE</span>  idart <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-3">(</span>
                            <span class="org-keyword">SELECT</span> idart
                            <span class="org-keyword">FROM</span>   articulo
                            <span class="org-keyword">WHERE</span>  descrip = <span class="org-string">'SALCHICHAS'</span>
-                         )
-                )
-       )
+                         <span class="org-rainbow-delimiters-depth-3">)</span>
+                <span class="org-rainbow-delimiters-depth-2">)</span>
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -987,22 +968,22 @@ Nombre de los clientes que no comen salchichas.
 Cuantas paellas se comen en Toledo?
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(cantidad)                      
-<span class="org-keyword">FROM</span>   detalle                            
-<span class="org-keyword">WHERE</span>  idped <span class="org-keyword">IN</span> (                         
-         <span class="org-keyword">SELECT</span> idped                     
-         <span class="org-keyword">FROM</span>   pedido                    
-         <span class="org-keyword">WHERE</span>  idcli <span class="org-keyword">IN</span> (                
-                  <span class="org-keyword">SELECT</span> idcli            
-                  <span class="org-keyword">FROM</span>   cliente          
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span><span class="org-rainbow-delimiters-depth-1">(</span>cantidad<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">FROM</span>   detalle
+<span class="org-keyword">WHERE</span>  idped <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
+         <span class="org-keyword">SELECT</span> idped
+         <span class="org-keyword">FROM</span>   pedido
+         <span class="org-keyword">WHERE</span>  idcli <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-2">(</span>
+                  <span class="org-keyword">SELECT</span> idcli
+                  <span class="org-keyword">FROM</span>   cliente
                   <span class="org-keyword">WHERE</span>  ciudad = <span class="org-string">'TOLEDO'</span>
-                )                         
-       )
-  <span class="org-keyword">AND</span>  idart = (
+                <span class="org-rainbow-delimiters-depth-2">)</span>
+       <span class="org-rainbow-delimiters-depth-1">)</span>
+  <span class="org-keyword">AND</span>  idart = <span class="org-rainbow-delimiters-depth-1">(</span>
          <span class="org-keyword">SELECT</span> idart
          <span class="org-keyword">FROM</span>   articulo
          <span class="org-keyword">WHERE</span>  descrip = <span class="org-string">'PAELLA'</span>
-       )
+       <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
 
@@ -1010,19 +991,88 @@ Cuantas paellas se comen en Toledo?
 Listado con el idped junto con el importe del pedido.
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span>   d.idped, <span class="org-builtin">SUM</span>(d.cantidad * a.precio)
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   d.idped, <span class="org-builtin">SUM</span><span class="org-rainbow-delimiters-depth-1">(</span>d.cantidad * a.precio<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-keyword">FROM</span>     detalle d, articulo a
 <span class="org-keyword">WHERE</span>    d.idart = a.idart
 <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> d.idped
 </pre>
 </div></li>
+
+<li><p>
+Listado con las ciudades y el numero de clientes de cada ciudad.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   ciudad, <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>idcli<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">FROM</span>     cliente
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> ciudad
+</pre>
+</div></li>
+
+<li><p>
+Nombre de las ciudades en las que tenemos mas de 2 clientes.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   ciudad
+<span class="org-keyword">FROM</span>     cliente
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> ciudad
+<span class="org-keyword">HAVING</span>   <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>idcli<span class="org-rainbow-delimiters-depth-1">)</span> &gt; 2
+</pre>
+</div></li>
+
+<li><p>
+En que formatos tenemos mas de 10 peliculas?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   formato
+<span class="org-keyword">FROM</span>     peliculas
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> formato
+<span class="org-keyword">HAVING</span>   <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>c_peli<span class="org-rainbow-delimiters-depth-1">)</span> &gt; 10
+</pre>
+</div></li>
+
+<li><p>
+Titulo de las peliculas que hemos alquilado mas de una vez.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   titulo
+<span class="org-keyword">FROM</span>     peliculas
+<span class="org-keyword">WHERE</span>    c_peli <span class="org-keyword">IN</span> <span class="org-rainbow-delimiters-depth-1">(</span>
+           <span class="org-keyword">SELECT</span>   c_peli
+           <span class="org-keyword">FROM</span>     alquiler
+           <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> c_peli
+           <span class="org-keyword">HAVING</span>   <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-2">(</span>c_socio<span class="org-rainbow-delimiters-depth-2">)</span> &gt; 1
+         <span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div></li>
+
+<li><p>
+Que paises producen menos de 3 peliculas?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   pa.nombre_pais
+<span class="org-keyword">FROM</span>     peliculas pe, paises pa
+<span class="org-keyword">WHERE</span>    pe.c_pais = pa.c_pais
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> pa.nombre_pais
+<span class="org-keyword">HAVING</span>   <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>pe.c_peli<span class="org-rainbow-delimiters-depth-1">)</span> &lt; 3
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los socios que han alquilado mas de 2 peliculas.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   s.nombre
+<span class="org-keyword">FROM</span>     socios s, alquiler a
+<span class="org-keyword">WHERE</span>    s.c_socio = a.c_socio
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> s.nombre
+<span class="org-keyword">HAVING</span>   <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>a.c_peli<span class="org-rainbow-delimiters-depth-1">)</span> &gt; 2
+</pre>
+</div></li>
 </ol>
-</div>
-</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2021-12-17 Fri 12:47</p>
+<p class="date">Created: 2022-01-20 Thu 13:04</p>
 </div>
 </body>
 </html>

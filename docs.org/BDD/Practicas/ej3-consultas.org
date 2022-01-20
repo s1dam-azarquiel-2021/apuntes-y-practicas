@@ -1,0 +1,30 @@
+#+TITLE: Ejercicio 3 Consultas
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+1. Vuestro nombre sea un nuevo CLIENTE
+   #+begin_src sql
+   INSERT INTO CLIENTE (idcli, nombre, direc, ciudad, cpostal, telef, credit)
+   VALUES (6969, 'Alberto Robles', 'C/ Cacho, 69', 'Trozo', 6969, 696969696, 696969);
+   #+end_src
+
+2. Insertar un nuevo registro de PEDIDO con fecha de hoy. El pedido
+   debe contener una de salchichas y algún artículo más.
+   #+begin_src sql
+   INSERT INTO PEDIDO (idped, idcli, fped, ffac)
+   VALUES (6969, 6969, '20/01/2022', '20/01/2022');
+
+   INSERT INTO DETALLE (idped, idart, cantidad)
+   VALUES (6969, 4006, 69);
+
+   INSERT INTO DETALLE (idped, idart, cantidad)
+   VALUES (6969, 4008, 69);
+   #+end_src
+
+3. Confirmar con una select que visualice los artículos que habéis
+   pedido.
+   #+begin_src sql
+   SELECT a.descrip
+   FROM   detalle d, articulo a
+   WHERE  d.idart = a.idart
+     AND  d.idped = 6969;
+   #+end_src
