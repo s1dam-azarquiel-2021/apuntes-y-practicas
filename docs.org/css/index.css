@@ -214,9 +214,10 @@ h7 {
   margin: 1rem 0 0.2rem;
   color: #cc241d; }
 
-.outline-2 {
+.content {
   width: 80ch;
   margin: 0 auto; }
+
 .outline-2 *, .outline-3 *, .outline-4 *, .outline-5 *, .outline-6 *, .outline-7 *, .outline-8 * {
   margin: 0.5rem 0; }
 .outline-2 code, .outline-3 code, .outline-4 code, .outline-5 code, .outline-6 code, .outline-7 code, .outline-8 code {
