@@ -837,3 +837,71 @@
     WHERE  a.c_peli = p.c_peli
       AND  a.total != a.ndias * p.precio
     #+end_src
+
+96. Actualizar bien la base de datos y poner el valor correcto de
+    TOTAL.
+    #+begin_src sql
+    UPDATE alquiler a
+    SET    total = ndias * (
+             SELECT precio
+             FROM   peliculas p
+             WHERE  p.c_peli = a.c_peli
+           )
+    #+end_src
+
+97. Listado con todos los nombres de los socios junto con el total que
+    se han gastado en el videoclub.
+    #+begin_src sql
+    SELECT nombre, (
+             SELECT SUM(total)
+             FROM alquiler a
+             WHERE a.c_socio = s.c_socio
+           ) "Total gastado"
+    FROM   socios s
+    #+end_src
+
+98. Cual es el pais que mas peliculas ha producido.
+    #+begin_src sql
+    SELECT nombre_pais
+    FROM   paises
+    WHERE  cines = (
+             SELECT MAX(cines)
+             FROM   paises
+           )
+    #+end_src
+
+99. Quitar 100 cines a los paises que no alquilan sus peliculas.
+    #+begin_src sql
+    UPDATE paises p
+    SET    cines = cines - 100
+    WHERE  c_pais NOT IN (
+             SELECT c_pais
+             FROM   peliculas
+             WHERE  c_peli IN (
+                      SELECT c_peli
+                      FROM   alquiler
+                    )
+           )
+    #+end_src
+
+100. En que formato tenemos mas peliculas.
+     #+begin_src sql
+     SELECT   formato
+     FROM     peliculas
+     GROUP BY formato
+     HAVING   COUNT(formato) = (
+                SELECT   MAX(SUM(1))
+                FROM     peliculas
+                GROUP BY formato
+              )
+     #+end_src
+
+101. Poner en oferta solo aquellas peliculas que no se alquilen.
+     #+begin_src sql
+     UPDATE peliculas
+     SET    oferta = 'S'
+     WHERE  c_peli NOT IN (
+              SELECT c_peli
+              FROM   alquiler
+            )
+     #+end_src
