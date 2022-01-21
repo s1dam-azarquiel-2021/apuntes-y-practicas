@@ -788,3 +788,52 @@
     GROUP BY s.nombre
     HAVING   COUNT(a.c_peli) > 2
     #+end_src
+
+90. Poner a oferta todas las peliculas anteriores a 2010.
+    #+begin_src sql
+    UPDATE peliculas
+    SET    oferta = 'S'
+    WHERE  anno < 2010
+    #+end_src
+
+91. Rebajar el PRECIO de todas las peliculas un 25%.
+    #+begin_src sql
+    UPDATE peliculas
+    SET    precio = precio - precio * 25/100
+    #+end_src
+
+92. Dia sin IVA. Quitar el IVA a todas las peliculas.
+    #+begin_src sql
+    UPDATE peliculas
+    SET    precio = precio / 121 * 100
+    #+end_src
+
+93. Poner a 1 euro todas las peliculas españolas.
+    #+begin_src sql
+    UPDATE peliculas
+    SET    precio = 1
+    WHERE  c_pais IN (
+             SELECT c_pais
+             FROM   paises
+             WHERE  nombre_pais LIKE 'España'
+           )
+    #+end_src
+
+94. Listado con los nombres de socios junto con el titulo de la
+    pelicula mal alquilada.
+    #+begin_src sql
+    SELECT s.nombre, p.titulo
+    FROM   socios s, peliculas p, alquiler a
+    WHERE  s.c_socio = a.c_socio
+      AND  a.c_peli = p.c_peli
+      AND  a.total != a.ndias * p.precio
+    #+end_src
+
+95. Listado con los alquileres con el precio cobrado junto con el
+    precio que se deberia haber cobrado.
+    #+begin_src sql
+    SELECT p.titulo, a.total "Cobrado", a.ndias * p.precio "Precio correcto"
+    FROM   peliculas p, alquiler a
+    WHERE  a.c_peli = p.c_peli
+      AND  a.total != a.ndias * p.precio
+    #+end_src
