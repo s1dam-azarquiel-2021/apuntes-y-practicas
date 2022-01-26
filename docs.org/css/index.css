@@ -119,9 +119,6 @@
   vertical-align: baseline;
   font: inherit; }
 
-html {
-  scrollbar-width: none; }
-
 body {
   font-family: "Iosevka Curly", monospace;
   font-size: 18px;
@@ -217,6 +214,8 @@ h7 {
 .content {
   width: 80ch;
   margin: 0 auto; }
+  .content ::marker {
+    color: #b16286; }
 
 .outline-2 *, .outline-3 *, .outline-4 *, .outline-5 *, .outline-6 *, .outline-7 *, .outline-8 * {
   margin: 0.5rem 0; }
@@ -233,15 +232,6 @@ h7 {
 .outline-text-7 ol, .outline-text-8 ul,
 .outline-text-8 ol {
   margin-left: 1rem; }
-  .outline-text-2 ul > ::marker,
-  .outline-text-2 ol > ::marker, .outline-text-3 ul > ::marker,
-  .outline-text-3 ol > ::marker, .outline-text-4 ul > ::marker,
-  .outline-text-4 ol > ::marker, .outline-text-5 ul > ::marker,
-  .outline-text-5 ol > ::marker, .outline-text-6 ul > ::marker,
-  .outline-text-6 ol > ::marker, .outline-text-7 ul > ::marker,
-  .outline-text-7 ol > ::marker, .outline-text-8 ul > ::marker,
-  .outline-text-8 ol > ::marker {
-    color: #8f3f71; }
 .outline-text-2 img, .outline-text-3 img, .outline-text-4 img, .outline-text-5 img, .outline-text-6 img, .outline-text-7 img, .outline-text-8 img {
   display: block;
   max-width: 50vw; }
@@ -355,6 +345,14 @@ code {
   color: #fb4934; }
 .org-nix-constant {
   color: #d3869b; }
+.org-rainbow-delimiters-depth-1, .org-rainbow-delimiters-depth-5 {
+  color: #458588; }
+.org-rainbow-delimiters-depth-2, .org-rainbow-delimiters-depth-6 {
+  color: #b16286; }
+.org-rainbow-delimiters-depth-3, .org-rainbow-delimiters-depth-7 {
+  color: #689d6a; }
+.org-rainbow-delimiters-depth-4, .org-rainbow-delimiters-depth-8 {
+  color: #d65d0e; }
 
 #postamble,
 #preamble {
