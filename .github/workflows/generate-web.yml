@@ -33,7 +33,6 @@ jobs:
 
       - name: Generate files
         run: |
-          ls htmlize.el
           emacs --batch \
                 --eval "(add-to-list 'load-path \"./elispStuff\")" \
                 --eval "(require 'htmlize)" \
