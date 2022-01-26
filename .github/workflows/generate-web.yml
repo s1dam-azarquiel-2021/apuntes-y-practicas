@@ -45,6 +45,10 @@ jobs:
                       org-export-allow-bind-keywords t) \
                 " \
                 --eval " \
+                (setq user-full-name    \"Alberto Robles Gomez\" \
+                      user-mail-address \"aru_hackZ.official@zohomail.eu\") \
+                " \
+                --eval " \
                 (setq org-publish-project-alist \
                       '((\"S1DAM - Notes\" \
                          :components \
