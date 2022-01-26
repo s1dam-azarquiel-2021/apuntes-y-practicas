@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-01-26 Wed 18:01 -->
+<!-- 2022-01-26 Wed 20:15 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Practica 1B</title>
@@ -38,12 +38,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7b043dd">1. Deteccion de drivers del equipo</a></li>
+<li><a href="#org47002ae">1. Deteccion de drivers del equipo</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org7b043dd" class="outline-2">
-<h2 id="org7b043dd"><span class="section-number-2">1</span> Deteccion de drivers del equipo</h2>
+<div id="outline-container-org47002ae" class="outline-2">
+<h2 id="org47002ae"><span class="section-number-2">1</span> Deteccion de drivers del equipo</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Version del kernel: 5.10.57
@@ -933,7 +933,7 @@ Version del kernel: 5.10.57
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2022-01-26 Wed 18:01</p>
+<p class="date">Created: 2022-01-26 Wed 20:15</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-01-26 Wed 18:01 -->
+<!-- 2022-01-26 Wed 20:15 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Practica 2A</title>
@@ -38,12 +38,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6d9c191">1. Creacion y configuracion de una maquina virtual</a></li>
+<li><a href="#org9366152">1. Creacion y configuracion de una maquina virtual</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org6d9c191" class="outline-2">
-<h2 id="org6d9c191"><span class="section-number-2">1</span> Creacion y configuracion de una maquina virtual</h2>
+<div id="outline-container-org9366152" class="outline-2">
+<h2 id="org9366152"><span class="section-number-2">1</span> Creacion y configuracion de una maquina virtual</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li><p>
@@ -69,13 +69,13 @@ Creacion de la VM:
 </p>
 
 
-<figure id="org5e7c12e">
+<figure id="org52792b2">
 <img src="./img/2.1.1.png" alt="2.1.1.png">
 
 </figure>
 
 
-<figure id="org5fa317a">
+<figure id="org703a3fa">
 <img src="./img/2.1.2.png" alt="2.1.2.png">
 
 </figure>
@@ -91,13 +91,13 @@ la máquina W10-SI-XX donde XX es tu rango de IP asignadas.
 </p>
 
 
-<figure id="org9a122f5">
+<figure id="org2e79865">
 <img src="./img/2.2.1.png" alt="2.2.1.png">
 
 </figure>
 
 
-<figure id="org9297f65">
+<figure id="org09b09d1">
 <img src="./img/2.2.2.png" alt="2.2.2.png">
 
 </figure>
@@ -112,7 +112,7 @@ Instala VMWTools en la máquina virtual.
 </p>
 
 
-<figure id="orgcb04d46">
+<figure id="orgab84102">
 <img src="./img/2.3.1.png" alt="2.3.1.png">
 
 </figure>
@@ -129,7 +129,7 @@ encontrado una nueva unidad.
 </p>
 
 
-<figure id="orge9aa799">
+<figure id="org2cbbfc6">
 <img src="./img/2.3.2.png" alt="2.3.2.png">
 
 </figure>
@@ -139,7 +139,7 @@ Ahora le hacemos doble click a la unidad.
 </p>
 
 
-<figure id="orgf0ec173">
+<figure id="orgc503af8">
 <img src="./img/2.3.3.png" alt="2.3.3.png">
 
 </figure>
@@ -149,7 +149,7 @@ Aceptamos y le damos a next hasta que deje de preguntar.
 </p>
 
 
-<figure id="org41a4601">
+<figure id="org215aff7">
 <img src="./img/2.3.4.png" alt="2.3.4.png">
 
 </figure>
@@ -159,7 +159,7 @@ Una vez acabe tocara reiniciar la VM.
 </p>
 
 
-<figure id="org6c5aaea">
+<figure id="orgc90ee45">
 <img src="./img/2.3.5.png" alt="2.3.5.png">
 
 </figure></li>
@@ -180,13 +180,13 @@ el guest:
 </p>
 
 
-<figure id="org1996a74">
+<figure id="org40c02e3">
 <img src="./img/2.4.1.png" alt="2.4.1.png">
 
 </figure>
 
 
-<figure id="org7c49393">
+<figure id="orgb472132">
 <img src="./img/2.4.2.png" alt="2.4.2.png">
 
 </figure></li>
@@ -202,7 +202,7 @@ Creamos una carpeta compartida.
 </p>
 
 
-<figure id="orgf92a101">
+<figure id="org90a1c8a">
 <img src="./img/2.5.1.png" alt="2.5.1.png">
 
 </figure>
@@ -213,7 +213,7 @@ red con la carpeta anteriormente especificada
 </p>
 
 
-<figure id="org649e0d3">
+<figure id="org2c58ce5">
 <img src="./img/2.5.2.png" alt="2.5.2.png">
 
 </figure></li>
@@ -252,7 +252,7 @@ de comandos con el comando ipconfig /all
 </p>
 
 
-<figure id="org2f509b8">
+<figure id="org4751503">
 <img src="./img/2.7.1.png" alt="2.7.1.png">
 
 </figure></li>
@@ -268,7 +268,7 @@ adaptador virtual, que en este caso es algo parecido a esto:
 </p>
 
 
-<figure id="orgf873861">
+<figure id="orgc0c85c2">
 <img src="./img/2.7.2.png" alt="2.7.2.png">
 
 </figure></li>
@@ -282,7 +282,7 @@ Google es malvado
 </p>
 
 
-<figure id="org333b6ba">
+<figure id="org3b27cf7">
 <img src="./img/2.7.3.png" alt="2.7.3.png">
 
 </figure></li>
@@ -298,7 +298,7 @@ dispositivo de la red de mi casa, en este caso mi movil.
 </p>
 
 
-<figure id="org7c5010a">
+<figure id="org0ad126a">
 <img src="./img/2.7.4.png" alt="2.7.4.png">
 
 </figure>
@@ -317,7 +317,7 @@ de comandos con el comando ipconfig /all
 </p>
 
 
-<figure id="orgdb8cf0d">
+<figure id="org3c9aa76">
 <img src="./img/2.8.1.png" alt="2.8.1.png">
 
 </figure></li>
@@ -339,7 +339,7 @@ Comprueba que funciona un PING a www.google.es
 </p>
 
 
-<figure id="org4ab0f29">
+<figure id="org1652a4a">
 <img src="./img/2.8.2.png" alt="2.8.2.png">
 
 </figure>
@@ -355,7 +355,7 @@ aula
 </p>
 
 
-<figure id="org81b6139">
+<figure id="orgabeb0c6">
 <img src="./img/2.8.3.png" alt="2.8.3.png">
 
 </figure>
@@ -391,7 +391,7 @@ configuracion de la red:
 </p>
 
 
-<figure id="org709b3a0">
+<figure id="org0f69278">
 <img src="./img/2.9.1.png" alt="2.9.1.png">
 
 </figure></li>
@@ -401,7 +401,7 @@ Comprueba que funciona un PING a www.google.es
 </p>
 
 
-<figure id="orgf653781">
+<figure id="orgf450408">
 <img src="./img/2.9.2.png" alt="2.9.2.png">
 
 </figure></li>
@@ -412,7 +412,7 @@ aula
 </p>
 
 
-<figure id="org2e0625b">
+<figure id="org60dc9f2">
 <img src="./img/2.9.3.png" alt="2.9.3.png">
 
 </figure>
@@ -455,7 +455,7 @@ Pinchamos en Machine y dentro Take Snapshot.
 </p>
 
 
-<figure id="org3944243">
+<figure id="orgef54620">
 <img src="./img/2.12.1.png" alt="2.12.1.png">
 
 </figure>
@@ -465,7 +465,7 @@ Le damos un nombre y descricion y aceptamos.
 </p>
 
 
-<figure id="org5a41bad">
+<figure id="orgb1fbbbf">
 <img src="./img/2.12.2.png" alt="2.12.2.png">
 
 </figure></li>
@@ -479,19 +479,19 @@ Voy a cambiar el nombre del equipo
 </p>
 
 
-<figure id="org17ccbc5">
+<figure id="orgdb2ea80">
 <img src="./img/2.13.1.png" alt="2.13.1.png">
 
 </figure>
 
 
-<figure id="org3f5ca7e">
+<figure id="orgbda38d3">
 <img src="./img/2.13.2.png" alt="2.13.2.png">
 
 </figure>
 
 
-<figure id="org53db10c">
+<figure id="org117db14">
 <img src="./img/2.13.3.png" alt="2.13.3.png">
 
 </figure></li>
@@ -505,7 +505,7 @@ Nos vamos a la vista de snapshots
 </p>
 
 
-<figure id="orgf627104">
+<figure id="orgb26f192">
 <img src="./img/2.14.1.png" alt="2.14.1.png">
 
 </figure>
@@ -517,7 +517,7 @@ normalidad.
 </p>
 
 
-<figure id="org2b4c7ff">
+<figure id="org4bb8390">
 <img src="./img/2.14.2.png" alt="2.14.2.png">
 
 </figure></li>
@@ -526,7 +526,7 @@ normalidad.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2022-01-26 Wed 18:01</p>
+<p class="date">Created: 2022-01-26 Wed 20:15</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

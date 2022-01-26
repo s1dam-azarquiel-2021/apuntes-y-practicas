@@ -211,10 +211,10 @@ h7 {
   margin: 1rem 0 0.2rem;
   color: #cc241d; }
 
-.content {
+#content {
   width: 80ch;
   margin: 0 auto; }
-  .content ::marker {
+  #content ::marker {
     color: #b16286; }
 
 .outline-2 *, .outline-3 *, .outline-4 *, .outline-5 *, .outline-6 *, .outline-7 *, .outline-8 * {
@@ -379,7 +379,7 @@ code {
   #table-of-contents #text-table-of-contents > ul {
     flex-flow: column nowrap; }
 
-  .content {
+  #content {
     width: auto;
     margin: 0 1em; }
 

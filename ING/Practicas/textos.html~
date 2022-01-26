@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-01-26 Wed 18:01 -->
+<!-- 2022-01-26 Wed 20:15 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Textos</title>
@@ -38,14 +38,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgda62aae">1. Texto 1</a></li>
-<li><a href="#org9aadba1">2. Texto 2</a></li>
-<li><a href="#orgf8b18d1">3. Texto 3</a></li>
+<li><a href="#org2687d0d">1. Texto 1</a></li>
+<li><a href="#org4a731da">2. Texto 2</a></li>
+<li><a href="#org2d987fa">3. Texto 3</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orgda62aae" class="outline-2">
-<h2 id="orgda62aae"><span class="section-number-2">1</span> Texto 1</h2>
+<div id="outline-container-org2687d0d" class="outline-2">
+<h2 id="org2687d0d"><span class="section-number-2">1</span> Texto 1</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The ability of tiny computing devices to control complex operations
@@ -257,8 +257,8 @@ reveal ……… unknown manuscript.
 </div>
 </div>
 
-<div id="outline-container-org9aadba1" class="outline-2">
-<h2 id="org9aadba1"><span class="section-number-2">2</span> Texto 2</h2>
+<div id="outline-container-org4a731da" class="outline-2">
+<h2 id="org4a731da"><span class="section-number-2">2</span> Texto 2</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Multimedia systems are known for their educational and entertainment
@@ -474,8 +474,8 @@ refer to?
 </div>
 </div>
 
-<div id="outline-container-orgf8b18d1" class="outline-2">
-<h2 id="orgf8b18d1"><span class="section-number-2">3</span> Texto 3</h2>
+<div id="outline-container-org2d987fa" class="outline-2">
+<h2 id="org2d987fa"><span class="section-number-2">3</span> Texto 3</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 According to new research, learning a second language can slow
@@ -676,7 +676,7 @@ later in your life, is beneficial against brain ageing.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2022-01-26 Wed 18:01</p>
+<p class="date">Created: 2022-01-26 Wed 20:15</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
