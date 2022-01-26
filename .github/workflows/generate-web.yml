@@ -57,7 +57,7 @@ jobs:
                          :publishing-directory \"$PWD/generated/\" \
                          :publishing-function org-publish-attachment))) \
                 " \
-                --eval "(require 'ox-publish)"
+                --eval "(require 'ox-publish)" \
                 --eval "(org-publish-project \"S1DAM - Notes\" t)"
 
       - name: Push generated files
