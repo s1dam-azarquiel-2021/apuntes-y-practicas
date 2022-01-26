@@ -864,9 +864,18 @@
     #+begin_src sql
     SELECT nombre_pais
     FROM   paises
-    WHERE  cines = (
-             SELECT MAX(cines)
-             FROM   paises
+    WHERE  c_pais = (
+             SELECT   c_pais
+             FROM     peliculas
+             GROUP BY c_pais
+             HAVING   COUNT(c_pais) = (
+                        SELECT MAX(count)
+                        FROM (
+                         SELECT   COUNT(c_pais) count
+                         FROM     peliculas
+                         GROUP BY c_pais
+                       )
+                     )
            )
     #+end_src
 
@@ -890,9 +899,12 @@
      FROM     peliculas
      GROUP BY formato
      HAVING   COUNT(formato) = (
-                SELECT   MAX(SUM(1))
-                FROM     peliculas
-                GROUP BY formato
+                SELECT MAX(count)
+                FROM (
+                  SELECT   COUNT(formato) count
+                  FROM     peliculas
+                  GROUP BY formato
+                )
               )
      #+end_src
 

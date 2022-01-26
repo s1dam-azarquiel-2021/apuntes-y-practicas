@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-01-21 Fri 12:48 -->
+<!-- 2022-01-26 Wed 13:00 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Consultas SQL</title>
@@ -1170,9 +1170,18 @@ Cual es el pais que mas peliculas ha producido.
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre_pais
 <span class="org-keyword">FROM</span>   paises
-<span class="org-keyword">WHERE</span>  cines = <span class="org-rainbow-delimiters-depth-1">(</span>
-         <span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-2">(</span>cines<span class="org-rainbow-delimiters-depth-2">)</span>
-         <span class="org-keyword">FROM</span>   paises
+<span class="org-keyword">WHERE</span>  c_pais = <span class="org-rainbow-delimiters-depth-1">(</span>
+         <span class="org-keyword">SELECT</span>   c_pais
+         <span class="org-keyword">FROM</span>     peliculas
+         <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> c_pais
+         <span class="org-keyword">HAVING</span>   <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-2">(</span>c_pais<span class="org-rainbow-delimiters-depth-2">)</span> = <span class="org-rainbow-delimiters-depth-2">(</span>
+                    <span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-3">(</span><span class="org-builtin">count</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                    <span class="org-keyword">FROM</span> <span class="org-rainbow-delimiters-depth-3">(</span>
+                     <span class="org-keyword">SELECT</span>   <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-4">(</span>c_pais<span class="org-rainbow-delimiters-depth-4">)</span> <span class="org-builtin">count</span>
+                     <span class="org-keyword">FROM</span>     peliculas
+                     <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> c_pais
+                   <span class="org-rainbow-delimiters-depth-3">)</span>
+                 <span class="org-rainbow-delimiters-depth-2">)</span>
        <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
@@ -1202,9 +1211,12 @@ En que formato tenemos mas peliculas.
 <span class="org-keyword">FROM</span>     peliculas
 <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> formato
 <span class="org-keyword">HAVING</span>   <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-1">(</span>formato<span class="org-rainbow-delimiters-depth-1">)</span> = <span class="org-rainbow-delimiters-depth-1">(</span>
-           <span class="org-keyword">SELECT</span>   <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-builtin">SUM</span><span class="org-rainbow-delimiters-depth-3">(</span>1<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
-           <span class="org-keyword">FROM</span>     peliculas
-           <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> formato
+           <span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-builtin">count</span><span class="org-rainbow-delimiters-depth-2">)</span>
+           <span class="org-keyword">FROM</span> <span class="org-rainbow-delimiters-depth-2">(</span>
+             <span class="org-keyword">SELECT</span>   <span class="org-builtin">COUNT</span><span class="org-rainbow-delimiters-depth-3">(</span>formato<span class="org-rainbow-delimiters-depth-3">)</span> <span class="org-builtin">count</span>
+             <span class="org-keyword">FROM</span>     peliculas
+             <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> formato
+           <span class="org-rainbow-delimiters-depth-2">)</span>
          <span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div></li>
@@ -1225,7 +1237,7 @@ Poner en oferta solo aquellas peliculas que no se alquilen.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-01-21 Fri 12:48</p>
+<p class="date">Created: 2022-01-26 Wed 13:00</p>
 </div>
 </body>
 </html>
