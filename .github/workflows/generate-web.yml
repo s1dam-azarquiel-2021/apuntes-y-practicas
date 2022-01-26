@@ -28,13 +28,15 @@ jobs:
 
       - name: Get htmlize
         run: |
-          curl -O https://raw.githubusercontent.com/hniksic/emacs-htmlize/master/htmlize.el
+          mkdir elispStuff
+          curl -o elispStuff/htmlize.el https://raw.githubusercontent.com/hniksic/emacs-htmlize/master/htmlize.el
 
       - name: Generate files
         run: |
           ls htmlize.el
           emacs --batch \
-                --eval "(load \"./htmlize.el\")" \
+                --eval "(add-to-list 'load-path \"./elispStuff\")" \
+                --eval "(require 'htmlize)" \
                 --eval "(require 'ox-publish)" \
                 --eval " \
                 (setq org-html-head-include-default-style nil \
