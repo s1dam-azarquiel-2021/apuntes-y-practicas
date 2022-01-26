@@ -1,0 +1,69 @@
+name: Web Generation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  GenerateFromOrg:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch new changes
+        uses: actions/checkout@v2
+        with:
+          path: changes
+          ref: main
+
+      - name: Fetch generated branch
+        uses: actions/checkout@v2
+        with:
+          path: generated
+          ref: generated
+
+      - name: Setup Emacs
+        uses: purcell/setup-emacs@master
+        with:
+          version: snapshot
+
+      - name: Generate files
+        run: |
+          emacs --batch \
+                --eval " \
+                (setq org-html-head-include-default-style nil \
+                      org-html-htmlize-output-type 'css \
+                      org-html-html5-fancy t \
+                      org-html-doctype \"html5\" \
+                      org-export-allow-bind-keywords t) \
+		" \
+		--eval " \
+                (setq org-publish-project-alist \
+                      '((\"S1DAM - Notes\" \
+                         :components \
+                       (\"S1DAM_Notes.org\" \
+                        \"S1DAM_Notes.static\")) \
+                        (\"S1DAM_Notes.org\" \
+                         :headline-levels 6 \
+                         :recursive t \
+                         :base-extension \"org\" \
+                         :base-directory \"$PWD/changes/\" \
+                         :publishing-directory \"$PWD/generated/\" \
+                         :publishing-function org-html-publish-to-html) \
+                        (\"S1DAM_Notes.static\" \
+                         :recursive t \
+                         :base-extension \
+                          \"css\\\\\\|png\\\\\\|jpg\\\\\\|jpeg\\\\\\|eot\\\\\\|woff2\\\\\\|woff\\\\\\|ttf\\\\\\|svg\" \
+                         :base-directory \"$PWD/changes/\" \
+                         :publishing-directory \"$PWD/generated/\" \
+                         :publishing-function org-publish-attachment))) \
+                " \
+		--eval "(org-publish-project \"S1DAM - Notes\" t)"
+
+      - name: Push generated files
+        run: |
+          cd generated/
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "[workflow] Generated"
+          git push
