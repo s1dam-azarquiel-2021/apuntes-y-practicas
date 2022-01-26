@@ -35,8 +35,8 @@ jobs:
                       org-html-html5-fancy t \
                       org-html-doctype \"html5\" \
                       org-export-allow-bind-keywords t) \
-		" \
-		--eval " \
+                " \
+                --eval " \
                 (setq org-publish-project-alist \
                       '((\"S1DAM - Notes\" \
                          :components \
@@ -57,7 +57,7 @@ jobs:
                          :publishing-directory \"$PWD/generated/\" \
                          :publishing-function org-publish-attachment))) \
                 " \
-		--eval "(org-publish-project \"S1DAM - Notes\" t)"
+                --eval "(org-publish-project \"S1DAM - Notes\" t)"
 
       - name: Push generated files
         run: |
