@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2022-01-26 Wed 18:01 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ejercicio 3 Consultas</title>
+<meta name="generator" content="Org mode">
+<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Ejercicio 3 Consultas</h1>
+</header><ol class="org-ol">
+<li><p>
+Vuestro nombre sea un nuevo CLIENTE
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">INSERT INTO CLIENTE (idcli, nombre, direc, ciudad, cpostal, telef, credit)
+VALUES (6969, 'Alberto Robles', 'C/ Cacho, 69', 'Trozo', 6969, 696969696, 696969);
+</pre>
+</div></li>
+
+<li><p>
+Insertar un nuevo registro de PEDIDO con fecha de hoy. El pedido
+debe contener una de salchichas y algún artículo más.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">INSERT INTO PEDIDO (idped, idcli, fped, ffac)
+VALUES (6969, 6969, '20/01/2022', '20/01/2022');
+
+INSERT INTO DETALLE (idped, idart, cantidad)
+VALUES (6969, 4006, 69);
+
+INSERT INTO DETALLE (idped, idart, cantidad)
+VALUES (6969, 4008, 69);
+</pre>
+</div></li>
+
+<li><p>
+Confirmar con una select que visualice los artículos que habéis
+pedido.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT a.descrip
+FROM   detalle d, articulo a
+WHERE  d.idart = a.idart
+  AND  d.idped = 6969;
+</pre>
+</div></li>
+</ol>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-01-26 Wed 18:01</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

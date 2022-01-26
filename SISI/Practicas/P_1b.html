@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2022-01-26 Wed 18:01 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practica 1B</title>
+<meta name="generator" content="Org mode">
+<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Practica 1B</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7b043dd">1. Deteccion de drivers del equipo</a></li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-org7b043dd" class="outline-2">
+<h2 id="org7b043dd"><span class="section-number-2">1</span> Deteccion de drivers del equipo</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Version del kernel: 5.10.57
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Modulo</th>
+<th scope="col" class="org-left">Usado por</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">hid-generic</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">usbhid</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">hid</td>
+<td class="org-left">usbhid,hid-generic</td>
+</tr>
+
+<tr>
+<td class="org-left">af-packet</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">8021q</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">nls-iso8859-1</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">nls-cp437</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">vfat</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">fat</td>
+<td class="org-left">vfat</td>
+</tr>
+
+<tr>
+<td class="org-left">ip6table-nat</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">iptable-nat</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">nf-nat</td>
+<td class="org-left">ip6table-nat,iptable-nat</td>
+</tr>
+
+<tr>
+<td class="org-left">xt-conntrack</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">nf-conntrack</td>
+<td class="org-left">xt-conntrack,nf-nat</td>
+</tr>
+
+<tr>
+<td class="org-left">nf-defrag-ipv6</td>
+<td class="org-left">nf-conntrack</td>
+</tr>
+
+<tr>
+<td class="org-left">uvcvideo</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">nf-defrag-ipv4</td>
+<td class="org-left">nf-conntrack</td>
+</tr>
+
+<tr>
+<td class="org-left">videobuf2-vmalloc</td>
+<td class="org-left">uvcvideo</td>
+</tr>
+
+<tr>
+<td class="org-left">videobuf2-memops</td>
+<td class="org-left">videobuf2-vmalloc</td>
+</tr>
+
+<tr>
+<td class="org-left">videobuf2-v4l2</td>
+<td class="org-left">uvcvideo</td>
+</tr>
+
+<tr>
+<td class="org-left">videobuf2-common</td>
+<td class="org-left">videobuf2-v4l2,uvcvideo</td>
+</tr>
+
+<tr>
+<td class="org-left">ip6t-rpfilter</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">videodev</td>
+<td class="org-left">videobuf2-v4l2,uvcvideo,videobuf2-common</td>
+</tr>
+
+<tr>
+<td class="org-left">btusb</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">btrtl</td>
+<td class="org-left">btusb</td>
+</tr>
+
+<tr>
+<td class="org-left">btbcm</td>
+<td class="org-left">btusb</td>
+</tr>
+
+<tr>
+<td class="org-left">ipt-rpfilter</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">btintel</td>
+<td class="org-left">btusb</td>
+</tr>
+
+<tr>
+<td class="org-left">iwlmvm</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">ip6table-raw</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">iptable-raw</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">mc</td>
+<td class="org-left">videodev,videobuf2-v4l2,uvcvideo,videobuf2-common</td>
+</tr>
+
+<tr>
+<td class="org-left">bluetooth</td>
+<td class="org-left">btrtl,btintel,btbcm,btusb</td>
+</tr>
+
+<tr>
+<td class="org-left">xt-pkttype</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">mac80211</td>
+<td class="org-left">iwlmvm</td>
+</tr>
+
+<tr>
+<td class="org-left">nf-log-ipv6</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">ecdh-generic</td>
+<td class="org-left">bluetooth</td>
+</tr>
+
+<tr>
+<td class="org-left">ecc</td>
+<td class="org-left">ecdh-generic</td>
+</tr>
+
+<tr>
+<td class="org-left">crc16</td>
+<td class="org-left">bluetooth</td>
+</tr>
+
+<tr>
+<td class="org-left">libarc4</td>
+<td class="org-left">mac80211</td>
+</tr>
+
+<tr>
+<td class="org-left">amdgpu</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">snd-hda-codec-realtek</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">edac-mce-amd</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">nf-log-ipv4</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">edac-core</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">snd-hda-codec-generic</td>
+<td class="org-left">snd-hda-codec-realtek</td>
+</tr>
+
+<tr>
+<td class="org-left">nf-log-common</td>
+<td class="org-left">nf-log-ipv4,nf-log-ipv6</td>
+</tr>
+
+<tr>
+<td class="org-left">ledtrig-audio</td>
+<td class="org-left">snd-hda-codec-generic</td>
+</tr>
+
+<tr>
+<td class="org-left">joydev</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">snd-hda-codec-hdmi</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">xt-LOG</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">mousedev</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">snd-hda-intel</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">crc32-pclmul</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">ghash-clmulni-intel</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">iwlwifi</td>
+<td class="org-left">iwlmvm</td>
+</tr>
+
+<tr>
+<td class="org-left">aesni-intel</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">snd-intel-dspcfg</td>
+<td class="org-left">snd-hda-intel</td>
+</tr>
+
+<tr>
+<td class="org-left">libaes</td>
+<td class="org-left">bluetooth,aesni-intel</td>
+</tr>
+
+<tr>
+<td class="org-left">hp-wmi</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">crypto-simd</td>
+<td class="org-left">aesni-intel</td>
+</tr>
+
+<tr>
+<td class="org-left">input-leds</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">sparse-keymap</td>
+<td class="org-left">hp-wmi</td>
+</tr>
+
+<tr>
+<td class="org-left">wmi-bmof</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">led-class</td>
+<td class="org-left">snd-hda-codec-generic,input-leds,iwlmvm</td>
+</tr>
+
+<tr>
+<td class="org-left">evdev</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">fam15h-power</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">cryptd</td>
+<td class="org-left">crypto-simd,ghash-clmulni-intel</td>
+</tr>
+
+<tr>
+<td class="org-left">xt-tcpudp</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">iommu-v2</td>
+<td class="org-left">amdgpu</td>
+</tr>
+
+<tr>
+<td class="org-left">snd-hwdep</td>
+<td class="org-left">snd-hda-codec</td>
+</tr>
+
+<tr>
+<td class="org-left">cfg80211</td>
+<td class="org-left">iwlmvm,iwlwifi,mac80211</td>
+</tr>
+
+<tr>
+<td class="org-left">gpu-sched</td>
+<td class="org-left">amdgpu</td>
+</tr>
+
+<tr>
+<td class="org-left">glue-helper</td>
+<td class="org-left">aesni-intel</td>
+</tr>
+
+<tr>
+<td class="org-left">mac-hid</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">deflate</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">rfkill</td>
+<td class="org-left">hp-wmi,bluetooth,cfg80211</td>
+</tr>
+
+<tr>
+<td class="org-left">snd-pcm</td>
+<td class="org-left">snd-hda-codec-hdmi,snd-hda-intel,snd-hda-codec,snd-hda-core</td>
+</tr>
+
+<tr>
+<td class="org-left">psmouse</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">ttm</td>
+<td class="org-left">amdgpu</td>
+</tr>
+
+<tr>
+<td class="org-left">snd-timer</td>
+<td class="org-left">snd-pcm</td>
+</tr>
+
+<tr>
+<td class="org-left">serio-raw</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">r8169</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">wmi</td>
+<td class="org-left">hp-wmi,wmi-bmof</td>
+</tr>
+
+<tr>
+<td class="org-left">efi-pstore</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">k10temp</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">drm-kms-helper</td>
+<td class="org-left">amdgpu</td>
+</tr>
+
+<tr>
+<td class="org-left">wdat-wdt</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">sp5100-tco</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">watchdog</td>
+<td class="org-left">sp5100-tco,wdat-wdt</td>
+</tr>
+
+<tr>
+<td class="org-left">i2c-algo-bit</td>
+<td class="org-left">amdgpu</td>
+</tr>
+
+<tr>
+<td class="org-left">soundcore</td>
+<td class="org-left">snd</td>
+</tr>
+
+<tr>
+<td class="org-left">tpm-crb</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">fb-sys-fops</td>
+<td class="org-left">drm-kms-helper</td>
+</tr>
+
+<tr>
+<td class="org-left">syscopyarea</td>
+<td class="org-left">drm-kms-helper</td>
+</tr>
+
+<tr>
+<td class="org-left">sysfillrect</td>
+<td class="org-left">drm-kms-helper</td>
+</tr>
+
+<tr>
+<td class="org-left">sysimgblt</td>
+<td class="org-left">drm-kms-helper</td>
+</tr>
+
+<tr>
+<td class="org-left">hp-wireless</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">realtek</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">tpm-tis</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">tpm-tis-core</td>
+<td class="org-left">tpm-tis</td>
+</tr>
+
+<tr>
+<td class="org-left">mdio-devres</td>
+<td class="org-left">r8169</td>
+</tr>
+
+<tr>
+<td class="org-left">libphy</td>
+<td class="org-left">r8169,mdio-devres,realtek</td>
+</tr>
+
+<tr>
+<td class="org-left">tpm</td>
+<td class="org-left">tpm-tis,tpm-crb,tpm-tis-core</td>
+</tr>
+
+<tr>
+<td class="org-left">thermal</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">battery</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">ip6table-filter</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">ac</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">ip6-tables</td>
+<td class="org-left">ip6table-filter,ip6table-raw,ip6table-nat</td>
+</tr>
+
+<tr>
+<td class="org-left">rng-core</td>
+<td class="org-left">tpm</td>
+</tr>
+
+<tr>
+<td class="org-left">video</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">i2c-scmi</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">tiny-power-button</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">i2c-piix4</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">acpi-cpufreq</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">button</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">sch-fq-codel</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">iptable-filter</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">ctr</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">loop</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">tun</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">tap</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">macvlan</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">bridge</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">stp</td>
+<td class="org-left">bridge</td>
+</tr>
+
+<tr>
+<td class="org-left">llc</td>
+<td class="org-left">bridge,stp</td>
+</tr>
+
+<tr>
+<td class="org-left">vboxnetflt</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">vboxnetadp</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">vboxdrv</td>
+<td class="org-left">vboxnetadp,vboxnetflt</td>
+</tr>
+
+<tr>
+<td class="org-left">drm</td>
+<td class="org-left">gpu-sched,drm-kms-helper,amdgpu,ttm</td>
+</tr>
+
+<tr>
+<td class="org-left">kvm-amd</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">agpgart</td>
+<td class="org-left">ttm,drm</td>
+</tr>
+
+<tr>
+<td class="org-left">backlight</td>
+<td class="org-left">video,amdgpu,drm</td>
+</tr>
+
+<tr>
+<td class="org-left">kvm</td>
+<td class="org-left">kvm-amd</td>
+</tr>
+
+<tr>
+<td class="org-left">irqbypass</td>
+<td class="org-left">kvm</td>
+</tr>
+
+<tr>
+<td class="org-left">fuse</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">pstore</td>
+<td class="org-left">efi-pstore</td>
+</tr>
+
+<tr>
+<td class="org-left">configfs</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">efivarfs</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">ip-tables</td>
+<td class="org-left">iptable-filter,iptable-raw,iptable-nat</td>
+</tr>
+
+<tr>
+<td class="org-left">autofs4</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">sd-mod</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">sr-mod</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">cdrom</td>
+<td class="org-left">sr-mod</td>
+</tr>
+
+<tr>
+<td class="org-left">t10-pi</td>
+<td class="org-left">sd-mod</td>
+</tr>
+
+<tr>
+<td class="org-left">crc-t10dif</td>
+<td class="org-left">t10-pi</td>
+</tr>
+
+<tr>
+<td class="org-left">crct10dif-generic</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">xhci-pci</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">xhci-pci-renesas</td>
+<td class="org-left">xhci-pci</td>
+</tr>
+
+<tr>
+<td class="org-left">xhci-hcd</td>
+<td class="org-left">xhci-pci</td>
+</tr>
+
+<tr>
+<td class="org-left">atkbd</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">libps2</td>
+<td class="org-left">atkbd,psmouse</td>
+</tr>
+
+<tr>
+<td class="org-left">ahci</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">libahci</td>
+<td class="org-left">ahci</td>
+</tr>
+
+<tr>
+<td class="org-left">ehci-pci</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">libata</td>
+<td class="org-left">libahci,ahci</td>
+</tr>
+
+<tr>
+<td class="org-left">ehci-hcd</td>
+<td class="org-left">ehci-pci</td>
+</tr>
+
+<tr>
+<td class="org-left">usbcore</td>
+<td class="org-left">xhci-hcd,ehci-pci,usbhid,uvcvideo,ehci-hcd,btusb,xhci-pci</td>
+</tr>
+
+<tr>
+<td class="org-left">rtc-cmos</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">crct10dif-pclmul</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">crct10dif-common</td>
+<td class="org-left">crct10dif-generic,crc-t10dif,crct10dif-pclmul</td>
+</tr>
+
+<tr>
+<td class="org-left">scsi-mod</td>
+<td class="org-left">sd-mod,libata,sr-mod</td>
+</tr>
+
+<tr>
+<td class="org-left">usb-common</td>
+<td class="org-left">xhci-hcd,usbcore,uvcvideo,ehci-hcd</td>
+</tr>
+
+<tr>
+<td class="org-left">i8042</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">serio</td>
+<td class="org-left">serio-raw,atkbd,psmouse,i8042</td>
+</tr>
+
+<tr>
+<td class="org-left">dm-mod</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">btrfs</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">blake2b-generic</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">libcrc32c</td>
+<td class="org-left">nf-conntrack,nf-nat,btrfs</td>
+</tr>
+
+<tr>
+<td class="org-left">crc32c-generic</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">crc32c-intel</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">xor</td>
+<td class="org-left">btrfs</td>
+</tr>
+
+<tr>
+<td class="org-left">raid6-pq</td>
+<td class="org-left">btrfs</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-01-26 Wed 18:01</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
