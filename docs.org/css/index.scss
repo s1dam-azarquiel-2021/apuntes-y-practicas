@@ -467,6 +467,13 @@ code {
 		&-keyword   { color: $r0; }
 		&-constant  { color: $m0; }
 	}
+
+	&-rainbow-delimiters-depth {
+		&-1, &-5 { color: $b1 };
+		&-2, &-6 { color: $m1 };
+		&-3, &-7 { color: $c1 };
+		&-4, &-8 { color: $o1 };
+	}
 }
 
 
