@@ -155,7 +155,7 @@ $o2: #af3a03;
 }
 
 html {
-	scrollbar-width: none;
+	// scrollbar-width: none;
 }
 
 body {
@@ -298,6 +298,10 @@ h7 {
 .content {
 	width: 80ch;
 	margin: 0 auto;
+
+	::marker {
+		color: $m1;
+	}
 }
 
 .outline {
@@ -337,10 +341,6 @@ h7 {
 			ul,
 			ol {
 				margin-left: 1rem;
-
-				> ::marker {
-					color: $m2;
-				}
 			}
 
 			img {
@@ -511,18 +511,17 @@ code {
 		margin: 0 1em;
 	}
 
+	// h2 {
+	// 	font-size: 2em;
+	// 	color: #458588;
+	// 	margin: 1em 0 0.2em;
+	// }
 
-// 	h2 {
-// 		font-size: 2em;
-// 		color: #458588;
-// 		margin: 1em 0 0.2em;
-// 	}
-// 
-// 	h3 {
-// 		font-size: 1.5em;
-// 		color: #d79921;
-// 		margin: 1em 0 0.2em;
-// 	}
+	// h3 {
+	// 	font-size: 1.5em;
+	// 	color: #d79921;
+	// 	margin: 1em 0 0.2em;
+	// }
 
 	.outline {
 		&-4,
@@ -547,10 +546,10 @@ code {
 			}
 		}
 	}
-// 
-// @media screen and (max-width: 500px) {
-// 	body {
-// 		font-size: 14px;
-// 		line-height: 1.1rem;
-// 	}
+
+	// @media screen and (max-width: 500px) {
+	// 	body {
+	// 		font-size: 14px;
+	// 		line-height: 1.1rem;
+	// 	}
 }
