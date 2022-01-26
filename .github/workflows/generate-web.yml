@@ -26,9 +26,15 @@ jobs:
         with:
           version: snapshot
 
+      - name: Get htmlize
+        run: |
+	  curl -O https://raw.githubusercontent.com/hniksic/emacs-htmlize/master/htmlize.el
+
       - name: Generate files
         run: |
           emacs --batch \
+		--eval "(load \"./htmlize\")" \
+                --eval "(require 'ox-publish)" \
                 --eval " \
                 (setq org-html-head-include-default-style nil \
                       org-html-htmlize-output-type 'css \
@@ -57,7 +63,6 @@ jobs:
                          :publishing-directory \"$PWD/generated/\" \
                          :publishing-function org-publish-attachment))) \
                 " \
-                --eval "(require 'ox-publish)" \
                 --eval "(org-publish-project \"S1DAM - Notes\" t)"
 
       - name: Push generated files
