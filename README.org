@@ -1,0 +1,10 @@
+#+TITLE: Notas y practicas - aru
+#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/index.css" />
+#+OPTIONS: toc:nil
+* Ver en la web
+Puedes ver el contenido en html + css usando tu navegador [[https://s1dam-azarquiel-2021.github.io/aru-notas-practicas/][aqui]].
+
+* Ver en GitHub
+Tambien puedes leerlo desde este mismo repo, sin acceder a la web,
+[[https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/blob/main/index.org][aqui]].
