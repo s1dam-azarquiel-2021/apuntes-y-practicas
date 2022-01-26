@@ -381,8 +381,10 @@ code {
   #table-of-contents #text-table-of-contents > ul {
     flex-flow: column nowrap; }
 
-  .outline-2 {
-    width: auto; }
+  .content {
+    width: auto;
+    margin: 0 1em; }
+
   .outline-4, .outline-5, .outline-6, .outline-7, .outline-8 {
     padding-left: 0; }
   .outline-text-3 ul,

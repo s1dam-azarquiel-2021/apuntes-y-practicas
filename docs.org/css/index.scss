@@ -498,13 +498,19 @@ code {
 		line-height: 1.2rem;
 	}
 
-#table-of-contents {
-	#text-table-of-contents {
-		> ul {
-			flex-flow: column nowrap;
+	#table-of-contents {
+		#text-table-of-contents {
+			> ul {
+				flex-flow: column nowrap;
+			}
 		}
 	}
-}
+
+	.content {
+		width: auto;
+		margin: 0 1em;
+	}
+
 
 // 	h2 {
 // 		font-size: 2em;
@@ -519,10 +525,6 @@ code {
 // 	}
 
 	.outline {
-		&-2 {
-			width: auto;
-		}
-
 		&-4,
 		&-5,
 		&-6,
