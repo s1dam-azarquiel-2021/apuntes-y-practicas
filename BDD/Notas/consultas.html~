@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2022-01-26 Wed 18:01 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consultas SQL</title>
+<meta name="generator" content="Org mode">
+<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Consultas SQL</h1>
+</header><ol class="org-ol">
+<li><p>
+Titulo de las peliculas producidas despues del año 2005
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT titulo
+FROM   peliculas
+WHERE  anno &gt; 2005
+</pre>
+</div></li>
+
+<li><p>
+Precio y formato de las peliculas de menos de 1 euro
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT precio, formato
+FROM   peliculas
+WHERE  precio &lt; 1
+</pre>
+</div></li>
+
+<li><p>
+Titulo de las peliculas en formato DVD
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT titulo
+FROM   peliculas
+WHERE  formato = 'DVD'
+</pre>
+</div></li>
+
+<li><p>
+Listado con los formetos de las peliculas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT DISTINCT formato
+FROM   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas se produjeron en los 3 ultimos años
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(*)
+FROM   peliculas
+WHERE  anno &gt;= 2019
+</pre>
+</div></li>
+
+<li><p>
+Cuantos DVDs estan de oferta
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(*)
+FROM   peliculas
+WHERE  oferta = 'S' AND formato = 'DVD'
+</pre>
+</div></li>
+
+<li><p>
+Precio mas caro de una pelicula
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT MAX(precio)
+FROM   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Año de la pelicula mas antigua
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT MIN(anno)
+FROM   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas no estan en MP4
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(*)
+FROM   peliculas
+WHERE  formato != 'MP4'
+</pre>
+</div></li>
+
+<li><p>
+Titulo de las peliculas que empiezan por 'M'
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT titulo
+FROM   peliculas
+WHERE  titulo LIKE 'M%'
+</pre>
+</div></li>
+
+<li><p>
+Cuantos titulos de peliculas estan formados por mas de una palabra
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT titulo
+FROM   peliculas
+WHERE  titulo LIKE '% %'
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas se han alquilado en Febrero
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(*)
+FROM   alquiler
+WHERE  FECHA LIKE '__/02/%'
+</pre>
+</div></li>
+
+<li><p>
+Codigo de los socios que no han devuelto las pelis que alquilaron
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT c_socio
+FROM   alquiler
+WHERE  devuelta = 'N'
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los socios que presublimenete son chicas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT nombre
+FROM   alquiler
+WHERE  nombre LIKE '%a'
+</pre>
+</div></li>
+
+<li><p>
+Que titulos de peliculas no estan ni en DVD ni en MP4
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT titulo
+FROM   peliculas
+WHERE  formato != 'DVD'
+  AND  formato != 'MP4'
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas hay de matrix
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(*)
+FROM   peliculas
+WHERE  titulo LIKE 'Matrix%'
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas se alquilaron en febrero de 2002
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(*)
+FROM   alquiler
+WHERE  fecha LIKE '__/02/02'
+</pre>
+</div></li>
+
+<li><p>
+Nombre de nuestros socios que presumiblemente son chicas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT nombre
+FROM   socios
+WHERE  nombre LIKE '%a'
+</pre>
+</div></li>
+
+<li><p>
+Código de los socios que en el 2005 no nos devolvieron las
+peliculas alquiladas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT c_socio
+FROM   alquiler
+WHERE  fecha LIKE '__/__/05'
+  AND  devuelta = 'N'
+</pre>
+</div></li>
+
+<li><p>
+Precio de la película mas cara
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT MAX(precio)
+FROM   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Nombre de paises que tienen menos de 7 letras
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT nombre_pais
+FROM   paises
+WHERE  LENGTH(nombre_pais) &lt; 7
+</pre>
+</div></li>
+
+<li><p>
+Visualiza los distintos formatos de las películas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT DISTINCT formato
+FROM   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Título de las pelis que valen 2 euros o 2 euros y pico
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT titulo
+FROM   peliculas
+WHERE  precio &gt;= 2
+  AND  precio &lt; 3
+</pre>
+</div></li>
+
+<li><p>
+En qué año se produjo la primera película
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT MIN(anno)
+FROM   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Título de las películas que se han producido en los últimos 10
+años
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT titulo
+FROM   peliculas
+WHERE  anno &gt; TO_CHAR(
+	 ADD_MONTHS(SYSDATE, -12*10),
+	 'YYYY'
+       )
+</pre>
+</div></li>
+
+<li><p>
+Precio medio de los dvds
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT AVG(precio)
+FROM   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Cuato valen todos los DVDs que tenemos
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT SUM(precio)
+FROM   peliculas
+</pre>
+</div></li>
+
+<li><p>
+Cuantos cines existen entre España, Francia y Portugal
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT SUM(cines)
+FROM   paises
+WHERE  nombre_pais in ( 'España', 'Francia', 'Portugal' )
+</pre>
+</div></li>
+
+<li><p>
+Cuanto valen todas las peliculas que no están ni en BR ni en MP4
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT SUM(precio)
+FROM   peliculas
+WHERE  NOT formato = 'BR'
+  AND  NOT formato = 'MP4'
+</pre>
+</div></li>
+
+<li><p>
+Precio mas caro de una pelicula en oferta
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT MAX(precio)
+FROM   peliculas
+WHERE  oferta = 'S'
+</pre>
+</div></li>
+
+<li><p>
+Cuantos socios son de Toledo
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(*)
+FROM   socios
+WHERE  telefono LIKE '925%'
+</pre>
+</div></li>
+
+<li><p>
+Cual es la facturación total del 2º semestre de 2002
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT SUM(precio)
+FROM   peliculas, alquiler
+WHERE  SUBSTR(fecha, 4, 2) &gt; 6
+  AND  fecha LIKE '__/__/02'
+</pre>
+</div></li>
+
+<li><p>
+Que codigos de socio alquilan películas en Enero
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT c_socio
+FROM   alquiler
+WHERE  fecha LIKE '__/01/__'
+</pre>
+</div></li>
+
+<li><p>
+Cuanto dinero se ha gastado el socio de código 1001
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT SUM(precio)
+FROM   alquiler, peliculas
+WHERE  c_socio = 1001
+</pre>
+</div></li>
+
+<li><p>
+Visualizar los paises de más de 8000 cines ordenados
+alfabeticamente
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   nombre_pais
+FROM     paises
+WHERE    cines &gt; 8000
+ORDER BY nombre_pais
+</pre>
+</div></li>
+
+<li><p>
+Cuantas veces se ha alquilado la pelicula de codigo 2
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(*)
+FROM   alquiler
+WHERE  c_peli = 2
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los hermanos de Gema Ramirez Lopez
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT nombre
+FROM   socios
+WHERE  ape1 = 'ramirez'
+  AND  ape2 = 'lopez'
+  AND  NOT nombre = 'gema'
+</pre>
+</div></li>
+
+<li><p>
+Despues del 2000 en cuantos años no se han producido peliculas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT SUBSTR(SYSDATE, 7, 2)
+       - COUNT(DISTINCT anno)
+FROM   peliculas
+WHERE  anno &gt; 2000
+</pre>
+</div></li>
+
+<li><p>
+Visualiza en que años se han alquilado peliculas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT DISTINCT SUBSTR(fecha, 7, 2)
+FROM   alquiler
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas hay de Tiburon
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(*)
+FROM   peliculas
+WHERE  titulo LIKE 'Tiburón%'
+</pre>
+</div></li>
+
+<li><p>
+Cuantos alquileres de un solo dia no se han devuelto
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(*)
+FROM   alquiler
+WHERE  ndias = 1
+  AND  devuelta = 'N'
+</pre>
+</div></li>
+
+<li><p>
+Cuantos socios viven en la calle oro
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(*)
+FROM   socios
+WHERE  direccion LIKE 'oro,%'
+</pre>
+</div></li>
+
+<li><p>
+Que titulo de peliculas es la mas cara
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT titulo
+FROM   peliculas
+WHERE  precio = (SELECT MAX(precio) FROM peliculas)
+</pre>
+</div></li>
+
+<li><p>
+Cual es el titulo de la pelicula mas moderna
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT titulo
+FROM   peliculas
+WHERE  anno = (SELECT MAX(anno) FROM PELICULAS)
+</pre>
+</div></li>
+
+<li><p>
+En que formato esta la pelicula mas barata
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT DISTINCT formato
+FROM   peliculas
+WHERE  precio = (SELECT MIN(precio) FROM PELICULAS)
+</pre>
+</div></li>
+
+<li><p>
+Cuando se hizo el ultimo alquiler
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT MAX(fecha)
+FROM   alquiler
+</pre>
+</div></li>
+
+<li><p>
+Cual es el pais que tiene mas cines
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT nombre_pais
+FROM   paises
+WHERE  cines = (SELECT MAX(cines) FROM paises)
+</pre>
+</div></li>
+
+<li><p>
+Titulo de las peliculas españolas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT titulo
+FROM   peliculas
+WHERE  c_pais = (
+	 SELECT c_pais
+	 FROM   paises
+	 WHERE  nombre_pais = 'España'
+       )
+</pre>
+</div></li>
+
+<li><p>
+Titulo de las peliculas que no se alquilan
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT titulo
+FROM   peliculas
+WHERE  c_peli NOT IN (
+	 SELECT DISTINCT c_peli
+	 FROM alquiler
+       )
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los hermanos de Laura.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT nombre
+FROM   socios
+WHERE  ape1 = (
+	 SELECT ape1
+	 FROM   socios
+	 WHERE  nombre = 'laura'
+       )
+  AND  ape2 = (
+	 SELECT ape2
+	 FROM   socios
+	 WHERE  nombre = 'laura'
+       )
+  AND  nombre != 'laura'
+</pre>
+</div></li>
+
+<li><p>
+Titulo de las peliculas del pais que menos cines tiene
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT titulo
+FROM   peliculas
+WHERE  c_pais = (
+	 SELECT c_pais
+	 FROM   paises
+	 WHERE  cines = (
+	   SELECT MIN(cines)
+	   FROM   paises
+	 )
+       )
+</pre>
+</div></li>
+
+<li><p>
+Codigo de la peliculas que se alquilo la primera vez
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT c_peli
+FROM   alquiler
+WHERE  fecha = (
+	 SELECT MIN(fecha)
+	 FROM   alquiler
+       )
+</pre>
+</div></li>
+
+<li><p>
+Codigo del socio que realizo el alquiler mas barato
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT c_socio
+FROM   alquiler
+WHERE  total = (
+	 SELECT MIN(total)
+	 FROM   alquiler
+       )
+</pre>
+</div></li>
+
+<li><p>
+Cuantas peliculas tenemos en los diferentes formatos
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   COUNT(formato), formato
+FROM     peliculas
+GROUP BY formato
+</pre>
+</div></li>
+
+<li><p>
+Listado con el numero de alquileres realizados los diferentes años
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   substr(fecha, 7, 2), COUNT(*)
+FROM     alquiler
+GROUP BY substr(fecha, 7, 2)
+ORDER BY substr(fecha, 7, 2)
+</pre>
+</div></li>
+
+<li><p>
+Listado de los precios de las peliculas mas caras en los
+diferentes años
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   anno, MAX(precio)
+FROM     peliculas
+GROUP BY anno
+ORDER BY anno
+</pre>
+</div></li>
+
+<li><p>
+Listado con el total que hemos facturada los distintos años,
+alquilando peliculas
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   substr(fecha, 7, 2), SUM(total)
+FROM     alquiler
+GROUP BY substr(fecha, 7, 2)
+ORDER BY substr(fecha, 7, 2)
+</pre>
+</div></li>
+
+<li><p>
+Cuantos DVDs españoles hay?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(*)
+FROM   peliculas
+WHERE  formato = 'DVD'
+  and  c_pais = (
+	 SELECT c_pais
+	 FROM   paises
+	 WHERE  nombre_pais = 'España'
+      )
+</pre>
+</div></li>
+
+<li><p>
+Listado con las diferencias familias socias (1er apellido) junto
+con el numero de integrantes que tiene cada familia.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   ape1, COUNT(*)
+FROM     socios
+GROUP BY ape1
+ORDER BY ape1
+</pre>
+</div></li>
+
+<li><p>
+Listado con los diferentes titulos de peliculas que se han ido
+produciendo los diferentes años.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   anno, titulo
+FROM     peliculas
+ORDER BY anno, titulo
+</pre>
+</div></li>
+
+<li><p>
+Listado con el titulo de las peliculas junto con el nombre de pais
+al que pertenece.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   pe.titulo, pa.nombre_pais
+FROM     peliculas pe, paises pa
+WHERE    pe.c_pais = pa.c_pais
+ORDER BY pe.titulo
+</pre>
+</div></li>
+
+<li><p>
+Listado con los titulos de las peliculas que se han alquildado
+junto con la fecha en que se alquilo
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   a.fecha, p.titulo
+FROM     peliculas p, alquiler a
+WHERE    p.c_peli = a.c_peli
+ORDER BY a.fecha
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los socios que no han visto ninguna de Torrente.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   nombre, ape1
+FROM     socios
+WHERE    c_socio NOT IN (
+	   SELECT c_socio
+	   FROM   alquiler
+	   WHERE  c_peli IN (
+		    SELECT c_peli
+		    FROM   peliculas
+		    WHERE  titulo LIKE 'Torrente%'
+		  )
+	 )
+ORDER BY nombre
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los socios que alquilaron el año pasado.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   s.nombre, s.ape1
+FROM     socios s, alquiler a
+WHERE    s.c_socio = a.c_socio
+  AND    SUBSTR(a.fecha, 7, 2) = SUBSTR(SYSDATE, 7, 2) - 1
+ORDER BY a.nombre
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los paises que no alquilan sus peliculas.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   nombre_pais
+FROM     paises
+WHERE    c_pais NOT IN (
+	   SELECT c_pais
+	   FROM   peliculas
+	   WHERE  c_peli IN (
+		    SELECT c_peli
+		    FROM   alquiler
+		  )
+	 )
+ORDER BY nombre_pais
+</pre>
+</div></li>
+
+<li><p>
+Nombre y apellidos de los socios que alquilan peliculas españolas.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT nombre, ape1
+FROM   socios
+WHERE  c_socio IN (
+	 SELECT c_socio
+	 FROM   alquiler
+	 WHERE  c_peli IN (
+		  SELECT c_peli
+		  FROM   peliculas
+		  WHERE  c_pais = (
+			   SELECT c_pais
+			   FROM   paises
+			   WHERE  nombre_pais = 'España'
+			 )
+		)
+       )
+ORDER BY nombre
+</pre>
+</div></li>
+
+<li><p>
+Cuantos socios han alquilado algun DVD?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(DISTINCT c_socio)
+FROM   alquiler
+WHERE  c_peli IN (
+	 SELECT c_peli
+	 FROM   peliculas
+	 WHERE  formato = 'DVD'
+       )
+</pre>
+</div></li>
+
+<li><p>
+Cuantos paises tienen mas cines que la media de los paises?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(c_pais)
+FROM   paises
+WHERE  cines &gt; (
+	 SELECT AVG(cines)
+	 FROM   paises
+       )
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los clientes que no han pedido nada.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT nombre
+FROM   cliente
+WHERE  idcli NOT IN (
+	 SELECT idcli
+	 FROM   pedido
+       )
+</pre>
+</div></li>
+
+<li><p>
+Cuantos pedidos se hicieron en 2017.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(idped)
+FROM   pedido
+WHERE  fped like '__/__/17'
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los clientes que no son ni de Madrid ni de Toledo.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT nombre
+FROM   cliente
+WHERE  ciudad != 'MADRID'
+  AND  ciudad != 'TOLEDO'
+</pre>
+</div></li>
+
+<li><p>
+Descripcion de los articulos que se han vendido.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT descrip
+FROM   articulo
+WHERE  idart IN (
+	 SELECT idart
+	 FROM   detalle
+       )
+</pre>
+</div></li>
+
+<li><p>
+Descripcion del articulo mas caro.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT descrip
+FROM   articulo
+WHERE  precio = (
+	 SELECT MAX(precio)
+	 FROM   articulo
+       )
+</pre>
+</div></li>
+
+<li><p>
+Cuantos pedidos nos hacen entre madrileños y toledanos?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(idped)
+FROM   pedido
+WHERE  idcli IN (
+	 SELECT idcli
+	 FROM   cliente
+	 WHERE  ciudad = 'MADRID'
+	    OR  ciudad = 'TOLEDO'
+       )
+</pre>
+</div></li>
+
+<li><p>
+Cuantos pedidos se hacen en la segunda quincena del mes?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT COUNT(idped)
+FROM   pedido
+WHERE  SUBSTR(fped, 1, 2) &gt; 15
+</pre>
+</div></li>
+
+<li><p>
+Listado de las ciudades con el numero de clientes que tenemos en
+cada provincia.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   ciudad, COUNT(idcli)
+FROM     cliente
+GROUP BY ciudad
+</pre>
+</div></li>
+
+<li><p>
+Listado con los nombres de los clientes junto con el numero de
+pedidos que nos han hecho.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   c.nombre, COUNT(p.idped)
+FROM     cliente c, pedido p
+WHERE    c.idcli = p.idcli
+GROUP BY c.nombre
+</pre>
+</div></li>
+
+<li><p>
+Que come Ana Kurnicova.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT descrip
+FROM   articulo
+WHERE  idart IN (
+	 SELECT idart
+	 FROM   detalle
+	 WHERE  idped IN (
+		  SELECT idped
+		  FROM   pedido
+		  WHERE  idcli = (
+			   SELECT idcli
+			   FROM   cliente
+			   WHERE  nombre = 'ANA KURNICOVA'
+			 )
+		)
+       )
+</pre>
+</div></li>
+
+<li><p>
+Listado de los articulos que vendemos junto con la cantidad que
+vendemos de ellos.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   a.descrip, SUM(d.cantidad)
+FROM     articulo a, detalle d
+WHERE    a.idart = d.idart
+GROUP BY a.descrip
+ORDER BY a.descrip
+</pre>
+</div></li>
+
+<li><p>
+Que capital tenemos entre corderos y hamburguesas en el almacen?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT SUM(stock * precio)
+FROM   articulo
+WHERE  descrip IN (
+	 'CORDERO',
+	 'HAMBURGUESA'
+       )
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los clientes que no comen salchichas.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT nombre
+FROM   cliente
+WHERE  idcli NOT IN (
+	 SELECT idcli
+	 FROM   pedido
+	 WHERE  idped IN (
+		  SELECT idped
+		  FROM   detalle
+		  WHERE  idart IN (
+			   SELECT idart
+			   FROM   articulo
+			   WHERE  descrip = 'SALCHICHAS'
+			 )
+		)
+       )
+</pre>
+</div></li>
+
+<li><p>
+Cuantas paellas se comen en Toledo?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT SUM(cantidad)
+FROM   detalle
+WHERE  idped IN (
+	 SELECT idped
+	 FROM   pedido
+	 WHERE  idcli IN (
+		  SELECT idcli
+		  FROM   cliente
+		  WHERE  ciudad = 'TOLEDO'
+		)
+       )
+  AND  idart = (
+	 SELECT idart
+	 FROM   articulo
+	 WHERE  descrip = 'PAELLA'
+       )
+</pre>
+</div></li>
+
+<li><p>
+Listado con el idped junto con el importe del pedido.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   d.idped, SUM(d.cantidad * a.precio)
+FROM     detalle d, articulo a
+WHERE    d.idart = a.idart
+GROUP BY d.idped
+</pre>
+</div></li>
+
+<li><p>
+Listado con las ciudades y el numero de clientes de cada ciudad.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   ciudad, COUNT(idcli)
+FROM     cliente
+GROUP BY ciudad
+</pre>
+</div></li>
+
+<li><p>
+Nombre de las ciudades en las que tenemos mas de 2 clientes.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   ciudad
+FROM     cliente
+GROUP BY ciudad
+HAVING   COUNT(idcli) &gt; 2
+</pre>
+</div></li>
+
+<li><p>
+En que formatos tenemos mas de 10 peliculas?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   formato
+FROM     peliculas
+GROUP BY formato
+HAVING   COUNT(c_peli) &gt; 10
+</pre>
+</div></li>
+
+<li><p>
+Titulo de las peliculas que hemos alquilado mas de una vez.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   titulo
+FROM     peliculas
+WHERE    c_peli IN (
+	   SELECT   c_peli
+	   FROM     alquiler
+	   GROUP BY c_peli
+	   HAVING   COUNT(c_socio) &gt; 1
+	 )
+</pre>
+</div></li>
+
+<li><p>
+Que paises producen menos de 3 peliculas?
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   pa.nombre_pais
+FROM     peliculas pe, paises pa
+WHERE    pe.c_pais = pa.c_pais
+GROUP BY pa.nombre_pais
+HAVING   COUNT(pe.c_peli) &lt; 3
+</pre>
+</div></li>
+
+<li><p>
+Nombre de los socios que han alquilado mas de 2 peliculas.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   s.nombre
+FROM     socios s, alquiler a
+WHERE    s.c_socio = a.c_socio
+GROUP BY s.nombre
+HAVING   COUNT(a.c_peli) &gt; 2
+</pre>
+</div></li>
+
+<li><p>
+Poner a oferta todas las peliculas anteriores a 2010.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">UPDATE peliculas
+SET    oferta = 'S'
+WHERE  anno &lt; 2010
+</pre>
+</div></li>
+
+<li><p>
+Rebajar el PRECIO de todas las peliculas un 25%.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">UPDATE peliculas
+SET    precio = precio - precio * 25/100
+</pre>
+</div></li>
+
+<li><p>
+Dia sin IVA. Quitar el IVA a todas las peliculas.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">UPDATE peliculas
+SET    precio = precio / 121 * 100
+</pre>
+</div></li>
+
+<li><p>
+Poner a 1 euro todas las peliculas españolas.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">UPDATE peliculas
+SET    precio = 1
+WHERE  c_pais IN (
+	 SELECT c_pais
+	 FROM   paises
+	 WHERE  nombre_pais LIKE 'España'
+       )
+</pre>
+</div></li>
+
+<li><p>
+Listado con los nombres de socios junto con el titulo de la
+pelicula mal alquilada.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT s.nombre, p.titulo
+FROM   socios s, peliculas p, alquiler a
+WHERE  s.c_socio = a.c_socio
+  AND  a.c_peli = p.c_peli
+  AND  a.total != a.ndias * p.precio
+</pre>
+</div></li>
+
+<li><p>
+Listado con los alquileres con el precio cobrado junto con el
+precio que se deberia haber cobrado.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT p.titulo, a.total "Cobrado", a.ndias * p.precio "Precio correcto"
+FROM   peliculas p, alquiler a
+WHERE  a.c_peli = p.c_peli
+  AND  a.total != a.ndias * p.precio
+</pre>
+</div></li>
+
+<li><p>
+Actualizar bien la base de datos y poner el valor correcto de
+TOTAL.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">UPDATE alquiler a
+SET    total = ndias * (
+	 SELECT precio
+	 FROM   peliculas p
+	 WHERE  p.c_peli = a.c_peli
+       )
+</pre>
+</div></li>
+
+<li><p>
+Listado con todos los nombres de los socios junto con el total que
+se han gastado en el videoclub.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT nombre, (
+	 SELECT SUM(total)
+	 FROM alquiler a
+	 WHERE a.c_socio = s.c_socio
+       ) "Total gastado"
+FROM   socios s
+</pre>
+</div></li>
+
+<li><p>
+Cual es el pais que mas peliculas ha producido.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT nombre_pais
+FROM   paises
+WHERE  c_pais = (
+	 SELECT   c_pais
+	 FROM     peliculas
+	 GROUP BY c_pais
+	 HAVING   COUNT(c_pais) = (
+		    SELECT MAX(count)
+		    FROM (
+		     SELECT   COUNT(c_pais) count
+		     FROM     peliculas
+		     GROUP BY c_pais
+		   )
+		 )
+       )
+</pre>
+</div></li>
+
+<li><p>
+Quitar 100 cines a los paises que no alquilan sus peliculas.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">UPDATE paises p
+SET    cines = cines - 100
+WHERE  c_pais NOT IN (
+	 SELECT c_pais
+	 FROM   peliculas
+	 WHERE  c_peli IN (
+		  SELECT c_peli
+		  FROM   alquiler
+		)
+       )
+</pre>
+</div></li>
+
+<li><p>
+En que formato tenemos mas peliculas.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT   formato
+FROM     peliculas
+GROUP BY formato
+HAVING   COUNT(formato) = (
+	   SELECT MAX(count)
+	   FROM (
+	     SELECT   COUNT(formato) count
+	     FROM     peliculas
+	     GROUP BY formato
+	   )
+	 )
+</pre>
+</div></li>
+
+<li><p>
+Poner en oferta solo aquellas peliculas que no se alquilen.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">UPDATE peliculas
+SET    oferta = 'S'
+WHERE  c_peli NOT IN (
+	 SELECT c_peli
+	 FROM   alquiler
+       )
+</pre>
+</div></li>
+</ol>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-01-26 Wed 18:01</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

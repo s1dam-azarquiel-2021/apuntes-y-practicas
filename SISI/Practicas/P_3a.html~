@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-01-26 Wed 20:15 -->
+<!-- 2022-01-26 Wed 18:01 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Practica 3A</title>
@@ -38,12 +38,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org790369a">1. Diseño de un sistema de informacion</a></li>
+<li><a href="#org7a25e21">1. Diseño de un sistema de informacion</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org790369a" class="outline-2">
-<h2 id="org790369a"><span class="section-number-2">1</span> Diseño de un sistema de informacion</h2>
+<div id="outline-container-org7a25e21" class="outline-2">
+<h2 id="org7a25e21"><span class="section-number-2">1</span> Diseño de un sistema de informacion</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li><p>
@@ -67,13 +67,13 @@ Primero de todo: creacion de la VM
 </p>
 
 
-<figure id="org4806e0a">
+<figure id="orgf1b0564">
 <img src="./img/3.1.1.png" alt="3.1.1.png">
 
 </figure>
 
 
-<figure id="org63bff75">
+<figure id="org0dd3590">
 <img src="./img/3.1.2.png" alt="3.1.2.png">
 
 </figure>
@@ -84,7 +84,7 @@ mas actual:
 </p>
 
 
-<figure id="org8c4e20d">
+<figure id="org0549cb8">
 <img src="./img/3.1.3.png" alt="3.1.3.png">
 
 </figure>
@@ -94,7 +94,7 @@ Añado la ISO del OS, que sera nixOS:
 </p>
 
 
-<figure id="org06187e9">
+<figure id="org03cf6dc">
 <img src="./img/3.1.4.png" alt="3.1.4.png">
 
 </figure>
@@ -104,7 +104,7 @@ Arranco la VM y selecciono la primera opcion:
 </p>
 
 
-<figure id="org5b06999">
+<figure id="orgc351696">
 <img src="./img/3.1.5.png" alt="3.1.5.png">
 
 </figure></li>
@@ -118,7 +118,7 @@ Hechamos un vistazo a los discos:
 </p>
 
 
-<figure id="org0311d98">
+<figure id="org15288be">
 <img src="./img/3.1.6.png" alt="3.1.6.png">
 
 </figure>
@@ -130,7 +130,7 @@ Lo primaro es a cambiar a root e ir a <code>/</code>:
 <div class="org-src-container">
 <pre class="src src-shell">sudo su
 
-<span class="org-builtin">cd</span> /
+cd /
 </pre>
 </div>
 
@@ -149,7 +149,7 @@ Le asigno el particionado GPT y creamos 2 particiones, una de
 </p>
 
 
-<figure id="orgfe672af">
+<figure id="orgc3692fc">
 <img src="./img/3.1.8.png" alt="3.1.8.png">
 
 </figure>
@@ -159,7 +159,7 @@ A la particion efi la pongo de tipo <code>EFI System</code>.
 </p>
 
 
-<figure id="org615ffcf">
+<figure id="org7de74a0">
 <img src="./img/3.1.9.png" alt="3.1.9.png">
 
 </figure>
@@ -169,7 +169,7 @@ Y por ultimo se guardan los cambios.
 </p>
 
 
-<figure id="orgfe12a56">
+<figure id="org6daecae">
 <img src="./img/3.1.10.png" alt="3.1.10.png">
 
 </figure>
@@ -210,7 +210,7 @@ su <code>/boot</code> y montarle la particion de boot y lo mismo creando
 <div class="org-src-container">
 <pre class="src src-shell">umount /mnt
 
-mount /dev/sda2 -o <span class="org-variable-name">subvol</span>=@nixos /mnt
+mount /dev/sda2 -o subvol=@nixos /mnt
 
 mkdir /mnt/boot
 
@@ -218,9 +218,9 @@ mount /dev/sda1 /mnt/boot
 
 mkdir /mnt/Datos /mnt/Backups
 
-mount /dev/sda2 -o <span class="org-variable-name">subvol</span>=@data /mnt/Datos
+mount /dev/sda2 -o subvol=@data /mnt/Datos
 
-mount /dev/sda2 -o <span class="org-variable-name">subvol</span>=@backups /mnt/Backups
+mount /dev/sda2 -o subvol=@backups /mnt/Backups
 </pre>
 </div>
 
@@ -248,7 +248,7 @@ Creo <code>/swap</code>, donde se montara el subvolumen creado antes:
 <div class="org-src-container">
 <pre class="src src-shell">mkdir /mnt/swap
 
-mount /dev/sda2 -o <span class="org-variable-name">subvol</span>=@swap /mnt/swap
+mount /dev/sda2 -o subvol=@swap /mnt/swap
 </pre>
 </div>
 
@@ -283,14 +283,14 @@ lo que se de en el blocksize, BS):
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">dd <span class="org-variable-name">if</span>=/dev/zero <span class="org-variable-name">of</span>=/mnt/swap/swapfile <span class="org-variable-name">bs</span>=1M <span class="org-variable-name">count</span>=2048
-<span class="org-comment-delimiter"># </span><span class="org-comment">2048+0 records in</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">2048+0 records out</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">2147483648 bytes (2 GiB) copied, 20 s, 105 MB/s</span>
+<pre class="src src-shell">dd if=/dev/zero of=/mnt/swap/swapfile bs=1M count=2048
+# 2048+0 records in
+# 2048+0 records out
+# 2147483648 bytes (2 GiB) copied, 20 s, 105 MB/s
 
 mkswap /mnt/swap/swapfile
-<span class="org-comment-delimiter"># </span><span class="org-comment">Setting up swapspace version 1, size = 2 GiB</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">no label, UUID=8d33617c-9642-4c9a4-ae68-9885a67bbea5</span>
+# Setting up swapspace version 1, size = 2 GiB
+# no label, UUID=8d33617c-9642-4c9a4-ae68-9885a67bbea5
 
 swapon /mnt/swap/swapfile
 </pre>
@@ -308,10 +308,10 @@ que se guarda en <code>/etc/nixos</code>:
 
 <div class="org-src-container">
 <pre class="src src-shell">nixos-generate-config --root /mnt
-<span class="org-comment-delimiter"># </span><span class="org-comment">writing /mnt/etc/nixos/hardware-configuration.nix...</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">writing /mnt/etc/nixos/configuration.nix...</span>
+# writing /mnt/etc/nixos/hardware-configuration.nix...
+# writing /mnt/etc/nixos/configuration.nix...
 
-<span class="org-builtin">cd</span> /mnt/etc/nixos/
+cd /mnt/etc/nixos/
 </pre>
 </div>
 
@@ -438,7 +438,7 @@ Y con esto y un bizcocho, rezamos para que instale:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span class="org-builtin">cd</span> /
+<pre class="src src-shell">cd /
 
 nixos-install
 </pre>
@@ -450,7 +450,7 @@ ultimo nos pregunta para poner la contraseña de root:
 </p>
 
 
-<figure id="orgb83953c">
+<figure id="org468ffd2">
 <img src="./img/3.1.25.png" alt="3.1.25.png">
 
 </figure>
@@ -461,7 +461,7 @@ perfectamente.
 </p>
 
 
-<figure id="org2304456">
+<figure id="orgcfff19b">
 <img src="./img/3.1.26.png" alt="3.1.26.png">
 
 </figure>
@@ -472,7 +472,7 @@ montado.
 </p>
 
 
-<figure id="org1e47613">
+<figure id="orgda895a4">
 <img src="./img/3.1.27.png" alt="3.1.27.png">
 
 </figure></li>
@@ -506,7 +506,7 @@ Como antes, nos vamos a la configuracion de nixOS:
 <div class="org-src-container">
 <pre class="src src-shell">sudo su
 
-<span class="org-builtin">cd</span> /etc/nixos/
+cd /etc/nixos/
 </pre>
 </div>
 
@@ -582,29 +582,29 @@ script:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span class="org-comment-delimiter"># </span><span class="org-comment">Path de la ultima backup completa</span>
-<span class="org-variable-name">LFB</span>=$(find /Backups -type d -name <span class="org-string">"full_*"</span> | tail -n1)
+<pre class="src src-shell"># Path de la ultima backup completa
+LFB=$(find /Backups -type d -name "full_*" | tail -n1)
 
-<span class="org-comment-delimiter"># </span><span class="org-comment">Si no existe una anterior backup completa, esta sera la 1</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Si no esta sera la siguiente (si es 1, pues 2)</span>
-<span class="org-keyword">if</span> [[ -z $<span class="org-variable-name">LFB</span> ]]; <span class="org-keyword">then</span>
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Nombre de la nueva backup</span>
-  <span class="org-variable-name">NBN</span>=full_1
-<span class="org-keyword">else</span>
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Numero / ID de la ultima backup completa</span>
-  <span class="org-variable-name">LFBN</span>=$(<span class="org-builtin">echo</span> <span class="org-string">"$LFB"</span> | sed <span class="org-string">"s/.*\/full_\(.*\)/\1/g"</span>)
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Numero / ID de la siguiente backup completa</span>
-  <span class="org-variable-name">NFBN</span>=$(($<span class="org-variable-name">LFBN</span> + 1))
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Nombre de la nueva backup</span>
-  <span class="org-variable-name">NBN</span>=full_$<span class="org-variable-name">NFBN</span>
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Borrar todas las backups locales</span>
+# Si no existe una anterior backup completa, esta sera la 1
+# Si no esta sera la siguiente (si es 1, pues 2)
+if [[ -z $LFB ]]; then
+  # Nombre de la nueva backup
+  NBN=full_1
+else
+  # Numero / ID de la ultima backup completa
+  LFBN=$(echo "$LFB" | sed "s/.*\/full_\(.*\)/\1/g")
+  # Numero / ID de la siguiente backup completa
+  NFBN=$(($LFBN + 1))
+  # Nombre de la nueva backup
+  NBN=full_$NFBN
+  # Borrar todas las backups locales
   btrfs subvolume delete /Backups/*
-<span class="org-keyword">fi</span>
+fi
 
-<span class="org-comment-delimiter"># </span><span class="org-comment">Creamos una snapshot de /Datos y la guardamos en local</span>
-btrfs subvolume snapshot -r /Datos /Backups/$<span class="org-variable-name">NBN</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Enviamos la snapshot al remoto</span>
-btrfs send /Backups/$<span class="org-variable-name">NBN</span> | btrfs receive /Remoto
+# Creamos una snapshot de /Datos y la guardamos en local
+btrfs subvolume snapshot -r /Datos /Backups/$NBN
+# Enviamos la snapshot al remoto
+btrfs send /Backups/$NBN | btrfs receive /Remoto
 </pre>
 </div>
 
@@ -646,36 +646,36 @@ una nueva snapshot.
 </div>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span class="org-comment-delimiter"># </span><span class="org-comment">Path de la ultima backup completa</span>
-<span class="org-variable-name">LFB</span>=$(find /Backups -type d -name <span class="org-string">"full_*"</span> | tail -n1)
-<span class="org-comment-delimiter"># </span><span class="org-comment">Numero / ID de la ultima backup completa</span>
-<span class="org-variable-name">LFBN</span>=$(<span class="org-builtin">echo</span> <span class="org-string">"$LFB"</span> | sed <span class="org-string">"s/.*\/full_\(.*\)/\1/g"</span>)
-<span class="org-comment-delimiter"># </span><span class="org-comment">Path de la ultima backup diferencial</span>
-<span class="org-variable-name">LDB</span>=$(find /Backups -type d -name <span class="org-string">"diferential_$LFBN-*"</span> | tail -n1)
+<pre class="src src-shell"># Path de la ultima backup completa
+LFB=$(find /Backups -type d -name "full_*" | tail -n1)
+# Numero / ID de la ultima backup completa
+LFBN=$(echo "$LFB" | sed "s/.*\/full_\(.*\)/\1/g")
+# Path de la ultima backup diferencial
+LDB=$(find /Backups -type d -name "diferential_$LFBN-*" | tail -n1)
 
-<span class="org-comment-delimiter"># </span><span class="org-comment">Si no existe una anterior backup diferencial, esta sera la 1</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Si existe el nombre sera la siguiente</span>
-<span class="org-keyword">if</span> [[ -z $<span class="org-variable-name">LDB</span> ]]; <span class="org-keyword">then</span>
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Nombre de la nueva backup</span>
-  <span class="org-variable-name">NBN</span>=diferential_$<span class="org-variable-name">LFBN</span>-1
-<span class="org-keyword">else</span>
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Numero / ID de la anterior backup diferencial</span>
-  <span class="org-variable-name">LDBN</span>=$(<span class="org-builtin">echo</span> <span class="org-string">"$LDB"</span> | sed <span class="org-string">"s/.*\/diferential_.*-\(.*\)/\1/g"</span>)
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Numero / ID de la siguiente backup diferencial</span>
-  <span class="org-variable-name">NDBN</span>=$(($<span class="org-variable-name">LDBN</span> + 1))
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Nombre de la nueva backup</span>
-  <span class="org-variable-name">NBN</span>=diferential_$<span class="org-variable-name">LFBN</span>-$<span class="org-variable-name">NDBN</span>
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Se elimina la anterior copia diferencial en local</span>
-  btrfs subvolume delete $<span class="org-variable-name">LDB</span>
-<span class="org-keyword">fi</span>
+# Si no existe una anterior backup diferencial, esta sera la 1
+# Si existe el nombre sera la siguiente
+if [[ -z $LDB ]]; then
+  # Nombre de la nueva backup
+  NBN=diferential_$LFBN-1
+else
+  # Numero / ID de la anterior backup diferencial
+  LDBN=$(echo "$LDB" | sed "s/.*\/diferential_.*-\(.*\)/\1/g")
+  # Numero / ID de la siguiente backup diferencial
+  NDBN=$(($LDBN + 1))
+  # Nombre de la nueva backup
+  NBN=diferential_$LFBN-$NDBN
+  # Se elimina la anterior copia diferencial en local
+  btrfs subvolume delete $LDB
+fi
 
-<span class="org-comment-delimiter"># </span><span class="org-comment">Creamos una snapshot de /Datos y la guardamos en local</span>
-btrfs subvolume snapshot -r /Datos /Backups/$<span class="org-variable-name">NBN</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Se forma un stream de diferencias entre la ultima backup completa</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">y el estado actual, que se guardo en local en el comando anterior</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Este stream se evia al remote y este lo interpreta creando la</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">copia diferencial</span>
-btrfs send -p $<span class="org-variable-name">LFB</span> /Backups/$<span class="org-variable-name">NBN</span> | btrfs receive /Remoto
+# Creamos una snapshot de /Datos y la guardamos en local
+btrfs subvolume snapshot -r /Datos /Backups/$NBN
+# Se forma un stream de diferencias entre la ultima backup completa
+# y el estado actual, que se guardo en local en el comando anterior
+# Este stream se evia al remote y este lo interpreta creando la
+# copia diferencial
+btrfs send -p $LFB /Backups/$NBN | btrfs receive /Remoto
 </pre>
 </div></li>
 
@@ -702,46 +702,46 @@ de cosas:
 </div>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span class="org-comment-delimiter"># </span><span class="org-comment">Path de la ultima backup completa</span>
-<span class="org-variable-name">LFB</span>=$(find /Backups -type d -name <span class="org-string">"full_*"</span> | tail -n1)
-<span class="org-comment-delimiter"># </span><span class="org-comment">Numero / ID de la ultima backup completa</span>
-<span class="org-variable-name">LFBN</span>=$(<span class="org-builtin">echo</span> <span class="org-string">"$LFB"</span> | sed <span class="org-string">"s/.*\/full_\(.*\)/\1/g"</span>)
-<span class="org-comment-delimiter"># </span><span class="org-comment">Path de la ultima backup diferencial</span>
-<span class="org-variable-name">LDB</span>=$(find /Backups -type d -name <span class="org-string">"diferential_$LFBN-*"</span> | tail -n1)
-<span class="org-comment-delimiter"># </span><span class="org-comment">Numero / ID de la ultima backup diferencial</span>
-<span class="org-variable-name">LDBN</span>=$(<span class="org-builtin">echo</span> <span class="org-string">"$LDB"</span> | sed <span class="org-string">"s/.*\/diferential_.*-\(.*\)/\1/g"</span>)
-<span class="org-comment-delimiter"># </span><span class="org-comment">Path de la ultima backup incremental</span>
-<span class="org-variable-name">LIB</span>=$(find /Backups -type d -name <span class="org-string">"incremental_$LFBN-$LDBN-*"</span> | tail -n1)
+<pre class="src src-shell"># Path de la ultima backup completa
+LFB=$(find /Backups -type d -name "full_*" | tail -n1)
+# Numero / ID de la ultima backup completa
+LFBN=$(echo "$LFB" | sed "s/.*\/full_\(.*\)/\1/g")
+# Path de la ultima backup diferencial
+LDB=$(find /Backups -type d -name "diferential_$LFBN-*" | tail -n1)
+# Numero / ID de la ultima backup diferencial
+LDBN=$(echo "$LDB" | sed "s/.*\/diferential_.*-\(.*\)/\1/g")
+# Path de la ultima backup incremental
+LIB=$(find /Backups -type d -name "incremental_$LFBN-$LDBN-*" | tail -n1)
 
-<span class="org-comment-delimiter"># </span><span class="org-comment">Si no existe una anterior backup incremental, esta sera la 1</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Si existe el nombre sera la siguiente</span>
-<span class="org-keyword">if</span> [[ -z $<span class="org-variable-name">LIB</span> ]]; <span class="org-keyword">then</span>
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Nombre de la nueva backup</span>
-  <span class="org-variable-name">NBN</span>=incremental_$<span class="org-variable-name">LFBN</span>-$<span class="org-variable-name">LDBN</span>-1
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Path de la copia con la que se debe comparar</span>
-  <span class="org-comment-delimiter"># </span><span class="org-comment">como no hay incrementales sera la ultima diferencial</span>
-  <span class="org-variable-name">PARENT</span>=$<span class="org-variable-name">LDB</span>
-<span class="org-keyword">else</span>
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Numero / ID de la anterior backup incremental</span>
-  <span class="org-variable-name">LIBN</span>=$(<span class="org-builtin">echo</span> <span class="org-string">"$LIB"</span> | sed <span class="org-string">"s/.*\/incremental_.*-.*-\(.*\)/\1/g"</span>)
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Numero / ID de la siguiente backup incremental</span>
-  <span class="org-variable-name">NIBN</span>=$(($<span class="org-variable-name">LIBN</span> + 1))
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Nombre de la nueva backup</span>
-  <span class="org-variable-name">NBN</span>=incremental_$<span class="org-variable-name">LFBN</span>-$<span class="org-variable-name">LDBN</span>-$<span class="org-variable-name">NIBN</span>
-  <span class="org-comment-delimiter"># </span><span class="org-comment">Path de la copia con la que se debe comparar</span>
-  <span class="org-comment-delimiter"># </span><span class="org-comment">como existe una anterior incremental, esa sera</span>
-  <span class="org-variable-name">PARENT</span>=$<span class="org-variable-name">LIB</span>
-<span class="org-keyword">fi</span>
+# Si no existe una anterior backup incremental, esta sera la 1
+# Si existe el nombre sera la siguiente
+if [[ -z $LIB ]]; then
+  # Nombre de la nueva backup
+  NBN=incremental_$LFBN-$LDBN-1
+  # Path de la copia con la que se debe comparar
+  # como no hay incrementales sera la ultima diferencial
+  PARENT=$LDB
+else
+  # Numero / ID de la anterior backup incremental
+  LIBN=$(echo "$LIB" | sed "s/.*\/incremental_.*-.*-\(.*\)/\1/g")
+  # Numero / ID de la siguiente backup incremental
+  NIBN=$(($LIBN + 1))
+  # Nombre de la nueva backup
+  NBN=incremental_$LFBN-$LDBN-$NIBN
+  # Path de la copia con la que se debe comparar
+  # como existe una anterior incremental, esa sera
+  PARENT=$LIB
+fi
 
-<span class="org-comment-delimiter"># </span><span class="org-comment">Creamos una snapshot de /Datos y la guardamos en local</span>
-btrfs subvolume snapshot -r /Datos /Backups/$<span class="org-variable-name">NBN</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Se forma un stream de diferencias entre la backup "PADRE"</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">y el estado actual, que se guardo en local en el comando anterior</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Este stream se evia al remote y este lo interpreta creando la</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">copia incremental</span>
-btrfs send -p $<span class="org-variable-name">PARENT</span> /Backups/$<span class="org-variable-name">NBN</span> | btrfs receive /Remoto
-<span class="org-comment-delimiter"># </span><span class="org-comment">Me cargo la anterior incremental en local si es que habia</span>
-[[ -z $<span class="org-variable-name">NIBN</span> ]] || btrfs subvolume delete $<span class="org-variable-name">PARENT</span>
+# Creamos una snapshot de /Datos y la guardamos en local
+btrfs subvolume snapshot -r /Datos /Backups/$NBN
+# Se forma un stream de diferencias entre la backup "PADRE"
+# y el estado actual, que se guardo en local en el comando anterior
+# Este stream se evia al remote y este lo interpreta creando la
+# copia incremental
+btrfs send -p $PARENT /Backups/$NBN | btrfs receive /Remoto
+# Me cargo la anterior incremental en local si es que habia
+[[ -z $NIBN ]] || btrfs subvolume delete $PARENT
 </pre>
 </div></li>
 
@@ -778,25 +778,25 @@ Ahora voy a forzar al servicio para que se ejecute:
 </p>
 
 
-<figure id="orgcb9c9c6">
+<figure id="org7ebf2cc">
 <img src="./img/3.2.1.png" alt="3.2.1.png">
 
 </figure>
 
 
-<figure id="org4b87118">
+<figure id="orgd0247c1">
 <img src="./img/3.2.2.png" alt="3.2.2.png">
 
 </figure>
 
 
-<figure id="org48bf562">
+<figure id="org172edad">
 <img src="./img/3.2.3.png" alt="3.2.3.png">
 
 </figure>
 
 
-<figure id="org32b280c">
+<figure id="org81f1f3c">
 <img src="./img/3.2.4.png" alt="3.2.4.png">
 
 </figure>
@@ -808,7 +808,7 @@ que desciende de el, menos el incremental 1-1-2 que es el ultimo.
 </p>
 
 
-<figure id="org28f806a">
+<figure id="orga4f9e39">
 <img src="./img/3.2.5.png" alt="3.2.5.png">
 
 </figure></li>
@@ -976,7 +976,7 @@ tengo en github de mis archivos de configuracion <a href="https://github.com/aru
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2022-01-26 Wed 20:15</p>
+<p class="date">Created: 2022-01-26 Wed 18:01</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

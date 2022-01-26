@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-01-26 Wed 20:15 -->
+<!-- 2022-01-26 Wed 18:01 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ejercicio 3 Consultas</title>
@@ -39,8 +39,8 @@
 Vuestro nombre sea un nuevo CLIENTE
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> CLIENTE (idcli, nombre, direc, ciudad, cpostal, telef, credit)
-<span class="org-keyword">VALUES</span> (6969, <span class="org-string">'Alberto Robles'</span>, <span class="org-string">'C/ Cacho, 69'</span>, <span class="org-string">'Trozo'</span>, 6969, 696969696, 696969);
+<pre class="src src-sql">INSERT INTO CLIENTE (idcli, nombre, direc, ciudad, cpostal, telef, credit)
+VALUES (6969, 'Alberto Robles', 'C/ Cacho, 69', 'Trozo', 6969, 696969696, 696969);
 </pre>
 </div></li>
 
@@ -49,14 +49,14 @@ Insertar un nuevo registro de PEDIDO con fecha de hoy. El pedido
 debe contener una de salchichas y algún artículo más.
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> PEDIDO (idped, idcli, fped, ffac)
-<span class="org-keyword">VALUES</span> (6969, 6969, <span class="org-string">'20/01/2022'</span>, <span class="org-string">'20/01/2022'</span>);
+<pre class="src src-sql">INSERT INTO PEDIDO (idped, idcli, fped, ffac)
+VALUES (6969, 6969, '20/01/2022', '20/01/2022');
 
-<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> DETALLE (idped, idart, cantidad)
-<span class="org-keyword">VALUES</span> (6969, 4006, 69);
+INSERT INTO DETALLE (idped, idart, cantidad)
+VALUES (6969, 4006, 69);
 
-<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> DETALLE (idped, idart, cantidad)
-<span class="org-keyword">VALUES</span> (6969, 4008, 69);
+INSERT INTO DETALLE (idped, idart, cantidad)
+VALUES (6969, 4008, 69);
 </pre>
 </div></li>
 
@@ -65,16 +65,16 @@ Confirmar con una select que visualice los artículos que habéis
 pedido.
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SELECT</span> a.descrip
-<span class="org-keyword">FROM</span>   detalle d, articulo a
-<span class="org-keyword">WHERE</span>  d.idart = a.idart
-  <span class="org-keyword">AND</span>  d.idped = 6969;
+<pre class="src src-sql">SELECT a.descrip
+FROM   detalle d, articulo a
+WHERE  d.idart = a.idart
+  AND  d.idped = 6969;
 </pre>
 </div></li>
 </ol>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2022-01-26 Wed 20:15</p>
+<p class="date">Created: 2022-01-26 Wed 18:01</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
