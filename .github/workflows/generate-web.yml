@@ -32,8 +32,9 @@ jobs:
 
       - name: Generate files
         run: |
+          ls htmlize.el
           emacs --batch \
-                --eval "(load \"./htmlize\")" \
+                --eval "(load \"./htmlize.el\")" \
                 --eval "(require 'ox-publish)" \
                 --eval " \
                 (setq org-html-head-include-default-style nil \
