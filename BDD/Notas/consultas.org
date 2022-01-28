@@ -917,3 +917,32 @@
               FROM   alquiler
             )
      #+end_src
+
+102. Escribir correctamente los nombres de los socios.
+     #+begin_src sql
+     UPDATE socios
+     SET    nombre = INITCAP(nombre),
+            ape1 = INITCAP(ape1),
+            ape2 = INITCAP(ape2)
+     #+end_src
+
+103. Añadir a la tabla socios el atributo GASTADO (numerico de 6):
+     #+begin_src sql
+     ALTER TABLE socios
+     ADD   gastado NUMBER(6)
+     #+end_src
+
+104. Poner el campo GASTADO con el valor correcto con el total gastado
+     de cada socio.
+     #+begin_src sql
+     UPDATE socios s
+     SET    gastado = (
+              SELECT NVL(SUM(ndias * (
+                       SELECT precio
+                       FROM   peliculas p
+                       WHERE  p.c_peli = a.c_peli
+                     )), 0)
+              FROM   alquiler a
+              WHERE  a.c_socio = s.c_socio
+            )
+     #+end_src
