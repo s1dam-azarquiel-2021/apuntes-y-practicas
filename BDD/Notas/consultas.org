@@ -853,7 +853,7 @@
     se han gastado en el videoclub.
     #+begin_src sql
     SELECT nombre, (
-             SELECT SUM(total)
+             SELECT NVL(SUM(total), 0)
              FROM alquiler a
              WHERE a.c_socio = s.c_socio
            ) "Total gastado"
