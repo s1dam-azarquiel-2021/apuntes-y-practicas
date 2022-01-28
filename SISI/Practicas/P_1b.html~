@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-01-26 Wed 20:15 -->
+<!-- 2022-01-26 Wed 20:25 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Practica 1B</title>
 <meta name="generator" content="Org mode">
+<meta name="author" content="Alberto Robles Gomez">
 <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 <script type="text/javascript">
 // @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
@@ -38,12 +39,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org47002ae">1. Deteccion de drivers del equipo</a></li>
+<li><a href="#orga6f8677">1. Deteccion de drivers del equipo</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org47002ae" class="outline-2">
-<h2 id="org47002ae"><span class="section-number-2">1</span> Deteccion de drivers del equipo</h2>
+<div id="outline-container-orga6f8677" class="outline-2">
+<h2 id="orga6f8677"><span class="section-number-2">1</span> Deteccion de drivers del equipo</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Version del kernel: 5.10.57
@@ -933,7 +934,8 @@ Version del kernel: 5.10.57
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2022-01-26 Wed 20:15</p>
+<p class="author">Author: Alberto Robles Gomez</p>
+<p class="date">Created: 2022-01-26 Wed 20:25</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-01-26 Wed 20:15 -->
+<!-- 2022-01-26 Wed 20:25 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Practica 3A</title>
 <meta name="generator" content="Org mode">
+<meta name="author" content="Alberto Robles Gomez">
 <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 <script type="text/javascript">
 // @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
@@ -38,12 +39,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org790369a">1. Diseño de un sistema de informacion</a></li>
+<li><a href="#org0fb38f8">1. Diseño de un sistema de informacion</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org790369a" class="outline-2">
-<h2 id="org790369a"><span class="section-number-2">1</span> Diseño de un sistema de informacion</h2>
+<div id="outline-container-org0fb38f8" class="outline-2">
+<h2 id="org0fb38f8"><span class="section-number-2">1</span> Diseño de un sistema de informacion</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li><p>
@@ -67,13 +68,13 @@ Primero de todo: creacion de la VM
 </p>
 
 
-<figure id="org4806e0a">
+<figure id="orgad80a86">
 <img src="./img/3.1.1.png" alt="3.1.1.png">
 
 </figure>
 
 
-<figure id="org63bff75">
+<figure id="org487e27c">
 <img src="./img/3.1.2.png" alt="3.1.2.png">
 
 </figure>
@@ -84,7 +85,7 @@ mas actual:
 </p>
 
 
-<figure id="org8c4e20d">
+<figure id="org5ad4d0b">
 <img src="./img/3.1.3.png" alt="3.1.3.png">
 
 </figure>
@@ -94,7 +95,7 @@ Añado la ISO del OS, que sera nixOS:
 </p>
 
 
-<figure id="org06187e9">
+<figure id="org77c42dd">
 <img src="./img/3.1.4.png" alt="3.1.4.png">
 
 </figure>
@@ -104,7 +105,7 @@ Arranco la VM y selecciono la primera opcion:
 </p>
 
 
-<figure id="org5b06999">
+<figure id="org4c79249">
 <img src="./img/3.1.5.png" alt="3.1.5.png">
 
 </figure></li>
@@ -118,7 +119,7 @@ Hechamos un vistazo a los discos:
 </p>
 
 
-<figure id="org0311d98">
+<figure id="org9a251ef">
 <img src="./img/3.1.6.png" alt="3.1.6.png">
 
 </figure>
@@ -149,7 +150,7 @@ Le asigno el particionado GPT y creamos 2 particiones, una de
 </p>
 
 
-<figure id="orgfe672af">
+<figure id="orgad11eaf">
 <img src="./img/3.1.8.png" alt="3.1.8.png">
 
 </figure>
@@ -159,7 +160,7 @@ A la particion efi la pongo de tipo <code>EFI System</code>.
 </p>
 
 
-<figure id="org615ffcf">
+<figure id="org86c2ae8">
 <img src="./img/3.1.9.png" alt="3.1.9.png">
 
 </figure>
@@ -169,7 +170,7 @@ Y por ultimo se guardan los cambios.
 </p>
 
 
-<figure id="orgfe12a56">
+<figure id="org9a59a90">
 <img src="./img/3.1.10.png" alt="3.1.10.png">
 
 </figure>
@@ -450,7 +451,7 @@ ultimo nos pregunta para poner la contraseña de root:
 </p>
 
 
-<figure id="orgb83953c">
+<figure id="org313b05c">
 <img src="./img/3.1.25.png" alt="3.1.25.png">
 
 </figure>
@@ -461,7 +462,7 @@ perfectamente.
 </p>
 
 
-<figure id="org2304456">
+<figure id="orgf04c642">
 <img src="./img/3.1.26.png" alt="3.1.26.png">
 
 </figure>
@@ -472,7 +473,7 @@ montado.
 </p>
 
 
-<figure id="org1e47613">
+<figure id="org2e7a04f">
 <img src="./img/3.1.27.png" alt="3.1.27.png">
 
 </figure></li>
@@ -778,25 +779,25 @@ Ahora voy a forzar al servicio para que se ejecute:
 </p>
 
 
-<figure id="orgcb9c9c6">
+<figure id="org0e9efaa">
 <img src="./img/3.2.1.png" alt="3.2.1.png">
 
 </figure>
 
 
-<figure id="org4b87118">
+<figure id="orga06ef9c">
 <img src="./img/3.2.2.png" alt="3.2.2.png">
 
 </figure>
 
 
-<figure id="org48bf562">
+<figure id="orgf8482e7">
 <img src="./img/3.2.3.png" alt="3.2.3.png">
 
 </figure>
 
 
-<figure id="org32b280c">
+<figure id="org7980a7f">
 <img src="./img/3.2.4.png" alt="3.2.4.png">
 
 </figure>
@@ -808,7 +809,7 @@ que desciende de el, menos el incremental 1-1-2 que es el ultimo.
 </p>
 
 
-<figure id="org28f806a">
+<figure id="org1f28209">
 <img src="./img/3.2.5.png" alt="3.2.5.png">
 
 </figure></li>
@@ -976,7 +977,8 @@ tengo en github de mis archivos de configuracion <a href="https://github.com/aru
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2022-01-26 Wed 20:15</p>
+<p class="author">Author: Alberto Robles Gomez</p>
+<p class="date">Created: 2022-01-26 Wed 20:25</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

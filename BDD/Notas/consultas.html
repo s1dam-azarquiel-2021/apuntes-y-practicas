@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-01-26 Wed 20:25 -->
+<!-- 2022-01-28 Fri 11:24 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Consultas SQL</title>
@@ -1178,7 +1178,7 @@ se han gastado en el videoclub.
 </p>
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> nombre, (
-         <span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(total)
+         <span class="org-keyword">SELECT</span> NVL(<span class="org-builtin">SUM</span>(total), 0)
          <span class="org-keyword">FROM</span> alquiler a
          <span class="org-keyword">WHERE</span> a.c_socio = s.c_socio
        ) "Total gastado"
@@ -1255,11 +1255,49 @@ Poner en oferta solo aquellas peliculas que no se alquilen.
        )
 </pre>
 </div></li>
+
+<li><p>
+Escribir correctamente los nombres de los socios.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">UPDATE</span> socios
+<span class="org-keyword">SET</span>    nombre = INITCAP(nombre),
+       ape1 = INITCAP(ape1),
+       ape2 = INITCAP(ape2)
+</pre>
+</div></li>
+
+<li><p>
+Añadir a la tabla socios el atributo GASTADO (numerico de 6):
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">ALTER</span> <span class="org-keyword">TABLE</span> <span class="org-function-name">socios</span>
+<span class="org-keyword">ADD</span>   gastado <span class="org-keyword">NUMBER</span>(6)
+</pre>
+</div></li>
+
+<li><p>
+Poner el campo GASTADO con el valor correcto con el total gastado
+de cada socio.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">UPDATE</span> socios s
+<span class="org-keyword">SET</span>    gastado = (
+         <span class="org-keyword">SELECT</span> NVL(<span class="org-builtin">SUM</span>(ndias * (
+                  <span class="org-keyword">SELECT</span> precio
+                  <span class="org-keyword">FROM</span>   peliculas p
+                  <span class="org-keyword">WHERE</span>  p.c_peli = a.c_peli
+                )), 0)
+         <span class="org-keyword">FROM</span>   alquiler a
+         <span class="org-keyword">WHERE</span>  a.c_socio = s.c_socio
+       )
+</pre>
+</div></li>
 </ol>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-01-26 Wed 20:25</p>
+<p class="date">Created: 2022-01-28 Fri 11:24</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
