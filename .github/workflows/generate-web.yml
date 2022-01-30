@@ -37,6 +37,7 @@ jobs:
                 --eval "(add-to-list 'load-path \"./elispStuff\")" \
                 --eval "(require 'package)" \
                 --eval "(package-install 'org)" \
+                --eval "(print (org-version))" \
                 --eval "(require 'htmlize)" \
                 --eval "(require 'ox-publish)" \
                 --eval " \
