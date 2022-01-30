@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<!-- 2022-01-30 Sun 16:37 -->
+<!-- 2022-01-30 Sun 17:13 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ejercicio 3 Consultas</title>
@@ -75,9 +75,8 @@ pedido.
 </ol>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-01-30 Sun 16:37</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="author">Autor: Alberto Robles Gomez</p>
+<p class="date">Created: 2022-01-30 Sun 17:13</p>
 </div>
 </body>
 </html>

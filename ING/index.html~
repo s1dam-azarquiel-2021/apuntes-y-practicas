@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<!-- 2022-01-30 Sun 16:37 -->
+<!-- 2022-01-30 Sun 17:13 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ING</title>
@@ -35,22 +35,21 @@
 <div id="content">
 <header>
 <h1 class="title">ING</h1>
-</header><div id="outline-container-org51dcadd" class="outline-2">
-<h2 id="org51dcadd"><span class="section-number-2">1</span> Contenido</h2>
-<div class="outline-text-2" id="text-1">
+</header><div id="outline-container-orgdaca784" class="outline-2">
+<h2 id="orgdaca784">Contenido</h2>
+<div class="outline-text-2" id="text-orgdaca784">
 </div>
-<div id="outline-container-orgde52c94" class="outline-3">
-<h3 id="orgde52c94"><span class="section-number-3">1.1</span> <a href="./Notas/index.html">Teoria, notas, etc</a></h3>
+<div id="outline-container-org9079109" class="outline-3">
+<h3 id="org9079109"><a href="./Notas/index.html">Teoria, notas, etc</a></h3>
 </div>
-<div id="outline-container-org94962f0" class="outline-3">
-<h3 id="org94962f0"><span class="section-number-3">1.2</span> <a href="./Practicas/index.html">Practicas, tarea, etc</a></h3>
+<div id="outline-container-org537573d" class="outline-3">
+<h3 id="org537573d"><a href="./Practicas/index.html">Practicas, tarea, etc</a></h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-01-30 Sun 16:37</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="author">Autor: Alberto Robles Gomez</p>
+<p class="date">Created: 2022-01-30 Sun 17:13</p>
 </div>
 </body>
 </html>
