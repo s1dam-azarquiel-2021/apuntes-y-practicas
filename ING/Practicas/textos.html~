@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-01-30 Sun 16:31 -->
+<!-- 2022-01-30 Sun 16:37 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Textos</title>
@@ -39,14 +39,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd98735f">1. Texto 1</a></li>
-<li><a href="#orgcc99d5d">2. Texto 2</a></li>
-<li><a href="#orge475c9e">3. Texto 3</a></li>
+<li><a href="#org6a7292b">1. Texto 1</a></li>
+<li><a href="#org8038e9a">2. Texto 2</a></li>
+<li><a href="#org27118ed">3. Texto 3</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orgd98735f" class="outline-2">
-<h2 id="orgd98735f"><span class="section-number-2">1</span> Texto 1</h2>
+<div id="outline-container-org6a7292b" class="outline-2">
+<h2 id="org6a7292b"><span class="section-number-2">1</span> Texto 1</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The ability of tiny computing devices to control complex operations
@@ -258,8 +258,8 @@ reveal ……… unknown manuscript.
 </div>
 </div>
 
-<div id="outline-container-orgcc99d5d" class="outline-2">
-<h2 id="orgcc99d5d"><span class="section-number-2">2</span> Texto 2</h2>
+<div id="outline-container-org8038e9a" class="outline-2">
+<h2 id="org8038e9a"><span class="section-number-2">2</span> Texto 2</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Multimedia systems are known for their educational and entertainment
@@ -475,8 +475,8 @@ refer to?
 </div>
 </div>
 
-<div id="outline-container-orge475c9e" class="outline-2">
-<h2 id="orge475c9e"><span class="section-number-2">3</span> Texto 3</h2>
+<div id="outline-container-org27118ed" class="outline-2">
+<h2 id="org27118ed"><span class="section-number-2">3</span> Texto 3</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 According to new research, learning a second language can slow
@@ -678,7 +678,7 @@ later in your life, is beneficial against brain ageing.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-01-30 Sun 16:31</p>
+<p class="date">Created: 2022-01-30 Sun 16:37</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
