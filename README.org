@@ -2,9 +2,11 @@
 #+SETUPFILE: ./template.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/index.css" />
 #+OPTIONS: toc:nil
+[[https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/generate-web.yml][https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/generate-web.yml/badge.svg?branch=main&event=push]]
+[[https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/pages/pages-build-deployment][https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/pages/pages-build-deployment/badge.svg?branch=generated]]
 * Ver en la web
 Puedes ver el contenido en html + css usando tu navegador [[https://s1dam-azarquiel-2021.github.io/aru-notas-practicas/][aqui]].
 
 * Ver en GitHub
 Tambien puedes leerlo desde este mismo repo, sin acceder a la web,
-[[https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/blob/main/docs.org/index.org][aqui]].
+[[https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/blob/main/index.org][aqui]].
