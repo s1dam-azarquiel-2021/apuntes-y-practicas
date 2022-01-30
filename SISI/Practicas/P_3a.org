@@ -1,5 +1,5 @@
 #+TITLE: Practica 3A
-#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+SETUPFILE: ../../template.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 * Diseño de un sistema de informacion
 1. Realizad un particionado del espacio de disco duro, teniendo en

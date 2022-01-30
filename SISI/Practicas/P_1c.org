@@ -1,5 +1,5 @@
 #+TITLE: Practica 1C
-#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+SETUPFILE: ../../template.org
 #+AUTHOR:  y Alfonso Rodriguez Rodriguez
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 * Configuracion opciones de arranque

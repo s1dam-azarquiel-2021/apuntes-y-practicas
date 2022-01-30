@@ -1,5 +1,5 @@
 #+TITLE: Practica 1B
-#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+SETUPFILE: ../../template.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 * Deteccion de drivers del equipo
 Version del kernel: 5.10.57

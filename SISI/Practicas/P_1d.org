@@ -1,5 +1,5 @@
 #+TITLE: Practica 1D
-#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+SETUPFILE: ../../template.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 * Interpretacion de mapas de red
 1. Interpreta ambas redes.

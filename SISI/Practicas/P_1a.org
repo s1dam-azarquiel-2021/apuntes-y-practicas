@@ -1,5 +1,5 @@
 #+TITLE: Practica 1A
-#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+SETUPFILE: ../../template.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 * Ordenador A
 Proposito: general

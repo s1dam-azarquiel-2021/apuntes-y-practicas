@@ -1,0 +1,7 @@
+#+AUTHOR: Alberto Robles Gomez
+#+EMAIL: aru_hackZ.official@zohomail.eu
+#+LANGUAGE: es
+#+HTML_CONTAINER: div
+#+EXCLUDE_TAGS: noexport
+#+OPTIONS: num:nil toc:3
+#+BIND: org-html-validation-link nil

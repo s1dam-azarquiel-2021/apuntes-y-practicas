@@ -1,5 +1,5 @@
 #+TITLE: LMSG - Practicas
-#+SETUPFILE: ~/Archive/Templates/Org/common-data-es-classes.org
+#+SETUPFILE: ../../template.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 #+OPTIONS: toc:nil
 * Contenido
