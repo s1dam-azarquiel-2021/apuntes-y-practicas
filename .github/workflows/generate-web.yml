@@ -36,6 +36,7 @@ jobs:
           emacs --batch \
                 --eval "(add-to-list 'load-path \"./elispStuff\")" \
                 --eval "(require 'package)" \
+                --eval "(package-refresh-contents)" \
                 --eval "(package-install 'org)" \
                 --eval "(print (org-version))" \
                 --eval "(require 'htmlize)" \
