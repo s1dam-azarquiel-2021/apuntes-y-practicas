@@ -946,3 +946,53 @@
               WHERE  a.c_socio = s.c_socio
             )
      #+end_src
+
+105. Cual es el valor en euros de todo lo que tenemos en stock?
+     #+begin_src sql
+     SELECT SUM(precio * stock)
+     FROM   articulo
+     #+end_src
+
+106. Bajar un 25% el precio de los articulos que se venden.
+     #+begin_src sql
+     UPDATE articulo a
+     SET    precio = precio * 0.75
+     WHERE  idart IN (
+              SELECT idart
+              FROM   detalle
+            )
+     #+end_src
+
+107. Que articulos se piden mas de una vez en el mismo pedido.
+     #+begin_src sql
+     SELECT descrip
+     FROM   articulo
+     WHERE  idart IN (
+              SELECT idart
+              FROM   detalle
+              WHERE  cantidad > 1
+            )
+     #+end_src
+
+108. Cual fue la ultima vez que se vendio CORDERO.
+     #+begin_src sql
+     SELECT MAX(fped)
+     FROM   pedido
+     WHERE idped IN (
+             SELECT idped
+             FROM   detalle
+             WHERE  idart = (
+                      SELECT idart
+                      FROM   articulo
+                      WHERE  descrip = 'CORDERO'
+                    )
+           )
+     #+end_src
+
+109. Que codigos de pedido incluyen mas de 2 articulos diferentes.
+     #+begin_src sql
+     SELECT   idped
+     FROM     detalle
+     GROUP BY idped
+     HAVING   COUNT(idart) > 2
+     #+end_src
