@@ -996,3 +996,89 @@
      GROUP BY idped
      HAVING   COUNT(idart) > 2
      #+end_src
+
+110. Nombre de los clientes que pagan despues de 10 dias de haber
+     hecho el pedido.
+     #+begin_src sql
+     SELECT nombre
+     FROM   cliente
+     WHERE  idcli IN (
+              SELECT idcli
+              FROM   pedido
+              WHERE  ffac - fped > 10
+            )
+     #+end_src
+
+111. Cuantos clientes se llaman MARIA de nombre?
+     #+begin_src sql
+     SELECT COUNT(idcli)
+     FROM   cliente
+     WHERE  nombre like 'MARIA%'
+     #+end_src
+
+112. Quien hizo el pedido con mas articulos.
+     #+begin_src sql
+     SELECT nombre
+     FROM   cliente
+     WHERE  idcli = (
+              SELECT idcli
+              FROM   pedido
+              WHERE  idped = (
+                       SELECT   idped
+                       FROM     detalle
+                       GROUP BY idped
+                       HAVING   SUM(cantidad) = (
+                                  SELECT   MAX(SUM(cantidad))
+                                  FROM     detalle
+                                  GROUP BY idped
+                                )
+                     )
+            )
+     #+end_src
+
+113. Nombre del cliente que pidio mas PAELLAS.
+     #+begin_src sql
+     SELECT nombre
+     FROM   cliente
+     WHERE  idcli IN (
+              SELECT   idcli
+              FROM     pedido p, detalle d
+              WHERE    p.idped = d.idped
+                AND    d.idart = (
+                         SELECT idart
+                         FROM   articulo
+                         WHERE  descrip = 'PAELLA'
+                       )
+              GROUP BY idcli
+              HAVING   SUM(d.cantidad) = (
+                         SELECT   MAX(SUM(d.cantidad))
+                         FROM     pedido p, detalle d
+                         WHERE    p.idped = d.idped
+                           AND    d.idart = (
+                                    SELECT idart
+                                    FROM   articulo
+                                    WHERE  descrip = 'PAELLA'
+                                  )
+                         GROUP BY idcli
+                       )
+            )
+     #+end_src
+
+114. Nombre de los clientes que no han probado las ALBONDIGAS.
+     #+begin_src sql
+     SELECT nombre
+     FROM   cliente
+     WHERE  idcli NOT IN (
+              SELECT idcli
+              FROM   pedido
+              WHERE  idped IN (
+                       SELECT idped
+                       FROM   detalle
+                       WHERE  idart = (
+                                SELECT idart
+                                FROM   articulo
+                                WHERE  descrip = 'ALBONDIGAS'
+                              )
+                     )
+            )
+     #+end_src
