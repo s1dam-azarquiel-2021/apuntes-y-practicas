@@ -1047,20 +1047,10 @@
                 AND    d.idart = (
                          SELECT idart
                          FROM   articulo
-                         WHERE  descrip = 'PAELLA'
+                         WHERE  descrip = 'HAMBURGUESA'
                        )
               GROUP BY idcli
-              HAVING   SUM(d.cantidad) = (
-                         SELECT   MAX(SUM(d.cantidad))
-                         FROM     pedido p, detalle d
-                         WHERE    p.idped = d.idped
-                           AND    d.idart = (
-                                    SELECT idart
-                                    FROM   articulo
-                                    WHERE  descrip = 'PAELLA'
-                                  )
-                         GROUP BY idcli
-                       )
+              HAVING   SUM(d.cantidad) > 2
             )
      #+end_src
 
@@ -1080,5 +1070,38 @@
                                 WHERE  descrip = 'ALBONDIGAS'
                               )
                      )
+            )
+     #+end_src
+
+115. Quien ha comido mas de dos HAMBURGUESAS.
+     #+begin_src sql
+     SELECT nombre
+     FROM   cliente
+     WHERE  idcli IN (
+              SELECT idcli
+              FROM   pedido
+              WHERE  idped IN (
+                       SELECT   idped
+                       FROM     detalle
+                       WHERE    idart = (
+                                  SELECT idart
+                                  FROM   articulo
+                                  WHERE  descrip = 'HAMBURGUESA'
+                                )
+                       GROUP BY idped
+                       HAVING   SUM(cantidad) > 2
+                     )
+            )
+     #+end_src
+
+116. Cuantos clientes han hecho menos de 2 pedidos.
+     #+begin_src sql
+     SELECT COUNT(idcli)
+     FROM   cliente
+     WHERE  idcli IN (
+              SELECT   idcli
+              FROM     pedido
+              GROUP BY idcli
+              HAVING   COUNT(idped) < 2
             )
      #+end_src
