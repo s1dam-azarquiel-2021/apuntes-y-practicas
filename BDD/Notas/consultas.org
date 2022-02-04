@@ -1098,10 +1098,10 @@
      #+begin_src sql
      SELECT COUNT(idcli)
      FROM   cliente
-     WHERE  idcli IN (
+     WHERE  idcli NOT IN (
               SELECT   idcli
               FROM     pedido
               GROUP BY idcli
-              HAVING   COUNT(idped) < 2
+              HAVING   COUNT(idped) >= 2
             )
      #+end_src
