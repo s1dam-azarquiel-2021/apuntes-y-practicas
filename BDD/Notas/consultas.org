@@ -1105,3 +1105,35 @@
               HAVING   COUNT(idped) >= 2
             )
      #+end_src
+
+117. Suponiendo que cuando abrimos la empresa teniamos 100 unidades de
+     cada articulo. Poner correctamente el valor de STOCK.
+     #+begin_src sql
+     UPDATE articulo a
+     SET    stock = 100 - (
+              SELECT NVL(SUM(cantidad), 0)
+              FROM   detalle
+              WHERE  idart = a.idart
+            )
+     #+end_src
+
+118. Añadir el campo GASTADO a la tabla cliente y ponerlo con el valor
+     correcto.
+     #+begin_src sql
+     ALTER TABLE cliente
+     ADD   gastado NUMBER(6)
+     #+end_src
+
+     #+begin_src sql
+     UPDATE cliente c
+     SET    gastado = (
+              SELECT   NVL(SUM(d.cantidad * (
+                         SELECT precio
+                         FROM   articulo
+                         WHERE  idart = d.idart
+                       )), 0)
+              FROM     pedido p, detalle d
+              WHERE    p.idcli = c.idcli
+                AND    p.idped = d.idped
+            )
+     #+end_src
