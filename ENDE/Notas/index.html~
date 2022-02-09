@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-04 Fri 09:31 -->
+<!-- 2022-02-04 Fri 11:33 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ENDE - Notas</title>
@@ -39,63 +39,63 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbf88bd0">TEMA 1</a>
+<li><a href="#orgffc9c11">TEMA 1</a>
 <ul>
-<li><a href="#org9bbbf5a">Conceptos de software, programa y aplicacion.</a>
+<li><a href="#org9d7b268">Conceptos de software, programa y aplicacion.</a>
 <ul>
-<li><a href="#org1cf38f7">Software</a></li>
-<li><a href="#orgc9d1b61">Programa</a></li>
-<li><a href="#orgdacf813">Aplicacion</a></li>
-<li><a href="#orgb1684c8">Suite o Paquete Integrado</a></li>
+<li><a href="#org862d78f">Software</a></li>
+<li><a href="#org8588e6b">Programa</a></li>
+<li><a href="#orgff00348">Aplicacion</a></li>
+<li><a href="#org6e82f69">Suite o Paquete Integrado</a></li>
 </ul>
 </li>
-<li><a href="#org7fb720d">Lenguajes de programacion</a>
+<li><a href="#org75bdc4e">Lenguajes de programacion</a>
 <ul>
-<li><a href="#orge0357fb">Componentes</a></li>
-<li><a href="#org1bd2a58">Criterios para establecer las clasificaciones</a></li>
-<li><a href="#org87a9770">Obtener codigo ejecutable</a></li>
+<li><a href="#org03d56a8">Componentes</a></li>
+<li><a href="#orgce24bdd">Criterios para establecer las clasificaciones</a></li>
+<li><a href="#orgef73b95">Obtener codigo ejecutable</a></li>
 </ul>
 </li>
-<li><a href="#org7bbaa0d">Maquinas Virtuales</a>
+<li><a href="#org7f23849">Maquinas Virtuales</a>
 <ul>
-<li><a href="#orga4de499">Categorias</a></li>
-<li><a href="#org419e4f8">La maquina virtual de Java</a></li>
+<li><a href="#org7f1dfdd">Categorias</a></li>
+<li><a href="#orge1eada3">La maquina virtual de Java</a></li>
 </ul>
 </li>
-<li><a href="#org4bc350c">Lenguajes mas difundidos. Caracteristicas.</a>
+<li><a href="#org5a32b61">Lenguajes mas difundidos. Caracteristicas.</a>
 <ul>
-<li><a href="#org45affb1">Java</a></li>
-<li><a href="#orga0c39c6">Python</a></li>
-<li><a href="#orge3e35c5">C y C++</a></li>
-<li><a href="#org68eac57">JavaScript</a></li>
-<li><a href="#orgcfbaa55">PHP</a></li>
-<li><a href="#orgabe7238">VB.NET</a></li>
+<li><a href="#org1bb3585">Java</a></li>
+<li><a href="#org1b09388">Python</a></li>
+<li><a href="#org4d5d6ef">C y C++</a></li>
+<li><a href="#org585b9ad">JavaScript</a></li>
+<li><a href="#orga924881">PHP</a></li>
+<li><a href="#orgab79aae">VB.NET</a></li>
 </ul>
 </li>
-<li><a href="#org48b4213">Desarrollo de una aplicacion</a>
+<li><a href="#org052225a">Desarrollo de una aplicacion</a>
 <ul>
-<li><a href="#org8f36b4d">Fases</a></li>
-<li><a href="#org779b50b">Roles en el desarrollo de software</a></li>
+<li><a href="#orgb12619b">Fases</a></li>
+<li><a href="#org369f0ad">Roles en el desarrollo de software</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgf2e5f83">TEMA 2</a></li>
+<li><a href="#org027a104">TEMA 2</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgbf88bd0" class="outline-2">
-<h2 id="orgbf88bd0">TEMA 1</h2>
-<div class="outline-text-2" id="text-orgbf88bd0">
+<div id="outline-container-orgffc9c11" class="outline-2">
+<h2 id="orgffc9c11">TEMA 1</h2>
+<div class="outline-text-2" id="text-orgffc9c11">
 </div>
-<div id="outline-container-org9bbbf5a" class="outline-3">
-<h3 id="org9bbbf5a">Conceptos de software, programa y aplicacion.</h3>
-<div class="outline-text-3" id="text-org9bbbf5a">
+<div id="outline-container-org9d7b268" class="outline-3">
+<h3 id="org9d7b268">Conceptos de software, programa y aplicacion.</h3>
+<div class="outline-text-3" id="text-org9d7b268">
 </div>
-<div id="outline-container-org1cf38f7" class="outline-4">
-<h4 id="org1cf38f7">Software</h4>
-<div class="outline-text-4" id="text-org1cf38f7">
+<div id="outline-container-org862d78f" class="outline-4">
+<h4 id="org862d78f">Software</h4>
+<div class="outline-text-4" id="text-org862d78f">
 <ul class="org-ul">
 <li>Tambien denominado componente logico.</li>
 <li>Es intangible, a diferencia del hardware que es tangible.</li>
@@ -107,17 +107,17 @@
 </ul>
 </div>
 
-<div id="outline-container-org4efb267" class="outline-5">
-<h5 id="org4efb267">Categorias</h5>
-<div class="outline-text-5" id="text-org4efb267">
+<div id="outline-container-org29700d6" class="outline-5">
+<h5 id="org29700d6">Categorias</h5>
+<div class="outline-text-5" id="text-org29700d6">
 </div>
-<div id="outline-container-org5ffc54a" class="outline-6">
-<h6 id="org5ffc54a">Segun el tipo de tarea que realiza</h6>
-<div class="outline-text-6" id="text-org5ffc54a">
+<div id="outline-container-org3aa69f3" class="outline-6">
+<h6 id="org3aa69f3">Segun el tipo de tarea que realiza</h6>
+<div class="outline-text-6" id="text-org3aa69f3">
 </div>
-<div id="outline-container-orgf4ff90c" class="outline-7">
-<h7 id="orgf4ff90c">De sistema</h7>
-<div class="outline-text-7" id="text-orgf4ff90c">
+<div id="outline-container-org0c87862" class="outline-7">
+<h7 id="org0c87862">De sistema</h7>
+<div class="outline-text-7" id="text-org0c87862">
 <ul class="org-ul">
 <li>Hace que funcione el HW.</li>
 <li>Administra los recursos HW.</li>
@@ -127,9 +127,9 @@
 </div>
 </div>
 
-<div id="outline-container-org1ef72d6" class="outline-7">
-<h7 id="org1ef72d6">De aplicacion</h7>
-<div class="outline-text-7" id="text-org1ef72d6">
+<div id="outline-container-org7ea384f" class="outline-7">
+<h7 id="org7ea384f">De aplicacion</h7>
+<div class="outline-text-7" id="text-org7ea384f">
 <ul class="org-ul">
 <li>Nos ayudan a realizar tareas especificas -&gt; automatizan.</li>
 <li>Ejemplo: CAD, SW medico, contabilidad, ofimatica, &#x2026;</li>
@@ -137,9 +137,9 @@
 </div>
 </div>
 
-<div id="outline-container-org4db9fa9" class="outline-7">
-<h7 id="org4db9fa9">De programacion o Desarrollo</h7>
-<div class="outline-text-7" id="text-org4db9fa9">
+<div id="outline-container-org3a5805a" class="outline-7">
+<h7 id="org3a5805a">De programacion o Desarrollo</h7>
+<div class="outline-text-7" id="text-org3a5805a">
 <ul class="org-ul">
 <li>Proporciona herramientas al progamador.</li>
 <li>Suelen contar con un IDE (Entornos de Desarrollo Integrados).</li>
@@ -149,13 +149,13 @@
 </div>
 </div>
 
-<div id="outline-container-org7506290" class="outline-6">
-<h6 id="org7506290">Segun el metodo de distribucion</h6>
-<div class="outline-text-6" id="text-org7506290">
+<div id="outline-container-orgad1084f" class="outline-6">
+<h6 id="orgad1084f">Segun el metodo de distribucion</h6>
+<div class="outline-text-6" id="text-orgad1084f">
 </div>
-<div id="outline-container-orgf51a00b" class="outline-7">
-<h7 id="orgf51a00b">Shareware</h7>
-<div class="outline-text-7" id="text-orgf51a00b">
+<div id="outline-container-orgedca477" class="outline-7">
+<h7 id="orgedca477">Shareware</h7>
+<div class="outline-text-7" id="text-orgedca477">
 <ul class="org-ul">
 <li>El usuario evalua el producto el producto por tiempo determinado.</li>
 <li>Adquirir su licencia -&gt; $ | Precio cero</li>
@@ -164,9 +164,9 @@
 </div>
 </div>
 
-<div id="outline-container-org7c46729" class="outline-7">
-<h7 id="org7c46729">Freeware</h7>
-<div class="outline-text-7" id="text-org7c46729">
+<div id="outline-container-orgff29bcc" class="outline-7">
+<h7 id="orgff29bcc">Freeware</h7>
+<div class="outline-text-7" id="text-orgff29bcc">
 <ul class="org-ul">
 <li>Se distribuye sin $.</li>
 <li>Incluye una licencia:</li>
@@ -177,9 +177,9 @@
 </div>
 </div>
 
-<div id="outline-container-orge01b24e" class="outline-7">
-<h7 id="orge01b24e">Adware</h7>
-<div class="outline-text-7" id="text-orge01b24e">
+<div id="outline-container-orgaa55dba" class="outline-7">
+<h7 id="orgaa55dba">Adware</h7>
+<div class="outline-text-7" id="text-orgaa55dba">
 <ul class="org-ul">
 <li>Shareware + se descarga automaticamente + publicidad.</li>
 <li>Al comprar la licencia -&gt; desaparece la publicidad.</li>
@@ -187,9 +187,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd8775bb" class="outline-7">
-<h7 id="orgd8775bb">Multimedia</h7>
-<div class="outline-text-7" id="text-orgd8775bb">
+<div id="outline-container-orgbdb550d" class="outline-7">
+<h7 id="orgbdb550d">Multimedia</h7>
+<div class="outline-text-7" id="text-orgbdb550d">
 <ul class="org-ul">
 <li>Integra textos, graficos, sonidos, animaciones.</li>
 <li>En distintos ambitos como el educativo.</li>
@@ -197,9 +197,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9396393" class="outline-7">
-<h7 id="org9396393">De uso especifico</h7>
-<div class="outline-text-7" id="text-org9396393">
+<div id="outline-container-orge0c5c79" class="outline-7">
+<h7 id="orge0c5c79">De uso especifico</h7>
+<div class="outline-text-7" id="text-orge0c5c79">
 <ul class="org-ul">
 <li>Resuelven un problema concreto.</li>
 <li>Ejemplo: bancos, educacion, &#x2026;</li>
@@ -209,17 +209,17 @@
 </div>
 </div>
 
-<div id="outline-container-org90fee18" class="outline-5">
-<h5 id="org90fee18">Licencias</h5>
-<div class="outline-text-5" id="text-org90fee18">
+<div id="outline-container-orgb6bf2ae" class="outline-5">
+<h5 id="orgb6bf2ae">Licencias</h5>
+<div class="outline-text-5" id="text-orgb6bf2ae">
 <ul class="org-ul">
 <li>Licencia = contrato (desarrollador del SW, usuario).</li>
 </ul>
 </div>
 
-<div id="outline-container-org1237a5f" class="outline-6">
-<h6 id="org1237a5f">SW Libre</h6>
-<div class="outline-text-6" id="text-org1237a5f">
+<div id="outline-container-orgd354932" class="outline-6">
+<h6 id="orgd354932">SW Libre</h6>
+<div class="outline-text-6" id="text-orgd354932">
 <ul class="org-ul">
 <li>Utilizado con cualquier fin.</li>
 <li>Podemos estudiar su funcionamiento y modificarlo.</li>
@@ -229,9 +229,9 @@
 </div>
 </div>
 
-<div id="outline-container-orga2b6079" class="outline-6">
-<h6 id="orga2b6079">SW Propietario</h6>
-<div class="outline-text-6" id="text-orga2b6079">
+<div id="outline-container-org8475ca6" class="outline-6">
+<h6 id="org8475ca6">SW Propietario</h6>
+<div class="outline-text-6" id="text-org8475ca6">
 <ul class="org-ul">
 <li>El codigo fuente no es accesible.</li>
 <li>Su licencia prohibe 1 o varias posibilidades:
@@ -247,18 +247,18 @@
 </div>
 </div>
 
-<div id="outline-container-org4dab7fb" class="outline-6">
-<h6 id="org4dab7fb">SW de dominio publico</h6>
-<div class="outline-text-6" id="text-org4dab7fb">
+<div id="outline-container-org32d511a" class="outline-6">
+<h6 id="org32d511a">SW de dominio publico</h6>
+<div class="outline-text-6" id="text-org32d511a">
 <ul class="org-ul">
 <li>So desconoce su autor o fin de la propiedad de autor.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf4c2903" class="outline-6">
-<h6 id="orgf4c2903">GPL</h6>
-<div class="outline-text-6" id="text-orgf4c2903">
+<div id="outline-container-org7e04866" class="outline-6">
+<h6 id="org7e04866">GPL</h6>
+<div class="outline-text-6" id="text-org7e04866">
 <ul class="org-ul">
 <li>Licencia mas utilizada.</li>
 <li>SW Libre + fuente abierta.</li>
@@ -268,13 +268,13 @@
 </div>
 </div>
 
-<div id="outline-container-org8f60bfe" class="outline-5">
-<h5 id="org8f60bfe">Tipos</h5>
-<div class="outline-text-5" id="text-org8f60bfe">
+<div id="outline-container-org765de85" class="outline-5">
+<h5 id="org765de85">Tipos</h5>
+<div class="outline-text-5" id="text-org765de85">
 </div>
-<div id="outline-container-orge79dbe2" class="outline-6">
-<h6 id="orge79dbe2">A medida</h6>
-<div class="outline-text-6" id="text-orge79dbe2">
+<div id="outline-container-org5956225" class="outline-6">
+<h6 id="org5956225">A medida</h6>
+<div class="outline-text-6" id="text-org5956225">
 <ul class="org-ul">
 <li>Adaptado a los requeremientos de la empresa u organizacion.</li>
 <li>Se desarrollo en funcion de las necesidades, actividad y
@@ -286,9 +286,9 @@ forma de trabajar.</li>
 </div>
 </div>
 
-<div id="outline-container-org7d3e77b" class="outline-6">
-<h6 id="org7d3e77b">Estandar o Enlatados</h6>
-<div class="outline-text-6" id="text-org7d3e77b">
+<div id="outline-container-orgcfd9e10" class="outline-6">
+<h6 id="orgcfd9e10">Estandar o Enlatados</h6>
+<div class="outline-text-6" id="text-orgcfd9e10">
 <ul class="org-ul">
 <li>Es software generico.</li>
 <li>Resuelve multiples necesidades.</li>
@@ -305,17 +305,17 @@ herramientas.</li>
 </div>
 </div>
 
-<div id="outline-container-orgf080620" class="outline-5">
-<h5 id="orgf080620">Ciclos de vida</h5>
-<div class="outline-text-5" id="text-orgf080620">
+<div id="outline-container-orge694040" class="outline-5">
+<h5 id="orge694040">Ciclos de vida</h5>
+<div class="outline-text-5" id="text-orge694040">
 <ul class="org-ul">
 <li>Son las fases o etapas en las que se desarrolla el software.</li>
 </ul>
 </div>
 
-<div id="outline-container-org274a2c5" class="outline-6">
-<h6 id="org274a2c5">Cascada</h6>
-<div class="outline-text-6" id="text-org274a2c5">
+<div id="outline-container-orge0caa8b" class="outline-6">
+<h6 id="orge0caa8b">Cascada</h6>
+<div class="outline-text-6" id="text-orge0caa8b">
 <ul class="org-ul">
 <li>Entrega el documento completo.</li>
 <li>Solo en el mantenimiento se vuelve a etapas anteriores
@@ -330,9 +330,9 @@ a etapas anteriores.</li>
 </div>
 </div>
 
-<div id="outline-container-org5fc53e5" class="outline-6">
-<h6 id="org5fc53e5">Evolutivos</h6>
-<div class="outline-text-6" id="text-org5fc53e5">
+<div id="outline-container-org9cdd650" class="outline-6">
+<h6 id="org9cdd650">Evolutivos</h6>
+<div class="outline-text-6" id="text-org9cdd650">
 <ul class="org-ul">
 <li>Los requisitos del usuario y del producto cambian cuando se
 desarrolla.</li>
@@ -340,9 +340,9 @@ desarrolla.</li>
 </ul>
 </div>
 
-<div id="outline-container-orgee9ab4d" class="outline-7">
-<h7 id="orgee9ab4d">Iterativo incremental</h7>
-<div class="outline-text-7" id="text-orgee9ab4d">
+<div id="outline-container-org5bc99cf" class="outline-7">
+<h7 id="org5bc99cf">Iterativo incremental</h7>
+<div class="outline-text-7" id="text-org5bc99cf">
 <ul class="org-ul">
 <li>Basado en cascada.</li>
 <li>El SW se entrega en partes pequeñas -&gt; incrementos.</li>
@@ -360,9 +360,9 @@ la gramatica u ortografia.</li>
 </div>
 </div>
 
-<div id="outline-container-org995b69b" class="outline-7">
-<h7 id="org995b69b">En espiral</h7>
-<div class="outline-text-7" id="text-org995b69b">
+<div id="outline-container-orgab0f96e" class="outline-7">
+<h7 id="orgab0f96e">En espiral</h7>
+<div class="outline-text-7" id="text-orgab0f96e">
 <ul class="org-ul">
 <li>Mezcla el modelo en Cascada y el iterativo de construccion
 de prototipos.</li>
@@ -386,9 +386,9 @@ planifican las fases del ciclo siguiente.</li>
 </div>
 </div>
 
-<div id="outline-container-orgc9d1b61" class="outline-4">
-<h4 id="orgc9d1b61">Programa</h4>
-<div class="outline-text-4" id="text-orgc9d1b61">
+<div id="outline-container-org8588e6b" class="outline-4">
+<h4 id="org8588e6b">Programa</h4>
+<div class="outline-text-4" id="text-org8588e6b">
 <ul class="org-ul">
 <li>Es una serie de ordenes o instrucciones.</li>
 <li>Siguen un orden o secuencia para cumplir una finalidad determinado.</li>
@@ -397,9 +397,9 @@ planifican las fases del ciclo siguiente.</li>
 </div>
 </div>
 
-<div id="outline-container-orgdacf813" class="outline-4">
-<h4 id="orgdacf813">Aplicacion</h4>
-<div class="outline-text-4" id="text-orgdacf813">
+<div id="outline-container-orgff00348" class="outline-4">
+<h4 id="orgff00348">Aplicacion</h4>
+<div class="outline-text-4" id="text-orgff00348">
 <ul class="org-ul">
 <li>Puede estar formada por uno o varios programas.</li>
 <li>Esta en contacto con el usuario, no con el hardware.</li>
@@ -409,9 +409,9 @@ planifican las fases del ciclo siguiente.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb1684c8" class="outline-4">
-<h4 id="orgb1684c8">Suite o Paquete Integrado</h4>
-<div class="outline-text-4" id="text-orgb1684c8">
+<div id="outline-container-org6e82f69" class="outline-4">
+<h4 id="org6e82f69">Suite o Paquete Integrado</h4>
+<div class="outline-text-4" id="text-org6e82f69">
 <ul class="org-ul">
 <li>Es el conjunto de programas que se ejecutan unos
 independientes del otro.</li>
@@ -423,9 +423,9 @@ independientes del otro.</li>
 </div>
 </div>
 
-<div id="outline-container-org7fb720d" class="outline-3">
-<h3 id="org7fb720d">Lenguajes de programacion</h3>
-<div class="outline-text-3" id="text-org7fb720d">
+<div id="outline-container-org75bdc4e" class="outline-3">
+<h3 id="org75bdc4e">Lenguajes de programacion</h3>
+<div class="outline-text-3" id="text-org75bdc4e">
 <ul class="org-ul">
 <li>Los programas son conjuntos de instrucciones que se desarrollan
 utilizando un lenguaje de programacion.</li>
@@ -435,9 +435,9 @@ utilizando un lenguaje de programacion.</li>
 </ul>
 </div>
 
-<div id="outline-container-orge0357fb" class="outline-4">
-<h4 id="orge0357fb">Componentes</h4>
-<div class="outline-text-4" id="text-orge0357fb">
+<div id="outline-container-org03d56a8" class="outline-4">
+<h4 id="org03d56a8">Componentes</h4>
+<div class="outline-text-4" id="text-org03d56a8">
 <ul class="org-ul">
 <li>Caracteres: Vocabulario o lexico -&gt; simbolos permitidos.</li>
 <li>Sintaxis: Son las reglas que combinan los caracteres -&gt;
@@ -449,17 +449,17 @@ construccion.</li>
 </div>
 </div>
 
-<div id="outline-container-org1bd2a58" class="outline-4">
-<h4 id="org1bd2a58">Criterios para establecer las clasificaciones</h4>
-<div class="outline-text-4" id="text-org1bd2a58">
+<div id="outline-container-orgce24bdd" class="outline-4">
+<h4 id="orgce24bdd">Criterios para establecer las clasificaciones</h4>
+<div class="outline-text-4" id="text-orgce24bdd">
 </div>
-<div id="outline-container-org5d1f98d" class="outline-5">
-<h5 id="org5d1f98d">Segun el nivel de abstraccion</h5>
-<div class="outline-text-5" id="text-org5d1f98d">
+<div id="outline-container-orge18de79" class="outline-5">
+<h5 id="orge18de79">Segun el nivel de abstraccion</h5>
+<div class="outline-text-5" id="text-orge18de79">
 </div>
-<div id="outline-container-orgd95ed5b" class="outline-6">
-<h6 id="orgd95ed5b">Lenguaje de bajo nivel</h6>
-<div class="outline-text-6" id="text-orgd95ed5b">
+<div id="outline-container-org0a61a6a" class="outline-6">
+<h6 id="org0a61a6a">Lenguaje de bajo nivel</h6>
+<div class="outline-text-6" id="text-org0a61a6a">
 <ul class="org-ul">
 <li>Son instrucciones complejas e ininteligibles -&gt; secuencias
 de 0's y 1's.</li>
@@ -473,9 +473,9 @@ etc.).</li>
 </div>
 </div>
 
-<div id="outline-container-orge7ce3a4" class="outline-6">
-<h6 id="orge7ce3a4">Lenguaje de Medio Nivel o Ensamblador</h6>
-<div class="outline-text-6" id="text-orge7ce3a4">
+<div id="outline-container-org9f8fe19" class="outline-6">
+<h6 id="org9f8fe19">Lenguaje de Medio Nivel o Ensamblador</h6>
+<div class="outline-text-6" id="text-org9f8fe19">
 <ul class="org-ul">
 <li>Esta cercano al Hardware.</li>
 <li>Surge por la poce portabilidad del L. Maquina.</li>
@@ -494,9 +494,9 @@ el HW.</li>
 </div>
 </div>
 
-<div id="outline-container-orgc147664" class="outline-6">
-<h6 id="orgc147664">Lenguaje de Alto Nivel</h6>
-<div class="outline-text-6" id="text-orgc147664">
+<div id="outline-container-orgd6be52a" class="outline-6">
+<h6 id="orgd6be52a">Lenguaje de Alto Nivel</h6>
+<div class="outline-text-6" id="text-orgd6be52a">
 <ul class="org-ul">
 <li>Son la mayoria de los lenguajes actuales.</li>
 <li>Mas cercano al lenguaje humano, son mas intuitivos.</li>
@@ -522,13 +522,13 @@ adaptables a las necesidades de la aplicacion.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd276fab" class="outline-5">
-<h5 id="orgd276fab">Segun la forma de ejecucion</h5>
-<div class="outline-text-5" id="text-orgd276fab">
+<div id="outline-container-orgd5c4475" class="outline-5">
+<h5 id="orgd5c4475">Segun la forma de ejecucion</h5>
+<div class="outline-text-5" id="text-orgd5c4475">
 </div>
-<div id="outline-container-org326d004" class="outline-6">
-<h6 id="org326d004">Compilados</h6>
-<div class="outline-text-6" id="text-org326d004">
+<div id="outline-container-org3a42eb4" class="outline-6">
+<h6 id="org3a42eb4">Compilados</h6>
+<div class="outline-text-6" id="text-org3a42eb4">
 <ul class="org-ul">
 <li>Necesitan de un traductor o compilador.</li>
 <li>Convierten de codigo fuente a codigo maquina.</li>
@@ -543,9 +543,9 @@ librerias).</li>
 </div>
 </div>
 
-<div id="outline-container-orgc092588" class="outline-6">
-<h6 id="orgc092588">Interpretados</h6>
-<div class="outline-text-6" id="text-orgc092588">
+<div id="outline-container-orgd538e0e" class="outline-6">
+<h6 id="orgd538e0e">Interpretados</h6>
+<div class="outline-text-6" id="text-orgd538e0e">
 <ul class="org-ul">
 <li>Se carga en Memoria el interprete.</li>
 <li>Lee las instrucciones + las interpreta + las ejecuta.</li>
@@ -557,9 +557,9 @@ librerias).</li>
 </div>
 </div>
 
-<div id="outline-container-org79e41c1" class="outline-5">
-<h5 id="org79e41c1">Paradigma de programacion</h5>
-<div class="outline-text-5" id="text-org79e41c1">
+<div id="outline-container-org86284e1" class="outline-5">
+<h5 id="org86284e1">Paradigma de programacion</h5>
+<div class="outline-text-5" id="text-org86284e1">
 <ul class="org-ul">
 <li>Paradigma = enfoque particular para construir el SW -&gt; reglas,</li>
 </ul>
@@ -574,13 +574,13 @@ se usa el que interesa.
 </p>
 </div>
 
-<div id="outline-container-org41b6265" class="outline-6">
-<h6 id="org41b6265">Categorias</h6>
-<div class="outline-text-6" id="text-org41b6265">
+<div id="outline-container-orgecd9b61" class="outline-6">
+<h6 id="orgecd9b61">Categorias</h6>
+<div class="outline-text-6" id="text-orgecd9b61">
 </div>
-<div id="outline-container-org424abbf" class="outline-7">
-<h7 id="org424abbf">Imperativos</h7>
-<div class="outline-text-7" id="text-org424abbf">
+<div id="outline-container-orga2a77bf" class="outline-7">
+<h7 id="orga2a77bf">Imperativos</h7>
+<div class="outline-text-7" id="text-orga2a77bf">
 <ul class="org-ul">
 <li>Instrucciones simples.</li>
 <li>Detallan como se manipula la informacion de la memoria.</li>
@@ -591,9 +591,9 @@ se usa el que interesa.
 </div>
 </div>
 
-<div id="outline-container-org8414dc3" class="outline-7">
-<h7 id="org8414dc3">Funcionales</h7>
-<div class="outline-text-7" id="text-org8414dc3">
+<div id="outline-container-org00bf5ef" class="outline-7">
+<h7 id="org00bf5ef">Funcionales</h7>
+<div class="outline-text-7" id="text-org00bf5ef">
 <ul class="org-ul">
 <li>Se basan en el concepto de funcion y los argumentos a
 aplicar.</li>
@@ -602,9 +602,9 @@ aplicar.</li>
 </div>
 </div>
 
-<div id="outline-container-org3cdbea0" class="outline-7">
-<h7 id="org3cdbea0">Logicos</h7>
-<div class="outline-text-7" id="text-org3cdbea0">
+<div id="outline-container-org23e0a25" class="outline-7">
+<h7 id="org23e0a25">Logicos</h7>
+<div class="outline-text-7" id="text-org23e0a25">
 <ul class="org-ul">
 <li>Los podemos ver como una BB.DD. de declaraciones logicas
 -&gt; reglas.</li>
@@ -615,9 +615,9 @@ interactiva.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb8f2193" class="outline-7">
-<h7 id="orgb8f2193">Estructurados</h7>
-<div class="outline-text-7" id="text-orgb8f2193">
+<div id="outline-container-org70a593e" class="outline-7">
+<h7 id="org70a593e">Estructurados</h7>
+<div class="outline-text-7" id="text-org70a593e">
 <ul class="org-ul">
 <li>Utilizan 3 construcciones logicas -&gt; secuencial,
 condicional y repetitiva.</li>
@@ -636,9 +636,9 @@ inputs y outputs).
 </div>
 </div>
 
-<div id="outline-container-org8960892" class="outline-7">
-<h7 id="org8960892">Orientados a objetos</h7>
-<div class="outline-text-7" id="text-org8960892">
+<div id="outline-container-org342a205" class="outline-7">
+<h7 id="org342a205">Orientados a objetos</h7>
+<div class="outline-text-7" id="text-org342a205">
 <ul class="org-ul">
 <li>Un programa es visto como un conjunto de objetos.</li>
 <li>Objeto:
@@ -666,9 +666,9 @@ mantenimiento del software.</li>
 </div>
 </div>
 
-<div id="outline-container-org87a9770" class="outline-4">
-<h4 id="org87a9770">Obtener codigo ejecutable</h4>
-<div class="outline-text-4" id="text-org87a9770">
+<div id="outline-container-orgef73b95" class="outline-4">
+<h4 id="orgef73b95">Obtener codigo ejecutable</h4>
+<div class="outline-text-4" id="text-orgef73b95">
 <ul class="org-ul">
 <li>Diseño:
 <ul class="org-ul">
@@ -680,13 +680,13 @@ mantenimiento del software.</li>
 </ul>
 </div>
 
-<div id="outline-container-org272cbfe" class="outline-5">
-<h5 id="org272cbfe">Tipos de codigo</h5>
-<div class="outline-text-5" id="text-org272cbfe">
+<div id="outline-container-org12a7269" class="outline-5">
+<h5 id="org12a7269">Tipos de codigo</h5>
+<div class="outline-text-5" id="text-org12a7269">
 </div>
-<div id="outline-container-org341e6f6" class="outline-6">
-<h6 id="org341e6f6">Fuente</h6>
-<div class="outline-text-6" id="text-org341e6f6">
+<div id="outline-container-org2746589" class="outline-6">
+<h6 id="org2746589">Fuente</h6>
+<div class="outline-text-6" id="text-org2746589">
 <ul class="org-ul">
 <li>Escrito por el programador.</li>
 <li>En lenguaje de alto nivel.</li>
@@ -697,9 +697,9 @@ mantenimiento del software.</li>
 </div>
 </div>
 
-<div id="outline-container-orge67d907" class="outline-6">
-<h6 id="orge67d907">Objeto</h6>
-<div class="outline-text-6" id="text-orge67d907">
+<div id="outline-container-org6254ef2" class="outline-6">
+<h6 id="org6254ef2">Objeto</h6>
+<div class="outline-text-6" id="text-org6254ef2">
 <ul class="org-ul">
 <li>Resultado de compilar el codigo fuente.</li>
 <li>No se ejecuta en el ordenador.</li>
@@ -709,9 +709,9 @@ mantenimiento del software.</li>
 </div>
 </div>
 
-<div id="outline-container-org206e4a2" class="outline-6">
-<h6 id="org206e4a2">Ejecutable</h6>
-<div class="outline-text-6" id="text-org206e4a2">
+<div id="outline-container-org7c3dcb2" class="outline-6">
+<h6 id="org7c3dcb2">Ejecutable</h6>
+<div class="outline-text-6" id="text-org7c3dcb2">
 <ul class="org-ul">
 <li>Resultado de enlazar: codigo objeto + rutinas + librerias.</li>
 </ul>
@@ -719,13 +719,13 @@ mantenimiento del software.</li>
 </div>
 </div>
 
-<div id="outline-container-orgbc83255" class="outline-5">
-<h5 id="orgbc83255">Compilacion</h5>
-<div class="outline-text-5" id="text-orgbc83255">
+<div id="outline-container-org245d411" class="outline-5">
+<h5 id="org245d411">Compilacion</h5>
+<div class="outline-text-5" id="text-org245d411">
 </div>
-<div id="outline-container-orgd7bca04" class="outline-6">
-<h6 id="orgd7bca04">Compilador</h6>
-<div class="outline-text-6" id="text-orgd7bca04">
+<div id="outline-container-org8c9eb64" class="outline-6">
+<h6 id="org8c9eb64">Compilador</h6>
+<div class="outline-text-6" id="text-org8c9eb64">
 <ul class="org-ul">
 <li>Si existe un error en la compilacion -&gt; no se genera el
 codigo objeto -&gt; modificar el codigo fuente + compilar.</li>
@@ -742,9 +742,9 @@ codigo objeto -&gt; modificar el codigo fuente + compilar.</li>
 </div>
 </div>
 
-<div id="outline-container-org63fea19" class="outline-6">
-<h6 id="org63fea19">Enlazador</h6>
-<div class="outline-text-6" id="text-org63fea19">
+<div id="outline-container-org2ac81f5" class="outline-6">
+<h6 id="org2ac81f5">Enlazador</h6>
+<div class="outline-text-6" id="text-org2ac81f5">
 <ul class="org-ul">
 <li>Inserta en el codigo objeto las funciones de las librerias.</li>
 </ul>
@@ -754,9 +754,9 @@ codigo objeto -&gt; modificar el codigo fuente + compilar.</li>
 </div>
 </div>
 
-<div id="outline-container-org7bbaa0d" class="outline-3">
-<h3 id="org7bbaa0d">Maquinas Virtuales</h3>
-<div class="outline-text-3" id="text-org7bbaa0d">
+<div id="outline-container-org7f23849" class="outline-3">
+<h3 id="org7f23849">Maquinas Virtuales</h3>
+<div class="outline-text-3" id="text-org7f23849">
 <ul class="org-ul">
 <li>El codigo es un codigo intermedio -&gt; bytecode.</li>
 <li>Son mas portables -&gt; sirven para distintas plataformas (Windows,
@@ -769,13 +769,13 @@ maquina real.</li>
 </ul>
 </div>
 
-<div id="outline-container-orga4de499" class="outline-4">
-<h4 id="orga4de499">Categorias</h4>
-<div class="outline-text-4" id="text-orga4de499">
+<div id="outline-container-org7f1dfdd" class="outline-4">
+<h4 id="org7f1dfdd">Categorias</h4>
+<div class="outline-text-4" id="text-org7f1dfdd">
 </div>
-<div id="outline-container-org2940670" class="outline-5">
-<h5 id="org2940670">De sistema</h5>
-<div class="outline-text-5" id="text-org2940670">
+<div id="outline-container-org8c24271" class="outline-5">
+<h5 id="org8c24271">De sistema</h5>
+<div class="outline-text-5" id="text-org8c24271">
 <ul class="org-ul">
 <li>Ejecuta en la misma fisica distintas maquinas virtuales con
 distintos sistemas operativos.</li>
@@ -784,9 +784,9 @@ distintos sistemas operativos.</li>
 </div>
 </div>
 
-<div id="outline-container-orgcec3663" class="outline-5">
-<h5 id="orgcec3663">De proceso o de aplicacion</h5>
-<div class="outline-text-5" id="text-orgcec3663">
+<div id="outline-container-org6f1ab29" class="outline-5">
+<h5 id="org6f1ab29">De proceso o de aplicacion</h5>
+<div class="outline-text-5" id="text-org6f1ab29">
 <ul class="org-ul">
 <li>La VM se ejecuta como un proceso en el SS.OO.</li>
 <li>Objetivo: proporcionar un entorno de ejecucion con
@@ -799,9 +799,9 @@ distinta plataforma.</li>
 </div>
 </div>
 
-<div id="outline-container-org419e4f8" class="outline-4">
-<h4 id="org419e4f8">La maquina virtual de Java</h4>
-<div class="outline-text-4" id="text-org419e4f8">
+<div id="outline-container-orge1eada3" class="outline-4">
+<h4 id="orge1eada3">La maquina virtual de Java</h4>
+<div class="outline-text-4" id="text-orge1eada3">
 <ul class="org-ul">
 <li>Programa compilador Java -&gt; se ejecuta en distintos entornos.</li>
 <li>El codigo generado por el compilador -&gt; lo ejecuta la JVM, no el
@@ -810,9 +810,9 @@ procesador.</li>
 </ul>
 </div>
 
-<div id="outline-container-org42ccbfc" class="outline-5">
-<h5 id="org42ccbfc">Tareas o funciones</h5>
-<div class="outline-text-5" id="text-org42ccbfc">
+<div id="outline-container-org4375b3e" class="outline-5">
+<h5 id="org4375b3e">Tareas o funciones</h5>
+<div class="outline-text-5" id="text-org4375b3e">
 <ul class="org-ul">
 <li>Reservar / Liberar memoria para los objetos.</li>
 <li>Comunicarse con el HW.</li>
@@ -829,13 +829,13 @@ aplicaciones Java.</li>
 </div>
 </div>
 
-<div id="outline-container-org4bc350c" class="outline-3">
-<h3 id="org4bc350c">Lenguajes mas difundidos. Caracteristicas.</h3>
-<div class="outline-text-3" id="text-org4bc350c">
+<div id="outline-container-org5a32b61" class="outline-3">
+<h3 id="org5a32b61">Lenguajes mas difundidos. Caracteristicas.</h3>
+<div class="outline-text-3" id="text-org5a32b61">
 </div>
-<div id="outline-container-org45affb1" class="outline-4">
-<h4 id="org45affb1">Java</h4>
-<div class="outline-text-4" id="text-org45affb1">
+<div id="outline-container-org1bb3585" class="outline-4">
+<h4 id="org1bb3585">Java</h4>
+<div class="outline-text-4" id="text-org1bb3585">
 <ul class="org-ul">
 <li>Evolucion de C++ -&gt; lo simplifica.</li>
 <li>LOO (Lenguaje Orientado a Objetos).</li>
@@ -848,9 +848,9 @@ aplicaciones Java.</li>
 </div>
 </div>
 
-<div id="outline-container-orga0c39c6" class="outline-4">
-<h4 id="orga0c39c6">Python</h4>
-<div class="outline-text-4" id="text-orga0c39c6">
+<div id="outline-container-org1b09388" class="outline-4">
+<h4 id="org1b09388">Python</h4>
+<div class="outline-text-4" id="text-org1b09388">
 <ul class="org-ul">
 <li>De alto nivel pero simple y sencillo</li>
 <li>Muy portable.</li>
@@ -862,9 +862,9 @@ aplicaciones Java.</li>
 </div>
 </div>
 
-<div id="outline-container-orge3e35c5" class="outline-4">
-<h4 id="orge3e35c5">C y C++</h4>
-<div class="outline-text-4" id="text-orge3e35c5">
+<div id="outline-container-org4d5d6ef" class="outline-4">
+<h4 id="org4d5d6ef">C y C++</h4>
+<div class="outline-text-4" id="text-org4d5d6ef">
 <ul class="org-ul">
 <li>Potente, versatil y se sigue utilizando.</li>
 <li>Ligado a Unix.</li>
@@ -877,9 +877,9 @@ aplicaciones Java.</li>
 </div>
 </div>
 
-<div id="outline-container-org68eac57" class="outline-4">
-<h4 id="org68eac57">JavaScript</h4>
-<div class="outline-text-4" id="text-org68eac57">
+<div id="outline-container-org585b9ad" class="outline-4">
+<h4 id="org585b9ad">JavaScript</h4>
+<div class="outline-text-4" id="text-org585b9ad">
 <ul class="org-ul">
 <li>En programacion web.</li>
 <li>Parecido a Java, C, C++.</li>
@@ -892,9 +892,9 @@ aplicaciones Java.</li>
 </div>
 </div>
 
-<div id="outline-container-orgcfbaa55" class="outline-4">
-<h4 id="orgcfbaa55">PHP</h4>
-<div class="outline-text-4" id="text-orgcfbaa55">
+<div id="outline-container-orga924881" class="outline-4">
+<h4 id="orga924881">PHP</h4>
+<div class="outline-text-4" id="text-orga924881">
 <ul class="org-ul">
 <li>Multiplataforma.</li>
 <li>Para desarrollar webs dinamicas.</li>
@@ -906,9 +906,9 @@ aplicaciones Java.</li>
 </div>
 </div>
 
-<div id="outline-container-orgabe7238" class="outline-4">
-<h4 id="orgabe7238">VB.NET</h4>
-<div class="outline-text-4" id="text-orgabe7238">
+<div id="outline-container-orgab79aae" class="outline-4">
+<h4 id="orgab79aae">VB.NET</h4>
+<div class="outline-text-4" id="text-orgab79aae">
 <ul class="org-ul">
 <li>Evolucion de Visual Basic.</li>
 <li>LOO.</li>
@@ -922,21 +922,21 @@ aplicaciones Java.</li>
 </div>
 </div>
 
-<div id="outline-container-org48b4213" class="outline-3">
-<h3 id="org48b4213">Desarrollo de una aplicacion</h3>
-<div class="outline-text-3" id="text-org48b4213">
+<div id="outline-container-org052225a" class="outline-3">
+<h3 id="org052225a">Desarrollo de una aplicacion</h3>
+<div class="outline-text-3" id="text-org052225a">
 <ul class="org-ul">
 <li>Existen distintos paradigmas.</li>
 </ul>
 </div>
 
-<div id="outline-container-org8f36b4d" class="outline-4">
-<h4 id="org8f36b4d">Fases</h4>
-<div class="outline-text-4" id="text-org8f36b4d">
+<div id="outline-container-orgb12619b" class="outline-4">
+<h4 id="orgb12619b">Fases</h4>
+<div class="outline-text-4" id="text-orgb12619b">
 </div>
-<div id="outline-container-org26279fb" class="outline-5">
-<h5 id="org26279fb">Inicial</h5>
-<div class="outline-text-5" id="text-org26279fb">
+<div id="outline-container-org73875b1" class="outline-5">
+<h5 id="org73875b1">Inicial</h5>
+<div class="outline-text-5" id="text-org73875b1">
 <ul class="org-ul">
 <li>Planificacion, Estimaciones y Rentabilidad del proyecto.</li>
 <li>Simil: construccion de un edificio: licencia, coste,
@@ -950,9 +950,9 @@ trabajadores, tiempo, &#x2026;</li>
 </div>
 </div>
 
-<div id="outline-container-orge1c5eac" class="outline-5">
-<h5 id="orge1c5eac">Analisis</h5>
-<div class="outline-text-5" id="text-orge1c5eac">
+<div id="outline-container-org2ae9aa9" class="outline-5">
+<h5 id="org2ae9aa9">Analisis</h5>
+<div class="outline-text-5" id="text-org2ae9aa9">
 <ul class="org-ul">
 <li>Se recopilan, examinan y formulan los requisitos del cliente.</li>
 <li>Se analizan posibles restricciones.</li>
@@ -967,9 +967,9 @@ nuevos, etc.</li>
 </ul>
 </div>
 
-<div id="outline-container-orgef60d2f" class="outline-6">
-<h6 id="orgef60d2f">Tecnicas utilizadas</h6>
-<div class="outline-text-6" id="text-orgef60d2f">
+<div id="outline-container-org29562b0" class="outline-6">
+<h6 id="org29562b0">Tecnicas utilizadas</h6>
+<div class="outline-text-6" id="text-org29562b0">
 <ul class="org-ul">
 <li>Entrevistas.</li>
 <li>Desarrollo conjunto de aplicaciones, donde cada persona
@@ -983,9 +983,9 @@ escenarios, comportamientos -&gt; requisitos funcionales.</li>
 </div>
 </div>
 
-<div id="outline-container-org1b77eac" class="outline-6">
-<h6 id="org1b77eac">Tipos de requisitos</h6>
-<div class="outline-text-6" id="text-org1b77eac">
+<div id="outline-container-org4b50f35" class="outline-6">
+<h6 id="org4b50f35">Tipos de requisitos</h6>
+<div class="outline-text-6" id="text-org4b50f35">
 <ul class="org-ul">
 <li>Funcionales: Comportamiento del sistema ante determinados
 inputs.</li>
@@ -1050,13 +1050,13 @@ fiabilidad, plataforma, HW, &#x2026;
 </div>
 </div>
 
-<div id="outline-container-orgca1936c" class="outline-6">
-<h6 id="orgca1936c">Representacion de requisitos</h6>
-<div class="outline-text-6" id="text-orgca1936c">
+<div id="outline-container-org89cd0ed" class="outline-6">
+<h6 id="org89cd0ed">Representacion de requisitos</h6>
+<div class="outline-text-6" id="text-org89cd0ed">
 </div>
-<div id="outline-container-orga73cc6c" class="outline-7">
-<h7 id="orga73cc6c">DFD (Diagrama De Flujo de Datos)</h7>
-<div class="outline-text-7" id="text-orga73cc6c">
+<div id="outline-container-org40c607b" class="outline-7">
+<h7 id="org40c607b">DFD (Diagrama De Flujo de Datos)</h7>
+<div class="outline-text-7" id="text-org40c607b">
 <ul class="org-ul">
 <li>Procesos -&gt; Funciones</li>
 <li>Entidades externas: no pertenecen al sistema y proporciona
@@ -1067,27 +1067,27 @@ datos o se reciben de el.</li>
 </div>
 </div>
 
-<div id="outline-container-org775792d" class="outline-7">
-<h7 id="org775792d">DFC (Diagrama de Flujo de Control)</h7>
-<div class="outline-text-7" id="text-org775792d">
+<div id="outline-container-org7546e94" class="outline-7">
+<h7 id="org7546e94">DFC (Diagrama de Flujo de Control)</h7>
+<div class="outline-text-7" id="text-org7546e94">
 <ul class="org-ul">
 <li>Muestra el flujo de control, no de Estados.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7b83f75" class="outline-7">
-<h7 id="org7b83f75">DTE (Diagrama de Transicion de Estados)</h7>
-<div class="outline-text-7" id="text-org7b83f75">
+<div id="outline-container-orgd4dd3cc" class="outline-7">
+<h7 id="orgd4dd3cc">DTE (Diagrama de Transicion de Estados)</h7>
+<div class="outline-text-7" id="text-orgd4dd3cc">
 <ul class="org-ul">
 <li>Comportamiento del sistema en funcion de los sucesos externos.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgedb6dd1" class="outline-7">
-<h7 id="orgedb6dd1">DER (Diagrama Entidad Relacion)</h7>
-<div class="outline-text-7" id="text-orgedb6dd1">
+<div id="outline-container-org6d2745c" class="outline-7">
+<h7 id="org6d2745c">DER (Diagrama Entidad Relacion)</h7>
+<div class="outline-text-7" id="text-org6d2745c">
 <ul class="org-ul">
 <li>Representa los datos y como se relacionan entre ellos.</li>
 <li>Entidades.</li>
@@ -1096,9 +1096,9 @@ datos o se reciben de el.</li>
 </div>
 </div>
 
-<div id="outline-container-org2564b8d" class="outline-7">
-<h7 id="org2564b8d">DD (Diccionario de Datos)</h7>
-<div class="outline-text-7" id="text-org2564b8d">
+<div id="outline-container-org1a96407" class="outline-7">
+<h7 id="org1a96407">DD (Diccionario de Datos)</h7>
+<div class="outline-text-7" id="text-org1a96407">
 <ul class="org-ul">
 <li>Describe detalladamente los datos (flujo, almacenes) del
 DFD.</li>
@@ -1106,9 +1106,9 @@ DFD.</li>
 </div>
 </div>
 
-<div id="outline-container-org411d485" class="outline-7">
-<h7 id="org411d485">Documento Generado</h7>
-<div class="outline-text-7" id="text-org411d485">
+<div id="outline-container-org1e01bcb" class="outline-7">
+<h7 id="org1e01bcb">Documento Generado</h7>
+<div class="outline-text-7" id="text-org1e01bcb">
 <ul class="org-ul">
 <li>Especificacion de Requisiton del SW.</li>
 <li>Estructura: IEEE 830.</li>
@@ -1118,9 +1118,9 @@ DFD.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd6fe410" class="outline-5">
-<h5 id="orgd6fe410">Diseño</h5>
-<div class="outline-text-5" id="text-orgd6fe410">
+<div id="outline-container-org464bb21" class="outline-5">
+<h5 id="org464bb21">Diseño</h5>
+<div class="outline-text-5" id="text-org464bb21">
 <ul class="org-ul">
 <li>Composicion sobre la solucion al problema.</li>
 <li>Requisitos -&gt; representacion del SW.</li>
@@ -1134,13 +1134,13 @@ la aplicacion.</li>
 </ul>
 </div>
 
-<div id="outline-container-org48b5f00" class="outline-6">
-<h6 id="org48b5f00">Estructurado: flujo de datos sobre el sistema.</h6>
-<div class="outline-text-6" id="text-org48b5f00">
+<div id="outline-container-org3eafbf4" class="outline-6">
+<h6 id="org3eafbf4">Estructurado: flujo de datos sobre el sistema.</h6>
+<div class="outline-text-6" id="text-org3eafbf4">
 </div>
-<div id="outline-container-org5140748" class="outline-7">
-<h7 id="org5140748">Diseño de datos</h7>
-<div class="outline-text-7" id="text-org5140748">
+<div id="outline-container-org5a7bb03" class="outline-7">
+<h7 id="org5a7bb03">Diseño de datos</h7>
+<div class="outline-text-7" id="text-org5a7bb03">
 <ul class="org-ul">
 <li>Son las estructuras de datos necesarias para implementar
 el software.</li>
@@ -1150,9 +1150,9 @@ de los datos.</li>
 </div>
 </div>
 
-<div id="outline-container-org6c388dd" class="outline-7">
-<h7 id="org6c388dd">Diseño arquitectonico</h7>
-<div class="outline-text-7" id="text-org6c388dd">
+<div id="outline-container-org49232d0" class="outline-7">
+<h7 id="org49232d0">Diseño arquitectonico</h7>
+<div class="outline-text-7" id="text-org49232d0">
 <ul class="org-ul">
 <li>Se centra en la representacion de la estructura de los
 componentes del SW, sus propiedades e interacciones.</li>
@@ -1165,9 +1165,9 @@ del SW a desarrollar.</li>
 </div>
 </div>
 
-<div id="outline-container-org5760ac4" class="outline-7">
-<h7 id="org5760ac4">Diseño de la interfaz</h7>
-<div class="outline-text-7" id="text-org5760ac4">
+<div id="outline-container-org3c0cd1e" class="outline-7">
+<h7 id="org3c0cd1e">Diseño de la interfaz</h7>
+<div class="outline-text-7" id="text-org3c0cd1e">
 <ul class="org-ul">
 <li>Describe la comunicacion entre (SW, Personas, Otros
 sistemas).</li>
@@ -1176,9 +1176,9 @@ sistemas).</li>
 </div>
 </div>
 
-<div id="outline-container-org8d98748" class="outline-7">
-<h7 id="org8d98748">Diseño a nivel de componentes</h7>
-<div class="outline-text-7" id="text-org8d98748">
+<div id="outline-container-orgd0ea6ec" class="outline-7">
+<h7 id="orgd0ea6ec">Diseño a nivel de componentes</h7>
+<div class="outline-text-7" id="text-orgd0ea6ec">
 <ul class="org-ul">
 <li>Transforma: elementos estructurales (arquitectura) en
 una descripcion procedimental -&gt; diseño de componentes
@@ -1207,9 +1207,9 @@ programacion estructurada:
 </div>
 </div>
 
-<div id="outline-container-org31fea25" class="outline-6">
-<h6 id="org31fea25">O.O.: objetos, propiedades, comportamiento, eventos, estado.</h6>
-<div class="outline-text-6" id="text-org31fea25">
+<div id="outline-container-orgd621435" class="outline-6">
+<h6 id="orgd621435">O.O.: objetos, propiedades, comportamiento, eventos, estado.</h6>
+<div class="outline-text-6" id="text-orgd621435">
 <ul class="org-ul">
 <li>Es dificil.</li>
 <li>Parte de un Analisis O.O.</li>
@@ -1234,9 +1234,9 @@ sistema.</li>
 </div>
 </div>
 
-<div id="outline-container-orgecc3c60" class="outline-5">
-<h5 id="orgecc3c60">Codificacion o Implementacion</h5>
-<div class="outline-text-5" id="text-orgecc3c60">
+<div id="outline-container-orgabcfcb1" class="outline-5">
+<h5 id="orgabcfcb1">Codificacion o Implementacion</h5>
+<div class="outline-text-5" id="text-orgabcfcb1">
 <ul class="org-ul">
 <li>Implementa el software mediante un lenguaje de programacion.</li>
 <li>Documentacion detallada que contiene el codigo (E/, S/,
@@ -1252,9 +1252,9 @@ hace.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb8b6cea" class="outline-5">
-<h5 id="orgb8b6cea">Pruebas</h5>
-<div class="outline-text-5" id="text-orgb8b6cea">
+<div id="outline-container-orge3195bc" class="outline-5">
+<h5 id="orge3195bc">Pruebas</h5>
+<div class="outline-text-5" id="text-orge3195bc">
 <ul class="org-ul">
 <li>Garantizan que cumple las especificaciones del cliente.</li>
 <li>Los mismos programas se integran bien y esta listo para la
@@ -1278,9 +1278,9 @@ documentos.</li>
 </div>
 </div>
 
-<div id="outline-container-orgbdce882" class="outline-5">
-<h5 id="orgbdce882">Explotacion</h5>
-<div class="outline-text-5" id="text-orgbdce882">
+<div id="outline-container-org6289797" class="outline-5">
+<h5 id="org6289797">Explotacion</h5>
+<div class="outline-text-5" id="text-org6289797">
 <ul class="org-ul">
 <li>Instalacion del software en el entorno real.</li>
 <li>Se trabaja con el de forma normal.</li>
@@ -1295,9 +1295,9 @@ documentos.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb332900" class="outline-5">
-<h5 id="orgb332900">Mantenimiento</h5>
-<div class="outline-text-5" id="text-orgb332900">
+<div id="outline-container-org8ba9140" class="outline-5">
+<h5 id="org8ba9140">Mantenimiento</h5>
+<div class="outline-text-5" id="text-org8ba9140">
 <ul class="org-ul">
 <li>Acciones:
 <ul class="org-ul">
@@ -1313,9 +1313,9 @@ RESULTADO ES LA APLICACION</li>
 </div>
 </div>
 
-<div id="outline-container-org89074ac" class="outline-5">
-<h5 id="org89074ac">Documentacion</h5>
-<div class="outline-text-5" id="text-org89074ac">
+<div id="outline-container-org163a387" class="outline-5">
+<h5 id="org163a387">Documentacion</h5>
+<div class="outline-text-5" id="text-org163a387">
 <ul class="org-ul">
 <li>Debe ser util y adaptada a los usuarios de dicha
 documentacion. Como minimo:
@@ -1343,13 +1343,13 @@ lo que no.</li>
 </div>
 </div>
 
-<div id="outline-container-org779b50b" class="outline-4">
-<h4 id="org779b50b">Roles en el desarrollo de software</h4>
-<div class="outline-text-4" id="text-org779b50b">
+<div id="outline-container-org369f0ad" class="outline-4">
+<h4 id="org369f0ad">Roles en el desarrollo de software</h4>
+<div class="outline-text-4" id="text-org369f0ad">
 </div>
-<div id="outline-container-org691082f" class="outline-5">
-<h5 id="org691082f">Arquitecto del SW</h5>
-<div class="outline-text-5" id="text-org691082f">
+<div id="outline-container-orgec59840" class="outline-5">
+<h5 id="orgec59840">Arquitecto del SW</h5>
+<div class="outline-text-5" id="text-orgec59840">
 <ul class="org-ul">
 <li>Decide:
 <ul class="org-ul">
@@ -1363,9 +1363,9 @@ librerias, etc.</li>
 </div>
 </div>
 
-<div id="outline-container-orgbe132c8" class="outline-5">
-<h5 id="orgbe132c8">Jefe de Proyecto</h5>
-<div class="outline-text-5" id="text-orgbe132c8">
+<div id="outline-container-org9c324e5" class="outline-5">
+<h5 id="org9c324e5">Jefe de Proyecto</h5>
+<div class="outline-text-5" id="text-org9c324e5">
 <ul class="org-ul">
 <li>Dirige el proyecto.</li>
 <li>Puede ser un analista experimentado.</li>
@@ -1380,9 +1380,9 @@ librerias, etc.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd5e641f" class="outline-5">
-<h5 id="orgd5e641f">Analista del sistema</h5>
-<div class="outline-text-5" id="text-orgd5e641f">
+<div id="outline-container-org4cd13fd" class="outline-5">
+<h5 id="org4cd13fd">Analista del sistema</h5>
+<div class="outline-text-5" id="text-org4cd13fd">
 <ul class="org-ul">
 <li>Tiene mucha experiencia.</li>
 </ul>
@@ -1392,9 +1392,9 @@ librerias, etc.</li>
 </div>
 </div>
 
-<div id="outline-container-orgf2e5f83" class="outline-2">
-<h2 id="orgf2e5f83">TEMA 2</h2>
-<div class="outline-text-2" id="text-orgf2e5f83">
+<div id="outline-container-org027a104" class="outline-2">
+<h2 id="org027a104">TEMA 2</h2>
+<div class="outline-text-2" id="text-org027a104">
 <ul class="org-ul">
 <li>&#x2026;</li>
 </ul>
@@ -1403,7 +1403,7 @@ librerias, etc.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-04 Fri 09:31</p>
+<p class="date">Created: 2022-02-04 Fri 11:33</p>
 </div>
 </body>
 </html>

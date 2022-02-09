@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-04 Fri 09:31 -->
+<!-- 2022-02-04 Fri 11:33 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Consultas SQL</title>
@@ -1480,11 +1480,50 @@ Cuantos clientes han hecho menos de 2 pedidos.
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(idcli)
 <span class="org-keyword">FROM</span>   cliente
-<span class="org-keyword">WHERE</span>  idcli <span class="org-keyword">IN</span> (
+<span class="org-keyword">WHERE</span>  idcli <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> (
          <span class="org-keyword">SELECT</span>   idcli
          <span class="org-keyword">FROM</span>     pedido
          <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> idcli
-         <span class="org-keyword">HAVING</span>   <span class="org-builtin">COUNT</span>(idped) &lt; 2
+         <span class="org-keyword">HAVING</span>   <span class="org-builtin">COUNT</span>(idped) &gt;= 2
+       )
+</pre>
+</div></li>
+
+<li><p>
+Suponiendo que cuando abrimos la empresa teniamos 100 unidades de
+cada articulo. Poner correctamente el valor de STOCK.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">UPDATE</span> articulo a
+<span class="org-keyword">SET</span>    stock = 100 - (
+         <span class="org-keyword">SELECT</span> NVL(<span class="org-builtin">SUM</span>(cantidad), 0)
+         <span class="org-keyword">FROM</span>   detalle
+         <span class="org-keyword">WHERE</span>  idart = a.idart
+       )
+</pre>
+</div></li>
+
+<li><p>
+Añadir el campo GASTADO a la tabla cliente y ponerlo con el valor
+correcto.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">ALTER</span> <span class="org-keyword">TABLE</span> <span class="org-function-name">cliente</span>
+<span class="org-keyword">ADD</span>   gastado <span class="org-keyword">NUMBER</span>(6)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">UPDATE</span> cliente c
+<span class="org-keyword">SET</span>    gastado = (
+         <span class="org-keyword">SELECT</span>   NVL(<span class="org-builtin">SUM</span>(d.cantidad * (
+                    <span class="org-keyword">SELECT</span> precio
+                    <span class="org-keyword">FROM</span>   articulo
+                    <span class="org-keyword">WHERE</span>  idart = d.idart
+                  )), 0)
+         <span class="org-keyword">FROM</span>     pedido p, detalle d
+         <span class="org-keyword">WHERE</span>    p.idcli = c.idcli
+           <span class="org-keyword">AND</span>    p.idped = d.idped
        )
 </pre>
 </div></li>
@@ -1492,7 +1531,7 @@ Cuantos clientes han hecho menos de 2 pedidos.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-04 Fri 09:31</p>
+<p class="date">Created: 2022-02-04 Fri 11:33</p>
 </div>
 </body>
 </html>

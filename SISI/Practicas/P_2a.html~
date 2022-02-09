@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-04 Fri 09:31 -->
+<!-- 2022-02-04 Fri 11:33 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Practica 2A</title>
@@ -39,13 +39,13 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0b25a8d">Creacion y configuracion de una maquina virtual</a></li>
+<li><a href="#org47c5689">Creacion y configuracion de una maquina virtual</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org0b25a8d" class="outline-2">
-<h2 id="org0b25a8d">Creacion y configuracion de una maquina virtual</h2>
-<div class="outline-text-2" id="text-org0b25a8d">
+<div id="outline-container-org47c5689" class="outline-2">
+<h2 id="org47c5689">Creacion y configuracion de una maquina virtual</h2>
+<div class="outline-text-2" id="text-org47c5689">
 <ol class="org-ol">
 <li><p>
 Crea una máquina virtual en VirtualBox Workstation que nos sirva
@@ -70,13 +70,13 @@ Creacion de la VM:
 </p>
 
 
-<figure id="orgaa97cca">
+<figure id="org7a8fda5">
 <img src="./img/2.1.1.png" alt="2.1.1.png">
 
 </figure>
 
 
-<figure id="orgbb8900d">
+<figure id="org5d14061">
 <img src="./img/2.1.2.png" alt="2.1.2.png">
 
 </figure>
@@ -92,13 +92,13 @@ la máquina W10-SI-XX donde XX es tu rango de IP asignadas.
 </p>
 
 
-<figure id="org6517300">
+<figure id="orgd39949d">
 <img src="./img/2.2.1.png" alt="2.2.1.png">
 
 </figure>
 
 
-<figure id="org4fabff0">
+<figure id="org448d74b">
 <img src="./img/2.2.2.png" alt="2.2.2.png">
 
 </figure>
@@ -113,7 +113,7 @@ Instala VMWTools en la máquina virtual.
 </p>
 
 
-<figure id="orgec49f45">
+<figure id="orgfe07431">
 <img src="./img/2.3.1.png" alt="2.3.1.png">
 
 </figure>
@@ -130,7 +130,7 @@ encontrado una nueva unidad.
 </p>
 
 
-<figure id="org5809bb9">
+<figure id="org8820101">
 <img src="./img/2.3.2.png" alt="2.3.2.png">
 
 </figure>
@@ -140,7 +140,7 @@ Ahora le hacemos doble click a la unidad.
 </p>
 
 
-<figure id="orgeda0098">
+<figure id="org247c527">
 <img src="./img/2.3.3.png" alt="2.3.3.png">
 
 </figure>
@@ -150,7 +150,7 @@ Aceptamos y le damos a next hasta que deje de preguntar.
 </p>
 
 
-<figure id="org3853a77">
+<figure id="orga24b49f">
 <img src="./img/2.3.4.png" alt="2.3.4.png">
 
 </figure>
@@ -160,7 +160,7 @@ Una vez acabe tocara reiniciar la VM.
 </p>
 
 
-<figure id="org62df036">
+<figure id="orgba89f91">
 <img src="./img/2.3.5.png" alt="2.3.5.png">
 
 </figure></li>
@@ -181,13 +181,13 @@ el guest:
 </p>
 
 
-<figure id="orgca824c3">
+<figure id="org7779ecf">
 <img src="./img/2.4.1.png" alt="2.4.1.png">
 
 </figure>
 
 
-<figure id="orgc67a07c">
+<figure id="orgd9c9ee7">
 <img src="./img/2.4.2.png" alt="2.4.2.png">
 
 </figure></li>
@@ -203,7 +203,7 @@ Creamos una carpeta compartida.
 </p>
 
 
-<figure id="org3735d48">
+<figure id="org2d08374">
 <img src="./img/2.5.1.png" alt="2.5.1.png">
 
 </figure>
@@ -214,7 +214,7 @@ red con la carpeta anteriormente especificada
 </p>
 
 
-<figure id="orgcf803c8">
+<figure id="org51bc9f5">
 <img src="./img/2.5.2.png" alt="2.5.2.png">
 
 </figure></li>
@@ -253,7 +253,7 @@ de comandos con el comando ipconfig /all
 </p>
 
 
-<figure id="org618c102">
+<figure id="org6e61cda">
 <img src="./img/2.7.1.png" alt="2.7.1.png">
 
 </figure></li>
@@ -269,7 +269,7 @@ adaptador virtual, que en este caso es algo parecido a esto:
 </p>
 
 
-<figure id="orgef742a0">
+<figure id="org05aa577">
 <img src="./img/2.7.2.png" alt="2.7.2.png">
 
 </figure></li>
@@ -283,7 +283,7 @@ Google es malvado
 </p>
 
 
-<figure id="org00c0979">
+<figure id="org21fbc81">
 <img src="./img/2.7.3.png" alt="2.7.3.png">
 
 </figure></li>
@@ -299,7 +299,7 @@ dispositivo de la red de mi casa, en este caso mi movil.
 </p>
 
 
-<figure id="org4ca6e15">
+<figure id="org692f73b">
 <img src="./img/2.7.4.png" alt="2.7.4.png">
 
 </figure>
@@ -318,7 +318,7 @@ de comandos con el comando ipconfig /all
 </p>
 
 
-<figure id="orge24ec52">
+<figure id="org642aef6">
 <img src="./img/2.8.1.png" alt="2.8.1.png">
 
 </figure></li>
@@ -340,7 +340,7 @@ Comprueba que funciona un PING a www.google.es
 </p>
 
 
-<figure id="orgd4ddad4">
+<figure id="org2bbd872">
 <img src="./img/2.8.2.png" alt="2.8.2.png">
 
 </figure>
@@ -356,7 +356,7 @@ aula
 </p>
 
 
-<figure id="orgca7fc34">
+<figure id="org62c80bb">
 <img src="./img/2.8.3.png" alt="2.8.3.png">
 
 </figure>
@@ -392,7 +392,7 @@ configuracion de la red:
 </p>
 
 
-<figure id="orgf99e790">
+<figure id="org439f702">
 <img src="./img/2.9.1.png" alt="2.9.1.png">
 
 </figure></li>
@@ -402,7 +402,7 @@ Comprueba que funciona un PING a www.google.es
 </p>
 
 
-<figure id="orgc047ca2">
+<figure id="orge023e0c">
 <img src="./img/2.9.2.png" alt="2.9.2.png">
 
 </figure></li>
@@ -413,7 +413,7 @@ aula
 </p>
 
 
-<figure id="orgd5a3e67">
+<figure id="org00d7c8e">
 <img src="./img/2.9.3.png" alt="2.9.3.png">
 
 </figure>
@@ -456,7 +456,7 @@ Pinchamos en Machine y dentro Take Snapshot.
 </p>
 
 
-<figure id="org240df0c">
+<figure id="org38e6bbc">
 <img src="./img/2.12.1.png" alt="2.12.1.png">
 
 </figure>
@@ -466,7 +466,7 @@ Le damos un nombre y descricion y aceptamos.
 </p>
 
 
-<figure id="orgdd9c411">
+<figure id="orgbb63b62">
 <img src="./img/2.12.2.png" alt="2.12.2.png">
 
 </figure></li>
@@ -480,19 +480,19 @@ Voy a cambiar el nombre del equipo
 </p>
 
 
-<figure id="orgf5f0cab">
+<figure id="org3265b04">
 <img src="./img/2.13.1.png" alt="2.13.1.png">
 
 </figure>
 
 
-<figure id="orgc539baa">
+<figure id="org1130103">
 <img src="./img/2.13.2.png" alt="2.13.2.png">
 
 </figure>
 
 
-<figure id="org86d38ce">
+<figure id="org9b208ad">
 <img src="./img/2.13.3.png" alt="2.13.3.png">
 
 </figure></li>
@@ -506,7 +506,7 @@ Nos vamos a la vista de snapshots
 </p>
 
 
-<figure id="org13cb7c7">
+<figure id="org9d30b61">
 <img src="./img/2.14.1.png" alt="2.14.1.png">
 
 </figure>
@@ -518,7 +518,7 @@ normalidad.
 </p>
 
 
-<figure id="org6e5c26b">
+<figure id="org8fc3991">
 <img src="./img/2.14.2.png" alt="2.14.2.png">
 
 </figure></li>
@@ -528,7 +528,7 @@ normalidad.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-04 Fri 09:31</p>
+<p class="date">Created: 2022-02-04 Fri 11:33</p>
 </div>
 </body>
 </html>
