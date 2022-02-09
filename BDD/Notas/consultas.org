@@ -1136,5 +1136,36 @@
               WHERE    p.idcli = c.idcli
                 AND    p.idped = d.idped
             );
+     #+end_src
+
+119. Cuantos pedidos tienen mas de 2 articulos diferentes.
+     #+begin_src sql
+     SELECT COUNT(*)
+     FROM   (
+              SELECT   idped
+              FROM     detalle
+              GROUP BY idped
+              HAVING   COUNT(idart) > 2
+            );
+     #+end_src
+
+120. Codigos de pedido con menos de 2 articulos.
+     #+begin_src sql
+     SELECT   idped
+     FROM     detalle
+     GROUP BY idped
+     HAVING   COUNT(idart) < 2;
+     #+end_src
+
+121. Nombre de los clientes que han consumido menos de 2 articulos.
+     #+begin_src sql
+     SELECT nombre
+     FROM   cliente
+     WHERE  idcli IN (
+              SELECT   idcli
+              FROM     pedido p, detalle d
+              WHERE    p.idped = d.idped
+              GROUP BY idcli
+              HAVING   SUM(cantidad) < 2
             )
      #+end_src
