@@ -5,95 +5,95 @@
    #+begin_src sql
    SELECT titulo
    FROM   peliculas
-   WHERE  anno > 2005
+   WHERE  anno > 2005;
    #+end_src
 
 2. Precio y formato de las peliculas de menos de 1 euro
    #+begin_src sql
    SELECT precio, formato
    FROM   peliculas
-   WHERE  precio < 1
+   WHERE  precio < 1;
    #+end_src
 
 3. Titulo de las peliculas en formato DVD
    #+begin_src sql
    SELECT titulo
    FROM   peliculas
-   WHERE  formato = 'DVD'
+   WHERE  formato = 'DVD';
    #+end_src
 
 4. Listado con los formetos de las peliculas
    #+begin_src sql
    SELECT DISTINCT formato
-   FROM   peliculas
+   FROM   peliculas;
    #+end_src
 
 5. Cuantas peliculas se produjeron en los 3 ultimos años
    #+begin_src sql
    SELECT COUNT(*)
    FROM   peliculas
-   WHERE  anno >= 2019
+   WHERE  anno >= 2019;
    #+end_src
 
 6. Cuantos DVDs estan de oferta
    #+begin_src sql
    SELECT COUNT(*)
    FROM   peliculas
-   WHERE  oferta = 'S' AND formato = 'DVD'
+   WHERE  oferta = 'S' AND formato = 'DVD';
    #+end_src
 
 7. Precio mas caro de una pelicula
    #+begin_src sql
    SELECT MAX(precio)
-   FROM   peliculas
+   FROM   peliculas;
    #+end_src
 
 8. Año de la pelicula mas antigua
    #+begin_src sql
    SELECT MIN(anno)
-   FROM   peliculas
+   FROM   peliculas;
    #+end_src
 
 9. Cuantas peliculas no estan en MP4
    #+begin_src sql
    SELECT COUNT(*)
    FROM   peliculas
-   WHERE  formato != 'MP4'
+   WHERE  formato != 'MP4';
    #+end_src
 
 10. Titulo de las peliculas que empiezan por 'M'
     #+begin_src sql
     SELECT titulo
     FROM   peliculas
-    WHERE  titulo LIKE 'M%'
+    WHERE  titulo LIKE 'M%';
     #+end_src
 
 11. Cuantos titulos de peliculas estan formados por mas de una palabra
     #+begin_src sql
     SELECT titulo
     FROM   peliculas
-    WHERE  titulo LIKE '% %'
+    WHERE  titulo LIKE '% %';
     #+end_src
 
 12. Cuantas peliculas se han alquilado en Febrero
     #+begin_src sql
     SELECT COUNT(*)
     FROM   alquiler
-    WHERE  FECHA LIKE '__/02/%'
+    WHERE  FECHA LIKE '__/02/%';
     #+end_src
 
 13. Codigo de los socios que no han devuelto las pelis que alquilaron
     #+begin_src sql
     SELECT c_socio
     FROM   alquiler
-    WHERE  devuelta = 'N'
+    WHERE  devuelta = 'N';
     #+end_src
 
 14. Nombre de los socios que presublimenete son chicas
     #+begin_src sql
     SELECT nombre
     FROM   alquiler
-    WHERE  nombre LIKE '%a'
+    WHERE  nombre LIKE '%a';
     #+end_src
 
 15. Que titulos de peliculas no estan ni en DVD ni en MP4
@@ -101,28 +101,28 @@
     SELECT titulo
     FROM   peliculas
     WHERE  formato != 'DVD'
-      AND  formato != 'MP4'
+      AND  formato != 'MP4';
     #+end_src
 
 16. Cuantas peliculas hay de matrix
     #+begin_src sql
     SELECT COUNT(*)
     FROM   peliculas
-    WHERE  titulo LIKE 'Matrix%'
+    WHERE  titulo LIKE 'Matrix%';
     #+end_src
 
 17. Cuantas peliculas se alquilaron en febrero de 2002
     #+begin_src sql
     SELECT COUNT(*)
     FROM   alquiler
-    WHERE  fecha LIKE '__/02/02'
+    WHERE  fecha LIKE '__/02/02';
     #+end_src
 
 18. Nombre de nuestros socios que presumiblemente son chicas
     #+begin_src sql
     SELECT nombre
     FROM   socios
-    WHERE  nombre LIKE '%a'
+    WHERE  nombre LIKE '%a';
     #+end_src
 
 19. Código de los socios que en el 2005 no nos devolvieron las
@@ -131,26 +131,26 @@
     SELECT c_socio
     FROM   alquiler
     WHERE  fecha LIKE '__/__/05'
-      AND  devuelta = 'N'
+      AND  devuelta = 'N';
     #+end_src
 
 20. Precio de la película mas cara
     #+begin_src sql
     SELECT MAX(precio)
-    FROM   peliculas
+    FROM   peliculas;
     #+end_src
 
 21. Nombre de paises que tienen menos de 7 letras
     #+begin_src sql
     SELECT nombre_pais
     FROM   paises
-    WHERE  LENGTH(nombre_pais) < 7
+    WHERE  LENGTH(nombre_pais) < 7;
     #+end_src
 
 22. Visualiza los distintos formatos de las películas
     #+begin_src sql
     SELECT DISTINCT formato
-    FROM   peliculas
+    FROM   peliculas;
     #+end_src
 
 23. Título de las pelis que valen 2 euros o 2 euros y pico
@@ -158,13 +158,13 @@
     SELECT titulo
     FROM   peliculas
     WHERE  precio >= 2
-      AND  precio < 3
+      AND  precio < 3;
     #+end_src
 
 24. En qué año se produjo la primera película
     #+begin_src sql
     SELECT MIN(anno)
-    FROM   peliculas
+    FROM   peliculas;
     #+end_src
 
 25. Título de las películas que se han producido en los últimos 10
@@ -175,26 +175,26 @@
     WHERE  anno > TO_CHAR(
              ADD_MONTHS(SYSDATE, -12*10),
              'YYYY'
-           )
+           );
     #+end_src
 
 26. Precio medio de los dvds
     #+begin_src sql
     SELECT AVG(precio)
-    FROM   peliculas
+    FROM   peliculas;
     #+end_src
 
 27. Cuato valen todos los DVDs que tenemos
     #+begin_src sql
     SELECT SUM(precio)
-    FROM   peliculas
+    FROM   peliculas;
     #+end_src
 
 28. Cuantos cines existen entre España, Francia y Portugal
     #+begin_src sql
     SELECT SUM(cines)
     FROM   paises
-    WHERE  nombre_pais in ( 'España', 'Francia', 'Portugal' )
+    WHERE  nombre_pais in ( 'España', 'Francia', 'Portugal' );
     #+end_src
 
 29. Cuanto valen todas las peliculas que no están ni en BR ni en MP4
@@ -202,21 +202,21 @@
     SELECT SUM(precio)
     FROM   peliculas
     WHERE  NOT formato = 'BR'
-      AND  NOT formato = 'MP4'
+      AND  NOT formato = 'MP4';
     #+end_src
 
 30. Precio mas caro de una pelicula en oferta
     #+begin_src sql
     SELECT MAX(precio)
     FROM   peliculas
-    WHERE  oferta = 'S'
+    WHERE  oferta = 'S';
     #+end_src
 
 31. Cuantos socios son de Toledo
     #+begin_src sql
     SELECT COUNT(*)
     FROM   socios
-    WHERE  telefono LIKE '925%'
+    WHERE  telefono LIKE '925%';
     #+end_src
 
 32. Cual es la facturación total del 2º semestre de 2002
@@ -224,21 +224,21 @@
     SELECT SUM(precio)
     FROM   peliculas, alquiler
     WHERE  SUBSTR(fecha, 4, 2) > 6
-      AND  fecha LIKE '__/__/02'
+      AND  fecha LIKE '__/__/02';
     #+end_src
 
 33. Que codigos de socio alquilan películas en Enero
     #+begin_src sql
     SELECT c_socio
     FROM   alquiler
-    WHERE  fecha LIKE '__/01/__'
+    WHERE  fecha LIKE '__/01/__';
     #+end_src
 
 34. Cuanto dinero se ha gastado el socio de código 1001
     #+begin_src sql
     SELECT SUM(precio)
     FROM   alquiler, peliculas
-    WHERE  c_socio = 1001
+    WHERE  c_socio = 1001;
     #+end_src
 
 35. Visualizar los paises de más de 8000 cines ordenados
@@ -247,14 +247,14 @@
     SELECT   nombre_pais
     FROM     paises
     WHERE    cines > 8000
-    ORDER BY nombre_pais
+    ORDER BY nombre_pais;
     #+end_src
 
 36. Cuantas veces se ha alquilado la pelicula de codigo 2
     #+begin_src sql
     SELECT COUNT(*)
     FROM   alquiler
-    WHERE  c_peli = 2
+    WHERE  c_peli = 2;
     #+end_src
 
 37. Nombre de los hermanos de Gema Ramirez Lopez
@@ -263,7 +263,7 @@
     FROM   socios
     WHERE  ape1 = 'ramirez'
       AND  ape2 = 'lopez'
-      AND  NOT nombre = 'gema'
+      AND  NOT nombre = 'gema';
     #+end_src
 
 38. Despues del 2000 en cuantos años no se han producido peliculas
@@ -271,20 +271,20 @@
     SELECT SUBSTR(SYSDATE, 7, 2)
            - COUNT(DISTINCT anno)
     FROM   peliculas
-    WHERE  anno > 2000
+    WHERE  anno > 2000;
     #+end_src
 
 39. Visualiza en que años se han alquilado peliculas
     #+begin_src sql
     SELECT DISTINCT SUBSTR(fecha, 7, 2)
-    FROM   alquiler
+    FROM   alquiler;
     #+end_src
 
 40. Cuantas peliculas hay de Tiburon
     #+begin_src sql
     SELECT COUNT(*)
     FROM   peliculas
-    WHERE  titulo LIKE 'Tiburón%'
+    WHERE  titulo LIKE 'Tiburón%';
     #+end_src
 
 41. Cuantos alquileres de un solo dia no se han devuelto
@@ -292,48 +292,48 @@
     SELECT COUNT(*)
     FROM   alquiler
     WHERE  ndias = 1
-      AND  devuelta = 'N'
+      AND  devuelta = 'N';
     #+end_src
 
 42. Cuantos socios viven en la calle oro
     #+begin_src sql
     SELECT COUNT(*)
     FROM   socios
-    WHERE  direccion LIKE 'oro,%'
+    WHERE  direccion LIKE 'oro,%';
     #+end_src
 
 43. Que titulo de peliculas es la mas cara
     #+begin_src sql
     SELECT titulo
     FROM   peliculas
-    WHERE  precio = (SELECT MAX(precio) FROM peliculas)
+    WHERE  precio = (SELECT MAX(precio) FROM peliculas);
     #+end_src
 
 44. Cual es el titulo de la pelicula mas moderna
     #+begin_src sql
     SELECT titulo
     FROM   peliculas
-    WHERE  anno = (SELECT MAX(anno) FROM PELICULAS)
+    WHERE  anno = (SELECT MAX(anno) FROM PELICULAS);
     #+end_src
 
 45. En que formato esta la pelicula mas barata
     #+begin_src sql
     SELECT DISTINCT formato
     FROM   peliculas
-    WHERE  precio = (SELECT MIN(precio) FROM PELICULAS)
+    WHERE  precio = (SELECT MIN(precio) FROM PELICULAS);
     #+end_src
 
 46. Cuando se hizo el ultimo alquiler
     #+begin_src sql
     SELECT MAX(fecha)
-    FROM   alquiler
+    FROM   alquiler;
     #+end_src
 
 47. Cual es el pais que tiene mas cines
     #+begin_src sql
     SELECT nombre_pais
     FROM   paises
-    WHERE  cines = (SELECT MAX(cines) FROM paises)
+    WHERE  cines = (SELECT MAX(cines) FROM paises);
     #+end_src
 
 48. Titulo de las peliculas españolas
@@ -344,7 +344,7 @@
              SELECT c_pais
              FROM   paises
              WHERE  nombre_pais = 'España'
-           )
+           );
     #+end_src
 
 49. Titulo de las peliculas que no se alquilan
@@ -354,7 +354,7 @@
     WHERE  c_peli NOT IN (
              SELECT DISTINCT c_peli
              FROM alquiler
-           )
+           );
     #+end_src
 
 50. Nombre de los hermanos de Laura.
@@ -371,7 +371,7 @@
              FROM   socios
              WHERE  nombre = 'laura'
            )
-      AND  nombre != 'laura'
+      AND  nombre != 'laura';
     #+end_src
 
 51. Titulo de las peliculas del pais que menos cines tiene
@@ -385,7 +385,7 @@
                SELECT MIN(cines)
                FROM   paises
              )
-           )
+           );
     #+end_src
 
 52. Codigo de la peliculas que se alquilo la primera vez
@@ -395,7 +395,7 @@
     WHERE  fecha = (
              SELECT MIN(fecha)
              FROM   alquiler
-           )
+           );
     #+end_src
 
 53. Codigo del socio que realizo el alquiler mas barato
@@ -405,14 +405,14 @@
     WHERE  total = (
              SELECT MIN(total)
              FROM   alquiler
-           )
+           );
     #+end_src
 
 54. Cuantas peliculas tenemos en los diferentes formatos
     #+begin_src sql
     SELECT   COUNT(formato), formato
     FROM     peliculas
-    GROUP BY formato
+    GROUP BY formato;
     #+end_src
 
 55. Listado con el numero de alquileres realizados los diferentes años
@@ -420,7 +420,7 @@
     SELECT   substr(fecha, 7, 2), COUNT(*)
     FROM     alquiler
     GROUP BY substr(fecha, 7, 2)
-    ORDER BY substr(fecha, 7, 2)
+    ORDER BY substr(fecha, 7, 2);
     #+end_src
 
 56. Listado de los precios de las peliculas mas caras en los
@@ -429,7 +429,7 @@
     SELECT   anno, MAX(precio)
     FROM     peliculas
     GROUP BY anno
-    ORDER BY anno
+    ORDER BY anno;
     #+end_src
 
 57. Listado con el total que hemos facturada los distintos años,
@@ -438,7 +438,7 @@
     SELECT   substr(fecha, 7, 2), SUM(total)
     FROM     alquiler
     GROUP BY substr(fecha, 7, 2)
-    ORDER BY substr(fecha, 7, 2)
+    ORDER BY substr(fecha, 7, 2);
     #+end_src
 
 58. Cuantos DVDs españoles hay?
@@ -450,7 +450,7 @@
              SELECT c_pais
              FROM   paises
              WHERE  nombre_pais = 'España'
-          )
+          );
     #+end_src
 
 59. Listado con las diferencias familias socias (1er apellido) junto
@@ -459,7 +459,7 @@
     SELECT   ape1, COUNT(*)
     FROM     socios
     GROUP BY ape1
-    ORDER BY ape1
+    ORDER BY ape1;
     #+end_src
 
 60. Listado con los diferentes titulos de peliculas que se han ido
@@ -467,7 +467,7 @@
     #+begin_src sql
     SELECT   anno, titulo
     FROM     peliculas
-    ORDER BY anno, titulo
+    ORDER BY anno, titulo;
     #+end_src
 
 61. Listado con el titulo de las peliculas junto con el nombre de pais
@@ -476,7 +476,7 @@
     SELECT   pe.titulo, pa.nombre_pais
     FROM     peliculas pe, paises pa
     WHERE    pe.c_pais = pa.c_pais
-    ORDER BY pe.titulo
+    ORDER BY pe.titulo;
     #+end_src
 
 62. Listado con los titulos de las peliculas que se han alquildado
@@ -485,7 +485,7 @@
     SELECT   a.fecha, p.titulo
     FROM     peliculas p, alquiler a
     WHERE    p.c_peli = a.c_peli
-    ORDER BY a.fecha
+    ORDER BY a.fecha;
     #+end_src
 
 63. Nombre de los socios que no han visto ninguna de Torrente.
@@ -501,7 +501,7 @@
                         WHERE  titulo LIKE 'Torrente%'
                       )
              )
-    ORDER BY nombre
+    ORDER BY nombre;
     #+end_src
 
 64. Nombre de los socios que alquilaron el año pasado.
@@ -510,7 +510,7 @@
     FROM     socios s, alquiler a
     WHERE    s.c_socio = a.c_socio
       AND    SUBSTR(a.fecha, 7, 2) = SUBSTR(SYSDATE, 7, 2) - 1
-    ORDER BY a.nombre
+    ORDER BY a.nombre;
     #+end_src
 
 65. Nombre de los paises que no alquilan sus peliculas.
@@ -525,7 +525,7 @@
                         FROM   alquiler
                       )
              )
-    ORDER BY nombre_pais
+    ORDER BY nombre_pais;
     #+end_src
 
 66. Nombre y apellidos de los socios que alquilan peliculas españolas.
@@ -545,7 +545,7 @@
                              )
                     )
            )
-    ORDER BY nombre
+    ORDER BY nombre;
     #+end_src
 
 67. Cuantos socios han alquilado algun DVD?
@@ -556,7 +556,7 @@
              SELECT c_peli
              FROM   peliculas
              WHERE  formato = 'DVD'
-           )
+           );
    #+end_src
 
 68. Cuantos paises tienen mas cines que la media de los paises?
@@ -566,7 +566,7 @@
     WHERE  cines > (
              SELECT AVG(cines)
              FROM   paises
-           )
+           );
     #+end_src
 
 69. Nombre de los clientes que no han pedido nada.
@@ -576,14 +576,14 @@
     WHERE  idcli NOT IN (
              SELECT idcli
              FROM   pedido
-           )
+           );
     #+end_src
 
 70. Cuantos pedidos se hicieron en 2017.
     #+begin_src sql
     SELECT COUNT(idped)
     FROM   pedido
-    WHERE  fped like '__/__/17'
+    WHERE  fped like '__/__/17';
     #+end_src
 
 71. Nombre de los clientes que no son ni de Madrid ni de Toledo.
@@ -591,7 +591,7 @@
     SELECT nombre
     FROM   cliente
     WHERE  ciudad != 'MADRID'
-      AND  ciudad != 'TOLEDO'
+      AND  ciudad != 'TOLEDO';
     #+end_src
 
 72. Descripcion de los articulos que se han vendido.
@@ -601,7 +601,7 @@
     WHERE  idart IN (
              SELECT idart
              FROM   detalle
-           )
+           );
     #+end_src
 
 73. Descripcion del articulo mas caro.
@@ -611,7 +611,7 @@
     WHERE  precio = (
              SELECT MAX(precio)
              FROM   articulo
-           )
+           );
     #+end_src
 
 74. Cuantos pedidos nos hacen entre madrileños y toledanos?
@@ -623,14 +623,14 @@
              FROM   cliente
              WHERE  ciudad = 'MADRID'
                 OR  ciudad = 'TOLEDO'
-           )
+           );
     #+end_src
 
 75. Cuantos pedidos se hacen en la segunda quincena del mes?
     #+begin_src sql
     SELECT COUNT(idped)
     FROM   pedido
-    WHERE  SUBSTR(fped, 1, 2) > 15
+    WHERE  SUBSTR(fped, 1, 2) > 15;
     #+end_src
 
 76. Listado de las ciudades con el numero de clientes que tenemos en
@@ -638,7 +638,7 @@
     #+begin_src sql
     SELECT   ciudad, COUNT(idcli)
     FROM     cliente
-    GROUP BY ciudad
+    GROUP BY ciudad;
     #+end_src
 
 77. Listado con los nombres de los clientes junto con el numero de
@@ -647,7 +647,7 @@
     SELECT   c.nombre, COUNT(p.idped)
     FROM     cliente c, pedido p
     WHERE    c.idcli = p.idcli
-    GROUP BY c.nombre
+    GROUP BY c.nombre;
     #+end_src
 
 78. Que come Ana Kurnicova.
@@ -666,7 +666,7 @@
                                WHERE  nombre = 'ANA KURNICOVA'
                              )
                     )
-           )
+           );
     #+end_src
 
 79. Listado de los articulos que vendemos junto con la cantidad que
@@ -676,7 +676,7 @@
     FROM     articulo a, detalle d
     WHERE    a.idart = d.idart
     GROUP BY a.descrip
-    ORDER BY a.descrip
+    ORDER BY a.descrip;
     #+end_src
 
 80. Que capital tenemos entre corderos y hamburguesas en el almacen?
@@ -686,7 +686,7 @@
     WHERE  descrip IN (
              'CORDERO',
              'HAMBURGUESA'
-           )
+           );
     #+end_src
 
 81. Nombre de los clientes que no comen salchichas.
@@ -705,7 +705,7 @@
                                WHERE  descrip = 'SALCHICHAS'
                              )
                     )
-           )
+           );
     #+end_src
 
 82. Cuantas paellas se comen en Toledo?
@@ -725,7 +725,7 @@
              SELECT idart
              FROM   articulo
              WHERE  descrip = 'PAELLA'
-           )
+           );
     #+end_src
 
 83. Listado con el idped junto con el importe del pedido.
@@ -733,14 +733,14 @@
     SELECT   d.idped, SUM(d.cantidad * a.precio)
     FROM     detalle d, articulo a
     WHERE    d.idart = a.idart
-    GROUP BY d.idped
+    GROUP BY d.idped;
     #+end_src
 
 84. Listado con las ciudades y el numero de clientes de cada ciudad.
     #+begin_src sql
     SELECT   ciudad, COUNT(idcli)
     FROM     cliente
-    GROUP BY ciudad
+    GROUP BY ciudad;
     #+end_src
 
 85. Nombre de las ciudades en las que tenemos mas de 2 clientes.
@@ -748,7 +748,7 @@
     SELECT   ciudad
     FROM     cliente
     GROUP BY ciudad
-    HAVING   COUNT(idcli) > 2
+    HAVING   COUNT(idcli) > 2;
     #+end_src
 
 86. En que formatos tenemos mas de 10 peliculas?
@@ -756,7 +756,7 @@
     SELECT   formato
     FROM     peliculas
     GROUP BY formato
-    HAVING   COUNT(c_peli) > 10
+    HAVING   COUNT(c_peli) > 10;
     #+end_src
 
 87. Titulo de las peliculas que hemos alquilado mas de una vez.
@@ -768,7 +768,7 @@
                FROM     alquiler
                GROUP BY c_peli
                HAVING   COUNT(c_socio) > 1
-             )
+             );
     #+end_src
 
 88. Que paises producen menos de 3 peliculas?
@@ -777,7 +777,7 @@
     FROM     peliculas pe, paises pa
     WHERE    pe.c_pais = pa.c_pais
     GROUP BY pa.nombre_pais
-    HAVING   COUNT(pe.c_peli) < 3
+    HAVING   COUNT(pe.c_peli) < 3;
     #+end_src
 
 89. Nombre de los socios que han alquilado mas de 2 peliculas.
@@ -786,26 +786,26 @@
     FROM     socios s, alquiler a
     WHERE    s.c_socio = a.c_socio
     GROUP BY s.nombre
-    HAVING   COUNT(a.c_peli) > 2
+    HAVING   COUNT(a.c_peli) > 2;
     #+end_src
 
 90. Poner a oferta todas las peliculas anteriores a 2010.
     #+begin_src sql
     UPDATE peliculas
     SET    oferta = 'S'
-    WHERE  anno < 2010
+    WHERE  anno < 2010;
     #+end_src
 
 91. Rebajar el PRECIO de todas las peliculas un 25%.
     #+begin_src sql
     UPDATE peliculas
-    SET    precio = precio - precio * 25/100
+    SET    precio = precio - precio * 25/100;
     #+end_src
 
 92. Dia sin IVA. Quitar el IVA a todas las peliculas.
     #+begin_src sql
     UPDATE peliculas
-    SET    precio = precio / 121 * 100
+    SET    precio = precio / 121 * 100;
     #+end_src
 
 93. Poner a 1 euro todas las peliculas españolas.
@@ -816,7 +816,7 @@
              SELECT c_pais
              FROM   paises
              WHERE  nombre_pais LIKE 'España'
-           )
+           );
     #+end_src
 
 94. Listado con los nombres de socios junto con el titulo de la
@@ -826,7 +826,7 @@
     FROM   socios s, peliculas p, alquiler a
     WHERE  s.c_socio = a.c_socio
       AND  a.c_peli = p.c_peli
-      AND  a.total != a.ndias * p.precio
+      AND  a.total != a.ndias * p.precio;
     #+end_src
 
 95. Listado con los alquileres con el precio cobrado junto con el
@@ -835,7 +835,7 @@
     SELECT p.titulo, a.total "Cobrado", a.ndias * p.precio "Precio correcto"
     FROM   peliculas p, alquiler a
     WHERE  a.c_peli = p.c_peli
-      AND  a.total != a.ndias * p.precio
+      AND  a.total != a.ndias * p.precio;
     #+end_src
 
 96. Actualizar bien la base de datos y poner el valor correcto de
@@ -846,7 +846,7 @@
              SELECT precio
              FROM   peliculas p
              WHERE  p.c_peli = a.c_peli
-           )
+           );
     #+end_src
 
 97. Listado con todos los nombres de los socios junto con el total que
@@ -857,7 +857,7 @@
              FROM alquiler a
              WHERE a.c_socio = s.c_socio
            ) "Total gastado"
-    FROM   socios s
+    FROM   socios s;
     #+end_src
 
 98. Cual es el pais que mas peliculas ha producido.
@@ -876,7 +876,7 @@
                          GROUP BY c_pais
                        )
                      )
-           )
+           );
     #+end_src
 
 99. Quitar 100 cines a los paises que no alquilan sus peliculas.
@@ -890,7 +890,7 @@
                       SELECT c_peli
                       FROM   alquiler
                     )
-           )
+           );
     #+end_src
 
 100. En que formato tenemos mas peliculas.
@@ -905,7 +905,7 @@
                   FROM     peliculas
                   GROUP BY formato
                 )
-              )
+              );
      #+end_src
 
 101. Poner en oferta solo aquellas peliculas que no se alquilen.
@@ -915,7 +915,7 @@
      WHERE  c_peli NOT IN (
               SELECT c_peli
               FROM   alquiler
-            )
+            );
      #+end_src
 
 102. Escribir correctamente los nombres de los socios.
@@ -923,13 +923,13 @@
      UPDATE socios
      SET    nombre = INITCAP(nombre),
             ape1 = INITCAP(ape1),
-            ape2 = INITCAP(ape2)
+            ape2 = INITCAP(ape2);
      #+end_src
 
 103. Añadir a la tabla socios el atributo GASTADO (numerico de 6):
      #+begin_src sql
      ALTER TABLE socios
-     ADD   gastado NUMBER(6)
+     ADD   gastado NUMBER(6);
      #+end_src
 
 104. Poner el campo GASTADO con el valor correcto con el total gastado
@@ -944,13 +944,13 @@
                      )), 0)
               FROM   alquiler a
               WHERE  a.c_socio = s.c_socio
-            )
+            );
      #+end_src
 
 105. Cual es el valor en euros de todo lo que tenemos en stock?
      #+begin_src sql
      SELECT SUM(precio * stock)
-     FROM   articulo
+     FROM   articulo;
      #+end_src
 
 106. Bajar un 25% el precio de los articulos que se venden.
@@ -960,7 +960,7 @@
      WHERE  idart IN (
               SELECT idart
               FROM   detalle
-            )
+            );
      #+end_src
 
 107. Que articulos se piden mas de una vez en el mismo pedido.
@@ -971,7 +971,7 @@
               SELECT idart
               FROM   detalle
               WHERE  cantidad > 1
-            )
+            );
      #+end_src
 
 108. Cual fue la ultima vez que se vendio CORDERO.
@@ -986,7 +986,7 @@
                       FROM   articulo
                       WHERE  descrip = 'CORDERO'
                     )
-           )
+           );
      #+end_src
 
 109. Que codigos de pedido incluyen mas de 2 articulos diferentes.
@@ -994,7 +994,7 @@
      SELECT   idped
      FROM     detalle
      GROUP BY idped
-     HAVING   COUNT(idart) > 2
+     HAVING   COUNT(idart) > 2;
      #+end_src
 
 110. Nombre de los clientes que pagan despues de 10 dias de haber
@@ -1006,14 +1006,14 @@
               SELECT idcli
               FROM   pedido
               WHERE  ffac - fped > 10
-            )
+            );
      #+end_src
 
 111. Cuantos clientes se llaman MARIA de nombre?
      #+begin_src sql
      SELECT COUNT(idcli)
      FROM   cliente
-     WHERE  nombre like 'MARIA%'
+     WHERE  nombre like 'MARIA%';
      #+end_src
 
 112. Quien hizo el pedido con mas articulos.
@@ -1033,7 +1033,7 @@
                                   GROUP BY idped
                                 )
                      )
-            )
+            );
      #+end_src
 
 113. Nombre del cliente que pidio mas PAELLAS.
@@ -1051,7 +1051,7 @@
                        )
               GROUP BY idcli
               HAVING   SUM(d.cantidad) > 2
-            )
+            );
      #+end_src
 
 114. Nombre de los clientes que no han probado las ALBONDIGAS.
@@ -1070,7 +1070,7 @@
                                 WHERE  descrip = 'ALBONDIGAS'
                               )
                      )
-            )
+            );
      #+end_src
 
 115. Quien ha comido mas de dos HAMBURGUESAS.
@@ -1091,7 +1091,7 @@
                        GROUP BY idped
                        HAVING   SUM(cantidad) > 2
                      )
-            )
+            );
      #+end_src
 
 116. Cuantos clientes han hecho menos de 2 pedidos.
@@ -1103,7 +1103,7 @@
               FROM     pedido
               GROUP BY idcli
               HAVING   COUNT(idped) >= 2
-            )
+            );
      #+end_src
 
 117. Suponiendo que cuando abrimos la empresa teniamos 100 unidades de
@@ -1114,14 +1114,14 @@
               SELECT NVL(SUM(cantidad), 0)
               FROM   detalle
               WHERE  idart = a.idart
-            )
+            );
      #+end_src
 
 118. Añadir el campo GASTADO a la tabla cliente y ponerlo con el valor
      correcto.
      #+begin_src sql
      ALTER TABLE cliente
-     ADD   gastado NUMBER(6)
+     ADD   gastado NUMBER(6);
      #+end_src
 
      #+begin_src sql
@@ -1135,5 +1135,6 @@
               FROM     pedido p, detalle d
               WHERE    p.idcli = c.idcli
                 AND    p.idped = d.idped
+            );
             )
      #+end_src
