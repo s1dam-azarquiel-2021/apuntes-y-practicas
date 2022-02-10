@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-10 Thu 20:17 -->
+<!-- 2022-02-10 Thu 20:22 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ejercicio 3 Consultas</title>
+<title>Ejercicio 5 Consultas</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Alberto Robles Gomez">
 <link rel="stylesheet" type="text/css" href="../../css/index.css" />
@@ -34,7 +34,7 @@
 <body>
 <div id="content">
 <header>
-<h1 class="title">Ejercicio 3 Consultas</h1>
+<h1 class="title">Ejercicio 5 Consultas</h1>
 </header><div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">TABLE</span> <span class="org-function-name">agenda</span> (
   c_amigo <span class="org-keyword">NUMBER</span>(4) <span class="org-keyword">NOT</span> <span class="org-keyword">NULL</span>,
@@ -79,14 +79,14 @@
 </div>
 
 
-<figure id="org55dfa39">
+<figure id="orgb9db558">
 <img src="./ej5-agenda.png" alt="ej5-agenda.png">
 
 </figure>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-10 Thu 20:17</p>
+<p class="date">Created: 2022-02-10 Thu 20:22</p>
 </div>
 </body>
 </html>

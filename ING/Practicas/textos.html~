@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-10 Thu 20:17 -->
+<!-- 2022-02-10 Thu 20:22 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Textos</title>
@@ -39,15 +39,15 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf110716">Texto 1</a></li>
-<li><a href="#org39e224e">Texto 2</a></li>
-<li><a href="#org02f7af0">Texto 3</a></li>
+<li><a href="#orge1b8b24">Texto 1</a></li>
+<li><a href="#org179d6d1">Texto 2</a></li>
+<li><a href="#org4a34438">Texto 3</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orgf110716" class="outline-2">
-<h2 id="orgf110716">Texto 1</h2>
-<div class="outline-text-2" id="text-orgf110716">
+<div id="outline-container-orge1b8b24" class="outline-2">
+<h2 id="orge1b8b24">Texto 1</h2>
+<div class="outline-text-2" id="text-orge1b8b24">
 <p>
 The ability of tiny computing devices to control complex operations
 has transformed the way many tasks are performed, ranging from
@@ -258,9 +258,9 @@ reveal ……… unknown manuscript.
 </div>
 </div>
 
-<div id="outline-container-org39e224e" class="outline-2">
-<h2 id="org39e224e">Texto 2</h2>
-<div class="outline-text-2" id="text-org39e224e">
+<div id="outline-container-org179d6d1" class="outline-2">
+<h2 id="org179d6d1">Texto 2</h2>
+<div class="outline-text-2" id="text-org179d6d1">
 <p>
 Multimedia systems are known for their educational and entertainment
 value, which we call ‘edutainment’. Multimedia combines text with
@@ -475,9 +475,9 @@ refer to?
 </div>
 </div>
 
-<div id="outline-container-org02f7af0" class="outline-2">
-<h2 id="org02f7af0">Texto 3</h2>
-<div class="outline-text-2" id="text-org02f7af0">
+<div id="outline-container-org4a34438" class="outline-2">
+<h2 id="org4a34438">Texto 3</h2>
+<div class="outline-text-2" id="text-org4a34438">
 <p>
 According to new research, learning a second language can slow
 cognitive ageing, that is, the speed at which the mental activity of
@@ -678,7 +678,7 @@ later in your life, is beneficial against brain ageing.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-10 Thu 20:17</p>
+<p class="date">Created: 2022-02-10 Thu 20:22</p>
 </div>
 </body>
 </html>
