@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- 2022-02-10 Thu 20:17 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ejercicio 3 Consultas</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Alberto Robles Gomez">
+<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Ejercicio 3 Consultas</h1>
+</header><div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">TABLE</span> <span class="org-function-name">agenda</span> (
+  c_amigo <span class="org-keyword">NUMBER</span>(4) <span class="org-keyword">NOT</span> <span class="org-keyword">NULL</span>,
+  nombre VARCHAR2(12),
+  apellidos VARCHAR2(20),
+  f_nac <span class="org-type">DATE</span>,
+  telefono <span class="org-keyword">NUMBER</span>(7),
+  <span class="org-keyword">CONSTRAINT</span> pk_agenda <span class="org-keyword">PRIMARY</span> <span class="org-keyword">KEY</span>(c_amigo)
+);
+
+<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> "VIDEO"."AGENDA" (
+  c_amigo,
+  nombre,
+  apellidos,
+  f_nac,
+  telefono
+) <span class="org-keyword">VALUES</span> (
+  <span class="org-string">'1'</span>,
+  <span class="org-string">'Pepino'</span>,
+  <span class="org-string">'Pimiento'</span>,
+  TO_DATE(<span class="org-string">'01/01/01'</span>, <span class="org-string">'DD/MM/RR'</span>),
+  <span class="org-string">'1111111'</span>
+);
+
+<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> "VIDEO"."AGENDA" (
+  c_amigo,
+  nombre,
+  apellidos,
+  f_nac,
+  telefono
+) <span class="org-keyword">VALUES</span> (
+  <span class="org-string">'2'</span>,
+  <span class="org-string">'Cebolla'</span>,
+  <span class="org-string">'Comino'</span>,
+  TO_DATE(<span class="org-string">'02/02/02'</span>, <span class="org-string">'DD/MM/RR'</span>),
+  <span class="org-string">'2222222'</span>
+);
+
+<span class="org-keyword">SELECT</span> *
+<span class="org-keyword">FROM</span>   agenda;
+</pre>
+</div>
+
+
+<figure id="org55dfa39">
+<img src="./ej5-agenda.png" alt="ej5-agenda.png">
+
+</figure>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Alberto Robles Gomez</p>
+<p class="date">Created: 2022-02-10 Thu 20:17</p>
+</div>
+</body>
+</html>

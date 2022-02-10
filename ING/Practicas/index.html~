@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-04 Fri 11:33 -->
+<!-- 2022-02-09 Wed 12:31 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ING - Practicas</title>
@@ -35,21 +35,21 @@
 <div id="content">
 <header>
 <h1 class="title">ING - Practicas</h1>
-</header><div id="outline-container-org8b7bb36" class="outline-2">
-<h2 id="org8b7bb36">Contenido</h2>
-<div class="outline-text-2" id="text-org8b7bb36">
+</header><div id="outline-container-orge26592f" class="outline-2">
+<h2 id="orge26592f">Contenido</h2>
+<div class="outline-text-2" id="text-orge26592f">
 </div>
-<div id="outline-container-orgd74f7cc" class="outline-3">
-<h3 id="orgd74f7cc"><a href="./textos.html">Textos</a></h3>
+<div id="outline-container-orga6e29ab" class="outline-3">
+<h3 id="orga6e29ab"><a href="./textos.html">Textos</a></h3>
 </div>
-<div id="outline-container-org54336e6" class="outline-3">
-<h3 id="org54336e6"><a href="./ejercicios_libro.html">Ejercicios del Libro</a></h3>
+<div id="outline-container-org02d82f7" class="outline-3">
+<h3 id="org02d82f7"><a href="./ejercicios_libro.html">Ejercicios del Libro</a></h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-04 Fri 11:33</p>
+<p class="date">Created: 2022-02-09 Wed 12:31</p>
 </div>
 </body>
 </html>
