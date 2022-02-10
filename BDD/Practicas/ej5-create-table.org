@@ -1,0 +1,46 @@
+#+TITLE: Ejercicio 3 Consultas
+#+SETUPFILE: ../../template.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+begin_src sql
+CREATE TABLE agenda (
+  c_amigo NUMBER(4) NOT NULL,
+  nombre VARCHAR2(12),
+  apellidos VARCHAR2(20),
+  f_nac DATE,
+  telefono NUMBER(7),
+  CONSTRAINT pk_agenda PRIMARY KEY(c_amigo)
+);
+
+INSERT INTO "VIDEO"."AGENDA" (
+  c_amigo,
+  nombre,
+  apellidos,
+  f_nac,
+  telefono
+) VALUES (
+  '1',
+  'Pepino',
+  'Pimiento',
+  TO_DATE('01/01/01', 'DD/MM/RR'),
+  '1111111'
+);
+
+INSERT INTO "VIDEO"."AGENDA" (
+  c_amigo,
+  nombre,
+  apellidos,
+  f_nac,
+  telefono
+) VALUES (
+  '2',
+  'Cebolla',
+  'Comino',
+  TO_DATE('02/02/02', 'DD/MM/RR'),
+  '2222222'
+);
+
+SELECT *
+FROM   agenda;
+#+end_src
+
+[[./ej5-agenda.png]]
