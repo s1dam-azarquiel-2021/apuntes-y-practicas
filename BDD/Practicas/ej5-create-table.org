@@ -11,13 +11,7 @@ CREATE TABLE agenda (
   CONSTRAINT pk_agenda PRIMARY KEY(c_amigo)
 );
 
-INSERT INTO "VIDEO"."AGENDA" (
-  c_amigo,
-  nombre,
-  apellidos,
-  f_nac,
-  telefono
-) VALUES (
+INSERT INTO agenda VALUES (
   '1',
   'Pepino',
   'Pimiento',
@@ -25,13 +19,7 @@ INSERT INTO "VIDEO"."AGENDA" (
   '1111111'
 );
 
-INSERT INTO "VIDEO"."AGENDA" (
-  c_amigo,
-  nombre,
-  apellidos,
-  f_nac,
-  telefono
-) VALUES (
+INSERT INTO agenda VALUES (
   '2',
   'Cebolla',
   'Comino',
@@ -39,13 +27,7 @@ INSERT INTO "VIDEO"."AGENDA" (
   '2222222'
 );
 
-INSERT INTO "VIDEO"."AGENDA" (
-  c_amigo,
-  nombre,
-  apellidos,
-  f_nac,
-  telefono
-) VALUES (
+INSERT INTO agenda VALUES (
   '3',
   'Patata',
   'Puerro',
@@ -53,13 +35,7 @@ INSERT INTO "VIDEO"."AGENDA" (
   '3333333'
 );
 
-INSERT INTO "VIDEO"."AGENDA" (
-  c_amigo,
-  nombre,
-  apellidos,
-  f_nac,
-  telefono
-) VALUES (
+INSERT INTO agenda VALUES (
   '4',
   'Ajo',
   'Alcachofa',
