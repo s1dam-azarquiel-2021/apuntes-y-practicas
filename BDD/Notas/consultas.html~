@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-10 Thu 20:30 -->
+<!-- 2022-02-10 Thu 20:37 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Consultas SQL</title>
@@ -1572,7 +1572,7 @@ Nombre de los clientes que han consumido menos de 2 articulos.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-10 Thu 20:30</p>
+<p class="date">Created: 2022-02-10 Thu 20:37</p>
 </div>
 </body>
 </html>

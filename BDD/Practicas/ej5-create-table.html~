@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-10 Thu 20:30 -->
+<!-- 2022-02-10 Thu 20:37 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ejercicio 5 Consultas</title>
@@ -73,20 +73,48 @@
   <span class="org-string">'2222222'</span>
 );
 
+<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> "VIDEO"."AGENDA" (
+  c_amigo,
+  nombre,
+  apellidos,
+  f_nac,
+  telefono
+) <span class="org-keyword">VALUES</span> (
+  <span class="org-string">'3'</span>,
+  <span class="org-string">'Patata'</span>,
+  <span class="org-string">'Puerro'</span>,
+  TO_DATE(<span class="org-string">'03/03/03'</span>, <span class="org-string">'DD/MM/RR'</span>),
+  <span class="org-string">'3333333'</span>
+);
+
+<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> "VIDEO"."AGENDA" (
+  c_amigo,
+  nombre,
+  apellidos,
+  f_nac,
+  telefono
+) <span class="org-keyword">VALUES</span> (
+  <span class="org-string">'4'</span>,
+  <span class="org-string">'Ajo'</span>,
+  <span class="org-string">'Alcachofa'</span>,
+  TO_DATE(<span class="org-string">'04/04/04'</span>, <span class="org-string">'DD/MM/RR'</span>),
+  <span class="org-string">'4444444'</span>
+);
+
 <span class="org-keyword">SELECT</span> *
 <span class="org-keyword">FROM</span>   agenda;
 </pre>
 </div>
 
 
-<figure id="orgf455941">
+<figure id="orga1f4e36">
 <img src="./ej5-agenda.png" alt="ej5-agenda.png">
 
 </figure>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-10 Thu 20:30</p>
+<p class="date">Created: 2022-02-10 Thu 20:37</p>
 </div>
 </body>
 </html>
