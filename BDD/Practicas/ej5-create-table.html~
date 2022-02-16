@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-10 Thu 20:37 -->
+<!-- 2022-02-11 Fri 10:40 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ejercicio 5 Consultas</title>
@@ -45,13 +45,7 @@
   <span class="org-keyword">CONSTRAINT</span> pk_agenda <span class="org-keyword">PRIMARY</span> <span class="org-keyword">KEY</span>(c_amigo)
 );
 
-<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> "VIDEO"."AGENDA" (
-  c_amigo,
-  nombre,
-  apellidos,
-  f_nac,
-  telefono
-) <span class="org-keyword">VALUES</span> (
+<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> agenda <span class="org-keyword">VALUES</span> (
   <span class="org-string">'1'</span>,
   <span class="org-string">'Pepino'</span>,
   <span class="org-string">'Pimiento'</span>,
@@ -59,13 +53,7 @@
   <span class="org-string">'1111111'</span>
 );
 
-<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> "VIDEO"."AGENDA" (
-  c_amigo,
-  nombre,
-  apellidos,
-  f_nac,
-  telefono
-) <span class="org-keyword">VALUES</span> (
+<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> agenda <span class="org-keyword">VALUES</span> (
   <span class="org-string">'2'</span>,
   <span class="org-string">'Cebolla'</span>,
   <span class="org-string">'Comino'</span>,
@@ -73,13 +61,7 @@
   <span class="org-string">'2222222'</span>
 );
 
-<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> "VIDEO"."AGENDA" (
-  c_amigo,
-  nombre,
-  apellidos,
-  f_nac,
-  telefono
-) <span class="org-keyword">VALUES</span> (
+<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> agenda <span class="org-keyword">VALUES</span> (
   <span class="org-string">'3'</span>,
   <span class="org-string">'Patata'</span>,
   <span class="org-string">'Puerro'</span>,
@@ -87,13 +69,7 @@
   <span class="org-string">'3333333'</span>
 );
 
-<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> "VIDEO"."AGENDA" (
-  c_amigo,
-  nombre,
-  apellidos,
-  f_nac,
-  telefono
-) <span class="org-keyword">VALUES</span> (
+<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> agenda <span class="org-keyword">VALUES</span> (
   <span class="org-string">'4'</span>,
   <span class="org-string">'Ajo'</span>,
   <span class="org-string">'Alcachofa'</span>,
@@ -107,14 +83,14 @@
 </div>
 
 
-<figure id="orga1f4e36">
+<figure id="orgf4ecf82">
 <img src="./ej5-agenda.png" alt="ej5-agenda.png">
 
 </figure>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-10 Thu 20:37</p>
+<p class="date">Created: 2022-02-11 Fri 10:40</p>
 </div>
 </body>
 </html>
