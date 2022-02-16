@@ -1,0 +1,96 @@
+#+TITLE: Practica 5A
+#+SETUPFILE: ../../template.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+1. Crea un script parametros.sh que nos diga el número de parámetros
+   pasados por línea de comando y que nos muestre por pantalla dichos
+   comandos.
+   #+begin_src shell :tangle P_5e-scripts/parametros.sh :shebang "#!/bin/bash"
+   # parametros.sh
+   echo "Numero de parametros:" $#
+   echo $@
+   echo "-----"
+
+   for parameter in $@
+   do
+   echo $parameter
+   done
+   #+end_src
+
+2. Crea un script suma.sh al cual le pasemos dos números por línea de
+   comando y nos los sume.
+   #+begin_src shell :tangle P_5e-scripts/suma.sh :shebang "#!/bin/bash"
+   # suma.sh
+   echo "Suma:" $(($1 + $2))
+   #+end_src
+
+3. Modifica el script anterior para que en caso de que no le pasemos
+   ningún parámetro nos los solicite de modo interactivo. Si le
+   pasamos un solo parámetro nos solicitará el otro número a sumar. Si
+   le pasamos más de dos parámetros nos dirá que el uso es incorrecto
+   y nos mostrará la ayuda del comando.
+   #+begin_src shell :tangle P_5e-scripts/suma_v2.sh :shebang "#!/bin/bash"
+   # suma_v2.sh
+   n1=$1
+   n2=$2
+
+   if [ $# -lt 1 ]
+   then
+   echo -n "Introduce el primer numero: "
+   read n1
+   fi
+
+   if [ $# -lt 2 ]
+   then
+   echo -n "Introduce el segundo numero: "
+   read n2
+   fi
+
+   if [ $# -gt 2 ]
+   then
+   echo "Solo puedes pasar 2 numeros."
+   else
+   echo "Suma:" $(($n1 + $n2))
+   fi
+   #+end_src
+
+4. Crea un script sumaparametros.sh que nos sume todos los parámetros
+   pasados por línea de comando y nos muestre el resultado. Si no se
+   pasa ningún parámetro nos mostrará una ayuda de cómo usarlo.
+   #+begin_src shell :tangle P_5e-scripts/sumaparametros.sh :shebang "#!/bin/bash"
+   # sumaparametros.sh
+   [[ $# -eq 0 ]] && echo "Tienes que meter al menos 1 numero." && exit 1
+
+   suma=0
+   for n in $@
+   do
+   suma=$(($suma + $n))
+   done
+
+   echo "Suma:" $suma
+   #+end_src
+
+5. Escribe un script divisible.sh al que nos diga si un número es
+   divisible por otro número. Para ello el script puede aceptar
+   parámetros de entrada por línea de comando o solicitar dichos
+   parámetros al usuario. La forma de uso será.
+   #+begin_src shell :tangle P_5e-scripts/divisible.sh :shebang "#!/bin/bash"
+   # divisible.sh
+   [[ $# -gt 2 ]] && echo "Puedes pasar como maximo 2 numeros." && exit 1
+
+   n1=$1
+   n2=$2
+
+   if [ $# -lt 1 ]
+   then
+   echo -n "Introduce el primer numero: "
+   read n1
+   fi
+
+   if [ $# -lt 2 ]
+   then
+   echo -n "Introduce el segundo numero: "
+   read n2
+   fi
+
+   [[ $((n1 % n2)) -eq 0 ]] && echo "Es divisible" || echo "No es divisible"
+   #+end_src
