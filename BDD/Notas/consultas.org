@@ -1167,5 +1167,41 @@
               WHERE    p.idped = d.idped
               GROUP BY idcli
               HAVING   SUM(cantidad) < 2
-            )
+            );
+     #+end_src
+
+122. Cuanto hemos facturado en el 2017?
+     #+begin_src sql
+     SELECT SUM(importe)
+     FROM   ventas
+     WHERE  fecha like '__/__/17';
+     #+end_src
+
+123. Con que articulo hemos ganado mas dinero?
+     #+begin_src sql
+     SELECT descrip
+     FROM   articulo
+     WHERE  c_art IN (
+              SELECT   c_art
+              FROM     ventas
+              GROUP BY c_art
+              HAVING   SUM(importe) = (
+                         SELECT MAX(SUM(importe * cantidad))
+                         FROM   ventas
+                         GROUP BY c_art
+                       )
+            );
+     #+end_src
+
+124. Nombre de los clientes que se gastan menos de 5 euros en nuestra
+     tienda.
+     #+begin_src sql
+     SELECT nombre
+     FROM   clientes
+     WHERE  c_cliente IN (
+              SELECT   c_cliente
+              FROM     ventas
+              GROUP BY c_cliente
+              HAVING   SUM(importe) < 5
+            );
      #+end_src
