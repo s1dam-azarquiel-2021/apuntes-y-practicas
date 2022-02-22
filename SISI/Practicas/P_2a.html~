@@ -1,51 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-11 Fri 10:40 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 2022-02-16 Wed 16:42 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 2A</title>
-<meta name="generator" content="Org mode">
-<meta name="author" content="Alberto Robles Gomez">
+<meta name="author" content="Alberto Robles Gomez" />
+<meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="../../css/index.css" />
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <header>
 <h1 class="title">Practica 2A</h1>
-</header><nav id="table-of-contents">
+</header><nav id="table-of-contents" role="doc-toc">
 <h2>&Iacute;ndice</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6f52c59">Creacion y configuracion de una maquina virtual</a></li>
+<li><a href="#orgcf09dbf">Creacion y configuracion de una maquina virtual</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org6f52c59" class="outline-2">
-<h2 id="org6f52c59">Creacion y configuracion de una maquina virtual</h2>
-<div class="outline-text-2" id="text-org6f52c59">
+<div id="outline-container-orgcf09dbf" class="outline-2">
+<h2 id="orgcf09dbf">Creacion y configuracion de una maquina virtual</h2>
+<div class="outline-text-2" id="text-orgcf09dbf">
 <ol class="org-ol">
 <li><p>
 Crea una máquina virtual en VirtualBox Workstation que nos sirva
@@ -70,13 +48,13 @@ Creacion de la VM:
 </p>
 
 
-<figure id="orgaaa639b">
+<figure id="org71501d6">
 <img src="./img/2.1.1.png" alt="2.1.1.png">
 
 </figure>
 
 
-<figure id="orgddde347">
+<figure id="org598d675">
 <img src="./img/2.1.2.png" alt="2.1.2.png">
 
 </figure>
@@ -92,13 +70,13 @@ la máquina W10-SI-XX donde XX es tu rango de IP asignadas.
 </p>
 
 
-<figure id="org13af048">
+<figure id="orgc4f2e48">
 <img src="./img/2.2.1.png" alt="2.2.1.png">
 
 </figure>
 
 
-<figure id="org6476fe0">
+<figure id="orgcb7c7e9">
 <img src="./img/2.2.2.png" alt="2.2.2.png">
 
 </figure>
@@ -113,7 +91,7 @@ Instala VMWTools en la máquina virtual.
 </p>
 
 
-<figure id="org2790ebc">
+<figure id="org54ee748">
 <img src="./img/2.3.1.png" alt="2.3.1.png">
 
 </figure>
@@ -130,7 +108,7 @@ encontrado una nueva unidad.
 </p>
 
 
-<figure id="org07f6a5e">
+<figure id="org40ada2b">
 <img src="./img/2.3.2.png" alt="2.3.2.png">
 
 </figure>
@@ -140,7 +118,7 @@ Ahora le hacemos doble click a la unidad.
 </p>
 
 
-<figure id="org530b9b7">
+<figure id="org0dee9cc">
 <img src="./img/2.3.3.png" alt="2.3.3.png">
 
 </figure>
@@ -150,7 +128,7 @@ Aceptamos y le damos a next hasta que deje de preguntar.
 </p>
 
 
-<figure id="org346eac0">
+<figure id="orgf5dac8e">
 <img src="./img/2.3.4.png" alt="2.3.4.png">
 
 </figure>
@@ -160,7 +138,7 @@ Una vez acabe tocara reiniciar la VM.
 </p>
 
 
-<figure id="orga4f7c3f">
+<figure id="orgdf43e8f">
 <img src="./img/2.3.5.png" alt="2.3.5.png">
 
 </figure></li>
@@ -181,13 +159,13 @@ el guest:
 </p>
 
 
-<figure id="org9a46339">
+<figure id="org752f5d9">
 <img src="./img/2.4.1.png" alt="2.4.1.png">
 
 </figure>
 
 
-<figure id="orgf43c52c">
+<figure id="orgd6d53ba">
 <img src="./img/2.4.2.png" alt="2.4.2.png">
 
 </figure></li>
@@ -203,7 +181,7 @@ Creamos una carpeta compartida.
 </p>
 
 
-<figure id="org96f413e">
+<figure id="org0cb562f">
 <img src="./img/2.5.1.png" alt="2.5.1.png">
 
 </figure>
@@ -214,7 +192,7 @@ red con la carpeta anteriormente especificada
 </p>
 
 
-<figure id="orgf91d39a">
+<figure id="orgc084e95">
 <img src="./img/2.5.2.png" alt="2.5.2.png">
 
 </figure></li>
@@ -253,7 +231,7 @@ de comandos con el comando ipconfig /all
 </p>
 
 
-<figure id="org5d8588d">
+<figure id="org3f65b08">
 <img src="./img/2.7.1.png" alt="2.7.1.png">
 
 </figure></li>
@@ -269,7 +247,7 @@ adaptador virtual, que en este caso es algo parecido a esto:
 </p>
 
 
-<figure id="orgb4a89db">
+<figure id="org2fb2f7a">
 <img src="./img/2.7.2.png" alt="2.7.2.png">
 
 </figure></li>
@@ -283,7 +261,7 @@ Google es malvado
 </p>
 
 
-<figure id="org07eb451">
+<figure id="orgd2cd6bb">
 <img src="./img/2.7.3.png" alt="2.7.3.png">
 
 </figure></li>
@@ -299,7 +277,7 @@ dispositivo de la red de mi casa, en este caso mi movil.
 </p>
 
 
-<figure id="org9dbefb6">
+<figure id="org7ec4974">
 <img src="./img/2.7.4.png" alt="2.7.4.png">
 
 </figure>
@@ -318,7 +296,7 @@ de comandos con el comando ipconfig /all
 </p>
 
 
-<figure id="org46873bb">
+<figure id="orgcc34293">
 <img src="./img/2.8.1.png" alt="2.8.1.png">
 
 </figure></li>
@@ -340,7 +318,7 @@ Comprueba que funciona un PING a www.google.es
 </p>
 
 
-<figure id="orgd852295">
+<figure id="org5fa6ad5">
 <img src="./img/2.8.2.png" alt="2.8.2.png">
 
 </figure>
@@ -356,7 +334,7 @@ aula
 </p>
 
 
-<figure id="org4b0017f">
+<figure id="orgfad2af2">
 <img src="./img/2.8.3.png" alt="2.8.3.png">
 
 </figure>
@@ -392,7 +370,7 @@ configuracion de la red:
 </p>
 
 
-<figure id="orgd251df7">
+<figure id="org008208d">
 <img src="./img/2.9.1.png" alt="2.9.1.png">
 
 </figure></li>
@@ -402,7 +380,7 @@ Comprueba que funciona un PING a www.google.es
 </p>
 
 
-<figure id="org7e21eab">
+<figure id="org8c079f7">
 <img src="./img/2.9.2.png" alt="2.9.2.png">
 
 </figure></li>
@@ -413,7 +391,7 @@ aula
 </p>
 
 
-<figure id="org1999b96">
+<figure id="org670c8f6">
 <img src="./img/2.9.3.png" alt="2.9.3.png">
 
 </figure>
@@ -456,7 +434,7 @@ Pinchamos en Machine y dentro Take Snapshot.
 </p>
 
 
-<figure id="orge3791a5">
+<figure id="org1916542">
 <img src="./img/2.12.1.png" alt="2.12.1.png">
 
 </figure>
@@ -466,7 +444,7 @@ Le damos un nombre y descricion y aceptamos.
 </p>
 
 
-<figure id="org9d55510">
+<figure id="org2a7e971">
 <img src="./img/2.12.2.png" alt="2.12.2.png">
 
 </figure></li>
@@ -480,19 +458,19 @@ Voy a cambiar el nombre del equipo
 </p>
 
 
-<figure id="org617a401">
+<figure id="orgde7579f">
 <img src="./img/2.13.1.png" alt="2.13.1.png">
 
 </figure>
 
 
-<figure id="org98376e2">
+<figure id="org33e182f">
 <img src="./img/2.13.2.png" alt="2.13.2.png">
 
 </figure>
 
 
-<figure id="org05c8ef7">
+<figure id="orgfbfb54a">
 <img src="./img/2.13.3.png" alt="2.13.3.png">
 
 </figure></li>
@@ -506,7 +484,7 @@ Nos vamos a la vista de snapshots
 </p>
 
 
-<figure id="orgf32f6fe">
+<figure id="org1fd2178">
 <img src="./img/2.14.1.png" alt="2.14.1.png">
 
 </figure>
@@ -518,7 +496,7 @@ normalidad.
 </p>
 
 
-<figure id="orgf8043a7">
+<figure id="org1a96f9c">
 <img src="./img/2.14.2.png" alt="2.14.2.png">
 
 </figure></li>
@@ -528,7 +506,7 @@ normalidad.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-11 Fri 10:40</p>
+<p class="date">Created: 2022-02-16 Wed 16:42</p>
 </div>
 </body>
 </html>

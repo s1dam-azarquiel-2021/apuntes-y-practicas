@@ -1,66 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-11 Fri 10:40 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 2022-02-16 Wed 16:42 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>BDD - Practicas</title>
-<meta name="generator" content="Org mode">
-<meta name="author" content="Alberto Robles Gomez">
+<meta name="author" content="Alberto Robles Gomez" />
+<meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="../../css/index.css" />
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <header>
 <h1 class="title">BDD - Practicas</h1>
-</header><div id="outline-container-org3ee3a32" class="outline-2">
-<h2 id="org3ee3a32">Contenido</h2>
-<div class="outline-text-2" id="text-org3ee3a32">
+</header><div id="outline-container-org5e845f0" class="outline-2">
+<h2 id="org5e845f0">Contenido</h2>
+<div class="outline-text-2" id="text-org5e845f0">
 </div>
-<div id="outline-container-orgf4c88b1" class="outline-3">
-<h3 id="orgf4c88b1">Modelo ER</h3>
-<div class="outline-text-3" id="text-orgf4c88b1">
+<div id="outline-container-orgef54a4e" class="outline-3">
+<h3 id="orgef54a4e">Modelo ER</h3>
+<div class="outline-text-3" id="text-orgef54a4e">
 </div>
-<div id="outline-container-orgd7884fd" class="outline-4">
-<h4 id="orgd7884fd"><a href="./modelo-er/Bomberos.png">Bomberos</a></h4>
+<div id="outline-container-org5ccece1" class="outline-4">
+<h4 id="org5ccece1"><a href="./modelo-er/Bomberos.png">Bomberos</a></h4>
 </div>
-<div id="outline-container-org63190ef" class="outline-4">
-<h4 id="org63190ef"><a href="./modelo-er/Copas.png">Copas</a></h4>
+<div id="outline-container-org1fdb010" class="outline-4">
+<h4 id="org1fdb010"><a href="./modelo-er/Copas.png">Copas</a></h4>
 </div>
-<div id="outline-container-org7018036" class="outline-4">
-<h4 id="org7018036"><a href="./modelo-er/Oscar.png">Oscar</a></h4>
+<div id="outline-container-org2f0d3e9" class="outline-4">
+<h4 id="org2f0d3e9"><a href="./modelo-er/Oscar.png">Oscar</a></h4>
 </div>
-<div id="outline-container-org3f15252" class="outline-4">
-<h4 id="org3f15252"><a href="./modelo-er/Viaje.png">Viaje</a></h4>
+<div id="outline-container-org7901ca2" class="outline-4">
+<h4 id="org7901ca2"><a href="./modelo-er/Viaje.png">Viaje</a></h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-11 Fri 10:40</p>
+<p class="date">Created: 2022-02-16 Wed 16:42</p>
 </div>
 </body>
 </html>

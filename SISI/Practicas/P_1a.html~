@@ -1,52 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-11 Fri 10:40 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 2022-02-16 Wed 16:42 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 1A</title>
-<meta name="generator" content="Org mode">
-<meta name="author" content="Alberto Robles Gomez">
+<meta name="author" content="Alberto Robles Gomez" />
+<meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="../../css/index.css" />
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <header>
 <h1 class="title">Practica 1A</h1>
-</header><nav id="table-of-contents">
+</header><nav id="table-of-contents" role="doc-toc">
 <h2>&Iacute;ndice</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org14cfdd4">Ordenador A</a></li>
-<li><a href="#orgab7cfa3">Ordenador B</a></li>
+<li><a href="#orgdc4ce97">Ordenador A</a></li>
+<li><a href="#org6b8cff6">Ordenador B</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org14cfdd4" class="outline-2">
-<h2 id="org14cfdd4">Ordenador A</h2>
-<div class="outline-text-2" id="text-org14cfdd4">
+<div id="outline-container-orgdc4ce97" class="outline-2">
+<h2 id="orgdc4ce97">Ordenador A</h2>
+<div class="outline-text-2" id="text-orgdc4ce97">
 <p>
 Proposito: general
 </p>
@@ -55,7 +33,7 @@ Proposito: general
 Presupuesto: 1000 euros
 </p>
 
-<table id="org197ab09">
+<table id="org81d89b5">
 
 
 <colgroup>
@@ -561,9 +539,9 @@ Presupuesto: 1000 euros
 </div>
 </div>
 
-<div id="outline-container-orgab7cfa3" class="outline-2">
-<h2 id="orgab7cfa3">Ordenador B</h2>
-<div class="outline-text-2" id="text-orgab7cfa3">
+<div id="outline-container-org6b8cff6" class="outline-2">
+<h2 id="org6b8cff6">Ordenador B</h2>
+<div class="outline-text-2" id="text-org6b8cff6">
 <p>
 Proposito: servidor de CI (build server) / servidor de compilacion (de
 cache binaria para software / kernel por ejemplo)
@@ -573,7 +551,7 @@ cache binaria para software / kernel por ejemplo)
 Presupuesto: <del>1700</del> 3700 euros
 </p>
 
-<table id="org48e98a9">
+<table id="orgfefd38f">
 
 
 <colgroup>
@@ -1079,7 +1057,7 @@ Presupuesto: <del>1700</del> 3700 euros
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-11 Fri 10:40</p>
+<p class="date">Created: 2022-02-16 Wed 16:42</p>
 </div>
 </body>
 </html>

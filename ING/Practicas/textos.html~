@@ -1,53 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-11 Fri 10:40 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 2022-02-16 Wed 16:42 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Textos</title>
-<meta name="generator" content="Org mode">
-<meta name="author" content="Alberto Robles Gomez">
+<meta name="author" content="Alberto Robles Gomez" />
+<meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="../../css/index.css" />
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <header>
 <h1 class="title">Textos</h1>
-</header><nav id="table-of-contents">
+</header><nav id="table-of-contents" role="doc-toc">
 <h2>&Iacute;ndice</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org311503f">Texto 1</a></li>
-<li><a href="#org3c9fc97">Texto 2</a></li>
-<li><a href="#orgf47664d">Texto 3</a></li>
+<li><a href="#orgd6914e8">Texto 1</a></li>
+<li><a href="#org81910fe">Texto 2</a></li>
+<li><a href="#org67bbcb6">Texto 3</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org311503f" class="outline-2">
-<h2 id="org311503f">Texto 1</h2>
-<div class="outline-text-2" id="text-org311503f">
+<div id="outline-container-orgd6914e8" class="outline-2">
+<h2 id="orgd6914e8">Texto 1</h2>
+<div class="outline-text-2" id="text-orgd6914e8">
 <p>
 The ability of tiny computing devices to control complex operations
 has transformed the way many tasks are performed, ranging from
@@ -258,9 +236,9 @@ reveal ……… unknown manuscript.
 </div>
 </div>
 
-<div id="outline-container-org3c9fc97" class="outline-2">
-<h2 id="org3c9fc97">Texto 2</h2>
-<div class="outline-text-2" id="text-org3c9fc97">
+<div id="outline-container-org81910fe" class="outline-2">
+<h2 id="org81910fe">Texto 2</h2>
+<div class="outline-text-2" id="text-org81910fe">
 <p>
 Multimedia systems are known for their educational and entertainment
 value, which we call ‘edutainment’. Multimedia combines text with
@@ -475,9 +453,9 @@ refer to?
 </div>
 </div>
 
-<div id="outline-container-orgf47664d" class="outline-2">
-<h2 id="orgf47664d">Texto 3</h2>
-<div class="outline-text-2" id="text-orgf47664d">
+<div id="outline-container-org67bbcb6" class="outline-2">
+<h2 id="org67bbcb6">Texto 3</h2>
+<div class="outline-text-2" id="text-org67bbcb6">
 <p>
 According to new research, learning a second language can slow
 cognitive ageing, that is, the speed at which the mental activity of
@@ -678,7 +656,7 @@ later in your life, is beneficial against brain ageing.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-11 Fri 10:40</p>
+<p class="date">Created: 2022-02-16 Wed 16:42</p>
 </div>
 </body>
 </html>
