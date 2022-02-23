@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-23 Wed 17:11 -->
+<!-- 2022-02-23 Wed 17:14 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notas y practicas - aru</title>
@@ -17,18 +17,18 @@
 <a href="https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/generate-web.yml"><img src="https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/generate-web.yml/badge.svg?branch=main&amp;event=push" alt="badge.svg?branch=main&amp;event=push"></a>
 <a href="https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/pages/pages-build-deployment/badge.svg?branch=generated" alt="badge.svg?branch=generated"></a>
 </p>
-<div id="outline-container-org2ce519a" class="outline-2">
-<h2 id="org2ce519a">Ver en la web</h2>
-<div class="outline-text-2" id="text-org2ce519a">
+<div id="outline-container-org5f9f26e" class="outline-2">
+<h2 id="org5f9f26e">Ver en la web</h2>
+<div class="outline-text-2" id="text-org5f9f26e">
 <p>
 Puedes ver el contenido en html + css usando tu navegador <a href="https://s1dam-azarquiel-2021.github.io/aru-notas-practicas/">aqui</a>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1660b31" class="outline-2">
-<h2 id="org1660b31">Ver en GitHub</h2>
-<div class="outline-text-2" id="text-org1660b31">
+<div id="outline-container-orgfdf855f" class="outline-2">
+<h2 id="orgfdf855f">Ver en GitHub</h2>
+<div class="outline-text-2" id="text-orgfdf855f">
 <p>
 Tambien puedes leerlo desde este mismo repo, sin acceder a la web,
 <a href="https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/blob/main/index.org">aqui</a>.
@@ -38,7 +38,7 @@ Tambien puedes leerlo desde este mismo repo, sin acceder a la web,
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-23 Wed 17:11</p>
+<p class="date">Created: 2022-02-23 Wed 17:14</p>
 </div>
 </body>
 </html>
