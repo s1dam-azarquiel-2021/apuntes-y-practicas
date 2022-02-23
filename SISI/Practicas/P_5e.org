@@ -94,3 +94,38 @@
 
    [[ $((n1 % n2)) -eq 0 ]] && echo "Es divisible" || echo "No es divisible"
    #+end_src
+
+6. Escribe un script comprime.sh que nos guarde una copia de seguridad
+   de un directorio dado en un fichero dado. Los parámetros los
+   podremos pasar por línea de comando o bien solicitar al usuario. El
+   comando utilizará el programa tar, con las opción de compresión. El
+   script comprobará que el número de parámetros pasados es el
+   correcto y que el directorio existe. Si no se pasan parámetros el
+   programa entrará en modo interactivo, solicitando los parámetros al
+   usuario. El script irá guardando en un fichero copias_seguridad.txt
+   el nombre de los ficheros comprimidos, de qué carpetas son y en qué
+   fecha se hizo.
+   #+begin_src shell :tangle P_5e-scripts/comprime.sh :shebang "#!/bin/bash"
+   # comprime.sh
+   [[ $# -gt 2 ]] && echo "Maximo 2 parametros" && exit 1
+
+   n1=$1
+   n2=$2
+
+   if [ $# -lt 1 ]
+   then
+   echo -n "Directorio a comprimir: "
+   read n1
+   fi
+
+   if [ $# -lt 2 ]
+   then
+   n2="copia.tar"
+   fi
+
+   tar cf $n2 $n1
+
+   echo -e "Copia de: $(realpath $n1)\nEn: $(realpath $n2)\nA las: $(date)\n" \
+        >> $HOME/copias_seguridad.txt
+   #+end_src
+   #+end_src
