@@ -8,3 +8,5 @@
 *** [[./modelo-er/Copas.png][Copas]]
 *** [[./modelo-er/Oscar.png][Oscar]]
 *** [[./modelo-er/Viaje.png][Viaje]]
+** [[file:./ej3-consultas.org][Ejercicio 3 - Consultas]]
+** [[file:./ej5-create-table.org][Ejercicio 5 - Create table]]
