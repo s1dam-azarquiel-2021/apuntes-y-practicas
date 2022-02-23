@@ -1198,11 +1198,11 @@
      #+begin_src sql
      SELECT nombre
      FROM   clientes
-     WHERE  c_cliente IN (
+     WHERE  c_cliente NOT IN (
               SELECT   c_cliente
               FROM     ventas
               GROUP BY c_cliente
-              HAVING   SUM(importe) < 5
+              HAVING   SUM(importe) >= 5
             );
      #+end_src
 
