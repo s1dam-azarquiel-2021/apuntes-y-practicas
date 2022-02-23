@@ -1205,3 +1205,42 @@
               HAVING   SUM(importe) < 5
             );
      #+end_src
+
+125. Actualizar el campo deuda de CLIENTE sabiendo que todos los
+     clientes han pagado todo menos la ultima compra que hicieron.
+     #+begin_src sql
+     UPDATE clientes c
+     SET    deuda = NVL((
+              SELECT importe
+              FROM   ventas
+              WHERE  c_cliente = c.c_cliente
+                AND  fecha = (
+                       SELECT MAX(fecha)
+                       FROM   ventas
+                       WHERE  c_cliente = c.c_cliente
+                     )
+            ), 0);
+     #+end_src
+
+126. Cual fue el año que mas articulos vendimos.
+     #+begin_src sql
+     SELECT   SUBSTR(fecha, 7, 2)
+     FROM     ventas
+     GROUP BY SUBSTR(fecha, 7, 2)
+     HAVING   SUM(importe) = (
+                SELECT   MAX(SUM(importe))
+                FROM     ventas
+                GROUP BY SUBSTR(fecha, 7, 2)
+     );
+     #+end_src
+
+127. Actualizar correctamente el campo IMPORTE DE VENTAS teniendo en
+     cuenta la CANTIDAD y el PRECIO.
+     #+begin_src sql
+     UPDATE ventas v
+     SET    importe = cantidad * (
+              SELECT precio
+              FROM   articulo
+              WHERE  c_art = v.c_art
+            );
+     #+end_src
