@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-22 Tue 15:56 -->
+<!-- 2022-02-23 Wed 17:11 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 5A</title>
@@ -122,11 +122,86 @@ parámetros al usuario. La forma de uso será.
 [[ $((n1 % n2)) -eq 0 ]] &amp;&amp; <span class="org-builtin">echo</span> <span class="org-string">"Es divisible"</span> || <span class="org-builtin">echo</span> <span class="org-string">"No es divisible"</span>
 </pre>
 </div></li>
+
+<li><p>
+Escribe un script comprime.sh que nos guarde una copia de seguridad
+de un directorio dado en un fichero dado. Los parámetros los
+podremos pasar por línea de comando o bien solicitar al usuario. El
+comando utilizará el programa tar, con las opción de compresión. El
+script comprobará que el número de parámetros pasados es el
+correcto y que el directorio existe. Si no se pasan parámetros el
+programa entrará en modo interactivo, solicitando los parámetros al
+usuario. El script irá guardando en un fichero copias<sub>seguridad.txt</sub>
+el nombre de los ficheros comprimidos, de qué carpetas son y en qué
+fecha se hizo.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span class="org-comment-delimiter"># </span><span class="org-comment">comprime.sh</span>
+[[ $<span class="org-variable-name">#</span> -gt 2 ]] &amp;&amp; <span class="org-builtin">echo</span> <span class="org-string">"Maximo 2 parametros"</span> &amp;&amp; <span class="org-keyword">exit</span> 1
+
+<span class="org-variable-name">n1</span>=$<span class="org-variable-name">1</span>
+<span class="org-variable-name">n2</span>=$<span class="org-variable-name">2</span>
+
+<span class="org-keyword">if</span> [ $<span class="org-variable-name">#</span> -lt 1 ]
+<span class="org-keyword">then</span>
+<span class="org-builtin">echo</span> -n <span class="org-string">"Directorio a comprimir: "</span>
+<span class="org-builtin">read</span> n1
+<span class="org-keyword">fi</span>
+
+<span class="org-keyword">if</span> [ $<span class="org-variable-name">#</span> -lt 2 ]
+<span class="org-keyword">then</span>
+<span class="org-variable-name">n2</span>=<span class="org-string">"copia.tar"</span>
+<span class="org-keyword">fi</span>
+
+tar cf $<span class="org-variable-name">n2</span> $<span class="org-variable-name">n1</span>
+
+<span class="org-builtin">echo</span> -e <span class="org-string">"Copia de: $(realpath $n1)\nEn: $(realpath $n2)\nA las: $(date)\n"</span> <span class="org-sh-escaped-newline">\</span>
+     &gt;&gt; $<span class="org-variable-name">HOME</span>/copias_seguridad.txt
+</pre>
+</div></li>
+
+<li><p>
+Escribe un script descomprime.sh que nos descomprima en contenido
+de un fichero .tar en un directorio dado. El comando podrá
+funcionar pasándole los parámetros por línea de comando o bien en
+modo interactivo. Si se le pasa un número erróneo de parámetros nos
+mostrará la ayuda del comando, si no se le pasan parámetros los
+solicitará en modo interactivo. El comando debe comprobar que el
+directorio existe (y es un directorio) y que el fichero .tar existe
+y es un fichero.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span class="org-comment-delimiter"># </span><span class="org-comment">descomprime.sh</span>
+[[ $<span class="org-variable-name">#</span> -gt 2 ]] &amp;&amp; <span class="org-builtin">echo</span> <span class="org-string">"Maximo 2 parametros"</span> &amp;&amp; <span class="org-keyword">exit</span> 1
+
+<span class="org-variable-name">n1</span>=$<span class="org-variable-name">1</span>
+<span class="org-variable-name">n2</span>=$<span class="org-variable-name">2</span>
+
+<span class="org-keyword">if</span> [ $<span class="org-variable-name">#</span> -lt 1 ]
+<span class="org-keyword">then</span>
+<span class="org-builtin">echo</span> -n <span class="org-string">"Fichero a descomprimir: "</span>
+<span class="org-builtin">read</span> n1
+<span class="org-keyword">fi</span>
+
+[[ -f $<span class="org-variable-name">n1</span> ]] || ( <span class="org-builtin">echo</span> <span class="org-string">"El comprimido no existe"</span> &amp;&amp; <span class="org-keyword">exit</span> 1 )
+
+<span class="org-keyword">if</span> [ $<span class="org-variable-name">#</span> -lt 2 ]
+<span class="org-keyword">then</span>
+<span class="org-variable-name">n2</span>=$(basename $<span class="org-variable-name">n1</span>)
+<span class="org-variable-name">n2</span>=<span class="org-string">"${n2%.*}"</span>
+mkdir -p $<span class="org-variable-name">n2</span>
+<span class="org-keyword">fi</span>
+
+[[ -d $<span class="org-variable-name">n2</span> ]] || ( <span class="org-builtin">echo</span> <span class="org-string">"El directorio no existe"</span> &amp;&amp; <span class="org-keyword">exit</span> 1 )
+
+tar xf $<span class="org-variable-name">n1</span> -C $<span class="org-variable-name">n2</span>
+</pre>
+</div></li>
 </ol>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-22 Tue 15:56</p>
+<p class="date">Created: 2022-02-23 Wed 17:11</p>
 </div>
 </body>
 </html>

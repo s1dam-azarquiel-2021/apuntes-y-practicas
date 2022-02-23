@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-16 Wed 16:42 -->
+<!-- 2022-02-22 Tue 15:56 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>BDD - Practicas</title>
@@ -13,32 +13,32 @@
 <div id="content" class="content">
 <header>
 <h1 class="title">BDD - Practicas</h1>
-</header><div id="outline-container-org5e845f0" class="outline-2">
-<h2 id="org5e845f0">Contenido</h2>
-<div class="outline-text-2" id="text-org5e845f0">
+</header><div id="outline-container-orgba5e9bb" class="outline-2">
+<h2 id="orgba5e9bb">Contenido</h2>
+<div class="outline-text-2" id="text-orgba5e9bb">
 </div>
-<div id="outline-container-orgef54a4e" class="outline-3">
-<h3 id="orgef54a4e">Modelo ER</h3>
-<div class="outline-text-3" id="text-orgef54a4e">
+<div id="outline-container-org727df9e" class="outline-3">
+<h3 id="org727df9e">Modelo ER</h3>
+<div class="outline-text-3" id="text-org727df9e">
 </div>
-<div id="outline-container-org5ccece1" class="outline-4">
-<h4 id="org5ccece1"><a href="./modelo-er/Bomberos.png">Bomberos</a></h4>
+<div id="outline-container-org7ff3c8e" class="outline-4">
+<h4 id="org7ff3c8e"><a href="./modelo-er/Bomberos.png">Bomberos</a></h4>
 </div>
-<div id="outline-container-org1fdb010" class="outline-4">
-<h4 id="org1fdb010"><a href="./modelo-er/Copas.png">Copas</a></h4>
+<div id="outline-container-orgdfa3bdc" class="outline-4">
+<h4 id="orgdfa3bdc"><a href="./modelo-er/Copas.png">Copas</a></h4>
 </div>
-<div id="outline-container-org2f0d3e9" class="outline-4">
-<h4 id="org2f0d3e9"><a href="./modelo-er/Oscar.png">Oscar</a></h4>
+<div id="outline-container-org309dff1" class="outline-4">
+<h4 id="org309dff1"><a href="./modelo-er/Oscar.png">Oscar</a></h4>
 </div>
-<div id="outline-container-org7901ca2" class="outline-4">
-<h4 id="org7901ca2"><a href="./modelo-er/Viaje.png">Viaje</a></h4>
+<div id="outline-container-org22144fd" class="outline-4">
+<h4 id="org22144fd"><a href="./modelo-er/Viaje.png">Viaje</a></h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-16 Wed 16:42</p>
+<p class="date">Created: 2022-02-22 Tue 15:56</p>
 </div>
 </body>
 </html>
