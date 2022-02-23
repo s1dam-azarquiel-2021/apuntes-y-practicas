@@ -128,4 +128,38 @@
    echo -e "Copia de: $(realpath $n1)\nEn: $(realpath $n2)\nA las: $(date)\n" \
         >> $HOME/copias_seguridad.txt
    #+end_src
+
+7. Escribe un script descomprime.sh que nos descomprima en contenido
+   de un fichero .tar en un directorio dado. El comando podrá
+   funcionar pasándole los parámetros por línea de comando o bien en
+   modo interactivo. Si se le pasa un número erróneo de parámetros nos
+   mostrará la ayuda del comando, si no se le pasan parámetros los
+   solicitará en modo interactivo. El comando debe comprobar que el
+   directorio existe (y es un directorio) y que el fichero .tar existe
+   y es un fichero.
+   #+begin_src shell :tangle P_5e-scripts/descomprime.sh :shebang "#!/bin/bash"
+   # descomprime.sh
+   [[ $# -gt 2 ]] && echo "Maximo 2 parametros" && exit 1
+
+   n1=$1
+   n2=$2
+
+   if [ $# -lt 1 ]
+   then
+   echo -n "Fichero a descomprimir: "
+   read n1
+   fi
+
+   [[ -f $n1 ]] || ( echo "El comprimido no existe" && exit 1 )
+
+   if [ $# -lt 2 ]
+   then
+   n2=$(basename $n1)
+   n2="${n2%.*}"
+   mkdir -p $n2
+   fi
+
+   [[ -d $n2 ]] || ( echo "El directorio no existe" && exit 1 )
+
+   tar xf $n1 -C $n2
    #+end_src
