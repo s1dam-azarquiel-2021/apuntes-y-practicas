@@ -1186,7 +1186,7 @@
               FROM     ventas
               GROUP BY c_art
               HAVING   SUM(importe) = (
-                         SELECT MAX(SUM(importe * cantidad))
+                         SELECT MAX(SUM(importe))
                          FROM   ventas
                          GROUP BY c_art
                        )
