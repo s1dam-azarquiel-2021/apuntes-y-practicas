@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-23 Wed 17:14 -->
+<!-- 2022-02-23 Wed 17:37 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 5A</title>
@@ -201,7 +201,7 @@ tar xf $<span class="org-variable-name">n1</span> -C $<span class="org-variable-
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-23 Wed 17:14</p>
+<p class="date">Created: 2022-02-23 Wed 17:37</p>
 </div>
 </body>
 </html>

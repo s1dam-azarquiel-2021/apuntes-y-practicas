@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-23 Wed 17:14 -->
+<!-- 2022-02-23 Wed 17:37 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>BDD - Practicas</title>
@@ -13,38 +13,38 @@
 <div id="content" class="content">
 <header>
 <h1 class="title">BDD - Practicas</h1>
-</header><div id="outline-container-orgceb919b" class="outline-2">
-<h2 id="orgceb919b">Contenido</h2>
-<div class="outline-text-2" id="text-orgceb919b">
+</header><div id="outline-container-org7da1923" class="outline-2">
+<h2 id="org7da1923">Contenido</h2>
+<div class="outline-text-2" id="text-org7da1923">
 </div>
-<div id="outline-container-org696e744" class="outline-3">
-<h3 id="org696e744">Modelo ER</h3>
-<div class="outline-text-3" id="text-org696e744">
+<div id="outline-container-org09797a1" class="outline-3">
+<h3 id="org09797a1">Modelo ER</h3>
+<div class="outline-text-3" id="text-org09797a1">
 </div>
-<div id="outline-container-org819df63" class="outline-4">
-<h4 id="org819df63"><a href="./modelo-er/Bomberos.png">Bomberos</a></h4>
+<div id="outline-container-org3160ab7" class="outline-4">
+<h4 id="org3160ab7"><a href="./modelo-er/Bomberos.png">Bomberos</a></h4>
 </div>
-<div id="outline-container-orga038b4b" class="outline-4">
-<h4 id="orga038b4b"><a href="./modelo-er/Copas.png">Copas</a></h4>
+<div id="outline-container-orgd5def9a" class="outline-4">
+<h4 id="orgd5def9a"><a href="./modelo-er/Copas.png">Copas</a></h4>
 </div>
-<div id="outline-container-orgf3707a5" class="outline-4">
-<h4 id="orgf3707a5"><a href="./modelo-er/Oscar.png">Oscar</a></h4>
+<div id="outline-container-org245dcb4" class="outline-4">
+<h4 id="org245dcb4"><a href="./modelo-er/Oscar.png">Oscar</a></h4>
 </div>
-<div id="outline-container-orgf213ed4" class="outline-4">
-<h4 id="orgf213ed4"><a href="./modelo-er/Viaje.png">Viaje</a></h4>
+<div id="outline-container-orgf0fc18f" class="outline-4">
+<h4 id="orgf0fc18f"><a href="./modelo-er/Viaje.png">Viaje</a></h4>
 </div>
 </div>
-<div id="outline-container-orgda59f5f" class="outline-3">
-<h3 id="orgda59f5f">[[<a href="./ej3-consultas.html">./ej3-consultas.html</a>][Ejercicio 3 - Consultas]</h3>
+<div id="outline-container-org3cddf07" class="outline-3">
+<h3 id="org3cddf07"><a href="./ej3-consultas.html">Ejercicio 3 - Consultas</a></h3>
 </div>
-<div id="outline-container-org6e3049e" class="outline-3">
-<h3 id="org6e3049e"><a href="./ej5-create-table.html">Ejercicio 5 - Create table</a></h3>
+<div id="outline-container-orgb38b00a" class="outline-3">
+<h3 id="orgb38b00a"><a href="./ej5-create-table.html">Ejercicio 5 - Create table</a></h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-23 Wed 17:14</p>
+<p class="date">Created: 2022-02-23 Wed 17:37</p>
 </div>
 </body>
 </html>
