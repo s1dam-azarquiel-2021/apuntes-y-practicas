@@ -1244,3 +1244,48 @@
               WHERE  c_art = v.c_art
             );
      #+end_src
+
+128. Listado con los nombres de los clientes junto con las fechas en
+     las que ha comprado.
+     #+begin_src sql
+     SELECT   (
+                SELECT nombre
+                FROM   clientes
+                WHERE  c_cliente = v.c_cliente
+              ), fecha
+     FROM     ventas v
+     ORDER BY 1, 2
+     #+end_src
+
+129. De que provincia proceden la mayoria de los productos que
+     tenemos?
+     #+begin_src sql
+     SELECT provincia
+     FROM   proveedor
+     WHERE  c_provee IN (
+              SELECT   c_provee
+              FROM     articulo
+              GROUP BY c_provee
+              HAVING   SUM(stock) = (
+                         SELECT   MAX(SUM(stock))
+                         FROM     articulo
+                         GROUP BY c_provee
+                       )
+            );
+     #+end_src
+
+130. Si de cada articulo ganamos un 30% de su precio, cuanto hemos
+     ganado con los articulos de Madrid.
+     #+begin_src sql
+     SELECT SUM(importe) * 0.3 "Beneficio"
+     FROM   ventas
+     WHERE  c_art IN (
+              SELECT c_art
+              FROM   articulo
+              WHERE  c_provee IN (
+                       SELECT c_provee
+                       FROM   proveedor
+                       WHERE  provincia = 'MADRID'
+                     )
+            );
+     #+end_src
