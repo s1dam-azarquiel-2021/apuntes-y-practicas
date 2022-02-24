@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-24 Thu 17:42 -->
+<!-- 2022-02-24 Thu 17:33 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ejercicio 6 Consultas</title>
@@ -13,11 +13,7 @@
 <div id="content" class="content">
 <header>
 <h1 class="title">Ejercicio 6 Consultas</h1>
-</header><ol class="org-ol">
-<li><p>
-Crear tabla ofertas
-</p>
-<div class="org-src-container">
+</header><div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">TABLE</span> <span class="org-function-name">ofertas</span> (
   c_oferta <span class="org-keyword">NUMBER</span>(3) <span class="org-keyword">NOT</span> <span class="org-keyword">NULL</span>,
   f_oferta <span class="org-type">DATE</span>,
@@ -30,14 +26,8 @@ Crear tabla ofertas
   <span class="org-keyword">CONSTRAINT</span> fk_oferta_art <span class="org-keyword">FOREIGN</span> <span class="org-keyword">KEY</span>(c_art) <span class="org-keyword">references</span> articulo(c_art),
   <span class="org-keyword">CONSTRAINT</span> activa_sn <span class="org-keyword">check</span>(activa <span class="org-keyword">in</span>(<span class="org-string">'S'</span>,<span class="org-string">'N'</span>))
 );
-</pre>
-</div></li>
 
-<li><p>
-Insertar ofertas
-</p>
-<div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> ofertas
+<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> ofertas
 <span class="org-keyword">SELECT</span>   c_art, sysdate + 2, c_art, precio / 2, sysdate + 9, precio, <span class="org-string">'S'</span>
 <span class="org-keyword">FROM</span>     articulo
 <span class="org-keyword">WHERE</span>    c_art <span class="org-keyword">NOT</span> <span class="org-keyword">IN</span> (
@@ -45,14 +35,8 @@ Insertar ofertas
            <span class="org-keyword">FROM</span>   ventas
            <span class="org-keyword">WHERE</span>  fecha &gt; <span class="org-string">'01/08/16'</span>
          );
-</pre>
-</div></li>
 
-<li><p>
-Aplicar precios ofertas
-</p>
-<div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">UPDATE</span> articulo a
+<span class="org-keyword">UPDATE</span> articulo a
 <span class="org-keyword">SET</span>    precio = (
          <span class="org-keyword">SELECT</span> precio_o
          <span class="org-keyword">FROM</span>   ofertas
@@ -63,14 +47,8 @@ Aplicar precios ofertas
          <span class="org-keyword">FROM</span>   ofertas
          <span class="org-keyword">WHERE</span>  activa = <span class="org-string">'S'</span>
        );
-</pre>
-</div></li>
 
-<li><p>
-Aplicar precios normales a ofertas acabadas
-</p>
-<div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">UPDATE</span> ofertas o
+<span class="org-keyword">UPDATE</span> ofertas o
 <span class="org-keyword">SET</span>    activa = <span class="org-string">'N'</span>
 <span class="org-keyword">WHERE</span>  f_fin &lt; sysdate;
 
@@ -86,12 +64,11 @@ Aplicar precios normales a ofertas acabadas
          <span class="org-keyword">WHERE</span>  activa = <span class="org-string">'N'</span>
        );
 </pre>
-</div></li>
-</ol>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-24 Thu 17:42</p>
+<p class="date">Created: 2022-02-24 Thu 17:33</p>
 </div>
 </body>
 </html>
