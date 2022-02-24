@@ -1,54 +1,64 @@
 #+TITLE: Ejercicio 6 Consultas
 #+SETUPFILE: ../../template.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
-#+begin_src sql
-CREATE TABLE ofertas (
-  c_oferta NUMBER(3) NOT NULL,
-  f_oferta DATE,
-  c_art NUMBER(3),
-  precio_o NUMBER(5,1),
-  f_fin DATE,
-  precio NUMBER(4),
-  activa CHAR(1),
-  CONSTRAINT pk_oferta PRIMARY KEY(c_oferta),
-  CONSTRAINT fk_oferta_art FOREIGN KEY(c_art) references articulo(c_art),
-  CONSTRAINT activa_sn check(activa in('S','N'))
-);
+1. Crear tabla ofertas
+   #+begin_src sql
+   CREATE TABLE ofertas (
+     c_oferta NUMBER(3) NOT NULL,
+     f_oferta DATE,
+     c_art NUMBER(3),
+     precio_o NUMBER(5,1),
+     f_fin DATE,
+     precio NUMBER(4),
+     activa CHAR(1),
+     CONSTRAINT pk_oferta PRIMARY KEY(c_oferta),
+     CONSTRAINT fk_oferta_art FOREIGN KEY(c_art) references articulo(c_art),
+     CONSTRAINT activa_sn check(activa in('S','N'))
+   );
+   #+end_src
 
-INSERT INTO ofertas
-SELECT   c_art, sysdate + 2, c_art, precio / 2, sysdate + 9, precio, 'S'
-FROM     articulo
-WHERE    c_art NOT IN (
-           SELECT c_art
-           FROM   ventas
-           WHERE  fecha > '01/08/16'
-         );
+2. Insertar ofertas
+   #+begin_src sql
+   INSERT INTO ofertas
+   SELECT   c_art, sysdate + 2, c_art, precio / 2, sysdate + 9, precio, 'S'
+   FROM     articulo
+   WHERE    c_art NOT IN (
+              SELECT c_art
+              FROM   ventas
+              WHERE  fecha > '01/08/16'
+            );
+   #+end_src
+   
+3. Aplicar precios ofertas
+   #+begin_src sql
+   UPDATE articulo a
+   SET    precio = (
+            SELECT precio_o
+            FROM   ofertas
+            WHERE  c_art = a.c_art
+          )
+   WHERE  c_art IN (
+            SELECT c_art
+            FROM   ofertas
+            WHERE  activa = 'S'
+          );
+   #+end_src
 
-UPDATE articulo a
-SET    precio = (
-         SELECT precio_o
-         FROM   ofertas
-         WHERE  c_art = a.c_art
-       )
-WHERE  c_art IN (
-         SELECT c_art
-         FROM   ofertas
-         WHERE  activa = 'S'
-       );
+4. Aplicar precios normales a ofertas acabadas
+   #+begin_src sql
+   UPDATE ofertas o
+   SET    activa = 'N'
+   WHERE  f_fin < sysdate;
 
-UPDATE ofertas o
-SET    activa = 'N'
-WHERE  f_fin < sysdate;
-
-UPDATE articulo a
-SET    precio = (
-         SELECT precio
-         FROM   ofertas
-         WHERE  c_art = a.c_art
-       )
-WHERE  c_art IN (
-         SELECT c_art
-         FROM   ofertas
-         WHERE  activa = 'N'
-       );
-#+end_src
+   UPDATE articulo a
+   SET    precio = (
+            SELECT precio
+            FROM   ofertas
+            WHERE  c_art = a.c_art
+          )
+   WHERE  c_art IN (
+            SELECT c_art
+            FROM   ofertas
+            WHERE  activa = 'N'
+          );
+    #+end_src
