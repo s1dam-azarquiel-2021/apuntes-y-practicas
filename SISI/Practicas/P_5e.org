@@ -1,10 +1,11 @@
 #+TITLE: Practica 5A
 #+SETUPFILE: ../../template.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+* Scripts iniciales I
 1. Crea un script parametros.sh que nos diga el número de parámetros
    pasados por línea de comando y que nos muestre por pantalla dichos
    comandos.
-   #+begin_src shell :tangle P_5e-scripts/parametros.sh :shebang "#!/bin/bash"
+   #+begin_src shell :tangle P_5e-scripts/parametros.sh :shebang "#!/bin/sh"
    # parametros.sh
    echo "Numero de parametros:" $#
    echo $@
@@ -18,7 +19,7 @@
 
 2. Crea un script suma.sh al cual le pasemos dos números por línea de
    comando y nos los sume.
-   #+begin_src shell :tangle P_5e-scripts/suma.sh :shebang "#!/bin/bash"
+   #+begin_src shell :tangle P_5e-scripts/suma.sh :shebang "#!/bin/sh"
    # suma.sh
    echo "Suma:" $(($1 + $2))
    #+end_src
@@ -28,7 +29,7 @@
    pasamos un solo parámetro nos solicitará el otro número a sumar. Si
    le pasamos más de dos parámetros nos dirá que el uso es incorrecto
    y nos mostrará la ayuda del comando.
-   #+begin_src shell :tangle P_5e-scripts/suma_v2.sh :shebang "#!/bin/bash"
+   #+begin_src shell :tangle P_5e-scripts/suma_v2.sh :shebang "#!/bin/sh"
    # suma_v2.sh
    n1=$1
    n2=$2
@@ -56,7 +57,7 @@
 4. Crea un script sumaparametros.sh que nos sume todos los parámetros
    pasados por línea de comando y nos muestre el resultado. Si no se
    pasa ningún parámetro nos mostrará una ayuda de cómo usarlo.
-   #+begin_src shell :tangle P_5e-scripts/sumaparametros.sh :shebang "#!/bin/bash"
+   #+begin_src shell :tangle P_5e-scripts/sumaparametros.sh :shebang "#!/bin/sh"
    # sumaparametros.sh
    [[ $# -eq 0 ]] && echo "Tienes que meter al menos 1 numero." && exit 1
 
@@ -73,7 +74,7 @@
    divisible por otro número. Para ello el script puede aceptar
    parámetros de entrada por línea de comando o solicitar dichos
    parámetros al usuario. La forma de uso será.
-   #+begin_src shell :tangle P_5e-scripts/divisible.sh :shebang "#!/bin/bash"
+   #+begin_src shell :tangle P_5e-scripts/divisible.sh :shebang "#!/bin/sh"
    # divisible.sh
    [[ $# -gt 2 ]] && echo "Puedes pasar como maximo 2 numeros." && exit 1
 
@@ -105,7 +106,7 @@
    usuario. El script irá guardando en un fichero copias_seguridad.txt
    el nombre de los ficheros comprimidos, de qué carpetas son y en qué
    fecha se hizo.
-   #+begin_src shell :tangle P_5e-scripts/comprime.sh :shebang "#!/bin/bash"
+   #+begin_src shell :tangle P_5e-scripts/comprime.sh :shebang "#!/bin/sh"
    # comprime.sh
    [[ $# -gt 2 ]] && echo "Maximo 2 parametros" && exit 1
 
@@ -125,7 +126,7 @@
 
    tar cf $n2 $n1
 
-   echo -e "Copia de: $(realpath $n1)\nEn: $(realpath $n2)\nA las: $(date)\n" \
+   echo -e "Copia de:" $(realpath $n1) "\nEn:" $(realpath $n2) "\nA las:" $(date) "\n" \
         >> $HOME/copias_seguridad.txt
    #+end_src
 
@@ -137,7 +138,7 @@
    solicitará en modo interactivo. El comando debe comprobar que el
    directorio existe (y es un directorio) y que el fichero .tar existe
    y es un fichero.
-   #+begin_src shell :tangle P_5e-scripts/descomprime.sh :shebang "#!/bin/bash"
+   #+begin_src shell :tangle P_5e-scripts/descomprime.sh :shebang "#!/bin/sh"
    # descomprime.sh
    [[ $# -gt 2 ]] && echo "Maximo 2 parametros" && exit 1
 
