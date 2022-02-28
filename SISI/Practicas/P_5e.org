@@ -164,3 +164,25 @@
 
    tar xf $n1 -C $n2
    #+end_src
+
+* Scripts Iniciales II
+1. Crear un script llamado borrar que se use asi: ~./borrar.sh
+   <fichero>~. Cuyo funcionamiento sea que mueva el fichero a la papelera de
+   reciclaje. La papelera de reciclaje tiene que estar en el
+   directorio home del usuario que ejecuta el script, y si no existe
+   la tiene que crear. Si se le pasa un número de argumentos distinto
+   de 1 saldrá un mensaje de error y dirá cómo hay que usar el
+   comando. El comando tiene que comprobar que el fichero existe antes
+   de moverlo a la papelera de reciclaje si no también mostrará un
+   mensaje de error.
+   #+begin_src shell :tangle P_5e-scripts/borrar.sh :shebang "#!/bin/sh"
+   # borrar.sh
+   [[ $# -ne 1 ]] && ( echo "Iserta un parametro tonto" && exit 1 )
+
+   [[ -f $1 ]] || ( echo "No existe el fichero" && exit 1 )
+
+   trash="$HOME/Trash"
+   [[ -d $trash ]] || mkdir $trash
+
+   mv $1 $trash
+   #+end_src
