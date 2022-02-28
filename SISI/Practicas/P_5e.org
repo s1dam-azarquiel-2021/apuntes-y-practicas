@@ -197,3 +197,29 @@
 
    [[ $seguro -eq "s" ]] && rm -rf "$HOME/Trash" || echo "Pues no la borro"
    #+end_src
+
+3. Crea un script datos_usuario.sh que solicite un nombre de usuario
+   por línea de comando de forma interactiva y que nos muestre los
+   datos de dicho usuario extrayéndolos del fichero passwd en este
+   formato:
+   Login: pepe
+   Contraseña: x
+   UID: 1002
+   GID: 1002
+   Directorio home: /home/pepe
+   Datos del usuario: Pepe Pérez, 645363524,
+   Shell por defecto: /bin/bash
+   #+begin_src shell :tangle P_5e-scripts/datos_usuario.sh :shebang "#!/bin/sh"
+   # datos_usuario.sh
+   echo -n "Mete el nombre de un usuario: "
+   read usuario
+
+   datos=$(grep $usuario /etc/passwd)
+   echo "Login:"             $(echo $datos | cut -f1 -d:)
+   echo "Contrasenia:"       $(echo $datos | cut -f2 -d:)
+   echo "UID:"               $(echo $datos | cut -f3 -d:)
+   echo "GID:"               $(echo $datos | cut -f4 -d:)
+   echo "Datos del usuario:" $(echo $datos | cut -f5 -d:)
+   echo "Directorio home:"   $(echo $datos | cut -f6 -d:)
+   echo "Shell por defecto:" $(echo $datos | cut -f7 -d:)
+   #+end_src
