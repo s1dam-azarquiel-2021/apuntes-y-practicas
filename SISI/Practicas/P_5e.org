@@ -186,3 +186,14 @@
 
    mv $1 $trash
    #+end_src
+
+2. Crear un script llamado vacia-papelera.sh que borre definitivamente
+   todos los ficheros de nuestra papelera. El script nos preguntará
+   antes si estamos seguros.
+   #+begin_src shell :tangle P_5e-scripts/vacia-papelera.sh :shebang "#!/bin/sh"
+   # vacia-papelera.sh
+   echo -n "Estas seguro? [s/n]:"
+   read seguro
+
+   [[ $seguro -eq "s" ]] && rm -rf "$HOME/Trash" || echo "Pues no la borro"
+   #+end_src
