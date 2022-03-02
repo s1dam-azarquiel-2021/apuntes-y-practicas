@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-02 Wed 18:03 -->
+<!-- 2022-03-02 Wed 18:15 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 5E</title>
@@ -17,16 +17,16 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org788225b">Scripts iniciales I</a></li>
-<li><a href="#org8dbfac7">Scripts Iniciales II</a></li>
-<li><a href="#org0a7e2e8">Scripts Iniciales III</a></li>
-<li><a href="#org1f9d19f">Ejercicios avanzados</a></li>
+<li><a href="#org8fff955">Scripts iniciales I</a></li>
+<li><a href="#org35d8589">Scripts Iniciales II</a></li>
+<li><a href="#org5312883">Scripts Iniciales III</a></li>
+<li><a href="#org297ed44">Ejercicios avanzados</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org788225b" class="outline-2">
-<h2 id="org788225b">Scripts iniciales I</h2>
-<div class="outline-text-2" id="text-org788225b">
+<div id="outline-container-org8fff955" class="outline-2">
+<h2 id="org8fff955">Scripts iniciales I</h2>
+<div class="outline-text-2" id="text-org8fff955">
 <ol class="org-ol">
 <li><p>
 Crea un script parametros.sh que nos diga el número de parámetros
@@ -177,7 +177,10 @@ fecha se hizo.
 
 tar cf $<span class="org-variable-name">n2</span> $<span class="org-variable-name">n1</span>
 
-<span class="org-builtin">echo</span> -e <span class="org-string">"Copia de:"</span> $(realpath $<span class="org-variable-name">n1</span>) <span class="org-string">"\nEn:"</span> $(realpath $<span class="org-variable-name">n2</span>) <span class="org-string">"\nA las:"</span> $(date) <span class="org-string">"\n"</span> <span class="org-sh-escaped-newline">\</span>
+<span class="org-builtin">echo</span> -e <span class="org-sh-escaped-newline">\</span>
+     <span class="org-string">"Copia de:"</span> $(realpath $<span class="org-variable-name">n1</span>) <span class="org-sh-escaped-newline">\</span>
+     <span class="org-string">"\nEn:"</span> $(realpath $<span class="org-variable-name">n2</span>) <span class="org-sh-escaped-newline">\</span>
+     <span class="org-string">"\nA las:"</span> $(date) <span class="org-string">"\n"</span> <span class="org-sh-escaped-newline">\</span>
      &gt;&gt; $<span class="org-variable-name">HOME</span>/copias_seguridad.txt
 </pre>
 </div></li>
@@ -227,9 +230,9 @@ tar xf $<span class="org-variable-name">n1</span> -C $<span class="org-variable-
 </div>
 </div>
 
-<div id="outline-container-org8dbfac7" class="outline-2">
-<h2 id="org8dbfac7">Scripts Iniciales II</h2>
-<div class="outline-text-2" id="text-org8dbfac7">
+<div id="outline-container-org35d8589" class="outline-2">
+<h2 id="org35d8589">Scripts Iniciales II</h2>
+<div class="outline-text-2" id="text-org35d8589">
 <ol class="org-ol">
 <li><p>
 Crear un script llamado borrar que se use asi: <code>./borrar.sh
@@ -306,9 +309,9 @@ Shell por defecto: /bin/bash
 </div>
 </div>
 
-<div id="outline-container-org0a7e2e8" class="outline-2">
-<h2 id="org0a7e2e8">Scripts Iniciales III</h2>
-<div class="outline-text-2" id="text-org0a7e2e8">
+<div id="outline-container-org5312883" class="outline-2">
+<h2 id="org5312883">Scripts Iniciales III</h2>
+<div class="outline-text-2" id="text-org5312883">
 <ol class="org-ol">
 <li><p>
 Escribe un script espar.sh que nos vaya solicitando introducir un
@@ -370,9 +373,9 @@ acumulando las sucesivas búsquedas de la forma:
 </div>
 </div>
 
-<div id="outline-container-org1f9d19f" class="outline-2">
-<h2 id="org1f9d19f">Ejercicios avanzados</h2>
-<div class="outline-text-2" id="text-org1f9d19f">
+<div id="outline-container-org297ed44" class="outline-2">
+<h2 id="org297ed44">Ejercicios avanzados</h2>
+<div class="outline-text-2" id="text-org297ed44">
 <ol class="org-ol">
 <li><p>
 Muestra el nombre de todos los usuarios registrados en el sistema.
@@ -459,7 +462,7 @@ que hace el comando id, pero procesandolo nosotros a partir /etc/*.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-02 Wed 18:03</p>
+<p class="date">Created: 2022-03-02 Wed 18:15</p>
 </div>
 </body>
 </html>
