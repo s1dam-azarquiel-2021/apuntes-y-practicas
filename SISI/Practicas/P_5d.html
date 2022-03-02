@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- 2022-03-02 Wed 18:03 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Practica 5D</title>
+<meta name="author" content="Alberto Robles Gomez" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+</head>
+<body>
+<div id="content" class="content">
+<header>
+<h1 class="title">Practica 5D</h1>
+</header><ol class="org-ol">
+<li><p>
+Mostrar el fichero /etc/passwd pero eliminando la primera línea.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sed -n <span class="org-string">'1!p'</span> /etc/passwd
+</pre>
+</div></li>
+
+<li><p>
+Mostrar el fichero /etc/idmapd.conf pero eliminando todas las
+líneas de comentarios (comienzan con un #).
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sed <span class="org-string">'/^[ \t]*#/d'</span> /etc/idmapd.conf
+</pre>
+</div></li>
+
+<li><p>
+Mostrar el fichero /etc/idmpad.conf pero eliminando todos los
+espacios en blanco.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sed <span class="org-string">'s/ //g'</span> /etc/idmapd.conf
+</pre>
+</div></li>
+
+<li><p>
+Mostrar el fichero /etc/passwd pero eliminando todas las líneas
+donde aparezca el texto home.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sed <span class="org-string">'/home/d'</span> /etc/passwd
+</pre>
+</div></li>
+
+<li><p>
+Mostrar el fichero /etc/passwd pero comentando todas las líneas
+donde aparezca el texto false.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sed <span class="org-string">'s/.*false.*/# &amp;/'</span> /etc/passwd
+</pre>
+</div></li>
+
+<li><p>
+Mostrar el fichero /etc/passwd pero sustituyendo el tercer punto y
+coma por un guion.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sed <span class="org-string">'s/\(.*\;.*\;.*\)\;\(.*\)/\1-\2/g'</span> /etc/passwd
+</pre>
+</div></li>
+
+<li><p>
+Mostrar un fichero de texto por pantalla, pero solo las líneas
+donde aparezca una dirección de correo electrónico.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sed -E -n <span class="org-string">'/.*[a-zA-Z0-9._-]+@[a-zA-Z._-]+\.[a-zA-Z]{2,6}.*/p'</span> fichero
+</pre>
+</div></li>
+
+<li><p>
+Mostrar un fichero de texto por pantalla, pero solo las líneas
+donde aparezca una fecha en formato dd-mm-aaaa.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sed -E -n <span class="org-string">'/.*[0-9]{2}-[0-9]{2}-[0-9]{4}.*/p'</span> fichero
+</pre>
+</div></li>
+
+<li><p>
+Mostrar un fichero de texto por pantalla, pero modificándolo de tal
+forma que si existen varios espacios en blanco seguido se
+sustituyan por un solo espacio en blanco.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sed <span class="org-string">'s/   */ /g'</span> fichero
+</pre>
+</div></li>
+
+<li><p>
+Mostrar un fichero por pantalla, pero asegurándose de que el
+primer carácter de cada línea está en mayúsculas.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sed <span class="org-string">'s/^[ \t]*[a-z]/\U&amp;/g'</span> fichero
+</pre>
+</div></li>
+</ol>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Alberto Robles Gomez</p>
+<p class="date">Created: 2022-03-02 Wed 18:03</p>
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-02 Wed 12:08 -->
+<!-- 2022-03-02 Wed 15:09 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Consultas SQL</title>
@@ -1693,11 +1693,76 @@ ganado con los articulos de Madrid.
        );
 </pre>
 </div></li>
+
+<li><p>
+Visualizar los 5 articulos mas baratos.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> *
+<span class="org-keyword">FROM</span>   (
+         <span class="org-keyword">SELECT</span>   descrip
+         <span class="org-keyword">FROM</span>     articulo
+         <span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> precio
+       )
+<span class="org-keyword">WHERE</span>  rownum &lt;= 5;
+</pre>
+</div></li>
+
+<li><p>
+En que anio incorporamos mas clientes a nuestra empresa.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   SUBSTR(f_alta, 7, 2)
+<span class="org-keyword">FROM</span>     clientes
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> SUBSTR(f_alta, 7, 2)
+<span class="org-keyword">HAVING</span>   <span class="org-builtin">COUNT</span>(c_cliente) = (
+           <span class="org-keyword">SELECT</span> <span class="org-builtin">MAX</span>(<span class="org-builtin">COUNT</span>(c_cliente))
+           <span class="org-keyword">FROM</span>   clientes
+           <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> SUBSTR(f_alta, 7, 2)
+         );    
+</pre>
+</div></li>
+
+<li><p>
+En que anios hemos vendido mas de 4 articulos.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>   SUBSTR(fecha, 7, 2)
+<span class="org-keyword">FROM</span>     ventas
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> SUBSTR(fecha, 7, 2)
+<span class="org-keyword">HAVING</span>   <span class="org-builtin">SUM</span>(cantidad) &gt; 4
+<span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> 1
+</pre>
+</div></li>
+
+<li><p>
+Cuantos articulos de proveedores de Toledo se han vendido
+seguramente a clientes de Toledo.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SELECT</span> NVL(<span class="org-builtin">SUM</span>(cantidad), 0)
+<span class="org-keyword">FROM</span>   ventas
+<span class="org-keyword">WHERE</span>  c_art <span class="org-keyword">IN</span> (
+         <span class="org-keyword">SELECT</span> c_art
+         <span class="org-keyword">FROM</span>   articulo
+         <span class="org-keyword">WHERE</span>  c_provee <span class="org-keyword">IN</span> (
+                  <span class="org-keyword">SELECT</span> c_provee
+                  <span class="org-keyword">FROM</span>   proveedor
+                  <span class="org-keyword">WHERE</span>  provincia = <span class="org-string">'TOLEDO'</span>
+                )
+       )
+  <span class="org-keyword">AND</span>  c_cliente <span class="org-keyword">IN</span> (
+         <span class="org-keyword">SELECT</span> c_cliente
+         <span class="org-keyword">FROM</span>   clientes
+         <span class="org-keyword">WHERE</span>  telefono <span class="org-keyword">LIKE</span> <span class="org-string">'925%'</span>
+       );
+</pre>
+</div></li>
 </ol>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-02 Wed 12:08</p>
+<p class="date">Created: 2022-03-02 Wed 15:09</p>
 </div>
 </body>
 </html>
