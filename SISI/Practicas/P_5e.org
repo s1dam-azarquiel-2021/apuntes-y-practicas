@@ -325,6 +325,19 @@
    done < "/etc/passwd"
    #+end_src
 
+3. Muestra el home de cada usuario.
+   #+begin_src shell :tangle P_5e-scripts/mostrar-homes.sh :shebang "#!/bin/sh"
+   # mostrar-homes
+
+   while IFS= read -r user
+   do
+       echo $(echo $user | cut -f1 -d:)":"
+       [[ $(echo $user | cut -f6 -d:) != "/var/empty" ]] \
+           && ls -al $(echo $user | cut -f6 -d:) \
+               || echo "No home"
+   done < "/etc/passwd"
+   #+end_src
+
 4. Para cada usuario, muestra los grupos a los que pertenece (lo mismo
    que hace el comando id, pero procesandolo nosotros a partir /etc/*.
    #+begin_src shell :tangle P_5e-scripts/mostrar-grupos.sh :shebang "#!/bin/sh"
