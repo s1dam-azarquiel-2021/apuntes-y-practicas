@@ -1289,3 +1289,56 @@
                      )
             );
      #+end_src
+
+131. Visualizar los 5 articulos mas baratos.
+     #+begin_src sql
+     SELECT *
+     FROM   (
+              SELECT   descrip
+              FROM     articulo
+              ORDER BY precio
+            )
+     WHERE  rownum <= 5;
+     #+end_src
+
+132. En que anio incorporamos mas clientes a nuestra empresa.
+     #+begin_src sql
+     SELECT   SUBSTR(f_alta, 7, 2)
+     FROM     clientes
+     GROUP BY SUBSTR(f_alta, 7, 2)
+     HAVING   COUNT(c_cliente) = (
+                SELECT MAX(COUNT(c_cliente))
+                FROM   clientes
+                GROUP BY SUBSTR(f_alta, 7, 2)
+              );    
+     #+end_src
+
+133. En que anios hemos vendido mas de 4 articulos.
+     #+begin_src sql
+     SELECT   SUBSTR(fecha, 7, 2)
+     FROM     ventas
+     GROUP BY SUBSTR(fecha, 7, 2)
+     HAVING   SUM(cantidad) > 4
+     ORDER BY 1
+     #+end_src
+
+134. Cuantos articulos de proveedores de Toledo se han vendido
+     seguramente a clientes de Toledo.
+     #+begin_src sql
+     SELECT NVL(SUM(cantidad), 0)
+     FROM   ventas
+     WHERE  c_art IN (
+              SELECT c_art
+              FROM   articulo
+              WHERE  c_provee IN (
+                       SELECT c_provee
+                       FROM   proveedor
+                       WHERE  provincia = 'TOLEDO'
+                     )
+            )
+       AND  c_cliente IN (
+              SELECT c_cliente
+              FROM   clientes
+              WHERE  telefono LIKE '925%'
+            );
+     #+end_src
