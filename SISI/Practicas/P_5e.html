@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-02 Wed 10:54 -->
+<!-- 2022-03-02 Wed 11:27 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Practica 5A</title>
+<title>Practica 5E</title>
 <meta name="author" content="Alberto Robles Gomez" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="../../css/index.css" />
@@ -12,20 +12,21 @@
 <body>
 <div id="content" class="content">
 <header>
-<h1 class="title">Practica 5A</h1>
+<h1 class="title">Practica 5E</h1>
 </header><nav id="table-of-contents" role="doc-toc">
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga13e0e5">Scripts iniciales I</a></li>
-<li><a href="#org6caa20e">Scripts Iniciales II</a></li>
-<li><a href="#org185a0f2">Scripts Iniciales III</a></li>
+<li><a href="#orged35296">Scripts iniciales I</a></li>
+<li><a href="#org0609328">Scripts Iniciales II</a></li>
+<li><a href="#org472b7af">Scripts Iniciales III</a></li>
+<li><a href="#org888efec">Ejercicios avanzados</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orga13e0e5" class="outline-2">
-<h2 id="orga13e0e5">Scripts iniciales I</h2>
-<div class="outline-text-2" id="text-orga13e0e5">
+<div id="outline-container-orged35296" class="outline-2">
+<h2 id="orged35296">Scripts iniciales I</h2>
+<div class="outline-text-2" id="text-orged35296">
 <ol class="org-ol">
 <li><p>
 Crea un script parametros.sh que nos diga el número de parámetros
@@ -226,9 +227,9 @@ tar xf $<span class="org-variable-name">n1</span> -C $<span class="org-variable-
 </div>
 </div>
 
-<div id="outline-container-org6caa20e" class="outline-2">
-<h2 id="org6caa20e">Scripts Iniciales II</h2>
-<div class="outline-text-2" id="text-org6caa20e">
+<div id="outline-container-org0609328" class="outline-2">
+<h2 id="org0609328">Scripts Iniciales II</h2>
+<div class="outline-text-2" id="text-org0609328">
 <ol class="org-ol">
 <li><p>
 Crear un script llamado borrar que se use asi: <code>./borrar.sh
@@ -267,7 +268,7 @@ antes si estamos seguros.
 <span class="org-builtin">echo</span> -n <span class="org-string">"Estas seguro? [s/n]:"</span>
 <span class="org-builtin">read</span> seguro
 
-[[ $<span class="org-variable-name">seguro</span> -eq <span class="org-string">"s"</span> ]] <span class="org-sh-escaped-newline">\</span>
+[[ $<span class="org-variable-name">seguro</span> = <span class="org-string">"s"</span> ]] <span class="org-sh-escaped-newline">\</span>
     &amp;&amp; rm -rf <span class="org-string">"$HOME/Trash"</span> <span class="org-sh-escaped-newline">\</span>
         || <span class="org-builtin">echo</span> <span class="org-string">"Pues no la borro"</span>
 </pre>
@@ -305,9 +306,9 @@ Shell por defecto: /bin/bash
 </div>
 </div>
 
-<div id="outline-container-org185a0f2" class="outline-2">
-<h2 id="org185a0f2">Scripts Iniciales III</h2>
-<div class="outline-text-2" id="text-org185a0f2">
+<div id="outline-container-org472b7af" class="outline-2">
+<h2 id="org472b7af">Scripts Iniciales III</h2>
+<div class="outline-text-2" id="text-org472b7af">
 <ol class="org-ol">
 <li><p>
 Escribe un script espar.sh que nos vaya solicitando introducir un
@@ -359,7 +360,7 @@ acumulando las sucesivas búsquedas de la forma:
 
 <span class="org-keyword">for</span> file<span class="org-keyword"> in</span> $(find / -type f -name <span class="org-string">"$fname"</span> 2&gt; /dev/null)
 <span class="org-keyword">do</span>
-    [[ $(stat -c <span class="org-string">"%U"</span> $<span class="org-variable-name">file</span>) -eq $<span class="org-variable-name">user</span> ]] <span class="org-sh-escaped-newline">\</span>
+    [[ $(stat -c <span class="org-string">"%U"</span> $<span class="org-variable-name">file</span>) = $<span class="org-variable-name">user</span> ]] <span class="org-sh-escaped-newline">\</span>
         &amp;&amp; <span class="org-builtin">echo</span> $<span class="org-variable-name">file</span> <span class="org-sh-escaped-newline">\</span>
         &amp;&amp; <span class="org-builtin">echo</span> $<span class="org-variable-name">file</span> <span class="org-string">"-&gt;"</span> $<span class="org-variable-name">user</span> &gt;&gt; <span class="org-string">"$HOME/busquedas.txt"</span>
 <span class="org-keyword">done</span>
@@ -368,10 +369,41 @@ acumulando las sucesivas búsquedas de la forma:
 </ol>
 </div>
 </div>
+
+<div id="outline-container-org888efec" class="outline-2">
+<h2 id="org888efec">Ejercicios avanzados</h2>
+<div class="outline-text-2" id="text-org888efec">
+<ol class="org-ol">
+<li><p>
+Muestra el nombre de todos los usuarios registrados en el sistema.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span class="org-comment-delimiter"># </span><span class="org-comment">mostrar-usuarios</span>
+
+<span class="org-builtin">echo</span> <span class="org-string">"Usuarios del sistema: "</span>
+<span class="org-keyword">while</span> <span class="org-variable-name">IFS</span>= read -r user
+<span class="org-keyword">do</span>
+    [[ $(<span class="org-builtin">echo</span> $<span class="org-variable-name">user</span> | cut -f3 -d:) -lt 1000 <span class="org-sh-escaped-newline">\</span>
+           || $(<span class="org-builtin">echo</span> $<span class="org-variable-name">user</span> | cut -f6 -d:) = <span class="org-string">"/var/empty"</span> ]] <span class="org-sh-escaped-newline">\</span>
+        &amp;&amp; <span class="org-builtin">echo</span> $<span class="org-variable-name">user</span> | cut -f1 -d:
+<span class="org-keyword">done</span> &lt; <span class="org-string">"/etc/passwd"</span>
+
+<span class="org-builtin">echo</span> -e <span class="org-string">"\nUsuarios normales: "</span>
+<span class="org-keyword">while</span> <span class="org-variable-name">IFS</span>= read -r user
+<span class="org-keyword">do</span>
+    [[ $(<span class="org-builtin">echo</span> $<span class="org-variable-name">user</span> | cut -f3 -d:) -ge 1000 <span class="org-sh-escaped-newline">\</span>
+           &amp;&amp; $(<span class="org-builtin">echo</span> $<span class="org-variable-name">user</span> | cut -f6 -d:) <span class="org-negation-char">!</span>= <span class="org-string">"/var/empty"</span> ]] <span class="org-sh-escaped-newline">\</span>
+        &amp;&amp; <span class="org-builtin">echo</span> $<span class="org-variable-name">user</span> | cut -f1 -d:
+<span class="org-keyword">done</span> &lt; <span class="org-string">"/etc/passwd"</span>
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-02 Wed 10:54</p>
+<p class="date">Created: 2022-03-02 Wed 11:27</p>
 </div>
 </body>
 </html>
