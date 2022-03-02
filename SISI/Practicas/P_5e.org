@@ -240,3 +240,17 @@
    echo "Directorio home:"   $(echo $datos | cut -f6 -d:)
    echo "Shell por defecto:" $(echo $datos | cut -f7 -d:)
    #+end_src
+
+* Scripts Iniciales III
+1. Escribe un script espar.sh que nos vaya solicitando introducir un
+   número hasta que el número introducido sea par.
+   #+begin_src shell :tangle P_5e-scripts/espar.sh :shebang "#!/bin/sh"
+   # espar.sh
+
+   read n
+
+   while [ $((n % 2)) -ne 0 ]
+   do
+       read n
+   done
+   #+end_src
