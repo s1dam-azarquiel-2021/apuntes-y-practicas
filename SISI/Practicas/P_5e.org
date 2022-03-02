@@ -289,3 +289,25 @@
            && echo $file "->" $user >> "$HOME/busquedas.txt"
    done
    #+end_src
+
+* Ejercicios avanzados
+1. Muestra el nombre de todos los usuarios registrados en el sistema.
+   #+begin_src shell :tangle P_5e-scripts/mostrar-usuarios.sh :shebang "#!/bin/sh"
+   # mostrar-usuarios
+
+   echo "Usuarios del sistema: "
+   while IFS= read -r user
+   do
+       [[ $(echo $user | cut -f3 -d:) -lt 1000 \
+              || $(echo $user | cut -f6 -d:) = "/var/empty" ]] \
+           && echo $user | cut -f1 -d:
+   done < "/etc/passwd"
+
+   echo -e "\nUsuarios normales: "
+   while IFS= read -r user
+   do
+       [[ $(echo $user | cut -f3 -d:) -ge 1000 \
+              && $(echo $user | cut -f6 -d:) != "/var/empty" ]] \
+           && echo $user | cut -f1 -d:
+   done < "/etc/passwd"
+   #+end_src
