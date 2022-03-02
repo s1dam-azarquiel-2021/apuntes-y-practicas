@@ -324,3 +324,24 @@
                || echo "Can't login"
    done < "/etc/passwd"
    #+end_src
+
+4. Para cada usuario, muestra los grupos a los que pertenece (lo mismo
+   que hace el comando id, pero procesandolo nosotros a partir /etc/*.
+   #+begin_src shell :tangle P_5e-scripts/mostrar-grupos.sh :shebang "#!/bin/sh"
+   # mostrar-grupos
+
+   while IFS= read -r user
+   do
+       echo -n $(echo $user | cut -f1 -d:) "-> "
+       while IFS= read -r group
+       do
+           for group_user in $(echo $group | cut -f4 -d: | tr "," " ")
+           do
+               [[ $group_user = $(echo $user | cut -f1 -d:) ]] \
+                   && echo -n $(echo $group | cut -f1 -d:)" " \
+                   && break
+           done
+       done < "/etc/group"
+       echo
+   done < "/etc/passwd"
+   #+end_src
