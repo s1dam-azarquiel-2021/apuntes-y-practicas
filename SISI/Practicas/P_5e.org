@@ -13,7 +13,7 @@
 
    for parameter in $@
    do
-   echo $parameter
+       echo $parameter
    done
    #+end_src
 
@@ -36,21 +36,21 @@
 
    if [ $# -lt 1 ]
    then
-   echo -n "Introduce el primer numero: "
-   read n1
+       echo -n "Introduce el primer numero: "
+       read n1
    fi
 
    if [ $# -lt 2 ]
    then
-   echo -n "Introduce el segundo numero: "
-   read n2
+       echo -n "Introduce el segundo numero: "
+       read n2
    fi
 
    if [ $# -gt 2 ]
    then
-   echo "Solo puedes pasar 2 numeros."
+       echo "Solo puedes pasar 2 numeros."
    else
-   echo "Suma:" $(($n1 + $n2))
+       echo "Suma:" $(($n1 + $n2))
    fi
    #+end_src
 
@@ -59,12 +59,14 @@
    pasa ningún parámetro nos mostrará una ayuda de cómo usarlo.
    #+begin_src shell :tangle P_5e-scripts/sumaparametros.sh :shebang "#!/bin/sh"
    # sumaparametros.sh
-   [[ $# -eq 0 ]] && echo "Tienes que meter al menos 1 numero." && exit 1
+   [[ $# -eq 0 ]] \
+       && echo "Tienes que meter al menos 1 numero." \
+       && exit 1
 
    suma=0
    for n in $@
    do
-   suma=$(($suma + $n))
+       suma=$(($suma + $n))
    done
 
    echo "Suma:" $suma
@@ -76,24 +78,28 @@
    parámetros al usuario. La forma de uso será.
    #+begin_src shell :tangle P_5e-scripts/divisible.sh :shebang "#!/bin/sh"
    # divisible.sh
-   [[ $# -gt 2 ]] && echo "Puedes pasar como maximo 2 numeros." && exit 1
+   [[ $# -gt 2 ]] \
+       && echo "Puedes pasar como maximo 2 numeros." \
+       && exit 1
 
    n1=$1
    n2=$2
 
    if [ $# -lt 1 ]
    then
-   echo -n "Introduce el primer numero: "
-   read n1
+       echo -n "Introduce el primer numero: "
+       read n1
    fi
 
    if [ $# -lt 2 ]
    then
-   echo -n "Introduce el segundo numero: "
-   read n2
+       echo -n "Introduce el segundo numero: "
+       read n2
    fi
 
-   [[ $((n1 % n2)) -eq 0 ]] && echo "Es divisible" || echo "No es divisible"
+   [[ $((n1 % n2)) -eq 0 ]] \
+       && echo "Es divisible" \
+           || echo "No es divisible"
    #+end_src
 
 6. Escribe un script comprime.sh que nos guarde una copia de seguridad
@@ -108,20 +114,22 @@
    fecha se hizo.
    #+begin_src shell :tangle P_5e-scripts/comprime.sh :shebang "#!/bin/sh"
    # comprime.sh
-   [[ $# -gt 2 ]] && echo "Maximo 2 parametros" && exit 1
+   [[ $# -gt 2 ]] \
+       && echo "Maximo 2 parametros" \
+       && exit 1
 
    n1=$1
    n2=$2
 
    if [ $# -lt 1 ]
    then
-   echo -n "Directorio a comprimir: "
-   read n1
+       echo -n "Directorio a comprimir: "
+       read n1
    fi
 
    if [ $# -lt 2 ]
    then
-   n2="copia.tar"
+       n2="copia.tar"
    fi
 
    tar cf $n2 $n1
@@ -140,27 +148,31 @@
    y es un fichero.
    #+begin_src shell :tangle P_5e-scripts/descomprime.sh :shebang "#!/bin/sh"
    # descomprime.sh
-   [[ $# -gt 2 ]] && echo "Maximo 2 parametros" && exit 1
+   [[ $# -gt 2 ]] \
+       && echo "Maximo 2 parametros" \
+       && exit 1
 
    n1=$1
    n2=$2
 
    if [ $# -lt 1 ]
    then
-   echo -n "Fichero a descomprimir: "
-   read n1
+       echo -n "Fichero a descomprimir: "
+       read n1
    fi
 
-   [[ -f $n1 ]] || ( echo "El comprimido no existe" && exit 1 )
+   [[ -f $n1 ]] \
+       || ( echo "El comprimido no existe" && exit 1 )
 
    if [ $# -lt 2 ]
    then
-   n2=$(basename $n1)
-   n2="${n2%.*}"
-   mkdir -p $n2
+       n2=$(basename $n1)
+       n2="${n2%.*}"
+       mkdir -p $n2
    fi
 
-   [[ -d $n2 ]] || ( echo "El directorio no existe" && exit 1 )
+   [[ -d $n2 ]] \
+       || ( echo "El directorio no existe" && exit 1 )
 
    tar xf $n1 -C $n2
    #+end_src
@@ -177,12 +189,15 @@
    mensaje de error.
    #+begin_src shell :tangle P_5e-scripts/borrar.sh :shebang "#!/bin/sh"
    # borrar.sh
-   [[ $# -ne 1 ]] && ( echo "Iserta un parametro tonto" && exit 1 )
+   [[ $# -ne 1 ]] \
+       && ( echo "Iserta un parametro tonto" && exit 1 )
 
-   [[ -f $1 ]] || ( echo "No existe el fichero" && exit 1 )
+   [[ -f $1 ]] \
+       || ( echo "No existe el fichero" && exit 1 )
 
    trash="$HOME/Trash"
-   [[ -d $trash ]] || mkdir $trash
+   [[ -d $trash ]] \
+       || mkdir $trash
 
    mv $1 $trash
    #+end_src
@@ -195,7 +210,9 @@
    echo -n "Estas seguro? [s/n]:"
    read seguro
 
-   [[ $seguro -eq "s" ]] && rm -rf "$HOME/Trash" || echo "Pues no la borro"
+   [[ $seguro -eq "s" ]] \
+       && rm -rf "$HOME/Trash" \
+           || echo "Pues no la borro"
    #+end_src
 
 3. Crea un script datos_usuario.sh que solicite un nombre de usuario
