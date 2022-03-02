@@ -1,0 +1,62 @@
+#+TITLE: Practica 5D
+#+SETUPFILE: ../../template.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+1. Mostrar el fichero /etc/passwd pero eliminando la primera línea.
+   #+begin_src shell
+   sed -n '1!p' /etc/passwd
+   #+end_src
+
+2. Mostrar el fichero /etc/idmapd.conf pero eliminando todas las
+   líneas de comentarios (comienzan con un #).
+   #+begin_src shell
+   sed '/^[ \t]*#/d' /etc/idmapd.conf
+   #+end_src
+
+3. Mostrar el fichero /etc/idmpad.conf pero eliminando todos los
+   espacios en blanco.
+   #+begin_src shell
+   sed 's/ //g' /etc/idmapd.conf
+   #+end_src
+
+4. Mostrar el fichero /etc/passwd pero eliminando todas las líneas
+   donde aparezca el texto home.
+   #+begin_src shell
+   sed '/home/d' /etc/passwd
+   #+end_src
+
+5. Mostrar el fichero /etc/passwd pero comentando todas las líneas
+   donde aparezca el texto false.
+   #+begin_src shell
+   sed 's/.*false.*/# &/' /etc/passwd
+   #+end_src
+
+6. Mostrar el fichero /etc/passwd pero sustituyendo el tercer punto y
+   coma por un guion.
+   #+begin_src shell
+   sed 's/\(.*\;.*\;.*\)\;\(.*\)/\1-\2/g' /etc/passwd
+   #+end_src
+
+7. Mostrar un fichero de texto por pantalla, pero solo las líneas
+   donde aparezca una dirección de correo electrónico.
+   #+begin_src shell
+   sed -E -n '/.*[a-zA-Z0-9._-]+@[a-zA-Z._-]+\.[a-zA-Z]{2,6}.*/p' fichero
+   #+end_src
+
+8. Mostrar un fichero de texto por pantalla, pero solo las líneas
+   donde aparezca una fecha en formato dd-mm-aaaa.
+   #+begin_src shell
+   sed -E -n '/.*[0-9]{2}-[0-9]{2}-[0-9]{4}.*/p' fichero
+   #+end_src
+
+9. Mostrar un fichero de texto por pantalla, pero modificándolo de tal
+   forma que si existen varios espacios en blanco seguido se
+   sustituyan por un solo espacio en blanco.
+   #+begin_src shell
+   sed 's/   */ /g' fichero
+   #+end_src
+
+10. Mostrar un fichero por pantalla, pero asegurándose de que el
+    primer carácter de cada línea está en mayúsculas.
+    #+begin_src shell
+    sed 's/^[ \t]*[a-z]/\U&/g' fichero
+    #+end_src
