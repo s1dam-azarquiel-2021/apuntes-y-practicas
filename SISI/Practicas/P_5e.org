@@ -268,3 +268,24 @@
        read f
    done
    #+end_src
+
+3. Escribe un script buscador.sh que nos solicite el nombre de un
+   usuario y el nombre de un fichero y realice una búsqueda desde / y
+   almacene el resultado en un fichero busquedas.txt en el cual se van
+   acumulando las sucesivas búsquedas de la forma:
+   #+begin_src shell :tangle P_5e-scripts/buscador.sh :shebang "#!/bin/sh"
+   # buscador.sh
+
+   echo -n "Nombre del user: "
+   read user
+
+   echo -n "Fichero: "
+   read fname
+
+   for file in $(find / -type f -name "$fname" 2> /dev/null)
+   do
+       [[ $(stat -c "%U" $file) -eq $user ]] \
+           && echo $file \
+           && echo $file "->" $user >> "$HOME/busquedas.txt"
+   done
+   #+end_src
