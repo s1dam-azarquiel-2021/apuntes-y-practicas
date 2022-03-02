@@ -311,3 +311,16 @@
            && echo $user | cut -f1 -d:
    done < "/etc/passwd"
    #+end_src
+
+2. Muestra todos los usuarios, junto con el shell que tienen.
+   #+begin_src shell :tangle P_5e-scripts/mostrar-usuarios-con-shell.sh :shebang "#!/bin/sh"
+   # mostrar-usuarios-con-shell
+
+   while IFS= read -r user
+   do
+       echo -n $(echo $user | cut -f1 -d:) "-> "
+       [[ $(echo $user | cut -f7 -d:) != $(which nologin) ]] \
+           && echo $user | cut -f7 -d: \
+               || echo "Can't login"
+   done < "/etc/passwd"
+   #+end_src
