@@ -134,7 +134,10 @@
 
    tar cf $n2 $n1
 
-   echo -e "Copia de:" $(realpath $n1) "\nEn:" $(realpath $n2) "\nA las:" $(date) "\n" \
+   echo -e \
+        "Copia de:" $(realpath $n1) \
+        "\nEn:" $(realpath $n2) \
+        "\nA las:" $(date) "\n" \
         >> $HOME/copias_seguridad.txt
    #+end_src
 
