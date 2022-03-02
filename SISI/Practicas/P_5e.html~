@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-02 Wed 12:00 -->
+<!-- 2022-03-02 Wed 12:08 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 5E</title>
@@ -17,16 +17,16 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb70f93e">Scripts iniciales I</a></li>
-<li><a href="#org59f23ea">Scripts Iniciales II</a></li>
-<li><a href="#orge69ef3d">Scripts Iniciales III</a></li>
-<li><a href="#org9dbcc1b">Ejercicios avanzados</a></li>
+<li><a href="#org3fcf913">Scripts iniciales I</a></li>
+<li><a href="#org14d780f">Scripts Iniciales II</a></li>
+<li><a href="#org88284c9">Scripts Iniciales III</a></li>
+<li><a href="#orge0cffe1">Ejercicios avanzados</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orgb70f93e" class="outline-2">
-<h2 id="orgb70f93e">Scripts iniciales I</h2>
-<div class="outline-text-2" id="text-orgb70f93e">
+<div id="outline-container-org3fcf913" class="outline-2">
+<h2 id="org3fcf913">Scripts iniciales I</h2>
+<div class="outline-text-2" id="text-org3fcf913">
 <ol class="org-ol">
 <li><p>
 Crea un script parametros.sh que nos diga el número de parámetros
@@ -227,9 +227,9 @@ tar xf $<span class="org-variable-name">n1</span> -C $<span class="org-variable-
 </div>
 </div>
 
-<div id="outline-container-org59f23ea" class="outline-2">
-<h2 id="org59f23ea">Scripts Iniciales II</h2>
-<div class="outline-text-2" id="text-org59f23ea">
+<div id="outline-container-org14d780f" class="outline-2">
+<h2 id="org14d780f">Scripts Iniciales II</h2>
+<div class="outline-text-2" id="text-org14d780f">
 <ol class="org-ol">
 <li><p>
 Crear un script llamado borrar que se use asi: <code>./borrar.sh
@@ -306,9 +306,9 @@ Shell por defecto: /bin/bash
 </div>
 </div>
 
-<div id="outline-container-orge69ef3d" class="outline-2">
-<h2 id="orge69ef3d">Scripts Iniciales III</h2>
-<div class="outline-text-2" id="text-orge69ef3d">
+<div id="outline-container-org88284c9" class="outline-2">
+<h2 id="org88284c9">Scripts Iniciales III</h2>
+<div class="outline-text-2" id="text-org88284c9">
 <ol class="org-ol">
 <li><p>
 Escribe un script espar.sh que nos vaya solicitando introducir un
@@ -370,9 +370,9 @@ acumulando las sucesivas búsquedas de la forma:
 </div>
 </div>
 
-<div id="outline-container-org9dbcc1b" class="outline-2">
-<h2 id="org9dbcc1b">Ejercicios avanzados</h2>
-<div class="outline-text-2" id="text-org9dbcc1b">
+<div id="outline-container-orge0cffe1" class="outline-2">
+<h2 id="orge0cffe1">Ejercicios avanzados</h2>
+<div class="outline-text-2" id="text-orge0cffe1">
 <ol class="org-ol">
 <li><p>
 Muestra el nombre de todos los usuarios registrados en el sistema.
@@ -415,6 +415,22 @@ Muestra todos los usuarios, junto con el shell que tienen.
 </div></li>
 
 <li><p>
+Muestra el home de cada usuario.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span class="org-comment-delimiter"># </span><span class="org-comment">mostrar-homes</span>
+
+<span class="org-keyword">while</span> <span class="org-variable-name">IFS</span>= read -r user
+<span class="org-keyword">do</span>
+    <span class="org-builtin">echo</span> $(<span class="org-builtin">echo</span> $<span class="org-variable-name">user</span> | cut -f1 -d:)<span class="org-string">":"</span>
+    [[ $(<span class="org-builtin">echo</span> $<span class="org-variable-name">user</span> | cut -f6 -d:) <span class="org-negation-char">!</span>= <span class="org-string">"/var/empty"</span> ]] <span class="org-sh-escaped-newline">\</span>
+        &amp;&amp; ls -al $(<span class="org-builtin">echo</span> $<span class="org-variable-name">user</span> | cut -f6 -d:) <span class="org-sh-escaped-newline">\</span>
+            || <span class="org-builtin">echo</span> <span class="org-string">"No home"</span>
+<span class="org-keyword">done</span> &lt; <span class="org-string">"/etc/passwd"</span>
+</pre>
+</div></li>
+
+<li><p>
 Para cada usuario, muestra los grupos a los que pertenece (lo mismo
 que hace el comando id, pero procesandolo nosotros a partir /etc/*.
 </p>
@@ -443,7 +459,7 @@ que hace el comando id, pero procesandolo nosotros a partir /etc/*.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-02 Wed 12:00</p>
+<p class="date">Created: 2022-03-02 Wed 12:08</p>
 </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-02 Wed 12:00 -->
+<!-- 2022-03-02 Wed 12:08 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 3A</title>
@@ -17,13 +17,13 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org484f734">Diseño de un sistema de informacion</a></li>
+<li><a href="#org54efeb2">Diseño de un sistema de informacion</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org484f734" class="outline-2">
-<h2 id="org484f734">Diseño de un sistema de informacion</h2>
-<div class="outline-text-2" id="text-org484f734">
+<div id="outline-container-org54efeb2" class="outline-2">
+<h2 id="org54efeb2">Diseño de un sistema de informacion</h2>
+<div class="outline-text-2" id="text-org54efeb2">
 <ol class="org-ol">
 <li><p>
 Realizad un particionado del espacio de disco duro, teniendo en
@@ -46,13 +46,13 @@ Primero de todo: creacion de la VM
 </p>
 
 
-<figure id="org09c8bcc">
+<figure id="org3679c35">
 <img src="./img/3.1.1.png" alt="3.1.1.png">
 
 </figure>
 
 
-<figure id="orgc35d6c0">
+<figure id="orgba12af4">
 <img src="./img/3.1.2.png" alt="3.1.2.png">
 
 </figure>
@@ -63,7 +63,7 @@ mas actual:
 </p>
 
 
-<figure id="orga62519a">
+<figure id="org3944c38">
 <img src="./img/3.1.3.png" alt="3.1.3.png">
 
 </figure>
@@ -73,7 +73,7 @@ Añado la ISO del OS, que sera nixOS:
 </p>
 
 
-<figure id="org74e5ea0">
+<figure id="orgc936eda">
 <img src="./img/3.1.4.png" alt="3.1.4.png">
 
 </figure>
@@ -83,7 +83,7 @@ Arranco la VM y selecciono la primera opcion:
 </p>
 
 
-<figure id="org0e84f5f">
+<figure id="org955d870">
 <img src="./img/3.1.5.png" alt="3.1.5.png">
 
 </figure></li>
@@ -97,7 +97,7 @@ Hechamos un vistazo a los discos:
 </p>
 
 
-<figure id="org54d43da">
+<figure id="org68c44e9">
 <img src="./img/3.1.6.png" alt="3.1.6.png">
 
 </figure>
@@ -128,7 +128,7 @@ Le asigno el particionado GPT y creamos 2 particiones, una de
 </p>
 
 
-<figure id="org2e9c923">
+<figure id="orgce5ca78">
 <img src="./img/3.1.8.png" alt="3.1.8.png">
 
 </figure>
@@ -138,7 +138,7 @@ A la particion efi la pongo de tipo <code>EFI System</code>.
 </p>
 
 
-<figure id="org7b2a628">
+<figure id="orge80a69b">
 <img src="./img/3.1.9.png" alt="3.1.9.png">
 
 </figure>
@@ -148,7 +148,7 @@ Y por ultimo se guardan los cambios.
 </p>
 
 
-<figure id="org5989afc">
+<figure id="org02db489">
 <img src="./img/3.1.10.png" alt="3.1.10.png">
 
 </figure>
@@ -429,7 +429,7 @@ ultimo nos pregunta para poner la contraseña de root:
 </p>
 
 
-<figure id="org9393cfc">
+<figure id="orgfabc9df">
 <img src="./img/3.1.25.png" alt="3.1.25.png">
 
 </figure>
@@ -440,7 +440,7 @@ perfectamente.
 </p>
 
 
-<figure id="orgef21f75">
+<figure id="orgc9698b0">
 <img src="./img/3.1.26.png" alt="3.1.26.png">
 
 </figure>
@@ -451,7 +451,7 @@ montado.
 </p>
 
 
-<figure id="orgb52cfc8">
+<figure id="org27ca615">
 <img src="./img/3.1.27.png" alt="3.1.27.png">
 
 </figure></li>
@@ -757,25 +757,25 @@ Ahora voy a forzar al servicio para que se ejecute:
 </p>
 
 
-<figure id="org980c479">
+<figure id="org873532d">
 <img src="./img/3.2.1.png" alt="3.2.1.png">
 
 </figure>
 
 
-<figure id="orgc8fece7">
+<figure id="org213ff9c">
 <img src="./img/3.2.2.png" alt="3.2.2.png">
 
 </figure>
 
 
-<figure id="org3f8b665">
+<figure id="orgae7f64a">
 <img src="./img/3.2.3.png" alt="3.2.3.png">
 
 </figure>
 
 
-<figure id="org445bead">
+<figure id="orge9d8110">
 <img src="./img/3.2.4.png" alt="3.2.4.png">
 
 </figure>
@@ -787,7 +787,7 @@ que desciende de el, menos el incremental 1-1-2 que es el ultimo.
 </p>
 
 
-<figure id="org33bdf2a">
+<figure id="org219b4cf">
 <img src="./img/3.2.5.png" alt="3.2.5.png">
 
 </figure></li>
@@ -956,7 +956,7 @@ tengo en github de mis archivos de configuracion <a href="https://github.com/aru
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-02 Wed 12:00</p>
+<p class="date">Created: 2022-03-02 Wed 12:08</p>
 </div>
 </body>
 </html>
