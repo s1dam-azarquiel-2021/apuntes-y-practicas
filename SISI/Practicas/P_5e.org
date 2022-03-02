@@ -254,3 +254,17 @@
        read n
    done
    #+end_src
+
+2. Escribe un script ficheroetc.sh que nos solicite introducir nombres
+   de ficheros hasta que introduzcamos el nombre de un fichero que
+   exista dentro del directorio /etc (y que no sea un directorio).
+   #+begin_src shell :tangle P_5e-scripts/ficheroetc.sh :shebang "#!/bin/sh"
+   # ficheroetc.sh
+
+   read f
+
+   while [ ! -f "/etc/$f" ]
+   do
+       read f
+   done
+   #+end_src
