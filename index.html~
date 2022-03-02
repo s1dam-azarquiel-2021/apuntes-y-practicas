@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-02 Wed 11:27 -->
+<!-- 2022-03-02 Wed 12:00 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>S1DAM - Notas y Practicas</title>
@@ -13,33 +13,33 @@
 <div id="content" class="content">
 <header>
 <h1 class="title">S1DAM - Notas y Practicas</h1>
-</header><div id="outline-container-org1c9bb1b" class="outline-2">
-<h2 id="org1c9bb1b">Contenido</h2>
-<div class="outline-text-2" id="text-org1c9bb1b">
+</header><div id="outline-container-org0dfb349" class="outline-2">
+<h2 id="org0dfb349">Contenido</h2>
+<div class="outline-text-2" id="text-org0dfb349">
 </div>
-<div id="outline-container-org70c6bb4" class="outline-3">
-<h3 id="org70c6bb4"><a href="./BDD/index.html">Bases de datos</a></h3>
+<div id="outline-container-org6b04c0b" class="outline-3">
+<h3 id="org6b04c0b"><a href="./BDD/index.html">Bases de datos</a></h3>
 </div>
-<div id="outline-container-org779c54c" class="outline-3">
-<h3 id="org779c54c"><a href="./ENDE/index.html">Entornos de desarrollo</a></h3>
+<div id="outline-container-org6a020f0" class="outline-3">
+<h3 id="org6a020f0"><a href="./ENDE/index.html">Entornos de desarrollo</a></h3>
 </div>
-<div id="outline-container-orgbdcbec1" class="outline-3">
-<h3 id="orgbdcbec1"><a href="./ING/index.html">Ingles</a></h3>
+<div id="outline-container-org01df0e2" class="outline-3">
+<h3 id="org01df0e2"><a href="./ING/index.html">Ingles</a></h3>
 </div>
-<div id="outline-container-orgd3f47bf" class="outline-3">
-<h3 id="orgd3f47bf"><a href="./LMSG/index.html">Lenguaje de marcas</a></h3>
+<div id="outline-container-orgff5d112" class="outline-3">
+<h3 id="orgff5d112"><a href="./LMSG/index.html">Lenguaje de marcas</a></h3>
 </div>
-<div id="outline-container-org2306553" class="outline-3">
-<h3 id="org2306553"><a href="./PROG/index.html">Programacion</a></h3>
+<div id="outline-container-org0bba14c" class="outline-3">
+<h3 id="org0bba14c"><a href="./PROG/index.html">Programacion</a></h3>
 </div>
-<div id="outline-container-org1dc0934" class="outline-3">
-<h3 id="org1dc0934"><a href="./SISI/index.html">Sistemas Informaticos</a></h3>
+<div id="outline-container-orgb4494cf" class="outline-3">
+<h3 id="orgb4494cf"><a href="./SISI/index.html">Sistemas Informaticos</a></h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-02 Wed 11:27</p>
+<p class="date">Created: 2022-03-02 Wed 12:00</p>
 </div>
 </body>
 </html>
