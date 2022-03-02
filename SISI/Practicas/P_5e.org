@@ -210,7 +210,7 @@
    echo -n "Estas seguro? [s/n]:"
    read seguro
 
-   [[ $seguro -eq "s" ]] \
+   [[ $seguro = "s" ]] \
        && rm -rf "$HOME/Trash" \
            || echo "Pues no la borro"
    #+end_src
@@ -284,7 +284,7 @@
 
    for file in $(find / -type f -name "$fname" 2> /dev/null)
    do
-       [[ $(stat -c "%U" $file) -eq $user ]] \
+       [[ $(stat -c "%U" $file) = $user ]] \
            && echo $file \
            && echo $file "->" $user >> "$HOME/busquedas.txt"
    done
