@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-02-24 Thu 17:42 -->
+<!-- 2022-02-28 Mon 19:36 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 1A</title>
@@ -17,14 +17,14 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga266cc2">Ordenador A</a></li>
-<li><a href="#org12a4d98">Ordenador B</a></li>
+<li><a href="#org7329b60">Ordenador A</a></li>
+<li><a href="#orgda18cbe">Ordenador B</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orga266cc2" class="outline-2">
-<h2 id="orga266cc2">Ordenador A</h2>
-<div class="outline-text-2" id="text-orga266cc2">
+<div id="outline-container-org7329b60" class="outline-2">
+<h2 id="org7329b60">Ordenador A</h2>
+<div class="outline-text-2" id="text-org7329b60">
 <p>
 Proposito: general
 </p>
@@ -33,7 +33,7 @@ Proposito: general
 Presupuesto: 1000 euros
 </p>
 
-<table id="org9af8ef8">
+<table id="orge567846">
 
 
 <colgroup>
@@ -539,9 +539,9 @@ Presupuesto: 1000 euros
 </div>
 </div>
 
-<div id="outline-container-org12a4d98" class="outline-2">
-<h2 id="org12a4d98">Ordenador B</h2>
-<div class="outline-text-2" id="text-org12a4d98">
+<div id="outline-container-orgda18cbe" class="outline-2">
+<h2 id="orgda18cbe">Ordenador B</h2>
+<div class="outline-text-2" id="text-orgda18cbe">
 <p>
 Proposito: servidor de CI (build server) / servidor de compilacion (de
 cache binaria para software / kernel por ejemplo)
@@ -551,7 +551,7 @@ cache binaria para software / kernel por ejemplo)
 Presupuesto: <del>1700</del> 3700 euros
 </p>
 
-<table id="org0545371">
+<table id="org34376f2">
 
 
 <colgroup>
@@ -1057,7 +1057,7 @@ Presupuesto: <del>1700</del> 3700 euros
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-02-24 Thu 17:42</p>
+<p class="date">Created: 2022-02-28 Mon 19:36</p>
 </div>
 </body>
 </html>
