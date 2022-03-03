@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-02 Wed 18:03 -->
+<!-- 2022-03-02 Wed 18:15 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>BDD</title>
@@ -13,21 +13,21 @@
 <div id="content" class="content">
 <header>
 <h1 class="title">BDD</h1>
-</header><div id="outline-container-org9590d7f" class="outline-2">
-<h2 id="org9590d7f">Contenido</h2>
-<div class="outline-text-2" id="text-org9590d7f">
+</header><div id="outline-container-org513ce2d" class="outline-2">
+<h2 id="org513ce2d">Contenido</h2>
+<div class="outline-text-2" id="text-org513ce2d">
 </div>
-<div id="outline-container-org830271c" class="outline-3">
-<h3 id="org830271c"><a href="./Notas/index.html">Teoria, notas, etc</a></h3>
+<div id="outline-container-orgbd2f661" class="outline-3">
+<h3 id="orgbd2f661"><a href="./Notas/index.html">Teoria, notas, etc</a></h3>
 </div>
-<div id="outline-container-org9b416c1" class="outline-3">
-<h3 id="org9b416c1"><a href="./Practicas/index.html">Practicas, tarea, etc</a></h3>
+<div id="outline-container-org77b32f0" class="outline-3">
+<h3 id="org77b32f0"><a href="./Practicas/index.html">Practicas, tarea, etc</a></h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-02 Wed 18:03</p>
+<p class="date">Created: 2022-03-02 Wed 18:15</p>
 </div>
 </body>
 </html>
