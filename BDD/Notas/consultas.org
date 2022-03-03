@@ -1303,9 +1303,9 @@
 
 132. En que anio incorporamos mas clientes a nuestra empresa.
      #+begin_src sql
-     SELECT   SUBSTR(f_alta, 7, 2)
+     SELECT   '20'||SUBSTR(f_alta, 7, 2)
      FROM     clientes
-     GROUP BY SUBSTR(f_alta, 7, 2)
+     GROUP BY '20'||SUBSTR(f_alta, 7, 2)
      HAVING   COUNT(c_cliente) = (
                 SELECT MAX(COUNT(c_cliente))
                 FROM   clientes
@@ -1315,11 +1315,11 @@
 
 133. En que anios hemos vendido mas de 4 articulos.
      #+begin_src sql
-     SELECT   SUBSTR(fecha, 7, 2)
+     SELECT   '20'||SUBSTR(fecha, 7, 2)
      FROM     ventas
-     GROUP BY SUBSTR(fecha, 7, 2)
+     GROUP BY '20'||SUBSTR(fecha, 7, 2)
      HAVING   SUM(cantidad) > 4
-     ORDER BY 1
+     ORDER BY 1;
      #+end_src
 
 134. Cuantos articulos de proveedores de Toledo se han vendido
