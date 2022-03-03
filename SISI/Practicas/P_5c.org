@@ -1,0 +1,56 @@
+#+TITLE: Practica 5C
+#+SETUPFILE: ../../template.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+1. Crear un directorio ejercicio1 en vuestro home, y copiar en el
+   mismo todos los ficheros con extensión conf del directorio
+   /etc. Realizad esta acción con un solo comando, y posicionados en
+   el directorio home del usuario.
+   #+begin_src shell
+   mkdir ~/ejercicio1 \
+       && cp /etc/*.conf ~/ejercicio1
+   #+end_src
+
+2. Crear un directorio ejercicio2 dentro de un directorio prueba
+   dentro de un directorio control dentro de un directorio alumno
+   dentro de vuestro home. Realizad esta acción con un solo comando y
+   posicionados en el directorio home de vuestro usuario.
+   #+begin_src shell
+   mkdir -p ~/alumno/control/prueba/ejercicio2
+   #+end_src
+
+3. Moved todos los ficheros que contengan una letra a en su nombre del
+   directorio ejercicio1 al directorio ejercicio 2. Un solo comando y
+   posicionados en el raíz de vuestro árbol.
+   #+begin_src shell
+   mv ~/ejercicio1/*a* ~/alumno/control/prueba/ejercicio2
+   #+end_src
+
+4. Cread un usuario rigoberto. Modificar todos los ficheros del
+   directorio ejercicio 2 para que pasen a ser propiedad del usuario
+   rigoberto y del grupo rigoberto.
+   #+begin_src shell
+   useradd rigoberto \
+       && chown rigoberto:rigoberto ~/alumno/control/prueba/ejercicio2/*
+   #+end_src
+
+5. Copiad el directorio alumno de vuestro home, y todo lo que
+   contiene, a un directorio copia_alumno que debe crearse en vuestro
+   directorio home. Un solo comando para la copia.
+   #+begin_src shell
+   cp -r ~/alumno ~/copia_alumno
+   #+end_src
+
+6. Borrar el directorio alumno de vuestro home con un solo comando y
+   sin que pida confirmación.
+   #+begin_src shell
+   rm -rf ~/alumno
+   #+end_src
+
+7. Cread un fichero con nombre ocultos en la raíz de vuestro árbol,
+   que contenga el nombre de todos los directorios ocultos que están
+   en vuestro home. (Los ficheros y directorios ocultos son aquellos
+   cuyo nombre comienza por un punto, y no son mostrados normalmente
+   por is).
+   #+begin_src shell
+   ls -d1p ~/.* | grep -E "\..*/" > ~/ocultos
+   #+end_src
