@@ -9,4 +9,6 @@
 ** [[file:./P_1d.org][Practica 1d]]
 ** [[file:./P_2a.org][Practica 2a]]
 ** [[file:./P_3a.org][Practica 3a]]
+** [[file:./P_5c.org][Practica 5c]]
+** [[file:./P_5d.org][Practica 5d]]
 ** [[file:./P_5e.org][Practica 5e]]
