@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- 2022-03-03 Thu 15:29 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Practica 5C</title>
+<meta name="author" content="Alberto Robles Gomez" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+</head>
+<body>
+<div id="content" class="content">
+<header>
+<h1 class="title">Practica 5C</h1>
+</header><ol class="org-ol">
+<li><p>
+Crear un directorio ejercicio1 en vuestro home, y copiar en el
+mismo todos los ficheros con extensión conf del directorio
+/etc. Realizad esta acción con un solo comando, y posicionados en
+el directorio home del usuario.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">mkdir ~/ejercicio1 <span class="org-sh-escaped-newline">\</span>
+    &amp;&amp; cp /etc/*.conf ~/ejercicio1
+</pre>
+</div></li>
+
+<li><p>
+Crear un directorio ejercicio2 dentro de un directorio prueba
+dentro de un directorio control dentro de un directorio alumno
+dentro de vuestro home. Realizad esta acción con un solo comando y
+posicionados en el directorio home de vuestro usuario.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">mkdir -p ~/alumno/control/prueba/ejercicio2
+</pre>
+</div></li>
+
+<li><p>
+Moved todos los ficheros que contengan una letra a en su nombre del
+directorio ejercicio1 al directorio ejercicio 2. Un solo comando y
+posicionados en el raíz de vuestro árbol.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">mv ~/ejercicio1/*a* ~/alumno/control/prueba/ejercicio2
+</pre>
+</div></li>
+
+<li><p>
+Cread un usuario rigoberto. Modificar todos los ficheros del
+directorio ejercicio 2 para que pasen a ser propiedad del usuario
+rigoberto y del grupo rigoberto.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">useradd rigoberto <span class="org-sh-escaped-newline">\</span>
+    &amp;&amp; chown rigoberto:rigoberto ~/alumno/control/prueba/ejercicio2/*
+</pre>
+</div></li>
+
+<li><p>
+Copiad el directorio alumno de vuestro home, y todo lo que
+contiene, a un directorio copia<sub>alumno</sub> que debe crearse en vuestro
+directorio home. Un solo comando para la copia.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">cp -r ~/alumno ~/copia_alumno
+</pre>
+</div></li>
+
+<li><p>
+Borrar el directorio alumno de vuestro home con un solo comando y
+sin que pida confirmación.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">rm -rf ~/alumno
+</pre>
+</div></li>
+
+<li><p>
+Cread un fichero con nombre ocultos en la raíz de vuestro árbol,
+que contenga el nombre de todos los directorios ocultos que están
+en vuestro home. (Los ficheros y directorios ocultos son aquellos
+cuyo nombre comienza por un punto, y no son mostrados normalmente
+por is).
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">ls -d1p ~/.* | grep -E <span class="org-string">"\..*/"</span> &gt; ~/ocultos
+</pre>
+</div></li>
+</ol>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Alberto Robles Gomez</p>
+<p class="date">Created: 2022-03-03 Thu 15:29</p>
+</div>
+</body>
+</html>
