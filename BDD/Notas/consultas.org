@@ -1310,7 +1310,7 @@
                 SELECT MAX(COUNT(c_cliente))
                 FROM   clientes
                 GROUP BY SUBSTR(f_alta, 7, 2)
-              );    
+              );
      #+end_src
 
 133. En que anios hemos vendido mas de 4 articulos.
@@ -1340,5 +1340,46 @@
               SELECT c_cliente
               FROM   clientes
               WHERE  telefono LIKE '925%'
+            );
+     #+end_src
+
+135. Poner bien el valor de deuda de los clientes. Suponiendo que
+     jamas nos han pagado nada.
+     #+begin_src sql
+     UPDATE clientes c
+     SET    deuda = (
+              SELECT SUM(importe)
+              FROM   ventas
+              WHERE  c_cliente = c.c_cliente
+            );
+     #+end_src
+
+136. Que nombres de clientes tienen una vocal repetida.
+     #+begin_src sql
+     SELECT nombre
+     FROM   clientes
+     WHERE  nombre LIKE '%a%a%'
+        OR  nombre LIKE '%A%a%'
+        OR  nombre LIKE '%e%e%'
+        OR  nombre LIKE '%E%e%'
+        OR  nombre LIKE '%i%i%'
+        OR  nombre LIKE '%I%i%'
+        OR  nombre LIKE '%o%o%'
+        OR  nombre LIKE '%O%o%'
+        OR  nombre LIKE '%u%u%'
+        OR  nombre LIKE '%U%u%';
+     #+end_src
+
+137. Aniadir el atributo PROCEDENCIA a articulo, que sera la misma
+     provincia del proveedor que lo suministra. Actualizar su valor.
+     #+begin_src sql
+     ALTER TABLE articulo
+     ADD   procedencia VARCHAR2(12);
+
+     UPDATE articulo a
+     SET    procedencia = (
+              SELECT provincia
+              FROM   proveedor
+              WHERE  c_provee = a.c_provee
             );
      #+end_src
