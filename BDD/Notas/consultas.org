@@ -1347,11 +1347,11 @@
      jamas nos han pagado nada.
      #+begin_src sql
      UPDATE clientes c
-     SET    deuda = (
+     SET    deuda = NVL((
               SELECT SUM(importe)
               FROM   ventas
               WHERE  c_cliente = c.c_cliente
-            );
+            ), 0);
      #+end_src
 
 136. Que nombres de clientes tienen una vocal repetida.
