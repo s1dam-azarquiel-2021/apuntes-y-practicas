@@ -1460,3 +1460,136 @@
             )
      WHERE  rownum < 11;
      #+end_src
+
+140. Borrar las tuplas de los proveedores que venden menos de 2
+     articulos (borrar tuplas de otras tablas si son necesarias).
+     #+begin_src sql
+     DELETE FROM ventas v
+     WHERE  c_art IN (
+              SELECT c_art
+              FROM   articulo
+              WHERE  c_provee IN (
+                       SELECT      c_provee
+                       FROM        articulo
+                       GROUP BY    c_provee
+                       HAVING COUNT(c_art) < 2
+                     )
+            );
+
+     DELETE FROM articulo a
+     WHERE  c_provee IN (
+              SELECT      c_provee
+              FROM        articulo
+              GROUP BY    c_provee
+              HAVING COUNT(c_art) < 2
+            );
+
+     DELETE FROM proveedor p
+     WHERE  (
+              SELECT COUNT(c_art)
+              FROM   articulo
+              WHERE  c_provee = p.c_provee
+            ) < 2;
+     #+end_src
+     
+141. Cuantos articulos tenemos de proveedores de que no son ni de
+     MADRID ni TOLEDO ni SEVILLA?
+     #+begin_src sql
+     SELECT COUNT(c_art)
+     FROM   articulo
+     WHERE  c_provee NOT IN (
+              SELECT c_provee
+              FROM   proveedor
+              WHERE  provincia IN (
+                       'MADRID',
+                       'TOLEDO',
+                       'SEVILLA'
+                     )
+            )
+     #+end_src
+     
+142. Sube un 15% de los articulos y cambia los valores de ventas para
+     que sean correctos.
+     #+begin_src sql
+     UPDATE articulo a
+     SET    precio = precio * 1.15;
+
+     UPDATE ventas v
+     SET    importe = cantidad * (
+              SELECT precio
+              FROM   articulo
+              WHERE  c_art = v.c_art
+            );
+     #+end_src
+     
+143. Visualizar la descripcion del articulo mas barato que no se
+     vende.
+     #+begin_src sql
+     SELECT descrip
+     FROM   (
+              SELECT   descrip
+              FROM     articulo
+              WHERE    c_art NOT IN (
+                         SELECT c_art
+                         FROM   ventas
+                       )
+              ORDER BY precio
+            )
+     WHERE  rownum = 1;
+     #+end_src
+
+144. Nombre de los clientes que han comprado mas de 14 productos.
+     #+begin_src sql
+     SELECT nombre
+     FROM   clientes
+     WHERE  c_cliente IN (
+              SELECT   c_cliente
+              FROM     ventas
+              GROUP BY c_cliente
+              HAVING   SUM(cantidad) > 14
+            )
+     #+end_src
+     
+145. Descripcion de los articulos que se han vendido menos de 10
+     unidades.
+     #+begin_src sql
+     SELECT descrip
+     FROM   articulo
+     WHERE  c_art NOT IN (
+              SELECT   c_art
+              FROM     ventas
+              GROUP BY c_art
+              HAVING   SUM(cantidad) >= 10
+            )
+     #+end_src
+
+146. Que clientes compran mas veces que la media, independiente de las
+     cantidades.
+     #+begin_src sql
+     SELECT nombre
+     FROM   clientes
+     WHERE  c_cliente IN (
+              SELECT   c_cliente
+              FROM     ventas
+              GROUP BY c_cliente
+              HAVING   COUNT(c_factura) > (
+                         SELECT   AVG(COUNT(c_factura))
+                         FROM     ventas
+                         GROUP BY c_cliente
+                       )
+            );
+     #+end_src
+     
+147. Cuantos proveedores no venden sus articulos.
+     #+begin_src sql
+     SELECT COUNT(c_provee)
+     FROM   proveedor
+     WHERE  c_provee NOT IN (
+              SELECT c_provee
+              FROM   articulo
+              WHERE  c_art IN (
+                       SELECT c_art
+                       FROM   ventas
+                     )
+            )
+     #+end_src
