@@ -1491,7 +1491,7 @@
               WHERE  c_provee = p.c_provee
             ) < 2;
      #+end_src
-     
+
 141. Cuantos articulos tenemos de proveedores de que no son ni de
      MADRID ni TOLEDO ni SEVILLA?
      #+begin_src sql
@@ -1507,7 +1507,7 @@
                      )
             )
      #+end_src
-     
+
 142. Sube un 15% de los articulos y cambia los valores de ventas para
      que sean correctos.
      #+begin_src sql
@@ -1521,7 +1521,7 @@
               WHERE  c_art = v.c_art
             );
      #+end_src
-     
+
 143. Visualizar la descripcion del articulo mas barato que no se
      vende.
      #+begin_src sql
@@ -1549,7 +1549,7 @@
               HAVING   SUM(cantidad) > 14
             )
      #+end_src
-     
+
 145. Descripcion de los articulos que se han vendido menos de 10
      unidades.
      #+begin_src sql
@@ -1579,7 +1579,7 @@
                        )
             );
      #+end_src
-     
+
 147. Cuantos proveedores no venden sus articulos.
      #+begin_src sql
      SELECT COUNT(c_provee)
