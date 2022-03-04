@@ -1404,3 +1404,59 @@
               WHERE c_cliente = c.c_cliente
             );
      #+end_src
+
+139. Insertar un cliente de Toledo. Insertar 10 ventas de proveedores
+     de Toledo a clientes de Toledo.
+     #+begin_src sql
+     INSERT INTO clientes
+     VALUES (
+       400,
+       'Pepino',
+       0,
+       925123456,
+       '04/03/22',
+       11
+     );
+
+     INSERT INTO ventas
+     SELECT 100 + rownum, art, cant, prec, fecha, cliente
+     FROM   (
+              SELECT a.c_art as art, rownum + 1 as cant,
+                     rownum + 1 * a.precio as prec,
+                     sysdate as fecha, c.c_cliente as cliente
+              FROM   clientes c, articulo a
+              WHERE  c.telefono LIKE '925%'
+                AND  a.c_provee IN (
+                       SELECT c_provee
+                       FROM   proveedor
+                       WHERE  provincia = 'TOLEDO'
+                     )
+              UNION
+              -- Copy paste del de arriba
+              -- (hay solo 4 ventas necesito 10)
+              SELECT a.c_art as art, rownum + 1 as cant,
+                     rownum + 1 * a.precio as prec,
+                     sysdate as fecha, c.c_cliente as cliente
+              FROM   clientes c, articulo a
+              WHERE  c.telefono LIKE '925%'
+                AND  a.c_provee IN (
+                       SELECT c_provee
+                       FROM   proveedor
+                       WHERE  provincia = 'TOLEDO'
+                     )
+              UNION
+              -- Copy paste del de arriba
+              -- (hay solo 4 ventas necesito 10)
+              SELECT a.c_art as art, rownum + 1 as cant,
+                     rownum + 1 * a.precio as prec,
+                     sysdate as fecha, c.c_cliente as cliente
+              FROM   clientes c, articulo a
+              WHERE  c.telefono LIKE '925%'
+                AND  a.c_provee IN (
+                       SELECT c_provee
+                       FROM   proveedor
+                       WHERE  provincia = 'TOLEDO'
+                     )
+            )
+     WHERE  rownum < 11;
+     #+end_src
