@@ -1378,3 +1378,29 @@
               WHERE  c_provee = a.c_provee
             );
      #+end_src
+
+138. Aniade el atributo RANKING a la tabla clientes y colocar el valor
+     correcto desde entero 1 hacia delante. Desde el q mas gasta al q
+     menos.
+     #+begin_src sql
+     ALTER TABLE clientes
+     ADD   ranking NUMBER(3);
+
+     UPDATE clientes c
+     SET    ranking = (
+              SELECT fila
+              FROM (
+                     SELECT   c_cliente, rownum as fila
+                     FROM     (
+                                SELECT   c_cliente
+                                FROM     clientes c
+                                ORDER BY (
+                                           SELECT SUM(importe)
+                                           FROM ventas
+                                           WHERE c_cliente = c.c_cliente
+                                         ), nombre
+                              )
+                   )
+              WHERE c_cliente = c.c_cliente
+            );
+     #+end_src
