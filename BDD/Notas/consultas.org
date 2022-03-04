@@ -1358,16 +1358,11 @@
      #+begin_src sql
      SELECT nombre
      FROM   clientes
-     WHERE  nombre LIKE '%a%a%'
-        OR  nombre LIKE '%A%a%'
-        OR  nombre LIKE '%e%e%'
-        OR  nombre LIKE '%E%e%'
-        OR  nombre LIKE '%i%i%'
-        OR  nombre LIKE '%I%i%'
-        OR  nombre LIKE '%o%o%'
-        OR  nombre LIKE '%O%o%'
-        OR  nombre LIKE '%u%u%'
-        OR  nombre LIKE '%U%u%';
+     WHERE  LOWER(nombre) LIKE '%a%a%'
+        OR  LOWER(nombre) LIKE '%e%e%'
+        OR  LOWER(nombre) LIKE '%i%i%'
+        OR  LOWER(nombre) LIKE '%o%o%'
+        OR  LOWER(nombre) LIKE '%u%u%';
      #+end_src
 
 137. Aniadir el atributo PROCEDENCIA a articulo, que sera la misma
