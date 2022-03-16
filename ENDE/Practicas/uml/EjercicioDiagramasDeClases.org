@@ -1,0 +1,344 @@
+#+STARTUP: inlineimages
+* Setup
+
+#+begin_src shell
+for svg in $(ls generated/*.svg)
+do
+    sed -Ei 's/textLength="[0-9]*" //g' $svg
+    inkscape $svg -w 4096 -b '#1d2021' -o "${svg%.*}.png"
+done
+#+end_src
+#+RESULTS:
+
+#+begin_src plantuml :tangle plantuml-config.txt
+skinparam groupInheritance 2
+
+skinparam Default {
+        FontName Iosevka Term
+        FontColor #ebdbb2
+}
+
+skinparam BackgroundColor #1d2021
+skinparam Shadowing false
+skinparam RoundCorner 15
+
+skinparam Class {
+        BackgroundColor #282828
+        BorderColor #504945
+        ArrowColor #689d6a
+}
+
+skinparam Stereotype {
+        CBackgroundColor #b8bb26
+        CBorderColor #b8bb26
+        EBackgroundColor #fe8019
+        EBorderColor #fe8019
+        ABackgroundColor #83a598
+        ABorderColor #83a598
+}
+
+skinparam Icon {
+        PrivateColor #cc241d
+        PrivateBackgroundColor #cc241d
+        ProtectedColor #d79921
+        ProtectedBackgroundColor #d79921
+}
+#+end_src
+
+* Ejercicio 1
+
+#+begin_src plantuml :file generated/VentaDeCoches.svg
+title Venta de Coches
+
+!include plantuml-config.txt
+
+class Coche {
+        - marca : String
+        - modelo : String
+        - matricula : String
+        - precioCompra : float
+        - precioVenta : float
+        - comprar() : void
+        - vender() : void
+        - reparar() : void
+        - listar() : Coche *
+}
+
+enum TipoCoche {
+        Turismo
+        Industrial
+        Todoterreno
+}
+
+class Reparacion {
+}
+
+enum TipoReparacion {
+        Mecanica
+        Electrica
+        Chapa
+}
+
+abstract class Vendedor
+
+class VendedorAsalariado {
+        - salario : float
+}
+
+class VendedorPorComision {
+        - cochesVendidos : int
+}
+
+class Exposicion {
+        - lugar : String
+}
+
+class Cliente
+
+class Proveedor
+
+skinparam Nodesep 100
+
+Cliente "0..1" <-> "0..*" Coche : compra
+Cliente "0..*" <-> "0..*" Coche : reserva
+
+Coche "*" <- "1" Proveedor : suministra
+Coche "0..*" <-> "0..1" Exposicion : esta
+Proveedor -[hidden]d- Exposicion
+
+Coche "1" <--> "0..*" Reparacion : tiene
+Coche "0..*" <-- "1" Vendedor : vende
+
+TipoCoche "1" <-- "0..*" Coche : es de tipo
+
+Reparacion "0..*" --> "1" TipoReparacion : es de tipo
+
+Vendedor <|-- VendedorAsalariado
+Vendedor <|-- VendedorPorComision
+#+end_src
+
+#+RESULTS:
+[[file:generated/VentaDeCoches.svg]]
+
+* Ejercicio 2
+
+#+begin_src plantuml :file generated/MatriculaEnLaUniversidad.svg
+title Matricula en la Universidad
+
+!include plantuml-config.txt
+
+class Persona {
+        # dni : String
+        # nombre : Strig
+        # direccion : String
+        # estadoCivil : String
+        # darseDeAlta() : void
+}
+
+class Estudiante {
+        # listarAsignaturas() : Asignatura *
+        # listarNotas() : Nota *
+        # matricular(Asignatura a) : void
+        # registrar(Asignatura a, float pts, float ptsMax) : void
+}
+
+class Asignatura {
+        - codigo : int
+        - nombre : String
+        - listarEstudiantes() : Estudiante *
+}
+
+class Nota {
+        - puntuacion : float
+        - puntuacionMaxima : float
+}
+
+class Becario {
+        - codigo : int
+        - importeBeca : float
+}
+
+class Beca
+class Profesor
+class Curso
+
+skinparam Nodesep 100
+
+Persona <|- Estudiante
+
+Estudiante <|-u- Becario
+Estudiante "0..*" <--> "0..*" Asignatura : matricula
+
+Becario "0..*" -l> "1" Beca : recibe
+
+Asignatura "1..*" --> "1" Profesor : imparte
+Asignatura "1..*" --> "1" Curso : pertenece
+
+Nota "0..*" -r-> "1" Asignatura : es de
+Nota "0..*" <-u- "1" Estudiante : es de
+#+end_src
+
+#+RESULTS:
+[[file:generated/MatriculaEnLaUniversidad.svg]]
+
+* Ejercicio 3
+
+#+begin_src plantuml :file generated/ElVeterinario.svg
+title El Veterinario
+
+!include plantuml-config.txt
+
+class Cliente {
+        - codigo : int
+        - apellido1 : String
+        - numeroCuentaBancaria : String
+        - direccion : String
+        - telefono : String
+}
+
+class Persona {
+        - nombre : String
+        - dni : String
+}
+
+class Paciente {
+        - codigo : int
+        - alias : String
+        - especie : String
+        - raza : String
+        - colorPelo : String
+        - fechaNacimiento : Date
+        - pesoMedioUltimas10Visitas : float
+        - pesoActual : float
+        - aniadirVacuna(CalendarioVacunacion calVac) : void
+        - aniadirVacuna(HistorialMedico histMed) : void
+}
+
+class Enfermedad {
+        - nombre : String
+}
+
+class CalendarioVacunacion {
+        - fecha : Date
+}
+
+class HistorialMedico {
+        - fecha : Date
+}
+
+skinparam Nodesep 100
+
+Cliente "1..*" <-> "1..*" Persona : asocia
+Cliente "1" <-- "1..*" Paciente : tiene
+
+Paciente "1" -> "0..*" HistorialMedico : tiene
+Paciente "1" -> "0..*" CalendarioVacunacion : tiene
+HistorialMedico -[hidden]d- CalendarioVacunacion
+
+Enfermedad "1" <-l- "0..*" HistorialMedico : tiene
+Enfermedad "1" <-l- "0..*" CalendarioVacunacion : tiene
+#+end_src
+
+#+RESULTS:
+[[file:generated/ElVeterinario.svg]]
+
+* Ejercicio 4
+
+#+begin_src plantuml :file generated/LaAsociacion.svg
+title La Asociacion
+
+!include plantuml-config.txt
+
+class Persona {
+        # nombreCompleto : String
+        # darAlta() : void
+}
+
+class Socio {
+        - codigoAsociado : int
+}
+
+class Fecha {
+        - dia : int
+        - mes : int
+        - anio : int
+}
+
+class Nif {
+        - dni : int
+        - letra : char
+}
+
+class Asociacion {
+        - nombre : String
+}
+
+skinparam Nodesep 150
+
+Asociacion "1" *-- "1..*" Socio
+Persona <|-- Socio
+Persona "1" -r-> "1" Nif : se identifica
+Socio "0..*" -r-> "1" Fecha : se da de alta
+Persona "0..*" --> "1" Fecha : nace
+#+end_src
+
+#+RESULTS:
+[[file:generated/LaAsociacion.svg]]
+
+* Ejercicio 5
+
+#+begin_src plantuml :file generated/ElTorneo.svg
+title El Torneo
+
+!include plantuml-config.txt
+
+class Torneo
+
+class Jugador {
+        - conoceLasReglas : boolean
+        - numeroFederado : int
+}
+
+class Persona {
+        # nombreCompleto : String
+}
+
+class Fecha {
+        - dia : int
+        - mes : int
+        - anio : int
+}
+
+class Nif {
+        - dni : int
+        - letra : char
+}
+
+class Encuentro {
+        - resultadoFinal : String
+}
+
+class Partida {
+        - puntosJ1 : int
+        - puntosJ2 : int
+}
+
+skinparam Nodesep 100
+
+Persona "0..*" -> "1" Fecha : nace
+Persona "1" -> "1" Nif : se identifica
+Fecha -[hidden]d- Nif
+
+Jugador --|> Persona
+
+Encuentro "1..*" -> "2" Jugador : juega
+Encuentro "0..*" -> "1" Jugador : gana
+Encuentro "1" --> "3" Partida : consiste
+
+Torneo "0..*" --> "1" Fecha : se realiza
+Torneo "1" --> "1..*" Encuentro : celebra
+Torneo "0..*" --> "1" Jugador : gana
+#+end_src
+
+#+RESULTS:
+[[file:generated/ElTorneo.svg]]

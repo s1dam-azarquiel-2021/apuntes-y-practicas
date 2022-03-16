@@ -1,0 +1,32 @@
+skinparam groupInheritance 2
+
+skinparam Default {
+        FontName Iosevka Term
+        FontColor #ebdbb2
+}
+
+skinparam BackgroundColor #1d2021
+skinparam Shadowing false
+skinparam RoundCorner 15
+
+skinparam Class {
+        BackgroundColor #282828
+        BorderColor #504945
+        ArrowColor #689d6a
+}
+
+skinparam Stereotype {
+        CBackgroundColor #b8bb26
+        CBorderColor #b8bb26
+        EBackgroundColor #fe8019
+        EBorderColor #fe8019
+        ABackgroundColor #83a598
+        ABorderColor #83a598
+}
+
+skinparam Icon {
+        PrivateColor #cc241d
+        PrivateBackgroundColor #cc241d
+        ProtectedColor #d79921
+        ProtectedBackgroundColor #d79921
+}

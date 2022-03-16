@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="547px" preserveAspectRatio="none" style="width:705px;height:547px;background:#1D2021;" version="1.1" viewBox="0 0 705 547" width="705px" zoomAndPan="magnify"><defs/><g><text fill="#EBDBB2" font-family="Iosevka Term" font-size="18" lengthAdjust="spacing" x="303.25" y="16.708">El Torneo</text><!--MD5=[a421269c88738b222d0d17110ffab68c]
+class Torneo--><rect codeLine="5" fill="#282828" height="48" id="Torneo" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="76" x="348" y="27.9531"/><ellipse cx="363" cy="43.9531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M363.2031,50.5938 Q362.7344,50.5938 362.2813,50.5 Q361.8281,50.4063 361.4063,50.1719 Q361,49.9375 360.6875,49.5781 Q360.375,49.2188 360.1875,48.7969 Q360,48.3594 359.9219,47.8906 Q359.8594,47.4219 359.8594,46.9688 L359.8594,41.4375 Q359.8594,40.9844 359.9219,40.5156 Q360,40.0469 360.1875,39.625 Q360.375,39.2031 360.6875,38.8438 Q361,38.4688 361.4063,38.25 Q361.8281,38.0156 362.2813,37.9219 Q362.7344,37.8281 363.2031,37.8281 Q363.6406,37.8281 364.0781,37.9063 Q364.5156,37.9688 364.9063,38.1719 Q365.2969,38.3594 365.6094,38.6875 Q365.9375,39 366.125,39.3906 Q366.3281,39.7813 366.4219,40.2188 Q366.5313,40.6406 366.5313,41.0938 Q366.5313,41.0938 366.5313,41.0938 Q366.5313,41.0938 366.5313,41.1094 L364.6406,41.1094 Q364.6406,41.0938 364.6406,41.0938 Q364.6406,41.0938 364.6406,41.0938 Q364.6406,40.7813 364.5469,40.4844 Q364.4688,40.1875 364.2813,39.9375 Q364.0938,39.6875 363.7969,39.5781 Q363.5,39.4531 363.2031,39.4531 Q362.9844,39.4531 362.75,39.5313 Q362.5156,39.5938 362.3438,39.75 Q362.1719,39.8906 362.0469,40.0938 Q361.9375,40.2969 361.875,40.5313 Q361.8125,40.75 361.7813,40.9844 Q361.75,41.2031 361.75,41.4375 L361.75,46.9688 Q361.75,47.2031 361.7813,47.4375 Q361.8125,47.6719 361.875,47.8906 Q361.9375,48.1094 362.0469,48.3125 Q362.1719,48.5156 362.3438,48.6719 Q362.5156,48.8281 362.75,48.8906 Q362.9844,48.9531 363.2031,48.9531 Q363.5,48.9531 363.7969,48.8438 Q364.0938,48.7188 364.2813,48.4688 Q364.4688,48.2188 364.5469,47.9219 Q364.6406,47.625 364.6406,47.3281 Q364.6406,47.3281 364.6406,47.3281 Q364.6406,47.3281 364.6406,47.3125 L366.5313,47.3125 Q366.5313,47.3281 366.5313,47.3281 Q366.5313,47.3281 366.5313,47.3281 Q366.5313,47.7656 366.4219,48.2031 Q366.3281,48.6406 366.125,49.0313 Q365.9375,49.4219 365.6094,49.7344 Q365.2969,50.0469 364.9063,50.25 Q364.5156,50.4375 364.0781,50.5156 Q363.6406,50.5938 363.2031,50.5938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="377" y="48.1074">Torneo</text><line style="stroke:#504945;stroke-width:1.5;" x1="349" x2="423" y1="59.9531" y2="59.9531"/><line style="stroke:#504945;stroke-width:1.5;" x1="349" x2="423" y1="67.9531" y2="67.9531"/><!--MD5=[e570de1d41a3b8125e1c820568fd7a6a]
+class Jugador--><rect codeLine="7" fill="#282828" height="73.6094" id="Jugador" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="181" x="295.5" y="152.9531"/><ellipse cx="357.75" cy="168.9531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M357.9531,175.5938 Q357.4844,175.5938 357.0313,175.5 Q356.5781,175.4063 356.1563,175.1719 Q355.75,174.9375 355.4375,174.5781 Q355.125,174.2188 354.9375,173.7969 Q354.75,173.3594 354.6719,172.8906 Q354.6094,172.4219 354.6094,171.9688 L354.6094,166.4375 Q354.6094,165.9844 354.6719,165.5156 Q354.75,165.0469 354.9375,164.625 Q355.125,164.2031 355.4375,163.8438 Q355.75,163.4688 356.1563,163.25 Q356.5781,163.0156 357.0313,162.9219 Q357.4844,162.8281 357.9531,162.8281 Q358.3906,162.8281 358.8281,162.9063 Q359.2656,162.9688 359.6563,163.1719 Q360.0469,163.3594 360.3594,163.6875 Q360.6875,164 360.875,164.3906 Q361.0781,164.7813 361.1719,165.2188 Q361.2813,165.6406 361.2813,166.0938 Q361.2813,166.0938 361.2813,166.0938 Q361.2813,166.0938 361.2813,166.1094 L359.3906,166.1094 Q359.3906,166.0938 359.3906,166.0938 Q359.3906,166.0938 359.3906,166.0938 Q359.3906,165.7813 359.2969,165.4844 Q359.2188,165.1875 359.0313,164.9375 Q358.8438,164.6875 358.5469,164.5781 Q358.25,164.4531 357.9531,164.4531 Q357.7344,164.4531 357.5,164.5313 Q357.2656,164.5938 357.0938,164.75 Q356.9219,164.8906 356.7969,165.0938 Q356.6875,165.2969 356.625,165.5313 Q356.5625,165.75 356.5313,165.9844 Q356.5,166.2031 356.5,166.4375 L356.5,171.9688 Q356.5,172.2031 356.5313,172.4375 Q356.5625,172.6719 356.625,172.8906 Q356.6875,173.1094 356.7969,173.3125 Q356.9219,173.5156 357.0938,173.6719 Q357.2656,173.8281 357.5,173.8906 Q357.7344,173.9531 357.9531,173.9531 Q358.25,173.9531 358.5469,173.8438 Q358.8438,173.7188 359.0313,173.4688 Q359.2188,173.2188 359.2969,172.9219 Q359.3906,172.625 359.3906,172.3281 Q359.3906,172.3281 359.3906,172.3281 Q359.3906,172.3281 359.3906,172.3125 L361.2813,172.3125 Q361.2813,172.3281 361.2813,172.3281 Q361.2813,172.3281 361.2813,172.3281 Q361.2813,172.7656 361.1719,173.2031 Q361.0781,173.6406 360.875,174.0313 Q360.6875,174.4219 360.3594,174.7344 Q360.0469,175.0469 359.6563,175.25 Q359.2656,175.4375 358.8281,175.5156 Q358.3906,175.5938 357.9531,175.5938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="378.25" y="173.1074">Jugador</text><line style="stroke:#504945;stroke-width:1.5;" x1="296.5" x2="475.5" y1="184.9531" y2="184.9531"/><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="303.5" y="192.9531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="315.5" y="199.1636">conoceLasReglas : boolean</text><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="303.5" y="205.7578"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="315.5" y="211.9683">numeroFederado : int</text><line style="stroke:#504945;stroke-width:1.5;" x1="296.5" x2="475.5" y1="218.5625" y2="218.5625"/><!--MD5=[8f63dadf5c643e74a34e53c8f0a15d23]
+class Persona--><rect codeLine="12" fill="#282828" height="60.8047" id="Persona" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="170" x="319" y="316.4531"/><ellipse cx="373.75" cy="332.4531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M373.9531,339.0938 Q373.4844,339.0938 373.0313,339 Q372.5781,338.9063 372.1563,338.6719 Q371.75,338.4375 371.4375,338.0781 Q371.125,337.7188 370.9375,337.2969 Q370.75,336.8594 370.6719,336.3906 Q370.6094,335.9219 370.6094,335.4688 L370.6094,329.9375 Q370.6094,329.4844 370.6719,329.0156 Q370.75,328.5469 370.9375,328.125 Q371.125,327.7031 371.4375,327.3438 Q371.75,326.9688 372.1563,326.75 Q372.5781,326.5156 373.0313,326.4219 Q373.4844,326.3281 373.9531,326.3281 Q374.3906,326.3281 374.8281,326.4063 Q375.2656,326.4688 375.6563,326.6719 Q376.0469,326.8594 376.3594,327.1875 Q376.6875,327.5 376.875,327.8906 Q377.0781,328.2813 377.1719,328.7188 Q377.2813,329.1406 377.2813,329.5938 Q377.2813,329.5938 377.2813,329.5938 Q377.2813,329.5938 377.2813,329.6094 L375.3906,329.6094 Q375.3906,329.5938 375.3906,329.5938 Q375.3906,329.5938 375.3906,329.5938 Q375.3906,329.2813 375.2969,328.9844 Q375.2188,328.6875 375.0313,328.4375 Q374.8438,328.1875 374.5469,328.0781 Q374.25,327.9531 373.9531,327.9531 Q373.7344,327.9531 373.5,328.0313 Q373.2656,328.0938 373.0938,328.25 Q372.9219,328.3906 372.7969,328.5938 Q372.6875,328.7969 372.625,329.0313 Q372.5625,329.25 372.5313,329.4844 Q372.5,329.7031 372.5,329.9375 L372.5,335.4688 Q372.5,335.7031 372.5313,335.9375 Q372.5625,336.1719 372.625,336.3906 Q372.6875,336.6094 372.7969,336.8125 Q372.9219,337.0156 373.0938,337.1719 Q373.2656,337.3281 373.5,337.3906 Q373.7344,337.4531 373.9531,337.4531 Q374.25,337.4531 374.5469,337.3438 Q374.8438,337.2188 375.0313,336.9688 Q375.2188,336.7188 375.2969,336.4219 Q375.3906,336.125 375.3906,335.8281 Q375.3906,335.8281 375.3906,335.8281 Q375.3906,335.8281 375.3906,335.8125 L377.2813,335.8125 Q377.2813,335.8281 377.2813,335.8281 Q377.2813,335.8281 377.2813,335.8281 Q377.2813,336.2656 377.1719,336.7031 Q377.0781,337.1406 376.875,337.5313 Q376.6875,337.9219 376.3594,338.2344 Q376.0469,338.5469 375.6563,338.75 Q375.2656,338.9375 374.8281,339.0156 Q374.3906,339.0938 373.9531,339.0938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="394.25" y="336.6074">Persona</text><line style="stroke:#504945;stroke-width:1.5;" x1="320" x2="488" y1="348.4531" y2="348.4531"/><polygon fill="none" points="330,354.4531,334,358.4531,330,362.4531,326,358.4531" style="stroke:#D79921;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="339" y="362.6636">nombreCompleto : String</text><line style="stroke:#504945;stroke-width:1.5;" x1="320" x2="488" y1="369.2578" y2="369.2578"/><!--MD5=[57ede1e6086d5eb2e952d648682e58ef]
+class Fecha--><rect codeLine="16" fill="#282828" height="86.4141" id="Fecha" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="77" x="621.5" y="303.9531"/><ellipse cx="639.65" cy="319.9531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M639.8531,326.5938 Q639.3844,326.5938 638.9313,326.5 Q638.4781,326.4063 638.0563,326.1719 Q637.65,325.9375 637.3375,325.5781 Q637.025,325.2188 636.8375,324.7969 Q636.65,324.3594 636.5719,323.8906 Q636.5094,323.4219 636.5094,322.9688 L636.5094,317.4375 Q636.5094,316.9844 636.5719,316.5156 Q636.65,316.0469 636.8375,315.625 Q637.025,315.2031 637.3375,314.8438 Q637.65,314.4688 638.0563,314.25 Q638.4781,314.0156 638.9313,313.9219 Q639.3844,313.8281 639.8531,313.8281 Q640.2906,313.8281 640.7281,313.9063 Q641.1656,313.9688 641.5563,314.1719 Q641.9469,314.3594 642.2594,314.6875 Q642.5875,315 642.775,315.3906 Q642.9781,315.7813 643.0719,316.2188 Q643.1813,316.6406 643.1813,317.0938 Q643.1813,317.0938 643.1813,317.0938 Q643.1813,317.0938 643.1813,317.1094 L641.2906,317.1094 Q641.2906,317.0938 641.2906,317.0938 Q641.2906,317.0938 641.2906,317.0938 Q641.2906,316.7813 641.1969,316.4844 Q641.1188,316.1875 640.9313,315.9375 Q640.7438,315.6875 640.4469,315.5781 Q640.15,315.4531 639.8531,315.4531 Q639.6344,315.4531 639.4,315.5313 Q639.1656,315.5938 638.9938,315.75 Q638.8219,315.8906 638.6969,316.0938 Q638.5875,316.2969 638.525,316.5313 Q638.4625,316.75 638.4313,316.9844 Q638.4,317.2031 638.4,317.4375 L638.4,322.9688 Q638.4,323.2031 638.4313,323.4375 Q638.4625,323.6719 638.525,323.8906 Q638.5875,324.1094 638.6969,324.3125 Q638.8219,324.5156 638.9938,324.6719 Q639.1656,324.8281 639.4,324.8906 Q639.6344,324.9531 639.8531,324.9531 Q640.15,324.9531 640.4469,324.8438 Q640.7438,324.7188 640.9313,324.4688 Q641.1188,324.2188 641.1969,323.9219 Q641.2906,323.625 641.2906,323.3281 Q641.2906,323.3281 641.2906,323.3281 Q641.2906,323.3281 641.2906,323.3125 L643.1813,323.3125 Q643.1813,323.3281 643.1813,323.3281 Q643.1813,323.3281 643.1813,323.3281 Q643.1813,323.7656 643.0719,324.2031 Q642.9781,324.6406 642.775,325.0313 Q642.5875,325.4219 642.2594,325.7344 Q641.9469,326.0469 641.5563,326.25 Q641.1656,326.4375 640.7281,326.5156 Q640.2906,326.5938 639.8531,326.5938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="654.35" y="324.1074">Fecha</text><line style="stroke:#504945;stroke-width:1.5;" x1="622.5" x2="697.5" y1="335.9531" y2="335.9531"/><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="629.5" y="343.9531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="641.5" y="350.1636">dia : int</text><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="629.5" y="356.7578"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="641.5" y="362.9683">mes : int</text><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="629.5" y="369.5625"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="641.5" y="375.7729">anio : int</text><line style="stroke:#504945;stroke-width:1.5;" x1="622.5" x2="697.5" y1="382.3672" y2="382.3672"/><!--MD5=[3bed08a2d8dc2299353a97046cc9cc77]
+class Nif--><rect codeLine="22" fill="#282828" height="73.6094" id="Nif" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="89" x="487.5" y="466.9531"/><ellipse cx="520.95" cy="482.9531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M521.1531,489.5938 Q520.6844,489.5938 520.2313,489.5 Q519.7781,489.4063 519.3563,489.1719 Q518.95,488.9375 518.6375,488.5781 Q518.325,488.2188 518.1375,487.7969 Q517.95,487.3594 517.8719,486.8906 Q517.8094,486.4219 517.8094,485.9688 L517.8094,480.4375 Q517.8094,479.9844 517.8719,479.5156 Q517.95,479.0469 518.1375,478.625 Q518.325,478.2031 518.6375,477.8438 Q518.95,477.4688 519.3563,477.25 Q519.7781,477.0156 520.2313,476.9219 Q520.6844,476.8281 521.1531,476.8281 Q521.5906,476.8281 522.0281,476.9063 Q522.4656,476.9688 522.8563,477.1719 Q523.2469,477.3594 523.5594,477.6875 Q523.8875,478 524.075,478.3906 Q524.2781,478.7813 524.3719,479.2188 Q524.4813,479.6406 524.4813,480.0938 Q524.4813,480.0938 524.4813,480.0938 Q524.4813,480.0938 524.4813,480.1094 L522.5906,480.1094 Q522.5906,480.0938 522.5906,480.0938 Q522.5906,480.0938 522.5906,480.0938 Q522.5906,479.7813 522.4969,479.4844 Q522.4188,479.1875 522.2313,478.9375 Q522.0438,478.6875 521.7469,478.5781 Q521.45,478.4531 521.1531,478.4531 Q520.9344,478.4531 520.7,478.5313 Q520.4656,478.5938 520.2938,478.75 Q520.1219,478.8906 519.9969,479.0938 Q519.8875,479.2969 519.825,479.5313 Q519.7625,479.75 519.7313,479.9844 Q519.7,480.2031 519.7,480.4375 L519.7,485.9688 Q519.7,486.2031 519.7313,486.4375 Q519.7625,486.6719 519.825,486.8906 Q519.8875,487.1094 519.9969,487.3125 Q520.1219,487.5156 520.2938,487.6719 Q520.4656,487.8281 520.7,487.8906 Q520.9344,487.9531 521.1531,487.9531 Q521.45,487.9531 521.7469,487.8438 Q522.0438,487.7188 522.2313,487.4688 Q522.4188,487.2188 522.4969,486.9219 Q522.5906,486.625 522.5906,486.3281 Q522.5906,486.3281 522.5906,486.3281 Q522.5906,486.3281 522.5906,486.3125 L524.4813,486.3125 Q524.4813,486.3281 524.4813,486.3281 Q524.4813,486.3281 524.4813,486.3281 Q524.4813,486.7656 524.3719,487.2031 Q524.2781,487.6406 524.075,488.0313 Q523.8875,488.4219 523.5594,488.7344 Q523.2469,489.0469 522.8563,489.25 Q522.4656,489.4375 522.0281,489.5156 Q521.5906,489.5938 521.1531,489.5938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="539.05" y="487.1074">Nif</text><line style="stroke:#504945;stroke-width:1.5;" x1="488.5" x2="575.5" y1="498.9531" y2="498.9531"/><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="495.5" y="506.9531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="507.5" y="513.1636">dni : int</text><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="495.5" y="519.7578"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="507.5" y="525.9683">letra : char</text><line style="stroke:#504945;stroke-width:1.5;" x1="488.5" x2="575.5" y1="532.5625" y2="532.5625"/><!--MD5=[cb0e43af56e2ee8ab00b5a0441550978]
+class Encuentro--><rect codeLine="27" fill="#282828" height="60.8047" id="Encuentro" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="152" x="7" y="159.4531"/><ellipse cx="46.75" cy="175.4531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M46.9531,182.0938 Q46.4844,182.0938 46.0313,182 Q45.5781,181.9063 45.1563,181.6719 Q44.75,181.4375 44.4375,181.0781 Q44.125,180.7188 43.9375,180.2969 Q43.75,179.8594 43.6719,179.3906 Q43.6094,178.9219 43.6094,178.4688 L43.6094,172.9375 Q43.6094,172.4844 43.6719,172.0156 Q43.75,171.5469 43.9375,171.125 Q44.125,170.7031 44.4375,170.3438 Q44.75,169.9688 45.1563,169.75 Q45.5781,169.5156 46.0313,169.4219 Q46.4844,169.3281 46.9531,169.3281 Q47.3906,169.3281 47.8281,169.4063 Q48.2656,169.4688 48.6563,169.6719 Q49.0469,169.8594 49.3594,170.1875 Q49.6875,170.5 49.875,170.8906 Q50.0781,171.2813 50.1719,171.7188 Q50.2813,172.1406 50.2813,172.5938 Q50.2813,172.5938 50.2813,172.5938 Q50.2813,172.5938 50.2813,172.6094 L48.3906,172.6094 Q48.3906,172.5938 48.3906,172.5938 Q48.3906,172.5938 48.3906,172.5938 Q48.3906,172.2813 48.2969,171.9844 Q48.2188,171.6875 48.0313,171.4375 Q47.8438,171.1875 47.5469,171.0781 Q47.25,170.9531 46.9531,170.9531 Q46.7344,170.9531 46.5,171.0313 Q46.2656,171.0938 46.0938,171.25 Q45.9219,171.3906 45.7969,171.5938 Q45.6875,171.7969 45.625,172.0313 Q45.5625,172.25 45.5313,172.4844 Q45.5,172.7031 45.5,172.9375 L45.5,178.4688 Q45.5,178.7031 45.5313,178.9375 Q45.5625,179.1719 45.625,179.3906 Q45.6875,179.6094 45.7969,179.8125 Q45.9219,180.0156 46.0938,180.1719 Q46.2656,180.3281 46.5,180.3906 Q46.7344,180.4531 46.9531,180.4531 Q47.25,180.4531 47.5469,180.3438 Q47.8438,180.2188 48.0313,179.9688 Q48.2188,179.7188 48.2969,179.4219 Q48.3906,179.125 48.3906,178.8281 Q48.3906,178.8281 48.3906,178.8281 Q48.3906,178.8281 48.3906,178.8125 L50.2813,178.8125 Q50.2813,178.8281 50.2813,178.8281 Q50.2813,178.8281 50.2813,178.8281 Q50.2813,179.2656 50.1719,179.7031 Q50.0781,180.1406 49.875,180.5313 Q49.6875,180.9219 49.3594,181.2344 Q49.0469,181.5469 48.6563,181.75 Q48.2656,181.9375 47.8281,182.0156 Q47.3906,182.0938 46.9531,182.0938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="66.25" y="179.6074">Encuentro</text><line style="stroke:#504945;stroke-width:1.5;" x1="8" x2="158" y1="191.4531" y2="191.4531"/><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="15" y="199.4531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="27" y="205.6636">resultadoFinal : String</text><line style="stroke:#504945;stroke-width:1.5;" x1="8" x2="158" y1="212.2578" y2="212.2578"/><!--MD5=[a2cbc64afa4cdc0a8baf22725fe8dce0]
+class Partida--><rect codeLine="31" fill="#282828" height="73.6094" id="Partida" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="101" x="32.5" y="309.9531"/><ellipse cx="58.3" cy="325.9531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M58.5031,332.5938 Q58.0344,332.5938 57.5813,332.5 Q57.1281,332.4063 56.7063,332.1719 Q56.3,331.9375 55.9875,331.5781 Q55.675,331.2188 55.4875,330.7969 Q55.3,330.3594 55.2219,329.8906 Q55.1594,329.4219 55.1594,328.9688 L55.1594,323.4375 Q55.1594,322.9844 55.2219,322.5156 Q55.3,322.0469 55.4875,321.625 Q55.675,321.2031 55.9875,320.8438 Q56.3,320.4688 56.7063,320.25 Q57.1281,320.0156 57.5813,319.9219 Q58.0344,319.8281 58.5031,319.8281 Q58.9406,319.8281 59.3781,319.9063 Q59.8156,319.9688 60.2063,320.1719 Q60.5969,320.3594 60.9094,320.6875 Q61.2375,321 61.425,321.3906 Q61.6281,321.7813 61.7219,322.2188 Q61.8313,322.6406 61.8313,323.0938 Q61.8313,323.0938 61.8313,323.0938 Q61.8313,323.0938 61.8313,323.1094 L59.9406,323.1094 Q59.9406,323.0938 59.9406,323.0938 Q59.9406,323.0938 59.9406,323.0938 Q59.9406,322.7813 59.8469,322.4844 Q59.7688,322.1875 59.5813,321.9375 Q59.3938,321.6875 59.0969,321.5781 Q58.8,321.4531 58.5031,321.4531 Q58.2844,321.4531 58.05,321.5313 Q57.8156,321.5938 57.6438,321.75 Q57.4719,321.8906 57.3469,322.0938 Q57.2375,322.2969 57.175,322.5313 Q57.1125,322.75 57.0813,322.9844 Q57.05,323.2031 57.05,323.4375 L57.05,328.9688 Q57.05,329.2031 57.0813,329.4375 Q57.1125,329.6719 57.175,329.8906 Q57.2375,330.1094 57.3469,330.3125 Q57.4719,330.5156 57.6438,330.6719 Q57.8156,330.8281 58.05,330.8906 Q58.2844,330.9531 58.5031,330.9531 Q58.8,330.9531 59.0969,330.8438 Q59.3938,330.7188 59.5813,330.4688 Q59.7688,330.2188 59.8469,329.9219 Q59.9406,329.625 59.9406,329.3281 Q59.9406,329.3281 59.9406,329.3281 Q59.9406,329.3281 59.9406,329.3125 L61.8313,329.3125 Q61.8313,329.3281 61.8313,329.3281 Q61.8313,329.3281 61.8313,329.3281 Q61.8313,329.7656 61.7219,330.2031 Q61.6281,330.6406 61.425,331.0313 Q61.2375,331.4219 60.9094,331.7344 Q60.5969,332.0469 60.2063,332.25 Q59.8156,332.4375 59.3781,332.5156 Q58.9406,332.5938 58.5031,332.5938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="74.7" y="330.1074">Partida</text><line style="stroke:#504945;stroke-width:1.5;" x1="33.5" x2="132.5" y1="341.9531" y2="341.9531"/><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="40.5" y="349.9531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="52.5" y="356.1636">puntosJ1 : int</text><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="40.5" y="362.7578"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="52.5" y="368.9683">puntosJ2 : int</text><line style="stroke:#504945;stroke-width:1.5;" x1="33.5" x2="132.5" y1="375.5625" y2="375.5625"/><!--MD5=[bdb970fcc7a921637ff54196d5e0510e]
+link Persona to Fecha--><path codeLine="38" d="M489.24,346.9531 C531.8,346.9531 581.49,346.9531 616.25,346.9531 " fill="none" id="Persona-to-Fecha" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#689D6A" points="621.27,346.9531,612.27,342.9531,616.27,346.9531,612.27,350.9531,621.27,346.9531" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="539.75" y="340.02">nace</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="496.949" y="343.4354">0..*</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="605.3917" y="342.6113">1</text><!--MD5=[e231b9914f5342cfec7e51a91f58b936]
+link Persona to Nif--><path codeLine="39" d="M427.38,377.8531 C441.09,395.2331 458.84,417.4831 475,436.9531 C481.98,445.3631 489.56,454.2731 496.84,462.7431 " fill="none" id="Persona-to-Nif" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#689D6A" points="500.38,466.8631,497.5599,457.4267,497.126,463.0668,491.4859,462.633,500.38,466.8631" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="476" y="433.02">se identifica</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="423.0743" y="397.2713">1</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="485.8126" y="455.757">1</text><!--MD5=[1db1cc15750a110febb9aef1cafef4f8]
+link Fecha to Nif--><!--MD5=[64a7f6e2f2360fa8223459ce3aa8c50d]
+link Jugador to Persona--><path codeLine="42" d="M390.22,227.2931 C392.61,247.8431 395.62,273.8231 398.23,296.2331 " fill="none" id="Jugador-to-Persona" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="none" points="405.21,295.6531,400.56,316.3331,391.3,297.2731,405.21,295.6531" style="stroke:#689D6A;stroke-width:1.0;"/><!--MD5=[b1d1ef3ab9848103c96e23364c6722a6]
+link Encuentro to Jugador--><path codeLine="44" d="M159.07,189.9531 C198.82,189.9531 247.88,189.9531 290.2,189.9531 " fill="none" id="Encuentro-to-Jugador" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#689D6A" points="295.33,189.9531,286.33,185.9531,290.33,189.9531,286.33,193.9531,295.33,189.9531" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="209.75" y="183.02">juega</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="166.8692" y="186.3667">1..*</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="279.4901" y="186.4206">2</text><!--MD5=[b1d1ef3ab9848103c96e23364c6722a6]
+link Encuentro to Jugador--><path codeLine="45" d="M159.14,203.9031 C175.92,206.4231 193.64,208.6531 210.25,209.9531 C236.23,211.9831 264.29,210.4731 290.2,207.5431 " fill="none" id="Encuentro-to-Jugador-1" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#689D6A" points="295.35,206.9331,285.9428,204.0168,290.3845,207.5198,286.8815,211.9615,295.35,206.9331" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="211.25" y="206.02">gana</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="166.9454" y="217.895">0..*</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="279.5118" y="204.8068">1</text><!--MD5=[64439dd0c02f11287ae53a0efe635a98]
+link Encuentro to Partida--><path codeLine="46" d="M83,220.4731 C83,244.2731 83,278.0231 83,304.5231 " fill="none" id="Encuentro-to-Partida" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#689D6A" points="83,309.7231,87,300.7231,83,304.7231,79,300.7231,83,309.7231" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="84" y="270.02">consiste</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="74.175" y="240.4155">1</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="74.2875" y="298.8691">3</text><!--MD5=[89a3d05660028f3d034cfea154f9a2d3]
+link Torneo to Fecha--><path codeLine="48" d="M424.07,74.8231 C454.12,93.2331 496.02,121.5531 527,152.9531 C570.84,197.3931 609.9,257.8831 634.16,299.2231 " fill="none" id="Torneo-to-Fecha" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#689D6A" points="636.76,303.6631,635.6843,293.8732,634.2424,299.3432,628.7724,297.9013,636.76,303.6631" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="586" y="194.52">se realiza</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="431.9702" y="74.3502">0..*</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="624.5889" y="292.9313">1</text><!--MD5=[02f132bf440355c35f29178d73ba4633]
+link Torneo to Encuentro--><path codeLine="49" d="M347.93,70.0431 C299.29,91.8731 214.15,130.0931 153.51,157.3031 " fill="none" id="Torneo-to-Encuentro" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#689D6A" points="148.83,159.4031,158.6788,159.3717,153.3925,157.3578,155.4064,152.0716,148.83,159.4031" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="263" y="119.02">celebra</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="331.9104" y="69.1414">1</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="137.7147" y="148.1825">1..*</text><!--MD5=[48a4273409a7efaae8a4e9f169ffe396]
+link Torneo to Jugador--><path codeLine="50" d="M386,76.0231 C386,95.6131 386,124.2031 386,147.7131 " fill="none" id="Torneo-to-Jugador" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#689D6A" points="386,152.9531,390,143.9531,386,147.9531,382,143.9531,386,152.9531" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="387" y="119.02">gana</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="360.0531" y="96.1968">0..*</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="377.2625" y="141.8636">1</text><!--MD5=[c7ccd202d124055f8eaf2b83321b9842]
+@startuml
+title El Torneo
+
+!include plantuml-config.txt
+
+class Torneo
+
+class Jugador {
+        - conoceLasReglas : boolean
+        - numeroFederado : int
+}
+
+class Persona {
+        # nombreCompleto : String
+}
+
+class Fecha {
+        - dia : int
+        - mes : int
+        - anio : int
+}
+
+class Nif {
+        - dni : int
+        - letra : char
+}
+
+class Encuentro {
+        - resultadoFinal : String
+}
+
+class Partida {
+        - puntosJ1 : int
+        - puntosJ2 : int
+}
+
+skinparam Nodesep 100
+
+Persona "0..*" -> "1" Fecha : nace
+Persona "1" -> "1" Nif : se identifica
+Fecha -[hidden]d- Nif
+
+Jugador - -|> Persona
+
+Encuentro "1..*" -> "2" Jugador : juega
+Encuentro "0..*" -> "1" Jugador : gana
+Encuentro "1" - -> "3" Partida : consiste
+
+Torneo "0..*" - -> "1" Fecha : se realiza
+Torneo "1" - -> "1..*" Encuentro : celebra
+Torneo "0..*" - -> "1" Jugador : gana
+@enduml
+
+@startuml
+title El Torneo
+
+skinparam groupInheritance 2
+
+skinparam Default {
+        FontName Iosevka Term
+        FontColor #ebdbb2
+}
+
+skinparam BackgroundColor #1d2021
+skinparam Shadowing false
+skinparam RoundCorner 15
+
+skinparam Class {
+        BackgroundColor #282828
+        BorderColor #504945
+        ArrowColor #689d6a
+}
+
+skinparam Stereotype {
+        CBackgroundColor #b8bb26
+        CBorderColor #b8bb26
+        EBackgroundColor #fe8019
+        EBorderColor #fe8019
+        ABackgroundColor #83a598
+        ABorderColor #83a598
+}
+
+skinparam Icon {
+        PrivateColor #cc241d
+        PrivateBackgroundColor #cc241d
+        ProtectedColor #d79921
+        ProtectedBackgroundColor #d79921
+}
+
+class Torneo
+
+class Jugador {
+        - conoceLasReglas : boolean
+        - numeroFederado : int
+}
+
+class Persona {
+        # nombreCompleto : String
+}
+
+class Fecha {
+        - dia : int
+        - mes : int
+        - anio : int
+}
+
+class Nif {
+        - dni : int
+        - letra : char
+}
+
+class Encuentro {
+        - resultadoFinal : String
+}
+
+class Partida {
+        - puntosJ1 : int
+        - puntosJ2 : int
+}
+
+skinparam Nodesep 100
+
+Persona "0..*" -> "1" Fecha : nace
+Persona "1" -> "1" Nif : se identifica
+Fecha -[hidden]d- Nif
+
+Jugador - -|> Persona
+
+Encuentro "1..*" -> "2" Jugador : juega
+Encuentro "0..*" -> "1" Jugador : gana
+Encuentro "1" - -> "3" Partida : consiste
+
+Torneo "0..*" - -> "1" Fecha : se realiza
+Torneo "1" - -> "1..*" Encuentro : celebra
+Torneo "0..*" - -> "1" Jugador : gana
+@enduml
+
+PlantUML version 1.2022.1(Tue Feb 01 19:19:58 CET 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
