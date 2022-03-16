@@ -1,0 +1,45 @@
+#+TITLE: Consultas SQL
+#+SETUPFILE: ../../template.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+Numeros del 100 al 1:
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  lanzamiento NUMBER(3) := 100;
+BEGIN
+  WHILE lanzamiento > 0 LOOP
+    dbms_output.put( lanzamiento || ' ' );
+    lanzamiento := lanzamiento - 1;
+  END LOOP;
+
+  dbms_output.put_line( '' );
+  dbms_output.put_line( 'acabo el bucle' );
+END;
+#+end_src
+
+Pedir un numero y mostrar sus divisores y si es primo:
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  numero NUMBER(5) := 0;
+  divisores NUMBER(5) := 0;
+BEGIN
+  numero := &1;
+  dbms_output.put_line( 'Divisores de ' || numero || ':' );
+  
+  FOR i IN 1 .. numero LOOP
+    IF MOD(numero, i) = 0 THEN
+      dbms_output.put_line( i );
+      divisores := divisores + 1;
+    END IF;
+  END LOOP;
+  
+  IF divisores < 3 THEN
+    dbms_output.put_line( 'El numero es primo' );
+  ELSE
+    dbms_output.put_line( 'El numero no es primo' );
+  END IF;
+END;
+#+end_src
