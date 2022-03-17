@@ -1,4 +1,4 @@
-#+TITLE: Consultas SQL
+#+TITLE: PLSQL
 #+SETUPFILE: ../../template.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 Numeros del 100 al 1:
