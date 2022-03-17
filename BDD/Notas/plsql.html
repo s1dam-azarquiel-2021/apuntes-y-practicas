@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- 2022-03-17 Thu 12:00 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Consultas SQL</title>
+<meta name="author" content="Alberto Robles Gomez" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+</head>
+<body>
+<div id="content" class="content">
+<header>
+<h1 class="title">Consultas SQL</h1>
+</header><p>
+Numeros del 100 al 1:
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+  lanzamiento <span class="org-keyword">NUMBER</span>(3) := 100;
+<span class="org-keyword">BEGIN</span>
+  WHILE lanzamiento &gt; 0 LOOP
+    dbms_output.put( lanzamiento || <span class="org-string">' '</span> );
+    lanzamiento := lanzamiento - 1;
+  <span class="org-keyword">END</span> LOOP;
+
+  dbms_output.put_line( <span class="org-string">''</span> );
+  dbms_output.put_line( <span class="org-string">'acabo el bucle'</span> );
+<span class="org-keyword">END</span>;
+</pre>
+</div>
+
+<p>
+Pedir un numero y mostrar sus divisores y si es primo:
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+  numero <span class="org-keyword">NUMBER</span>(5) := 0;
+  divisores <span class="org-keyword">NUMBER</span>(5) := 0;
+<span class="org-keyword">BEGIN</span>
+  numero := &amp;1;
+  dbms_output.put_line( <span class="org-string">'Divisores de '</span> || numero || <span class="org-string">':'</span> );
+
+  <span class="org-keyword">FOR</span> i <span class="org-keyword">IN</span> 1 .. numero LOOP
+    IF <span class="org-builtin">MOD</span>(numero, i) = 0 <span class="org-keyword">THEN</span>
+      dbms_output.put_line( i );
+      divisores := divisores + 1;
+    <span class="org-keyword">END</span> IF;
+  <span class="org-keyword">END</span> LOOP;
+
+  IF divisores &lt; 3 <span class="org-keyword">THEN</span>
+    dbms_output.put_line( <span class="org-string">'El numero es primo'</span> );
+  <span class="org-keyword">ELSE</span>
+    dbms_output.put_line( <span class="org-string">'El numero no es primo'</span> );
+  <span class="org-keyword">END</span> IF;
+<span class="org-keyword">END</span>;
+</pre>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Alberto Robles Gomez</p>
+<p class="date">Created: 2022-03-17 Thu 12:00</p>
+</div>
+</body>
+</html>
