@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-16 Wed 09:37 -->
+<!-- 2022-03-17 Thu 12:00 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Consultas SQL</title>
@@ -2052,7 +2052,7 @@ Cuantos proveedores no venden sus articulos.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-16 Wed 09:37</p>
+<p class="date">Created: 2022-03-17 Thu 12:00</p>
 </div>
 </body>
 </html>

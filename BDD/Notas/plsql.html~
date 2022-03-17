@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-17 Thu 12:04 -->
+<!-- 2022-03-17 Thu 12:00 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PLSQL</title>
+<title>Consultas SQL</title>
 <meta name="author" content="Alberto Robles Gomez" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="../../css/index.css" />
@@ -12,7 +12,7 @@
 <body>
 <div id="content" class="content">
 <header>
-<h1 class="title">PLSQL</h1>
+<h1 class="title">Consultas SQL</h1>
 </header><p>
 Numeros del 100 al 1:
 </p>
@@ -64,7 +64,7 @@ Pedir un numero y mostrar sus divisores y si es primo:
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-17 Thu 12:04</p>
+<p class="date">Created: 2022-03-17 Thu 12:00</p>
 </div>
 </body>
 </html>
