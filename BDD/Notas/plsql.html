@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-17 Thu 12:04 -->
+<!-- 2022-03-17 Thu 16:12 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -61,10 +61,70 @@ Pedir un numero y mostrar sus divisores y si es primo:
 <span class="org-keyword">END</span>;
 </pre>
 </div>
+
+<p>
+Programa que admite una nota y nos dice con palabras la nota:
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+  nota <span class="org-keyword">NUMBER</span>(3,1);
+<span class="org-keyword">BEGIN</span>
+  nota := &amp;1;
+
+  IF nota &lt; 0 <span class="org-keyword">THEN</span>
+    dbms_output.put_line( <span class="org-string">'Tan penoso que tiene nota negativa'</span> );
+  ELSIF nota &lt; 3 <span class="org-keyword">THEN</span>
+    dbms_output.put_line( <span class="org-string">'Muy deficiente'</span> );
+  ELSIF nota &lt; 5 <span class="org-keyword">THEN</span>
+    dbms_output.put_line( <span class="org-string">'Insuficiente'</span> );
+  ELSIF nota &lt; 6 <span class="org-keyword">THEN</span>
+    dbms_output.put_line( <span class="org-string">'Suficiente'</span> );
+  ELSIF nota &lt; 7 <span class="org-keyword">THEN</span>
+    dbms_output.put_line( <span class="org-string">'Bien'</span> );
+  ELSIF nota &lt; 9 <span class="org-keyword">THEN</span>
+    dbms_output.put_line( <span class="org-string">'Notable'</span> );
+  ELSIF nota &lt;= 10 <span class="org-keyword">THEN</span>
+    dbms_output.put_line( <span class="org-string">'Sobresaliente'</span> );
+  <span class="org-keyword">ELSE</span>
+    dbms_output.put_line( <span class="org-string">'Vaya nota mas rara tienes'</span> );
+  <span class="org-keyword">END</span> IF;
+<span class="org-keyword">END</span>;
+</pre>
+</div>
+
+<p>
+Visualizar los 10 ultimos multiplos de 7 menores de 1000
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+  ultimoMultiplo <span class="org-keyword">NUMBER</span>(3) := 0;
+  desde <span class="org-keyword">NUMBER</span>(3) := 999;
+  multiplo <span class="org-keyword">NUMBER</span>(1) := 7;
+  cantidad <span class="org-keyword">NUMBER</span>(2) := 10;
+<span class="org-keyword">BEGIN</span>
+  WHILE ultimoMultiplo = 0 LOOP
+    IF <span class="org-builtin">MOD</span>(desde, multiplo) = 0 <span class="org-keyword">THEN</span>
+      ultimoMultiplo := desde;
+    <span class="org-keyword">ELSE</span>
+      desde := desde - 1;
+    <span class="org-keyword">END</span> IF;
+  <span class="org-keyword">END</span> LOOP;
+
+  <span class="org-keyword">FOR</span> i <span class="org-keyword">IN</span> 1 .. cantidad LOOP
+    dbms_output.put_line( ultimoMultiplo );
+    ultimoMultiplo := ultimoMultiplo - multiplo;
+  <span class="org-keyword">END</span> LOOP;
+<span class="org-keyword">END</span>;
+</pre>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-17 Thu 12:04</p>
+<p class="date">Created: 2022-03-17 Thu 16:12</p>
 </div>
 </body>
 </html>
