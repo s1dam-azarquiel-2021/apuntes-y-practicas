@@ -97,3 +97,29 @@ BEGIN
   END LOOP;
 END;
 #+end_src
+
+Numeros capicuas desde el 1000 hasta el 9999 (de 4 cifras):
+#+begin_src sql
+SET serveroutput ON;
+
+BEGIN
+  FOR i IN 1000 .. 9999 LOOP
+    IF TRUNC(i / 100) = MOD(i, 10) * 10 + MOD(TRUNC(i / 10), 10) THEN
+      dbms_output.put_line( i );
+    END IF;
+  END LOOP;
+END;
+#+end_src
+
+Crear un reloj digital:
+#+begin_src sql
+SET serveroutput ON;
+
+BEGIN
+  FOR i IN 0 .. 23 LOOP
+    FOR j IN 0 .. 59 LOOP
+      dbms_output.put_line( LPAD(i, 2, '0') || ':' || LPAD(j, 2, '0') );
+    END LOOP;
+  END LOOP;
+END;
+#+end_src
