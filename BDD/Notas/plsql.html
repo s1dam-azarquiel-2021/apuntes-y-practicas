@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-18 Fri 09:23 -->
+<!-- 2022-03-18 Fri 11:34 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -121,10 +121,42 @@ Visualizar los 10 ultimos multiplos de 7 menores de 1000
 <span class="org-keyword">END</span>;
 </pre>
 </div>
+
+<p>
+Numeros capicuas desde el 1000 hasta el 9999 (de 4 cifras):
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">FOR</span> i <span class="org-keyword">IN</span> 1000 .. 9999 LOOP
+    IF TRUNC(i / 100) = <span class="org-builtin">MOD</span>(i, 10) * 10 + <span class="org-builtin">MOD</span>(TRUNC(i / 10), 10) <span class="org-keyword">THEN</span>
+      dbms_output.put_line( i );
+    <span class="org-keyword">END</span> IF;
+  <span class="org-keyword">END</span> LOOP;
+<span class="org-keyword">END</span>;
+</pre>
+</div>
+
+<p>
+Crear un reloj digital:
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">FOR</span> i <span class="org-keyword">IN</span> 0 .. 23 LOOP
+    <span class="org-keyword">FOR</span> j <span class="org-keyword">IN</span> 0 .. 59 LOOP
+      dbms_output.put_line( LPAD(i, 2, <span class="org-string">'0'</span>) || <span class="org-string">':'</span> || LPAD(j, 2, <span class="org-string">'0'</span>) );
+    <span class="org-keyword">END</span> LOOP;
+  <span class="org-keyword">END</span> LOOP;
+<span class="org-keyword">END</span>;
+</pre>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-18 Fri 09:23</p>
+<p class="date">Created: 2022-03-18 Fri 11:34</p>
 </div>
 </body>
 </html>
