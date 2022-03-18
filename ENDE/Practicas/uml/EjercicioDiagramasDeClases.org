@@ -139,13 +139,14 @@ class Estudiante {
         - listarAsignaturas() : Asignatura *
         - listarNotas() : Nota *
         - matricular(Asignatura a) : void
-        - registrar(Asignatura a, float pts, float ptsMax) : void
+        - examinar(Asignatura a, float pts, float ptsMax) : void
 }
 
 class Asignatura {
         - codigo : int
         - nombre : String
         - listarEstudiantes() : Estudiante *
+        - listarNotas() : Nota *
 }
 
 class Nota {
@@ -155,10 +156,14 @@ class Nota {
 
 class Becario {
         - codigo : int
+}
+
+class Beca {
         - importeBeca : float
 }
 
-class Beca
+class Matricula
+
 class Profesor
 class Curso
 
@@ -167,15 +172,17 @@ skinparam Nodesep 100
 Persona <|- Estudiante
 
 Estudiante <|-u- Becario
-Estudiante "0..*" <--> "0..*" Asignatura : matricula
+Estudiante "0..*" <--> "1..*" Asignatura : matricula
+(Estudiante,Asignatura) .. Matricula
+Estudiante "0..*" <--> "1..*" Asignatura : examina
+(Estudiante,Asignatura) .. Nota
 
 Becario "0..*" -l> "1" Beca : recibe
 
 Asignatura "1..*" --> "1" Profesor : imparte
 Asignatura "1..*" --> "1" Curso : pertenece
 
-Nota "0..*" -r-> "1" Asignatura : es de
-Nota "0..*" <-u- "1" Estudiante : es de
+Profesor -l-|> Persona
 #+end_src
 
 #+RESULTS:
