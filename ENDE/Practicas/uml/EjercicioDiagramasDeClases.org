@@ -132,14 +132,14 @@ class Persona {
         # nombre : Strig
         # direccion : String
         # estadoCivil : String
-        # darseDeAlta() : void
+        - darseDeAlta() : void
 }
 
 class Estudiante {
-        # listarAsignaturas() : Asignatura *
-        # listarNotas() : Nota *
-        # matricular(Asignatura a) : void
-        # registrar(Asignatura a, float pts, float ptsMax) : void
+        - listarAsignaturas() : Asignatura *
+        - listarNotas() : Nota *
+        - matricular(Asignatura a) : void
+        - registrar(Asignatura a, float pts, float ptsMax) : void
 }
 
 class Asignatura {
