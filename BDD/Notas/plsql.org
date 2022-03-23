@@ -123,3 +123,60 @@ BEGIN
   END LOOP;
 END;
 #+end_src
+
+Programa que acepta un numero de 5 digitos y visualiza cuantos
+divisores tieney cuales son:
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  numero NUMBER(5) := 0;
+  raiz NUMBER(3) := 0;
+  total NUMBER(3) := 0;
+  i NUMBER(5) := 1;
+BEGIN
+  numero := &1;
+  raiz := SQRT(numero);
+  
+  WHILE i < TRUNC(numero / 2) AND NOT (i > raiz AND total = 0) LOOP
+    IF MOD(numero, i) = 0 THEN
+      dbms_output.put_line(i);
+      total := total + 1;
+    END IF;
+    i := i + 1;
+  END LOOP;
+  
+  IF numero > 1 THEN
+    dbms_output.put_line(numero);
+    total := total + 1;
+  END IF;
+  
+  dbms_output.put_line( 'Numero de divisores: ' || total );
+END;
+#+end_src
+
+Listado de numeros primos hasta 100:
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  n NUMBER(2);
+  tieneDivisor BOOLEAN;
+BEGIN
+  FOR i IN 1 .. 100 LOOP
+    n := 2;
+    tieneDivisor := FALSE;
+    WHILE NOT tieneDivisor AND n <= SQRT(i) LOOP
+      IF MOD(i, n) = 0 THEN
+        tieneDivisor := TRUE;
+      ELSE
+        n := n + 1;
+      END IF;
+    END LOOP;
+    
+    IF NOT tieneDivisor THEN
+      dbms_output.put_line(i);
+    END IF;
+  END LOOP;
+END;
+#+end_src
