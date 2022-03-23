@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-18 Fri 09:23 -->
+<!-- 2022-03-18 Fri 11:34 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 1D</title>
@@ -17,13 +17,13 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga5f8d51">Interpretacion de mapas de red</a></li>
+<li><a href="#orgd52d1ad">Interpretacion de mapas de red</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orga5f8d51" class="outline-2">
-<h2 id="orga5f8d51">Interpretacion de mapas de red</h2>
-<div class="outline-text-2" id="text-orga5f8d51">
+<div id="outline-container-orgd52d1ad" class="outline-2">
+<h2 id="orgd52d1ad">Interpretacion de mapas de red</h2>
+<div class="outline-text-2" id="text-orgd52d1ad">
 <ol class="org-ol">
 <li>Interpreta ambas redes.</li>
 <li><p>
@@ -31,7 +31,7 @@ Identifica los siguientes elementos de ambas redes:
 </p>
 
 
-<figure id="orgb293fd4">
+<figure id="orgbc42e2c">
 <img src="./img/red-2.1.png" alt="red-2.1.png">
 
 </figure>
@@ -68,7 +68,7 @@ Identifica los siguientes elementos de ambas redes:
 </ul>
 
 
-<figure id="org4736c1d">
+<figure id="orgb67b609">
 <img src="./img/red-2.2.png" alt="red-2.2.png">
 
 </figure>
@@ -139,7 +139,7 @@ del DNS, ya que sino ocurre un DNS leakeage).
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-18 Fri 09:23</p>
+<p class="date">Created: 2022-03-18 Fri 11:34</p>
 </div>
 </body>
 </html>
