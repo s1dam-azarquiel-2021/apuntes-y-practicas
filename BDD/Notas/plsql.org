@@ -160,19 +160,23 @@ Listado de numeros primos hasta 100:
 SET serveroutput ON;
 
 DECLARE
-  n NUMBER(2);
+  n NUMBER;
   tieneDivisor BOOLEAN;
 BEGIN
-  FOR i IN 1 .. 100 LOOP
-    n := 2;
-    tieneDivisor := FALSE;
-    WHILE NOT tieneDivisor AND n <= SQRT(i) LOOP
-      IF MOD(i, n) = 0 THEN
-        tieneDivisor := TRUE;
-      ELSE
-        n := n + 1;
-      END IF;
-    END LOOP;
+  FOR i IN 1 .. 100000 LOOP
+    IF MOD(i, 2) = 0 AND i != 2 THEN
+      tieneDivisor := TRUE;
+    ELSE
+      n := 3;
+      tieneDivisor := FALSE;
+      WHILE NOT tieneDivisor AND n <= SQRT(i) LOOP
+        IF MOD(i, n) = 0 THEN
+          tieneDivisor := TRUE;
+        ELSE
+          n := n + 2;
+        END IF;
+      END LOOP;
+    END IF;
     
     IF NOT tieneDivisor THEN
       dbms_output.put_line(i);
