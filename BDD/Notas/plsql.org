@@ -157,7 +157,7 @@ END;
 
 Listado de numeros primos hasta 100.000:
 #+begin_src sql
-SET serveroutput ON;
+SET serveroutput ON SIZE UNLIMITED;
 
 DECLARE
   n NUMBER;
