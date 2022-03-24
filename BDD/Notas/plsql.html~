@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-23 Wed 17:52 -->
+<!-- 2022-03-24 Thu 11:58 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -195,19 +195,23 @@ Listado de numeros primos hasta 100:
 <pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
 
 <span class="org-keyword">DECLARE</span>
-  n <span class="org-keyword">NUMBER</span>(2);
+  n <span class="org-keyword">NUMBER</span>;
   tieneDivisor <span class="org-type">BOOLEAN</span>;
 <span class="org-keyword">BEGIN</span>
-  <span class="org-keyword">FOR</span> i <span class="org-keyword">IN</span> 1 .. 100 LOOP
-    n := 2;
-    tieneDivisor := <span class="org-keyword">FALSE</span>;
-    WHILE <span class="org-keyword">NOT</span> tieneDivisor <span class="org-keyword">AND</span> n &lt;= SQRT(i) LOOP
-      IF <span class="org-builtin">MOD</span>(i, n) = 0 <span class="org-keyword">THEN</span>
-        tieneDivisor := <span class="org-keyword">TRUE</span>;
-      <span class="org-keyword">ELSE</span>
-        n := n + 1;
-      <span class="org-keyword">END</span> IF;
-    <span class="org-keyword">END</span> LOOP;
+  <span class="org-keyword">FOR</span> i <span class="org-keyword">IN</span> 1 .. 100000 LOOP
+    IF <span class="org-builtin">MOD</span>(i, 2) = 0 <span class="org-keyword">AND</span> i != 2 <span class="org-keyword">THEN</span>
+      tieneDivisor := <span class="org-keyword">TRUE</span>;
+    <span class="org-keyword">ELSE</span>
+      n := 3;
+      tieneDivisor := <span class="org-keyword">FALSE</span>;
+      WHILE <span class="org-keyword">NOT</span> tieneDivisor <span class="org-keyword">AND</span> n &lt;= SQRT(i) LOOP
+        IF <span class="org-builtin">MOD</span>(i, n) = 0 <span class="org-keyword">THEN</span>
+          tieneDivisor := <span class="org-keyword">TRUE</span>;
+        <span class="org-keyword">ELSE</span>
+          n := n + 2;
+        <span class="org-keyword">END</span> IF;
+      <span class="org-keyword">END</span> LOOP;
+    <span class="org-keyword">END</span> IF;
 
     IF <span class="org-keyword">NOT</span> tieneDivisor <span class="org-keyword">THEN</span>
       dbms_output.put_line(i);
@@ -219,7 +223,7 @@ Listado de numeros primos hasta 100:
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-23 Wed 17:52</p>
+<p class="date">Created: 2022-03-24 Thu 11:58</p>
 </div>
 </body>
 </html>
