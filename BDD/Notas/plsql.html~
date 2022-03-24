@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-18 Fri 11:34 -->
+<!-- 2022-03-23 Wed 17:52 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -153,10 +153,73 @@ Crear un reloj digital:
 <span class="org-keyword">END</span>;
 </pre>
 </div>
+
+<p>
+Programa que acepta un numero de 5 digitos y visualiza cuantos
+divisores tieney cuales son:
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+  numero <span class="org-keyword">NUMBER</span>(5) := 0;
+  raiz <span class="org-keyword">NUMBER</span>(3) := 0;
+  total <span class="org-keyword">NUMBER</span>(3) := 0;
+  i <span class="org-keyword">NUMBER</span>(5) := 1;
+<span class="org-keyword">BEGIN</span>
+  numero := &amp;1;
+  raiz := SQRT(numero);
+
+  WHILE i &lt; TRUNC(numero / 2) <span class="org-keyword">AND</span> <span class="org-keyword">NOT</span> (i &gt; raiz <span class="org-keyword">AND</span> total = 0) LOOP
+    IF <span class="org-builtin">MOD</span>(numero, i) = 0 <span class="org-keyword">THEN</span>
+      dbms_output.put_line(i);
+      total := total + 1;
+    <span class="org-keyword">END</span> IF;
+    i := i + 1;
+  <span class="org-keyword">END</span> LOOP;
+
+  IF numero &gt; 1 <span class="org-keyword">THEN</span>
+    dbms_output.put_line(numero);
+    total := total + 1;
+  <span class="org-keyword">END</span> IF;
+
+  dbms_output.put_line( <span class="org-string">'Numero de divisores: '</span> || total );
+<span class="org-keyword">END</span>;
+</pre>
+</div>
+
+<p>
+Listado de numeros primos hasta 100:
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+  n <span class="org-keyword">NUMBER</span>(2);
+  tieneDivisor <span class="org-type">BOOLEAN</span>;
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">FOR</span> i <span class="org-keyword">IN</span> 1 .. 100 LOOP
+    n := 2;
+    tieneDivisor := <span class="org-keyword">FALSE</span>;
+    WHILE <span class="org-keyword">NOT</span> tieneDivisor <span class="org-keyword">AND</span> n &lt;= SQRT(i) LOOP
+      IF <span class="org-builtin">MOD</span>(i, n) = 0 <span class="org-keyword">THEN</span>
+        tieneDivisor := <span class="org-keyword">TRUE</span>;
+      <span class="org-keyword">ELSE</span>
+        n := n + 1;
+      <span class="org-keyword">END</span> IF;
+    <span class="org-keyword">END</span> LOOP;
+
+    IF <span class="org-keyword">NOT</span> tieneDivisor <span class="org-keyword">THEN</span>
+      dbms_output.put_line(i);
+    <span class="org-keyword">END</span> IF;
+  <span class="org-keyword">END</span> LOOP;
+<span class="org-keyword">END</span>;
+</pre>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-18 Fri 11:34</p>
+<p class="date">Created: 2022-03-23 Wed 17:52</p>
 </div>
 </body>
 </html>
