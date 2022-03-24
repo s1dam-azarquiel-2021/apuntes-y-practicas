@@ -155,7 +155,7 @@ BEGIN
 END;
 #+end_src
 
-Listado de numeros primos hasta 100:
+Listado de numeros primos hasta 100.000:
 #+begin_src sql
 SET serveroutput ON;
 
