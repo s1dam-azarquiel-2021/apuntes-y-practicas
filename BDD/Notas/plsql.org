@@ -184,3 +184,17 @@ BEGIN
   END LOOP;
 END;
 #+end_src
+
+Insertar 100 registros en paises con distinto nombre.
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  ultimoID NUMBER(3);
+BEGIN
+  SELECT NVL(MAX(c_pais), 0) + 1 INTO ultimoID FROM paises;
+  for i IN 1 .. 100 LOOP
+    INSERT INTO paises (c_pais, nombre_pais) VALUES (i + ultimoID, 'Pepino ' || i);
+  END LOOP;
+END;
+#+end_src
