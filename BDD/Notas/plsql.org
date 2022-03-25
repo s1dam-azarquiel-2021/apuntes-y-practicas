@@ -28,14 +28,14 @@ DECLARE
 BEGIN
   numero := &1;
   dbms_output.put_line( 'Divisores de ' || numero || ':' );
-  
+
   FOR i IN 1 .. numero LOOP
     IF MOD(numero, i) = 0 THEN
       dbms_output.put_line( i );
       divisores := divisores + 1;
     END IF;
   END LOOP;
-  
+
   IF divisores < 3 THEN
     dbms_output.put_line( 'El numero es primo' );
   ELSE
@@ -137,7 +137,7 @@ DECLARE
 BEGIN
   numero := &1;
   raiz := SQRT(numero);
-  
+
   WHILE i < TRUNC(numero / 2) AND NOT (i > raiz AND total = 0) LOOP
     IF MOD(numero, i) = 0 THEN
       dbms_output.put_line(i);
@@ -145,12 +145,12 @@ BEGIN
     END IF;
     i := i + 1;
   END LOOP;
-  
+
   IF numero > 1 THEN
     dbms_output.put_line(numero);
     total := total + 1;
   END IF;
-  
+
   dbms_output.put_line( 'Numero de divisores: ' || total );
 END;
 #+end_src
@@ -177,7 +177,7 @@ BEGIN
         END IF;
       END LOOP;
     END IF;
-    
+
     IF NOT tieneDivisor THEN
       dbms_output.put_line(i);
     END IF;
