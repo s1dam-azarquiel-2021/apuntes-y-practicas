@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-24 Thu 11:58 -->
+<!-- 2022-03-24 Thu 12:41 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -189,10 +189,10 @@ divisores tieney cuales son:
 </div>
 
 <p>
-Listado de numeros primos hasta 100:
+Listado de numeros primos hasta 100.000:
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span> <span class="org-keyword">SIZE</span> UNLIMITED;
 
 <span class="org-keyword">DECLARE</span>
   n <span class="org-keyword">NUMBER</span>;
@@ -220,10 +220,27 @@ Listado de numeros primos hasta 100:
 <span class="org-keyword">END</span>;
 </pre>
 </div>
+
+<p>
+Insertar 100 registros en paises con distinto nombre.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+  ultimoID <span class="org-keyword">NUMBER</span>(3);
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">SELECT</span> NVL(<span class="org-builtin">MAX</span>(c_pais), 0) + 1 <span class="org-keyword">INTO</span> ultimoID <span class="org-keyword">FROM</span> paises;
+  <span class="org-keyword">for</span> i <span class="org-keyword">IN</span> 1 .. 100 LOOP
+    <span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> paises (c_pais, nombre_pais) <span class="org-keyword">VALUES</span> (i + ultimoID, <span class="org-string">'Pepino '</span> || i);
+  <span class="org-keyword">END</span> LOOP;
+<span class="org-keyword">END</span>;
+</pre>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-24 Thu 11:58</p>
+<p class="date">Created: 2022-03-24 Thu 12:41</p>
 </div>
 </body>
 </html>
