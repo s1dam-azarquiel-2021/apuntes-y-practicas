@@ -198,3 +198,110 @@ BEGIN
   END LOOP;
 END;
 #+end_src
+
+Mostrar todos los titulos de las peliculas.
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  c_min NUMBER(4,0);
+  c_max NUMBER(4,0);
+  titulo VARCHAR2(16);
+BEGIN
+  SELECT MIN(c_peli), MAX(c_peli)
+  INTO   c_min, c_max
+  FROM   peliculas;
+
+  FOR i IN c_min .. c_max LOOP
+    SELECT titulo INTO titulo FROM peliculas WHERE c_peli = i;
+    dbms_output.put_line( titulo );
+  END LOOP;
+END;
+#+end_src
+
+Visualizar todos los campos de datos de los socios.
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  c_min NUMBER(4,0);
+  c_max NUMBER(4,0);
+  nombre VARCHAR2(15);
+  ape1 VARCHAR2(15);
+  ape2 VARCHAR2(15);
+  direccion VARCHAR2(20);
+  telefono CHAR(9);
+BEGIN
+  SELECT MIN(c_socio), MAX(c_socio)
+  INTO   c_min, c_max
+  FROM   socios;
+
+  dbms_output.put_line(
+    '| CODIGO '
+    || RPAD('| NOMBRE', 18)
+    || RPAD('| APE1', 18)
+    || RPAD('| APE2', 18)
+    || RPAD('| DIRECCION', 23)
+    || RPAD('| TELEFONO', 12)
+    || '|'
+  );
+
+  FOR i IN c_min .. c_max LOOP
+    dbms_output.put_line(RPAD('-',99,'-'));
+
+    SELECT nombre, ape1, ape2, direccion, telefono
+    INTO   nombre, ape1, ape2, direccion, telefono
+    FROM   socios
+    WHERE  c_socio = i;
+
+    dbms_output.put_line(
+      RPAD('| ' || i, 9)
+      || RPAD('| ' || nombre, 18)
+      || RPAD('| ' || ape1, 18)
+      || RPAD('| ' || ape2, 18)
+      || RPAD('| ' || direccion, 23)
+      || RPAD('| ' || telefono, 12)
+      || '|'
+    );
+  END LOOP;
+END;
+#+end_src
+
+Visualizar los titulos de las peliculas que se han alquilado, junto
+con la fecha del ultimo alquiler.
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  c_min NUMBER(4,0);
+  c_max NUMBER(4,0);
+  titulo VARCHAR2(16);
+  fecha DATE;
+BEGIN
+  SELECT MIN(c_peli), MAX(c_peli)
+  INTO   c_min, c_max
+  FROM   peliculas;
+
+  dbms_output.put_line(RPAD('TITULO', 16) || ' | FECHA');
+  dbms_output.put_line(RPAD('-',27,'-'));
+
+  FOR i IN c_min .. c_max LOOP
+    SELECT titulo, (
+      SELECT MAX(fecha)
+      FROM   alquiler
+      WHERE  c_peli = p.c_peli
+    )
+    INTO   titulo, fecha
+    FROM   peliculas p
+    WHERE  c_peli = i;
+
+    IF fecha IS NOT NULL THEN
+      dbms_output.put_line(
+        RPAD(titulo, 16)
+        || ' | '
+        || fecha
+      );
+    END IF;
+  END LOOP;
+END;
+#+end_src
