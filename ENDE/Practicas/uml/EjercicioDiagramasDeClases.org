@@ -322,12 +322,13 @@ class Nif {
 }
 
 class Encuentro {
-        - resultadoFinal : String
+        - calcularGanador() : Jugador
 }
 
-class Partida {
-        - puntosJ1 : int
-        - puntosJ2 : int
+class PuntosPartidas {
+        - set1 : int
+        - set2 : int
+        - set3 : int
 }
 
 skinparam Nodesep 100
@@ -336,11 +337,10 @@ Persona "0..*" -> "1" Fecha : nace
 Persona "1" -> "1" Nif : se identifica
 Fecha -[hidden]d- Nif
 
-Jugador --|> Persona
+Jugador -|> Persona
 
-Encuentro "1..*" -> "2" Jugador : juega
-Encuentro "0..*" -> "1" Jugador : gana
-Encuentro "1" --> "3" Partida : consiste
+Encuentro "1..*" --> "2" Jugador : juega
+(Encuentro, Jugador) .. PuntosPartidas
 
 Torneo "0..*" --> "1" Fecha : se realiza
 Torneo "1" --> "1..*" Encuentro : celebra
