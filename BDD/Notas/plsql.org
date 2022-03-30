@@ -305,3 +305,85 @@ BEGIN
   END LOOP;
 END;
 #+end_src
+
+Listado con todos los articulos de la BD VENTAS junto con cuantas
+ventas hay de cada uno de ellos, su precio y de que provincia vienen.
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  c_min NUMBER(3,0);
+  c_max NUMBER(3,0);
+  ventas NUMBER(5);
+  precio NUMBER(4,0);
+  provincia VARCHAR2(12);
+  articulo VARCHAR2(15);
+BEGIN
+  SELECT MIN(c_art), MAX(c_art)
+  INTO   c_min, c_max
+  FROM   articulo;
+
+  dbms_output.put_line(
+    RPAD('| ARTICULO', 18)
+    || '| PRECIO '
+    || '| VENTAS '
+    || RPAD('| PROVINCIA', 15)
+    || '|'
+  );
+  dbms_output.put_line(RPAD('-',52,'-'));
+
+  FOR i IN c_min .. c_max LOOP
+    SELECT  precio, descrip, (
+      SELECT   SUM(cantidad)
+      FROM     ventas
+      WHERE    c_art = i
+      GROUP BY c_art
+    ), (
+      SELECT provincia
+      FROM   proveedor
+      WHERE  c_provee = a.c_provee
+    )
+    INTO  precio, articulo, ventas, provincia
+    FROM  articulo a
+    WHERE c_art = i;
+
+    dbms_output.put_line(
+      '| ' || RPAD(articulo, 15)
+      || ' | ' || RPAD(precio, 6)
+      || ' | ' || RPAD(ventas, 6)
+      || ' | ' || RPAD(provincia, 12)
+      || ' |'
+    );
+    dbms_output.put_line(RPAD('-',52,'-'));
+  END LOOP;
+END;
+#+end_src
+
+Visualizar los 3 articulos que más cantidad hemos vendido.
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  articulo VARCHAR2(15);
+BEGIN
+  FOR i IN 1 .. 3 LOOP
+    SELECT nombre
+    INTO   articulo
+    FROM (
+      SELECT nombre, rownum as fila
+      FROM (
+        SELECT   descrip as nombre
+        FROM     articulo a
+        ORDER BY (
+          SELECT SUM(cantidad)
+          FROM   ventas
+          WHERE  c_art = a.c_art
+        ) DESC
+      )
+    )
+    WHERE fila = i;
+
+    dbms_output.put_line( articulo );
+  END LOOP;
+END;
+#+end_src
