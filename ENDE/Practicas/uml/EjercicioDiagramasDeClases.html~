@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-03-25 Fri 11:58 -->
+<!-- 2022-03-26 Sat 14:52 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -14,17 +14,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb7956b0">1. Setup</a></li>
-<li><a href="#orga175886">2. Ejercicio 1</a></li>
-<li><a href="#orgd035c0a">3. Ejercicio 2</a></li>
-<li><a href="#org5ffd4a4">4. Ejercicio 3</a></li>
-<li><a href="#orgf7d7e8a">5. Ejercicio 4</a></li>
-<li><a href="#org63d2f3f">6. Ejercicio 5</a></li>
+<li><a href="#org544b3a2">1. Setup</a></li>
+<li><a href="#org9ddea0f">2. Ejercicio 1</a></li>
+<li><a href="#org36c6b6a">3. Ejercicio 2</a></li>
+<li><a href="#org59adeab">4. Ejercicio 3</a></li>
+<li><a href="#org9c9aa5f">5. Ejercicio 4</a></li>
+<li><a href="#org70cb973">6. Ejercicio 5</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orgb7956b0" class="outline-2">
-<h2 id="orgb7956b0"><span class="section-number-2">1.</span> Setup</h2>
+<div id="outline-container-org544b3a2" class="outline-2">
+<h2 id="org544b3a2"><span class="section-number-2">1.</span> Setup</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-shell"><span class="org-keyword">for</span> svg<span class="org-keyword"> in</span> $(ls generated/*.svg)
@@ -73,8 +73,8 @@ skinparam Icon {
 </div>
 </div>
 
-<div id="outline-container-orga175886" class="outline-2">
-<h2 id="orga175886"><span class="section-number-2">2.</span> Ejercicio 1</h2>
+<div id="outline-container-org9ddea0f" class="outline-2">
+<h2 id="org9ddea0f"><span class="section-number-2">2.</span> Ejercicio 1</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-plantuml">title Venta de Coches
@@ -149,8 +149,8 @@ Vendedor &lt;|-- VendedorPorComision
 </div>
 </div>
 
-<div id="outline-container-orgd035c0a" class="outline-2">
-<h2 id="orgd035c0a"><span class="section-number-2">3.</span> Ejercicio 2</h2>
+<div id="outline-container-org36c6b6a" class="outline-2">
+<h2 id="org36c6b6a"><span class="section-number-2">3.</span> Ejercicio 2</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-plantuml">title Matricula en la Universidad
@@ -218,8 +218,8 @@ Profesor -l-|&gt; Persona
 </div>
 </div>
 
-<div id="outline-container-org5ffd4a4" class="outline-2">
-<h2 id="org5ffd4a4"><span class="section-number-2">4.</span> Ejercicio 3</h2>
+<div id="outline-container-org59adeab" class="outline-2">
+<h2 id="org59adeab"><span class="section-number-2">4.</span> Ejercicio 3</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-plantuml">title El Veterinario
@@ -280,8 +280,8 @@ Enfermedad "1" &lt;-l- "0..*" CalendarioVacunacion : tiene
 </div>
 </div>
 
-<div id="outline-container-orgf7d7e8a" class="outline-2">
-<h2 id="orgf7d7e8a"><span class="section-number-2">5.</span> Ejercicio 4</h2>
+<div id="outline-container-org9c9aa5f" class="outline-2">
+<h2 id="org9c9aa5f"><span class="section-number-2">5.</span> Ejercicio 4</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-plantuml">title La Asociacion
@@ -324,8 +324,8 @@ Persona "0..*" --&gt; "1" Fecha : nace
 </div>
 </div>
 
-<div id="outline-container-org63d2f3f" class="outline-2">
-<h2 id="org63d2f3f"><span class="section-number-2">6.</span> Ejercicio 5</h2>
+<div id="outline-container-org70cb973" class="outline-2">
+<h2 id="org70cb973"><span class="section-number-2">6.</span> Ejercicio 5</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-plantuml">title El Torneo
@@ -355,12 +355,13 @@ class Nif {
 }
 
 class Encuentro {
-	- resultadoFinal : String
+	- calcularGanador() : Jugador
 }
 
-class Partida {
-	- puntosJ1 : int
-	- puntosJ2 : int
+class PuntosPartidas {
+	- set1 : int
+	- set2 : int
+	- set3 : int
 }
 
 skinparam Nodesep 100
@@ -369,11 +370,10 @@ Persona "0..*" -&gt; "1" Fecha : nace
 Persona "1" -&gt; "1" Nif : se identifica
 Fecha -[hidden]d- Nif
 
-Jugador --|&gt; Persona
+Jugador -|&gt; Persona
 
-Encuentro "1..*" -&gt; "2" Jugador : juega
-Encuentro "0..*" -&gt; "1" Jugador : gana
-Encuentro "1" --&gt; "3" Partida : consiste
+Encuentro "1..*" --&gt; "2" Jugador : juega
+(Encuentro, Jugador) .. PuntosPartidas
 
 Torneo "0..*" --&gt; "1" Fecha : se realiza
 Torneo "1" --&gt; "1..*" Encuentro : celebra
@@ -385,7 +385,7 @@ Torneo "0..*" --&gt; "1" Jugador : gana
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-25 Fri 11:58</p>
+<p class="date">Created: 2022-03-26 Sat 14:52</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
