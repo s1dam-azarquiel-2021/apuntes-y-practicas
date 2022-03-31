@@ -387,3 +387,57 @@ BEGIN
   END LOOP;
 END;
 #+end_src
+
+#+begin_src sql
+SET serveroutput ON;
+
+DROP TABLE gangastoledo;
+CREATE TABLE gangastoledo (
+  codigo NUMBER(3) NOT NULL,
+  nombre VARCHAR2(15),
+  precio NUMBER(6),
+  origen VARCHAR2(12),
+  cuantas_ven NUMBER(4),
+  cuantos_cli NUMBER(4),
+  CONSTRAINT pk_codigo_gangas PRIMARY KEY(codigo)
+);
+
+DECLARE
+  c_min NUMBER(3);
+  c_max NUMBER(3);
+  codigo NUMBER(3);
+  articulo VARCHAR2(15);
+  precio NUMBER(6);
+  proveedor VARCHAR2(15);
+  n_ven NUMBER(4);
+  n_cli NUMBER(4);
+BEGIN
+  SELECT MIN(c_art), MAX(c_art)
+  INTO   c_min, c_max
+  FROM   articulo;
+  
+  FOR i IN c_min .. c_max LOOP
+    SELECT c_art, descrip, precio, (
+      SELECT n_prov
+      FROM   proveedor
+      WHERE  c_provee = a.c_provee
+    ), (
+      SELECT COUNT(c_factura)
+      FROM   ventas
+      WHERE  c_art = a.c_art
+    ), (
+      SELECT COUNT(DISTINCT c_cliente)
+      FROM   ventas
+      WHERE  c_art = a.c_art
+    )
+    INTO   codigo, articulo, precio, proveedor, n_ven, n_cli
+    FROM   articulo a
+    WHERE  c_art = i;
+    
+    INSERT INTO gangastoledo
+    VALUES (
+      codigo, articulo, precio, proveedor, n_ven, n_cli
+    );
+  END LOOP;
+END;
+#+end_src
