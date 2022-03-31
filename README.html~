@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-26 Sat 14:52 -->
+<!-- 2022-03-30 Wed 19:39 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notas y practicas - aru</title>
@@ -17,18 +17,18 @@
 <a href="https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/generate-web.yml"><img src="https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/generate-web.yml/badge.svg" alt="badge.svg" class="org-svg"></a>
 <a href="https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/pages/pages-build-deployment/badge.svg" alt="badge.svg" class="org-svg"></a>
 </p>
-<div id="outline-container-orgf626396" class="outline-2">
-<h2 id="orgf626396">Ver en la web</h2>
-<div class="outline-text-2" id="text-orgf626396">
+<div id="outline-container-org80ba2b3" class="outline-2">
+<h2 id="org80ba2b3">Ver en la web</h2>
+<div class="outline-text-2" id="text-org80ba2b3">
 <p>
 Puedes ver el contenido en html + css usando tu navegador <a href="https://s1dam-azarquiel-2021.github.io/aru-notas-practicas/">aqui</a>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3d77df5" class="outline-2">
-<h2 id="org3d77df5">Ver en GitHub</h2>
-<div class="outline-text-2" id="text-org3d77df5">
+<div id="outline-container-org88f334f" class="outline-2">
+<h2 id="org88f334f">Ver en GitHub</h2>
+<div class="outline-text-2" id="text-org88f334f">
 <p>
 Tambien puedes leerlo desde este mismo repo, sin acceder a la web,
 <a href="https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/blob/main/index.org">aqui</a>.
@@ -38,7 +38,7 @@ Tambien puedes leerlo desde este mismo repo, sin acceder a la web,
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-26 Sat 14:52</p>
+<p class="date">Created: 2022-03-30 Wed 19:39</p>
 </div>
 </body>
 </html>
