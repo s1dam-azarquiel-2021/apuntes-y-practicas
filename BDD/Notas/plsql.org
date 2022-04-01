@@ -444,3 +444,71 @@ BEGIN
   END LOOP;
 END;
 #+end_src
+
+Listar nombre area, nombre instituto ganador, instituto que mas puntos
+tiene, puntos obtenidos.
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  c_min NUMBER(2);
+  c_max NUMBER(2);
+  area VARCHAR2(25);
+  ganador VARCHAR2(25);
+  masPuntos VARCHAR2(25);
+  totalPuntos NUMBER;
+BEGIN
+  SELECT MIN(c_area), MAX(c_area)
+  INTO   c_min, c_max
+  FROM   area;
+
+  dbms_output.put_line(
+    RPAD('| AREA ', 20)
+    || RPAD('| GANADOR', 20)
+    || RPAD('| MAS PUNTOS', 20)
+    || '| TOTAL PUNTOS |'
+  );
+  dbms_output.put_line(RPAD('-',76,'-'));
+
+  FOR i IN c_min .. c_max LOOP
+    SELECT descrip, (
+      SELECT nombre_i
+      FROM   instituto
+      WHERE  ies = a.ies_ganador
+    ), (
+      SELECT nombre_i
+      FROM   instituto
+      WHERE  ies = (
+        SELECT   ies
+        FROM     alumno al, participa pa
+        WHERE    c_area = i
+          AND    al.dni = pa.dni
+        GROUP BY ies
+        HAVING   SUM(ptos) = (
+          SELECT   MAX(SUM(ptos))
+          FROM     alumno al, participa pa
+          WHERE    c_area = i
+            AND    al.dni = pa.dni
+          GROUP BY ies
+        )
+      )
+    ), (
+      SELECT SUM(ptos)
+      FROM   participa
+      WHERE  c_area = i
+    )
+    INTO   area, ganador, masPuntos, totalPuntos
+    FROM   area a
+    WHERE  c_area = i;
+
+    dbms_output.put_line(
+      RPAD('| ' || area, 20)
+      || RPAD('| ' || ganador, 20)
+      || RPAD('| ' || masPuntos, 20)
+      || RPAD('| ' || totalPuntos, 14)
+      || ' |'
+    );
+    dbms_output.put_line(RPAD('-',76,'-'));
+  END LOOP;
+END;
+#+end_src
