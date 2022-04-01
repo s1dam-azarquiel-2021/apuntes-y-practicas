@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="310px" preserveAspectRatio="none" style="width:611px;height:310px;background:#1D2021;" version="1.1" viewBox="0 0 611 310" width="611px" zoomAndPan="magnify"><defs/><g><text fill="#EBDBB2" font-family="Iosevka Term" font-size="18" lengthAdjust="spacing" x="200.75" y="16.708">Maquina Expendedora</text><!--MD5=[c967f4a67cf9571b09fdfa64855e7eb8]
+class MaquinaExpendedora--><rect codeLine="5" fill="#282828" height="112.0234" id="MaquinaExpendedora" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="264" x="171" y="27.9531"/><ellipse cx="230.75" cy="43.9531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M230.9531,50.5938 Q230.4844,50.5938 230.0313,50.5 Q229.5781,50.4063 229.1563,50.1719 Q228.75,49.9375 228.4375,49.5781 Q228.125,49.2188 227.9375,48.7969 Q227.75,48.3594 227.6719,47.8906 Q227.6094,47.4219 227.6094,46.9688 L227.6094,41.4375 Q227.6094,40.9844 227.6719,40.5156 Q227.75,40.0469 227.9375,39.625 Q228.125,39.2031 228.4375,38.8438 Q228.75,38.4688 229.1563,38.25 Q229.5781,38.0156 230.0313,37.9219 Q230.4844,37.8281 230.9531,37.8281 Q231.3906,37.8281 231.8281,37.9063 Q232.2656,37.9688 232.6563,38.1719 Q233.0469,38.3594 233.3594,38.6875 Q233.6875,39 233.875,39.3906 Q234.0781,39.7813 234.1719,40.2188 Q234.2813,40.6406 234.2813,41.0938 Q234.2813,41.0938 234.2813,41.0938 Q234.2813,41.0938 234.2813,41.1094 L232.3906,41.1094 Q232.3906,41.0938 232.3906,41.0938 Q232.3906,41.0938 232.3906,41.0938 Q232.3906,40.7813 232.2969,40.4844 Q232.2188,40.1875 232.0313,39.9375 Q231.8438,39.6875 231.5469,39.5781 Q231.25,39.4531 230.9531,39.4531 Q230.7344,39.4531 230.5,39.5313 Q230.2656,39.5938 230.0938,39.75 Q229.9219,39.8906 229.7969,40.0938 Q229.6875,40.2969 229.625,40.5313 Q229.5625,40.75 229.5313,40.9844 Q229.5,41.2031 229.5,41.4375 L229.5,46.9688 Q229.5,47.2031 229.5313,47.4375 Q229.5625,47.6719 229.625,47.8906 Q229.6875,48.1094 229.7969,48.3125 Q229.9219,48.5156 230.0938,48.6719 Q230.2656,48.8281 230.5,48.8906 Q230.7344,48.9531 230.9531,48.9531 Q231.25,48.9531 231.5469,48.8438 Q231.8438,48.7188 232.0313,48.4688 Q232.2188,48.2188 232.2969,47.9219 Q232.3906,47.625 232.3906,47.3281 Q232.3906,47.3281 232.3906,47.3281 Q232.3906,47.3281 232.3906,47.3125 L234.2813,47.3125 Q234.2813,47.3281 234.2813,47.3281 Q234.2813,47.3281 234.2813,47.3281 Q234.2813,47.7656 234.1719,48.2031 Q234.0781,48.6406 233.875,49.0313 Q233.6875,49.4219 233.3594,49.7344 Q233.0469,50.0469 232.6563,50.25 Q232.2656,50.4375 231.8281,50.5156 Q231.3906,50.5938 230.9531,50.5938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="251.25" y="48.1074">MaquinaExpendedora</text><line style="stroke:#504945;stroke-width:1.5;" x1="172" x2="434" y1="59.9531" y2="59.9531"/><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="179" y="67.9531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="191" y="74.1636">recaudado : float</text><line style="stroke:#504945;stroke-width:1.5;" x1="172" x2="434" y1="80.7578" y2="80.7578"/><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="179" y="88.7578"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="191" y="94.9683">mostrarPrecio(Producto p) : float</text><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="179" y="101.5625"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="191" y="107.7729">dispensarProducto(Producto p) : Producto</text><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="179" y="114.3672"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="191" y="120.5776">estaVacio() : boolean</text><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="179" y="127.1719"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="191" y="133.3823">pedir(Producto p) : Producto</text><!--MD5=[9884e166d189446fe4825863c8acf943]
+class Producto--><rect codeLine="13" fill="#282828" height="73.6094" id="Producto" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="116" x="7" y="222.9531"/><ellipse cx="34.15" cy="238.9531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M34.3531,245.5938 Q33.8844,245.5938 33.4313,245.5 Q32.9781,245.4063 32.5563,245.1719 Q32.15,244.9375 31.8375,244.5781 Q31.525,244.2188 31.3375,243.7969 Q31.15,243.3594 31.0719,242.8906 Q31.0094,242.4219 31.0094,241.9688 L31.0094,236.4375 Q31.0094,235.9844 31.0719,235.5156 Q31.15,235.0469 31.3375,234.625 Q31.525,234.2031 31.8375,233.8438 Q32.15,233.4688 32.5563,233.25 Q32.9781,233.0156 33.4313,232.9219 Q33.8844,232.8281 34.3531,232.8281 Q34.7906,232.8281 35.2281,232.9063 Q35.6656,232.9688 36.0563,233.1719 Q36.4469,233.3594 36.7594,233.6875 Q37.0875,234 37.275,234.3906 Q37.4781,234.7813 37.5719,235.2188 Q37.6813,235.6406 37.6813,236.0938 Q37.6813,236.0938 37.6813,236.0938 Q37.6813,236.0938 37.6813,236.1094 L35.7906,236.1094 Q35.7906,236.0938 35.7906,236.0938 Q35.7906,236.0938 35.7906,236.0938 Q35.7906,235.7813 35.6969,235.4844 Q35.6188,235.1875 35.4313,234.9375 Q35.2438,234.6875 34.9469,234.5781 Q34.65,234.4531 34.3531,234.4531 Q34.1344,234.4531 33.9,234.5313 Q33.6656,234.5938 33.4938,234.75 Q33.3219,234.8906 33.1969,235.0938 Q33.0875,235.2969 33.025,235.5313 Q32.9625,235.75 32.9313,235.9844 Q32.9,236.2031 32.9,236.4375 L32.9,241.9688 Q32.9,242.2031 32.9313,242.4375 Q32.9625,242.6719 33.025,242.8906 Q33.0875,243.1094 33.1969,243.3125 Q33.3219,243.5156 33.4938,243.6719 Q33.6656,243.8281 33.9,243.8906 Q34.1344,243.9531 34.3531,243.9531 Q34.65,243.9531 34.9469,243.8438 Q35.2438,243.7188 35.4313,243.4688 Q35.6188,243.2188 35.6969,242.9219 Q35.7906,242.625 35.7906,242.3281 Q35.7906,242.3281 35.7906,242.3281 Q35.7906,242.3281 35.7906,242.3125 L37.6813,242.3125 Q37.6813,242.3281 37.6813,242.3281 Q37.6813,242.3281 37.6813,242.3281 Q37.6813,242.7656 37.5719,243.2031 Q37.4781,243.6406 37.275,244.0313 Q37.0875,244.4219 36.7594,244.7344 Q36.4469,245.0469 36.0563,245.25 Q35.6656,245.4375 35.2281,245.5156 Q34.7906,245.5938 34.3531,245.5938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="50.85" y="243.1074">Producto</text><line style="stroke:#504945;stroke-width:1.5;" x1="8" x2="122" y1="254.9531" y2="254.9531"/><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="15" y="262.9531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="27" y="269.1636">nombre : String</text><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="15" y="275.7578"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="27" y="281.9683">precio : float</text><line style="stroke:#504945;stroke-width:1.5;" x1="8" x2="122" y1="288.5625" y2="288.5625"/><!--MD5=[292033ffe4750640675b59034298e578]
+class Display--><rect codeLine="18" fill="#282828" height="60.8047" id="Display" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="160" x="223" y="229.4531"/><ellipse cx="276.75" cy="245.4531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M276.9531,252.0938 Q276.4844,252.0938 276.0313,252 Q275.5781,251.9063 275.1563,251.6719 Q274.75,251.4375 274.4375,251.0781 Q274.125,250.7188 273.9375,250.2969 Q273.75,249.8594 273.6719,249.3906 Q273.6094,248.9219 273.6094,248.4688 L273.6094,242.9375 Q273.6094,242.4844 273.6719,242.0156 Q273.75,241.5469 273.9375,241.125 Q274.125,240.7031 274.4375,240.3438 Q274.75,239.9688 275.1563,239.75 Q275.5781,239.5156 276.0313,239.4219 Q276.4844,239.3281 276.9531,239.3281 Q277.3906,239.3281 277.8281,239.4063 Q278.2656,239.4688 278.6563,239.6719 Q279.0469,239.8594 279.3594,240.1875 Q279.6875,240.5 279.875,240.8906 Q280.0781,241.2813 280.1719,241.7188 Q280.2813,242.1406 280.2813,242.5938 Q280.2813,242.5938 280.2813,242.5938 Q280.2813,242.5938 280.2813,242.6094 L278.3906,242.6094 Q278.3906,242.5938 278.3906,242.5938 Q278.3906,242.5938 278.3906,242.5938 Q278.3906,242.2813 278.2969,241.9844 Q278.2188,241.6875 278.0313,241.4375 Q277.8438,241.1875 277.5469,241.0781 Q277.25,240.9531 276.9531,240.9531 Q276.7344,240.9531 276.5,241.0313 Q276.2656,241.0938 276.0938,241.25 Q275.9219,241.3906 275.7969,241.5938 Q275.6875,241.7969 275.625,242.0313 Q275.5625,242.25 275.5313,242.4844 Q275.5,242.7031 275.5,242.9375 L275.5,248.4688 Q275.5,248.7031 275.5313,248.9375 Q275.5625,249.1719 275.625,249.3906 Q275.6875,249.6094 275.7969,249.8125 Q275.9219,250.0156 276.0938,250.1719 Q276.2656,250.3281 276.5,250.3906 Q276.7344,250.4531 276.9531,250.4531 Q277.25,250.4531 277.5469,250.3438 Q277.8438,250.2188 278.0313,249.9688 Q278.2188,249.7188 278.2969,249.4219 Q278.3906,249.125 278.3906,248.8281 Q278.3906,248.8281 278.3906,248.8281 Q278.3906,248.8281 278.3906,248.8125 L280.2813,248.8125 Q280.2813,248.8281 280.2813,248.8281 Q280.2813,248.8281 280.2813,248.8281 Q280.2813,249.2656 280.1719,249.7031 Q280.0781,250.1406 279.875,250.5313 Q279.6875,250.9219 279.3594,251.2344 Q279.0469,251.5469 278.6563,251.75 Q278.2656,251.9375 277.8281,252.0156 Q277.3906,252.0938 276.9531,252.0938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="297.25" y="249.6074">Display</text><line style="stroke:#504945;stroke-width:1.5;" x1="224" x2="382" y1="261.4531" y2="261.4531"/><line style="stroke:#504945;stroke-width:1.5;" x1="224" x2="382" y1="269.4531" y2="269.4531"/><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="231" y="277.4531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="243" y="283.6636">mostrar(String s) : void</text><!--MD5=[b2b224e876b723bde36af294211d87d8]
+class Caja--><rect codeLine="22" fill="#282828" height="86.4141" id="Caja" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="121" x="483.5" y="216.9531"/><ellipse cx="526.4" cy="232.9531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M526.6031,239.5938 Q526.1344,239.5938 525.6813,239.5 Q525.2281,239.4063 524.8063,239.1719 Q524.4,238.9375 524.0875,238.5781 Q523.775,238.2188 523.5875,237.7969 Q523.4,237.3594 523.3219,236.8906 Q523.2594,236.4219 523.2594,235.9688 L523.2594,230.4375 Q523.2594,229.9844 523.3219,229.5156 Q523.4,229.0469 523.5875,228.625 Q523.775,228.2031 524.0875,227.8438 Q524.4,227.4688 524.8063,227.25 Q525.2281,227.0156 525.6813,226.9219 Q526.1344,226.8281 526.6031,226.8281 Q527.0406,226.8281 527.4781,226.9063 Q527.9156,226.9688 528.3063,227.1719 Q528.6969,227.3594 529.0094,227.6875 Q529.3375,228 529.525,228.3906 Q529.7281,228.7813 529.8219,229.2188 Q529.9313,229.6406 529.9313,230.0938 Q529.9313,230.0938 529.9313,230.0938 Q529.9313,230.0938 529.9313,230.1094 L528.0406,230.1094 Q528.0406,230.0938 528.0406,230.0938 Q528.0406,230.0938 528.0406,230.0938 Q528.0406,229.7813 527.9469,229.4844 Q527.8688,229.1875 527.6813,228.9375 Q527.4938,228.6875 527.1969,228.5781 Q526.9,228.4531 526.6031,228.4531 Q526.3844,228.4531 526.15,228.5313 Q525.9156,228.5938 525.7438,228.75 Q525.5719,228.8906 525.4469,229.0938 Q525.3375,229.2969 525.275,229.5313 Q525.2125,229.75 525.1813,229.9844 Q525.15,230.2031 525.15,230.4375 L525.15,235.9688 Q525.15,236.2031 525.1813,236.4375 Q525.2125,236.6719 525.275,236.8906 Q525.3375,237.1094 525.4469,237.3125 Q525.5719,237.5156 525.7438,237.6719 Q525.9156,237.8281 526.15,237.8906 Q526.3844,237.9531 526.6031,237.9531 Q526.9,237.9531 527.1969,237.8438 Q527.4938,237.7188 527.6813,237.4688 Q527.8688,237.2188 527.9469,236.9219 Q528.0406,236.625 528.0406,236.3281 Q528.0406,236.3281 528.0406,236.3281 Q528.0406,236.3281 528.0406,236.3125 L529.9313,236.3125 Q529.9313,236.3281 529.9313,236.3281 Q529.9313,236.3281 529.9313,236.3281 Q529.9313,236.7656 529.8219,237.2031 Q529.7281,237.6406 529.525,238.0313 Q529.3375,238.4219 529.0094,238.7344 Q528.6969,239.0469 528.3063,239.25 Q527.9156,239.4375 527.4781,239.5156 Q527.0406,239.5938 526.6031,239.5938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="546.6" y="237.1074">Caja</text><line style="stroke:#504945;stroke-width:1.5;" x1="484.5" x2="603.5" y1="248.9531" y2="248.9531"/><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="491.5" y="256.9531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="503.5" y="263.1636">saldo : float</text><line style="stroke:#504945;stroke-width:1.5;" x1="484.5" x2="603.5" y1="269.7578" y2="269.7578"/><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="491.5" y="277.7578"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="503.5" y="283.9683">recopilar() : float</text><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="491.5" y="290.5625"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="503.5" y="296.7729">devolver() : float</text><!--MD5=[db5a4ea4fff07f0a45f625e9583a08ee]
+reverse link MaquinaExpendedora to Producto--><path codeLine="30" d="M217.12,147.7431 C182.57,172.9931 143.98,201.2131 114.31,222.9031 " fill="none" id="MaquinaExpendedora-backto-Producto" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#1D2021" points="227.7,140.0031,220.4956,140.3129,218.0106,147.0823,225.215,146.7725,227.7,140.0031" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="185" y="183.02">contiene</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="209.5397" y="160.2194">1</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="98.2812" y="211.8044">0..*</text><!--MD5=[984acbc470d6dce5f229148cf169be36]
+link MaquinaExpendedora to Display--><path codeLine="31" d="M303,140.0031 C303,167.5231 303,199.9831 303,224.0431 " fill="none" id="MaquinaExpendedora-to-Display" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#689D6A" points="303,229.0431,307,220.0431,303,224.0431,299,220.0431,303,229.0431" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="304" y="183.02">muestra</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="294.4875" y="160.2194">1</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="294.175" y="218.2218">1</text><!--MD5=[2576e694f3c054561fe9e04cd8e6a1c9]
+link MaquinaExpendedora to Caja--><path codeLine="32" d="M379.25,140.0031 C412.25,163.8331 450.38,191.3631 481.65,213.9331 " fill="none" id="MaquinaExpendedora-to-Caja" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#689D6A" points="485.81,216.9431,480.8339,208.4438,481.7491,214.0261,476.1667,214.9413,485.81,216.9431" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="438" y="183.02">tiene</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="380.507" y="160.2194">1</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="467.8985" y="205.9376">1</text><!--MD5=[d9eeeb0962c725b5057b8d2fe9d0b5de]
+@startuml
+title Maquina Expendedora
+
+!include plantuml-config.txt
+
+class MaquinaExpendedora {
+        - recaudado : float
+        - mostrarPrecio(Producto p) : float
+        - dispensarProducto(Producto p) : Producto
+        - estaVacio() : boolean
+        - pedir(Producto p) : Producto
+}
+
+class Producto {
+        - nombre : String
+        - precio : float
+}
+
+class Display {
+        - mostrar(String s) : void
+}
+
+class Caja {
+        - saldo : float
+        - recopilar() : float
+        - devolver() : float
+}
+
+skinparam Nodesep 100
+
+MaquinaExpendedora "1" o- - "0..*" Producto : contiene
+MaquinaExpendedora "1" - -> "1" Display : muestra
+MaquinaExpendedora "1" - -> "1" Caja : tiene
+@enduml
+
+@startuml
+title Maquina Expendedora
+
+skinparam groupInheritance 2
+
+skinparam Default {
+        FontName Iosevka Term
+        FontColor #ebdbb2
+}
+
+skinparam BackgroundColor #1d2021
+skinparam Shadowing false
+skinparam RoundCorner 15
+
+skinparam Class {
+        BackgroundColor #282828
+        BorderColor #504945
+        ArrowColor #689d6a
+}
+
+skinparam Stereotype {
+        CBackgroundColor #b8bb26
+        CBorderColor #b8bb26
+        EBackgroundColor #fe8019
+        EBorderColor #fe8019
+        ABackgroundColor #83a598
+        ABorderColor #83a598
+}
+
+skinparam Icon {
+        PrivateColor #cc241d
+        PrivateBackgroundColor #cc241d
+        ProtectedColor #d79921
+        ProtectedBackgroundColor #d79921
+}
+
+class MaquinaExpendedora {
+        - recaudado : float
+        - mostrarPrecio(Producto p) : float
+        - dispensarProducto(Producto p) : Producto
+        - estaVacio() : boolean
+        - pedir(Producto p) : Producto
+}
+
+class Producto {
+        - nombre : String
+        - precio : float
+}
+
+class Display {
+        - mostrar(String s) : void
+}
+
+class Caja {
+        - saldo : float
+        - recopilar() : float
+        - devolver() : float
+}
+
+skinparam Nodesep 100
+
+MaquinaExpendedora "1" o- - "0..*" Producto : contiene
+MaquinaExpendedora "1" - -> "1" Display : muestra
+MaquinaExpendedora "1" - -> "1" Caja : tiene
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 18:25:22 CET 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

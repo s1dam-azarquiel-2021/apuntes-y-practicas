@@ -235,7 +235,7 @@ class HistorialMedico {
 
 skinparam Nodesep 100
 
-Cliente "1..*" <-> "1..*" Persona : asocia
+Cliente "1..*" o- "1..*" Persona : asocia
 Cliente "1" <-- "1..*" Paciente : tiene
 
 Paciente "1" -> "0..*" HistorialMedico : tiene
@@ -349,3 +349,43 @@ Torneo "0..*" --> "1" Jugador : gana
 
 #+RESULTS:
 [[file:generated/ElTorneo.svg]]
+
+* Ejercicio 6
+
+#+begin_src plantuml :file generated/MaquinaExpendedora.svg
+title Maquina Expendedora
+
+!include plantuml-config.txt
+
+class MaquinaExpendedora {
+        - recaudado : float
+        - mostrarPrecio(Producto p) : float
+        - dispensarProducto(Producto p) : Producto
+        - estaVacio() : boolean
+        - pedir(Producto p) : Producto
+}
+
+class Producto {
+        - nombre : String
+        - precio : float
+}
+
+class Display {
+        - mostrar(String s) : void
+}
+
+class Caja {
+        - saldo : float
+        - recopilar() : float
+        - devolver() : float
+}
+
+skinparam Nodesep 100
+
+MaquinaExpendedora "1" o-- "0..*" Producto : contiene
+MaquinaExpendedora "1" --> "1" Display : muestra
+MaquinaExpendedora "1" --> "1" Caja : tiene
+#+end_src
+
+#+RESULTS:
+[[file:generated/MaquinaExpendedora.svg]]
