@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-03-31 Thu 15:09 -->
+<!-- 2022-04-01 Fri 16:56 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -195,27 +195,30 @@ Listado de numeros primos hasta 100.000:
 <pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span> <span class="org-keyword">SIZE</span> UNLIMITED;
 
 <span class="org-keyword">DECLARE</span>
-  n <span class="org-keyword">NUMBER</span>;
-  tieneDivisor <span class="org-type">BOOLEAN</span>;
+  i <span class="org-keyword">NUMBER</span> := 3;
+  j <span class="org-keyword">NUMBER</span>;
+  esPrimo <span class="org-type">BOOLEAN</span>;
 <span class="org-keyword">BEGIN</span>
-  <span class="org-keyword">FOR</span> i <span class="org-keyword">IN</span> 1 .. 100000 LOOP
-    IF <span class="org-builtin">MOD</span>(i, 2) = 0 <span class="org-keyword">AND</span> i != 2 <span class="org-keyword">THEN</span>
-      tieneDivisor := <span class="org-keyword">TRUE</span>;
-    <span class="org-keyword">ELSE</span>
-      n := 3;
-      tieneDivisor := <span class="org-keyword">FALSE</span>;
-      WHILE <span class="org-keyword">NOT</span> tieneDivisor <span class="org-keyword">AND</span> n &lt;= SQRT(i) LOOP
-        IF <span class="org-builtin">MOD</span>(i, n) = 0 <span class="org-keyword">THEN</span>
-          tieneDivisor := <span class="org-keyword">TRUE</span>;
-        <span class="org-keyword">ELSE</span>
-          n := n + 2;
-        <span class="org-keyword">END</span> IF;
-      <span class="org-keyword">END</span> LOOP;
-    <span class="org-keyword">END</span> IF;
+  dbms_output.put_line(1);
+  dbms_output.put_line(2);
 
-    IF <span class="org-keyword">NOT</span> tieneDivisor <span class="org-keyword">THEN</span>
+  WHILE i &lt; 100000 LOOP
+    j := 3;
+    esPrimo := <span class="org-keyword">TRUE</span>;
+
+    WHILE esPrimo <span class="org-keyword">AND</span> j &lt;= SQRT(i) LOOP
+      IF <span class="org-builtin">MOD</span>(i, j) = 0 <span class="org-keyword">THEN</span>
+        esPrimo := <span class="org-keyword">FALSE</span>;
+      <span class="org-keyword">ELSE</span>
+        j := j + 2;
+      <span class="org-keyword">END</span> IF;
+    <span class="org-keyword">END</span> LOOP;
+
+    IF esPrimo <span class="org-keyword">THEN</span>
       dbms_output.put_line(i);
     <span class="org-keyword">END</span> IF;
+
+    i := i + 2;
   <span class="org-keyword">END</span> LOOP;
 <span class="org-keyword">END</span>;
 </pre>
@@ -499,7 +502,7 @@ Visualizar los 3 articulos que más cantidad hemos vendido.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-03-31 Thu 15:09</p>
+<p class="date">Created: 2022-04-01 Fri 16:56</p>
 </div>
 </body>
 </html>
