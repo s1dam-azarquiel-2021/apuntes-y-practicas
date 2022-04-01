@@ -160,27 +160,30 @@ Listado de numeros primos hasta 100.000:
 SET serveroutput ON SIZE UNLIMITED;
 
 DECLARE
-  n NUMBER;
-  tieneDivisor BOOLEAN;
+  i NUMBER := 3;
+  j NUMBER;
+  esPrimo BOOLEAN;
 BEGIN
-  FOR i IN 1 .. 100000 LOOP
-    IF MOD(i, 2) = 0 AND i != 2 THEN
-      tieneDivisor := TRUE;
-    ELSE
-      n := 3;
-      tieneDivisor := FALSE;
-      WHILE NOT tieneDivisor AND n <= SQRT(i) LOOP
-        IF MOD(i, n) = 0 THEN
-          tieneDivisor := TRUE;
-        ELSE
-          n := n + 2;
-        END IF;
-      END LOOP;
-    END IF;
+  dbms_output.put_line(1);
+  dbms_output.put_line(2);
 
-    IF NOT tieneDivisor THEN
+  WHILE i < 100000 LOOP
+    j := 3;
+    esPrimo := TRUE;
+
+    WHILE esPrimo AND j <= SQRT(i) LOOP
+      IF MOD(i, j) = 0 THEN
+        esPrimo := FALSE;
+      ELSE
+        j := j + 2;
+      END IF;
+    END LOOP;
+
+    IF esPrimo THEN
       dbms_output.put_line(i);
     END IF;
+
+    i := i + 2;
   END LOOP;
 END;
 #+end_src
@@ -415,7 +418,7 @@ BEGIN
   SELECT MIN(c_art), MAX(c_art)
   INTO   c_min, c_max
   FROM   articulo;
-  
+
   FOR i IN c_min .. c_max LOOP
     SELECT c_art, descrip, precio, (
       SELECT n_prov
@@ -433,7 +436,7 @@ BEGIN
     INTO   codigo, articulo, precio, proveedor, n_ven, n_cli
     FROM   articulo a
     WHERE  c_art = i;
-    
+
     INSERT INTO gangastoledo
     VALUES (
       codigo, articulo, precio, proveedor, n_ven, n_cli
