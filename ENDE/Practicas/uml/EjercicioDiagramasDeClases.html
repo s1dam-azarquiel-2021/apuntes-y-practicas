@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-04-01 Fri 18:07 -->
+<!-- 2022-04-01 Fri 18:17 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -14,17 +14,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgac2ed3d">1. Setup</a></li>
-<li><a href="#org4bc784a">2. Ejercicio 1</a></li>
-<li><a href="#orgd1bdf27">3. Ejercicio 2</a></li>
-<li><a href="#org8894f19">4. Ejercicio 3</a></li>
-<li><a href="#org5a5fcbf">5. Ejercicio 4</a></li>
-<li><a href="#orgee9f998">6. Ejercicio 5</a></li>
+<li><a href="#org327544e">1. Setup</a></li>
+<li><a href="#orgbbd0cc9">2. Ejercicio 1</a></li>
+<li><a href="#orgf43351d">3. Ejercicio 2</a></li>
+<li><a href="#org24707c2">4. Ejercicio 3</a></li>
+<li><a href="#org0a03827">5. Ejercicio 4</a></li>
+<li><a href="#org80a022a">6. Ejercicio 5</a></li>
+<li><a href="#org4d333b4">7. Ejercicio 6</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orgac2ed3d" class="outline-2">
-<h2 id="orgac2ed3d"><span class="section-number-2">1.</span> Setup</h2>
+<div id="outline-container-org327544e" class="outline-2">
+<h2 id="org327544e"><span class="section-number-2">1.</span> Setup</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-shell"><span class="org-keyword">for</span> svg<span class="org-keyword"> in</span> $(ls generated/*.svg)
@@ -73,8 +74,8 @@ skinparam Icon {
 </div>
 </div>
 
-<div id="outline-container-org4bc784a" class="outline-2">
-<h2 id="org4bc784a"><span class="section-number-2">2.</span> Ejercicio 1</h2>
+<div id="outline-container-orgbbd0cc9" class="outline-2">
+<h2 id="orgbbd0cc9"><span class="section-number-2">2.</span> Ejercicio 1</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-plantuml">title Venta de Coches
@@ -149,8 +150,8 @@ Vendedor &lt;|-- VendedorPorComision
 </div>
 </div>
 
-<div id="outline-container-orgd1bdf27" class="outline-2">
-<h2 id="orgd1bdf27"><span class="section-number-2">3.</span> Ejercicio 2</h2>
+<div id="outline-container-orgf43351d" class="outline-2">
+<h2 id="orgf43351d"><span class="section-number-2">3.</span> Ejercicio 2</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-plantuml">title Matricula en la Universidad
@@ -218,8 +219,8 @@ Profesor -l-|&gt; Persona
 </div>
 </div>
 
-<div id="outline-container-org8894f19" class="outline-2">
-<h2 id="org8894f19"><span class="section-number-2">4.</span> Ejercicio 3</h2>
+<div id="outline-container-org24707c2" class="outline-2">
+<h2 id="org24707c2"><span class="section-number-2">4.</span> Ejercicio 3</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-plantuml">title El Veterinario
@@ -266,7 +267,7 @@ class HistorialMedico {
 
 skinparam Nodesep 100
 
-Cliente "1..*" &lt;-&gt; "1..*" Persona : asocia
+Cliente "1..*" o- "1..*" Persona : asocia
 Cliente "1" &lt;-- "1..*" Paciente : tiene
 
 Paciente "1" -&gt; "0..*" HistorialMedico : tiene
@@ -280,8 +281,8 @@ Enfermedad "1" &lt;-l- "0..*" CalendarioVacunacion : tiene
 </div>
 </div>
 
-<div id="outline-container-org5a5fcbf" class="outline-2">
-<h2 id="org5a5fcbf"><span class="section-number-2">5.</span> Ejercicio 4</h2>
+<div id="outline-container-org0a03827" class="outline-2">
+<h2 id="org0a03827"><span class="section-number-2">5.</span> Ejercicio 4</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-plantuml">title La Asociacion
@@ -324,8 +325,8 @@ Persona "0..*" --&gt; "1" Fecha : nace
 </div>
 </div>
 
-<div id="outline-container-orgee9f998" class="outline-2">
-<h2 id="orgee9f998"><span class="section-number-2">6.</span> Ejercicio 5</h2>
+<div id="outline-container-org80a022a" class="outline-2">
+<h2 id="org80a022a"><span class="section-number-2">6.</span> Ejercicio 5</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-plantuml">title El Torneo
@@ -382,10 +383,51 @@ Torneo "0..*" --&gt; "1" Jugador : gana
 </div>
 </div>
 </div>
+
+<div id="outline-container-org4d333b4" class="outline-2">
+<h2 id="org4d333b4"><span class="section-number-2">7.</span> Ejercicio 6</h2>
+<div class="outline-text-2" id="text-7">
+<div class="org-src-container">
+<pre class="src src-plantuml">title Maquina Expendedora
+
+!include plantuml-config.txt
+
+class MaquinaExpendedora {
+	- recaudado : float
+	- mostrarPrecio(Producto p) : float
+	- dispensarProducto(Producto p) : Producto
+	- estaVacio() : boolean
+	- pedir(Producto p) : Producto
+}
+
+class Producto {
+	- nombre : String
+	- precio : float
+}
+
+class Display {
+	- mostrar(String s) : void
+}
+
+class Caja {
+	- saldo : float
+	- recopilar() : float
+	- devolver() : float
+}
+
+skinparam Nodesep 100
+
+MaquinaExpendedora "1" o-- "0..*" Producto : contiene
+MaquinaExpendedora "1" --&gt; "1" Display : muestra
+MaquinaExpendedora "1" --&gt; "1" Caja : tiene
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-04-01 Fri 18:07</p>
+<p class="date">Created: 2022-04-01 Fri 18:17</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

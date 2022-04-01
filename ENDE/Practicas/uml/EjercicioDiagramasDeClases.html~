@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-04-01 Fri 16:56 -->
+<!-- 2022-04-01 Fri 18:07 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -14,17 +14,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org11b3acb">1. Setup</a></li>
-<li><a href="#orge82329d">2. Ejercicio 1</a></li>
-<li><a href="#org70d7c9c">3. Ejercicio 2</a></li>
-<li><a href="#orgd38b135">4. Ejercicio 3</a></li>
-<li><a href="#org0d53f40">5. Ejercicio 4</a></li>
-<li><a href="#org84f8901">6. Ejercicio 5</a></li>
+<li><a href="#orgac2ed3d">1. Setup</a></li>
+<li><a href="#org4bc784a">2. Ejercicio 1</a></li>
+<li><a href="#orgd1bdf27">3. Ejercicio 2</a></li>
+<li><a href="#org8894f19">4. Ejercicio 3</a></li>
+<li><a href="#org5a5fcbf">5. Ejercicio 4</a></li>
+<li><a href="#orgee9f998">6. Ejercicio 5</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org11b3acb" class="outline-2">
-<h2 id="org11b3acb"><span class="section-number-2">1.</span> Setup</h2>
+<div id="outline-container-orgac2ed3d" class="outline-2">
+<h2 id="orgac2ed3d"><span class="section-number-2">1.</span> Setup</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-shell"><span class="org-keyword">for</span> svg<span class="org-keyword"> in</span> $(ls generated/*.svg)
@@ -73,8 +73,8 @@ skinparam Icon {
 </div>
 </div>
 
-<div id="outline-container-orge82329d" class="outline-2">
-<h2 id="orge82329d"><span class="section-number-2">2.</span> Ejercicio 1</h2>
+<div id="outline-container-org4bc784a" class="outline-2">
+<h2 id="org4bc784a"><span class="section-number-2">2.</span> Ejercicio 1</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-plantuml">title Venta de Coches
@@ -149,8 +149,8 @@ Vendedor &lt;|-- VendedorPorComision
 </div>
 </div>
 
-<div id="outline-container-org70d7c9c" class="outline-2">
-<h2 id="org70d7c9c"><span class="section-number-2">3.</span> Ejercicio 2</h2>
+<div id="outline-container-orgd1bdf27" class="outline-2">
+<h2 id="orgd1bdf27"><span class="section-number-2">3.</span> Ejercicio 2</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-plantuml">title Matricula en la Universidad
@@ -218,8 +218,8 @@ Profesor -l-|&gt; Persona
 </div>
 </div>
 
-<div id="outline-container-orgd38b135" class="outline-2">
-<h2 id="orgd38b135"><span class="section-number-2">4.</span> Ejercicio 3</h2>
+<div id="outline-container-org8894f19" class="outline-2">
+<h2 id="org8894f19"><span class="section-number-2">4.</span> Ejercicio 3</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-plantuml">title El Veterinario
@@ -280,8 +280,8 @@ Enfermedad "1" &lt;-l- "0..*" CalendarioVacunacion : tiene
 </div>
 </div>
 
-<div id="outline-container-org0d53f40" class="outline-2">
-<h2 id="org0d53f40"><span class="section-number-2">5.</span> Ejercicio 4</h2>
+<div id="outline-container-org5a5fcbf" class="outline-2">
+<h2 id="org5a5fcbf"><span class="section-number-2">5.</span> Ejercicio 4</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-plantuml">title La Asociacion
@@ -324,8 +324,8 @@ Persona "0..*" --&gt; "1" Fecha : nace
 </div>
 </div>
 
-<div id="outline-container-org84f8901" class="outline-2">
-<h2 id="org84f8901"><span class="section-number-2">6.</span> Ejercicio 5</h2>
+<div id="outline-container-orgee9f998" class="outline-2">
+<h2 id="orgee9f998"><span class="section-number-2">6.</span> Ejercicio 5</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-plantuml">title El Torneo
@@ -385,7 +385,7 @@ Torneo "0..*" --&gt; "1" Jugador : gana
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-04-01 Fri 16:56</p>
+<p class="date">Created: 2022-04-01 Fri 18:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
