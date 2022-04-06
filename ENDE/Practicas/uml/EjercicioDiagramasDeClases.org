@@ -359,10 +359,14 @@ title Maquina Expendedora
 
 class MaquinaExpendedora {
         - recaudado : float
-        - mostrarPrecio(Producto p) : float
-        - dispensarProducto(Producto p) : Producto
-        - estaVacio() : boolean
         - pedir(Producto p) : Producto
+}
+
+class Contenedor {
+        - recargar(Producto p, int cantidad) : void
+        - estaVacio() : boolean
+        - dispensar(Producto p) : Producto
+        - mostrarPrecio(Producto p) : float
 }
 
 class Producto {
@@ -380,11 +384,26 @@ class Caja {
         - devolver() : float
 }
 
+class Boton {
+        - pulsar() : void
+}
+
+class BotonDevolucion
+class BotonBebida
+
 skinparam Nodesep 100
 
-MaquinaExpendedora "1" o-- "0..*" Producto : contiene
+MaquinaExpendedora "1" --> "1" Contenedor : tiene
 MaquinaExpendedora "1" --> "1" Display : muestra
 MaquinaExpendedora "1" --> "1" Caja : tiene
+MaquinaExpendedora "1" --> "1" BotonBebida 
+
+Contenedor "1" *-- "0..*" Producto : contiene
+
+Caja "1" --> "1" BotonDevolucion
+
+BotonDevolucion --|> Boton
+BotonBebida --|> Boton
 #+end_src
 
 #+RESULTS:
