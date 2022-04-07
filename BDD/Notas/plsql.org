@@ -455,8 +455,8 @@ DECLARE
   c_max NUMBER(2);
   area VARCHAR2(25);
   ganador VARCHAR2(25);
-  masPuntos VARCHAR2(25);
-  totalPuntos NUMBER;
+  institutoMasPuntos VARCHAR2(25);
+  masPuntos NUMBER;
 BEGIN
   SELECT MIN(c_area), MAX(c_area)
   INTO   c_min, c_max
@@ -466,11 +466,18 @@ BEGIN
     RPAD('| AREA ', 20)
     || RPAD('| GANADOR', 20)
     || RPAD('| MAS PUNTOS', 20)
-    || '| TOTAL PUNTOS |'
+    || '| PUNTOS |'
   );
-  dbms_output.put_line(RPAD('-',76,'-'));
+  dbms_output.put_line(RPAD('-',70,'-'));
 
   FOR i IN c_min .. c_max LOOP
+    SELECT   MAX(SUM(ptos))
+    INTO     masPuntos
+    FROM     alumno al, participa pa
+    WHERE    c_area = i
+      AND    al.dni = pa.dni
+    GROUP BY ies;
+
     SELECT descrip, (
       SELECT nombre_i
       FROM   instituto
@@ -484,31 +491,21 @@ BEGIN
         WHERE    c_area = i
           AND    al.dni = pa.dni
         GROUP BY ies
-        HAVING   SUM(ptos) = (
-          SELECT   MAX(SUM(ptos))
-          FROM     alumno al, participa pa
-          WHERE    c_area = i
-            AND    al.dni = pa.dni
-          GROUP BY ies
-        )
+        HAVING   SUM(ptos) = masPuntos
       )
-    ), (
-      SELECT SUM(ptos)
-      FROM   participa
-      WHERE  c_area = i
     )
-    INTO   area, ganador, masPuntos, totalPuntos
+    INTO   area, ganador, institutoMasPuntos
     FROM   area a
     WHERE  c_area = i;
 
     dbms_output.put_line(
       RPAD('| ' || area, 20)
       || RPAD('| ' || ganador, 20)
-      || RPAD('| ' || masPuntos, 20)
-      || RPAD('| ' || totalPuntos, 14)
+      || RPAD('| ' || institutoMasPuntos, 20)
+      || RPAD('| ' || masPuntos, 8)
       || ' |'
     );
-    dbms_output.put_line(RPAD('-',76,'-'));
+    dbms_output.put_line(RPAD('-',70,'-'));
   END LOOP;
 END;
 #+end_src
