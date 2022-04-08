@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-04-01 Fri 18:07 -->
+<!-- 2022-04-01 Fri 18:17 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 1C</title>
@@ -17,13 +17,13 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgdbaeaf9">Configuracion opciones de arranque</a></li>
+<li><a href="#org330ea1b">Configuracion opciones de arranque</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orgdbaeaf9" class="outline-2">
-<h2 id="orgdbaeaf9">Configuracion opciones de arranque</h2>
-<div class="outline-text-2" id="text-orgdbaeaf9">
+<div id="outline-container-org330ea1b" class="outline-2">
+<h2 id="org330ea1b">Configuracion opciones de arranque</h2>
+<div class="outline-text-2" id="text-org330ea1b">
 <p>
 <img src="./img/reseteo-bios.png" alt="reseteo-bios.png">
 <img src="./img/secuencia-de-arranque.png" alt="secuencia-de-arranque.png">
@@ -38,7 +38,7 @@
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez y Alfonso Rodriguez Rodriguez</p>
-<p class="date">Created: 2022-04-01 Fri 18:07</p>
+<p class="date">Created: 2022-04-01 Fri 18:17</p>
 </div>
 </body>
 </html>
