@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-04-01 Fri 18:17 -->
+<!-- 2022-04-08 Fri 07:16 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -512,8 +512,8 @@ tiene, puntos obtenidos.
   c_max <span class="org-keyword">NUMBER</span>(2);
   area VARCHAR2(25);
   ganador VARCHAR2(25);
-  masPuntos VARCHAR2(25);
-  totalPuntos <span class="org-keyword">NUMBER</span>;
+  institutoMasPuntos VARCHAR2(25);
+  masPuntos <span class="org-keyword">NUMBER</span>;
 <span class="org-keyword">BEGIN</span>
   <span class="org-keyword">SELECT</span> <span class="org-builtin">MIN</span>(c_area), <span class="org-builtin">MAX</span>(c_area)
   <span class="org-keyword">INTO</span>   c_min, c_max
@@ -523,11 +523,18 @@ tiene, puntos obtenidos.
     RPAD(<span class="org-string">'| AREA '</span>, 20)
     || RPAD(<span class="org-string">'| GANADOR'</span>, 20)
     || RPAD(<span class="org-string">'| MAS PUNTOS'</span>, 20)
-    || <span class="org-string">'| TOTAL PUNTOS |'</span>
+    || <span class="org-string">'| PUNTOS |'</span>
   );
-  dbms_output.put_line(RPAD(<span class="org-string">'-'</span>,76,<span class="org-string">'-'</span>));
+  dbms_output.put_line(RPAD(<span class="org-string">'-'</span>,70,<span class="org-string">'-'</span>));
 
   <span class="org-keyword">FOR</span> i <span class="org-keyword">IN</span> c_min .. c_max LOOP
+    <span class="org-keyword">SELECT</span>   <span class="org-builtin">MAX</span>(<span class="org-builtin">SUM</span>(ptos))
+    <span class="org-keyword">INTO</span>     masPuntos
+    <span class="org-keyword">FROM</span>     alumno al, participa pa
+    <span class="org-keyword">WHERE</span>    c_area = i
+      <span class="org-keyword">AND</span>    al.dni = pa.dni
+    <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> ies;
+
     <span class="org-keyword">SELECT</span> descrip, (
       <span class="org-keyword">SELECT</span> nombre_i
       <span class="org-keyword">FROM</span>   instituto
@@ -541,31 +548,21 @@ tiene, puntos obtenidos.
         <span class="org-keyword">WHERE</span>    c_area = i
           <span class="org-keyword">AND</span>    al.dni = pa.dni
         <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> ies
-        <span class="org-keyword">HAVING</span>   <span class="org-builtin">SUM</span>(ptos) = (
-          <span class="org-keyword">SELECT</span>   <span class="org-builtin">MAX</span>(<span class="org-builtin">SUM</span>(ptos))
-          <span class="org-keyword">FROM</span>     alumno al, participa pa
-          <span class="org-keyword">WHERE</span>    c_area = i
-            <span class="org-keyword">AND</span>    al.dni = pa.dni
-          <span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span> ies
-        )
+        <span class="org-keyword">HAVING</span>   <span class="org-builtin">SUM</span>(ptos) = masPuntos
       )
-    ), (
-      <span class="org-keyword">SELECT</span> <span class="org-builtin">SUM</span>(ptos)
-      <span class="org-keyword">FROM</span>   participa
-      <span class="org-keyword">WHERE</span>  c_area = i
     )
-    <span class="org-keyword">INTO</span>   area, ganador, masPuntos, totalPuntos
+    <span class="org-keyword">INTO</span>   area, ganador, institutoMasPuntos
     <span class="org-keyword">FROM</span>   area a
     <span class="org-keyword">WHERE</span>  c_area = i;
 
     dbms_output.put_line(
       RPAD(<span class="org-string">'| '</span> || area, 20)
       || RPAD(<span class="org-string">'| '</span> || ganador, 20)
-      || RPAD(<span class="org-string">'| '</span> || masPuntos, 20)
-      || RPAD(<span class="org-string">'| '</span> || totalPuntos, 14)
+      || RPAD(<span class="org-string">'| '</span> || institutoMasPuntos, 20)
+      || RPAD(<span class="org-string">'| '</span> || masPuntos, 8)
       || <span class="org-string">' |'</span>
     );
-    dbms_output.put_line(RPAD(<span class="org-string">'-'</span>,76,<span class="org-string">'-'</span>));
+    dbms_output.put_line(RPAD(<span class="org-string">'-'</span>,70,<span class="org-string">'-'</span>));
   <span class="org-keyword">END</span> LOOP;
 <span class="org-keyword">END</span>;
 </pre>
@@ -573,7 +570,7 @@ tiene, puntos obtenidos.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-04-01 Fri 18:17</p>
+<p class="date">Created: 2022-04-08 Fri 07:16</p>
 </div>
 </body>
 </html>

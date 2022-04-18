@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="498px" preserveAspectRatio="none" style="width:486px;height:498px;background:#1D2021;" version="1.1" viewBox="0 0 486 498" width="486px" zoomAndPan="magnify"><defs/><g><text fill="#EBDBB2" font-family="Iosevka Term" font-size="18" lengthAdjust="spacing" x="101" y="16.708">Facturacion y Almacenamiento</text><!--MD5=[a926c88f85ce99385ed3fd3448dac0f5]
+class Factura--><rect codeLine="5" fill="#282828" height="86.4141" id="Factura" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="125" x="342.5" y="27.9531"/><ellipse cx="377.75" cy="43.9531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M377.9531,50.5938 Q377.4844,50.5938 377.0313,50.5 Q376.5781,50.4063 376.1563,50.1719 Q375.75,49.9375 375.4375,49.5781 Q375.125,49.2188 374.9375,48.7969 Q374.75,48.3594 374.6719,47.8906 Q374.6094,47.4219 374.6094,46.9688 L374.6094,41.4375 Q374.6094,40.9844 374.6719,40.5156 Q374.75,40.0469 374.9375,39.625 Q375.125,39.2031 375.4375,38.8438 Q375.75,38.4688 376.1563,38.25 Q376.5781,38.0156 377.0313,37.9219 Q377.4844,37.8281 377.9531,37.8281 Q378.3906,37.8281 378.8281,37.9063 Q379.2656,37.9688 379.6563,38.1719 Q380.0469,38.3594 380.3594,38.6875 Q380.6875,39 380.875,39.3906 Q381.0781,39.7813 381.1719,40.2188 Q381.2813,40.6406 381.2813,41.0938 Q381.2813,41.0938 381.2813,41.0938 Q381.2813,41.0938 381.2813,41.1094 L379.3906,41.1094 Q379.3906,41.0938 379.3906,41.0938 Q379.3906,41.0938 379.3906,41.0938 Q379.3906,40.7813 379.2969,40.4844 Q379.2188,40.1875 379.0313,39.9375 Q378.8438,39.6875 378.5469,39.5781 Q378.25,39.4531 377.9531,39.4531 Q377.7344,39.4531 377.5,39.5313 Q377.2656,39.5938 377.0938,39.75 Q376.9219,39.8906 376.7969,40.0938 Q376.6875,40.2969 376.625,40.5313 Q376.5625,40.75 376.5313,40.9844 Q376.5,41.2031 376.5,41.4375 L376.5,46.9688 Q376.5,47.2031 376.5313,47.4375 Q376.5625,47.6719 376.625,47.8906 Q376.6875,48.1094 376.7969,48.3125 Q376.9219,48.5156 377.0938,48.6719 Q377.2656,48.8281 377.5,48.8906 Q377.7344,48.9531 377.9531,48.9531 Q378.25,48.9531 378.5469,48.8438 Q378.8438,48.7188 379.0313,48.4688 Q379.2188,48.2188 379.2969,47.9219 Q379.3906,47.625 379.3906,47.3281 Q379.3906,47.3281 379.3906,47.3281 Q379.3906,47.3281 379.3906,47.3125 L381.2813,47.3125 Q381.2813,47.3281 381.2813,47.3281 Q381.2813,47.3281 381.2813,47.3281 Q381.2813,47.7656 381.1719,48.2031 Q381.0781,48.6406 380.875,49.0313 Q380.6875,49.4219 380.3594,49.7344 Q380.0469,50.0469 379.6563,50.25 Q379.2656,50.4375 378.8281,50.5156 Q378.3906,50.5938 377.9531,50.5938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="396.25" y="48.1074">Factura</text><line style="stroke:#504945;stroke-width:1.5;" x1="343.5" x2="466.5" y1="59.9531" y2="59.9531"/><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="350.5" y="67.9531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="362.5" y="74.1636">fecha : Date</text><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="350.5" y="80.7578"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="362.5" y="86.9683">numero : int</text><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="350.5" y="93.5625"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="362.5" y="99.7729">pagada : boolean</text><line style="stroke:#504945;stroke-width:1.5;" x1="343.5" x2="466.5" y1="106.3672" y2="106.3672"/><!--MD5=[821cddec06d28d2d7f88bbb374879490]
+class Cajon--><rect codeLine="11" fill="#282828" height="73.6094" id="Cajon" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="158" x="116" y="33.9531"/><ellipse cx="173.25" cy="49.9531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M173.4531,56.5938 Q172.9844,56.5938 172.5313,56.5 Q172.0781,56.4063 171.6563,56.1719 Q171.25,55.9375 170.9375,55.5781 Q170.625,55.2188 170.4375,54.7969 Q170.25,54.3594 170.1719,53.8906 Q170.1094,53.4219 170.1094,52.9688 L170.1094,47.4375 Q170.1094,46.9844 170.1719,46.5156 Q170.25,46.0469 170.4375,45.625 Q170.625,45.2031 170.9375,44.8438 Q171.25,44.4688 171.6563,44.25 Q172.0781,44.0156 172.5313,43.9219 Q172.9844,43.8281 173.4531,43.8281 Q173.8906,43.8281 174.3281,43.9063 Q174.7656,43.9688 175.1563,44.1719 Q175.5469,44.3594 175.8594,44.6875 Q176.1875,45 176.375,45.3906 Q176.5781,45.7813 176.6719,46.2188 Q176.7813,46.6406 176.7813,47.0938 Q176.7813,47.0938 176.7813,47.0938 Q176.7813,47.0938 176.7813,47.1094 L174.8906,47.1094 Q174.8906,47.0938 174.8906,47.0938 Q174.8906,47.0938 174.8906,47.0938 Q174.8906,46.7813 174.7969,46.4844 Q174.7188,46.1875 174.5313,45.9375 Q174.3438,45.6875 174.0469,45.5781 Q173.75,45.4531 173.4531,45.4531 Q173.2344,45.4531 173,45.5313 Q172.7656,45.5938 172.5938,45.75 Q172.4219,45.8906 172.2969,46.0938 Q172.1875,46.2969 172.125,46.5313 Q172.0625,46.75 172.0313,46.9844 Q172,47.2031 172,47.4375 L172,52.9688 Q172,53.2031 172.0313,53.4375 Q172.0625,53.6719 172.125,53.8906 Q172.1875,54.1094 172.2969,54.3125 Q172.4219,54.5156 172.5938,54.6719 Q172.7656,54.8281 173,54.8906 Q173.2344,54.9531 173.4531,54.9531 Q173.75,54.9531 174.0469,54.8438 Q174.3438,54.7188 174.5313,54.4688 Q174.7188,54.2188 174.7969,53.9219 Q174.8906,53.625 174.8906,53.3281 Q174.8906,53.3281 174.8906,53.3281 Q174.8906,53.3281 174.8906,53.3125 L176.7813,53.3125 Q176.7813,53.3281 176.7813,53.3281 Q176.7813,53.3281 176.7813,53.3281 Q176.7813,53.7656 176.6719,54.2031 Q176.5781,54.6406 176.375,55.0313 Q176.1875,55.4219 175.8594,55.7344 Q175.5469,56.0469 175.1563,56.25 Q174.7656,56.4375 174.3281,56.5156 Q173.8906,56.5938 173.4531,56.5938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="193.75" y="54.1074">Cajon</text><line style="stroke:#504945;stroke-width:1.5;" x1="117" x2="273" y1="65.9531" y2="65.9531"/><line style="stroke:#504945;stroke-width:1.5;" x1="117" x2="273" y1="73.9531" y2="73.9531"/><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="124" y="81.9531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="136" y="88.1636">aniadir(Factura f) : void</text><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="124" y="94.7578"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="136" y="100.9683">quitar(Factura f) : void</text><!--MD5=[9884e166d189446fe4825863c8acf943]
+class Producto--><rect codeLine="16" fill="#282828" height="112.0234" id="Producto" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="138" x="76" y="379.9531"/><ellipse cx="113.05" cy="395.9531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M113.2531,402.5938 Q112.7844,402.5938 112.3313,402.5 Q111.8781,402.4063 111.4563,402.1719 Q111.05,401.9375 110.7375,401.5781 Q110.425,401.2188 110.2375,400.7969 Q110.05,400.3594 109.9719,399.8906 Q109.9094,399.4219 109.9094,398.9688 L109.9094,393.4375 Q109.9094,392.9844 109.9719,392.5156 Q110.05,392.0469 110.2375,391.625 Q110.425,391.2031 110.7375,390.8438 Q111.05,390.4688 111.4563,390.25 Q111.8781,390.0156 112.3313,389.9219 Q112.7844,389.8281 113.2531,389.8281 Q113.6906,389.8281 114.1281,389.9063 Q114.5656,389.9688 114.9563,390.1719 Q115.3469,390.3594 115.6594,390.6875 Q115.9875,391 116.175,391.3906 Q116.3781,391.7813 116.4719,392.2188 Q116.5813,392.6406 116.5813,393.0938 Q116.5813,393.0938 116.5813,393.0938 Q116.5813,393.0938 116.5813,393.1094 L114.6906,393.1094 Q114.6906,393.0938 114.6906,393.0938 Q114.6906,393.0938 114.6906,393.0938 Q114.6906,392.7813 114.5969,392.4844 Q114.5188,392.1875 114.3313,391.9375 Q114.1438,391.6875 113.8469,391.5781 Q113.55,391.4531 113.2531,391.4531 Q113.0344,391.4531 112.8,391.5313 Q112.5656,391.5938 112.3938,391.75 Q112.2219,391.8906 112.0969,392.0938 Q111.9875,392.2969 111.925,392.5313 Q111.8625,392.75 111.8313,392.9844 Q111.8,393.2031 111.8,393.4375 L111.8,398.9688 Q111.8,399.2031 111.8313,399.4375 Q111.8625,399.6719 111.925,399.8906 Q111.9875,400.1094 112.0969,400.3125 Q112.2219,400.5156 112.3938,400.6719 Q112.5656,400.8281 112.8,400.8906 Q113.0344,400.9531 113.2531,400.9531 Q113.55,400.9531 113.8469,400.8438 Q114.1438,400.7188 114.3313,400.4688 Q114.5188,400.2188 114.5969,399.9219 Q114.6906,399.625 114.6906,399.3281 Q114.6906,399.3281 114.6906,399.3281 Q114.6906,399.3281 114.6906,399.3125 L116.5813,399.3125 Q116.5813,399.3281 116.5813,399.3281 Q116.5813,399.3281 116.5813,399.3281 Q116.5813,399.7656 116.4719,400.2031 Q116.3781,400.6406 116.175,401.0313 Q115.9875,401.4219 115.6594,401.7344 Q115.3469,402.0469 114.9563,402.25 Q114.5656,402.4375 114.1281,402.5156 Q113.6906,402.5938 113.2531,402.5938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="131.95" y="400.1074">Producto</text><line style="stroke:#504945;stroke-width:1.5;" x1="77" x2="213" y1="411.9531" y2="411.9531"/><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="84" y="419.9531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="96" y="426.1636">codigo : int</text><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="84" y="432.7578"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="96" y="438.9683">descripcion : String</text><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="84" y="445.5625"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="96" y="451.7729">precioMinimo : float</text><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="84" y="458.3672"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="96" y="464.5776">stock : int</text><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="84" y="471.1719"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="96" y="477.3823">stockMinimo : int</text><line style="stroke:#504945;stroke-width:1.5;" x1="77" x2="213" y1="483.9766" y2="483.9766"/><!--MD5=[df02e81e6a70ba1d5cc84202155ccf0c]
+class Detalle--><rect codeLine="24" fill="#282828" height="60.8047" id="Detalle" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="130" x="238" y="216.4531"/><ellipse cx="277.3" cy="232.4531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M277.5031,239.0938 Q277.0344,239.0938 276.5813,239 Q276.1281,238.9063 275.7063,238.6719 Q275.3,238.4375 274.9875,238.0781 Q274.675,237.7188 274.4875,237.2969 Q274.3,236.8594 274.2219,236.3906 Q274.1594,235.9219 274.1594,235.4688 L274.1594,229.9375 Q274.1594,229.4844 274.2219,229.0156 Q274.3,228.5469 274.4875,228.125 Q274.675,227.7031 274.9875,227.3438 Q275.3,226.9688 275.7063,226.75 Q276.1281,226.5156 276.5813,226.4219 Q277.0344,226.3281 277.5031,226.3281 Q277.9406,226.3281 278.3781,226.4063 Q278.8156,226.4688 279.2063,226.6719 Q279.5969,226.8594 279.9094,227.1875 Q280.2375,227.5 280.425,227.8906 Q280.6281,228.2813 280.7219,228.7188 Q280.8313,229.1406 280.8313,229.5938 Q280.8313,229.5938 280.8313,229.5938 Q280.8313,229.5938 280.8313,229.6094 L278.9406,229.6094 Q278.9406,229.5938 278.9406,229.5938 Q278.9406,229.5938 278.9406,229.5938 Q278.9406,229.2813 278.8469,228.9844 Q278.7688,228.6875 278.5813,228.4375 Q278.3938,228.1875 278.0969,228.0781 Q277.8,227.9531 277.5031,227.9531 Q277.2844,227.9531 277.05,228.0313 Q276.8156,228.0938 276.6438,228.25 Q276.4719,228.3906 276.3469,228.5938 Q276.2375,228.7969 276.175,229.0313 Q276.1125,229.25 276.0813,229.4844 Q276.05,229.7031 276.05,229.9375 L276.05,235.4688 Q276.05,235.7031 276.0813,235.9375 Q276.1125,236.1719 276.175,236.3906 Q276.2375,236.6094 276.3469,236.8125 Q276.4719,237.0156 276.6438,237.1719 Q276.8156,237.3281 277.05,237.3906 Q277.2844,237.4531 277.5031,237.4531 Q277.8,237.4531 278.0969,237.3438 Q278.3938,237.2188 278.5813,236.9688 Q278.7688,236.7188 278.8469,236.4219 Q278.9406,236.125 278.9406,235.8281 Q278.9406,235.8281 278.9406,235.8281 Q278.9406,235.8281 278.9406,235.8125 L280.8313,235.8125 Q280.8313,235.8281 280.8313,235.8281 Q280.8313,235.8281 280.8313,235.8281 Q280.8313,236.2656 280.7219,236.7031 Q280.6281,237.1406 280.425,237.5313 Q280.2375,237.9219 279.9094,238.2344 Q279.5969,238.5469 279.2063,238.75 Q278.8156,238.9375 278.3781,239.0156 Q277.9406,239.0938 277.5031,239.0938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="296.7" y="236.6074">Detalle</text><line style="stroke:#504945;stroke-width:1.5;" x1="239" x2="367" y1="248.4531" y2="248.4531"/><rect fill="none" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="246" y="256.4531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="258" y="262.6636">precioVenta : float</text><line style="stroke:#504945;stroke-width:1.5;" x1="239" x2="367" y1="269.2578" y2="269.2578"/><!--MD5=[a4cb0f987c11031dc931233a0e7767af]
+class Stock--><rect codeLine="28" fill="#282828" height="112.0234" id="Stock" rx="7.5" ry="7.5" style="stroke:#504945;stroke-width:1.5;" width="196" x="7" y="190.9531"/><ellipse cx="83.25" cy="206.9531" fill="#B8BB26" rx="11" ry="11" style="stroke:#B8BB26;stroke-width:1.0;"/><path d="M83.4531,213.5938 Q82.9844,213.5938 82.5313,213.5 Q82.0781,213.4063 81.6563,213.1719 Q81.25,212.9375 80.9375,212.5781 Q80.625,212.2188 80.4375,211.7969 Q80.25,211.3594 80.1719,210.8906 Q80.1094,210.4219 80.1094,209.9688 L80.1094,204.4375 Q80.1094,203.9844 80.1719,203.5156 Q80.25,203.0469 80.4375,202.625 Q80.625,202.2031 80.9375,201.8438 Q81.25,201.4688 81.6563,201.25 Q82.0781,201.0156 82.5313,200.9219 Q82.9844,200.8281 83.4531,200.8281 Q83.8906,200.8281 84.3281,200.9063 Q84.7656,200.9688 85.1563,201.1719 Q85.5469,201.3594 85.8594,201.6875 Q86.1875,202 86.375,202.3906 Q86.5781,202.7813 86.6719,203.2188 Q86.7813,203.6406 86.7813,204.0938 Q86.7813,204.0938 86.7813,204.0938 Q86.7813,204.0938 86.7813,204.1094 L84.8906,204.1094 Q84.8906,204.0938 84.8906,204.0938 Q84.8906,204.0938 84.8906,204.0938 Q84.8906,203.7813 84.7969,203.4844 Q84.7188,203.1875 84.5313,202.9375 Q84.3438,202.6875 84.0469,202.5781 Q83.75,202.4531 83.4531,202.4531 Q83.2344,202.4531 83,202.5313 Q82.7656,202.5938 82.5938,202.75 Q82.4219,202.8906 82.2969,203.0938 Q82.1875,203.2969 82.125,203.5313 Q82.0625,203.75 82.0313,203.9844 Q82,204.2031 82,204.4375 L82,209.9688 Q82,210.2031 82.0313,210.4375 Q82.0625,210.6719 82.125,210.8906 Q82.1875,211.1094 82.2969,211.3125 Q82.4219,211.5156 82.5938,211.6719 Q82.7656,211.8281 83,211.8906 Q83.2344,211.9531 83.4531,211.9531 Q83.75,211.9531 84.0469,211.8438 Q84.3438,211.7188 84.5313,211.4688 Q84.7188,211.2188 84.7969,210.9219 Q84.8906,210.625 84.8906,210.3281 Q84.8906,210.3281 84.8906,210.3281 Q84.8906,210.3281 84.8906,210.3125 L86.7813,210.3125 Q86.7813,210.3281 86.7813,210.3281 Q86.7813,210.3281 86.7813,210.3281 Q86.7813,210.7656 86.6719,211.2031 Q86.5781,211.6406 86.375,212.0313 Q86.1875,212.4219 85.8594,212.7344 Q85.5469,213.0469 85.1563,213.25 Q84.7656,213.4375 84.3281,213.5156 Q83.8906,213.5938 83.4531,213.5938 Z " fill="#EBDBB2"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="12" lengthAdjust="spacing" x="103.75" y="211.1074">Stock</text><line style="stroke:#504945;stroke-width:1.5;" x1="8" x2="202" y1="222.9531" y2="222.9531"/><line style="stroke:#504945;stroke-width:1.5;" x1="8" x2="202" y1="230.9531" y2="230.9531"/><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="15" y="238.9531"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="27" y="245.1636">getAgotados() : Producto *</text><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="15" y="251.7578"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="27" y="257.9683">getBajoMinimos() : Producto *</text><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="15" y="264.5625"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="27" y="270.7729">darDeAlta(Producto p) : void</text><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="15" y="277.3672"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="27" y="283.5776">borrar(Producto p) : void</text><rect fill="#CC241D" height="6" style="stroke:#CC241D;stroke-width:1.0;" width="6" x="15" y="290.1719"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="11" lengthAdjust="spacing" x="27" y="296.3823">buscar(String s) : Producto</text><ellipse cx="405" cy="246.9531" fill="#000000" rx="2" ry="2" style="stroke:none;stroke-width:1.0;"/><!--MD5=[6f41d20ff4708860c2e0b6fd2047a722]
+reverse link Cajon to Factura--><path codeLine="36" d="M287.2,70.9531 C305.83,70.9531 325.01,70.9531 342.34,70.9531 " fill="none" id="Cajon-backto-Factura" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#1D2021" points="274.09,70.9531,280.09,74.9531,286.09,70.9531,280.09,66.9531,274.09,70.9531" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="292.25" y="64.02">tiene</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="282.0095" y="67.3301">1</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="311.6922" y="83.779">0..*</text><!--MD5=[f7c0ff670f577bbe7408036a3f28b461]
+reverse link Factura to apoint9--><path d="M405,127.2131 C405,174.2631 405,235.6731 405,244.8031 " fill="none" id="Factura-backto-apoint9" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#689D6A" points="405,114.0731,401,120.0731,405,126.0731,409,120.0731,405,114.0731" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="406" y="157.02">compuesta</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="396.3375" y="134.5007">1</text><!--MD5=[94e93790ec5be824d238e5a7b1e52089]
+link apoint9 to Producto--><path d="M404.87,249.5031 C404.2,256.5231 400.6,285.6631 386,302.9531 C340.76,356.5331 268.01,392.1031 214.26,412.6831 " fill="none" id="apoint9-Producto" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="221.9574" y="406.8225">1..*</text><!--MD5=[38ccd24ff281ea8d38c616f48caa9db2]
+link Detalle to apoint9--><path d="M368.34,246.9531 C379.89,246.9531 391.44,246.9531 403,246.9531 " fill="none" id="Detalle-apoint9" style="stroke:#689D6A;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[e40a2f6afb6fb67ee9f3fdf2063122ce]
+reverse link Stock to Producto--><path codeLine="41" d="M119.53,315.8731 C124.03,336.9331 128.94,359.8631 133.23,379.9331 " fill="none" id="Stock-backto-Producto" style="stroke:#689D6A;stroke-width:1.0;"/><polygon fill="#689D6A" points="116.78,303.0431,114.1208,309.746,119.2853,314.7787,121.9445,308.0758,116.78,303.0431" style="stroke:#689D6A;stroke-width:1.0;"/><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="128" y="346.02">contiene</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="109.7282" y="322.8667">1</text><text fill="#EBDBB2" font-family="Iosevka Term" font-size="13" lengthAdjust="spacing" x="107.2485" y="368.8685">0..*</text><!--MD5=[9545b14ba85d3c589c57ae2f5d3455c0]
+@startuml
+title Facturacion y Almacenamiento
+
+!include plantuml-config.txt
+
+class Factura {
+        - fecha : Date
+        - numero : int
+        - pagada : boolean
+}
+
+class Cajon {
+        - aniadir(Factura f) : void
+        - quitar(Factura f) : void
+}
+
+class Producto {
+        - codigo : int
+        - descripcion : String
+        - precioMinimo : float
+        - stock : int
+        - stockMinimo : int
+}
+
+class Detalle {
+        - precioVenta : float
+}
+
+class Stock {
+        - getAgotados() : Producto *
+        - getBajoMinimos() : Producto *
+        - darDeAlta(Producto p) : void
+        - borrar(Producto p) : void
+        - buscar(String s) : Producto
+}
+
+Cajon "1" o- "0..*" Factura : tiene
+
+Factura "1" *- - "1..*" Producto : compuesta
+Detalle .. (Factura, Producto)
+
+Stock "1" *- - "0..*" Producto : contiene
+@enduml
+
+@startuml
+title Facturacion y Almacenamiento
+
+skinparam groupInheritance 2
+
+skinparam Default {
+        FontName Iosevka Term
+        FontColor #ebdbb2
+}
+
+skinparam BackgroundColor #1d2021
+skinparam Shadowing false
+skinparam RoundCorner 15
+
+skinparam Class {
+        BackgroundColor #282828
+        BorderColor #504945
+        ArrowColor #689d6a
+}
+
+skinparam Stereotype {
+        CBackgroundColor #b8bb26
+        CBorderColor #b8bb26
+        EBackgroundColor #fe8019
+        EBorderColor #fe8019
+        ABackgroundColor #83a598
+        ABorderColor #83a598
+}
+
+skinparam Icon {
+        PrivateColor #cc241d
+        PrivateBackgroundColor #cc241d
+        ProtectedColor #d79921
+        ProtectedBackgroundColor #d79921
+}
+
+class Factura {
+        - fecha : Date
+        - numero : int
+        - pagada : boolean
+}
+
+class Cajon {
+        - aniadir(Factura f) : void
+        - quitar(Factura f) : void
+}
+
+class Producto {
+        - codigo : int
+        - descripcion : String
+        - precioMinimo : float
+        - stock : int
+        - stockMinimo : int
+}
+
+class Detalle {
+        - precioVenta : float
+}
+
+class Stock {
+        - getAgotados() : Producto *
+        - getBajoMinimos() : Producto *
+        - darDeAlta(Producto p) : void
+        - borrar(Producto p) : void
+        - buscar(String s) : Producto
+}
+
+Cajon "1" o- "0..*" Factura : tiene
+
+Factura "1" *- - "1..*" Producto : compuesta
+Detalle .. (Factura, Producto)
+
+Stock "1" *- - "0..*" Producto : contiene
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 18:25:22 CET 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
