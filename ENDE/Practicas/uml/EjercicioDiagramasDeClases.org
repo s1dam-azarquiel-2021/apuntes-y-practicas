@@ -408,3 +408,52 @@ BotonBebida --|> Boton
 
 #+RESULTS:
 [[file:generated/MaquinaExpendedora.svg]]
+
+* Ejercicio 7
+
+#+begin_src plantuml :file generated/FacturacionYAlmacenamiento.svg
+title Facturacion y Almacenamiento
+
+!include plantuml-config.txt
+
+class Factura {
+        - fecha : Date
+        - numero : int
+        - pagada : boolean
+}
+
+class Cajon {
+        - aniadir(Factura f) : void
+        - quitar(Factura f) : void
+}
+
+class Producto {
+        - codigo : int
+        - descripcion : String
+        - precioMinimo : float
+        - stock : int
+        - stockMinimo : int
+}
+
+class Detalle {
+        - precioVenta : float
+}
+
+class Stock {
+        - getAgotados() : Producto *
+        - getBajoMinimos() : Producto *
+        - darDeAlta(Producto p) : void
+        - borrar(Producto p) : void
+        - buscar(String s) : Producto
+}
+
+Cajon "1" o- "0..*" Factura : tiene
+
+Factura "1" *-- "1..*" Producto : compuesta
+Detalle .. (Factura, Producto)
+
+Stock "1" *-- "0..*" Producto : contiene
+#+end_src
+
+#+RESULTS:
+[[file:generated/FacturacionYAlmacenamiento.svg]]
