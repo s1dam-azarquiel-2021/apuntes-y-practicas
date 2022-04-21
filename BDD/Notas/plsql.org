@@ -509,3 +509,45 @@ BEGIN
   END LOOP;
 END;
 #+end_src
+
+Poner el ies que gano realmente en cada area.
+
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  c_min NUMBER(2);
+  c_max NUMBER(2);
+  masPuntos NUMBER;
+  institutoMasPuntos NUMBER(2);
+BEGIN
+  SELECT MIN(c_area), MAX(c_area)
+  INTO   c_min, c_max
+  FROM   area;
+
+  FOR i IN c_min .. c_max LOOP
+    SELECT   MAX(SUM(ptos))
+    INTO     masPuntos
+    FROM     alumno al, participa pa
+    WHERE    c_area = i
+      AND    al.dni = pa.dni
+    GROUP BY ies;
+
+    SELECT ies
+    INTO   institutoMasPuntos
+    FROM   instituto
+    WHERE  ies = (
+      SELECT   ies
+      FROM     alumno al, participa pa
+      WHERE    c_area = i
+        AND    al.dni = pa.dni
+      GROUP BY ies
+      HAVING   SUM(ptos) = masPuntos
+    );
+
+    UPDATE area a
+    SET    ies_ganador = institutoMasPuntos
+    WHERE  c_area = i;
+  END LOOP;
+END;
+#+end_src
