@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-04-08 Fri 07:16 -->
+<!-- 2022-04-18 Mon 19:09 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 5E</title>
@@ -17,16 +17,16 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org56f3162">Scripts iniciales I</a></li>
-<li><a href="#org1e5fcc9">Scripts Iniciales II</a></li>
-<li><a href="#org833d1ed">Scripts Iniciales III</a></li>
-<li><a href="#orgcdb4d18">Ejercicios avanzados</a></li>
+<li><a href="#orge035656">Scripts iniciales I</a></li>
+<li><a href="#org98ab505">Scripts Iniciales II</a></li>
+<li><a href="#org42be932">Scripts Iniciales III</a></li>
+<li><a href="#orga57219c">Ejercicios avanzados</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org56f3162" class="outline-2">
-<h2 id="org56f3162">Scripts iniciales I</h2>
-<div class="outline-text-2" id="text-org56f3162">
+<div id="outline-container-orge035656" class="outline-2">
+<h2 id="orge035656">Scripts iniciales I</h2>
+<div class="outline-text-2" id="text-orge035656">
 <ol class="org-ol">
 <li><p>
 Crea un script parametros.sh que nos diga el número de parámetros
@@ -230,9 +230,9 @@ tar xf $<span class="org-variable-name">n1</span> -C $<span class="org-variable-
 </div>
 </div>
 
-<div id="outline-container-org1e5fcc9" class="outline-2">
-<h2 id="org1e5fcc9">Scripts Iniciales II</h2>
-<div class="outline-text-2" id="text-org1e5fcc9">
+<div id="outline-container-org98ab505" class="outline-2">
+<h2 id="org98ab505">Scripts Iniciales II</h2>
+<div class="outline-text-2" id="text-org98ab505">
 <ol class="org-ol">
 <li><p>
 Crear un script llamado borrar que se use asi: <code>./borrar.sh
@@ -309,9 +309,9 @@ Shell por defecto: /bin/bash
 </div>
 </div>
 
-<div id="outline-container-org833d1ed" class="outline-2">
-<h2 id="org833d1ed">Scripts Iniciales III</h2>
-<div class="outline-text-2" id="text-org833d1ed">
+<div id="outline-container-org42be932" class="outline-2">
+<h2 id="org42be932">Scripts Iniciales III</h2>
+<div class="outline-text-2" id="text-org42be932">
 <ol class="org-ol">
 <li><p>
 Escribe un script espar.sh que nos vaya solicitando introducir un
@@ -373,9 +373,9 @@ acumulando las sucesivas búsquedas de la forma:
 </div>
 </div>
 
-<div id="outline-container-orgcdb4d18" class="outline-2">
-<h2 id="orgcdb4d18">Ejercicios avanzados</h2>
-<div class="outline-text-2" id="text-orgcdb4d18">
+<div id="outline-container-orga57219c" class="outline-2">
+<h2 id="orga57219c">Ejercicios avanzados</h2>
+<div class="outline-text-2" id="text-orga57219c">
 <ol class="org-ol">
 <li><p>
 Muestra el nombre de todos los usuarios registrados en el sistema.
@@ -462,7 +462,7 @@ que hace el comando id, pero procesandolo nosotros a partir /etc/*.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-04-08 Fri 07:16</p>
+<p class="date">Created: 2022-04-18 Mon 19:09</p>
 </div>
 </body>
 </html>
