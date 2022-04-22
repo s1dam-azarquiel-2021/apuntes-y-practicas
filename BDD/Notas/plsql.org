@@ -511,7 +511,6 @@ END;
 #+end_src
 
 Poner el ies que gano realmente en cada area.
-
 #+begin_src sql
 SET serveroutput ON;
 
@@ -548,6 +547,87 @@ BEGIN
     UPDATE area a
     SET    ies_ganador = institutoMasPuntos
     WHERE  c_area = i;
+  END LOOP;
+END;
+#+end_src
+
+Listado con el nombre del ALUMNO junto con el numero de areas en las
+que ha participado.
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  numeroAlumnos NUMBER;
+  dniActual NUMBER(8);
+  participaciones NUMBER;
+BEGIN
+  SELECT COUNT(dni)
+  INTO   numeroAlumnos
+  FROM   alumno;
+
+  dbms_output.put_line(RPAD('DNI',8) || ' | PARTICIPACIONES');
+  dbms_output.put_line(RPAD('-',26,'-'));
+
+  FOR i IN 1 .. numeroAlumnos LOOP
+    SELECT dni
+    INTO   dniActual
+    FROM (
+      SELECT dni, rownum as fila
+      FROM   alumno
+    )
+    WHERE fila = i;
+
+    SELECT COUNT(c_area)
+    INTO   participaciones
+    FROM   participa
+    WHERE  dni = dniActual;
+
+    dbms_output.put_line(RPAD(dniActual,8) || ' | ' || participaciones);
+  END LOOP;
+END;
+#+end_src
+
+Listado con el nombre del INSTITUTO junto con el numero de areas en las
+que ha participado.
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  numeroInstitutos NUMBER;
+  institutoActual NUMBER(2);
+  nombreInstitutoActual VARCHAR2(25);
+  participaciones NUMBER;
+BEGIN
+  SELECT COUNT(ies)
+  INTO   numeroInstitutos
+  FROM   instituto;
+
+  dbms_output.put_line(RPAD('INSTITUTO',20) || ' | PARTICIPACIONES');
+  dbms_output.put_line(RPAD('-',38,'-'));
+
+  FOR i IN 1 .. numeroInstitutos LOOP
+    SELECT ies, nombre_i
+    INTO   institutoActual, nombreInstitutoActual
+    FROM (
+      SELECT ies, nombre_i, rownum as fila
+      FROM   instituto
+    )
+    WHERE fila = i;
+
+    SELECT COUNT(DISTINCT c_area)
+    INTO   participaciones
+    FROM   participa
+    WHERE  dni IN (
+      SELECT dni
+      FROM   alumno
+      WHERE  ies = institutoActual
+    );
+
+    dbms_output.put_line(
+      RPAD(nombreInstitutoActual,20)
+      || ' | '
+      || participaciones
+    );
   END LOOP;
 END;
 #+end_src
