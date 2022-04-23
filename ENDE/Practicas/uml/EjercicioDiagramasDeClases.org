@@ -457,3 +457,83 @@ Stock "1" *-- "0..*" Producto : contiene
 
 #+RESULTS:
 [[file:generated/FacturacionYAlmacenamiento.svg]]
+
+* Ejercicio 8
+
+#+begin_src plantuml :file generated/CasoCinema.svg
+title Caso Cinema
+
+skinparam Nodesep 100
+
+!include plantuml-config.txt
+
+class Multiplex {
+        - direccion : String
+}
+
+class Salas {
+        - ocupacion : int
+}
+
+class Butacas {
+        - fila : int
+        - columna : int
+}
+
+class Reserva
+class ReservaInternet
+class ReservaTelefono
+
+enum TipoButaca {
+        General
+        Preferencial
+        Cinebar
+        Fumador
+}
+
+class Peliculas {
+        - director : String
+        - duracion
+        - idioma : String
+        - resumen : String
+}
+
+class Horario {
+        - fecha : Date
+        - hora
+}
+
+class ClienteRegistrado {
+        - cuentaBancaria : String
+        - descuento : float
+}
+
+class Articulos {
+        - precio : float
+        - nombre : String
+}
+
+class Clientes
+
+Multiplex "1" *-l- "1..*" Salas : contienen
+
+Salas "1" *-l- "1..*" Butacas : tienen
+Peliculas "1..*" <-- "1..*" Salas : proyectan
+(Salas,Peliculas) .. Horario
+
+Butacas "0..*" -l> "1..*" TipoButaca
+
+Reserva "1..*" -l> "1" ClienteRegistrado : realiza
+Reserva "1..*" <-- "1..5" Butacas : tiene
+
+ReservaInternet --|> Reserva
+ReservaTelefono --|> Reserva
+
+ClienteRegistrado --|> Clientes
+Clientes "1" <-- "1..*" Butacas : compra
+
+Articulos "0..*" <-- "0..*" ClienteRegistrado : compra
+#+end_src
+
+#+RESULTS:
+[[file:generated/CasoCinema.svg]]
