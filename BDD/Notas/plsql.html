@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-04-23 Sat 19:29 -->
+<!-- 2022-04-27 Wed 15:11 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -698,10 +698,90 @@ que ha participado.
 <span class="org-keyword">END</span>;
 </pre>
 </div>
+
+<p>
+Crear una funcion para comprobar si un numero es primo:
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">OR</span> REPLACE <span class="org-keyword">FUNCTION</span> <span class="org-function-name">ESPRIMO</span>
+(
+  NUMERO <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
+) <span class="org-keyword">RETURN</span> <span class="org-type">BOOLEAN</span> <span class="org-keyword">AS</span>
+  i <span class="org-keyword">NUMBER</span> := 3;
+<span class="org-keyword">BEGIN</span>
+  IF numero = 2 <span class="org-keyword">THEN</span>
+    <span class="org-keyword">return</span> <span class="org-keyword">true</span>;
+  ELSIF <span class="org-builtin">MOD</span>(numero, 2) = 0 <span class="org-keyword">THEN</span>
+    <span class="org-keyword">return</span> <span class="org-keyword">false</span>;
+  <span class="org-keyword">ELSE</span>
+    WHILE i &lt;= SQRT(numero) LOOP
+      IF <span class="org-builtin">MOD</span>(numero, i) = 0 <span class="org-keyword">THEN</span>
+        <span class="org-keyword">return</span> <span class="org-keyword">false</span>;
+      <span class="org-keyword">ELSE</span>
+        i := i + 2;
+      <span class="org-keyword">END</span> IF;
+    <span class="org-keyword">END</span> LOOP;
+  <span class="org-keyword">END</span> IF;
+  <span class="org-keyword">return</span> <span class="org-keyword">true</span>;
+<span class="org-keyword">END</span> ESPRIMO;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span> <span class="org-keyword">SIZE</span> UNLIMITED;
+
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">FOR</span> x <span class="org-keyword">IN</span> 1 .. 100 LOOP
+    IF esPrimo(x) <span class="org-keyword">THEN</span>
+      dbms_output.put_line(x || <span class="org-string">' es primo'</span>);
+    <span class="org-keyword">END</span> IF;
+  <span class="org-keyword">END</span> LOOP;
+<span class="org-keyword">END</span>;
+</pre>
+</div>
+
+<p>
+Realizar una funcion DIVISOR con un parametro de entrada y nos
+devuelve cuantos divisores tiene.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">OR</span> REPLACE <span class="org-keyword">FUNCTION</span> <span class="org-function-name">DIVISOR</span>
+(
+  NUMERO <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
+) <span class="org-keyword">RETURN</span> <span class="org-keyword">NUMBER</span> <span class="org-keyword">AS</span>
+  divisores <span class="org-keyword">NUMBER</span> := 2;
+<span class="org-keyword">BEGIN</span>
+  IF numero = 0 <span class="org-keyword">THEN</span>
+    <span class="org-keyword">return</span> 0;
+  ELSIF numero = 1 <span class="org-keyword">THEN</span>
+    <span class="org-keyword">return</span> 1;
+  <span class="org-keyword">ELSE</span>
+    <span class="org-keyword">FOR</span> i <span class="org-keyword">IN</span> 2 .. TRUNC(numero / 2) LOOP
+      IF <span class="org-builtin">MOD</span>(numero, i) = 0 <span class="org-keyword">THEN</span>
+        divisores := divisores + 1;
+      <span class="org-keyword">END</span> IF;
+    <span class="org-keyword">END</span> LOOP;
+  <span class="org-keyword">END</span> IF;
+
+  <span class="org-keyword">return</span> divisores;
+<span class="org-keyword">END</span> DIVISOR;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">FOR</span> x <span class="org-keyword">IN</span> 1 .. 100 LOOP
+    dbms_output.put_line(<span class="org-string">'Divisores de '</span> || x || <span class="org-string">': '</span> || divisor(x));
+  <span class="org-keyword">END</span> LOOP;
+<span class="org-keyword">END</span>;
+</pre>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-04-23 Sat 19:29</p>
+<p class="date">Created: 2022-04-27 Wed 15:11</p>
 </div>
 </body>
 </html>
