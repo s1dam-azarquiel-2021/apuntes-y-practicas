@@ -631,3 +631,75 @@ BEGIN
   END LOOP;
 END;
 #+end_src
+
+Crear una funcion para comprobar si un numero es primo:
+#+begin_src sql
+CREATE OR REPLACE FUNCTION ESPRIMO
+(
+  NUMERO IN NUMBER
+) RETURN BOOLEAN AS
+  i NUMBER := 3;
+BEGIN
+  IF numero = 2 THEN
+    return true;
+  ELSIF MOD(numero, 2) = 0 THEN
+    return false;
+  ELSE
+    WHILE i <= SQRT(numero) LOOP
+      IF MOD(numero, i) = 0 THEN
+        return false;
+      ELSE
+        i := i + 2;
+      END IF;
+    END LOOP;
+  END IF;
+  return true;
+END ESPRIMO;
+#+end_src
+
+#+begin_src sql
+SET serveroutput ON SIZE UNLIMITED;
+
+BEGIN
+  FOR x IN 1 .. 100 LOOP
+    IF esPrimo(x) THEN
+      dbms_output.put_line(x || ' es primo');
+    END IF;
+  END LOOP;
+END;
+#+end_src
+
+Realizar una funcion DIVISOR con un parametro de entrada y nos
+devuelve cuantos divisores tiene.
+#+begin_src sql
+CREATE OR REPLACE FUNCTION DIVISOR
+(
+  NUMERO IN NUMBER
+) RETURN NUMBER AS
+  divisores NUMBER := 2;
+BEGIN
+  IF numero = 0 THEN
+    return 0;
+  ELSIF numero = 1 THEN
+    return 1;
+  ELSE
+    FOR i IN 2 .. TRUNC(numero / 2) LOOP
+      IF MOD(numero, i) = 0 THEN
+        divisores := divisores + 1;
+      END IF;
+    END LOOP;
+  END IF;
+
+  return divisores;
+END DIVISOR;
+#+end_src
+
+#+begin_src sql
+SET serveroutput ON;
+
+BEGIN
+  FOR x IN 1 .. 100 LOOP
+    dbms_output.put_line('Divisores de ' || x || ': ' || divisor(x));
+  END LOOP;
+END;
+#+end_src
