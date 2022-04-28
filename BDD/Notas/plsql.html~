@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-04-27 Wed 15:11 -->
+<!-- 2022-04-28 Thu 11:11 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -778,10 +778,42 @@ devuelve cuantos divisores tiene.
 <span class="org-keyword">END</span>;
 </pre>
 </div>
+
+<p>
+Realizar una funcion MAYOR con 3 parametros de entrada y nos devuelva
+el mayor de los 3.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">OR</span> REPLACE <span class="org-keyword">FUNCTION</span> <span class="org-function-name">MAYOR</span>
+(
+  NUMERO1 <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
+, NUMERO2 <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
+, NUMERO3 <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
+) <span class="org-keyword">RETURN</span> <span class="org-keyword">NUMBER</span> <span class="org-keyword">AS</span>
+<span class="org-keyword">BEGIN</span>
+  IF numero1 &gt;= numero2 <span class="org-keyword">AND</span> numero2 &gt;= numero3 <span class="org-keyword">THEN</span>
+    <span class="org-keyword">return</span> numero1;
+  ELSIF numero2 &gt;= numero1 <span class="org-keyword">AND</span> numero2 &gt;= numero3 <span class="org-keyword">THEN</span>
+    <span class="org-keyword">return</span> numero2;
+  <span class="org-keyword">ELSE</span>
+    <span class="org-keyword">return</span> numero3;
+  <span class="org-keyword">END</span> IF;
+<span class="org-keyword">END</span> MAYOR;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">BEGIN</span>
+  dbms_output.put_line(<span class="org-string">'Mayor: '</span> || MAYOR(1,63,3));
+<span class="org-keyword">END</span>;
+</pre>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-04-27 Wed 15:11</p>
+<p class="date">Created: 2022-04-28 Thu 11:11</p>
 </div>
 </body>
 </html>

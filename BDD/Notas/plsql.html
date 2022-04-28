@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-04-28 Thu 11:11 -->
+<!-- 2022-04-28 Thu 16:03 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -704,8 +704,7 @@ Crear una funcion para comprobar si un numero es primo:
 </p>
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">OR</span> REPLACE <span class="org-keyword">FUNCTION</span> <span class="org-function-name">ESPRIMO</span>
-(
-  NUMERO <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
+( NUMERO <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
 ) <span class="org-keyword">RETURN</span> <span class="org-type">BOOLEAN</span> <span class="org-keyword">AS</span>
   i <span class="org-keyword">NUMBER</span> := 3;
 <span class="org-keyword">BEGIN</span>
@@ -746,8 +745,7 @@ devuelve cuantos divisores tiene.
 </p>
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">OR</span> REPLACE <span class="org-keyword">FUNCTION</span> <span class="org-function-name">DIVISOR</span>
-(
-  NUMERO <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
+( NUMERO <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
 ) <span class="org-keyword">RETURN</span> <span class="org-keyword">NUMBER</span> <span class="org-keyword">AS</span>
   divisores <span class="org-keyword">NUMBER</span> := 2;
 <span class="org-keyword">BEGIN</span>
@@ -785,8 +783,7 @@ el mayor de los 3.
 </p>
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">OR</span> REPLACE <span class="org-keyword">FUNCTION</span> <span class="org-function-name">MAYOR</span>
-(
-  NUMERO1 <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
+( NUMERO1 <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
 , NUMERO2 <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
 , NUMERO3 <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
 ) <span class="org-keyword">RETURN</span> <span class="org-keyword">NUMBER</span> <span class="org-keyword">AS</span>
@@ -805,15 +802,51 @@ el mayor de los 3.
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
 
+<span class="org-keyword">DECLARE</span>
+  pais VARCHAR2(16) := <span class="org-string">'Holanda'</span>;
+  anio <span class="org-keyword">NUMBER</span> := 2000;
+  cuantos <span class="org-keyword">NUMBER</span>;
+  precioMax <span class="org-keyword">NUMBER</span>;
 <span class="org-keyword">BEGIN</span>
-  dbms_output.put_line(<span class="org-string">'Mayor: '</span> || MAYOR(1,63,3));
+  consulta(pais, anio, cuantos, precioMax);
+  dbms_output.put_line(
+    <span class="org-string">'Peliculas de '</span> || pais
+    || <span class="org-string">' en el '</span> || anio
+    || <span class="org-string">': '</span> || cuantos
+    || <span class="org-string">', precio mas alto: '</span> || precioMax
+  );
 <span class="org-keyword">END</span>;
+</pre>
+</div>
+
+<p>
+Procedimiento con 4 parametros, de entrada el nombre del pais y anio,
+de salida cuantas y el precio maximo.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">create</span> <span class="org-keyword">or</span> replace
+<span class="org-keyword">PROCEDURE</span> CONSULTA
+( NOMBRE <span class="org-keyword">IN</span> VARCHAR2
+, ANIO <span class="org-keyword">IN</span> <span class="org-keyword">NUMBER</span>
+, CUANTOS <span class="org-keyword">OUT</span> <span class="org-keyword">NUMBER</span>
+, PRECIOMAX <span class="org-keyword">OUT</span> <span class="org-keyword">NUMBER</span>
+) <span class="org-keyword">AS</span>
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(c_peli), NVL(<span class="org-builtin">MAX</span>(precio), 0)
+  <span class="org-keyword">INTO</span>   cuantos, preciomax
+  <span class="org-keyword">FROM</span>   peliculas
+  <span class="org-keyword">WHERE</span>  c_pais = (
+    <span class="org-keyword">SELECT</span> c_pais
+    <span class="org-keyword">FROM</span>   paises
+    <span class="org-keyword">WHERE</span>  nombre_pais = nombre
+  ) <span class="org-keyword">AND</span>  anno = anio;
+<span class="org-keyword">END</span> CONSULTA;
 </pre>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-04-28 Thu 11:11</p>
+<p class="date">Created: 2022-04-28 Thu 16:03</p>
 </div>
 </body>
 </html>
