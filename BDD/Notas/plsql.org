@@ -724,19 +724,8 @@ END MAYOR;
 #+begin_src sql
 SET serveroutput ON;
 
-DECLARE
-  pais VARCHAR2(16) := 'Holanda';
-  anio NUMBER := 2000;
-  cuantos NUMBER;
-  precioMax NUMBER;
 BEGIN
-  consulta(pais, anio, cuantos, precioMax);
-  dbms_output.put_line(
-    'Peliculas de ' || pais
-    || ' en el ' || anio
-    || ': ' || cuantos
-    || ', precio mas alto: ' || precioMax
-  );
+  dbms_output.put_line('Mayor: ' || MAYOR(1,63,3));
 END;
 #+end_src
 
@@ -760,4 +749,23 @@ BEGIN
     WHERE  nombre_pais = nombre
   ) AND  anno = anio;
 END CONSULTA;
+#+end_src
+
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  pais VARCHAR2(16) := 'Holanda';
+  anio NUMBER := 2000;
+  cuantos NUMBER;
+  precioMax NUMBER;
+BEGIN
+  consulta(pais, anio, cuantos, precioMax);
+  dbms_output.put_line(
+    'Peliculas de ' || pais
+    || ' en el ' || anio
+    || ': ' || cuantos
+    || ', precio mas alto: ' || precioMax
+  );
+END;
 #+end_src
