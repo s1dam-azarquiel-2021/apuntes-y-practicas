@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-04-28 Thu 11:10 -->
+<!-- 2022-04-28 Thu 16:03 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SISI</title>
@@ -13,21 +13,21 @@
 <div id="content" class="content">
 <header>
 <h1 class="title">SISI</h1>
-</header><div id="outline-container-org1ccec2a" class="outline-2">
-<h2 id="org1ccec2a">Contenido</h2>
-<div class="outline-text-2" id="text-org1ccec2a">
+</header><div id="outline-container-org0b717aa" class="outline-2">
+<h2 id="org0b717aa">Contenido</h2>
+<div class="outline-text-2" id="text-org0b717aa">
 </div>
-<div id="outline-container-org4788d40" class="outline-3">
-<h3 id="org4788d40"><a href="./Notas/index.html">Teoria, notas, etc</a></h3>
+<div id="outline-container-org8ad62a5" class="outline-3">
+<h3 id="org8ad62a5"><a href="./Notas/index.html">Teoria, notas, etc</a></h3>
 </div>
-<div id="outline-container-orga81c71e" class="outline-3">
-<h3 id="orga81c71e"><a href="./Practicas/index.html">Practicas, tarea, etc</a></h3>
+<div id="outline-container-org453cd8c" class="outline-3">
+<h3 id="org453cd8c"><a href="./Practicas/index.html">Practicas, tarea, etc</a></h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-04-28 Thu 11:10</p>
+<p class="date">Created: 2022-04-28 Thu 16:03</p>
 </div>
 </body>
 </html>
