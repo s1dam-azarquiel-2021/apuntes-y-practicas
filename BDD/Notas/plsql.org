@@ -635,8 +635,7 @@ END;
 Crear una funcion para comprobar si un numero es primo:
 #+begin_src sql
 CREATE OR REPLACE FUNCTION ESPRIMO
-(
-  NUMERO IN NUMBER
+( NUMERO IN NUMBER
 ) RETURN BOOLEAN AS
   i NUMBER := 3;
 BEGIN
@@ -673,8 +672,7 @@ Realizar una funcion DIVISOR con un parametro de entrada y nos
 devuelve cuantos divisores tiene.
 #+begin_src sql
 CREATE OR REPLACE FUNCTION DIVISOR
-(
-  NUMERO IN NUMBER
+( NUMERO IN NUMBER
 ) RETURN NUMBER AS
   divisores NUMBER := 2;
 BEGIN
@@ -708,8 +706,7 @@ Realizar una funcion MAYOR con 3 parametros de entrada y nos devuelva
 el mayor de los 3.
 #+begin_src sql
 CREATE OR REPLACE FUNCTION MAYOR
-(
-  NUMERO1 IN NUMBER
+( NUMERO1 IN NUMBER
 , NUMERO2 IN NUMBER
 , NUMERO3 IN NUMBER
 ) RETURN NUMBER AS
@@ -727,7 +724,40 @@ END MAYOR;
 #+begin_src sql
 SET serveroutput ON;
 
+DECLARE
+  pais VARCHAR2(16) := 'Holanda';
+  anio NUMBER := 2000;
+  cuantos NUMBER;
+  precioMax NUMBER;
 BEGIN
-  dbms_output.put_line('Mayor: ' || MAYOR(1,63,3));
+  consulta(pais, anio, cuantos, precioMax);
+  dbms_output.put_line(
+    'Peliculas de ' || pais
+    || ' en el ' || anio
+    || ': ' || cuantos
+    || ', precio mas alto: ' || precioMax
+  );
 END;
+#+end_src
+
+Procedimiento con 4 parametros, de entrada el nombre del pais y anio,
+de salida cuantas y el precio maximo.
+#+begin_src sql
+create or replace
+PROCEDURE CONSULTA
+( NOMBRE IN VARCHAR2
+, ANIO IN NUMBER
+, CUANTOS OUT NUMBER
+, PRECIOMAX OUT NUMBER
+) AS
+BEGIN
+  SELECT COUNT(c_peli), NVL(MAX(precio), 0)
+  INTO   cuantos, preciomax
+  FROM   peliculas
+  WHERE  c_pais = (
+    SELECT c_pais
+    FROM   paises
+    WHERE  nombre_pais = nombre
+  ) AND  anno = anio;
+END CONSULTA;
 #+end_src
