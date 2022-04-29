@@ -815,3 +815,53 @@ BEGIN
   );
 END;
 #+end_src
+
+Procedimiento ACTUALIZA que actualice correctamente el NUM_ALUMNOS de
+la tabla instituto visualizando los cambios que va haciendo.
+#+begin_src sql
+create or replace
+PROCEDURE ACTUALIZA AS
+  numeroInstitutos NUMBER;
+  institutoActual NUMBER;
+  numeroAlumnosGuardado NUMBER;
+  numeroAlumnosReal NUMBER;
+BEGIN
+  SELECT COUNT(ies)
+  INTO   numeroInstitutos
+  FROM   instituto;
+
+  FOR i IN 1 .. numeroInstitutos LOOP
+    SELECT num_alumnos, num_alumnos_real, ies
+    INTO   numeroAlumnosGuardado, numeroAlumnosReal, institutoActual
+    FROM (
+      SELECT ies, num_alumnos, (
+        SELECT COUNT(dni)
+        FROM   alumno
+        WHERE  ies = i.ies
+      ) as num_alumnos_real, rownum as fila
+      FROM   instituto i
+    )
+    WHERE fila = i;
+
+    IF numeroAlumnosGuardado != numeroAlumnosReal THEN
+      UPDATE instituto
+      SET    num_alumnos = numeroAlumnosReal
+      WHERE  ies = institutoActual;
+
+      dbms_output.put_line(
+        'Arreglado ' || institutoActual || ': '
+        || numeroAlumnosGuardado || ' -> ' || numeroAlumnosReal
+      );
+    END IF;
+  END LOOP;
+END ACTUALIZA;
+#+end_src
+
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+BEGIN
+  actualiza();
+END;
+#+end_src
