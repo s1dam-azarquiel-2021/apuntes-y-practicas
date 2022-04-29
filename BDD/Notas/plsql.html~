@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-04-28 Thu 16:03 -->
+<!-- 2022-04-28 Thu 16:09 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -802,19 +802,8 @@ el mayor de los 3.
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
 
-<span class="org-keyword">DECLARE</span>
-  pais VARCHAR2(16) := <span class="org-string">'Holanda'</span>;
-  anio <span class="org-keyword">NUMBER</span> := 2000;
-  cuantos <span class="org-keyword">NUMBER</span>;
-  precioMax <span class="org-keyword">NUMBER</span>;
 <span class="org-keyword">BEGIN</span>
-  consulta(pais, anio, cuantos, precioMax);
-  dbms_output.put_line(
-    <span class="org-string">'Peliculas de '</span> || pais
-    || <span class="org-string">' en el '</span> || anio
-    || <span class="org-string">': '</span> || cuantos
-    || <span class="org-string">', precio mas alto: '</span> || precioMax
-  );
+  dbms_output.put_line(<span class="org-string">'Mayor: '</span> || MAYOR(1,63,3));
 <span class="org-keyword">END</span>;
 </pre>
 </div>
@@ -843,10 +832,30 @@ de salida cuantas y el precio maximo.
 <span class="org-keyword">END</span> CONSULTA;
 </pre>
 </div>
+
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+  pais VARCHAR2(16) := <span class="org-string">'Holanda'</span>;
+  anio <span class="org-keyword">NUMBER</span> := 2000;
+  cuantos <span class="org-keyword">NUMBER</span>;
+  precioMax <span class="org-keyword">NUMBER</span>;
+<span class="org-keyword">BEGIN</span>
+  consulta(pais, anio, cuantos, precioMax);
+  dbms_output.put_line(
+    <span class="org-string">'Peliculas de '</span> || pais
+    || <span class="org-string">' en el '</span> || anio
+    || <span class="org-string">': '</span> || cuantos
+    || <span class="org-string">', precio mas alto: '</span> || precioMax
+  );
+<span class="org-keyword">END</span>;
+</pre>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-04-28 Thu 16:03</p>
+<p class="date">Created: 2022-04-28 Thu 16:09</p>
 </div>
 </body>
 </html>
