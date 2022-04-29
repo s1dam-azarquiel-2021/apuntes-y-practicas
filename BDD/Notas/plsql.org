@@ -769,3 +769,49 @@ BEGIN
   );
 END;
 #+end_src
+
+Procedimiento con 3 parametros, de entrada el nombre del socio y de
+salida cuantas peliculas ha visto y cuantas no ha devuelto.
+#+begin_src sql
+CREATE OR REPLACE PROCEDURE CONTROL
+(
+  NOMBRE_SOCIO IN VARCHAR2
+, CUANTAS OUT NUMBER
+, NO_DEVUELTAS OUT NUMBER
+) AS
+  socio NUMBER(4);
+BEGIN
+  SELECT c_socio
+  INTO   socio
+  FROM   socios
+  WHERE  nombre = nombre_socio;
+
+  SELECT count(c_peli)
+  INTO   cuantas
+  FROM   alquiler a
+  WHERE  c_socio = socio;
+
+  SELECT count(c_peli)
+  INTO   no_devueltas
+  FROM   alquiler
+  WHERE  c_socio = socio
+    AND  devuelta = 'N';
+END CONTROL;
+#+end_src
+
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  nombre VARCHAR2(15) := 'pepe';
+  cuantas NUMBER;
+  no_devueltas NUMBER;
+BEGIN
+  control(nombre, cuantas, no_devueltas);
+  dbms_output.put_line(
+    'Peliculas vistas por ' || nombre
+    || ': ' || cuantas
+    || ', no devueltas: ' || no_devueltas
+  );
+END;
+#+end_src
