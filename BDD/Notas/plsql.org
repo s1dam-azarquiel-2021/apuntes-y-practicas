@@ -865,3 +865,129 @@ BEGIN
   actualiza();
 END;
 #+end_src
+
+Ejemplo de cursor, visualizar todos los titulos:
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  titulo VARCHAR2(16);
+
+  CURSOR curTitulo IS
+  SELECT titulo
+  FROM peliculas;
+BEGIN
+  OPEN curTitulo;
+  FETCH curTitulo
+  INTO titulo;
+  WHILE curTitulo%FOUND LOOP
+    dbms_output.put_line(titulo);
+
+    FETCH curTitulo
+    INTO titulo;
+  END loop;
+  CLOSE curTitulo;
+END;
+#+end_src
+
+En COMIDA realizar un script que visualice la fecha del pedido con el
+nombre del cliente que ha hecho el pedido, de todos los pedidos que
+hay.
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  fecha DATE;
+  nombre VARCHAR2(14);
+
+  CURSOR curPedido IS
+  SELECT fped, (
+    SELECT nombre
+    FROM   cliente
+    WHERE  idcli = p.idcli
+  )
+  FROM   pedido p;
+BEGIN
+  OPEN curPedido;
+  FETCH curPedido
+  INTO fecha, nombre;
+  WHILE curPedido%FOUND LOOP
+    dbms_output.put_line(fecha || ' -> ' || nombre);
+
+    FETCH curPedido
+    INTO fecha, nombre;
+  END loop;
+  CLOSE curPedido;
+END;
+#+end_src
+
+Realizar un script que visualice los dias en que se vende algo y que
+se vende ese dia, asi como el nombre de quien lo compra.
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  fecha DATE;
+  nombre VARCHAR2(14);
+  pedido NUMBER(4);
+  articulo VARCHAR2(15);
+
+  CURSOR curFechas IS
+  SELECT DISTINCT fped
+  FROM   pedido p
+  ORDER BY 1 ASC;
+
+  CURSOR curVentas IS
+  SELECT idped, (
+    SELECT nombre
+    FROM   cliente
+    WHERE  idcli = p.idcli
+  )
+  FROM   pedido p
+  WHERE  fped = fecha;
+
+  CURSOR curArticulos IS
+  SELECT (
+    SELECT descrip
+    FROM   articulo
+    WHERE  idart = d.idart
+  )
+  FROM   detalle d
+  WHERE  idped = pedido;
+BEGIN
+  OPEN curFechas;
+  FETCH curFechas
+  INTO fecha;
+  WHILE curFechas%FOUND LOOP
+    dbms_output.put_line(fecha || ':');
+
+    OPEN curVentas;
+    FETCH curVentas
+    INTO  pedido, nombre;
+    WHILE curVentas%FOUND LOOP
+      dbms_output.put(nombre || ' -> ');
+
+      OPEN curArticulos;
+      FETCH curArticulos
+      INTO  articulo;
+      WHILE curArticulos%FOUND LOOP
+        dbms_output.put(articulo || ' ');
+
+        FETCH curArticulos
+        INTO  articulo;
+      END loop;
+      CLOSE curArticulos;
+
+      FETCH curVentas
+      INTO  pedido, nombre;
+    END loop;
+    CLOSE curVentas;
+
+    dbms_output.put_line('');
+
+    FETCH curFechas
+    INTO fecha;
+  END loop;
+  CLOSE curFechas;
+END;
+#+end_src
