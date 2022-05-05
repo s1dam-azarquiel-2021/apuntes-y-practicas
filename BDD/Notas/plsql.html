@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-04-29 Fri 17:51 -->
+<!-- 2022-05-05 Thu 14:29 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -956,10 +956,145 @@ la tabla instituto visualizando los cambios que va haciendo.
 <span class="org-keyword">END</span>;
 </pre>
 </div>
+
+<p>
+Ejemplo de cursor, visualizar todos los titulos:
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+  titulo VARCHAR2(16);
+
+  <span class="org-keyword">CURSOR</span> curTitulo <span class="org-keyword">IS</span>
+  <span class="org-keyword">SELECT</span> titulo
+  <span class="org-keyword">FROM</span> peliculas;
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">OPEN</span> curTitulo;
+  <span class="org-keyword">FETCH</span> curTitulo
+  <span class="org-keyword">INTO</span> titulo;
+  WHILE curTitulo%<span class="org-keyword">FOUND</span> LOOP
+    dbms_output.put_line(titulo);
+
+    <span class="org-keyword">FETCH</span> curTitulo
+    <span class="org-keyword">INTO</span> titulo;
+  <span class="org-keyword">END</span> loop;
+  <span class="org-keyword">CLOSE</span> curTitulo;
+<span class="org-keyword">END</span>;
+</pre>
+</div>
+
+<p>
+En COMIDA realizar un script que visualice la fecha del pedido con el
+nombre del cliente que ha hecho el pedido, de todos los pedidos que
+hay.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+  fecha <span class="org-type">DATE</span>;
+  nombre VARCHAR2(14);
+
+  <span class="org-keyword">CURSOR</span> curPedido <span class="org-keyword">IS</span>
+  <span class="org-keyword">SELECT</span> fped, (
+    <span class="org-keyword">SELECT</span> nombre
+    <span class="org-keyword">FROM</span>   cliente
+    <span class="org-keyword">WHERE</span>  idcli = p.idcli
+  )
+  <span class="org-keyword">FROM</span>   pedido p;
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">OPEN</span> curPedido;
+  <span class="org-keyword">FETCH</span> curPedido
+  <span class="org-keyword">INTO</span> fecha, nombre;
+  WHILE curPedido%<span class="org-keyword">FOUND</span> LOOP
+    dbms_output.put_line(fecha || <span class="org-string">' -&gt; '</span> || nombre);
+
+    <span class="org-keyword">FETCH</span> curPedido
+    <span class="org-keyword">INTO</span> fecha, nombre;
+  <span class="org-keyword">END</span> loop;
+  <span class="org-keyword">CLOSE</span> curPedido;
+<span class="org-keyword">END</span>;
+</pre>
+</div>
+
+<p>
+Realizar un script que visualice los dias en que se vende algo y que
+se vende ese dia, asi como el nombre de quien lo compra.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+  fecha <span class="org-type">DATE</span>;
+  nombre VARCHAR2(14);
+  pedido <span class="org-keyword">NUMBER</span>(4);
+  articulo VARCHAR2(15);
+
+  <span class="org-keyword">CURSOR</span> curFechas <span class="org-keyword">IS</span>
+  <span class="org-keyword">SELECT</span> <span class="org-keyword">DISTINCT</span> fped
+  <span class="org-keyword">FROM</span>   pedido p
+  <span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span> 1 <span class="org-keyword">ASC</span>;
+
+  <span class="org-keyword">CURSOR</span> curVentas <span class="org-keyword">IS</span>
+  <span class="org-keyword">SELECT</span> idped, (
+    <span class="org-keyword">SELECT</span> nombre
+    <span class="org-keyword">FROM</span>   cliente
+    <span class="org-keyword">WHERE</span>  idcli = p.idcli
+  )
+  <span class="org-keyword">FROM</span>   pedido p
+  <span class="org-keyword">WHERE</span>  fped = fecha;
+
+  <span class="org-keyword">CURSOR</span> curArticulos <span class="org-keyword">IS</span>
+  <span class="org-keyword">SELECT</span> (
+    <span class="org-keyword">SELECT</span> descrip
+    <span class="org-keyword">FROM</span>   articulo
+    <span class="org-keyword">WHERE</span>  idart = d.idart
+  )
+  <span class="org-keyword">FROM</span>   detalle d
+  <span class="org-keyword">WHERE</span>  idped = pedido;
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">OPEN</span> curFechas;
+  <span class="org-keyword">FETCH</span> curFechas
+  <span class="org-keyword">INTO</span> fecha;
+  WHILE curFechas%<span class="org-keyword">FOUND</span> LOOP
+    dbms_output.put_line(fecha || <span class="org-string">':'</span>);
+
+    <span class="org-keyword">OPEN</span> curVentas;
+    <span class="org-keyword">FETCH</span> curVentas
+    <span class="org-keyword">INTO</span>  pedido, nombre;
+    WHILE curVentas%<span class="org-keyword">FOUND</span> LOOP
+      dbms_output.put(nombre || <span class="org-string">' -&gt; '</span>);
+
+      <span class="org-keyword">OPEN</span> curArticulos;
+      <span class="org-keyword">FETCH</span> curArticulos
+      <span class="org-keyword">INTO</span>  articulo;
+      WHILE curArticulos%<span class="org-keyword">FOUND</span> LOOP
+        dbms_output.put(articulo || <span class="org-string">' '</span>);
+
+        <span class="org-keyword">FETCH</span> curArticulos
+        <span class="org-keyword">INTO</span>  articulo;
+      <span class="org-keyword">END</span> loop;
+      <span class="org-keyword">CLOSE</span> curArticulos;
+
+      <span class="org-keyword">FETCH</span> curVentas
+      <span class="org-keyword">INTO</span>  pedido, nombre;
+    <span class="org-keyword">END</span> loop;
+    <span class="org-keyword">CLOSE</span> curVentas;
+
+    dbms_output.put_line(<span class="org-string">''</span>);
+
+    <span class="org-keyword">FETCH</span> curFechas
+    <span class="org-keyword">INTO</span> fecha;
+  <span class="org-keyword">END</span> loop;
+  <span class="org-keyword">CLOSE</span> curFechas;
+<span class="org-keyword">END</span>;
+</pre>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-04-29 Fri 17:51</p>
+<p class="date">Created: 2022-05-05 Thu 14:29</p>
 </div>
 </body>
 </html>
