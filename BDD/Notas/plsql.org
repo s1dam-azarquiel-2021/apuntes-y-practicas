@@ -991,3 +991,96 @@ BEGIN
   CLOSE curFechas;
 END;
 #+end_src
+
+De la base de datos TIENDA realizar procedimiento UNAVENTA que inserte
+un registro en ventas, tiene 4 parametros: nombre articulo, nombre
+cliente, cantidad y precio. El procedimiento tiene que comprobar si el
+articulo existe y si el cliente existe.
+#+begin_src sql
+create or replace
+PROCEDURE UNAVENTA
+( ARTICULO IN VARCHAR2
+, CLIENTE IN VARCHAR2
+, CANTIDAD IN NUMBER
+, PRECIO OUT NUMBER
+) AS
+clis NUMBER(3);
+arts NUMBER(3);
+art_c NUMBER(3);
+cli_c NUMBER(3);
+fac_c NUMBER(3);
+art_stock NUMBER(3);
+BEGIN
+  SELECT COUNT(c_art)
+  INTO   arts
+  FROM   articulo
+  WHERE  descrip = articulo;
+
+  IF arts <= 0 THEN
+    dbms_output.put_line('El articulo no existe');
+    return;
+  END IF;
+
+  SELECT COUNT(c_cliente)
+  INTO   clis
+  FROM   clientes
+  WHERE  nombre = cliente;
+
+  IF clis <= 0 THEN
+    dbms_output.put_line('El cliente no existe');
+    return;
+  END IF;
+
+  SELECT c_art
+  INTO   art_c
+  FROM   articulo
+  WHERE  descrip = articulo;
+
+  SELECT c_cliente
+  INTO   cli_c
+  FROM   clientes
+  WHERE  nombre = cliente;
+
+  SELECT stock
+  INTO   art_stock
+  FROM   articulo
+  WHERE  c_art = art_c;
+
+  IF art_stock < cantidad THEN
+    dbms_output.put_line('No hay suficiente stock');
+    return;
+  END IF;
+
+  SELECT a.precio * cantidad
+  INTO   precio
+  FROM   articulo a
+  WHERE  c_art = art_c;
+
+  SELECT MAX(c_factura)
+  INTO   fac_c
+  FROM   ventas;
+
+  INSERT INTO ventas
+  VALUES (fac_c + 1, art_c, cantidad, precio, sysdate, cli_c);
+
+  UPDATE articulo
+  SET    stock = stock - art_stock
+  WHERE  c_art = art_c;
+END UNAVENTA;
+#+end_src
+
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+  ARTICULO VARCHAR2(15) := 'pizarra';
+  CLIENTE VARCHAR2(15) := 'Pepito';
+  CANTIDAD NUMBER := 5;
+  PRECIO NUMBER;
+BEGIN
+  unaventa(articulo, cliente, cantidad, precio);
+  IF precio IS NOT NULL THEN
+    dbms_output.put_line('El precio de la compra es: ' || precio);
+  END IF;
+END;
+#+end_src
