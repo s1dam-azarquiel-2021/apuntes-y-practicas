@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-04-29 Fri 17:51 -->
+<!-- 2022-05-05 Thu 14:29 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 1B</title>
@@ -17,13 +17,13 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0c78be7">Deteccion de drivers del equipo</a></li>
+<li><a href="#org6b7bdfc">Deteccion de drivers del equipo</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org0c78be7" class="outline-2">
-<h2 id="org0c78be7">Deteccion de drivers del equipo</h2>
-<div class="outline-text-2" id="text-org0c78be7">
+<div id="outline-container-org6b7bdfc" class="outline-2">
+<h2 id="org6b7bdfc">Deteccion de drivers del equipo</h2>
+<div class="outline-text-2" id="text-org6b7bdfc">
 <p>
 Version del kernel: 5.10.57
 </p>
@@ -913,7 +913,7 @@ Version del kernel: 5.10.57
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-04-29 Fri 17:51</p>
+<p class="date">Created: 2022-05-05 Thu 14:29</p>
 </div>
 </body>
 </html>
