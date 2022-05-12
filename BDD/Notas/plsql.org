@@ -1084,3 +1084,107 @@ BEGIN
   END IF;
 END;
 #+end_src
+
+Realiza un procedimiento NECESITA que visualice los articulos que hay
+que pedir al proveedor. Tenemos que tener 20 unidades de articulos,
+como minimo, si no los tenemos los pedimos al proveedor.
+#+begin_src sql
+CREATE OR REPLACE PROCEDURE NECESITA AS
+  articulo VARCHAR2(15);
+  stock NUMBER(3);
+  proveedor VARCHAR2(12);
+
+  CURSOR curStock IS
+  SELECT descrip, stock, (
+    SELECT n_prov
+    FROM   proveedor
+    WHERE  c_provee = a.c_provee
+  )
+  FROM   articulo a
+  WHERE  stock < 20;
+BEGIN
+  OPEN curStock;
+  FETCH curStock
+  INTO articulo, stock, proveedor;
+
+  IF curStock%FOUND THEN
+    dbms_output.put_line(
+      RPAD('Articulo', 15)
+      || ' | ' || RPAD('Proveedor', 12)
+      || ' | ' || 'Cuantos'
+    );
+    dbms_output.put_line(RPAD('-',40,'-'));
+  END IF;
+
+  WHILE curStock%FOUND LOOP
+    dbms_output.put_line(
+      RPAD(articulo, 15)
+      || ' | ' || RPAD(proveedor, 12)
+      || ' | ' || (20 - stock)
+    );
+
+    FETCH curStock
+    INTO articulo, stock, proveedor;
+  END loop;
+  CLOSE curStock;
+END NECESITA;
+#+end_src
+
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+BEGIN
+  necesita();
+END;
+#+end_src
+
+Procedimiento que realice un LISTADO con el nombre del alumno junto
+con el numero de areas en las que ha participado. Trabajamos en la
+tabla MIEXAMEN empleando cursores.
+#+begin_src sql
+CREATE OR REPLACE PROCEDURE LISTADO AS
+  nombre VARCHAR2(25);
+  participaciones NUMBER;
+
+  CURSOR curParticip IS
+  SELECT nombre, (
+    SELECT COUNT(c_area)
+    FROM   participa
+    WHERE  dni = a.dni
+  )
+  FROM   alumno a;
+BEGIN
+  OPEN curParticip;
+  FETCH curParticip
+  INTO nombre, participaciones;
+
+  IF curParticip%FOUND THEN
+    dbms_output.put_line(
+      RPAD('Nombre', 25)
+      || ' | ' || 'Participaciones'
+    );
+    dbms_output.put_line(RPAD('-',43,'-'));
+  END IF;
+
+  WHILE curParticip%FOUND LOOP
+    dbms_output.put_line(
+      RPAD(nombre, 25)
+      || ' | ' || participaciones
+    );
+
+    FETCH curParticip
+    INTO nombre, participaciones;
+  END loop;
+  CLOSE curParticip;
+END LISTADO;
+#+end_src
+
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+BEGIN
+  listado();
+END;
+#+end_src
