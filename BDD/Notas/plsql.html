@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-05-11 Wed 11:07 -->
+<!-- 2022-05-12 Thu 16:04 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -1188,10 +1188,122 @@ art_stock <span class="org-keyword">NUMBER</span>(3);
 <span class="org-keyword">END</span>;
 </pre>
 </div>
+
+<p>
+Realiza un procedimiento NECESITA que visualice los articulos que hay
+que pedir al proveedor. Tenemos que tener 20 unidades de articulos,
+como minimo, si no los tenemos los pedimos al proveedor.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">OR</span> REPLACE <span class="org-keyword">PROCEDURE</span> <span class="org-function-name">NECESITA</span> <span class="org-keyword">AS</span>
+  articulo VARCHAR2(15);
+  stock <span class="org-keyword">NUMBER</span>(3);
+  proveedor VARCHAR2(12);
+
+  <span class="org-keyword">CURSOR</span> curStock <span class="org-keyword">IS</span>
+  <span class="org-keyword">SELECT</span> descrip, stock, (
+    <span class="org-keyword">SELECT</span> n_prov
+    <span class="org-keyword">FROM</span>   proveedor
+    <span class="org-keyword">WHERE</span>  c_provee = a.c_provee
+  )
+  <span class="org-keyword">FROM</span>   articulo a
+  <span class="org-keyword">WHERE</span>  stock &lt; 20;
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">OPEN</span> curStock;
+  <span class="org-keyword">FETCH</span> curStock
+  <span class="org-keyword">INTO</span> articulo, stock, proveedor;
+
+  IF curStock%<span class="org-keyword">FOUND</span> <span class="org-keyword">THEN</span>
+    dbms_output.put_line(
+      RPAD(<span class="org-string">'Articulo'</span>, 15)
+      || <span class="org-string">' | '</span> || RPAD(<span class="org-string">'Proveedor'</span>, 12)
+      || <span class="org-string">' | '</span> || <span class="org-string">'Cuantos'</span>
+    );
+    dbms_output.put_line(RPAD(<span class="org-string">'-'</span>,40,<span class="org-string">'-'</span>));
+  <span class="org-keyword">END</span> IF;
+
+  WHILE curStock%<span class="org-keyword">FOUND</span> LOOP
+    dbms_output.put_line(
+      RPAD(articulo, 15)
+      || <span class="org-string">' | '</span> || RPAD(proveedor, 12)
+      || <span class="org-string">' | '</span> || (20 - stock)
+    );
+
+    <span class="org-keyword">FETCH</span> curStock
+    <span class="org-keyword">INTO</span> articulo, stock, proveedor;
+  <span class="org-keyword">END</span> loop;
+  <span class="org-keyword">CLOSE</span> curStock;
+<span class="org-keyword">END</span> NECESITA;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+<span class="org-keyword">BEGIN</span>
+  necesita();
+<span class="org-keyword">END</span>;
+</pre>
+</div>
+
+<p>
+Procedimiento que realice un LISTADO con el nombre del alumno junto
+con el numero de areas en las que ha participado. Trabajamos en la
+tabla MIEXAMEN empleando cursores.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">OR</span> REPLACE <span class="org-keyword">PROCEDURE</span> <span class="org-function-name">LISTADO</span> <span class="org-keyword">AS</span>
+  nombre VARCHAR2(25);
+  participaciones <span class="org-keyword">NUMBER</span>;
+
+  <span class="org-keyword">CURSOR</span> curParticip <span class="org-keyword">IS</span>
+  <span class="org-keyword">SELECT</span> nombre, (
+    <span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(c_area)
+    <span class="org-keyword">FROM</span>   participa
+    <span class="org-keyword">WHERE</span>  dni = a.dni
+  )
+  <span class="org-keyword">FROM</span>   alumno a;
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">OPEN</span> curParticip;
+  <span class="org-keyword">FETCH</span> curParticip
+  <span class="org-keyword">INTO</span> nombre, participaciones;
+
+  IF curParticip%<span class="org-keyword">FOUND</span> <span class="org-keyword">THEN</span>
+    dbms_output.put_line(
+      RPAD(<span class="org-string">'Nombre'</span>, 25)
+      || <span class="org-string">' | '</span> || <span class="org-string">'Participaciones'</span>
+    );
+    dbms_output.put_line(RPAD(<span class="org-string">'-'</span>,43,<span class="org-string">'-'</span>));
+  <span class="org-keyword">END</span> IF;
+
+  WHILE curParticip%<span class="org-keyword">FOUND</span> LOOP
+    dbms_output.put_line(
+      RPAD(nombre, 25)
+      || <span class="org-string">' | '</span> || participaciones
+    );
+
+    <span class="org-keyword">FETCH</span> curParticip
+    <span class="org-keyword">INTO</span> nombre, participaciones;
+  <span class="org-keyword">END</span> loop;
+  <span class="org-keyword">CLOSE</span> curParticip;
+<span class="org-keyword">END</span> LISTADO;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+<span class="org-keyword">BEGIN</span>
+  listado();
+<span class="org-keyword">END</span>;
+</pre>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-05-11 Wed 11:07</p>
+<p class="date">Created: 2022-05-12 Thu 16:04</p>
 </div>
 </body>
 </html>
