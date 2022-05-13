@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-05-12 Thu 16:04 -->
+<!-- 2022-05-13 Fri 14:30 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL</title>
@@ -1300,10 +1300,80 @@ tabla MIEXAMEN empleando cursores.
 <span class="org-keyword">END</span>;
 </pre>
 </div>
+
+<p>
+Realiza un procedimiento LASAREAS con 1 parametro de entrada,
+nombre<sub>area</sub>, y nos visualiza los nombres instituto participantes y
+el nombre del instituto ganador.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">create</span> <span class="org-keyword">or</span> replace
+<span class="org-keyword">PROCEDURE</span> LASAREAS
+(
+  NOMBRE_AREA <span class="org-keyword">IN</span> VARCHAR2
+) <span class="org-keyword">AS</span>
+  cod_area <span class="org-keyword">NUMBER</span>(2);
+  ganador <span class="org-type">VARCHAR</span>(25);
+  participante VARCHAR2(25);
+
+  <span class="org-keyword">CURSOR</span> curParticip <span class="org-keyword">IS</span>
+  <span class="org-keyword">SELECT</span> nombre_i
+  <span class="org-keyword">FROM</span>   instituto
+  <span class="org-keyword">WHERE</span>  ies <span class="org-keyword">IN</span> (
+    <span class="org-keyword">SELECT</span> ies
+    <span class="org-keyword">FROM</span>   alumno
+    <span class="org-keyword">WHERE</span>  dni <span class="org-keyword">IN</span> (
+      <span class="org-keyword">SELECT</span> dni
+      <span class="org-keyword">FROM</span>   participa
+      <span class="org-keyword">WHERE</span>  c_area = (
+        <span class="org-keyword">SELECT</span> c_area
+        <span class="org-keyword">FROM</span>   area
+        <span class="org-keyword">WHERE</span>  descrip = nombre_area
+      )
+    )
+  );
+<span class="org-keyword">BEGIN</span>
+  <span class="org-keyword">SELECT</span> nombre_i
+  <span class="org-keyword">INTO</span>   ganador
+  <span class="org-keyword">FROM</span>   instituto
+  <span class="org-keyword">WHERE</span>  ies = (
+    <span class="org-keyword">SELECT</span> ies_ganador
+    <span class="org-keyword">FROM</span>   area
+    <span class="org-keyword">WHERE</span>  descrip = nombre_area
+  );
+
+  dbms_output.put_line(<span class="org-string">'Ganador: '</span> || ganador);
+
+  <span class="org-keyword">OPEN</span> curParticip;
+  <span class="org-keyword">FETCH</span> curParticip
+  <span class="org-keyword">INTO</span> participante;
+
+  dbms_output.put_line(<span class="org-string">'Participantes:'</span>);
+
+  WHILE curParticip%<span class="org-keyword">FOUND</span> LOOP
+    dbms_output.put_line(participante);
+
+    <span class="org-keyword">FETCH</span> curParticip
+    <span class="org-keyword">INTO</span> participante;
+  <span class="org-keyword">END</span> loop;
+  <span class="org-keyword">CLOSE</span> curParticip;
+<span class="org-keyword">END</span> LASAREAS;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sql"><span class="org-keyword">SET</span> serveroutput <span class="org-keyword">ON</span>;
+
+<span class="org-keyword">DECLARE</span>
+<span class="org-keyword">BEGIN</span>
+  lasareas(<span class="org-string">'cocina'</span>);
+<span class="org-keyword">END</span>;
+</pre>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-05-12 Thu 16:04</p>
+<p class="date">Created: 2022-05-13 Fri 14:30</p>
 </div>
 </body>
 </html>

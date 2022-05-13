@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-05-11 Wed 11:07 -->
+<!-- 2022-05-12 Thu 16:04 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -14,20 +14,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org49f26ff">1. Setup</a></li>
-<li><a href="#org5621259">2. Ejercicio 1</a></li>
-<li><a href="#org6491296">3. Ejercicio 2</a></li>
-<li><a href="#org292e21c">4. Ejercicio 3</a></li>
-<li><a href="#orgb72417f">5. Ejercicio 4</a></li>
-<li><a href="#org7e1c9d6">6. Ejercicio 5</a></li>
-<li><a href="#org8e9a5fb">7. Ejercicio 6</a></li>
-<li><a href="#org0a9f267">8. Ejercicio 7</a></li>
-<li><a href="#org7470415">9. Ejercicio 8</a></li>
+<li><a href="#org3020a62">1. Setup</a></li>
+<li><a href="#orga743a5d">2. Ejercicio 1</a></li>
+<li><a href="#org37eaf30">3. Ejercicio 2</a></li>
+<li><a href="#org63186cb">4. Ejercicio 3</a></li>
+<li><a href="#org043c6c5">5. Ejercicio 4</a></li>
+<li><a href="#orgb177115">6. Ejercicio 5</a></li>
+<li><a href="#org8c49817">7. Ejercicio 6</a></li>
+<li><a href="#orgb5505b6">8. Ejercicio 7</a></li>
+<li><a href="#orgeb4dbf6">9. Ejercicio 8</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org49f26ff" class="outline-2">
-<h2 id="org49f26ff"><span class="section-number-2">1.</span> Setup</h2>
+<div id="outline-container-org3020a62" class="outline-2">
+<h2 id="org3020a62"><span class="section-number-2">1.</span> Setup</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-shell"><span class="org-keyword">for</span> svg<span class="org-keyword"> in</span> $(ls generated/*.svg)
@@ -76,8 +76,8 @@ skinparam Icon {
 </div>
 </div>
 
-<div id="outline-container-org5621259" class="outline-2">
-<h2 id="org5621259"><span class="section-number-2">2.</span> Ejercicio 1</h2>
+<div id="outline-container-orga743a5d" class="outline-2">
+<h2 id="orga743a5d"><span class="section-number-2">2.</span> Ejercicio 1</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-plantuml">title Venta de Coches
@@ -152,8 +152,8 @@ Vendedor &lt;|-- VendedorPorComision
 </div>
 </div>
 
-<div id="outline-container-org6491296" class="outline-2">
-<h2 id="org6491296"><span class="section-number-2">3.</span> Ejercicio 2</h2>
+<div id="outline-container-org37eaf30" class="outline-2">
+<h2 id="org37eaf30"><span class="section-number-2">3.</span> Ejercicio 2</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-plantuml">title Matricula en la Universidad
@@ -221,8 +221,8 @@ Profesor -l-|&gt; Persona
 </div>
 </div>
 
-<div id="outline-container-org292e21c" class="outline-2">
-<h2 id="org292e21c"><span class="section-number-2">4.</span> Ejercicio 3</h2>
+<div id="outline-container-org63186cb" class="outline-2">
+<h2 id="org63186cb"><span class="section-number-2">4.</span> Ejercicio 3</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-plantuml">title El Veterinario
@@ -283,8 +283,8 @@ Enfermedad "1" &lt;-l- "0..*" CalendarioVacunacion : tiene
 </div>
 </div>
 
-<div id="outline-container-orgb72417f" class="outline-2">
-<h2 id="orgb72417f"><span class="section-number-2">5.</span> Ejercicio 4</h2>
+<div id="outline-container-org043c6c5" class="outline-2">
+<h2 id="org043c6c5"><span class="section-number-2">5.</span> Ejercicio 4</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-plantuml">title La Asociacion
@@ -327,8 +327,8 @@ Persona "0..*" --&gt; "1" Fecha : nace
 </div>
 </div>
 
-<div id="outline-container-org7e1c9d6" class="outline-2">
-<h2 id="org7e1c9d6"><span class="section-number-2">6.</span> Ejercicio 5</h2>
+<div id="outline-container-orgb177115" class="outline-2">
+<h2 id="orgb177115"><span class="section-number-2">6.</span> Ejercicio 5</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-plantuml">title El Torneo
@@ -386,8 +386,8 @@ Torneo "0..*" --&gt; "1" Jugador : gana
 </div>
 </div>
 
-<div id="outline-container-org8e9a5fb" class="outline-2">
-<h2 id="org8e9a5fb"><span class="section-number-2">7.</span> Ejercicio 6</h2>
+<div id="outline-container-org8c49817" class="outline-2">
+<h2 id="org8c49817"><span class="section-number-2">7.</span> Ejercicio 6</h2>
 <div class="outline-text-2" id="text-7">
 <div class="org-src-container">
 <pre class="src src-plantuml">title Maquina Expendedora
@@ -446,8 +446,8 @@ BotonBebida --|&gt; Boton
 </div>
 </div>
 
-<div id="outline-container-org0a9f267" class="outline-2">
-<h2 id="org0a9f267"><span class="section-number-2">8.</span> Ejercicio 7</h2>
+<div id="outline-container-orgb5505b6" class="outline-2">
+<h2 id="orgb5505b6"><span class="section-number-2">8.</span> Ejercicio 7</h2>
 <div class="outline-text-2" id="text-8">
 <div class="org-src-container">
 <pre class="src src-plantuml">title Facturacion y Almacenamiento
@@ -496,8 +496,8 @@ Stock "1" *-- "0..*" Producto : contiene
 </div>
 </div>
 
-<div id="outline-container-org7470415" class="outline-2">
-<h2 id="org7470415"><span class="section-number-2">9.</span> Ejercicio 8</h2>
+<div id="outline-container-orgeb4dbf6" class="outline-2">
+<h2 id="orgeb4dbf6"><span class="section-number-2">9.</span> Ejercicio 8</h2>
 <div class="outline-text-2" id="text-9">
 <div class="org-src-container">
 <pre class="src src-plantuml">title Caso Cinema
@@ -579,7 +579,7 @@ Articulos "0..*" &lt;-- "0..*" ClienteRegistrado : compra
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-05-11 Wed 11:07</p>
+<p class="date">Created: 2022-05-12 Thu 16:04</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
