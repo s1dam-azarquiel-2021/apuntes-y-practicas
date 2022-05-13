@@ -1188,3 +1188,69 @@ BEGIN
   listado();
 END;
 #+end_src
+
+Realiza un procedimiento LASAREAS con 1 parametro de entrada,
+nombre_area, y nos visualiza los nombres instituto participantes y
+el nombre del instituto ganador.
+#+begin_src sql
+create or replace
+PROCEDURE LASAREAS
+(
+  NOMBRE_AREA IN VARCHAR2
+) AS
+  cod_area NUMBER(2);
+  ganador VARCHAR(25);
+  participante VARCHAR2(25);
+
+  CURSOR curParticip IS
+  SELECT nombre_i
+  FROM   instituto
+  WHERE  ies IN (
+    SELECT ies
+    FROM   alumno
+    WHERE  dni IN (
+      SELECT dni
+      FROM   participa
+      WHERE  c_area = (
+        SELECT c_area
+        FROM   area
+        WHERE  descrip = nombre_area
+      )
+    )
+  );
+BEGIN
+  SELECT nombre_i
+  INTO   ganador
+  FROM   instituto
+  WHERE  ies = (
+    SELECT ies_ganador
+    FROM   area
+    WHERE  descrip = nombre_area
+  );
+
+  dbms_output.put_line('Ganador: ' || ganador);
+
+  OPEN curParticip;
+  FETCH curParticip
+  INTO participante;
+
+  dbms_output.put_line('Participantes:');
+
+  WHILE curParticip%FOUND LOOP
+    dbms_output.put_line(participante);
+
+    FETCH curParticip
+    INTO participante;
+  END loop;
+  CLOSE curParticip;
+END LASAREAS;
+#+end_src
+
+#+begin_src sql
+SET serveroutput ON;
+
+DECLARE
+BEGIN
+  lasareas('cocina');
+END;
+#+end_src
