@@ -1,0 +1,122 @@
+#+TITLE: Practica 7A
+#+SETUPFILE: ../../template.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+1. ¿Cuál es a tu juicio la finalidad del uso de las redes
+   informáticas? ¿Qué ventajas tiene usar ordenadores en red, frente
+   al trabajo aislado?
+
+   Comunicacion, compartir y descentralizar.
+
+   Un ordenador en red puede conectarse a un servidor en el que puede
+   guardar o realizar su trabajo (descentralizar), puede comunicarse
+   con otros ordenadores (comunicacion) o puede compartir su trabajo
+   con otras personas (compartir).
+
+2. Mira la tabla de velocidades de conexión que tienes aquí y calcula
+   cuanto tiempo tardaríamos en enviar un archivo de 512 MB
+   (Megabytes) a través de cada uno de los siguientes sistemas de
+   conexión, así como el tamaño del archivo en bits.
+
+   a) Pares trenzados:
+
+      0.5s.
+      
+   b) Fibra optica:
+
+      0.0005s.
+      
+   c) Wi-Fi:
+
+      Unos 5s.
+      
+   d) Bluetooth:
+
+      Unos 170s.
+
+3. Ejecuta la instrucción getmac en la línea de comandos (cmd) para
+   averiguar la dirección MAC de tu tarjeta de red. ¿Por qué no puede
+   haber 2 dispositivos con el mismo MAC? Razona la respuesta.
+
+   #+begin_src shell
+   ❯ cat /sys/class/net/wlp5s0/address
+   38:d5:7a:17:d7:5b
+   #+end_src
+
+   La MAC es el identificador unico de una NIC.
+
+4. Explica las diferencias entre un Hub y un Switch.
+
+   Un hub es como una rotonda sin señalizacion y el switch es una
+   rotonda con un policia.
+      
+5. Abre la línea de comandos y escribe =ping www.google.es= ¿Cuál es
+   la dirección IP de la página Google? Abre el navegador de Internet
+   y teclea la IP obtenida en lugar de www.google.es ¿Se obtiene el
+   mismo resultado?
+
+   IP: 142.250.200.99
+
+   Si.
+
+6. ¿Cuál de las siguientes direcciones IP son válidas?
+
+   a) 40.260.5.54
+   b) 256.125.100.3
+   c) 80.1.8.100
+   d) 135.23.1.100
+
+   =c= y =d=.
+
+7. Realiza la búsqueda de un equipo perteneciente a la red del
+   aula. Panel de control – Redes e Internet – Ver los equipos y
+   dispositivos de red. Apunta el nombre de los equipos de la red.
+
+   Meh.
+
+8. ¿Cuáles son a tu juicio las ventajas e inconvenientes de las redes
+   inalámbricas frente a las redes por cable?
+
+   Menores velocidades y fiablidad.
+
+9. Indica cuáles son los elementos básicos que forman la red wi-fi.
+
+   El AP wireless y los hosts que se conectan.
+
+10. Mide la velocidad a la que está funcionando, en estos momentos, tu
+    conexión a Internet. Puedes comprobarlo y anotar los resultado en:
+    http://www.testdevelocidad.es/.
+
+    [[file:./img/7.1.1.png]]
+
+11. Ejercicio de Identificación de la Clase de Red (A, B o C).
+
+    10.250.1.1 -> A
+
+    150.10.15.0 -> B
+
+    192.14.2.0 -> C
+
+    148.17.9.1 -> B
+
+    193.42.1.1 -> C
+
+    126.8.156.0 -> A
+
+    220.200.23.1 -> D
+
+    230.230.45.5 -> D
+
+12. Vamos a elaborar un resumen de la unidad completando las palabras que faltan.
+
+    1. red
+    2. local
+    3. cliente-servidor centralizada
+    4. mac dispositivo
+    5. routers
+    6. dispositivos
+    7. rj45
+    8. electrico
+    9. infrarrojos luz
+    10. bluetooth
+    11. wi-fi
+    12. cobertura estaciones
