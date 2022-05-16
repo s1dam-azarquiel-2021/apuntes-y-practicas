@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-05-15 Sun 16:01 -->
+<!-- 2022-05-16 Mon 16:53 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practica 7A</title>
@@ -159,7 +159,7 @@ conexión a Internet. Puedes comprobarlo y anotar los resultado en:
 </p>
 
 
-<figure id="org97051b9">
+<figure id="org7af9872">
 <img src="./img/7.1.1.png" alt="7.1.1.png">
 
 </figure></li>
@@ -220,7 +220,7 @@ Ejercicio de Identificación de la Clase de Red (A, B o C).
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-05-15 Sun 16:01</p>
+<p class="date">Created: 2022-05-16 Mon 16:53</p>
 </div>
 </body>
 </html>
