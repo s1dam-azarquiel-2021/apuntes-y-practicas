@@ -1,0 +1,119 @@
+#+TITLE: PLSQL - Examen (esperemos sea el mismo)
+#+SETUPFILE: ../../template.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+
+   Tabla PELICULAS (C_PELI, TITULO, FORMATO, C_PAIS, ANNO, PRECIO).
+   Tabla ALQUILER  (C_SOCIO, C_PELI, FECHA, NDIAS, DEVUELTA, TOTAL).
+   Tabla SOCIOS    (C_SOCIO, NOMBRE, DIRECCION, CIUDAD).
+
+1. Realiza el procedimiento ESEANIO con un parámetro de entrada AÑO; Y
+   nos visualice los distintos nombres de los socios que han alquilado
+   ese año. (El posibles valor de C_SOCIO y C_PELI son correlativos).
+
+   #+begin_src sql
+   CREATE OR REPLACE PROCEDURE ESEANIO (
+     anio IN NUMBER
+   ) AS
+     nombre VARCHAR2(20);
+
+     CURSOR curNombres IS
+     SELECT nombre
+     FROM   socios
+     WHERE  c_socio IN (
+       SELECT c_socio
+       FROM   alquiler
+       WHERE  SUBSTR(fecha, 7, 2) = anio
+     );
+   BEGIN
+     OPEN curNombres;
+     FETCH curNombres INTO nombre;
+
+     WHILE curNombres%FOUND LOOP
+       dbms_output.put_line(nombre);
+
+       FETCH curNombres INTO nombre;
+     END LOOP;
+
+     CLOSE curNombres;
+   END ESEANIO;
+   #+end_src
+
+2. Realiza un script que visualice 50 múltiplos de 7, mayores de 100.
+   #+begin_src sql
+   SET serveroutput ON;
+
+   DECLARE
+     numero NUMBER := 100;
+   BEGIN
+     -- Encuentro el primer multiplo de 7 mayor a 100
+     WHILE MOD(numero, 7) != 0 LOOP
+       numero := numero + 1;
+     END LOOP;
+
+     -- Iterar 50 veces
+     FOR i IN 1 .. 50 LOOP
+       -- Mostrar el numero
+       dbms_output.put_line(numero);
+
+       -- Siguiente multiplo de 7
+       numero := numero + 7;
+     END LOOP;
+   END;
+   #+end_src
+
+   Tabla ARTICULO (C_ART, DESCRIP, PRECIO, STOCK, C_PROVEE).
+   Tabla VENTAS   (C_CLI, C_ART, FECHA, CANTIDAD, IMPORTE).
+   Tabla CLIENTE  (C_CLI, NOMBRE, CIUDAD, TELEFONO)
+
+3. Realiza la función CORRIGE sin parámetros que ponga bien el campo
+   importe de las ventas. (Teniendo en cuenta el precio y la cantidad)
+   La función devuelve el número de ventas que ha arreglado.
+   #+begin_src sql
+   CREATE OR REPLACE FUNCTION corrige
+   RETURN NUMBER AS
+     contador NUMBER;
+   BEGIN
+     -- Numero de ventas q tienen mal el importe
+     SELECT COUNT(*)
+     INTO   contador
+     FROM   ventas v
+     WHERE  importe != cantidad * (
+       SELECT precio
+       FROM   articulo
+       WHERE  c_art = v.c_art
+     );
+
+     -- Poner bien las ventas
+     UPDATE ventas v
+     SET    importe = cantidad * (
+       SELECT precio
+       FROM   articulo
+       WHERE  c_art = v.c_art
+     );
+
+     return contador;
+   END corrige;
+   #+end_src
+
+   Tabla ARTICULO (C_ART, DESCRIP, STOCK, PRECIO).
+
+4. Realiza un procedimiento CUANTOS que tiene 2 parámetros de entrada
+   y visualice cuantos artículos tienen un precio entre esos dos
+   valores inclusive. (el primer parámetro no tiene porqué ser menor)
+   #+begin_src sql
+   create or replace
+   PROCEDURE cuantos (
+     desde IN NUMBER,
+     hasta IN NUMBER
+   ) AS
+     contador NUMBER;
+   BEGIN
+     SELECT COUNT(*)
+     INTO   contador
+     FROM   articulo
+     WHERE  (precio >= desde AND precio <= hasta)
+        OR  (precio >= hasta AND precio <= desde);
+
+     dbms_output.put_line('Cuantos: ' || contador);
+   END cuantos;
+   #+end_src
