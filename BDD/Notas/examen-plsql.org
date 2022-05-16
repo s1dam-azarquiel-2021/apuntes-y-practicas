@@ -2,13 +2,13 @@
 #+SETUPFILE: ../../template.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 
-   Tabla PELICULAS (C_PELI, TITULO, FORMATO, C_PAIS, ANNO, PRECIO).
-   Tabla ALQUILER  (C_SOCIO, C_PELI, FECHA, NDIAS, DEVUELTA, TOTAL).
-   Tabla SOCIOS    (C_SOCIO, NOMBRE, DIRECCION, CIUDAD).
-
 1. Realiza el procedimiento ESEANIO con un parámetro de entrada AÑO; Y
    nos visualice los distintos nombres de los socios que han alquilado
    ese año. (El posibles valor de C_SOCIO y C_PELI son correlativos).
+
+   - Tabla PELICULAS (C_PELI, TITULO, FORMATO, C_PAIS, ANNO, PRECIO).
+   - Tabla ALQUILER  (C_SOCIO, C_PELI, FECHA, NDIAS, DEVUELTA, TOTAL).
+   - Tabla SOCIOS    (C_SOCIO, NOMBRE, DIRECCION, CIUDAD).
 
    #+begin_src sql
    CREATE OR REPLACE PROCEDURE ESEANIO (
@@ -61,13 +61,14 @@
    END;
    #+end_src
 
-   Tabla ARTICULO (C_ART, DESCRIP, PRECIO, STOCK, C_PROVEE).
-   Tabla VENTAS   (C_CLI, C_ART, FECHA, CANTIDAD, IMPORTE).
-   Tabla CLIENTE  (C_CLI, NOMBRE, CIUDAD, TELEFONO)
-
 3. Realiza la función CORRIGE sin parámetros que ponga bien el campo
    importe de las ventas. (Teniendo en cuenta el precio y la cantidad)
    La función devuelve el número de ventas que ha arreglado.
+
+   - Tabla ARTICULO (C_ART, DESCRIP, PRECIO, STOCK, C_PROVEE).
+   - Tabla VENTAS   (C_CLI, C_ART, FECHA, CANTIDAD, IMPORTE).
+   - Tabla CLIENTE  (C_CLI, NOMBRE, CIUDAD, TELEFONO)
+
    #+begin_src sql
    CREATE OR REPLACE FUNCTION corrige
    RETURN NUMBER AS
@@ -95,11 +96,12 @@
    END corrige;
    #+end_src
 
-   Tabla ARTICULO (C_ART, DESCRIP, STOCK, PRECIO).
-
 4. Realiza un procedimiento CUANTOS que tiene 2 parámetros de entrada
    y visualice cuantos artículos tienen un precio entre esos dos
    valores inclusive. (el primer parámetro no tiene porqué ser menor)
+
+   - Tabla ARTICULO (C_ART, DESCRIP, STOCK, PRECIO).
+
    #+begin_src sql
    create or replace
    PROCEDURE cuantos (
