@@ -1,4 +1,4 @@
-#+TITLE: PLSQL - Examen (esperemos sea el mismo)
+#+TITLE: PLSQL - Ejercicios pre-examen
 #+SETUPFILE: ../../template.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 
