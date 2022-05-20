@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-05-16 Mon 16:53 -->
+<!-- 2022-05-16 Mon 16:55 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PLSQL - Examen (esperemos sea el mismo)</title>
@@ -13,18 +13,18 @@
 <div id="content" class="content">
 <header>
 <h1 class="title">PLSQL - Examen (esperemos sea el mismo)</h1>
-</header><p>
-Tabla PELICULAS (C<sub>PELI</sub>, TITULO, FORMATO, C<sub>PAIS</sub>, ANNO, PRECIO).
-Tabla ALQUILER  (C<sub>SOCIO</sub>, C<sub>PELI</sub>, FECHA, NDIAS, DEVUELTA, TOTAL).
-Tabla SOCIOS    (C<sub>SOCIO</sub>, NOMBRE, DIRECCION, CIUDAD).
-</p>
-
-<ol class="org-ol">
+</header><ol class="org-ol">
 <li><p>
 Realiza el procedimiento ESEANIO con un parámetro de entrada AÑO; Y
 nos visualice los distintos nombres de los socios que han alquilado
 ese año. (El posibles valor de C<sub>SOCIO</sub> y C<sub>PELI</sub> son correlativos).
 </p>
+
+<ul class="org-ul">
+<li>Tabla PELICULAS (C<sub>PELI</sub>, TITULO, FORMATO, C<sub>PAIS</sub>, ANNO, PRECIO).</li>
+<li>Tabla ALQUILER  (C<sub>SOCIO</sub>, C<sub>PELI</sub>, FECHA, NDIAS, DEVUELTA, TOTAL).</li>
+<li>Tabla SOCIOS    (C<sub>SOCIO</sub>, NOMBRE, DIRECCION, CIUDAD).</li>
+</ul>
 
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">OR</span> REPLACE <span class="org-keyword">PROCEDURE</span> <span class="org-function-name">ESEANIO</span> (
@@ -79,19 +79,20 @@ Realiza un script que visualice 50 múltiplos de 7, mayores de 100.
   <span class="org-keyword">END</span> LOOP;
 <span class="org-keyword">END</span>;
 </pre>
-</div>
-
-<p>
-Tabla ARTICULO (C<sub>ART</sub>, DESCRIP, PRECIO, STOCK, C<sub>PROVEE</sub>).
-Tabla VENTAS   (C<sub>CLI</sub>, C<sub>ART</sub>, FECHA, CANTIDAD, IMPORTE).
-Tabla CLIENTE  (C<sub>CLI</sub>, NOMBRE, CIUDAD, TELEFONO)
-</p></li>
+</div></li>
 
 <li><p>
 Realiza la función CORRIGE sin parámetros que ponga bien el campo
 importe de las ventas. (Teniendo en cuenta el precio y la cantidad)
 La función devuelve el número de ventas que ha arreglado.
 </p>
+
+<ul class="org-ul">
+<li>Tabla ARTICULO (C<sub>ART</sub>, DESCRIP, PRECIO, STOCK, C<sub>PROVEE</sub>).</li>
+<li>Tabla VENTAS   (C<sub>CLI</sub>, C<sub>ART</sub>, FECHA, CANTIDAD, IMPORTE).</li>
+<li>Tabla CLIENTE  (C<sub>CLI</sub>, NOMBRE, CIUDAD, TELEFONO)</li>
+</ul>
+
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">CREATE</span> <span class="org-keyword">OR</span> REPLACE <span class="org-keyword">FUNCTION</span> <span class="org-function-name">corrige</span>
 <span class="org-keyword">RETURN</span> <span class="org-keyword">NUMBER</span> <span class="org-keyword">AS</span>
@@ -118,17 +119,18 @@ La función devuelve el número de ventas que ha arreglado.
   <span class="org-keyword">return</span> contador;
 <span class="org-keyword">END</span> corrige;
 </pre>
-</div>
-
-<p>
-Tabla ARTICULO (C<sub>ART</sub>, DESCRIP, STOCK, PRECIO).
-</p></li>
+</div></li>
 
 <li><p>
 Realiza un procedimiento CUANTOS que tiene 2 parámetros de entrada
 y visualice cuantos artículos tienen un precio entre esos dos
 valores inclusive. (el primer parámetro no tiene porqué ser menor)
 </p>
+
+<ul class="org-ul">
+<li>Tabla ARTICULO (C<sub>ART</sub>, DESCRIP, STOCK, PRECIO).</li>
+</ul>
+
 <div class="org-src-container">
 <pre class="src src-sql"><span class="org-keyword">create</span> <span class="org-keyword">or</span> replace
 <span class="org-keyword">PROCEDURE</span> cuantos (
@@ -151,7 +153,7 @@ valores inclusive. (el primer parámetro no tiene porqué ser menor)
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-05-16 Mon 16:53</p>
+<p class="date">Created: 2022-05-16 Mon 16:55</p>
 </div>
 </body>
 </html>

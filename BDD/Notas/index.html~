@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- 2022-05-16 Mon 16:53 -->
+<!-- 2022-05-16 Mon 16:55 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>BDD - Notas</title>
@@ -13,18 +13,18 @@
 <div id="content" class="content">
 <header>
 <h1 class="title">BDD - Notas</h1>
-</header><div id="outline-container-orgefcc135" class="outline-2">
-<h2 id="orgefcc135">Contenido</h2>
-<div class="outline-text-2" id="text-orgefcc135">
+</header><div id="outline-container-orgd002ddd" class="outline-2">
+<h2 id="orgd002ddd">Contenido</h2>
+<div class="outline-text-2" id="text-orgd002ddd">
 </div>
-<div id="outline-container-orge527f20" class="outline-3">
-<h3 id="orge527f20"><a href="./consultas.html">Consultas SQL</a></h3>
+<div id="outline-container-org512c3da" class="outline-3">
+<h3 id="org512c3da"><a href="./consultas.html">Consultas SQL</a></h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Alberto Robles Gomez</p>
-<p class="date">Created: 2022-05-16 Mon 16:53</p>
+<p class="date">Created: 2022-05-16 Mon 16:55</p>
 </div>
 </body>
 </html>
