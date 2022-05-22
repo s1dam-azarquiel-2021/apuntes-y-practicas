@@ -1,6 +1,6 @@
 #+TITLE: Ejercicio 6 Consultas
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 1. Crear tabla ofertas
    #+begin_src sql
    CREATE TABLE ofertas (

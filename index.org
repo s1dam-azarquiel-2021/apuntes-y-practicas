@@ -1,6 +1,6 @@
 #+TITLE: S1DAM - Notas y Practicas
 #+SETUPFILE: ./template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="styles/main.css" />
 #+OPTIONS: toc:nil
 * Contenido
 ** [[file:./BDD/index.org][Bases de datos]]

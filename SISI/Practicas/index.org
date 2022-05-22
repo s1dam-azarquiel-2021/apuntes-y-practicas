@@ -1,6 +1,6 @@
 #+TITLE: SISI - Practicas
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 #+OPTIONS: toc:nil
 * Contenido
 ** [[file:./P_1a.org][Practica 1a]]

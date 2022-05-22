@@ -1,6 +1,6 @@
 #+TITLE: PLSQL - Ejercicios pre-examen
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 
 1. Realiza el procedimiento ESEANIO con un parámetro de entrada AÑO; Y
    nos visualice los distintos nombres de los socios que han alquilado

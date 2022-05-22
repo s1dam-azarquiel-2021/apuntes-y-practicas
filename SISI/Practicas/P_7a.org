@@ -1,6 +1,6 @@
 #+TITLE: Practica 7A
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 1. ¿Cuál es a tu juicio la finalidad del uso de las redes
    informáticas? ¿Qué ventajas tiene usar ordenadores en red, frente
    al trabajo aislado?
@@ -106,7 +106,8 @@
 
     230.230.45.5 -> D
 
-12. Vamos a elaborar un resumen de la unidad completando las palabras que faltan.
+12. Vamos a elaborar un resumen de la unidad completando las palabras
+    que faltan.
 
     1. red
     2. local

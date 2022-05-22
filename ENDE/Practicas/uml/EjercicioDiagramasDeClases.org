@@ -10,7 +10,7 @@ done
 #+end_src
 #+RESULTS:
 
-#+begin_src plantuml :tangle plantuml-config.txt
+#+begin_src text :tangle plantuml-config.txt
 skinparam groupInheritance 2
 
 skinparam Default {

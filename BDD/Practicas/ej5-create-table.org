@@ -1,6 +1,6 @@
 #+TITLE: Ejercicio 5 Consultas
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 #+begin_src sql
 CREATE TABLE agenda (
   c_amigo NUMBER(4) NOT NULL,

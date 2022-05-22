@@ -1,6 +1,6 @@
 #+TITLE: Notas y practicas - aru
 #+SETUPFILE: ./template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="styles/main.css" />
 #+OPTIONS: toc:nil
 [[https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/generate-web.yml][https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/generate-web.yml/badge.svg]]
 [[https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/pages/pages-build-deployment][https://github.com/s1dam-azarquiel-2021/aru-notas-practicas/actions/workflows/pages/pages-build-deployment/badge.svg]]

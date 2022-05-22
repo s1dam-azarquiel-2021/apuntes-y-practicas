@@ -1,6 +1,6 @@
 #+TITLE: Practica 5C
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 1. Crear un directorio ejercicio1 en vuestro home, y copiar en el
    mismo todos los ficheros con extensión conf del directorio
    /etc. Realizad esta acción con un solo comando, y posicionados en

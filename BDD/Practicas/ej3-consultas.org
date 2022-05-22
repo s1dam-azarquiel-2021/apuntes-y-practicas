@@ -1,6 +1,6 @@
 #+TITLE: Ejercicio 3 Consultas
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 1. Vuestro nombre sea un nuevo CLIENTE
    #+begin_src sql
    INSERT INTO CLIENTE (idcli, nombre, direc, ciudad, cpostal, telef, credit)

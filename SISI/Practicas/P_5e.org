@@ -1,6 +1,6 @@
 #+TITLE: Practica 5E
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 * Scripts iniciales I
 1. Crea un script parametros.sh que nos diga el número de parámetros
    pasados por línea de comando y que nos muestre por pantalla dichos

@@ -1,6 +1,6 @@
 #+TITLE: Ejercicios del Libro
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 * Unidad 2
 
 1. Complete the sentences with this, that, these, those.

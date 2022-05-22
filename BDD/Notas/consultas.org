@@ -1,6 +1,6 @@
 #+TITLE: Consultas SQL
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 1. Titulo de las peliculas producidas despues del año 2005
    #+begin_src sql
    SELECT titulo

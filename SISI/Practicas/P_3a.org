@@ -1,6 +1,6 @@
 #+TITLE: Practica 3A
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 * Diseño de un sistema de informacion
 1. Realizad un particionado del espacio de disco duro, teniendo en
    cuenta que por eficiencia necesitaremos al menos tres particiones:

@@ -1,6 +1,6 @@
 #+TITLE: Practica 1D
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 * Interpretacion de mapas de red
 1. Interpreta ambas redes.
 2. Identifica los siguientes elementos de ambas redes:

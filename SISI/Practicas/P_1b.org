@@ -1,6 +1,6 @@
 #+TITLE: Practica 1B
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 * Deteccion de drivers del equipo
 Version del kernel: 5.10.57
 | Modulo                | Usado por                                                   |

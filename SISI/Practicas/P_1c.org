@@ -1,7 +1,7 @@
 #+TITLE: Practica 1C
 #+SETUPFILE: ../../template.org
 #+AUTHOR:  y Alfonso Rodriguez Rodriguez
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 * Configuracion opciones de arranque
 [[file:./img/reseteo-bios.png]]
 [[file:./img/secuencia-de-arranque.png]]

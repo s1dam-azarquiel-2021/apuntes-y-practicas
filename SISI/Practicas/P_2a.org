@@ -1,6 +1,6 @@
 #+TITLE: Practica 2A
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 * Creacion y configuracion de una maquina virtual
 1. Crea una máquina virtual en VirtualBox Workstation que nos sirva
    para instalar el sistema operativo Windows 7. ¿Qué requerimientos

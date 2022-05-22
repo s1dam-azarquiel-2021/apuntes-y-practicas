@@ -1,6 +1,6 @@
 #+TITLE: Practica 5D
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 1. Mostrar el fichero /etc/passwd pero eliminando la primera línea.
    #+begin_src shell
    sed -n '1!p' /etc/passwd

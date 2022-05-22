@@ -1,6 +1,6 @@
 #+TITLE: Textos
 #+SETUPFILE: ../../template.org
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
 * Texto 1
 
 The ability of tiny computing devices to control complex operations
