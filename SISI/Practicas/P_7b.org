@@ -1,0 +1,118 @@
+#+TITLE: Practica 7B
+#+SETUPFILE: ../../template.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
+* Subredes
+
+2. [@2] Tenemos la siguiente dirección IP: 192.168.1.0, y queremos
+   realizar 6 subredes con 30 host por subred. Crear tabla con las
+   seis subredes. Se pide:
+
+   - Clase: C
+   - Máscara de Subred por defecto: 255.255.255.0
+   - Máscara de Subred: 255.255.255.224
+   - No total de subredes: 8
+   - No total de direcciones por subred: 32
+   - No de direcciones para host: 30
+   - No de bits cogido para subred: 2
+   - Salto de red: 32
+
+   |   |     IP Subred |  Host Primero |   Host Ultimo |     Broadcast |
+   |---+---------------+---------------+---------------+---------------|
+   | 1 |   192.168.1.0 |   192.168.1.1 |  192.168.1.30 |  192.168.1.31 |
+   | 2 |  192.168.1.32 |  192.168.1.33 |  192.168.1.62 |  192.168.1.63 |
+   | 3 |  192.168.1.64 |  192.168.1.65 |  192.168.1.94 |  192.168.1.95 |
+   | 4 |  192.168.1.96 |  192.168.1.97 | 192.168.1.126 | 192.168.1.127 |
+   | 5 | 192.168.1.128 | 192.168.1.129 | 192.168.1.158 | 192.168.1.159 |
+   | 6 | 192.168.1.160 | 192.168.1.161 | 192.168.1.190 | 192.168.1.191 |
+
+3. Tenemos la siguiente dirección IP: 172.20.0.0, y queremos realizar
+   1000 subredes con 60 host por subred. Crear tabla con las primeras
+   cinco subredes. Se pide:
+
+   - Clase: B
+   - Máscara de Subred por defecto: 255.255.0.0
+   - Máscara de Subred: 255.255.255.192
+   - No total de subredes: 1024
+   - No total de direcciones por subred: 64
+   - No de direcciones para host: 62
+   - No de bits cogido para subred: 2
+   - Salto de red: 0.64
+
+   |   |    IP Subred | Host Primero |  Host Ultimo |    Broadcast |
+   |---+--------------+--------------+--------------+--------------|
+   | 1 |   172.20.0.0 |   172.20.0.1 |  172.20.0.62 |  172.20.0.63 |
+   | 2 |  172.20.0.64 |  172.20.0.65 | 172.20.0.126 | 172.20.0.127 |
+   | 3 | 172.20.0.128 | 172.20.0.129 | 172.20.0.190 | 172.20.0.191 |
+   | 4 | 172.20.0.192 | 172.20.0.193 | 172.20.0.254 | 172.20.0.255 |
+   | 5 |   172.20.1.0 |   172.20.1.1 |  172.20.1.62 |  172.20.1.63 |
+
+4. Tenemos la siguiente dirección IP: 10.0.0.0, y queremos realizar
+   126 subredes con 130000 host por subred. Crear tabla con las
+   primeras cinco subredes. Se pide:
+
+   - Clase: A
+   - Máscara de Subred por defecto: 255.0.0.0
+   - Máscara de Subred: 255.254.0.0
+   - No total de subredes: 128
+   - No total de direcciones por subred: 131072
+   - No de direcciones para host: 131070
+   - No de bits cogido para subred: 2
+   - Salto de red: 2
+
+   |   |  IP Subred | Host Primero |  Host Ultimo |    Broadcast |
+   |---+------------+--------------+--------------+--------------|
+   | 1 |   10.0.0.0 |     10.0.0.1 | 10.1.255.254 | 10.1.255.255 |
+   | 2 |   10.2.0.0 |     10.2.0.1 | 10.3.255.254 | 10.3.255.255 |
+   | 3 |   10.4.0.0 |     10.4.0.1 | 10.5.255.254 | 10.5.255.255 |
+   | 4 |   10.6.0.0 |     10.6.0.1 | 10.7.255.254 | 10.7.255.255 |
+   | 5 |   10.8.0.0 |     10.8.0.1 | 10.9.255.254 | 10.9.255.255 |
+
+* VSLM
+
+1. Usando el diagrama de red y la información proporcionada (subred de
+   60 y de 28 host), cree un direccionamiento que utiliza máscaras de
+   subred de longitud variable. Mostrar la subred dirección en los
+   cuadros. Esta empresa utilizará la dirección de clase C
+   192.168.1.0. Recuerde comenzar primero con sus grupos más grandes.
+
+   |   | IP Subred       | Host Primero |  Host Ultimo |    Broadcast |
+   |---+-----------------+--------------+--------------+--------------|
+   | 1 | 192.168.1.0/26  |  192.168.1.1 | 192.168.1.62 | 192.168.1.63 |
+   | 2 | 192.168.1.64/27 | 192.168.1.65 | 192.168.1.94 | 192.168.1.95 |
+
+2. Usando el diagrama de red y la información proporcionada, cree un
+   direccionamiento esquema que utiliza máscaras de subred de longitud
+   variable. Mostrar las direcciones de las subredes. Esta empresa
+   utilizará la dirección de clase C 192.168.16.0. Recuerde comenzar
+   primero con sus grupos más grandes.
+
+   |   | IP Subred        |  Host Primero |   Host Ultimo |     Broadcast |
+   |---+------------------+---------------+---------------+---------------|
+   | 1 | 192.168.1.0/25   |   192.168.1.1 | 192.168.1.126 | 192.168.1.127 |
+   | 2 | 192.168.1.128/26 | 192.168.1.129 | 192.168.1.190 | 192.168.1.191 |
+   | 3 | 192.168.1.192/27 | 192.168.1.193 | 192.168.1.222 | 192.168.1.223 |
+
+3. Usando el diagrama de red y la información proporcionada, cree un
+   direccionamiento con máscaras de subred de longitud
+   variable. Mostrar las direcciones de las subredes. Esta empresa
+   utilizará la dirección de clase C 220.108.38.0. Comenzar primero
+   con los grupos más grandes.
+
+   |   | IP Subred         |   Host Primero |    Host Ultimo |      Broadcast |
+   |---+-------------------+----------------+----------------+----------------|
+   | 1 | 220.108.38.0/25   |   220.108.38.1 | 220.108.38.126 | 220.108.38.127 |
+   | 2 | 220.108.38.128/26 | 220.108.38.129 | 220.108.38.190 | 220.108.38.191 |
+   | 3 | 220.108.38.192/27 | 220.108.38.193 | 220.108.38.222 | 220.108.38.223 |
+
+4. Usando el diagrama de red y la información proporcionada, cree un
+   direccionamiento con máscaras de subred de longitud
+   variable. Mostrar las direcciones de las subredes. Esta empresa
+   utilizará la dirección de clase C 192.168.10.0. Comenzar primero
+   con los grupos más grandes.
+
+   |   | IP Subred         |   Host Primero |    Host Ultimo |      Broadcast |
+   |---+-------------------+----------------+----------------+----------------|
+   | 1 | 192.168.10.0/25   |   192.168.10.1 | 192.168.10.126 | 192.168.10.127 |
+   | 2 | 192.168.10.128/26 | 192.168.10.129 | 192.168.10.190 | 192.168.10.191 |
+   | 3 | 192.168.10.192/27 | 192.168.10.193 | 192.168.10.222 | 192.168.10.223 |
+   | 3 | 192.168.10.224/28 | 192.168.10.225 | 192.168.10.238 | 192.168.10.239 |
