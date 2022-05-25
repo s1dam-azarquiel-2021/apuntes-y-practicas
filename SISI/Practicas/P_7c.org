@@ -1,0 +1,127 @@
+#+TITLE: Practica 7B
+#+SETUPFILE: ../../template.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
+1. Teniendo en cuenta el siguiente esquema de red: Configura la
+   interfaz de red de un cliente para tener acceso a internet, utiliza
+   direccionamiento estático. ¿Qué diferencia hay entre dirección
+   estática y dinámica? ¿Qué dirección del router es la pública? ¿Cuál
+   es la privada? Define cada uno de los parámetros que has
+   configurado: puerta de enlace, máscara de red, etc.
+
+   Las direcciones dinamicas las provee el DHCP a cada dispositivo
+   cuando intenta conectarse, las estaticas deben ser asignadas
+   manualmente.
+
+   Publica: 85.136.83.249
+   Privada: 192.168.1.1
+
+   Gateway: 192.168.1.1
+   Netmask: 255.255.255.0
+   Broadcast: 192.168.1.255
+
+2. 172.22.0.0/19 ¿Cuantos equipos podemos tener con esta máscara de
+   subred?
+
+   8192
+
+3. Investiga en Internet y en los apuntes, y describe brevemente el
+   modelo TCP/IP y sus capas y al menos dos protocolos de cada una de
+   las capas.
+
+   - Aplicacion: FTP y HTTP
+   - Transporte: TCP y UDP
+   - Internet: IP y ICMP
+   - Enlace: ARP y NDP
+
+4. ¿Qué puerto se utiliza por defecto para conectarse a un servidor
+   web? ¿Y a un servidor web con conexión segura? ¿Y para el servidor
+   MySQL? ¿Para qué se usa el puerto 22? Investiga los puertos
+   utilizados en tu servidor de correo electrónico, google u otra
+   cuenta.
+
+   Http 80, https 443, mysql 3306, ssh 22.
+
+   Se usan varios puertos segun la conexion, yo en mi cliente de
+   correo (mu4e) uso el 993 para IMAP con SSL y 465 para SMTP para
+   recibir y enviar correos con zohomail, tambien se puede usar POP.
+
+5. Comprueba la ruta que seguirían los paquetes para llegar al
+   servidor de correo de google: "mail.google.com".
+
+   [[file:./img/7.2.1.png]]
+
+6. Qué es el servicio DNS y para qué se utiliza. ¿Podremos navegar por
+   la red si no tenemos configurado DNS en nuestro equipo?
+
+   Es una especie de "traductor" que a partir de un domain name nos
+   devuelve su IP, es decir, el domain name es una manera mas sencilla
+   y facil de recordar de referirse a un servidor que contenga, por
+   ejemplo, una pagina web.
+
+7. Investiga a cerca del servicio Telnet y SSH. ¿Para qué se utilizan?
+   ¿Qué puertos utilizan?
+
+   Telnet es el antiguo protocolo que se usaba para conectarse de
+   forma remota a otros dispositivos en una red y no tenia ningun
+   metodo de encriptacion, por ello es considerado como no seguro.
+
+   Mas tarde aparecio el SSH que es telnet pero aniadiendo
+   encriptacion mediante SSL (capa de sockets seguros).
+
+   Telnet usa el 23, ssh el 22.
+
+8. Define las capas de los modelos de red OSI y TCP/IP indicando qué
+   capas de OSI correspondes a las capas de TCP/IP.
+
+   Tardo menos:
+   
+   [[file:./img/7.2.2.png]]
+
+9. Su red utiliza la dirección IP 172.30.0.0/16. Inicialmente
+   existen 25 subredes con un mínimo de 1000 hosts por subred. Se
+   proyecta un crecimiento en los próximos años hasta llegar a un
+   total de 55 subredes. ¿Qué mascará de subred se deberá utilizar?
+
+   255.255.252.0 (/22)
+
+10. Una red está dividida en 8 subredes de una clase B. ¿Qué mascará
+    de subred se deberá utilizar si se pretende tener 2500 host por
+    subred?
+
+    255.255.224.0 (/19)
+
+11. Práctica subnetting. Con una dirección de Clase C, 192.168.1.0, y
+    necesita crear un esquema de subredes para proporcionar seguridad
+    a bajo nivel y control de difusión en la LAN. No es necesario
+    proporcionar una dirección para la conexión WAN porque ya la
+    proporciona el proveedor de servicios de Internet. La LAN consiste
+    en los siguientes elementos, cada uno de los cuales requerirá su
+    propia subred.
+
+    a. Aula número 1. 28 nodos
+    b. Aula número 2. 22 nodos.
+    c. Sala de prácticas. 30 nodos
+    d. Profesores. 12 nodos.
+    e. Administración. 8 nodos.
+
+    Realiza la división y crea una tabla en la que se documente las
+    ips disponibles para cada red.
+
+    |   |     IP Subred |  Host Primero |   Host Ultimo |     Broadcast |
+    |---+---------------+---------------+---------------+---------------|
+    | c |   192.168.1.0 |   192.168.1.1 |  192.168.1.30 |  192.168.1.31 |
+    | a |  192.168.1.32 |  192.168.1.33 |  192.168.1.62 |  192.168.1.63 |
+    | b |  192.168.1.64 |  192.168.1.65 |  192.168.1.94 |  192.168.1.95 |
+    | d |  192.168.1.96 |  192.168.1.97 | 192.168.1.110 | 192.168.1.111 |
+    | e | 192.168.1.112 | 192.168.1.113 | 192.168.1.126 | 192.168.1.127 |
+
+    Dibuja un posible esquema de red utilizando elementos de
+    interconexión con o sin Packet tracer (un router, switch, pc,
+    etc.).
+
+    [[file:./img/7.2.3.png]]
+
+    R -> Router
+    SC -> Switch Central
+    SSR -> Switch SubRed
+    APW -> AP Wireless
