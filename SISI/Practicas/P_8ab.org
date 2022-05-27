@@ -1,0 +1,35 @@
+#+TITLE: Practica 8AB
+#+SETUPFILE: ../../template.org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
+1. Conéctate al equipo de tu compañero utilizando cualquiera de los
+   siguientes servicios. Documentalo con pantallazos.
+
+   a) _ssh_
+   b) google Chrome Stpre
+   c) Remote Desktop Protocol (Ms)
+   d) TeamViewer
+
+   Me conecto mediante el protocolo ssh al servidor ssh que tengo en
+   el movil (usando la app simpleSSHD):
+
+   [[file:./img/8.1.3.png]]
+
+   Y como se puede ver puedo usar varios comandos de linux como un
+   ~echo~ o un ~top~:
+
+   [[file:./img/8.1.4.png]]
+
+   [[file:./img/8.1.5.png]]
+
+2. Descargate un archivo utilizando filezilla desde el ordenador de tu
+   companiero. Documentalo.
+
+   Voy a usar el protocolo sftp que viene siendo mas sencillo, me voy
+   a conectar al servidor sftp que tengo en el movil (usando la app de
+   primitive ftpd):
+
+   [[file:./img/8.1.1.png]]
+
+   Y usando el comando ~get~ me descargo algun fichero:
+
+   [[file:./img/8.1.2.png]]
